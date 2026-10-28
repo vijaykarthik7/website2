@@ -1,0 +1,10 @@
+{
+  "name": "website2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static web application",
+  "scripts": {
+    "start": "node server.js",
+    "build": ""
+  }
+}

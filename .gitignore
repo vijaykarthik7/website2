@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+
+# Scratch & Dev artifacts
+/scratch/
+*.png
+*.jpg
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
