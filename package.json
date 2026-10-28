@@ -5,6 +5,6 @@
   "description": "Static web application",
   "scripts": {
     "start": "node server.js",
-    "build": ""
+    "build": "echo build done"
   }
 }
