@@ -548,7 +548,7 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .hero-editorial-center {
-    top: clamp(82px, 11vh, 98px);
+    top: clamp(92px, 12.5vh, 110px);
     padding: 0 20px;
   }
 
@@ -595,7 +595,7 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 46% / contain no-repeat;
+  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 49.5% / contain no-repeat;
 }
 
 @media (min-width: 901px) and (min-aspect-ratio: 13/10) {
@@ -6484,7 +6484,7 @@ spline-viewer::part(logo) {
   }
 
   .section-about {
-    padding: 24px 0 50px 0 !important;
+    padding: 30px 0 50px 0 !important;
   }
 
   .section-awards,
@@ -6541,29 +6541,29 @@ spline-viewer::part(logo) {
     letter-spacing: 0.04em;
   }
 
-  /* Hero Section — Balanced compact height eliminating empty void */
+  /* Hero Section — Balanced compact height with comfortable breathing room */
   .hero-section {
     height: auto;
-    min-height: clamp(480px, 66vh, 540px);
+    min-height: clamp(520px, 70vh, 580px);
     padding: 0 16px;
     margin: 0;
   }
 
   .video-hero-canvas {
     background-size: 100% auto !important;
-    background-position: center 46% !important;
+    background-position: center 49.5% !important;
     background-repeat: no-repeat !important;
   }
 
   .hero-container {
     height: auto;
-    min-height: clamp(480px, 66vh, 540px);
+    min-height: clamp(520px, 70vh, 580px);
     padding-bottom: 0;
     margin: 0 auto;
   }
 
   .hero-editorial-center {
-    top: clamp(82px, 11vh, 98px);
+    top: clamp(92px, 12.5vh, 110px);
     padding: 0 16px;
     max-width: 100%;
   }
@@ -6905,7 +6905,7 @@ spline-viewer::part(logo) {
   }
 
   .hero-editorial-center {
-    top: clamp(78px, 10.5vh, 92px);
+    top: clamp(86px, 11.5vh, 100px);
     padding: 0 12px;
   }
 
