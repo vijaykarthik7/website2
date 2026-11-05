@@ -265,8 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
         nw = Math.round(cw);
         nh = Math.round(ih * r);
         cx = 0;
-        // Position hands with comfortable breathing room below the lowered CTA button
-        cy = Math.round(ch * 0.58 - nh * 0.5);
+        // Position hands in the focal area with tight, balanced spacing between CTA and timeline
+        cy = Math.round(ch * 0.47 - nh * 0.5);
       } else {
         // Aspect ratio cover scale to immerse the widescreen desktop viewport
         const r = Math.max(cw / iw, ch / ih);
