@@ -3261,14 +3261,14 @@ body {
   z-index: 2;
 }
 
-/* 6-Step Systematic Methodology Box */
+/* 6-Step Systematic Methodology Box — Transparent, seamless, zero card container */
 .timeline-01-process-box {
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(180deg, rgba(12, 12, 15, 0.6) 0%, rgba(5, 5, 5, 0.9) 100%);
+  border: none !important;
+  background: transparent !important;
   padding: 48px clamp(24px, 4vw, 48px) 56px clamp(24px, 4vw, 48px);
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Process Box Connector & Terminal Hub */
@@ -3350,9 +3350,11 @@ body {
 /* 6-Step Process Cards Sequential Lighting & Glow */
 .process-step-card {
   position: relative;
-  background: rgba(18, 18, 22, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(18, 18, 24, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 22px 14px;
   text-align: center;
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
@@ -3373,10 +3375,10 @@ body {
 
 .process-step-card.active,
 .process-step-card:hover {
-  border-color: rgba(244, 211, 107, 0.6);
+  border-color: rgba(244, 211, 107, 0.85);
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.18), 0 0 20px rgba(244, 211, 107, 0.12);
-  background: rgba(24, 24, 30, 0.9);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25), 0 0 20px rgba(244, 211, 107, 0.18);
+  background: rgba(28, 25, 20, 0.7);
 }
 
 .process-step-card.active::before,
@@ -6660,7 +6662,10 @@ spline-viewer::part(logo) {
   }
 
   .timeline-01-process-box {
-    padding: 32px 16px 36px 16px;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 24px 0 32px 0 !important;
   }
 
   .process-steps-grid {

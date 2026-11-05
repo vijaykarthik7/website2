@@ -352,8 +352,8 @@ document.addEventListener('DOMContentLoaded', () => {
         progress = Math.max(0, Math.min(1, forcedProgress));
       } else if (aboutSection && heroSection) {
         const startY = 0;
-        // Reach touching contact at the 2026 milestone before methodology
-        const endY = aboutSection.offsetTop + aboutSection.offsetHeight * 0.72;
+        // Reach touching contact as user progresses through timeline and methodology
+        const endY = aboutSection.offsetTop + aboutSection.offsetHeight * 0.88;
         const currentY = window.scrollY || window.pageYOffset || 0;
         progress = Math.max(0, Math.min(1, (currentY - startY) / Math.max(1, endY - startY)));
       } else {
@@ -451,15 +451,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Smoothly fade out the canvas stage as user finishes About Us, completely clear before Awards enters view
+      // Keep VideoHero canvas active through all About Us milestones and 6-step engineering methodology
       ScrollTrigger.create({
         trigger: aboutSection,
-        start: "bottom 95%",
-        end: "bottom 25%",
+        start: "bottom 60%",
+        end: "bottom 5%",
         scrub: true,
         onUpdate: (self) => {
           if (videoHeroStage) {
-            const op = Math.max(0, 1 - self.progress * 1.25);
+            const op = Math.max(0, 1 - self.progress * 1.3);
             videoHeroStage.style.opacity = op.toFixed(2);
             videoHeroStage.style.visibility = op < 0.01 ? 'hidden' : 'visible';
           }
@@ -2941,15 +2941,19 @@ void main(void) {
     if (processBox) {
       ScrollTrigger.create({
         trigger: processBox,
-        start: 'top 80%',
+        start: 'top 85%',
         end: 'bottom 15%',
         onEnter: () => {
           if (terminalPin) terminalPin.classList.add('active');
           processCards.forEach((card, idx) => {
             setTimeout(() => {
               card.classList.add('active');
-            }, idx * 90);
+            }, idx * 80);
           });
+        },
+        onEnterBack: () => {
+          if (terminalPin) terminalPin.classList.add('active');
+          processCards.forEach(card => card.classList.add('active'));
         },
         onLeaveBack: () => {
           if (terminalPin) terminalPin.classList.remove('active');
