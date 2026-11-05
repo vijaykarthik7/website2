@@ -167,14 +167,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trigger progress bar
     setTimeout(() => {
       if (preloaderBar) preloaderBar.style.width = '100%';
-    }, 150);
+    }, 50);
 
-    // Hide preloader at ~1.5s
-    setTimeout(() => {
+    let preloaderDismissed = false;
+    function dismissPreloader() {
+      if (preloaderDismissed) return;
+      preloaderDismissed = true;
       cancelAnimationFrame(pAnimId);
       preloader.classList.add('preloader-hidden');
-      AudioEngine.playBeep(980, 'sine', 0.15, 0.03);
-    }, 1450);
+      try { AudioEngine.playBeep(980, 'sine', 0.12, 0.02); } catch (e) {}
+    }
+
+    // Dismiss early on window load (400ms) or at 800ms max for instant perceived speed
+    window.addEventListener('load', () => {
+      setTimeout(dismissPreloader, 400);
+    });
+    setTimeout(dismissPreloader, 800);
   }
 
   // =========================================================================
@@ -204,17 +212,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getFrameSrc(index) {
       const num = String(index).padStart(3, '0');
-      return `assets/HeroAbout/VideoHero_frames/frame_${num}.png`;
+      return `assets/HeroAbout/VideoHero_frames/frame_${num}.webp`;
     }
 
     function getFallbackFrameSrc(index) {
       const num = String(index).padStart(3, '0');
-      return `assets/HeroAbout/frame_${num}.png`;
+      return `assets/HeroAbout/VideoHero_frames/frame_${num}.png`;
     }
 
     function resizeCanvas() {
       if (!canvas) return;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.8);
       const w = window.innerWidth;
       const h = window.innerHeight;
       canvas.width = Math.round(w * dpr);
@@ -247,12 +255,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const iw = img.naturalWidth;
       const ih = img.naturalHeight;
 
-      // Aspect ratio cover scale to immerse the entire viewport
-      const r = Math.max(cw / iw, ch / ih);
-      const nw = iw * r;
-      const nh = ih * r;
-      const cx = (cw - nw) * 0.5;
-      const cy = (ch - nh) * 0.5 + Math.min(45, Math.max(0, (nh - ch) * 0.28));
+      const isMobilePortrait = window.innerWidth <= 768 && cw < ch;
+
+      let nw, nh, cx, cy;
+      if (isMobilePortrait) {
+        // Frame human and robot hands into view on narrow portrait mobile screens
+        const r = Math.max(cw / iw * 1.32, Math.min(cw / iw * 1.62, ch / ih));
+        nw = iw * r;
+        nh = ih * r;
+        cx = (cw - nw) * 0.5;
+        cy = ch - nh + Math.min(25, ch * 0.03);
+      } else {
+        // Aspect ratio cover scale to immerse the entire viewport
+        const r = Math.max(cw / iw, ch / ih);
+        nw = iw * r;
+        nh = ih * r;
+        cx = (cw - nw) * 0.5;
+        cy = (ch - nh) * 0.5 + Math.min(45, Math.max(0, (nh - ch) * 0.28));
+      }
 
       ctx.clearRect(0, 0, cw, ch);
       ctx.drawImage(img, 0, 0, iw, ih, cx, cy, nw, nh);
@@ -293,26 +313,29 @@ document.addEventListener('DOMContentLoaded', () => {
       render();
     });
 
-    // Step 2: Progressive Keyframe Stride (Loads anchor frames across full scroll arc in <400ms)
+    // Step 2: Progressive Keyframe Stride (Loads anchor frames across full scroll arc in <200ms)
+    const isMobileHero = window.innerWidth <= 768;
+    const strideStep = isMobileHero ? 15 : 10;
     const keyframes = [];
-    for (let k = 10; k <= TOTAL_FRAMES; k += 10) {
+    for (let k = strideStep; k <= TOTAL_FRAMES; k += strideStep) {
       keyframes.push(k);
     }
     keyframes.forEach(k => loadFrame(k));
 
     // Step 3: Stream all remaining frames progressively in background
     let nextIdxToLoad = 2;
+    const heroStep = isMobileHero ? 2 : 1;
     function loadNextBatch() {
       let count = 0;
-      while (nextIdxToLoad <= TOTAL_FRAMES && count < 6) {
+      while (nextIdxToLoad <= TOTAL_FRAMES && count < (isMobileHero ? 3 : 5)) {
         if (!frames[nextIdxToLoad]) {
           loadFrame(nextIdxToLoad);
           count++;
         }
-        nextIdxToLoad++;
+        nextIdxToLoad += heroStep;
       }
       if (nextIdxToLoad <= TOTAL_FRAMES) {
-        setTimeout(loadNextBatch, 35);
+        setTimeout(loadNextBatch, isMobileHero ? 50 : 35);
       }
     }
     setTimeout(loadNextBatch, 150);
@@ -561,34 +584,59 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = getRocketFrameSrc(idx);
     }
 
-    // Step 1: Immediately load and render Frame 1 (Zero delay)
-    loadRocketFrame(1, () => {
-      renderRocket();
-    });
+    // Progressive Staged Loader — Lazy loaded when visitor nears Awards/About section
+    let rocketLoadingStarted = false;
+    function startRocketLoading() {
+      if (rocketLoadingStarted) return;
+      rocketLoadingStarted = true;
 
-    // Step 2: Progressive Keyframe Stride (16 keyframes across full scroll arc)
-    for (let k = 15; k <= TOTAL_ROCKET_FRAMES; k += 15) {
-      loadRocketFrame(k);
-    }
+      // Step 1: Immediately load and render Frame 1
+      loadRocketFrame(1, () => {
+        renderRocket();
+      });
 
-    // Step 3: Stream all remaining frames progressively in background
-    let nextRocketIdx = 2;
-    function loadNextRocketBatch() {
-      let count = 0;
-      while (nextRocketIdx <= TOTAL_ROCKET_FRAMES && count < 8) {
-        if (!rocketFrames[nextRocketIdx]) {
-          loadRocketFrame(nextRocketIdx);
-          count++;
+      // Step 2: Progressive Keyframe Stride (Loads anchor frames across full scroll arc)
+      const isMobileRocket = window.innerWidth <= 768;
+      const strideStep = isMobileRocket ? 20 : 15;
+      for (let k = strideStep; k <= TOTAL_ROCKET_FRAMES; k += strideStep) {
+        loadRocketFrame(k);
+      }
+
+      // Step 3: Stream all remaining frames progressively in background
+      let nextRocketIdx = 2;
+      const rocketStep = isMobileRocket ? 2 : 1;
+      function loadNextRocketBatch() {
+        let count = 0;
+        while (nextRocketIdx <= TOTAL_ROCKET_FRAMES && count < (isMobileRocket ? 4 : 6)) {
+          if (!rocketFrames[nextRocketIdx]) {
+            loadRocketFrame(nextRocketIdx);
+            count++;
+          }
+          nextRocketIdx += rocketStep;
         }
-        nextRocketIdx++;
+        if (nextRocketIdx <= TOTAL_ROCKET_FRAMES) {
+          setTimeout(loadNextRocketBatch, 30);
+        }
       }
-      if (nextRocketIdx <= TOTAL_ROCKET_FRAMES) {
-        setTimeout(loadNextRocketBatch, 25);
-      }
+      setTimeout(loadNextRocketBatch, 100);
     }
-    setTimeout(loadNextRocketBatch, 100);
+
+    // Connect IntersectionObserver to trigger loading when scrolling towards section
+    const aboutSectionElForRocket = document.getElementById('about');
+    if ('IntersectionObserver' in window && aboutSectionElForRocket) {
+      const rocketObserver = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) {
+          startRocketLoading();
+          rocketObserver.disconnect();
+        }
+      }, { rootMargin: '600px 0px' });
+      rocketObserver.observe(aboutSectionElForRocket);
+    } else {
+      setTimeout(startRocketLoading, 2000);
+    }
 
     function updateRocketProgress(progressVal) {
+      if (!rocketLoadingStarted) startRocketLoading();
       const p = Math.max(0, Math.min(1, progressVal));
       rocketTargetFrame = 1 + p * (TOTAL_ROCKET_FRAMES - 1);
 
@@ -746,12 +794,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getEarthFrameSrc(index) {
       const num = String(index).padStart(3, '0');
+      return `assets/earth/ezgif-frame-${num}.webp`;
+    }
+
+    function getEarthFallbackFrameSrc(index) {
+      const num = String(index).padStart(3, '0');
       return `assets/earth/ezgif-frame-${num}.png`;
     }
 
     function resizeEarthCanvas() {
       if (!earthCanvas) return;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.8);
       const w = window.innerWidth;
       const h = window.innerHeight;
       earthCanvas.width = Math.round(w * dpr);
@@ -810,37 +863,73 @@ document.addEventListener('DOMContentLoaded', () => {
           renderEarth();
         }
       };
+      img.onerror = () => {
+        const fallback = new Image();
+        fallback.onload = () => {
+          earthFrames[idx] = fallback;
+          earthLoaded[idx] = true;
+          if (onComplete) onComplete(fallback);
+          if (Math.round(earthCurrentFrame) === idx || earthRenderedFrame === -1) {
+            renderEarth();
+          }
+        };
+        fallback.src = getEarthFallbackFrameSrc(idx);
+      };
       img.src = getEarthFrameSrc(idx);
     }
 
-    // Step 1: Immediately load and render Frame 1 (Zero delay)
-    loadEarthFrame(1, () => {
-      renderEarth();
-    });
+    // Lazy load Earth frames when scrolling toward industries/guardian section
+    let earthLoadingStarted = false;
+    function startEarthLoading() {
+      if (earthLoadingStarted) return;
+      earthLoadingStarted = true;
 
-    // Step 2: Progressive Keyframe Stride across full arc
-    for (let k = 15; k <= TOTAL_EARTH_FRAMES; k += 15) {
-      loadEarthFrame(k);
-    }
+      // Step 1: Immediately load and render Frame 1
+      loadEarthFrame(1, () => {
+        renderEarth();
+      });
 
-    // Step 3: Stream all remaining frames progressively in background
-    let nextEarthIdx = 2;
-    function loadNextEarthBatch() {
-      let count = 0;
-      while (nextEarthIdx <= TOTAL_EARTH_FRAMES && count < 6) {
-        if (!earthFrames[nextEarthIdx]) {
-          loadEarthFrame(nextEarthIdx);
-          count++;
+      // Step 2: Progressive Keyframe Stride across full arc
+      const isMobileEarth = window.innerWidth <= 768;
+      const strideStep = isMobileEarth ? 20 : 15;
+      for (let k = strideStep; k <= TOTAL_EARTH_FRAMES; k += strideStep) {
+        loadEarthFrame(k);
+      }
+
+      // Step 3: Stream all remaining frames progressively in background
+      let nextEarthIdx = 2;
+      const earthStep = isMobileEarth ? 2 : 1;
+      function loadNextEarthBatch() {
+        let count = 0;
+        while (nextEarthIdx <= TOTAL_EARTH_FRAMES && count < (isMobileEarth ? 3 : 5)) {
+          if (!earthFrames[nextEarthIdx]) {
+            loadEarthFrame(nextEarthIdx);
+            count++;
+          }
+          nextEarthIdx += earthStep;
         }
-        nextEarthIdx++;
+        if (nextEarthIdx <= TOTAL_EARTH_FRAMES) {
+          setTimeout(loadNextEarthBatch, 35);
+        }
       }
-      if (nextEarthIdx <= TOTAL_EARTH_FRAMES) {
-        setTimeout(loadNextEarthBatch, 30);
-      }
+      setTimeout(loadNextEarthBatch, 100);
     }
-    setTimeout(loadNextEarthBatch, 150);
+
+    const servicesSectionForEarth = document.getElementById('services');
+    if ('IntersectionObserver' in window && servicesSectionForEarth) {
+      const earthObserver = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) {
+          startEarthLoading();
+          earthObserver.disconnect();
+        }
+      }, { rootMargin: '600px 0px' });
+      earthObserver.observe(servicesSectionForEarth);
+    } else {
+      setTimeout(startEarthLoading, 3000);
+    }
 
     function updateEarthProgress(progressVal) {
+      if (!earthLoadingStarted) startEarthLoading();
       const p = Math.max(0, Math.min(1, progressVal));
       earthTargetFrame = 1 + p * (TOTAL_EARTH_FRAMES - 1);
 
@@ -1062,34 +1151,58 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = getHandaniFrameSrc(idx);
     }
 
-    // Step 1: Immediately load and render Frame 1 (Zero delay)
-    loadHandaniFrame(1, () => {
-      renderHandani();
-    });
+    // Lazy load Handani frames when scrolling towards portfolio/estimator section
+    let handaniLoadingStarted = false;
+    function startHandaniLoading() {
+      if (handaniLoadingStarted) return;
+      handaniLoadingStarted = true;
 
-    // Step 2: Progressive Keyframe Stride across full arc
-    for (let k = 15; k <= TOTAL_HANDANI_FRAMES; k += 15) {
-      loadHandaniFrame(k);
-    }
+      // Step 1: Immediately load and render Frame 1
+      loadHandaniFrame(1, () => {
+        renderHandani();
+      });
 
-    // Step 3: Stream all remaining frames progressively in background
-    let nextHandaniIdx = 2;
-    function loadNextHandaniBatch() {
-      let count = 0;
-      while (nextHandaniIdx <= TOTAL_HANDANI_FRAMES && count < 6) {
-        if (!handaniFrames[nextHandaniIdx]) {
-          loadHandaniFrame(nextHandaniIdx);
-          count++;
+      // Step 2: Progressive Keyframe Stride across full arc
+      const isMobileHandani = window.innerWidth <= 768;
+      const strideStep = isMobileHandani ? 20 : 15;
+      for (let k = strideStep; k <= TOTAL_HANDANI_FRAMES; k += strideStep) {
+        loadHandaniFrame(k);
+      }
+
+      // Step 3: Stream all remaining frames progressively in background
+      let nextHandaniIdx = 2;
+      const handaniStep = isMobileHandani ? 2 : 1;
+      function loadNextHandaniBatch() {
+        let count = 0;
+        while (nextHandaniIdx <= TOTAL_HANDANI_FRAMES && count < (isMobileHandani ? 3 : 5)) {
+          if (!handaniFrames[nextHandaniIdx]) {
+            loadHandaniFrame(nextHandaniIdx);
+            count++;
+          }
+          nextHandaniIdx += handaniStep;
         }
-        nextHandaniIdx++;
+        if (nextHandaniIdx <= TOTAL_HANDANI_FRAMES) {
+          setTimeout(loadNextHandaniBatch, 35);
+        }
       }
-      if (nextHandaniIdx <= TOTAL_HANDANI_FRAMES) {
-        setTimeout(loadNextHandaniBatch, 30);
-      }
+      setTimeout(loadNextHandaniBatch, 100);
     }
-    setTimeout(loadNextHandaniBatch, 200);
+
+    const portfolioSectionForHandani = document.getElementById('portfolio');
+    if ('IntersectionObserver' in window && portfolioSectionForHandani) {
+      const handaniObserver = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) {
+          startHandaniLoading();
+          handaniObserver.disconnect();
+        }
+      }, { rootMargin: '600px 0px' });
+      handaniObserver.observe(portfolioSectionForHandani);
+    } else {
+      setTimeout(startHandaniLoading, 4000);
+    }
 
     function updateHandaniProgress(progressVal) {
+      if (!handaniLoadingStarted) startHandaniLoading();
       const p = Math.max(0, Math.min(1, progressVal));
       handaniTargetFrame = 1 + p * (TOTAL_HANDANI_FRAMES - 1);
 
@@ -1309,19 +1422,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
-  // Mobile Menu Toggle
+  // Mobile Menu Toggle with Body Lock & Smooth Navigation
   const mobileToggle = document.getElementById('mobileNavToggle');
   const mobileMenu = document.getElementById('mobileMenuOverlay');
   if (mobileToggle && mobileMenu) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
       mobileToggle.classList.toggle('active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     document.querySelectorAll('.mobile-nav-link').forEach((l) => {
-      l.addEventListener('click', () => {
+      l.addEventListener('click', (e) => {
         mobileMenu.classList.remove('open');
         mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+        const targetId = l.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            if (window.lenis) {
+              window.lenis.scrollTo(targetEl, { offset: -70, duration: 1.2 });
+            } else {
+              targetEl.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
       });
     });
   }

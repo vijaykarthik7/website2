@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>Riyadvi Software Technologies | Digital Technology & Business Growth Partner</title>
   <meta name="description" content="Riyadvi Software Technologies Pvt. Ltd. is a premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and the proprietary Riyadvi Guardian system to engineer sustainable business growth.">
   <link rel="icon" type="image/png" href="assets/riyadvilogo.png">
+
+  <!-- Performance Preconnect & DNS Prefetch -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://prod.spline.design">
+
+  <!-- Priority Hero Image Preload for Instant First Contentful Paint -->
+  <link rel="preload" as="image" href="assets/HeroAbout/VideoHero_frames/frame_001.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/riyadvilogo.png" type="image/png">
 
   <!-- OpenGraph Metadata -->
   <meta property="og:title" content="Riyadvi Software Technologies | Digital Technology & Business Growth Partner">
@@ -15,14 +25,9 @@
   <meta property="og:type" content="website">
 
   <!-- Modern Geometric Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=6.1">
-  
-  <!-- Spline 3D Interactive WebGL Engine -->
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.72/build/spline-viewer.js"></script>
+  <link rel="stylesheet" href="styles.css?v=6.2">
 
   <!-- JSON-LD Organization Schema Markup -->
   <script type="application/ld+json">
@@ -2088,6 +2093,8 @@
   <script src="assets/ScrollTrigger.min.js"></script>
   <!-- Lenis Smooth Inertial Scroll -->
   <script src="assets/lenis.min.js"></script>
-  <script src="script.js?v=5.0"></script>
+  <!-- Spline 3D Interactive WebGL Engine (Deferred) -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.72/build/spline-viewer.js"></script>
+  <script src="script.js?v=5.1"></script>
 </body>
 </html>
