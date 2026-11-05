@@ -595,7 +595,7 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 58% / contain no-repeat;
+  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 44% / contain no-repeat;
 }
 
 @media (min-width: 901px) and (min-aspect-ratio: 13/10) {
@@ -2078,8 +2078,8 @@ body {
 @media (max-width: 1120px) {
   .hero-container {
     height: auto;
-    min-height: 850px;
-    padding-bottom: 80px;
+    min-height: auto;
+    padding-bottom: 24px;
   }
   
   .design-cards-grid,
@@ -2114,19 +2114,12 @@ body {
     display: inline;
   }
 
-  .hero-left-column {
-    position: static;
-    margin-top: 450px;
-    padding: 0 24px;
-    max-width: 100%;
-    transform: none;
-  }
-
+  .hero-left-column,
   .hero-right-column {
-    position: static;
-    margin-top: 30px;
-    padding: 0 24px;
-    align-items: flex-start;
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .metrics-card-group {
@@ -6490,7 +6483,10 @@ spline-viewer::part(logo) {
     padding: 0 18px;
   }
 
-  .section-about,
+  .section-about {
+    padding: 16px 0 45px 0 !important;
+  }
+
   .section-awards,
   .section-trust,
   .section-capabilities,
@@ -6499,7 +6495,7 @@ spline-viewer::part(logo) {
   .section-portfolio,
   .section-estimator,
   .section-contact-full {
-    padding: 70px 0 60px 0 !important;
+    padding: 60px 0 50px 0 !important;
   }
 
   .section-title {
@@ -6545,27 +6541,29 @@ spline-viewer::part(logo) {
     letter-spacing: 0.04em;
   }
 
-  /* Hero Section */
+  /* Hero Section — Tightened to eliminate empty vertical gap before About section */
   .hero-section {
-    height: 100svh;
-    min-height: 560px;
+    height: auto;
+    min-height: clamp(430px, 58vh, 500px);
     padding: 0 16px;
+    margin: 0;
   }
 
   .video-hero-canvas {
     background-size: 100% auto !important;
-    background-position: center 58% !important;
+    background-position: center 44% !important;
     background-repeat: no-repeat !important;
   }
 
   .hero-container {
-    height: 100svh;
-    min-height: 560px;
+    height: auto;
+    min-height: clamp(430px, 58vh, 500px);
     padding-bottom: 0;
+    margin: 0 auto;
   }
 
   .hero-editorial-center {
-    top: clamp(80px, 12vh, 105px);
+    top: clamp(68px, 9vh, 84px);
     padding: 0 12px;
     max-width: 100%;
   }
@@ -6918,15 +6916,16 @@ spline-viewer::part(logo) {
   }
 
   .hero-editorial-actions {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 10px;
     width: 100%;
   }
 
   .hero-pill-cta {
-    width: 100%;
+    width: auto;
     justify-content: center;
-    padding: 9px 12px;
+    padding: 8px 18px;
   }
 
   .process-steps-grid {
