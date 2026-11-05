@@ -595,7 +595,14 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center center / cover no-repeat;
+  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 58% / contain no-repeat;
+}
+
+@media (min-width: 901px) and (min-aspect-ratio: 13/10) {
+  .video-hero-canvas {
+    background-size: cover;
+    background-position: center center;
+  }
 }
 
 .video-hero-ambient {
@@ -6543,6 +6550,12 @@ spline-viewer::part(logo) {
     height: 100svh;
     min-height: 560px;
     padding: 0 16px;
+  }
+
+  .video-hero-canvas {
+    background-size: 100% auto !important;
+    background-position: center 58% !important;
+    background-repeat: no-repeat !important;
   }
 
   .hero-container {

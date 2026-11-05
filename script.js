@@ -255,23 +255,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const iw = img.naturalWidth;
       const ih = img.naturalHeight;
 
-      const isMobilePortrait = window.innerWidth <= 768 && cw < ch;
+      // Identify portrait or narrow viewports (e.g. mobile, portrait tablets)
+      const isNarrowOrPortrait = (cw / ch) < (iw / ih) * 0.92 || window.innerWidth <= 900;
 
       let nw, nh, cx, cy;
-      if (isMobilePortrait) {
-        // Frame human and robot hands into view on narrow portrait mobile screens
-        const r = Math.max(cw / iw * 1.32, Math.min(cw / iw * 1.62, ch / ih));
-        nw = iw * r;
-        nh = ih * r;
-        cx = (cw - nw) * 0.5;
-        cy = ch - nh + Math.min(25, ch * 0.03);
+      if (isNarrowOrPortrait) {
+        // Fit 100% of the image width inside the viewport so BOTH human hand (left) and robot hand (right) fit completely inside the frame
+        const r = cw / iw;
+        nw = Math.round(cw);
+        nh = Math.round(ih * r);
+        cx = 0;
+        // Position hands in the focal area below the CTA button and above the scroll cue
+        cy = Math.round(ch * 0.58 - nh * 0.5);
       } else {
-        // Aspect ratio cover scale to immerse the entire viewport
+        // Aspect ratio cover scale to immerse the widescreen desktop viewport
         const r = Math.max(cw / iw, ch / ih);
-        nw = iw * r;
-        nh = ih * r;
-        cx = (cw - nw) * 0.5;
-        cy = (ch - nh) * 0.5 + Math.min(45, Math.max(0, (nh - ch) * 0.28));
+        nw = Math.round(iw * r);
+        nh = Math.round(ih * r);
+        cx = Math.round((cw - nw) * 0.5);
+        cy = Math.round((ch - nh) * 0.5 + Math.min(45, Math.max(0, (nh - ch) * 0.28)));
       }
 
       ctx.clearRect(0, 0, cw, ch);
