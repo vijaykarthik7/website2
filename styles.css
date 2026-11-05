@@ -548,7 +548,7 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .hero-editorial-center {
-    top: clamp(90px, 14vh, 120px);
+    top: clamp(105px, 14.5vh, 135px);
     padding: 0 20px;
   }
 
@@ -595,7 +595,7 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 44% / contain no-repeat;
+  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 54% / contain no-repeat;
 }
 
 @media (min-width: 901px) and (min-aspect-ratio: 13/10) {
@@ -6484,7 +6484,7 @@ spline-viewer::part(logo) {
   }
 
   .section-about {
-    padding: 16px 0 45px 0 !important;
+    padding: 60px 0 60px 0 !important;
   }
 
   .section-awards,
@@ -6541,30 +6541,30 @@ spline-viewer::part(logo) {
     letter-spacing: 0.04em;
   }
 
-  /* Hero Section — Tightened to eliminate empty vertical gap before About section */
+  /* Hero Section — Full viewport height with balanced vertical spacing */
   .hero-section {
-    height: auto;
-    min-height: clamp(430px, 58vh, 500px);
+    height: 100svh;
+    min-height: 600px;
     padding: 0 16px;
     margin: 0;
   }
 
   .video-hero-canvas {
     background-size: 100% auto !important;
-    background-position: center 44% !important;
+    background-position: center 54% !important;
     background-repeat: no-repeat !important;
   }
 
   .hero-container {
-    height: auto;
-    min-height: clamp(430px, 58vh, 500px);
+    height: 100svh;
+    min-height: 600px;
     padding-bottom: 0;
     margin: 0 auto;
   }
 
   .hero-editorial-center {
-    top: clamp(68px, 9vh, 84px);
-    padding: 0 12px;
+    top: clamp(105px, 14.5vh, 135px);
+    padding: 0 16px;
     max-width: 100%;
   }
 
@@ -6902,6 +6902,11 @@ spline-viewer::part(logo) {
   .btn-talk {
     padding: 6px 10px;
     font-size: 11px;
+  }
+
+  .hero-editorial-center {
+    top: clamp(95px, 13vh, 120px);
+    padding: 0 12px;
   }
 
   .hero-editorial-title {
