@@ -4167,7 +4167,8 @@ void main(void) {
 
   // =========================================================================
   // 18. Master Unified Section Flow Engine (GSAP & ScrollTrigger)
-  //     Ensures buttery-smooth, cohesive entrance transitions for ALL sections
+  //     Ensures each and every section comes up with a smooth fade-up-from-bottom
+  //     animation on scroll down and re-animates on every visit.
   // =========================================================================
   function initMasterSectionFlow() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
@@ -4176,35 +4177,102 @@ void main(void) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
-    // A. Section Headers Reveal across ALL sections
-    const sectionHeaders = document.querySelectorAll(
-      '#awards .center-header, #trust .center-header, ' +
-      '#services .center-header, #services .services-header-left, ' +
-      '#industries .center-header, #industries .industries-header-left, ' +
-      '#guardian .guardian-header-block, ' +
-      '#portfolio .center-header, ' +
-      '#estimator .center-header, ' +
-      '#contact .center-header'
-    );
+    // Master list of each and every section to fade up from bottom on scroll
+    const sectionsToFadeUp = [
+      {
+        id: 'about',
+        trigger: '#about',
+        header: '#about .timeline-01-header-box',
+        body: '#about .timeline-01-track-box'
+      },
+      {
+        id: 'awards',
+        trigger: '#awards',
+        header: '#awards .center-header',
+        body: '#awards .awards-grid'
+      },
+      {
+        id: 'services',
+        trigger: '#services',
+        header: '#services .design-header-row, #services .center-header',
+        body: '#services .bento-services-grid'
+      },
+      {
+        id: 'industries',
+        trigger: '#industries',
+        header: '#industries .industries-header-left, #industries .center-header',
+        body: '#industries .industry-hud-layout'
+      },
+      {
+        id: 'guardian',
+        trigger: '#guardian',
+        header: '#guardian .guardian-band-hero',
+        body: '#guardian .guardian-band-funnel, #guardian .guardian-band-consultation'
+      },
+      {
+        id: 'portfolio',
+        trigger: '#portfolio',
+        header: '#portfolio .center-header',
+        body: '#portfolio .portfolio-story-container'
+      },
+      {
+        id: 'estimator',
+        trigger: '#estimator',
+        header: '#estimator .center-header',
+        body: '#estimator .estimator-console'
+      },
+      {
+        id: 'contact',
+        trigger: '#contact',
+        header: '#contact .center-header',
+        body: '#contact .contact-split-grid, #contact .contact-channels-strip'
+      }
+    ];
 
-    sectionHeaders.forEach((hdr) => {
-      gsap.fromTo(hdr, 
-        { opacity: 0, y: 35 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: hdr,
-            start: 'top 85%',
-            toggleActions: 'play reverse play reverse'
-          }
+    sectionsToFadeUp.forEach(({ id, trigger, header, body }) => {
+      const triggerEl = document.querySelector(trigger);
+      if (!triggerEl) return;
+
+      const headerEls = header ? triggerEl.querySelectorAll(header) : [];
+      const bodyEls = body ? triggerEl.querySelectorAll(body) : [];
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerEl,
+          start: 'top 85%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse'
         }
-      );
+      });
+
+      if (headerEls.length > 0) {
+        tl.fromTo(headerEls,
+          { opacity: 0, y: 55 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.85,
+            ease: 'power3.out'
+          },
+          0
+        );
+      }
+
+      if (bodyEls.length > 0) {
+        tl.fromTo(bodyEls,
+          { opacity: 0, y: 75 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.95,
+            ease: 'power3.out'
+          },
+          0.08
+        );
+      }
     });
 
-    // B. Awards Cards Staggered Fluid Reveal
+    // Sub-stagger for awards cards on entrance
     const awardCards = document.querySelectorAll('#awards .award-card');
     if (awardCards.length > 0) {
       gsap.fromTo(awardCards,
@@ -4213,7 +4281,7 @@ void main(void) {
           opacity: 1,
           y: 0,
           scale: 1,
-          stagger: 0.12,
+          stagger: 0.1,
           duration: 0.8,
           ease: 'power3.out',
           scrollTrigger: {
@@ -4225,30 +4293,11 @@ void main(void) {
       );
     }
 
-    // C. Trust Interactive Viewer (TIV Stage) Reveal
-    const tivViewer = document.getElementById('trustImageViewer');
-    if (tivViewer) {
-      gsap.fromTo(tivViewer,
-        { opacity: 0, y: 45 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.9,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: tivViewer,
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    // D. Digital Capability Bento Grid Staggered Reveal
+    // Sub-stagger for bento cards on entrance
     const bentoCards = document.querySelectorAll('.bento-card');
     if (bentoCards.length > 0) {
       gsap.fromTo(bentoCards,
-        { opacity: 0, y: 40, scale: 0.97 },
+        { opacity: 0, y: 35, scale: 0.97 },
         {
           opacity: 1,
           y: 0,
@@ -4258,285 +4307,6 @@ void main(void) {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.bento-services-grid',
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    // E. Industries Display Box & Tabs / HUD Stage Reveal
-    const indDisplay = document.querySelector('.industry-display-box');
-    const indTabs = document.querySelector('.industry-tabs-bar');
-    const indIndexCol = document.getElementById('industryIndexCol');
-    const indStageCol = document.getElementById('industryStageCol');
-
-    if (indDisplay) {
-      gsap.fromTo(indDisplay,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: indDisplay,
-            start: 'top 85%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-    if (indTabs) {
-      gsap.fromTo(indTabs,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: indTabs,
-            start: 'top 88%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-    if (indIndexCol) {
-      gsap.fromTo(indIndexCol,
-        { opacity: 0, x: -25 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: indIndexCol,
-            start: 'top 85%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-    if (indStageCol) {
-      gsap.fromTo(indStageCol,
-        { opacity: 0, x: 25 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: indStageCol,
-            start: 'top 85%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    // F. Riyadvi Guardian™ Platform Stagger Reveals
-    const guardianHero = document.querySelector('.guardian-platform-hero');
-    const guardianArena = document.querySelectorAll('.guardian-arena-card');
-    const tierItems = document.querySelectorAll('.tier-step');
-    const trustStrip = document.querySelector('.guardian-trust-strip');
-    const guardianFlow = document.querySelector('.guardian-centered-flow');
-    
-    if (guardianHero) {
-      gsap.fromTo(guardianHero,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: guardianHero,
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-    if (guardianFlow) {
-      gsap.fromTo(guardianFlow,
-        { opacity: 0, y: 35 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: guardianFlow,
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-    if (guardianArena.length > 0) {
-      gsap.fromTo(guardianArena,
-        { opacity: 0, y: 35 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.guardian-split-arena',
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-    if (tierItems.length > 0) {
-      gsap.fromTo(tierItems,
-        { opacity: 0, x: -20 },
-        {
-          opacity: 1,
-          x: 0,
-          stagger: 0.1,
-          duration: 0.7,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.guardian-tier-stack',
-            start: 'top 85%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-    if (trustStrip) {
-      gsap.fromTo(trustStrip,
-        { opacity: 0, y: 15 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: trustStrip,
-            start: 'top 92%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    // G. Portfolio Case Studies Staggered Reveal
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-    if (portfolioCards.length > 0) {
-      gsap.fromTo(portfolioCards,
-        { opacity: 0, y: 45 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.15,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.portfolio-grid',
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    // H. Tech Ecosystem Badges Gentle Elastic Stagger
-    const techBadges = document.querySelectorAll('.tech-node-badge');
-    if (techBadges.length > 0) {
-      gsap.fromTo(techBadges,
-        { opacity: 0, scale: 0.9, y: 20 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          stagger: 0.03,
-          duration: 0.55,
-          ease: 'back.out(1.3)',
-          scrollTrigger: {
-            trigger: '.tech-nodes-container',
-            start: 'top 85%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    // I. Client Logos Staggered Fade
-    const clientLogos = document.querySelectorAll('.client-logo-item');
-    if (clientLogos.length > 0) {
-      gsap.fromTo(clientLogos,
-        { opacity: 0, y: 15 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.07,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: '.clients-grid',
-            start: 'top 85%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    // J. Estimator Box & Interactive Assistant Window Reveal
-    const estimatorBox = document.querySelector('.estimator-box');
-    if (estimatorBox) {
-      gsap.fromTo(estimatorBox,
-        { opacity: 0, y: 40, scale: 0.98 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: estimatorBox,
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    const demoSplit = document.querySelector('.demo-split');
-    if (demoSplit) {
-      gsap.fromTo(demoSplit,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: demoSplit,
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
-    }
-
-    // K. Contact Split Grid Reveal
-    const contactGrid = document.querySelector('.contact-split-grid');
-    if (contactGrid) {
-      gsap.fromTo(contactGrid,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: contactGrid,
             start: 'top 82%',
             toggleActions: 'play reverse play reverse'
           }
