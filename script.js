@@ -2983,168 +2983,796 @@ void main(void) {
 
 
   // =========================================================================
-  // 11. Interactive 6-Step Project Estimator Logic
+  // 11. Interactive 6-Step Project Estimator Logic (Three-Zone Console)
   // =========================================================================
-  const estimatorQuestions = [
+
+  // Master Data Array for All Steps, Options, Timelines, and Weights
+  const estimatorStepsData = [
     {
-      category: "WHAT DO YOU NEED?",
-      question: "What primary digital capability are you looking to build?",
+      id: 'capability',
+      stepNum: 1,
+      name: 'Capability',
+      category: 'WHAT DO YOU NEED?',
+      question: 'What primary digital capability are you looking to build?',
+      hint: 'Choose one option to continue.',
+      type: 'single',
       options: [
-        "Full-Stack Web Development",
-        "iOS & Android Mobile App",
-        "Riyadvi Guardian Growth Funnel",
-        "3D WebGL Digital Experience",
-        "Custom Enterprise Software"
+        {
+          id: 'web',
+          title: 'Full-Stack Web Development',
+          desc: 'Websites, portals & web apps',
+          icon: '🌐',
+          weeks: 6,
+          complexity: 40
+        },
+        {
+          id: 'mobile',
+          title: 'iOS & Android Mobile App',
+          desc: 'Native-feel apps for both stores',
+          icon: '📱',
+          weeks: 10,
+          complexity: 55
+        },
+        {
+          id: 'guardian',
+          title: 'Riyadvi Guardian Growth Funnel',
+          desc: 'Ads, capture, CRM & telemetry',
+          icon: '🛡️',
+          weeks: 4,
+          complexity: 35
+        },
+        {
+          id: 'webgl',
+          title: '3D WebGL Digital Experience',
+          desc: 'Immersive tours & configurators',
+          icon: '🧊',
+          weeks: 8,
+          complexity: 60
+        },
+        {
+          id: 'enterprise',
+          title: 'Custom Enterprise Software',
+          desc: 'Internal systems & platforms',
+          icon: '🏢',
+          weeks: 14,
+          complexity: 75
+        }
       ]
     },
     {
-      category: "BUSINESS TYPE",
-      question: "What category best describes your organization?",
+      id: 'scale',
+      stepNum: 2,
+      name: 'Scale',
+      category: 'SCALE & CAPACITY',
+      question: 'What scale or volume does this solution need to handle?',
+      hint: 'Select the target capacity for initial deployment.',
+      type: 'single',
       options: [
-        "Funded Seed / Series A Startup",
-        "Growing SME / Established Business",
-        "High-Growth E-Commerce Brand",
-        "Global Corporate / Enterprise",
-        "Agency / White-Label Partner"
+        {
+          id: 'starter',
+          title: 'Starter Deployment',
+          desc: 'Validated traffic, single region, core audience',
+          icon: '🚀',
+          weeks: 0,
+          complexity: 0
+        },
+        {
+          id: 'growth',
+          title: 'Growth Tier',
+          desc: 'High concurrency, multi-region CDN, automated pipelines',
+          icon: '⚡',
+          weeks: 3,
+          complexity: 10
+        },
+        {
+          id: 'enterprise_scale',
+          title: 'Enterprise Infrastructure',
+          desc: 'Mission-critical SLA, multi-cloud redundancy, global scale',
+          icon: '🌐',
+          weeks: 7,
+          complexity: 25
+        }
       ]
     },
     {
-      category: "PROJECT SCALE",
-      question: "What scope or scale of solution are you targeting?",
+      id: 'features',
+      stepNum: 3,
+      name: 'Features',
+      category: 'HIGH-IMPACT MODULES',
+      question: 'Which advanced capabilities need to be integrated?',
+      hint: 'Select all that apply. (Optional — skip if not needed)',
+      type: 'multi',
       options: [
-        "Rapid MVP (Launch in < 4 weeks)",
-        "Complete End-to-End Production Platform",
-        "Multi-Platform Scaled Ecosystem",
-        "Total Modernization of Legacy Stack"
+        {
+          id: 'payments',
+          title: 'Payments & Subscriptions',
+          desc: 'Stripe, recurrent billing & automated invoicing',
+          icon: '💳',
+          weeks: 1,
+          complexity: 4
+        },
+        {
+          id: 'crm',
+          title: 'CRM & Automation',
+          desc: 'HubSpot/Salesforce sync & automated customer journeys',
+          icon: '🔄',
+          weeks: 1,
+          complexity: 4
+        },
+        {
+          id: 'ai',
+          title: 'AI Chatbot / Agents',
+          desc: 'Intelligent LLM assistant & custom knowledge base',
+          icon: '🤖',
+          weeks: 1,
+          complexity: 4
+        },
+        {
+          id: 'analytics',
+          title: 'Analytics & Telemetry',
+          desc: 'Custom funnel telemetry, heatmaps & conversion tracking',
+          icon: '📊',
+          weeks: 1,
+          complexity: 4
+        },
+        {
+          id: 'admin',
+          title: 'Admin Dashboard',
+          desc: 'Granular role-based permissions & audit logging',
+          icon: '🖥️',
+          weeks: 1,
+          complexity: 4
+        },
+        {
+          id: 'i18n',
+          title: 'Multi-language / Global',
+          desc: 'Localized currency, i18n routing & geo-adaptation',
+          icon: '🌍',
+          weeks: 1,
+          complexity: 4
+        }
       ]
     },
     {
-      category: "CORE FEATURES",
-      question: "Which high-impact capabilities must be included?",
+      id: 'timeline',
+      stepNum: 4,
+      name: 'Timeline',
+      category: 'TARGET TIMELINE',
+      question: 'What is your ideal go-to-market milestone?',
+      hint: 'Helps us benchmark scope against engineering velocity.',
+      type: 'single',
       options: [
-        "AI Assistant & Workflow Automation",
-        "Payment Gateway & Instant Checkout",
-        "Real-Time Analytics & CRM Pipeline",
-        "Riyadvi Guardian Growth Sentinel",
-        "3D Interactive Visualizer"
+        {
+          id: 'asap',
+          title: 'As soon as possible',
+          desc: 'Urgent sprint launch in under 6 weeks',
+          icon: '⏱️',
+          maxWeeks: 6
+        },
+        {
+          id: 'standard',
+          title: 'Standard pace',
+          desc: 'Balanced rollout between 6 to 12 weeks',
+          icon: '📅',
+          maxWeeks: 12
+        },
+        {
+          id: 'flexible',
+          title: 'Flexible schedule',
+          desc: 'Strategic horizon with phased iterations 12+ weeks',
+          icon: '🎯',
+          maxWeeks: 99
+        }
       ]
     },
     {
-      category: "TIMELINE",
-      question: "What is your target launch schedule?",
+      id: 'approach',
+      stepNum: 5,
+      name: 'Approach',
+      category: 'EXECUTION APPROACH',
+      question: 'How would you like our engineering team to execute?',
+      hint: 'Determines sprint pacing, staging gates, and iteration velocity.',
+      type: 'single',
       options: [
-        "Urgent: Deliver within 3–4 weeks",
-        "Standard: 2–3 months",
-        "Long-Term Strategic: 4+ months",
-        "Flexible based on recommendation"
+        {
+          id: 'mvp',
+          title: 'Lean MVP first',
+          desc: 'Rapid core release with phased post-launch sprints',
+          icon: '🏃',
+          multiplier: 0.7
+        },
+        {
+          id: 'balanced',
+          title: 'Balanced build',
+          desc: 'Full-feature release with rigorous QA & documentation',
+          icon: '⚖️',
+          multiplier: 1.0
+        },
+        {
+          id: 'premium',
+          title: 'Premium full-scale',
+          desc: 'Zero-compromise polish, pentesting & white-glove onboarding',
+          icon: '👑',
+          multiplier: 1.15
+        }
       ]
     },
     {
-      category: "BUDGET RANGE",
-      question: "What investment allocation best fits this initiative?",
-      options: [
-        "Growth Partner Tier ($2,000 - $5,000)",
-        "Strategic Enterprise Tier ($5,000 - $15,000)",
-        "Bespoke Ecosystem ($15,000+)",
-        "Request Custom Tailored Quote"
-      ]
+      id: 'contact',
+      stepNum: 6,
+      name: 'Contact',
+      category: 'DELIVERY COORDINATES',
+      question: 'Where should we dispatch your custom consultation blueprint?',
+      hint: 'Our engineering director will review your scope within 2 business hours.',
+      type: 'form'
     }
   ];
 
+  // Estimator Application State
   let currentEstStep = 0;
-  const userEstimatorChoices = [];
+  const estSelections = {
+    capability: null,
+    scale: null,
+    features: [],
+    timeline: null,
+    approach: null,
+    contact: null
+  };
+  let currentComplexityVal = 0;
+  let gaugeAnimId = null;
 
-  const stepCounterEl = document.getElementById('estimatorStepCounter');
-  const stepCategoryEl = document.getElementById('estimatorStepCategory');
-  const stepQuestionEl = document.getElementById('estimatorQuestion');
-  const stepOptionsEl = document.getElementById('estimatorOptions');
-  const prevBtn = document.getElementById('estimatorPrevBtn');
-  const nextBtn = document.getElementById('estimatorNextBtn');
+  // DOM Elements
+  const estStepperList = document.getElementById('estimatorStepperList');
+  const stepperTrackProgress = document.getElementById('stepperTrackProgress');
+  const qStepCounter = document.getElementById('estimatorStepCounter');
+  const qStepCategory = document.getElementById('estimatorStepCategory');
+  const qProgressBarFill = document.getElementById('qProgressBarFill');
+  const qSlideContainer = document.getElementById('qSlideContainer');
+  const estBackBtn = document.getElementById('estimatorPrevBtn');
+  const estNextBtn = document.getElementById('estimatorNextBtn');
+  const bpGaugeFillRing = document.getElementById('bpGaugeFillRing');
+  const bpComplexityNum = document.getElementById('bpComplexityNum');
+  const bpWeeksVal = document.getElementById('bpWeeksVal');
+  const bpStatusPill = document.getElementById('bpStatusPill');
 
-  function renderEstimatorStep(stepIdx) {
-    if (stepIdx < estimatorQuestions.length) {
-      const q = estimatorQuestions[stepIdx];
-      if (stepCounterEl) stepCounterEl.textContent = `STEP ${stepIdx + 1} OF ${estimatorQuestions.length}`;
-      if (stepCategoryEl) stepCategoryEl.textContent = q.category;
-      if (stepQuestionEl) stepQuestionEl.textContent = q.question;
-      if (prevBtn) prevBtn.style.display = stepIdx > 0 ? 'inline-flex' : 'none';
-      if (nextBtn) nextBtn.textContent = stepIdx === estimatorQuestions.length - 1 ? 'Finish Profile &rarr;' : 'Next Step &rarr;';
+  const bpValCapability = document.getElementById('bpValCapability');
+  const bpValScale = document.getElementById('bpValScale');
+  const bpValFeatures = document.getElementById('bpValFeatures');
+  const bpValTimeline = document.getElementById('bpValTimeline');
+  const bpValApproach = document.getElementById('bpValApproach');
 
-      if (stepOptionsEl) {
-        stepOptionsEl.innerHTML = q.options.map((opt) => {
-          const isSelected = userEstimatorChoices[stepIdx] === opt ? 'selected' : '';
-          return `<button class="estimator-opt-btn ${isSelected}" data-val="${opt}">${opt}</button>`;
-        }).join('');
+  const bpRowCapability = document.getElementById('bpRowCapability');
+  const bpRowScale = document.getElementById('bpRowScale');
+  const bpRowFeatures = document.getElementById('bpRowFeatures');
+  const bpRowTimeline = document.getElementById('bpRowTimeline');
+  const bpRowApproach = document.getElementById('bpRowApproach');
 
-        stepOptionsEl.querySelectorAll('.estimator-opt-btn').forEach((btn) => {
-          btn.addEventListener('click', () => {
-            stepOptionsEl.querySelectorAll('.estimator-opt-btn').forEach((b) => b.classList.remove('selected'));
-            btn.classList.add('selected');
-            userEstimatorChoices[stepIdx] = btn.getAttribute('data-val');
-            AudioEngine.playBeep(900, 'sine', 0.06, 0.02);
-          });
-        });
-      }
+  // Gauge Circumference: 2 * Math.PI * 48 ~ 301.59
+  const GAUGE_CIRCUMFERENCE = 301.59;
+
+  // 1. Calculate Scope Metrics
+  function calculateScopeMetrics() {
+    const cap = estSelections.capability;
+    const scale = estSelections.scale;
+    const feats = estSelections.features || [];
+    const tl = estSelections.timeline;
+    const app = estSelections.approach;
+
+    // Complexity: min(100, capability + scale + 4 * featuresCount)
+    let complexity = 0;
+    if (cap) {
+      complexity = cap.complexity + (scale ? scale.complexity : 0) + (feats.length * 4);
+      complexity = Math.min(100, complexity);
+    }
+
+    // Weeks calculation
+    let weeksMin = 0;
+    let weeksMax = 0;
+    let weeksStr = '-';
+    if (cap) {
+      const baseWeeks = cap.weeks + (scale ? scale.weeks : 0) + feats.length;
+      const mult = app ? app.multiplier : 1.0;
+      weeksMin = Math.round(baseWeeks * mult);
+      weeksMax = weeksMin + Math.max(2, Math.ceil(weeksMin * 0.3));
+      weeksStr = `${weeksMin}-${weeksMax} weeks`;
+    }
+
+    // Timeline fit status
+    let statusText = 'Select a capability';
+    let statusClass = 'status-neutral';
+
+    if (!cap) {
+      statusText = 'Select a capability';
+      statusClass = 'status-neutral';
+    } else if (!tl) {
+      statusText = 'Pick a launch timeline';
+      statusClass = 'status-neutral';
     } else {
-      // Final Step: Project Profile Summary
-      if (stepCounterEl) stepCounterEl.textContent = 'PROFILE READY';
-      if (stepCategoryEl) stepCategoryEl.textContent = 'YOUR PROJECT PROFILE IS READY';
-      if (stepQuestionEl) stepQuestionEl.textContent = 'Your Tailored Digital Scope Summary';
-      if (prevBtn) prevBtn.style.display = 'none';
-      if (nextBtn) {
-        nextBtn.textContent = 'Request Consultation &rarr;';
-        nextBtn.onclick = () => {
-          const contactSec = document.getElementById('contact');
-          if (contactSec) {
-            contactSec.scrollIntoView({ behavior: 'smooth' });
-            const msgInput = document.getElementById('contactMessage');
-            if (msgInput) {
-              msgInput.value = `[Project Estimator Blueprint]\nCapability: ${userEstimatorChoices[0] || 'Web'}\nOrganization: ${userEstimatorChoices[1] || 'Business'}\nScale: ${userEstimatorChoices[2] || 'Full Platform'}\nKey Feature: ${userEstimatorChoices[3] || 'Automation'}\nTimeline: ${userEstimatorChoices[4] || 'Standard'}\nBudget: ${userEstimatorChoices[5] || 'Growth Tier'}`;
-            }
-          }
-        };
+      if (weeksMin <= tl.maxWeeks) {
+        statusText = 'On track';
+        statusClass = 'status-green';
+      } else if (weeksMin <= tl.maxWeeks + 4) {
+        statusText = 'Tight: phase the launch';
+        statusClass = 'status-gold';
+      } else {
+        statusText = 'Needs phased delivery';
+        statusClass = 'status-orange';
       }
+    }
 
-      if (stepOptionsEl) {
-        stepOptionsEl.innerHTML = `
-          <div style="grid-column: 1 / -1; background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.25); border-radius: 6px; padding: 24px;">
-            <p style="font-size: 14px; color: #fff; line-height: 1.8;">
-              &bull; <strong>Capability:</strong> ${userEstimatorChoices[0] || 'Web Development'}<br>
-              &bull; <strong>Business Stage:</strong> ${userEstimatorChoices[1] || 'SME'}<br>
-              &bull; <strong>Scope:</strong> ${userEstimatorChoices[2] || 'Full Platform'}<br>
-              &bull; <strong>Features:</strong> ${userEstimatorChoices[3] || 'Automation & Analytics'}<br>
-              &bull; <strong>Timeline:</strong> ${userEstimatorChoices[4] || '2-3 Months'}<br>
-              &bull; <strong>Budget Allocation:</strong> ${userEstimatorChoices[5] || 'Strategic Tier'}
-            </p>
-            <div style="margin-top: 16px; font-size: 12px; color: var(--gold-champagne);">
-              This is a preliminary lead qualification profile, not a binding quotation. Our team will review your requirements for immediate consultation.
-            </div>
-          </div>
-        `;
+    return {
+      complexity,
+      weeksMin,
+      weeksMax,
+      weeksStr,
+      statusText,
+      statusClass
+    };
+  }
+
+  // 2. Animate Complexity Gauge & Number
+  function updateComplexityGauge(targetVal) {
+    if (!bpGaugeFillRing || !bpComplexityNum) return;
+
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targetOffset = GAUGE_CIRCUMFERENCE * (1 - targetVal / 100);
+
+    bpGaugeFillRing.style.strokeDashoffset = targetOffset;
+
+    if (prefersReducedMotion) {
+      bpComplexityNum.textContent = targetVal;
+      currentComplexityVal = targetVal;
+      return;
+    }
+
+    const startVal = currentComplexityVal;
+    const startTime = performance.now();
+    const duration = 900; // 0.9s
+
+    if (gaugeAnimId) cancelAnimationFrame(gaugeAnimId);
+
+    function step(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(startVal + (targetVal - startVal) * ease);
+
+      bpComplexityNum.textContent = current;
+
+      if (progress < 1) {
+        gaugeAnimId = requestAnimationFrame(step);
+      } else {
+        bpComplexityNum.textContent = targetVal;
+        currentComplexityVal = targetVal;
+      }
+    }
+
+    gaugeAnimId = requestAnimationFrame(step);
+  }
+
+  // 3. Update Live Blueprint Panel
+  function updateLiveBlueprint(flashFieldId = null) {
+    const metrics = calculateScopeMetrics();
+
+    // Update gauge
+    updateComplexityGauge(metrics.complexity);
+
+    // Update estimated window
+    if (bpWeeksVal) {
+      bpWeeksVal.textContent = metrics.weeksStr;
+    }
+
+    // Update status pill
+    if (bpStatusPill) {
+      bpStatusPill.textContent = metrics.statusText;
+      bpStatusPill.className = `status-pill ${metrics.statusClass}`;
+    }
+
+    // Update Spec Rows
+    const cap = estSelections.capability;
+    const scale = estSelections.scale;
+    const feats = estSelections.features;
+    const tl = estSelections.timeline;
+    const app = estSelections.approach;
+
+    if (bpValCapability) {
+      bpValCapability.textContent = cap ? cap.title : 'Pending';
+      bpValCapability.className = `spec-val ${cap ? '' : 'pending'}`;
+    }
+
+    if (bpValScale) {
+      bpValScale.textContent = scale ? scale.title : 'Pending';
+      bpValScale.className = `spec-val ${scale ? '' : 'pending'}`;
+    }
+
+    if (bpValFeatures) {
+      if (feats && feats.length > 0) {
+        const shortNames = feats.map(f => f.title.split(' ')[0]).join(', ');
+        bpValFeatures.textContent = `${feats.length}: ${shortNames}`;
+        bpValFeatures.className = 'spec-val';
+      } else if (currentEstStep > 2) {
+        bpValFeatures.textContent = 'None selected (0)';
+        bpValFeatures.className = 'spec-val';
+      } else {
+        bpValFeatures.textContent = 'Pending';
+        bpValFeatures.className = 'spec-val pending';
+      }
+    }
+
+    if (bpValTimeline) {
+      bpValTimeline.textContent = tl ? tl.title : 'Pending';
+      bpValTimeline.className = `spec-val ${tl ? '' : 'pending'}`;
+    }
+
+    if (bpValApproach) {
+      bpValApproach.textContent = app ? app.title : 'Pending';
+      bpValApproach.className = `spec-val ${app ? '' : 'pending'}`;
+    }
+
+    // Brief gold flash highlight on updated row
+    if (flashFieldId) {
+      const rowEl = document.getElementById(flashFieldId);
+      if (rowEl) {
+        rowEl.classList.remove('row-flash');
+        void rowEl.offsetWidth; // Trigger reflow
+        rowEl.classList.add('row-flash');
       }
     }
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      if (currentEstStep < estimatorQuestions.length) {
-        if (!userEstimatorChoices[currentEstStep]) {
-          userEstimatorChoices[currentEstStep] = estimatorQuestions[currentEstStep].options[0];
+  // 4. Update Stepper Nav (Zone 1)
+  function renderStepperNav() {
+    if (!estStepperList) return;
+
+    estStepperList.innerHTML = estimatorStepsData.map((step, idx) => {
+      let statusClass = 'pending';
+      let iconContent = `${idx + 1}`;
+
+      if (idx < currentEstStep) {
+        statusClass = 'completed';
+        iconContent = `&#10003;`;
+      } else if (idx === currentEstStep) {
+        statusClass = 'active';
+      }
+
+      return `
+        <li>
+          <button type="button" class="stepper-item-btn ${statusClass}" data-step-index="${idx}" ${idx < currentEstStep ? '' : 'disabled'}>
+            <span class="step-circle" aria-hidden="true">${iconContent}</span>
+            <span class="step-name">${step.name}</span>
+          </button>
+        </li>
+      `;
+    }).join('');
+
+    // Attach click listeners to completed steps to jump back
+    estStepperList.querySelectorAll('.stepper-item-btn.completed').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetStep = parseInt(btn.getAttribute('data-step-index'), 10);
+        if (!isNaN(targetStep) && targetStep < currentEstStep) {
+          currentEstStep = targetStep;
+          renderEstimatorStep(currentEstStep);
+          if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+            AudioEngine.playBeep(780, 'sine', 0.04, 0.015);
+          }
         }
+      });
+    });
+
+    // Update connector track height
+    if (stepperTrackProgress) {
+      const progressPercent = (currentEstStep / (estimatorStepsData.length - 1)) * 100;
+      stepperTrackProgress.style.height = `${progressPercent}%`;
+    }
+  }
+
+  // 5. Render Question Step (Zone 2)
+  function renderEstimatorStep(stepIdx) {
+    if (stepIdx < 0 || stepIdx >= estimatorStepsData.length) return;
+
+    const stepData = estimatorStepsData[stepIdx];
+
+    // Header counters & progress bar
+    if (qStepCounter) qStepCounter.textContent = `STEP ${stepIdx + 1} OF ${estimatorStepsData.length}`;
+    if (qStepCategory) qStepCategory.textContent = stepData.category;
+    if (qProgressBarFill) {
+      const pct = ((stepIdx + 1) / estimatorStepsData.length) * 100;
+      qProgressBarFill.style.width = `${pct}%`;
+    }
+
+    // Update Stepper Nav
+    renderStepperNav();
+
+    // Slide transition on container
+    if (qSlideContainer) {
+      qSlideContainer.classList.remove('slide-in-right');
+      void qSlideContainer.offsetWidth;
+      qSlideContainer.classList.add('slide-in-right');
+
+      if (stepData.type === 'form') {
+        // Step 6: Contact Delivery Coordinates Form
+        qSlideContainer.innerHTML = `
+          <h3 class="estimator-step-question">${stepData.question}</h3>
+          <p class="q-hint-text">${stepData.hint}</p>
+          <form class="est-contact-form" id="estContactForm" novalidate>
+            <div class="est-field-group">
+              <label class="est-field-label" for="estNameInput">YOUR NAME *</label>
+              <input type="text" id="estNameInput" class="est-input" required placeholder="e.g. Alexander Vance" value="${estSelections.contact ? estSelections.contact.name : ''}">
+            </div>
+            <div class="est-field-group">
+              <label class="est-field-label" for="estPhoneInput">MOBILE / WHATSAPP NUMBER *</label>
+              <input type="tel" id="estPhoneInput" class="est-input" required placeholder="+91 / International with country code" value="${estSelections.contact ? estSelections.contact.phone : ''}">
+            </div>
+            <div class="est-field-group">
+              <label class="est-field-label" for="estEmailInput">WORK EMAIL ADDRESS *</label>
+              <input type="email" id="estEmailInput" class="est-input" required placeholder="alex@company.com" value="${estSelections.contact ? estSelections.contact.email : ''}">
+            </div>
+          </form>
+        `;
+      } else {
+        // Steps 1 to 5: Options Cards Grid
+        const optionsHtml = stepData.options.map((opt) => {
+          let isSelected = false;
+          if (stepData.type === 'multi') {
+            isSelected = estSelections.features.some(f => f.id === opt.id);
+          } else {
+            isSelected = estSelections[stepData.id] && estSelections[stepData.id].id === opt.id;
+          }
+
+          return `
+            <button type="button" 
+                    class="est-option-card ${isSelected ? 'selected' : ''}" 
+                    role="${stepData.type === 'multi' ? 'checkbox' : 'radio'}" 
+                    aria-checked="${isSelected}" 
+                    data-opt-id="${opt.id}">
+              <div class="opt-icon-tile" aria-hidden="true">${opt.icon}</div>
+              <div class="opt-text-wrap">
+                <span class="opt-title">${opt.title}</span>
+                <span class="opt-desc">${opt.desc}</span>
+              </div>
+              <div class="opt-check-circle" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.5 6.2L4.8 8.5L9.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </button>
+          `;
+        }).join('');
+
+        qSlideContainer.innerHTML = `
+          <h3 class="estimator-step-question">${stepData.question}</h3>
+          <p class="q-hint-text">${stepData.hint}</p>
+          <div class="estimator-options-grid" role="${stepData.type === 'multi' ? 'group' : 'radiogroup'}" aria-label="${stepData.question}">
+            ${optionsHtml}
+          </div>
+        `;
+
+        // Card Click Listeners
+        qSlideContainer.querySelectorAll('.est-option-card').forEach((card) => {
+          card.addEventListener('click', () => {
+            const optId = card.getAttribute('data-opt-id');
+            const optObj = stepData.options.find(o => o.id === optId);
+            if (!optObj) return;
+
+            if (stepData.type === 'multi') {
+              // Multi-select (Features)
+              const existingIdx = estSelections.features.findIndex(f => f.id === optId);
+              if (existingIdx > -1) {
+                estSelections.features.splice(existingIdx, 1);
+                card.classList.remove('selected');
+                card.setAttribute('aria-checked', 'false');
+              } else {
+                estSelections.features.push(optObj);
+                card.classList.add('selected');
+                card.setAttribute('aria-checked', 'true');
+              }
+              updateLiveBlueprint('bpRowFeatures');
+            } else {
+              // Single choice
+              estSelections[stepData.id] = optObj;
+              qSlideContainer.querySelectorAll('.est-option-card').forEach(c => {
+                c.classList.remove('selected');
+                c.setAttribute('aria-checked', 'false');
+              });
+              card.classList.add('selected');
+              card.setAttribute('aria-checked', 'true');
+
+              // Flash matching row in Live Blueprint
+              const flashMap = {
+                capability: 'bpRowCapability',
+                scale: 'bpRowScale',
+                timeline: 'bpRowTimeline',
+                approach: 'bpRowApproach'
+              };
+              updateLiveBlueprint(flashMap[stepData.id]);
+            }
+
+            // Audio feedback
+            if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+              AudioEngine.playBeep(880, 'sine', 0.045, 0.015);
+            }
+
+            // Update Next button enabled state
+            checkNextButtonState();
+          });
+        });
+      }
+    }
+
+    // Back & Next Buttons State
+    if (estBackBtn) {
+      estBackBtn.style.display = stepIdx > 0 ? 'inline-flex' : 'none';
+    }
+
+    if (estNextBtn) {
+      estNextBtn.textContent = stepIdx === estimatorStepsData.length - 1 ? 'GET MY BLUEPRINT →' : 'NEXT STEP →';
+    }
+
+    checkNextButtonState();
+  }
+
+  // 6. Check whether Next Step Button is enabled
+  function checkNextButtonState() {
+    if (!estNextBtn) return;
+    const step = estimatorStepsData[currentEstStep];
+
+    if (step.type === 'single') {
+      const isSelected = !!estSelections[step.id];
+      estNextBtn.disabled = !isSelected;
+    } else if (step.type === 'multi') {
+      // Features step is optional, next step always enabled
+      estNextBtn.disabled = false;
+    } else if (step.type === 'form') {
+      // Contact step is enabled for user to trigger validation
+      estNextBtn.disabled = false;
+    }
+  }
+
+  // 7. Navigation Listeners (Back & Next)
+  if (estNextBtn) {
+    estNextBtn.addEventListener('click', () => {
+      const step = estimatorStepsData[currentEstStep];
+
+      if (step.type === 'form') {
+        // Step 6: Validate Contact Form
+        const nameInput = document.getElementById('estNameInput');
+        const phoneInput = document.getElementById('estPhoneInput');
+        const emailInput = document.getElementById('estEmailInput');
+
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+        const emailVal = emailInput ? emailInput.value.trim() : '';
+
+        if (!nameVal || !phoneVal || !emailVal || !emailVal.includes('@')) {
+          if (!nameVal && nameInput) nameInput.focus();
+          else if (!phoneVal && phoneInput) phoneInput.focus();
+          else if (emailInput) emailInput.focus();
+
+          if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+            AudioEngine.playBeep(320, 'sine', 0.12, 0.03);
+          }
+          return;
+        }
+
+        estSelections.contact = {
+          name: nameVal,
+          phone: phoneVal,
+          email: emailVal
+        };
+
+        // =====================================================================
+        // TODO: CONNECT REAL CONSULTATION BLUEPRINT API ENDPOINT HERE
+        // Send estSelections (capability, scale, features, timeline, approach, contact)
+        // Example:
+        // fetch('/api/estimator-blueprint', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify(estSelections)
+        // });
+        // =====================================================================
+
+        // Sound confirmation
+        if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+          AudioEngine.playBeep(780, 'sine', 0.08, 0.02);
+          setTimeout(() => AudioEngine.playBeep(1040, 'sine', 0.15, 0.03), 80);
+        }
+
+        // Render Success State in Zone 2
+        renderEstimatorSuccessState();
+        return;
+      }
+
+      // Steps 1 to 5: Advance to next step
+      if (currentEstStep < estimatorStepsData.length - 1) {
         currentEstStep++;
         renderEstimatorStep(currentEstStep);
+        if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+          AudioEngine.playBeep(820, 'sine', 0.04, 0.015);
+        }
       }
     });
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
+  if (estBackBtn) {
+    estBackBtn.addEventListener('click', () => {
       if (currentEstStep > 0) {
         currentEstStep--;
         renderEstimatorStep(currentEstStep);
+        if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+          AudioEngine.playBeep(640, 'sine', 0.04, 0.012);
+        }
       }
     });
   }
+
+  // 8. Render Success State on Submit
+  function renderEstimatorSuccessState() {
+    if (!qSlideContainer) return;
+
+    const firstName = estSelections.contact && estSelections.contact.name
+      ? estSelections.contact.name.split(' ')[0]
+      : 'Partner';
+    const capabilityTitle = estSelections.capability
+      ? estSelections.capability.title
+      : 'Digital Architecture';
+    const email = estSelections.contact ? estSelections.contact.email : 'your email';
+    const metrics = calculateScopeMetrics();
+
+    // Hide bottom action footer during success state
+    const footerBar = document.getElementById('estimatorFooterBar');
+    if (footerBar) footerBar.style.display = 'none';
+
+    if (qStepCounter) qStepCounter.textContent = 'BLUEPRINT DISPATCHED';
+    if (qStepCategory) qStepCategory.textContent = 'SCOPE SPECIFICATION READY';
+    if (qProgressBarFill) qProgressBarFill.style.width = '100%';
+
+    qSlideContainer.innerHTML = `
+      <div class="est-success-state">
+        <div class="est-success-check-badge" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6fd3a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="est-success-title">Your blueprint is on its way</h3>
+        <p class="est-success-text">
+          Thank you, <strong>${firstName}</strong>! We've generated your tailored scope analysis for <strong>${capabilityTitle}</strong> (${metrics.weeksStr}). Our engineering directors are reviewing your requirements and will reach out to <strong>${email}</strong> within 2 business hours.
+        </p>
+        <button type="button" class="btn-est-reset" id="estResetBtn">START OVER</button>
+      </div>
+    `;
+
+    const resetBtn = document.getElementById('estResetBtn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        resetEstimatorConsole();
+      });
+    }
+  }
+
+  // 9. Reset Estimator Console
+  function resetEstimatorConsole() {
+    currentEstStep = 0;
+    estSelections.capability = null;
+    estSelections.scale = null;
+    estSelections.features = [];
+    estSelections.timeline = null;
+    estSelections.approach = null;
+    estSelections.contact = null;
+
+    const footerBar = document.getElementById('estimatorFooterBar');
+    if (footerBar) footerBar.style.display = 'flex';
+
+    updateLiveBlueprint();
+    renderEstimatorStep(0);
+
+    if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+      AudioEngine.playBeep(720, 'sine', 0.05, 0.02);
+    }
+  }
+
+  // Initialize Estimator Console on DOM ready
+  updateLiveBlueprint();
+  renderEstimatorStep(0);
 
   // =========================================================================
   // 12. Lead Capture Form with UTM Tracking & WhatsApp Sync

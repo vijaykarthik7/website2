@@ -1597,26 +1597,119 @@
           <p class="section-subtitle">Configure your project requirements to get an instant scope analysis and tailored consultation blueprint.</p>
         </div>
 
-        <div class="estimator-box" id="estimatorBox">
-          <div class="estimator-step-indicator">
-            <span id="estimatorStepCounter">STEP 1 OF 6</span>
-            <span id="estimatorStepCategory">WHAT DO YOU NEED?</span>
+        <!-- THREE-ZONE CONSOLE (Stepper | Question | Live Blueprint) -->
+        <div class="estimator-console estimator-box" id="estimatorBox" role="region" aria-label="Interactive Project Estimator Console">
+          
+          <!-- ZONE 1: VERTICAL STEPPER (Left Column, ~210px) -->
+          <aside class="estimator-stepper-zone" aria-label="Configuration Steps">
+            <div class="stepper-header-label">CONFIGURATION</div>
+            <nav class="stepper-nav" id="estimatorStepperNav" aria-label="Estimator Progress">
+              <div class="stepper-track-line" aria-hidden="true">
+                <div class="stepper-track-progress" id="stepperTrackProgress"></div>
+              </div>
+              <ul class="stepper-list" id="estimatorStepperList">
+                <!-- Dynamically populated from estimatorStepsData in script.js -->
+              </ul>
+            </nav>
+          </aside>
+
+          <!-- ZONE 2: QUESTION & INTERACTIVE OPTIONS (Center Column, Flexible) -->
+          <div class="estimator-question-zone" id="estimatorQuestionZone">
+            <!-- Top Progress Header -->
+            <div class="q-top-bar">
+              <span class="q-step-counter" id="estimatorStepCounter">STEP 1 OF 6</span>
+              <span class="q-step-category" id="estimatorStepCategory">WHAT DO YOU NEED?</span>
+            </div>
+            <div class="q-progress-bar-track" aria-hidden="true">
+              <div class="q-progress-bar-fill" id="qProgressBarFill" style="width: 16.66%;"></div>
+            </div>
+
+            <!-- Dynamic Question Slide Container -->
+            <div class="q-slide-container" id="qSlideContainer" aria-live="polite">
+              <h3 class="estimator-step-question" id="estimatorQuestion">What primary digital capability are you looking to build?</h3>
+              <p class="q-hint-text" id="estimatorHint">Choose one option to continue.</p>
+              <div class="estimator-options-grid" id="estimatorOptions">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+
+            <!-- Bottom Action Navigation -->
+            <div class="q-footer-bar" id="estimatorFooterBar">
+              <button type="button" class="btn-est-back" id="estimatorPrevBtn" style="display: none;" aria-label="Previous step">
+                &larr; BACK
+              </button>
+              <div class="q-footer-spacer"></div>
+              <button type="button" class="btn-est-next" id="estimatorNextBtn" disabled>
+                NEXT STEP &rarr;
+              </button>
+            </div>
           </div>
 
-          <h3 class="estimator-step-question" id="estimatorQuestion">What primary digital capability are you looking to build?</h3>
+          <!-- ZONE 3: LIVE SCOPE BLUEPRINT (Right Column, ~360px) -->
+          <aside class="estimator-blueprint-zone" id="estimatorBlueprintZone" aria-live="polite" aria-label="Live Scope Blueprint">
+            <div class="blueprint-header">
+              <span class="blueprint-live-dot" aria-hidden="true"></span>
+              <span class="blueprint-title">LIVE SCOPE BLUEPRINT</span>
+            </div>
 
-          <div class="estimator-options-grid" id="estimatorOptions">
-            <button class="estimator-opt-btn" data-value="Web Development">Full-Stack Web Development</button>
-            <button class="estimator-opt-btn" data-value="Mobile Application">iOS & Android Mobile App</button>
-            <button class="estimator-opt-btn" data-value="Riyadvi Guardian">Riyadvi Guardian Growth Funnel</button>
-            <button class="estimator-opt-btn" data-value="3D & WebGL">3D WebGL Digital Experience</button>
-            <button class="estimator-opt-btn" data-value="Custom Enterprise">Custom Enterprise Software</button>
-          </div>
+            <!-- Complexity Gauge & Build Window -->
+            <div class="blueprint-metrics-row">
+              <div class="gauge-wrap" title="Calculated Project Complexity Index">
+                <svg class="gauge-svg" viewBox="0 0 118 118" width="118" height="118" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="goldGradientGauge" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#f0c75e"/>
+                      <stop offset="100%" stop-color="#c9993a"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Background Track Ring (r=48, circumference ~301.6px) -->
+                  <circle cx="59" cy="59" r="48" class="gauge-track-ring" />
+                  <!-- Animated Progress Ring -->
+                  <circle cx="59" cy="59" r="48" class="gauge-fill-ring" id="bpGaugeFillRing" />
+                </svg>
+                <div class="gauge-center-content">
+                  <span class="gauge-number" id="bpComplexityNum">0</span>
+                  <span class="gauge-caption">COMPLEXITY</span>
+                </div>
+              </div>
 
-          <div class="estimator-footer-actions">
-            <button class="btn-talk" id="estimatorPrevBtn" style="background: rgba(255,255,255,0.08); color: #fff; display: none;">&larr; Back</button>
-            <button class="btn-talk" id="estimatorNextBtn">Next Step &rarr;</button>
-          </div>
+              <div class="estimate-window-wrap">
+                <span class="estimate-label">ESTIMATED BUILD WINDOW</span>
+                <div class="estimate-val" id="bpWeeksVal">-</div>
+                <div class="status-pill status-neutral" id="bpStatusPill">Select a capability</div>
+              </div>
+            </div>
+
+            <!-- Scope Spec Breakdown List -->
+            <div class="blueprint-spec-list" id="bpSpecList">
+              <div class="spec-row" id="bpRowCapability">
+                <span class="spec-label">CAPABILITY</span>
+                <span class="spec-val pending" id="bpValCapability">Pending</span>
+              </div>
+              <div class="spec-row" id="bpRowScale">
+                <span class="spec-label">SCALE</span>
+                <span class="spec-val pending" id="bpValScale">Pending</span>
+              </div>
+              <div class="spec-row" id="bpRowFeatures">
+                <span class="spec-label">FEATURES</span>
+                <span class="spec-val pending" id="bpValFeatures">Pending</span>
+              </div>
+              <div class="spec-row" id="bpRowTimeline">
+                <span class="spec-label">TIMELINE</span>
+                <span class="spec-val pending" id="bpValTimeline">Pending</span>
+              </div>
+              <div class="spec-row" id="bpRowApproach">
+                <span class="spec-label">APPROACH</span>
+                <span class="spec-val pending" id="bpValApproach">Pending</span>
+              </div>
+            </div>
+
+            <!-- Indicative Note -->
+            <p class="blueprint-disclaimer">
+              Indicative scope analysis only. Your consultation blueprint will refine timelines with our growth engineering team.
+            </p>
+          </aside>
+
         </div>
       </div>
     </section>
