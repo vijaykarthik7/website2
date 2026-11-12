@@ -678,23 +678,7 @@ body {
 }
 
 .rocket-telemetry-hud {
-  position: absolute;
-  bottom: clamp(20px, 3vh, 36px);
-  left: clamp(20px, 3.5vw, 48px);
-  z-index: 12;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding: 11px 18px;
-  background: rgba(10, 10, 15, 0.78);
-  border: 1px solid rgba(212, 175, 55, 0.28);
-  border-radius: 14px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(212, 175, 55, 0.12);
-  pointer-events: none;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
+  display: none !important;
 }
 
 .rocket-telemetry-hud .telemetry-badge {
@@ -810,23 +794,7 @@ body {
 }
 
 .earth-telemetry-hud {
-  position: absolute;
-  bottom: clamp(20px, 3vh, 36px);
-  left: clamp(20px, 3.5vw, 48px);
-  z-index: 12;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding: 11px 18px;
-  background: rgba(8, 12, 18, 0.80);
-  border: 1px solid rgba(97, 218, 251, 0.30);
-  border-radius: 14px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 20px rgba(97, 218, 251, 0.15);
-  pointer-events: none;
-  opacity: 0.92;
-  transition: opacity 0.3s ease;
+  display: none !important;
 }
 
 .earth-telemetry-hud .telemetry-badge {
@@ -942,23 +910,7 @@ body {
 }
 
 .handani-telemetry-hud {
-  position: absolute;
-  bottom: clamp(20px, 3vh, 36px);
-  left: clamp(20px, 3.5vw, 48px);
-  z-index: 12;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding: 11px 18px;
-  background: rgba(10, 10, 14, 0.82);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 14px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(212, 175, 55, 0.18);
-  pointer-events: none;
-  opacity: 0.92;
-  transition: opacity 0.3s ease;
+  display: none !important;
 }
 
 .handani-telemetry-hud .telemetry-badge {
