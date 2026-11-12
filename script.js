@@ -2190,148 +2190,331 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 10. Industry Ecosystem Interactive Selector
+  // 10. Industry Ecosystem Interactive Selector & HUD Controller
   // =========================================================================
-  const industryTabs = document.querySelectorAll('.industry-tab');
-  const indTitle = document.getElementById('indTitle');
-  const indDesc = document.getElementById('indDesc');
-  const indStack = document.getElementById('indStack');
-
-  const industryProfiles = {
-    realestate: {
+  const industriesData = [
+    {
+      num: "01",
+      name: "Real Estate",
+      cta: "REAL ESTATE",
+      x: 38,
+      y: 14,
       title: "Real Estate Digital Infrastructure",
       desc: "Virtual 3D property tours, dynamic CRM lead capture, MLS integration, and automated WhatsApp inspection booking engines built to convert high-net-worth real estate buyers.",
-      tags: ["3D WebGL Virtual Walkthrough", "Next.js Headless", "Automated CRM Routing", "WhatsApp Funnel API"]
+      stack: ["3D WebGL Virtual Walkthrough", "Next.js Headless", "Automated CRM Routing", "WhatsApp Funnel API"],
+      geo: "LAT 13.0827° N // LON 80.2707° E"
     },
-    healthcare: {
+    {
+      num: "02",
+      name: "Healthcare",
+      cta: "HEALTHCARE",
+      x: 25,
+      y: 18,
       title: "Healthcare & Telemedicine Systems",
-      desc: "HIPAA-compliant patient portals, doctor tele-consultation booking engines, and electronic health record (EHR) sync engineered with zero downtime.",
-      tags: ["HIPAA Compliant Architecture", "Real-Time WebRTC", "React Native Mobile App", "Secure Cloud Database"]
+      desc: "HIPAA-compliant patient portals, doctor tele-consultation booking engines, and electronic health record (EHR) sync engineered with zero downtime and ironclad security.",
+      stack: ["HIPAA Compliant Cloud", "Real-Time WebRTC", "React Native Mobile App", "Secure EHR Interop"],
+      geo: "LAT 37.7749° N // LON 122.4194° W"
     },
-    education: {
-      title: "EdTech & Learning Management",
-      desc: "Scalable interactive virtual classrooms, student assignment assessment workflows, and recurring course subscription gateways.",
-      tags: ["Video Streaming CDN", "Interactive LMS", "Gamified Quizzes", "Payment Gateways"]
+    {
+      num: "03",
+      name: "Education",
+      cta: "EDTECH",
+      x: 16,
+      y: 28,
+      title: "EdTech & Learning Infrastructure",
+      desc: "Scalable interactive virtual classrooms, student assignment assessment workflows, and recurring course subscription gateways built for millions of concurrent learners.",
+      stack: ["Video Streaming CDN", "Interactive Canvas LMS", "Adaptive Quiz Engines", "Stripe Multi-Currency"],
+      geo: "LAT 51.5074° N // LON 0.1278° W"
     },
-    retail: {
-      title: "Omnichannel Retail Platforms",
-      desc: "POS terminal syncing, multi-store inventory automation, click-and-collect portals, and customer loyalty retention engines.",
-      tags: ["Microservices POS Sync", "Shopify/WooCommerce", "Barcode Scanner Integration", "Loyalty Rewards"]
+    {
+      num: "04",
+      name: "Retail",
+      cta: "RETAIL",
+      x: 55,
+      y: 12,
+      title: "Omnichannel Retail & POS Networks",
+      desc: "POS terminal syncing, multi-store inventory automation, click-and-collect portals, and customer loyalty retention engines that maximize lifetime customer value.",
+      stack: ["Distributed POS Sync", "Headless Shopify Store", "Real-Time Stock Matrix", "Loyalty Rewards Engine"],
+      geo: "LAT 40.7128° N // LON 74.0060° W"
     },
-    ecommerce: {
+    {
+      num: "05",
+      name: "E-Commerce",
+      cta: "E-COMMERCE",
+      x: 72,
+      y: 15,
       title: "High-Volume Direct-to-Consumer (D2C)",
-      desc: "High-converting storefronts, sub-second checkout pages, dynamic product recommendations, and automated drop-shipping pipelines.",
-      tags: ["Headless Commerce", "One-Click Checkout", "Algolia Search", "Automated Retention Email"]
+      desc: "High-converting storefronts, sub-second checkout pages, dynamic AI product recommendations, and automated drop-shipping pipelines engineered for peak scale.",
+      stack: ["Next.js Headless Commerce", "Algolia Instant Search", "1-Click Accelerated Checkout", "Automated Retention Funnel"],
+      geo: "LAT 35.6762° N // LON 139.6503° E"
     },
-    sports: {
-      title: "Sports & Fitness Member Portals",
-      desc: "Gym membership subscription billing, workout telemetry tracking, personal trainer booking, and branded mobile companion apps.",
-      tags: ["Mobile Fitness App", "Recurring Stripe Subscriptions", "Push Notification Automation", "Live Calendars"]
+    {
+      num: "06",
+      name: "Sports & Fitness",
+      cta: "FITNESS",
+      x: 32,
+      y: 26,
+      title: "Member Portals & Fitness Telemetry",
+      desc: "Gym membership subscription billing, workout telemetry tracking, personal trainer live scheduling, and branded companion mobile apps with push automation.",
+      stack: ["BLE Wearable Sync", "Recurring Stripe Billing", "Trainer Live Scheduler", "React Native Companion"],
+      geo: "LAT 34.0522° N // LON 118.2437° W"
     },
-    professional: {
+    {
+      num: "07",
+      name: "Professional Services",
+      cta: "ADVISORY",
+      x: 22,
+      y: 12,
       title: "Professional Services & Legal Tech",
-      desc: "Client intake automation, secure document vaulting, contract digital signing, and billable hour tracking portals.",
-      tags: ["Encrypted Document Vault", "Electronic Signature API", "Client Intake Funnel", "Next.js Portal"]
+      desc: "Client intake automation, secure zero-knowledge document vaulting, contract digital signing workflows, and billable hour tracking portals.",
+      stack: ["Zero-Knowledge Vault", "e-Signature Webhooks", "Client Intake Funnel", "Encrypted Billing API"],
+      geo: "LAT 25.2048° N // LON 55.2708° E"
     },
-    startups: {
-      title: "Startup MVP Launchpad",
-      desc: "Rapid concept-to-deployment execution, investor-ready UI design, serverless backend infrastructure, and scalable cloud elasticity.",
-      tags: ["4-Week MVP Sprints", "Supabase / Firebase", "Modern Tailwind/React", "Mixpanel Analytics"]
+    {
+      num: "08",
+      name: "Startups",
+      cta: "STARTUP",
+      x: 12,
+      y: 20,
+      title: "Rapid MVP Launchpad Architecture",
+      desc: "Rapid concept-to-deployment execution in 4-week sprints, investor-ready UI/UX design, serverless backend infrastructure, and scalable cloud elasticity.",
+      stack: ["4-Week MVP Sprints", "Supabase / Postgres", "Modern Tailwind/React", "Mixpanel Growth Funnel"],
+      geo: "LAT 1.3521° N // LON 103.8198° E"
     },
-    smes: {
-      title: "SME Digital Transformation",
-      desc: "Modernizing legacy manual processes, automating customer service inquiries, and establishing multi-channel market dominance.",
-      tags: ["Automated Invoicing", "WhatsApp Business Funnel", "Lead Generation Web", "Cloud Migration"]
+    {
+      num: "09",
+      name: "SMEs",
+      cta: "SME",
+      x: 48,
+      y: 18,
+      title: "SME Digital Transformation Suite",
+      desc: "Modernizing legacy manual processes, automating customer service inquiries with AI WhatsApp bots, and establishing dominant multi-channel online pipelines.",
+      stack: ["Automated Invoicing", "WhatsApp Business Funnel", "Lead Capture Automation", "Cloud Operations Hub"],
+      geo: "LAT 19.0760° N // LON 72.8777° E"
     },
-    enterprise: {
+    {
+      num: "10",
+      name: "Enterprise",
+      cta: "ENTERPRISE",
+      x: 64,
+      y: 20,
       title: "Enterprise Multi-Tenant Infrastructure",
-      desc: "High-availability microservice clusters, enterprise single sign-on (SSO), role-based permissions, and SOC-2 standard architectures.",
-      tags: ["Kubernetes", "OAuth 2.0 / SSO", "Multi-Region Cloud", "24/7 SLA Telemetry"]
+      desc: "High-availability microservice clusters, enterprise single sign-on (SSO), role-based permissions (RBAC), and SOC-2 standard cloud architectures.",
+      stack: ["Kubernetes Microservices", "OAuth 2.0 / Okta SSO", "Multi-Region Cloud Failover", "24/7 SLA Telemetry"],
+      geo: "LAT 48.8566° N // LON 2.3522° E"
     }
-  };
+  ];
 
-  const indCtaBtn = document.getElementById('indCtaBtn');
+  let currentIndustryIndex = 0;
 
-  industryTabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      industryTabs.forEach((t) => t.classList.remove('active'));
-      tab.classList.add('active');
+  // DOM Elements
+  const indIndexCol = document.getElementById('industryIndexCol');
+  const indNodesLayer = document.getElementById('industryNodesLayer');
+  const indStageCol = document.getElementById('industryStageCol');
+  const indLeaderSvg = document.getElementById('industryLeaderSvg');
+  const indLeaderPath = document.getElementById('industryLeaderPath');
+  const indLeaderEndDot = document.getElementById('industryLeaderEndDot');
+  const indHudCard = document.getElementById('industryHudCard');
+  const hudCardInner = document.getElementById('hudCardInner');
 
-      const key = tab.getAttribute('data-industry');
-      const data = industryProfiles[key] || industryProfiles.realestate;
-      if (indTitle) indTitle.textContent = data.title;
-      if (indDesc) indDesc.textContent = data.desc;
-      if (indStack) {
-        indStack.innerHTML = data.tags.map((tag) => `<span class="tech-tag">${tag}</span>`).join('');
+  const hudSectorTag = document.getElementById('hudSectorTag');
+  const hudCounterTag = document.getElementById('hudCounterTag');
+  const hudCardTitle = document.getElementById('hudCardTitle');
+  const hudCardDesc = document.getElementById('hudCardDesc');
+  const hudStackGrid = document.getElementById('hudStackGrid');
+  const hudCtaBtn = document.getElementById('hudCtaBtn');
+  const hudCtaText = document.getElementById('hudCtaText');
+  const hudGeoCoords = document.getElementById('hudGeoCoords');
+
+  // Render Signal Nodes dynamically over stage
+  if (indNodesLayer) {
+    indNodesLayer.innerHTML = industriesData.map((ind, i) => {
+      const isFlipped = ind.x > 68 ? ' flipped' : '';
+      const isActive = i === 0 ? ' active' : '';
+      return `
+        <button type="button" 
+          class="industry-node-btn${isActive}${isFlipped}" 
+          id="indNode-${i}" 
+          data-index="${i}" 
+          style="left: ${ind.x}%; top: ${ind.y}%;" 
+          aria-label="Select ${ind.name} signal node"
+          tabindex="0">
+          <span class="industry-node-pulse" aria-hidden="true"></span>
+          <span class="industry-node-dot" aria-hidden="true"></span>
+          <span class="industry-node-label" aria-hidden="true">${ind.name}</span>
+        </button>
+      `;
+    }).join('');
+  }
+
+  // Calculate and redraw Dashed Gold Leader Line
+  function updateLeaderLine() {
+    if (!indStageCol || !indLeaderSvg || !indLeaderPath || !indLeaderEndDot || !indHudCard) return;
+
+    // Responsive: below 900px, nodes and line are hidden
+    if (window.innerWidth <= 900) {
+      indLeaderPath.setAttribute('d', '');
+      indLeaderEndDot.setAttribute('cx', '-999');
+      indLeaderEndDot.setAttribute('cy', '-999');
+      return;
+    }
+
+    const activeNode = indNodesLayer ? indNodesLayer.querySelector('.industry-node-btn.active') : null;
+    if (!activeNode) return;
+
+    const stageRect = indStageCol.getBoundingClientRect();
+    const cardRect = indHudCard.getBoundingClientRect();
+    const nodeRect = activeNode.getBoundingClientRect();
+
+    if (stageRect.width === 0 || cardRect.width === 0) return;
+
+    // Node center coordinates relative to stage
+    const nx = Math.round((nodeRect.left + nodeRect.width / 2) - stageRect.left);
+    const ny = Math.round((nodeRect.top + nodeRect.height / 2) - stageRect.top);
+
+    // Card entry point: near left of card top edge (e.g. 36px in from card left)
+    const cardRelLeft = Math.round(cardRect.left - stageRect.left);
+    const cardRelTop = Math.round(cardRect.top - stageRect.top);
+    const entryX = cardRelLeft + 36;
+    const entryY = cardRelTop;
+
+    // Path: from node (nx, ny) -> horizontally to (entryX, ny) -> straight down into (entryX, entryY)
+    const d = `M ${nx} ${ny} L ${entryX} ${ny} L ${entryX} ${entryY}`;
+    indLeaderPath.setAttribute('d', d);
+    indLeaderEndDot.setAttribute('cx', entryX);
+    indLeaderEndDot.setAttribute('cy', entryY);
+  }
+
+  // Select Industry Function
+  function selectIndustry(index, shouldFocus = false) {
+    if (index < 0 || index >= industriesData.length) return;
+    currentIndustryIndex = index;
+    const data = industriesData[index];
+
+    // 1. Update List Rows
+    const rows = indIndexCol ? indIndexCol.querySelectorAll('.industry-index-row') : [];
+    rows.forEach((row, i) => {
+      const isActive = i === index;
+      row.classList.toggle('active', isActive);
+      row.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      row.setAttribute('tabindex', isActive ? '0' : '-1');
+    });
+
+    if (shouldFocus && rows[index]) {
+      rows[index].focus();
+    }
+
+    // 2. Update Nodes
+    const nodes = indNodesLayer ? indNodesLayer.querySelectorAll('.industry-node-btn') : [];
+    nodes.forEach((node, i) => {
+      node.classList.toggle('active', i === index);
+    });
+
+    // 3. Card Content Transition: Fade & Slide up 12px
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (hudCardInner) {
+      if (!prefersReducedMotion) {
+        hudCardInner.classList.add('animating');
       }
-      if (indCtaBtn) {
-        const industryName = tab.textContent.trim();
-        indCtaBtn.textContent = `Consult ${industryName} Experts`;
-      }
+
+      setTimeout(() => {
+        if (hudSectorTag) hudSectorTag.textContent = `SECTOR ${data.num} // ${data.name.toUpperCase()}`;
+        if (hudCounterTag) hudCounterTag.textContent = `${data.num} / 10`;
+        if (hudCardTitle) hudCardTitle.textContent = data.title;
+        if (hudCardDesc) hudCardDesc.textContent = data.desc;
+
+        if (hudStackGrid) {
+          hudStackGrid.innerHTML = data.stack.map((item) => `
+            <div class="hud-stack-item">
+              <span class="hud-stack-bullet" aria-hidden="true">&#10022;</span>
+              <span>${item}</span>
+            </div>
+          `).join('');
+        }
+
+        if (hudCtaText) hudCtaText.textContent = `CONSULT ${data.cta} EXPERTS`;
+        if (hudGeoCoords) hudGeoCoords.textContent = data.geo;
+
+        if (!prefersReducedMotion) {
+          requestAnimationFrame(() => {
+            hudCardInner.classList.remove('animating');
+            updateLeaderLine();
+          });
+        } else {
+          updateLeaderLine();
+        }
+      }, prefersReducedMotion ? 0 : 160);
+    } else {
+      updateLeaderLine();
+    }
+
+    // Play subtle high-tech sound beep
+    if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
       AudioEngine.playBeep(850, 'sine', 0.08, 0.02);
-    });
-  });
-
-  // 10B. Interactive Spotlight Controller (matching spotlight.tsx)
-  const indDisplayBox = document.getElementById('industryDisplayBox');
-  const indSpotlight = document.getElementById('industrySpotlight');
-  if (indDisplayBox && indSpotlight) {
-    let mouseX = 0, mouseY = 0;
-    let spotX = 0, spotY = 0;
-    let isHovered = false;
-
-    indDisplayBox.addEventListener('mouseenter', () => {
-      isHovered = true;
-      indSpotlight.style.opacity = '1';
-    });
-    indDisplayBox.addEventListener('mouseleave', () => {
-      isHovered = false;
-      indSpotlight.style.opacity = '0';
-    });
-    indDisplayBox.addEventListener('mousemove', (e) => {
-      const rect = indDisplayBox.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-    });
-
-    function renderSpotlight() {
-      if (isHovered) {
-        spotX += (mouseX - spotX) * 0.15;
-        spotY += (mouseY - spotY) * 0.15;
-        indSpotlight.style.left = `${spotX}px`;
-        indSpotlight.style.top = `${spotY}px`;
-      }
-      requestAnimationFrame(renderSpotlight);
     }
-    renderSpotlight();
   }
 
-  // 10C. Spline 3D Robot Interactive Loader & Watermark Cleanup
-  const splineViewer = document.getElementById('industrySplineViewer');
-  const robotLoader = document.getElementById('robotLoader');
-  if (splineViewer) {
-    splineViewer.addEventListener('load', () => {
-      if (robotLoader) {
-        robotLoader.classList.add('loaded');
-        setTimeout(() => { if (robotLoader.parentNode) robotLoader.remove(); }, 600);
-      }
-      try {
-        const shadowLogo = splineViewer.shadowRoot?.querySelector('#logo');
-        if (shadowLogo) shadowLogo.remove();
-      } catch (e) {}
+  // List Rows Click Event Listeners
+  if (indIndexCol) {
+    const rows = indIndexCol.querySelectorAll('.industry-index-row');
+    rows.forEach((row, i) => {
+      row.addEventListener('click', () => {
+        selectIndustry(i, false);
+      });
     });
 
-    // Auto-dismiss loader after 2.5s if event handled internally
-    setTimeout(() => {
-      if (robotLoader) {
-        robotLoader.classList.add('loaded');
+    // Arrow Up / Arrow Down / Home / End Keyboard Navigation
+    indIndexCol.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        const nextIdx = (currentIndustryIndex + 1) % industriesData.length;
+        selectIndustry(nextIdx, true);
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const prevIdx = (currentIndustryIndex - 1 + industriesData.length) % industriesData.length;
+        selectIndustry(prevIdx, true);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        selectIndustry(0, true);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        selectIndustry(industriesData.length - 1, true);
       }
-      try {
-        const shadowLogo = splineViewer.shadowRoot?.querySelector('#logo');
-        if (shadowLogo) shadowLogo.remove();
-      } catch (e) {}
-    }, 2500);
+    });
   }
+
+  // Nodes Click Event Listeners
+  if (indNodesLayer) {
+    indNodesLayer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.industry-node-btn');
+      if (btn) {
+        const idx = parseInt(btn.getAttribute('data-index'), 10);
+        if (!isNaN(idx)) {
+          selectIndustry(idx, false);
+        }
+      }
+    });
+  }
+
+  // Window Resize & ResizeObserver for Dynamic Leader Line Redraw
+  window.addEventListener('resize', updateLeaderLine);
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const hudObserver = new ResizeObserver(() => {
+      updateLeaderLine();
+    });
+    if (indStageCol) hudObserver.observe(indStageCol);
+    if (indHudCard) hudObserver.observe(indHudCard);
+  }
+
+  // Initialize Leader Line on Page Ready & on Scroll
+  setTimeout(() => {
+    updateLeaderLine();
+  }, 300);
+
+  // Expose selectIndustry globally for external triggers if needed
+  window.selectIndustry = selectIndustry;
 
   // 10D. Cosmic Shader Background for Industries Section (Disabled per user request)
   function initIndustryShaderBackground() {

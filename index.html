@@ -25,7 +25,7 @@
   <meta property="og:type" content="website">
 
   <!-- Modern Geometric Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css?v=6.2">
 
@@ -1086,44 +1086,159 @@
           <p class="section-subtitle">Tailored technology stacks and growth models designed for specialized market verticals.</p>
         </div>
 
-        <div class="industry-tabs-bar">
-          <button class="industry-tab active" data-industry="realestate">Real Estate</button>
-          <button class="industry-tab" data-industry="healthcare">Healthcare</button>
-          <button class="industry-tab" data-industry="education">Education</button>
-          <button class="industry-tab" data-industry="retail">Retail</button>
-          <button class="industry-tab" data-industry="ecommerce">E-Commerce</button>
-          <button class="industry-tab" data-industry="sports">Sports & Fitness</button>
-          <button class="industry-tab" data-industry="professional">Professional Services</button>
-          <button class="industry-tab" data-industry="startups">Startups</button>
-          <button class="industry-tab" data-industry="smes">SMEs</button>
-          <button class="industry-tab" data-industry="enterprise">Enterprise</button>
-        </div>
+        <!-- NEW 2-COLUMN LAYOUT: NUMBERED INDEX + FLOATING HUD STAGE -->
+        <div class="industry-hud-layout" id="industryHudLayout">
 
-        <!-- Compact Card on the left, leaving right background open for the 3D Robot -->
-        <div class="industry-display-box" id="industryDisplayBox">
-          <!-- Interactive Spotlight from spotlight.tsx -->
-          <div class="industry-spotlight" id="industrySpotlight"></div>
+          <!-- LEFT COLUMN: Numbered Index List -->
+          <div class="industry-index-col" role="tablist" aria-label="Industry Verticals" id="industryIndexCol">
+            <button type="button" class="industry-index-row active" role="tab" id="indTab-0" aria-selected="true" tabindex="0" data-index="0">
+              <div class="industry-index-left">
+                <span class="industry-index-num">01</span>
+                <span class="industry-index-name">Real Estate</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-1" aria-selected="false" tabindex="-1" data-index="1">
+              <div class="industry-index-left">
+                <span class="industry-index-num">02</span>
+                <span class="industry-index-name">Healthcare</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-2" aria-selected="false" tabindex="-1" data-index="2">
+              <div class="industry-index-left">
+                <span class="industry-index-num">03</span>
+                <span class="industry-index-name">Education</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-3" aria-selected="false" tabindex="-1" data-index="3">
+              <div class="industry-index-left">
+                <span class="industry-index-num">04</span>
+                <span class="industry-index-name">Retail</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-4" aria-selected="false" tabindex="-1" data-index="4">
+              <div class="industry-index-left">
+                <span class="industry-index-num">05</span>
+                <span class="industry-index-name">E-Commerce</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-5" aria-selected="false" tabindex="-1" data-index="5">
+              <div class="industry-index-left">
+                <span class="industry-index-num">06</span>
+                <span class="industry-index-name">Sports & Fitness</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-6" aria-selected="false" tabindex="-1" data-index="6">
+              <div class="industry-index-left">
+                <span class="industry-index-num">07</span>
+                <span class="industry-index-name">Professional Services</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-7" aria-selected="false" tabindex="-1" data-index="7">
+              <div class="industry-index-left">
+                <span class="industry-index-num">08</span>
+                <span class="industry-index-name">Startups</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-8" aria-selected="false" tabindex="-1" data-index="8">
+              <div class="industry-index-left">
+                <span class="industry-index-num">09</span>
+                <span class="industry-index-name">SMEs</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <button type="button" class="industry-index-row" role="tab" id="indTab-9" aria-selected="false" tabindex="-1" data-index="9">
+              <div class="industry-index-left">
+                <span class="industry-index-num">10</span>
+                <span class="industry-index-name">Enterprise</span>
+              </div>
+              <span class="industry-index-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
 
-          <div class="industry-content-side">
-            <h3 class="industry-display-title" id="indTitle">Real Estate Digital Infrastructure</h3>
-            <p class="industry-display-desc" id="indDesc">
-              Virtual 3D property tours, dynamic CRM lead capture, MLS integration, and automated WhatsApp inspection booking engines built to convert high-net-worth real estate buyers.
-            </p>
+          <!-- RIGHT COLUMN: Stage over the globe (660px relative stage) -->
+          <div class="industry-stage-col" id="industryStageCol">
+            <!-- Dashed Gold Leader Line SVG -->
+            <svg class="industry-leader-svg" id="industryLeaderSvg" aria-hidden="true">
+              <defs>
+                <filter id="leaderGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="2.5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <path id="industryLeaderPath" class="industry-leader-path" d="" />
+              <circle id="industryLeaderEndDot" class="industry-leader-end-dot" cx="0" cy="0" r="3.5" />
+            </svg>
 
-            <div class="industry-stack-section">
-              <span class="portfolio-label">RECOMMENDED STACK</span>
-              <div class="capability-tech-tags" id="indStack" style="margin-top: 10px;">
-                <span class="tech-tag">3D WebGL Virtual Walkthrough</span>
-                <span class="tech-tag">Next.js Headless</span>
-                <span class="tech-tag">Automated CRM Routing</span>
-                <span class="tech-tag">WhatsApp Funnel API</span>
+            <!-- Signal Nodes Layer (10 gold dots over globe) -->
+            <div class="industry-nodes-layer" id="industryNodesLayer">
+              <!-- Rendered by JS -->
+            </div>
+
+            <!-- Floating HUD Card (bottom-right of stage, width up to 500px) -->
+            <div class="industry-hud-card" id="industryHudCard" role="region" aria-live="polite">
+              <!-- Gold Corner Brackets -->
+              <span class="hud-bracket hud-bracket-tl" aria-hidden="true"></span>
+              <span class="hud-bracket hud-bracket-br" aria-hidden="true"></span>
+
+              <div class="hud-card-inner" id="hudCardInner">
+                <!-- 1. Label row -->
+                <div class="hud-label-row">
+                  <span class="hud-sector-tag" id="hudSectorTag">SECTOR 01 // REAL ESTATE</span>
+                  <span class="hud-counter-tag" id="hudCounterTag">01 / 10</span>
+                </div>
+
+                <!-- 2. Title -->
+                <h3 class="hud-card-title" id="hudCardTitle">Real Estate Digital Infrastructure</h3>
+
+                <!-- 3. Description -->
+                <p class="hud-card-desc" id="hudCardDesc">
+                  Virtual 3D property tours, dynamic CRM lead capture, MLS integration, and automated WhatsApp inspection booking engines built to convert high-net-worth real estate buyers.
+                </p>
+
+                <!-- 4. Divider, RECOMMENDED STACK, and 2x2 grid -->
+                <div class="hud-stack-block">
+                  <div class="hud-stack-divider"></div>
+                  <span class="hud-stack-label">RECOMMENDED STACK</span>
+                  <div class="hud-stack-grid" id="hudStackGrid">
+                    <div class="hud-stack-item"><span class="hud-stack-bullet" aria-hidden="true">&#10022;</span><span>3D WebGL Virtual Walkthrough</span></div>
+                    <div class="hud-stack-item"><span class="hud-stack-bullet" aria-hidden="true">&#10022;</span><span>Next.js Headless</span></div>
+                    <div class="hud-stack-item"><span class="hud-stack-bullet" aria-hidden="true">&#10022;</span><span>Automated CRM Routing</span></div>
+                    <div class="hud-stack-item"><span class="hud-stack-bullet" aria-hidden="true">&#10022;</span><span>WhatsApp Funnel API</span></div>
+                  </div>
+                </div>
+
+                <!-- 5. Gold Gradient Button -->
+                <div class="hud-action-row">
+                  <a href="#contact" class="hud-cta-btn" id="hudCtaBtn">
+                    <span id="hudCtaText">CONSULT REAL ESTATE EXPERTS</span>
+                    <span class="hud-btn-arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <!-- 6. Dashed Divider & Geo Strip -->
+                <div class="hud-geo-strip">
+                  <span class="hud-geo-left">REGIONAL HUBS</span>
+                  <div class="hud-geo-right">
+                    <span class="hud-geo-dot"></span>
+                    <span class="hud-geo-coords" id="hudGeoCoords">LAT 13.0827° N // LON 80.2707° E</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="industry-cta-row">
-              <a href="#contact" class="btn-talk" id="indCtaBtn">Consult Real Estate Experts</a>
-            </div>
           </div>
+
         </div>
       </div>
     </section>
