@@ -1386,9 +1386,6 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 clamp(24px, 5.5vw, 72px);
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
 .design-header-row {
@@ -9389,3 +9386,58 @@ html.lenis, html.lenis body {
 #about, #awards, #trust, #services, #industries, #guardian, #portfolio, #estimator, #contact {
   scroll-margin-top: 80px;
 }
+
+/* ==========================================================================
+   PREMIUM SCROLL-TRIGGERED FADE-UP ENGINE
+   Fluid blur-to-clear upward entrance (cubic-bezier(0.22, 1, 0.36, 1))
+   Applied to individual cards, headings, and content blocks
+   ========================================================================== */
+
+/* Initially hidden state: activated only when JS engine confirms DOM readiness */
+html.scroll-reveal-active .scroll-reveal-item {
+  opacity: 0;
+  transform: translateY(42px);
+  filter: blur(8px);
+  transition: 
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Revealed in-viewport state */
+html.scroll-reveal-active .scroll-reveal-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+
+/* Settled state: removes filter so hover & backdrop-filter work 100% natively without conflicts */
+html.scroll-reveal-active .scroll-reveal-item.is-revealed.is-settled {
+  filter: none;
+  will-change: auto;
+}
+
+/* Card hover transform overrides */
+html.scroll-reveal-active .award-card.is-revealed:hover { transform: translateY(-6px); }
+html.scroll-reveal-active .bento-card.is-revealed:hover { transform: translateY(-4px); }
+html.scroll-reveal-active .guardian-feature-card.is-revealed:hover { transform: translateY(-4px); }
+html.scroll-reveal-active .guardian-funnel-card.is-revealed:hover { transform: translateY(-4px); }
+html.scroll-reveal-active .story-row-card.is-revealed:hover { transform: translateY(-3px); }
+html.scroll-reveal-active .contact-channel-item.is-revealed:hover { transform: translateY(-3px); }
+html.scroll-reveal-active .process-step-card.is-revealed:hover { transform: translateY(-4px); }
+html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px) !important; }
+
+/* Respect prefers-reduced-motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html.scroll-reveal-active .scroll-reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+

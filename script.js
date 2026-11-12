@@ -1767,98 +1767,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       AudioEngine.playBeep(640, 'triangle', 0.08, 0.02);
       if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
-    });
-  });
-
-  // =========================================================================
-  // 8B. Service Section Seamless Scroll Animation Reveal
-  // =========================================================================
-  const servicesSection = document.getElementById('services');
-  const trustSection = document.getElementById('trust') || document.querySelector('.section-trust');
-
-  if (servicesSection && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const bentoHeader = servicesSection.querySelector('.bento-services-header');
-    const bentoTabs = servicesSection.querySelector('.bento-category-tabs');
-    const bentoLeft = servicesSection.querySelector('.bento-col-left');
-    const bentoCard2 = servicesSection.querySelector('.bento-col-right .bento-card-2');
-    const bentoBottomRow = servicesSection.querySelector('.bento-col-right .bento-right-bottom-row');
-    const bentoDevExtraRow = servicesSection.querySelector('.bento-dev-extra-row');
-    const bentoGrowth = document.getElementById('bentoGroupGrowth');
-
-    // Smooth scroll-driven scrub timeline as user scrolls down from Built for Business into Services
-    const serviceTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: servicesSection,
-        start: "top 85%",   // Starts as user scrolls past Trust section
-        end: "top 25%",     // Completes smoothly before reaching center
-        scrub: 0.8,         // Physics-based smooth scroll scrub
+      if (typeof ScrollRevealEngine !== 'undefined') {
+        const activeGroup = target === 'development' ? gDev : (target === 'designing' ? gDesign : gMkt);
+        ScrollRevealEngine.refreshGroup(activeGroup);
       }
     });
-
-    if (bentoHeader) {
-      serviceTl.fromTo(bentoHeader, 
-        { opacity: 0, y: 45 }, 
-        { opacity: 1, y: 0, ease: "power2.out", duration: 0.4 }
-      );
-    }
-    if (bentoTabs) {
-      serviceTl.fromTo(bentoTabs, 
-        { opacity: 0, y: 30 }, 
-        { opacity: 1, y: 0, ease: "power2.out", duration: 0.35 }, 
-        "-=0.2"
-      );
-    }
-    if (bentoLeft) {
-      serviceTl.fromTo(bentoLeft, 
-        { opacity: 0, y: 70, scale: 0.96 }, 
-        { opacity: 1, y: 0, scale: 1, ease: "power3.out", duration: 0.7 }, 
-        "-=0.2"
-      );
-    }
-    if (bentoCard2) {
-      serviceTl.fromTo(bentoCard2, 
-        { opacity: 0, y: 55, scale: 0.97 }, 
-        { opacity: 1, y: 0, scale: 1, ease: "power3.out", duration: 0.65 }, 
-        "-=0.5"
-      );
-    }
-    if (bentoBottomRow) {
-      serviceTl.fromTo(bentoBottomRow, 
-        { opacity: 0, y: 65, scale: 0.96 }, 
-        { opacity: 1, y: 0, scale: 1, ease: "power3.out", duration: 0.65 }, 
-        "-=0.45"
-      );
-    }
-    if (bentoDevExtraRow) {
-      serviceTl.fromTo(bentoDevExtraRow, 
-        { opacity: 0, y: 65, scale: 0.96 }, 
-        { opacity: 1, y: 0, scale: 1, ease: "power3.out", duration: 0.65 }, 
-        "-=0.4"
-      );
-    }
-
-    // Secondary Bento grid (Creative & Growth Systems) scroll reveal
-    if (bentoGrowth) {
-      gsap.fromTo(bentoGrowth, 
-        { opacity: 0, y: 60, scale: 0.97 }, 
-        { 
-          opacity: 1, 
-          y: 0, 
-          scale: 1, 
-          ease: "power3.out", 
-          duration: 0.7,
-          scrollTrigger: {
-            trigger: bentoGrowth,
-            start: "top 85%",
-            end: "top 40%",
-            scrub: 0.8,
-          }
-        }
-      );
-    }
-  }
+  });
 
   // =========================================================================
   // 8C. Thumbnail Image Viewer Engine for Trust Section (6 Core Pillars)
@@ -4166,157 +4080,307 @@ void main(void) {
   initStraightTimeline();
 
   // =========================================================================
-  // 18. Master Unified Section Flow Engine (GSAP & ScrollTrigger)
-  //     Ensures each and every section comes up with a smooth fade-up-from-bottom
-  //     animation on scroll down and re-animates on every visit.
+  // 18. Universal Scroll-Triggered Fade-Up Reveal Engine
+  //     Consistent, premium fade-up with blur-to-clear across the ENTIRE website.
+  //     Easing: cubic-bezier(0.22, 1, 0.36, 1), Duration: ~900ms, Offset: ~42px.
+  //     Independent staggered entrance for each card (100–140ms delay).
+  //     Re-triggers smoothly when scrolling up/down on every visit.
   // =========================================================================
-  function initMasterSectionFlow() {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-    gsap.registerPlugin(ScrollTrigger);
-
+  const ScrollRevealEngine = (() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
+    let observer = null;
+    const registeredElements = new Set();
 
-    // Master list of each and every section to fade up from bottom on scroll
-    const sectionsToFadeUp = [
+    // Registry of standalone elements (section headers, badges, titles, descriptions, standalone cards)
+    const singleSelectors = [
+      // About Section
+      '#about .timeline-01-badge',
+      '#about .timeline-01-title',
+      '#about .timeline-01-desc',
+      '#about .timeline-01-process-header',
+      '#about .timeline-01-process-footer',
+
+      // Awards Section
+      '#awards .center-header .sub-badge',
+      '#awards .center-header .section-title',
+      '#awards .center-header .section-subtitle',
+
+      // Services Section
+      '#services .bento-services-header .sub-badge',
+      '#services .bento-services-header .section-title',
+      '#services .bento-services-header .section-subtitle',
+      '#services .bento-services-header .bento-pill-cta',
+      '#services .bento-category-tabs',
+
+      // Industries Section
+      '#industries .industries-header-left .sub-badge',
+      '#industries .industries-header-left .section-title',
+      '#industries .industries-header-left .section-subtitle',
+      '#industries .industry-hud-stage .industry-hud-card',
+      '#industries .industry-hud-stage .industry-hud-readout',
+
+      // Guardian Section
+      '#guardian .guardian-badges-row',
+      '#guardian .guardian-title',
+      '#guardian .guardian-lead-desc',
+      '#guardian .guardian-shield-area',
+      '#guardian .guardian-connector-stem',
+      '#guardian .guardian-hero-cta',
+      '#guardian .guardian-funnel-header .guardian-funnel-title',
+      '#guardian .guardian-funnel-header .guardian-funnel-lead',
+      '#guardian .guardian-consult-card',
+
+      // Portfolio Section
+      '#portfolio .center-header .sub-badge',
+      '#portfolio .center-header .section-title',
+      '#portfolio .center-header .section-subtitle',
+      '#portfolio .portfolio-legend-row',
+
+      // Estimator Section
+      '#estimator .center-header .sub-badge',
+      '#estimator .center-header .section-title',
+      '#estimator .center-header .section-subtitle',
+
+      // Contact Section
+      '#contact .center-header .sub-badge',
+      '#contact .center-header .section-title',
+      '#contact .center-header .section-subtitle',
+      '#contact .contact-lead-form',
+
+      // Footer
+      '#footer .footer-brand',
+      '#footer .footer-bottom'
+    ];
+
+    // Registry of card groups: multiple cards that stagger when scrolled into view
+    const groupConfigs = [
+      // About timeline milestone rows
       {
-        id: 'about',
-        trigger: '#about',
-        header: '#about .timeline-01-header-box',
-        body: '#about .timeline-01-track-box'
+        container: '#about .timeline-01-items',
+        items: '.timeline-01-row',
+        staggerMs: 140
       },
+      // About 6-step methodology cards
       {
-        id: 'awards',
-        trigger: '#awards',
-        header: '#awards .center-header',
-        body: '#awards .awards-grid'
+        container: '#about .process-steps-grid',
+        items: '.process-step-card',
+        staggerMs: 100
       },
+      // Awards credibility cards
       {
-        id: 'services',
-        trigger: '#services',
-        header: '#services .design-header-row, #services .center-header',
-        body: '#services .bento-services-grid'
+        container: '#awards .awards-grid',
+        items: '.award-card',
+        staggerMs: 130
       },
+      // Bento Development Cards
       {
-        id: 'industries',
-        trigger: '#industries',
-        header: '#industries .industries-header-left, #industries .center-header',
-        body: '#industries .industry-hud-layout'
+        container: '#bentoGroupDevelopment',
+        items: '.bento-card',
+        staggerMs: 120
       },
+      // Bento Designing Cards
       {
-        id: 'guardian',
-        trigger: '#guardian',
-        header: '#guardian .guardian-band-hero',
-        body: '#guardian .guardian-band-funnel, #guardian .guardian-band-consultation'
+        container: '#bentoGroupDesign',
+        items: '.bento-card',
+        staggerMs: 130
       },
+      // Bento Marketing Cards
       {
-        id: 'portfolio',
-        trigger: '#portfolio',
-        header: '#portfolio .center-header',
-        body: '#portfolio .portfolio-story-container'
+        container: '#bentoGroupMarketing',
+        items: '.bento-card',
+        staggerMs: 130
       },
+      // Industries 10 Index Rows
       {
-        id: 'estimator',
-        trigger: '#estimator',
-        header: '#estimator .center-header',
-        body: '#estimator .estimator-console'
+        container: '#industries .industry-hud-index',
+        items: '.industry-hud-row',
+        staggerMs: 50
       },
+      // Guardian 3 Feature Cards
       {
-        id: 'contact',
-        trigger: '#contact',
-        header: '#contact .center-header',
-        body: '#contact .contact-split-grid, #contact .contact-channels-strip'
+        container: '#guardian .guardian-features-row',
+        items: '.guardian-feature-card',
+        staggerMs: 130
+      },
+      // Guardian 4 Funnel Cards
+      {
+        container: '#guardian .guardian-funnel-grid',
+        items: '.guardian-funnel-card',
+        staggerMs: 130
+      },
+      // Portfolio Case Study Rows
+      {
+        container: '#portfolioStoryContainer',
+        items: '.story-row-card',
+        staggerMs: 140
+      },
+      // Estimator Console Zones
+      {
+        container: '#estimatorBox',
+        items: '.estimator-stepper-zone, .estimator-question-zone, .estimator-blueprint-zone',
+        staggerMs: 130
+      },
+      // Contact Direct Channels
+      {
+        container: '#contact .contact-channels-box',
+        items: '.contact-channel-item',
+        staggerMs: 120
+      },
+      // Footer Columns
+      {
+        container: '#footer .footer-columns',
+        items: '.footer-col',
+        staggerMs: 120
       }
     ];
 
-    sectionsToFadeUp.forEach(({ id, trigger, header, body }) => {
-      const triggerEl = document.querySelector(trigger);
-      if (!triggerEl) return;
+    function registerItem(el, delayMs = 0) {
+      if (!el || registeredElements.has(el)) return;
+      registeredElements.add(el);
 
-      const headerEls = header ? triggerEl.querySelectorAll(header) : [];
-      const bodyEls = body ? triggerEl.querySelectorAll(body) : [];
+      el.classList.add('scroll-reveal-item');
+      if (delayMs > 0) {
+        el.style.setProperty('--reveal-delay', `${delayMs}ms`);
+        el.setAttribute('data-reveal-delay', delayMs);
+      }
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: triggerEl,
-          start: 'top 85%',
-          end: 'bottom 15%',
-          toggleActions: 'play reverse play reverse'
+      // Check if element is already within or above the 85% viewport line on load
+      const rect = el.getBoundingClientRect();
+      const windowH = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < windowH * 0.85 && rect.bottom > 0) {
+        el.classList.add('is-revealed');
+        if (el.classList.contains('story-row-card')) {
+          el.classList.add('row-entered');
         }
+        setTimeout(() => {
+          if (el.classList.contains('is-revealed')) {
+            el.classList.add('is-settled');
+          }
+        }, 950 + delayMs);
+      }
+
+      if (observer) {
+        observer.observe(el);
+      }
+    }
+
+    function init() {
+      if (prefersReducedMotion) {
+        // Respect accessibility: do not add scroll-reveal-active, elements remain 100% visible
+        return;
+      }
+
+      // Safe activation: activates reveal styles only once JS engine is loaded
+      document.documentElement.classList.add('scroll-reveal-active');
+
+      if (!('IntersectionObserver' in window)) {
+        // Fallback for browsers without IntersectionObserver
+        document.querySelectorAll(singleSelectors.join(',')).forEach(el => {
+          el.classList.add('scroll-reveal-item', 'is-revealed', 'is-settled');
+        });
+        return;
+      }
+
+      observer = new IntersectionObserver((entries) => {
+        const windowH = window.innerHeight || document.documentElement.clientHeight;
+        entries.forEach(entry => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            el.classList.add('is-revealed');
+            if (el.classList.contains('story-row-card')) {
+              el.classList.add('row-entered');
+            }
+            const delayMs = parseFloat(el.getAttribute('data-reveal-delay') || 0);
+            setTimeout(() => {
+              if (el.classList.contains('is-revealed')) {
+                el.classList.add('is-settled');
+              }
+            }, 950 + delayMs);
+          } else {
+            // Avoid repeatedly restarting animations unnecessarily
+            // Only reset when element has scrolled well away (buffer of 150px below, 350px above)
+            const rect = entry.boundingClientRect;
+            if (rect.top > windowH + 150) {
+              el.classList.remove('is-revealed', 'is-settled');
+              if (el.classList.contains('story-row-card')) {
+                el.classList.remove('row-entered');
+              }
+            } else if (rect.bottom < -350) {
+              el.classList.remove('is-revealed', 'is-settled');
+              if (el.classList.contains('story-row-card')) {
+                el.classList.remove('row-entered');
+              }
+            }
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -15% 0px', // Triggers when element reaches 85% of viewport
+        threshold: 0.05
       });
 
-      if (headerEls.length > 0) {
-        tl.fromTo(headerEls,
-          { opacity: 0, y: 55 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.85,
-            ease: 'power3.out'
-          },
-          0
-        );
-      }
+      // 1. Register all single selectors
+      singleSelectors.forEach(sel => {
+        document.querySelectorAll(sel).forEach(el => registerItem(el, 0));
+      });
 
-      if (bodyEls.length > 0) {
-        tl.fromTo(bodyEls,
-          { opacity: 0, y: 75 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.95,
-            ease: 'power3.out'
-          },
-          0.08
-        );
-      }
-    });
+      // 2. Register all staggered card groups
+      groupConfigs.forEach(({ container, items, staggerMs }) => {
+        const contEl = document.querySelector(container);
+        if (!contEl) return;
+        const itemEls = contEl.querySelectorAll(items);
+        itemEls.forEach((item, idx) => {
+          registerItem(item, idx * staggerMs);
+        });
+      });
 
-    // Sub-stagger for awards cards on entrance
-    const awardCards = document.querySelectorAll('#awards .award-card');
-    if (awardCards.length > 0) {
-      gsap.fromTo(awardCards,
-        { opacity: 0, y: 40, scale: 0.96 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          stagger: 0.1,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '#awards .awards-grid',
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
+      // 3. Register any custom elements marked with [data-reveal] or .scroll-reveal
+      document.querySelectorAll('[data-reveal], .scroll-reveal').forEach(el => {
+        registerItem(el, 0);
+      });
     }
 
-    // Sub-stagger for bento cards on entrance
-    const bentoCards = document.querySelectorAll('.bento-card');
-    if (bentoCards.length > 0) {
-      gsap.fromTo(bentoCards,
-        { opacity: 0, y: 35, scale: 0.97 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          stagger: 0.08,
-          duration: 0.75,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.bento-services-grid',
-            start: 'top 82%',
-            toggleActions: 'play reverse play reverse'
-          }
-        }
-      );
+    function refreshGroup(containerEl, staggerMs = 120) {
+      if (!containerEl) return;
+      const items = containerEl.querySelectorAll('.bento-card, .scroll-reveal-item');
+      items.forEach((item, idx) => {
+        item.classList.remove('is-revealed', 'is-settled');
+        const delayMs = idx * staggerMs;
+        item.style.setProperty('--reveal-delay', `${delayMs}ms`);
+        item.setAttribute('data-reveal-delay', delayMs);
+        setTimeout(() => {
+          item.classList.add('is-revealed');
+          setTimeout(() => {
+            if (item.classList.contains('is-revealed')) {
+              item.classList.add('is-settled');
+            }
+          }, 950 + delayMs);
+        }, 40);
+      });
     }
-  }
 
-  // Initialize Master Section Flow
-  initMasterSectionFlow();
+    function scanNewElements() {
+      // Re-scan for dynamically rendered items (e.g. portfolio cards)
+      groupConfigs.forEach(({ container, items, staggerMs }) => {
+        const contEl = document.querySelector(container);
+        if (!contEl) return;
+        const itemEls = contEl.querySelectorAll(items);
+        itemEls.forEach((item, idx) => {
+          registerItem(item, idx * staggerMs);
+        });
+      });
+    }
+
+    return {
+      init,
+      registerItem,
+      refreshGroup,
+      scanNewElements
+    };
+  })();
+
+  // Initialize Global Scroll-Triggered Fade-Up Engine
+  ScrollRevealEngine.init();
 
 });
 
