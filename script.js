@@ -2878,14 +2878,13 @@ void main(void) {
       });
     });
 
-    // Staggered Entrance via IntersectionObserver (threshold: 0.22)
+    // Staggered Entrance via IntersectionObserver (re-triggers on every visit)
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+          const card = entry.target;
           if (entry.isIntersecting) {
-            const card = entry.target;
             card.classList.add('row-entered');
-            observer.unobserve(card);
 
             if (prefersReducedMotion) {
               // Set final values immediately
@@ -2906,6 +2905,15 @@ void main(void) {
                 animateRowCounters(card);
               }, 1000);
             }
+          } else {
+            // When scrolling out of view, reset so it fades in every time visited
+            card.classList.remove('row-entered');
+            card.querySelectorAll('.metric-number[data-target]').forEach(el => {
+              const prefix = el.getAttribute('data-prefix') || '';
+              const suffix = el.getAttribute('data-suffix') || '';
+              el.textContent = `${prefix}0${suffix}`;
+              el.classList.remove('glow-finish');
+            });
           }
         });
       }, {
@@ -4065,6 +4073,16 @@ void main(void) {
           if (content) gsap.to(content, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' });
           if (imgCard) gsap.to(imgCard, { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' });
         },
+        onLeave: () => {
+          if (pin) pin.classList.remove('active');
+          if (content) gsap.to(content, { opacity: 0.3, x: isEven ? 20 : -20, duration: 0.3 });
+          if (imgCard) gsap.to(imgCard, { opacity: 0.4, scale: 0.96, duration: 0.3 });
+        },
+        onEnterBack: () => {
+          if (pin) pin.classList.add('active');
+          if (content) gsap.to(content, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' });
+          if (imgCard) gsap.to(imgCard, { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' });
+        },
         onLeaveBack: () => {
           if (pin) pin.classList.remove('active');
           if (content) gsap.to(content, { opacity: 0.3, x: isEven ? 20 : -20, duration: 0.3 });
@@ -4121,6 +4139,16 @@ void main(void) {
           gsap.to(stem, { scaleX: 1, duration: 0.4, ease: 'power2.out' });
           gsap.to(card, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' });
         },
+        onLeave: () => {
+          if (pin) pin.classList.remove('active');
+          gsap.to(stem, { scaleX: 0, duration: 0.3 });
+          gsap.to(card, { opacity: 0.25, x: 20, duration: 0.3 });
+        },
+        onEnterBack: () => {
+          if (pin) pin.classList.add('active');
+          gsap.to(stem, { scaleX: 1, duration: 0.4, ease: 'power2.out' });
+          gsap.to(card, { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' });
+        },
         onLeaveBack: () => {
           if (pin) pin.classList.remove('active');
           gsap.to(stem, { scaleX: 0, duration: 0.3 });
@@ -4170,7 +4198,7 @@ void main(void) {
           scrollTrigger: {
             trigger: hdr,
             start: 'top 85%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4191,7 +4219,7 @@ void main(void) {
           scrollTrigger: {
             trigger: '#awards .awards-grid',
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4210,7 +4238,7 @@ void main(void) {
           scrollTrigger: {
             trigger: tivViewer,
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4231,15 +4259,18 @@ void main(void) {
           scrollTrigger: {
             trigger: '.bento-services-grid',
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
     }
 
-    // E. Industries Display Box & Tabs Reveal
+    // E. Industries Display Box & Tabs / HUD Stage Reveal
     const indDisplay = document.querySelector('.industry-display-box');
     const indTabs = document.querySelector('.industry-tabs-bar');
+    const indIndexCol = document.getElementById('industryIndexCol');
+    const indStageCol = document.getElementById('industryStageCol');
+
     if (indDisplay) {
       gsap.fromTo(indDisplay,
         { opacity: 0, y: 40 },
@@ -4251,7 +4282,7 @@ void main(void) {
           scrollTrigger: {
             trigger: indDisplay,
             start: 'top 85%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4267,7 +4298,39 @@ void main(void) {
           scrollTrigger: {
             trigger: indTabs,
             start: 'top 88%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
+          }
+        }
+      );
+    }
+    if (indIndexCol) {
+      gsap.fromTo(indIndexCol,
+        { opacity: 0, x: -25 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.85,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: indIndexCol,
+            start: 'top 85%',
+            toggleActions: 'play reverse play reverse'
+          }
+        }
+      );
+    }
+    if (indStageCol) {
+      gsap.fromTo(indStageCol,
+        { opacity: 0, x: 25 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.85,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: indStageCol,
+            start: 'top 85%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4278,6 +4341,7 @@ void main(void) {
     const guardianArena = document.querySelectorAll('.guardian-arena-card');
     const tierItems = document.querySelectorAll('.tier-step');
     const trustStrip = document.querySelector('.guardian-trust-strip');
+    const guardianFlow = document.querySelector('.guardian-centered-flow');
     
     if (guardianHero) {
       gsap.fromTo(guardianHero,
@@ -4290,7 +4354,23 @@ void main(void) {
           scrollTrigger: {
             trigger: guardianHero,
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
+          }
+        }
+      );
+    }
+    if (guardianFlow) {
+      gsap.fromTo(guardianFlow,
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.85,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: guardianFlow,
+            start: 'top 82%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4307,7 +4387,7 @@ void main(void) {
           scrollTrigger: {
             trigger: '.guardian-split-arena',
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4324,7 +4404,7 @@ void main(void) {
           scrollTrigger: {
             trigger: '.guardian-tier-stack',
             start: 'top 85%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4340,7 +4420,7 @@ void main(void) {
           scrollTrigger: {
             trigger: trustStrip,
             start: 'top 92%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4360,7 +4440,7 @@ void main(void) {
           scrollTrigger: {
             trigger: '.portfolio-grid',
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4381,7 +4461,7 @@ void main(void) {
           scrollTrigger: {
             trigger: '.tech-nodes-container',
             start: 'top 85%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4401,7 +4481,7 @@ void main(void) {
           scrollTrigger: {
             trigger: '.clients-grid',
             start: 'top 85%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4421,7 +4501,7 @@ void main(void) {
           scrollTrigger: {
             trigger: estimatorBox,
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4439,7 +4519,7 @@ void main(void) {
           scrollTrigger: {
             trigger: demoSplit,
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -4458,7 +4538,7 @@ void main(void) {
           scrollTrigger: {
             trigger: contactGrid,
             start: 'top 82%',
-            toggleActions: 'play none none reverse'
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
