@@ -2136,56 +2136,64 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 9. Riyadvi Guardian™ Platform Interactions & Lead Consultation Form
+  // 9. Riyadvi Guardian™ Platform Centered Three-Band Interactions & Form
   // =========================================================================
-  const shieldOrbitBadges = document.querySelectorAll('.shield-orbit-badge');
-  const tierSteps = document.querySelectorAll('.tier-step');
-  const guardianMiniCards = document.querySelectorAll('.guardian-mini-card');
+  const guardianPillChips = document.querySelectorAll('.guardian-pill-chip');
+  const guardianFeatureCards = document.querySelectorAll('.guardian-feature-card');
+  const tierCards = document.querySelectorAll('.tier-card');
   const guardianForm = document.getElementById('guardianForm');
+  const guardianThankYou = document.getElementById('guardianThankYou');
 
-  shieldOrbitBadges.forEach((badge) => {
-    badge.addEventListener('mouseenter', () => {
-      AudioEngine.playBeep(720, 'sine', 0.04, 0.015);
+  guardianPillChips.forEach((chip) => {
+    chip.addEventListener('mouseenter', () => {
+      if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+        AudioEngine.playBeep(720, 'sine', 0.04, 0.015);
+      }
     });
   });
 
-  tierSteps.forEach((step) => {
-    step.addEventListener('mouseenter', () => {
-      AudioEngine.playBeep(640, 'sine', 0.05, 0.015);
-    });
-    step.addEventListener('click', () => {
-      tierSteps.forEach((s) => s.classList.remove('active'));
-      step.classList.add('active');
-      AudioEngine.playBeep(820, 'sine', 0.08, 0.02);
-    });
-  });
-
-  guardianMiniCards.forEach((card) => {
+  guardianFeatureCards.forEach((card) => {
     card.addEventListener('mouseenter', () => {
-      AudioEngine.playBeep(580, 'sine', 0.04, 0.012);
+      if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+        AudioEngine.playBeep(580, 'sine', 0.04, 0.012);
+      }
+    });
+  });
+
+  tierCards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+        AudioEngine.playBeep(640, 'sine', 0.05, 0.015);
+      }
     });
   });
 
   if (guardianForm) {
     guardianForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      AudioEngine.playBeep(880, 'sine', 0.12, 0.03);
-      setTimeout(() => AudioEngine.playBeep(1100, 'sine', 0.18, 0.04), 100);
-      
-      const submitBtn = guardianForm.querySelector('.btn-guardian-submit');
-      if (submitBtn) {
-        const originalHtml = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>&#10003; Request Received &mdash; Telemetry Active</span>';
-        submitBtn.style.background = 'linear-gradient(135deg, #22c55e 0%, #4ade80 100%)';
-        submitBtn.style.color = '#000000';
-        
-        setTimeout(() => {
-          submitBtn.innerHTML = originalHtml;
-          submitBtn.style.background = '';
-          submitBtn.style.color = '';
-          guardianForm.reset();
-        }, 4000);
+
+      // Acoustic confirmation feedback
+      if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+        AudioEngine.playBeep(880, 'sine', 0.12, 0.03);
+        setTimeout(() => AudioEngine.playBeep(1100, 'sine', 0.18, 0.04), 100);
       }
+
+      // Hide the form fields and show the green dashed thank-you box
+      guardianForm.style.display = 'none';
+      if (guardianThankYou) {
+        guardianThankYou.style.display = 'flex';
+      }
+
+      // =====================================================================
+      // NOTE: CONNECT REAL FORM SUBMISSION ENDPOINT HERE
+      // Example:
+      // const formData = new FormData(guardianForm);
+      // fetch('/api/guardian-consultation', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(Object.fromEntries(formData))
+      // });
+      // =====================================================================
     });
   }
 

@@ -25,7 +25,7 @@
   <meta property="og:type" content="website">
 
   <!-- Modern Geometric Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css?v=6.2">
 
@@ -1251,19 +1251,35 @@
 
       <div class="section-container">
 
-        <!-- TOP HERO STAGE: 3D Shield + Platform Pitch & Metrics -->
-        <div class="guardian-platform-hero">
-          
-          <!-- Left: Sentinel Shield with Orbital Pedestal & Floating Orbit Badges -->
-          <div class="guardian-sentinel-col">
-            <div class="sentinel-shield-stage" id="guardianShieldStage">
-              <!-- Orbital pedestal with golden radial glow -->
-              <div class="shield-pedestal-glow"></div>
-              <div class="shield-pedestal-rings"></div>
+        <!-- RIYADVI GUARDIAN: CENTERED THREE-BAND FLOW -->
+        <div class="guardian-flow-container">
 
-              <!-- Central 3D Knight/Sentinel Shield Emblem -->
+          <!-- BAND 1: HERO (CENTERED) -->
+          <div class="guardian-band-hero">
+            <!-- 1. Two badges side by side -->
+            <div class="guardian-badges-row">
+              <span class="guardian-badge badge-grey">PROPRIETARY ARCHITECTURE</span>
+              <span class="guardian-badge badge-gold">ENTERPRISE GROWTH PROTECTOR</span>
+            </div>
+
+            <!-- 2. Big centered heading -->
+            <h2 class="guardian-main-heading">
+              Riyadvi <span class="guardian-gold-text">Guardian<sup>&trade;</sup></span> Platform
+            </h2>
+
+            <!-- 3. Centered description, max about 660px -->
+            <p class="guardian-main-desc">
+              A unified growth intelligence and security system that prevents ad leaks, safeguards your digital assets, and transforms traffic into verified revenue pipelines.
+            </p>
+
+            <!-- 4. Centered Shield Stage with slow float animation, dashed elliptical ring & 5 floating pill chips -->
+            <div class="guardian-shield-stage-centered" id="guardianShieldStage">
+              <!-- Dashed elliptical ring under shield -->
+              <div class="shield-dashed-ellipse" aria-hidden="true"></div>
+
+              <!-- 3D Shield Artwork with soft gold glow and floating motion -->
               <div class="guardian-shield-3d" data-cursor="VIEW">
-                <svg class="shield-svg" viewBox="0 0 140 170" fill="none">
+                <svg class="shield-svg" viewBox="0 0 140 170" fill="none" aria-hidden="true">
                   <defs>
                     <linearGradient id="shieldGoldBevel" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stop-color="#FFF0A5"/>
@@ -1293,231 +1309,244 @@
                 <img src="assets/riyadvilogo.png" alt="Riyadvi Guardian Shield" class="shield-hero-logo">
               </div>
 
-              <!-- Orbiting Badges matching reference image -->
-              <div class="shield-orbit-badge badge-secure" data-cursor="VIEW">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <!-- 5 Floating Pill Chips with gold diamond bullet & offset delays -->
+              <div class="guardian-pill-chip chip-secure" data-cursor="VIEW">
+                <span class="chip-bullet" aria-hidden="true">&#10022;</span>
                 <span>Secure</span>
               </div>
-
-              <div class="shield-orbit-badge badge-optimize" data-cursor="VIEW">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <div class="guardian-pill-chip chip-optimize" data-cursor="VIEW">
+                <span class="chip-bullet" aria-hidden="true">&#10022;</span>
                 <span>Optimize</span>
               </div>
-
-              <div class="shield-orbit-badge badge-grow" data-cursor="VIEW">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              <div class="guardian-pill-chip chip-grow" data-cursor="VIEW">
+                <span class="chip-bullet" aria-hidden="true">&#10022;</span>
                 <span>Grow</span>
               </div>
-
-              <div class="shield-orbit-badge badge-monitor" data-cursor="VIEW">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <div class="guardian-pill-chip chip-monitor" data-cursor="VIEW">
+                <span class="chip-bullet" aria-hidden="true">&#10022;</span>
                 <span>Monitor</span>
               </div>
-
-              <div class="shield-orbit-badge badge-protect" data-cursor="VIEW">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <div class="guardian-pill-chip chip-protect" data-cursor="VIEW">
+                <span class="chip-bullet" aria-hidden="true">&#10022;</span>
                 <span>Protect</span>
               </div>
             </div>
-          </div>
 
-          <!-- Right: Title, Pitch, 3 Feature Mini-Cards & CTA -->
-          <div class="guardian-content-col">
-            <!-- Dual Top Badges -->
-            <div class="guardian-pill-tags">
-              <span class="pill-tag pill-dark">PROPRIETARY ARCHITECTURE</span>
-              <span class="pill-tag pill-gold">ENTERPRISE GROWTH PROTECTOR</span>
-            </div>
-
-            <h2 class="guardian-platform-title">
-              Riyadvi <span class="title-gold">Guardian&trade;</span> Platform
-            </h2>
-
-            <p class="guardian-platform-subtitle">
-              A unified growth intelligence and security system that prevents ad leaks, safeguards your digital assets, and transforms traffic into verified revenue pipelines.
-            </p>
-
-            <!-- 3 Feature Metric Mini-Cards -->
-            <div class="guardian-features-row">
-              <div class="guardian-mini-card" data-cursor="VIEW">
-                <div class="mini-card-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="mini-card-info">
-                  <h4 class="mini-card-title">Infrastructure Defense</h4>
-                  <p class="mini-card-desc">24/7 uptime, SSL hardening &amp; zero-leak telemetry</p>
-                </div>
-              </div>
-
-              <div class="guardian-mini-card" data-cursor="VIEW">
-                <div class="mini-card-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                </div>
-                <div class="mini-card-info">
-                  <h4 class="mini-card-title">Pipeline Acceleration</h4>
-                  <p class="mini-card-desc">Sub-second landing pages &amp; smart conversion routing</p>
-                </div>
-              </div>
-
-              <div class="guardian-mini-card" data-cursor="VIEW">
-                <div class="mini-card-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-                </div>
-                <div class="mini-card-info">
-                  <h4 class="mini-card-title">Revenue Telemetry</h4>
-                  <p class="mini-card-desc">Live lead validation &amp; automated CRM integration</p>
-                </div>
+            <!-- 5. Vertical gold stem into tree joined 3 feature cards -->
+            <div class="guardian-tree-connector" aria-hidden="true">
+              <div class="tree-stem-vertical"></div>
+              <div class="tree-bar-horizontal">
+                <div class="tree-stub stub-1"></div>
+                <div class="tree-stub stub-2"></div>
+                <div class="tree-stub stub-3"></div>
               </div>
             </div>
 
-            <!-- Primary Hero CTA -->
-            <div class="guardian-hero-cta">
-              <a href="#guardianConsultForm" class="btn-guardian-primary" data-cursor="CLICK">
-                <span>Activate Guardian Protection</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <!-- Three Feature Cards in 3 equal columns -->
+            <div class="guardian-features-tree">
+              <div class="guardian-feature-card" data-cursor="VIEW">
+                <div class="feature-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <h4 class="feature-card-title">Infrastructure Defense</h4>
+                <p class="feature-card-desc">24/7 uptime, SSL hardening &amp; zero-leak telemetry</p>
+              </div>
+
+              <div class="guardian-feature-card" data-cursor="VIEW">
+                <div class="feature-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <h4 class="feature-card-title">Pipeline Acceleration</h4>
+                <p class="feature-card-desc">Sub-second landing pages &amp; smart conversion routing</p>
+              </div>
+
+              <div class="guardian-feature-card" data-cursor="VIEW">
+                <div class="feature-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                </div>
+                <h4 class="feature-card-title">Revenue Telemetry</h4>
+                <p class="feature-card-desc">Live lead validation &amp; automated CRM integration</p>
+              </div>
+            </div>
+
+            <!-- 6. Centered gold gradient pill button -->
+            <div class="guardian-hero-action">
+              <a href="#guardianConsultBand" class="btn-activate-guardian" data-cursor="CLICK">
+                <span>ACTIVATE GUARDIAN PROTECTION</span>
+                <span class="btn-arrow">&rarr;</span>
               </a>
             </div>
           </div>
 
-        </div>
-
-        <!-- BOTTOM SPLIT ARENA: 4-Tier Funnel Cascade (Left) + Interactive Consultation Form (Right) -->
-        <div class="guardian-split-arena">
-
-          <!-- Left Card: 4-Tier Funnel Cascade -->
-          <div class="guardian-arena-card funnel-card" data-cursor="VIEW">
-            <h3 class="arena-card-title">
-              Your Business Doesn't Need More Random Marketing. <span class="title-gold">It Needs A Growth System.</span>
-            </h3>
-            <p class="arena-card-subtitle">
-              See how our 4-tier funnel converts cold attention into predictable enterprise revenue:
-            </p>
-
-            <!-- Stepped 4-Tier Stack -->
-            <div class="guardian-tier-stack">
-              <!-- Tier 1: ATTRACT -->
-              <div class="tier-step tier-1" data-cursor="VIEW">
-                <div class="tier-lead">
-                  <span class="tier-badge">TIER 1</span>
-                  <span class="tier-name">ATTRACT</span>
-                </div>
-                <div class="tier-tags">
-                  <span class="tier-tag">SEO</span>
-                  <span class="tier-tag">Google Ads</span>
-                  <span class="tier-tag">Meta Ads</span>
-                  <span class="tier-tag">Social</span>
-                </div>
-              </div>
-
-              <!-- Tier 2: CAPTURE (Indented) -->
-              <div class="tier-step tier-2" data-cursor="VIEW">
-                <div class="tier-lead">
-                  <span class="tier-badge">TIER 2</span>
-                  <span class="tier-name">CAPTURE</span>
-                </div>
-                <div class="tier-tags">
-                  <span class="tier-tag">Landing Pages</span>
-                  <span class="tier-tag">Smart Forms</span>
-                  <span class="tier-tag">WhatsApp</span>
-                  <span class="tier-tag">Tracking</span>
-                </div>
-              </div>
-
-              <!-- Tier 3: CONVERT (Further Indented) -->
-              <div class="tier-step tier-3" data-cursor="VIEW">
-                <div class="tier-lead">
-                  <span class="tier-badge">TIER 3</span>
-                  <span class="tier-name">CONVERT</span>
-                </div>
-                <div class="tier-tags">
-                  <span class="tier-tag">CRM Automation</span>
-                  <span class="tier-tag">Instant Routing</span>
-                  <span class="tier-tag">Remarketing</span>
-                </div>
-              </div>
-
-              <!-- Tier 4: GROW (Furthest Indented) -->
-              <div class="tier-step tier-4" data-cursor="VIEW">
-                <div class="tier-lead">
-                  <span class="tier-badge">TIER 4</span>
-                  <span class="tier-name">GROW</span>
-                </div>
-                <div class="tier-tags">
-                  <span class="tier-tag">Analytics</span>
-                  <span class="tier-tag">Optimization</span>
-                  <span class="tier-tag">Retention</span>
-                </div>
-              </div>
-
-              <!-- Subtle funnel light beam glow -->
-              <div class="tier-funnel-glow"></div>
+          <!-- BAND 2: HORIZONTAL FUNNEL (REPLACES STEPPED LIST) -->
+          <div class="guardian-band-funnel">
+            <!-- Centered Heading & Subtext -->
+            <div class="funnel-heading-group">
+              <h3 class="funnel-heading">
+                Your Business Doesn't Need More Random Marketing. <span class="funnel-gold-text">It Needs A Growth System.</span>
+              </h3>
+              <p class="funnel-subtext">
+                See how our 4-tier funnel converts cold attention into predictable enterprise revenue:
+              </p>
             </div>
-          </div>
 
-          <!-- Right Card: Interactive Consultation Lead Form -->
-          <div class="guardian-arena-card form-card" id="guardianConsultForm">
-            <h3 class="arena-card-title">Get a Free Consultation</h3>
-            <p class="arena-card-subtitle">
-              Deploy Riyadvi Guardian across your digital assets. Speak with our growth engineering team:
-            </p>
+            <!-- Small mono uppercase row -->
+            <div class="funnel-mono-row">
+              <span class="mono-left">COLD ATTENTION &rarr;</span>
+              <span class="mono-right">&rarr; VERIFIED REVENUE</span>
+            </div>
 
-            <form class="guardian-lead-form" id="guardianForm">
-              <div class="form-group">
-                <input type="text" name="name" class="guardian-form-input" placeholder="Your Name" required>
-              </div>
-              <div class="form-group">
-                <input type="tel" name="phone" class="guardian-form-input" placeholder="Mobile / WhatsApp Number" required>
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" class="guardian-form-input" placeholder="Work Email Address" required>
-              </div>
-              <div class="form-group">
-                <textarea name="goals" class="guardian-form-textarea" rows="3" placeholder="Tell us about your business goals..."></textarea>
+            <!-- Funnel Container with Mid-Height Line, Traveling Dots & 4 Silhouette Cards -->
+            <div class="funnel-stage">
+              <!-- Mid-height gradient line behind cards with 3 traveling glowing dots -->
+              <div class="funnel-flow-line" aria-hidden="true">
+                <div class="funnel-travel-dot dot-1"></div>
+                <div class="funnel-travel-dot dot-2"></div>
+                <div class="funnel-travel-dot dot-3"></div>
               </div>
 
-              <button type="submit" class="btn-guardian-submit" data-cursor="CLICK">
-                <span>Get Free Consultation</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </form>
+              <!-- 4 Tier Cards progressively shorter from left to right (100%, 88%, 76%, 64%) -->
+              <div class="funnel-cards-row">
+                <!-- Tier 1: ATTRACT (100% height) -->
+                <div class="tier-card tier-card-1" data-cursor="VIEW">
+                  <div class="tier-watermark">01</div>
+                  <div class="tier-card-top">
+                    <span class="tier-tag">TIER 1</span>
+                    <h4 class="tier-name">ATTRACT</h4>
+                  </div>
+                  <div class="tier-chips">
+                    <span class="tier-chip">SEO</span>
+                    <span class="tier-chip">Google Ads</span>
+                    <span class="tier-chip">Meta Ads</span>
+                    <span class="tier-chip">Social</span>
+                  </div>
+                </div>
 
-            <!-- Social Proof Footer below button -->
-            <div class="form-social-proof">
-              <div class="avatar-stack">
-                <span class="avatar-chip av-vr">VR</span>
-                <span class="avatar-chip av-ak">AK</span>
-                <span class="avatar-chip av-sm">SM</span>
-              </div>
-              <div class="proof-text">
-                <strong class="proof-highlight">100+ Leads Generated</strong> in Current Campaigns!
+                <!-- Tier 2: CAPTURE (88% height) -->
+                <div class="tier-card tier-card-2" data-cursor="VIEW">
+                  <div class="tier-watermark">02</div>
+                  <div class="tier-card-top">
+                    <span class="tier-tag">TIER 2</span>
+                    <h4 class="tier-name">CAPTURE</h4>
+                  </div>
+                  <div class="tier-chips">
+                    <span class="tier-chip">Landing Pages</span>
+                    <span class="tier-chip">Smart Forms</span>
+                    <span class="tier-chip">WhatsApp</span>
+                    <span class="tier-chip">Tracking</span>
+                  </div>
+                </div>
+
+                <!-- Tier 3: CONVERT (76% height) -->
+                <div class="tier-card tier-card-3" data-cursor="VIEW">
+                  <div class="tier-watermark">03</div>
+                  <div class="tier-card-top">
+                    <span class="tier-tag">TIER 3</span>
+                    <h4 class="tier-name">CONVERT</h4>
+                  </div>
+                  <div class="tier-chips">
+                    <span class="tier-chip">CRM Automation</span>
+                    <span class="tier-chip">Instant Routing</span>
+                    <span class="tier-chip">Remarketing</span>
+                  </div>
+                </div>
+
+                <!-- Tier 4: GROW (64% height) -->
+                <div class="tier-card tier-card-4" data-cursor="VIEW">
+                  <div class="tier-watermark">04</div>
+                  <div class="tier-card-top">
+                    <span class="tier-tag">TIER 4</span>
+                    <h4 class="tier-name">GROW</h4>
+                  </div>
+                  <div class="tier-chips">
+                    <span class="tier-chip">Analytics</span>
+                    <span class="tier-chip">Optimization</span>
+                    <span class="tier-chip">Retention</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-        </div>
+          <!-- BAND 3: CONSULTATION BAND (FULL WIDTH WIDE CARD) -->
+          <div class="guardian-band-consult" id="guardianConsultBand">
+            <div class="guardian-consult-card">
+              <!-- Left Column: Heading, Text & Social Proof -->
+              <div class="consult-info-col">
+                <h3 class="consult-heading">Get a Free Consultation</h3>
+                <p class="consult-desc">
+                  Deploy Riyadvi Guardian across your digital assets. Speak with our growth engineering team:
+                </p>
 
-        <!-- BOTTOM TRUST STRIP -->
-        <div class="guardian-trust-strip">
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Result-Driven Strategy</span>
+                <div class="consult-social-proof">
+                  <div class="avatar-stack-initials">
+                    <span class="avatar-circle">VR</span>
+                    <span class="avatar-circle">AK</span>
+                    <span class="avatar-circle">SM</span>
+                  </div>
+                  <span class="proof-statement">
+                    <strong class="proof-bold-gold">100+ Leads Generated</strong> in Current Campaigns!
+                  </span>
+                </div>
+              </div>
+
+              <!-- Right Column: 3-Column Input Grid Form -->
+              <div class="consult-form-col">
+                <form class="guardian-consult-form" id="guardianForm">
+                  <!-- Row 1: 3-column input grid -->
+                  <div class="consult-form-row">
+                    <input type="text" name="name" class="consult-input" placeholder="Your Name" required>
+                    <input type="tel" name="phone" class="consult-input" placeholder="Mobile / WhatsApp Number" required>
+                    <input type="email" name="email" class="consult-input" placeholder="Work Email Address" required>
+                  </div>
+
+                  <!-- Row 2: full-width textarea -->
+                  <div class="consult-textarea-row">
+                    <textarea name="goals" class="consult-textarea" rows="3" placeholder="Tell us about your business goals..."></textarea>
+                  </div>
+
+                  <!-- Row 3: full-width gold gradient button -->
+                  <div class="consult-btn-row">
+                    <button type="submit" class="btn-consult-submit" data-cursor="CLICK">
+                      <span>GET FREE CONSULTATION</span>
+                      <span class="btn-arrow">&rarr;</span>
+                    </button>
+                  </div>
+                </form>
+
+                <!-- Green dashed thank-you box (hidden initially) -->
+                <div class="consult-thankyou-box" id="guardianThankYou" style="display: none;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <p>Thanks! Our growth engineering team will reach out shortly.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <span>Dedicated Expert Team</span>
+
+          <!-- BOTTOM TRUST STRIP -->
+          <div class="guardian-trust-strip">
+            <div class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Result-Driven Strategy</span>
+            </div>
+            <div class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span>Dedicated Expert Team</span>
+            </div>
+            <div class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>Transparent Process</span>
+            </div>
+            <div class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 10"></polyline></svg>
+              <span>On-Time Delivery</span>
+            </div>
+            <div class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Long-Term Support</span>
+            </div>
           </div>
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            <span>Transparent Process</span>
-          </div>
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 10"></polyline></svg>
-            <span>On-Time Delivery</span>
-          </div>
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span>Long-Term Support</span>
-          </div>
+
         </div>
 
       </div>
