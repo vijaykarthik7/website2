@@ -1214,18 +1214,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (handaniTelemetryPhase && handaniNodesVal) {
-        if (p < 0.45) {
+        if (p < 0.28) {
+          handaniTelemetryPhase.textContent = 'TRANS-CONTINENTAL LINK // CANADA - AUSTRALIA';
+          handaniNodesVal.textContent = 'GLOBAL NODE ARCHITECTURE // SYNCHRONIZED';
+          if (handaniTelemetryLabel) handaniTelemetryLabel.textContent = 'GLOBAL NETWORK';
+        } else if (p < 0.65) {
           handaniTelemetryPhase.textContent = 'NEURAL COGNITION // AI ECOSYSTEM';
           handaniNodesVal.textContent = 'INTERACTIVE SCOPE MATRIX // ACTIVE';
           if (handaniTelemetryLabel) handaniTelemetryLabel.textContent = 'PROJECT ESTIMATOR';
-        } else if (p < 0.75) {
+        } else {
           handaniTelemetryPhase.textContent = 'SYNAPTIC NETWORK // DISTRIBUTED ARCHITECTURE';
           handaniNodesVal.textContent = 'ENTERPRISE BLUEPRINT // SYNCHRONIZING';
           if (handaniTelemetryLabel) handaniTelemetryLabel.textContent = 'ENTERPRISE CONSULTATION';
-        } else {
-          handaniTelemetryPhase.textContent = 'DIRECT COLLABORATION // READY';
-          handaniNodesVal.textContent = 'AUTONOMOUS PARTNER CORE // ONLINE';
-          if (handaniTelemetryLabel) handaniTelemetryLabel.textContent = 'RIYADVI ENTERPRISE';
         }
       }
 
@@ -1301,6 +1301,26 @@ document.addEventListener('DOMContentLoaded', () => {
           updateHandaniVisibility();
         }
       });
+
+      // Global Presence Trans-Continental Arc Scroll-Down Draw Animation
+      const globalArcLine = document.getElementById('canadaAustraliaArc');
+      const globalAmbientTrail = document.querySelector('.arc-ambient-trail');
+      const globalMapConsole = document.querySelector('.global-map-console');
+      if (globalArcLine && globalMapConsole) {
+        gsap.fromTo([globalArcLine, globalAmbientTrail].filter(Boolean),
+          { strokeDashoffset: 1400 },
+          {
+            strokeDashoffset: 0,
+            duration: 2.0,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: globalMapConsole,
+              start: 'top 80%',
+              toggleActions: 'play reverse play reverse'
+            }
+          }
+        );
+      }
     }
 
     // Direct scroll listener for smooth fallback & Lenis updates
@@ -4136,11 +4156,12 @@ void main(void) {
       '#portfolio .center-header .section-subtitle',
       '#portfolio .portfolio-legend-row',
 
-      // Global Presence Section
+      // Global Presence (integrated inside Estimator)
       '#global-presence .center-header .sub-badge',
       '#global-presence .center-header .section-title',
       '#global-presence .center-header .section-subtitle',
       '#global-presence .global-map-console',
+      '#estimator .estimator-sub-divider',
 
       // Estimator Section
       '#estimator .center-header .sub-badge',
@@ -4218,6 +4239,12 @@ void main(void) {
       {
         container: '#portfolioStoryContainer',
         items: '.story-row-card',
+        staggerMs: 140
+      },
+      // Global Presence Map Markers
+      {
+        container: '#global-presence .global-map-stage',
+        items: '.map-marker-label',
         staggerMs: 140
       },
       // Estimator Console Zones

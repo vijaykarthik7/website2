@@ -9388,30 +9388,91 @@ html.lenis, html.lenis body {
 }
 
 /* ==========================================================================
-   GLOBAL PRESENCE SECTION (Dotted World Map & Trans-Continental Arcs)
-   Adjusted to Dark Luxury Color Theme
+   GLOBAL PRESENCE INTEGRATION (Inside Section Estimator)
+   Dotted World Map, Trans-Continental Arcs & Telemetry Console
+   Adjusted to Dark Luxury Color Theme with Live 3D Background
    ========================================================================== */
 
-.section-global-presence {
+.estimator-global-presence {
   position: relative;
-  padding: 100px 0 120px 0;
-  background: transparent;
-  overflow: hidden;
-  z-index: 5;
+  width: 100%;
+  margin-bottom: 50px;
+  z-index: 3;
+}
+
+.estimator-global-presence .global-presence-header {
+  margin-bottom: 34px;
 }
 
 .global-map-console {
   position: relative;
   max-width: 1220px;
   margin: 0 auto;
-  background: rgba(10, 10, 14, 0.65);
+  background: rgba(10, 10, 14, 0.45);
   border: 1px solid rgba(240, 199, 94, 0.22);
   border-radius: 24px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 45px rgba(240, 199, 94, 0.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background-image: radial-gradient(ellipse 70% 60% at 50% 45%, rgba(240, 199, 94, 0.07) 0%, transparent 75%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background-image: radial-gradient(ellipse 70% 60% at 50% 45%, rgba(240, 199, 94, 0.06) 0%, transparent 75%);
   overflow: hidden;
+}
+
+/* Scroll-triggered Arc Path Drawing */
+.arc-main-line,
+.arc-ambient-trail {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+}
+
+/* Connector Divider between Global Map & Estimator Calculator */
+.estimator-sub-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 860px;
+  margin: 60px auto 65px auto;
+  user-select: none;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.estimator-sub-divider .divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.35), transparent);
+}
+
+.estimator-sub-divider .divider-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px;
+  background: rgba(12, 12, 16, 0.75);
+  border: 1px solid rgba(240, 199, 94, 0.28);
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.estimator-sub-divider .divider-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f0c75e;
+  box-shadow: 0 0 10px #f0c75e;
+  animation: telemetryPulse 2s infinite ease-in-out;
+}
+
+.estimator-sub-divider .divider-label {
+  font-family: var(--font-mono, 'Space Mono', monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--gold-champagne, #f0c75e);
+  text-transform: uppercase;
 }
 
 .global-map-stage {
