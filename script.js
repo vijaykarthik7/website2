@@ -2694,6 +2694,295 @@ void main(void) {
 
 
   // =========================================================================
+  // 10C. Portfolio & Verified Case Studies: Story-Flow Rows Controller
+  // =========================================================================
+  const caseStudiesData = [
+    {
+      index: "01",
+      initials: "S11",
+      name: "Studio 11 Salon & Spa",
+      category: "Luxury Salon Chain • Retail",
+      challenge: "Multi-location digital booking friction and fragmented local franchise presence across nationwide centers.",
+      solution: "Architected unified high-speed booking portal, automated appointment sync, and localized franchise search visibility.",
+      technologies: ["WordPress / Custom Engine", "Node.js API", "Geo-location routing", "High-performance CDN"],
+      metrics: [
+        { target: 210, prefix: "+", suffix: "%", decimals: 0, label: "ONLINE APPOINTMENTS" },
+        { target: 40, prefix: "", suffix: "+", decimals: 0, label: "FRANCHISES UNIFIED" }
+      ]
+    },
+    {
+      index: "02",
+      initials: "TNG",
+      name: "TNG Global",
+      category: "Enterprise Cloud Infrastructure • B2B",
+      challenge: "Legacy corporate architecture struggling with high-concurrency client requests and data visibility.",
+      solution: "Re-platformed into modern microservices with responsive enterprise dashboard and sub-50ms API response.",
+      technologies: ["React", "Next.js", "TypeScript", "PostgreSQL", "AWS Elastic Cloud"],
+      metrics: [
+        { target: 99.99, prefix: "", suffix: "%", decimals: 2, label: "UPTIME GUARANTEED" },
+        { target: 65, prefix: "", suffix: "%", decimals: 0, label: "LATENCY REDUCTION" }
+      ]
+    },
+    {
+      index: "03",
+      initials: "PT",
+      name: "Puratap Drinking Water Systems",
+      category: "D2C E-Commerce • Clean Water Technology",
+      challenge: "Conversion drop-offs during filter cartridge subscription checkout and field service lead capture.",
+      solution: "Re-engineered checkout UX with instant 1-click recurring renewals and automated field tech dispatcher.",
+      technologies: ["WooCommerce Headless", "Stripe Subscriptions", "Custom Lead Routing"],
+      metrics: [
+        { target: 42, prefix: "+", suffix: "%", decimals: 0, label: "CHECKOUT CONVERSION" },
+        { target: 30000, prefix: "", suffix: "+", decimals: 0, separator: true, label: "ACTIVE SUBSCRIBERS" }
+      ]
+    },
+    {
+      index: "04",
+      initials: "TB",
+      name: "TechBehemoths Excellence Showcase",
+      category: "Global Award Winning Web Architecture",
+      challenge: "Deliver international-grade React.JS web performance under rigorous European benchmark standards.",
+      solution: "Designed headless architecture achieving 100/100 Lighthouse performance metrics and automated SMM integration.",
+      technologies: ["ReactJS", "Next.js", "Tailwind CSS", "Optimized WebGL", "Cloudflare Edge"],
+      metrics: [
+        { static: "2025", label: "TECHBEHEMOTHS GLOBAL WINNER" },
+        { static: "Berlin, Germany", smaller: true, label: "AWARD LOCATION" }
+      ]
+    }
+  ];
+
+  function renderPortfolioStoryRows() {
+    const listContainer = document.getElementById('portfolioRowsList');
+    if (!listContainer) return;
+
+    listContainer.innerHTML = caseStudiesData.map((cs) => {
+      const metricsHtml = cs.metrics.map((m, mIdx) => {
+        const divider = mIdx > 0 ? '<div class="result-metric-divider" aria-hidden="true"></div>' : '';
+        if (m.static) {
+          return `
+            ${divider}
+            <div class="result-metric-item">
+              <div class="metric-number static-text ${m.smaller ? 'smaller-text' : ''}">${m.static}</div>
+              <span class="metric-caption">${m.label}</span>
+            </div>
+          `;
+        }
+        return `
+          ${divider}
+          <div class="result-metric-item">
+            <div class="metric-number"
+                 data-target="${m.target}"
+                 data-prefix="${m.prefix || ''}"
+                 data-suffix="${m.suffix || ''}"
+                 data-decimals="${m.decimals || 0}"
+                 data-separator="${m.separator ? 'true' : 'false'}">
+              ${m.prefix || ''}0${m.suffix || ''}
+            </div>
+            <span class="metric-caption">${m.label}</span>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <article class="story-row-card" data-index="${cs.index}">
+          <!-- Left 3px Gold Accent Bar -->
+          <div class="row-accent-bar" aria-hidden="true"></div>
+
+          <!-- 1. Client Cell -->
+          <div class="row-cell cell-client">
+            <div>
+              <div class="client-badge-wrapper">
+                <div class="client-badge" title="${cs.name}">
+                  <span class="client-badge-initials">${cs.initials}</span>
+                </div>
+              </div>
+              <div class="client-info">
+                <h3 class="client-name">${cs.name}</h3>
+                <span class="client-category">${cs.category}</span>
+              </div>
+            </div>
+            <div class="client-index-num" aria-hidden="true">${cs.index}</div>
+          </div>
+
+          <!-- 2. Challenge Cell -->
+          <div class="row-cell cell-challenge">
+            <span class="mobile-cell-label" aria-hidden="true">CHALLENGE</span>
+            <p class="challenge-text">${cs.challenge}</p>
+          </div>
+
+          <!-- 3. Arrow Cell 1 -->
+          <div class="row-cell cell-arrow cell-arrow-1" aria-hidden="true">
+            <div class="arrow-dashed-line"></div>
+            <div class="arrow-circle"><span>&rarr;</span></div>
+            <div class="arrow-dot"></div>
+          </div>
+
+          <!-- 4. Solution Cell -->
+          <div class="row-cell cell-solution">
+            <span class="mobile-cell-label" aria-hidden="true">SOLUTION</span>
+            <p class="solution-text">${cs.solution}</p>
+            <div class="solution-tech-divider" aria-hidden="true"></div>
+            <span class="tech-label-mono">TECHNOLOGY</span>
+            <div class="tech-chips-list">
+              ${cs.technologies.map(tech => `<span class="tech-chip">${tech}</span>`).join('')}
+            </div>
+          </div>
+
+          <!-- 5. Arrow Cell 2 -->
+          <div class="row-cell cell-arrow cell-arrow-2" aria-hidden="true">
+            <div class="arrow-dashed-line"></div>
+            <div class="arrow-circle"><span>&rarr;</span></div>
+            <div class="arrow-dot"></div>
+          </div>
+
+          <!-- 6. Result Cell -->
+          <div class="row-cell cell-result">
+            <span class="mobile-cell-label" aria-hidden="true">RESULT</span>
+            <!-- Green Circular Check Badge with continuous soft ripple -->
+            <div class="result-check-badge" title="Verified Client Result" aria-label="Verified Result">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 6.2L4.8 8.5L9.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="result-metrics-wrap">
+              ${metricsHtml}
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    initPortfolioStoryInteractions();
+  }
+
+  function initPortfolioStoryInteractions() {
+    const cards = document.querySelectorAll('.story-row-card');
+    if (!cards.length) return;
+
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Interactive Hover Spotlight (--mx, --my) & Micro-tones
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mx', `${x}px`);
+        card.style.setProperty('--my', `${y}px`);
+      });
+
+      card.addEventListener('mouseenter', () => {
+        if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+          AudioEngine.playBeep(680, 'sine', 0.035, 0.012);
+        }
+      });
+    });
+
+    // Staggered Entrance via IntersectionObserver (threshold: 0.22)
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+            card.classList.add('row-entered');
+            observer.unobserve(card);
+
+            if (prefersReducedMotion) {
+              // Set final values immediately
+              card.querySelectorAll('.metric-number[data-target]').forEach(el => {
+                const target = parseFloat(el.getAttribute('data-target'));
+                const prefix = el.getAttribute('data-prefix') || '';
+                const suffix = el.getAttribute('data-suffix') || '';
+                const decimals = parseInt(el.getAttribute('data-decimals'), 10) || 0;
+                const separator = el.getAttribute('data-separator') === 'true';
+                let formatted = decimals > 0 ? target.toFixed(decimals) : Math.round(target).toString();
+                if (separator) formatted = Math.round(target).toLocaleString('en-US');
+                el.textContent = `${prefix}${formatted}${suffix}`;
+                el.classList.add('glow-finish');
+              });
+            } else {
+              // Trigger number count-up after ~1.0s (aligned with result cell entrance)
+              setTimeout(() => {
+                animateRowCounters(card);
+              }, 1000);
+            }
+          }
+        });
+      }, {
+        threshold: window.innerWidth <= 768 ? 0.12 : 0.22,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      cards.forEach(card => observer.observe(card));
+    } else {
+      cards.forEach(card => {
+        card.classList.add('row-entered');
+        animateRowCounters(card);
+      });
+    }
+  }
+
+  // Animate counters over 1.4s with ease-out cubic curve
+  function animateRowCounters(card) {
+    const counterEls = card.querySelectorAll('.metric-number[data-target]');
+    const duration = 1400; // 1.4s
+
+    counterEls.forEach(el => {
+      const target = parseFloat(el.getAttribute('data-target'));
+      const prefix = el.getAttribute('data-prefix') || '';
+      const suffix = el.getAttribute('data-suffix') || '';
+      const decimals = parseInt(el.getAttribute('data-decimals'), 10) || 0;
+      const separator = el.getAttribute('data-separator') === 'true';
+
+      const startTime = performance.now();
+
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(1, elapsed / duration);
+        // Ease-out cubic: 1 - (1 - t)^3
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const currentVal = ease * target;
+
+        let displayVal = '';
+        if (decimals > 0) {
+          displayVal = currentVal.toFixed(decimals);
+        } else {
+          const rounded = Math.round(currentVal);
+          displayVal = separator ? rounded.toLocaleString('en-US') : rounded.toString();
+        }
+
+        el.textContent = `${prefix}${displayVal}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          // Snap to exact target formatted value
+          let finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target).toString();
+          if (separator) finalVal = Math.round(target).toLocaleString('en-US');
+          el.textContent = `${prefix}${finalVal}${suffix}`;
+
+          // Brief gold glow on completion
+          el.classList.add('glow-finish');
+          setTimeout(() => {
+            el.classList.remove('glow-finish');
+          }, 900);
+
+          if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+            AudioEngine.playBeep(920, 'sine', 0.05, 0.015);
+          }
+        }
+      }
+
+      requestAnimationFrame(update);
+    });
+  }
+
+  // Initialize Portfolio Story Rows
+  renderPortfolioStoryRows();
+
+
+
+  // =========================================================================
   // 11. Interactive 6-Step Project Estimator Logic
   // =========================================================================
   const estimatorQuestions = [

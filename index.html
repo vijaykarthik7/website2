@@ -1558,121 +1558,25 @@
       <div class="section-container">
         <div class="center-header">
           <span class="sub-badge">VERIFIED CASE STUDIES</span>
-          <h2 class="section-title">Engineered for Proven Real-World Impact</h2>
+          <h2 class="section-title">Engineered for Proven <span class="shimmer-text-gold">Real-World Impact</span></h2>
           <p class="section-subtitle">Real client partnerships delivering measurable business advantage and technical supremacy.</p>
         </div>
 
-        <div class="portfolio-grid">
-          <!-- Case Study 1: Studio 11 -->
-          <div class="portfolio-card" data-cursor="VIEW">
-            <div class="portfolio-card-header">
-              <div class="portfolio-client-info">
-                <h4>Studio 11 Salon & Spa</h4>
-                <span class="portfolio-industry-tag">Luxury Salon Chain &bull; Retail</span>
-              </div>
-              <img src="assets/studio11-logo.png" alt="Studio 11 Logo" class="portfolio-logo-thumb">
-            </div>
-            <div class="portfolio-card-body">
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">CHALLENGE</span>
-                <span class="portfolio-value">Multi-location digital booking friction and fragmented local franchise presence across nationwide centers.</span>
-              </div>
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">SOLUTION</span>
-                <span class="portfolio-value">Architected unified high-speed booking portal, automated appointment sync, and localized franchise search visibility.</span>
-              </div>
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">TECHNOLOGY</span>
-                <span class="portfolio-value">WordPress / Custom Engine, Node.js API, Geo-location routing, High-performance CDN.</span>
-              </div>
-              <div class="portfolio-result-badge">
-                RESULT: +210% Online Appointments &bull; 40+ Franchises Unified
-              </div>
-            </div>
+        <!-- NEW STORY-FLOW ROWS CONTAINER -->
+        <div class="portfolio-story-container" id="portfolioStoryContainer">
+          <!-- 6-Column Legend Row (Desktop) -->
+          <div class="portfolio-legend-row" aria-hidden="true">
+            <span class="legend-col legend-col-client">CLIENT</span>
+            <span class="legend-col legend-col-challenge">CHALLENGE</span>
+            <span class="legend-col legend-col-arrow"></span>
+            <span class="legend-col legend-col-solution">SOLUTION</span>
+            <span class="legend-col legend-col-arrow"></span>
+            <span class="legend-col legend-col-result">RESULT</span>
           </div>
 
-          <!-- Case Study 2: TNG Global -->
-          <div class="portfolio-card" data-cursor="VIEW">
-            <div class="portfolio-card-header">
-              <div class="portfolio-client-info">
-                <h4>TNG Global</h4>
-                <span class="portfolio-industry-tag">Enterprise Cloud Infrastructure &bull; B2B</span>
-              </div>
-              <img src="assets/TNG.png" alt="TNG Logo" class="portfolio-logo-thumb">
-            </div>
-            <div class="portfolio-card-body">
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">CHALLENGE</span>
-                <span class="portfolio-value">Legacy corporate architecture struggling with high-concurrency client requests and data visibility.</span>
-              </div>
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">SOLUTION</span>
-                <span class="portfolio-value">Re-platformed into modern microservices with responsive enterprise dashboard and sub-50ms API response.</span>
-              </div>
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">TECHNOLOGY</span>
-                <span class="portfolio-value">React, Next.js, TypeScript, PostgreSQL, AWS Elastic Cloud.</span>
-              </div>
-              <div class="portfolio-result-badge">
-                RESULT: 99.99% Uptime Guaranteed &bull; 65% Latency Reduction
-              </div>
-            </div>
-          </div>
-
-          <!-- Case Study 3: Puratap Drinking Water Systems -->
-          <div class="portfolio-card" data-cursor="VIEW">
-            <div class="portfolio-card-header">
-              <div class="portfolio-client-info">
-                <h4>Puratap Drinking Water Systems</h4>
-                <span class="portfolio-industry-tag">D2C E-Commerce &bull; Clean Water Technology</span>
-              </div>
-              <img src="assets/puratap.png" alt="Puratap Logo" class="portfolio-logo-thumb">
-            </div>
-            <div class="portfolio-card-body">
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">CHALLENGE</span>
-                <span class="portfolio-value">Conversion drop-offs during filter cartridge subscription checkout and field service lead capture.</span>
-              </div>
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">SOLUTION</span>
-                <span class="portfolio-value">Re-engineered checkout UX with instant 1-click recurring renewals and automated field tech dispatcher.</span>
-              </div>
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">TECHNOLOGY</span>
-                <span class="portfolio-value">WooCommerce Headless, Stripe Subscriptions, Custom Lead Routing.</span>
-              </div>
-              <div class="portfolio-result-badge">
-                RESULT: +42% Checkout Conversion &bull; 30,000+ Active Subscribers
-              </div>
-            </div>
-          </div>
-
-          <!-- Case Study 4: TechBehemoths Global Award Winner -->
-          <div class="portfolio-card" data-cursor="VIEW">
-            <div class="portfolio-card-header">
-              <div class="portfolio-client-info">
-                <h4>TechBehemoths Excellence Showcase</h4>
-                <span class="portfolio-industry-tag">Global Award Winning Web Architecture</span>
-              </div>
-              <img src="assets/l1r.png" alt="Award Project" class="portfolio-logo-thumb">
-            </div>
-            <div class="portfolio-card-body">
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">CHALLENGE</span>
-                <span class="portfolio-value">Deliver international-grade ReactJS web performance under rigorous European benchmark standards.</span>
-              </div>
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">SOLUTION</span>
-                <span class="portfolio-value">Designed headless architecture achieving 100/100 Lighthouse performance metrics and automated SMM integration.</span>
-              </div>
-              <div class="portfolio-field-block">
-                <span class="portfolio-label">TECHNOLOGY</span>
-                <span class="portfolio-value">ReactJS, Next.js, Tailwind CSS, Optimized WebGL, Cloudflare Edge.</span>
-              </div>
-              <div class="portfolio-result-badge">
-                RESULT: 2025 TechBehemoths Global Winner (Berlin, Germany)
-              </div>
-            </div>
+          <!-- Rows Container Rendered by JS -->
+          <div class="portfolio-rows-list" id="portfolioRowsList">
+            <!-- Populated dynamically from caseStudiesData in script.js -->
           </div>
         </div>
       </div>
