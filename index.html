@@ -1582,6 +1582,141 @@
       </div>
     </section>
 
+    <!-- Section 20: Global Presence (Dotted World Map with Trans-Continental Arcs) -->
+    <section class="section-global-presence" id="global-presence">
+      <div class="section-container">
+        <div class="center-header">
+          <span class="sub-badge">GLOBAL NETWORK</span>
+          <h2 class="section-title">Our Global <span class="gold-gradient">Presence</span></h2>
+          <p class="section-subtitle">Connecting clients in <strong class="glow-text">Australia</strong> and <strong class="glow-text">Canada</strong>.</p>
+        </div>
+
+        <div class="global-map-console">
+          <!-- Background Dotted World Map Stage -->
+          <div class="global-map-stage">
+            <img src="assets/world_map_dots.svg" alt="Global World Map" class="global-map-dots-img" draggable="false" loading="lazy">
+            
+            <!-- SVG Overlay for Arcs, Pulses & Traveling Beams -->
+            <svg class="global-map-svg" viewBox="0 0 1780 900" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <!-- Arc Gradient (Cyan/Blue to Primary Gold to Amber/Coral) -->
+                <linearGradient id="globalArcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#5eb7ff" stop-opacity="0.25" />
+                  <stop offset="12%" stop-color="#5eb7ff" stop-opacity="1" />
+                  <stop offset="50%" stop-color="#f0c75e" stop-opacity="0.95" />
+                  <stop offset="88%" stop-color="#ff8a50" stop-opacity="1" />
+                  <stop offset="100%" stop-color="#ff8a50" stop-opacity="0.25" />
+                </linearGradient>
+
+                <!-- Glow Filter for Arc & Beam -->
+                <filter id="arcGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="4.5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="beaconGlow" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="6" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Ambient Glow Trace Path -->
+              <path d="M 335 208 Q 970 80 1605 693"
+                    fill="none"
+                    stroke="rgba(240, 199, 94, 0.16)"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    filter="url(#arcGlow)" />
+
+              <!-- Main Illuminated Curved Arc Line: Canada to Australia -->
+              <path id="canadaAustraliaArc"
+                    d="M 335 208 Q 970 80 1605 693"
+                    fill="none"
+                    stroke="url(#globalArcGrad)"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    filter="url(#arcGlow)" />
+
+              <!-- Traveling Light Pulse (Bead) from Canada to Australia -->
+              <circle r="4" fill="#ffffff" filter="url(#arcGlow)">
+                <animateMotion dur="4.2s" repeatCount="indefinite" path="M 335 208 Q 970 80 1605 693" />
+              </circle>
+              <circle r="9" fill="#f0c75e" opacity="0.75" filter="url(#arcGlow)">
+                <animateMotion dur="4.2s" repeatCount="indefinite" path="M 335 208 Q 970 80 1605 693" />
+              </circle>
+              <circle r="16" fill="#5eb7ff" opacity="0.28" filter="url(#beaconGlow)">
+                <animateMotion dur="4.2s" repeatCount="indefinite" path="M 335 208 Q 970 80 1605 693" />
+              </circle>
+
+              <!-- Node 1: Canada (cx: 335, cy: 208) -->
+              <g class="map-node node-canada">
+                <!-- Concentric Pulsing Ripples -->
+                <circle cx="335" cy="208" r="5" fill="none" stroke="#5eb7ff" stroke-width="1.8" opacity="0.85">
+                  <animate attributeName="r" from="5" to="32" dur="2.4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" from="0.85" to="0" dur="2.4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="335" cy="208" r="5" fill="none" stroke="#5eb7ff" stroke-width="1.2" opacity="0.6">
+                  <animate attributeName="r" from="5" to="22" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" from="0.6" to="0" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+                </circle>
+                <!-- Core Pin Beacon -->
+                <circle cx="335" cy="208" r="7" fill="#5eb7ff" filter="url(#beaconGlow)" />
+                <circle cx="335" cy="208" r="3" fill="#ffffff" />
+              </g>
+
+              <!-- Node 2: Australia (cx: 1605, cy: 693) -->
+              <g class="map-node node-australia">
+                <!-- Concentric Pulsing Ripples -->
+                <circle cx="1605" cy="693" r="5" fill="none" stroke="#ff8a50" stroke-width="1.8" opacity="0.85">
+                  <animate attributeName="r" from="5" to="32" dur="2.4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" from="0.85" to="0" dur="2.4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="1605" cy="693" r="5" fill="none" stroke="#ff8a50" stroke-width="1.2" opacity="0.6">
+                  <animate attributeName="r" from="5" to="22" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" from="0.6" to="0" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+                </circle>
+                <!-- Core Pin Beacon -->
+                <circle cx="1605" cy="693" r="7" fill="#ff8a50" filter="url(#beaconGlow)" />
+                <circle cx="1605" cy="693" r="3" fill="#ffffff" />
+              </g>
+            </svg>
+
+            <!-- HTML Location Labels Positioned in Exact Geographic % -->
+            <div class="map-marker-label label-canada" style="left: 18.82%; top: 23.1%;">
+              <span class="marker-dot dot-blue"></span>
+              <span class="marker-text">Canada</span>
+            </div>
+
+            <div class="map-marker-label label-australia" style="left: 90.17%; top: 77.0%;">
+              <span class="marker-dot dot-orange"></span>
+              <span class="marker-text">Australia</span>
+            </div>
+          </div>
+
+          <!-- Console Bottom Telemetry Bar -->
+          <div class="global-map-footer">
+            <div class="telemetry-item">
+              <span class="telemetry-label">REGION NORTH</span>
+              <span class="telemetry-val">Ottawa &bull; Toronto &bull; Vancouver</span>
+            </div>
+            <div class="telemetry-status">
+              <span class="status-pulse-dot"></span>
+              <span class="telemetry-status-text">TRANS-CONTINENTAL INFRASTRUCTURE ACTIVE</span>
+            </div>
+            <div class="telemetry-item item-right">
+              <span class="telemetry-label">REGION PACIFIC</span>
+              <span class="telemetry-val">Sydney &bull; Melbourne &bull; Brisbane</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     
 
 

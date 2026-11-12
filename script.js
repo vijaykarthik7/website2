@@ -4136,6 +4136,12 @@ void main(void) {
       '#portfolio .center-header .section-subtitle',
       '#portfolio .portfolio-legend-row',
 
+      // Global Presence Section
+      '#global-presence .center-header .sub-badge',
+      '#global-presence .center-header .section-title',
+      '#global-presence .center-header .section-subtitle',
+      '#global-presence .global-map-console',
+
       // Estimator Section
       '#estimator .center-header .sub-badge',
       '#estimator .center-header .section-title',

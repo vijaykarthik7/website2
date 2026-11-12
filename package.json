@@ -6,5 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "build": "echo build done"
+  },
+  "dependencies": {
+    "dotted-map": "^3.1.0"
   }
 }
