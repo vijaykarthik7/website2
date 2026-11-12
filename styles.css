@@ -4186,6 +4186,19 @@ body {
   font-weight: 600;
 }
 
+/* Bento Group Container for Development (6 cards) */
+.bento-group-development,
+#bentoGroupDevelopment {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.bento-dev-extra-row {
+  width: 100%;
+}
+
 /* 4-Card Asymmetric Bento Grid */
 .bento-grid {
   display: grid;
@@ -4512,12 +4525,6 @@ body {
   .service-modal-deliverables {
     grid-template-columns: 1fr;
   }
-}
-  background: rgba(212, 175, 55, 0.25);
-  border-color: var(--gold-bright);
-  color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
 }
 
 /* Card Heights & Sizing */

@@ -1587,44 +1587,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "App Store & Google Play compliance & publishing"
       ]
     },
-    '3d': {
-      badge: "04 // IMMERSIVE EXPERIENCES",
-      title: "3D Modeling & AR/VR Systems",
-      desc: "Cinematic WebGL experiences, interactive product configurators, and futuristic 3D digital universe assets built for the web.",
-      tags: ["Three.js", "WebGL", "Blender", "GLTF / GLB", "WebXR", "GLSL Shaders", "Physics Engine", "3D Optimization"],
-      deliverables: [
-        "Ultra-lightweight mesh compression (< 3MB scenes)",
-        "Hardware-accelerated 60fps cross-device rendering",
-        "Interactive 360° product customizers & showrooms",
-        "Spatial audio & dynamic cinematic lighting"
-      ]
-    },
-    marketing: {
-      badge: "05 // GROWTH ACCELERATION",
-      title: "Digital Marketing & Performance",
-      desc: "High-ROI multi-channel customer acquisition funnels, paid performance campaigns, and programmatic lead generation.",
-      tags: ["Google Ads", "Meta Ads", "Lead Funnels", "ROI Analytics", "HubSpot", "Conversion Rate Opt", "Retargeting", "A/B Testing"],
-      deliverables: [
-        "Multi-touch attribution & conversion tracking",
-        "Predictive audience cohort targeting & retargeting",
-        "Continuous landing page split-testing (A/B & MVT)",
-        "Lower customer acquisition cost (CAC) & higher ROAS"
-      ]
-    },
-    design: {
-      badge: "06 // CREATIVE & DESIGN SYSTEMS",
-      title: "UI/UX Design & Architecture",
-      desc: "Bespoke design systems, rapid interactive Figma prototypes, and micro-interaction flows centered around conversion rate optimization.",
-      tags: ["Figma", "Design Systems", "Interactive Prototypes", "Wireframing", "User Research", "Motion Design", "Design Tokens", "Usability Testing"],
-      deliverables: [
-        "Scalable atomic design system with Figma token sync",
-        "High-fidelity interactive prototype click-throughs",
-        "Data-backed UX user journeys & heatmaps analysis",
-        "Pixel-perfect developer handoff specifications"
-      ]
-    },
     ecommerce: {
-      badge: "07 // COMMERCE ENGINEERING",
+      badge: "04 // COMMERCE ENGINEERING",
       title: "E-Commerce Solutions",
       desc: "High-converting online store architectures with seamless payment gateways, automated inventory sync, and instant checkout.",
       tags: ["WooCommerce", "Shopify Plus", "Stripe", "Headless Commerce", "Razorpay", "Inventory Sync", "Cart Optimization", "ERP Integration"],
@@ -1635,8 +1599,68 @@ document.addEventListener('DOMContentLoaded', () => {
         "Abandoned cart recovery & automated upsell funnels"
       ]
     },
+    gamedev: {
+      badge: "05 // REALTIME GAME ENGINES",
+      title: "Game Development",
+      desc: "High-performance 2D and 3D games engineered with cutting-edge physics, immersive audio, cross-platform multiplayer, and custom shaders.",
+      tags: ["Unreal Engine 5", "Unity", "C++", "C#", "HLSL / GLSL", "Multiplayer Networking", "Physics Simulation", "Game AI"],
+      deliverables: [
+        "Cross-platform game deployment (PC, Console, Mobile, Web)",
+        "Real-time multiplayer client-server architecture",
+        "Custom shader authoring & dynamic visual effects (VFX)",
+        "End-to-end game lifecycle: mechanics, audio, and QA testing"
+      ]
+    },
+    arvr: {
+      badge: "06 // SPATIAL COMPUTING & XR",
+      title: "AR/VR Development",
+      desc: "Transformative spatial computing, WebXR environments, 6-DoF interactive simulations, and enterprise XR apps for Apple Vision Pro and Meta Quest.",
+      tags: ["Apple VisionOS", "Meta Quest", "WebXR", "Unity XR", "ARKit / ARCore", "Spatial Audio", "6-DoF Tracking", "Hand Tracking"],
+      deliverables: [
+        "Spatial computing apps for VisionOS and Meta Quest ecosystem",
+        "Browser-accessible WebXR immersive interactive experiences",
+        "Enterprise AR training simulations & digital twins",
+        "Real-time spatial audio and precision hand-tracking integration"
+      ]
+    },
+    design: {
+      badge: "07 // CREATIVE & DESIGN SYSTEMS",
+      title: "UI/UX Design & Architecture",
+      desc: "Bespoke design systems, rapid interactive Figma prototypes, and micro-interaction flows centered around conversion rate optimization.",
+      tags: ["Figma", "Design Systems", "Interactive Prototypes", "Wireframing", "User Research", "Motion Design", "Design Tokens", "Usability Testing"],
+      deliverables: [
+        "Scalable atomic design system with Figma token sync",
+        "High-fidelity interactive prototype click-throughs",
+        "Data-backed UX user journeys & heatmaps analysis",
+        "Pixel-perfect developer handoff specifications"
+      ]
+    },
+    '3d': {
+      badge: "08 // 3D ASSETS & CGI",
+      title: "3D Modeling & Digital Assets",
+      desc: "Photorealistic 3D modeling, cinematic rendering, interactive product configurators, and optimized real-time 3D web assets.",
+      tags: ["Blender", "Three.js", "Cinema 4D", "ZBrush", "GLTF / GLB", "PBR Texturing", "GLSL Shaders", "3D Optimization"],
+      deliverables: [
+        "Photorealistic 3D product visualizations & renders",
+        "Ultra-lightweight real-time mesh compression (< 3MB)",
+        "Interactive 360° product configurators for web & e-commerce",
+        "Rigged, textured, and game-ready 3D asset libraries"
+      ]
+    },
+    marketing: {
+      badge: "09 // GROWTH ACCELERATION",
+      title: "Digital Marketing & Performance",
+      desc: "High-ROI multi-channel customer acquisition funnels, paid performance campaigns, and programmatic lead generation.",
+      tags: ["Google Ads", "Meta Ads", "Lead Funnels", "ROI Analytics", "HubSpot", "Conversion Rate Opt", "Retargeting", "A/B Testing"],
+      deliverables: [
+        "Multi-touch attribution & conversion tracking",
+        "Predictive audience cohort targeting & retargeting",
+        "Continuous landing page split-testing (A/B & MVT)",
+        "Lower customer acquisition cost (CAC) & higher ROAS"
+      ]
+    },
     seo: {
-      badge: "08 // AUTHORITY & DOMINANCE",
+      badge: "10 // AUTHORITY & DOMINANCE",
       title: "SEO & Social Media (SMM)",
       desc: "Award-winning organic search engine dominance and viral social media campaigns that capture targeted market share.",
       tags: ["Technical SEO", "SMM Mastery", "Backlinks", "Schema Markup", "Core Web Vitals", "Content Strategy", "Trend Hijacking", "Viral Campaigns"],
@@ -1760,6 +1784,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bentoLeft = servicesSection.querySelector('.bento-col-left');
     const bentoCard2 = servicesSection.querySelector('.bento-col-right .bento-card-2');
     const bentoBottomRow = servicesSection.querySelector('.bento-col-right .bento-right-bottom-row');
+    const bentoDevExtraRow = servicesSection.querySelector('.bento-dev-extra-row');
     const bentoGrowth = document.getElementById('bentoGroupGrowth');
 
     // Smooth scroll-driven scrub timeline as user scrolls down from Built for Business into Services
@@ -1804,6 +1829,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { opacity: 0, y: 65, scale: 0.96 }, 
         { opacity: 1, y: 0, scale: 1, ease: "power3.out", duration: 0.65 }, 
         "-=0.45"
+      );
+    }
+    if (bentoDevExtraRow) {
+      serviceTl.fromTo(bentoDevExtraRow, 
+        { opacity: 0, y: 65, scale: 0.96 }, 
+        { opacity: 1, y: 0, scale: 1, ease: "power3.out", duration: 0.65 }, 
+        "-=0.4"
       );
     }
 

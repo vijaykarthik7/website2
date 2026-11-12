@@ -997,71 +997,171 @@
 
         <!-- Bento Category Tabs -->
         <div class="bento-category-tabs">
-          <button class="bento-tab active" data-bento-tab="development">Development (4)</button>
+          <button class="bento-tab active" data-bento-tab="development">Development (6)</button>
           <button class="bento-tab" data-bento-tab="designing">Designing (2)</button>
           <button class="bento-tab" data-bento-tab="marketing">Marketing & SEO (2)</button>
         </div>
 
-        <!-- BENTO BLOCK 1: DEVELOPMENT (Web, Custom Software, Mobile Apps, E-Commerce) -->
-        <div class="bento-grid" id="bentoGroupDevelopment">
+        <!-- BENTO BLOCK 1: DEVELOPMENT (Web, Custom Software, Mobile Apps, E-Commerce, Game Dev, AR/VR) -->
+        <div class="bento-group-development" id="bentoGroupDevelopment">
 
-          <!-- Card 1: Left Column Tall Portrait (01 // CORE — Web Development) -->
-          <div class="bento-col-left">
-            <div class="bento-card bento-card-1" data-service-trigger="web" data-cursor="VIEW">
-              <img src="assets/bento_web_dev.gif" alt="Web Development Architecture" class="bento-card-bg">
-              <div class="bento-card-overlay"></div>
-              
-              <div class="bento-card-top">
-                <span class="bento-index">01 // CORE</span>
-                <span class="bento-badge">Web Architecture</span>
+          <div class="bento-grid">
+            <!-- Card 1: Left Column Tall Portrait (01 // CORE — Web Development) -->
+            <div class="bento-col-left">
+              <div class="bento-card bento-card-1" data-service-trigger="web" data-cursor="VIEW">
+                <img src="assets/bento_web_dev.gif" alt="Web Development Architecture" class="bento-card-bg">
+                <div class="bento-card-overlay"></div>
+                
+                <div class="bento-card-top">
+                  <span class="bento-index">01 // CORE</span>
+                  <span class="bento-badge">Web Architecture</span>
+                </div>
+
+                <div class="bento-card-bottom">
+                  <h3 class="bento-card-title bento-hero-title">Web Development</h3>
+                  <p class="bento-card-desc">
+                    Next-generation responsive web applications engineered with headless CMS, sub-second load times, and custom APIs.
+                  </p>
+                  <div class="bento-tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                  </div>
+                  <div class="bento-card-action-row">
+                    <button class="capability-btn" data-service-trigger="web">
+                      <span>EXPLORE SERVICE</span>
+                      <span>&rarr;</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Top Wide Landscape + Bottom Split Row -->
+            <div class="bento-col-right">
+
+              <!-- Card 2: Top Wide Landscape (02 // ENTERPRISE — Custom Software Development) -->
+              <div class="bento-card bento-card-2" data-service-trigger="custom" data-cursor="VIEW">
+                <img src="assets/bento_custom_software.gif" alt="Custom Software Cloud Architecture" class="bento-card-bg">
+                <div class="bento-card-overlay"></div>
+
+                <div class="bento-card-top">
+                  <h3 class="bento-card-title bento-card-title-lg">Custom Software Development</h3>
+                  <span class="bento-index">02 // ENTERPRISE</span>
+                </div>
+
+                <div class="bento-card-bottom bento-bottom-landscape">
+                  <p class="bento-card-desc bento-desc-landscape">
+                    Mission-critical enterprise software, bespoke CRM/ERP platforms, microservice architectures, and multi-tenant cloud backends.
+                  </p>
+                  <div class="bento-tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Microservices</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">AWS Cloud</span>
+                  </div>
+                  <div class="bento-card-action-row">
+                    <button class="capability-btn" data-service-trigger="custom">
+                      <span>EXPLORE SERVICE</span>
+                      <span>&rarr;</span>
+                    </button>
+                  </div>
+                </div>
               </div>
 
-              <div class="bento-card-bottom">
-                <h3 class="bento-card-title bento-hero-title">Web Development</h3>
-                <p class="bento-card-desc">
-                  Next-generation responsive web applications engineered with headless CMS, sub-second load times, and custom APIs.
-                </p>
-                <div class="bento-tech-tags">
-                  <span class="tech-tag">React</span>
-                  <span class="tech-tag">Next.js</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">TypeScript</span>
+              <!-- Bottom Row: Card 3 & Card 4 Side-by-Side -->
+              <div class="bento-right-bottom-row">
+
+                <!-- Card 3: Bottom Left (03 // MOBILE — Mobile App Development) -->
+                <div class="bento-card bento-card-3" data-service-trigger="mobile" data-cursor="VIEW">
+                  <img src="assets/bento_mobile_dev.gif" alt="Mobile App Development" class="bento-card-bg">
+                  <div class="bento-card-overlay"></div>
+
+                  <div class="bento-card-top">
+                    <h3 class="bento-card-title bento-card-title-sm">Mobile App Development</h3>
+                    <span class="bento-index">03 // MOBILE</span>
+                  </div>
+
+                  <div class="bento-card-bottom">
+                    <p class="bento-card-desc">
+                      High-performance cross-platform iOS and Android mobile applications built for fluid user engagement and offline resilience.
+                    </p>
+                    <div class="bento-tech-tags">
+                      <span class="tech-tag">Flutter</span>
+                      <span class="tech-tag">React Native</span>
+                      <span class="tech-tag">REST APIs</span>
+                    </div>
+                    <div class="bento-card-action-row">
+                      <button class="capability-btn" data-service-trigger="mobile">
+                        <span>EXPLORE SERVICE</span>
+                        <span>&rarr;</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div class="bento-card-action-row">
-                  <button class="capability-btn" data-service-trigger="web">
-                    <span>EXPLORE SERVICE</span>
-                    <span>&rarr;</span>
-                  </button>
+
+                <!-- Card 4: Bottom Right (04 // COMMERCE — E-Commerce Solutions) -->
+                <div class="bento-card bento-card-4" data-service-trigger="ecommerce" data-cursor="VIEW">
+                  <img src="assets/bento_ecommerce.gif" alt="E-Commerce Solutions" class="bento-card-bg">
+                  <div class="bento-card-overlay"></div>
+
+                  <div class="bento-card-top">
+                    <h3 class="bento-card-title bento-card-title-sm">E-Commerce Solutions</h3>
+                    <span class="bento-index">04 // COMMERCE</span>
+                  </div>
+
+                  <div class="bento-card-bottom">
+                    <p class="bento-card-desc">
+                      High-converting online store architectures with seamless payment gateways, automated inventory sync, and instant checkout.
+                    </p>
+                    <div class="bento-tech-tags">
+                      <span class="tech-tag">WooCommerce</span>
+                      <span class="tech-tag">Shopify</span>
+                      <span class="tech-tag">Stripe</span>
+                    </div>
+                    <div class="bento-card-action-row">
+                      <button class="capability-btn" data-service-trigger="ecommerce">
+                        <span>EXPLORE SERVICE</span>
+                        <span>&rarr;</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
+
               </div>
+
             </div>
           </div>
 
-          <!-- Right Column: Top Wide Landscape + Bottom Split Row -->
-          <div class="bento-col-right">
+          <!-- Extra Row: Card 5 (Game Development) & Card 6 (AR/VR Development) -->
+          <div class="bento-grid-dual bento-dev-extra-row">
 
-            <!-- Card 2: Top Wide Landscape (02 // ENTERPRISE — Custom Software Development) -->
-            <div class="bento-card bento-card-2" data-service-trigger="custom" data-cursor="VIEW">
-              <img src="assets/bento_custom_software.gif" alt="Custom Software Cloud Architecture" class="bento-card-bg">
+            <!-- Card 5: Game Development -->
+            <div class="bento-card bento-card-dual" data-service-trigger="gamedev" data-cursor="VIEW">
+              <img src="assets/bento_game_dev.gif" alt="Game Development Engine" class="bento-card-bg">
               <div class="bento-card-overlay"></div>
 
               <div class="bento-card-top">
-                <h3 class="bento-card-title bento-card-title-lg">Custom Software Development</h3>
-                <span class="bento-index">02 // ENTERPRISE</span>
+                <span class="bento-index">05 // INTERACTIVE</span>
+                <span class="bento-badge">Realtime Engine</span>
               </div>
 
-              <div class="bento-card-bottom bento-bottom-landscape">
-                <p class="bento-card-desc bento-desc-landscape">
-                  Mission-critical enterprise software, bespoke CRM/ERP platforms, microservice architectures, and multi-tenant cloud backends.
+              <div class="bento-card-bottom">
+                <h3 class="bento-card-title bento-card-title-lg">Game Development</h3>
+                <p class="bento-card-desc">
+                  High-fidelity 2D/3D games, custom physics, multiplayer networking, and realtime graphics built on Unreal Engine and Unity.
                 </p>
                 <div class="bento-tech-tags">
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Microservices</span>
-                  <span class="tech-tag">PostgreSQL</span>
-                  <span class="tech-tag">AWS Cloud</span>
+                  <span class="tech-tag">Unreal Engine 5</span>
+                  <span class="tech-tag">Unity</span>
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">Shaders</span>
+                  <span class="tech-tag">Multiplayer</span>
                 </div>
                 <div class="bento-card-action-row">
-                  <button class="capability-btn" data-service-trigger="custom">
+                  <button class="capability-btn" data-service-trigger="gamedev">
                     <span>EXPLORE SERVICE</span>
                     <span>&rarr;</span>
                   </button>
@@ -1069,81 +1169,52 @@
               </div>
             </div>
 
-            <!-- Bottom Row: Card 3 & Card 4 Side-by-Side -->
-            <div class="bento-right-bottom-row">
+            <!-- Card 6: AR/VR Development -->
+            <div class="bento-card bento-card-dual" data-service-trigger="arvr" data-cursor="VIEW">
+              <img src="assets/bento_ar_vr.gif" alt="AR VR Spatial Development" class="bento-card-bg">
+              <div class="bento-card-overlay"></div>
 
-              <!-- Card 3: Bottom Left (03 // MOBILE — Mobile App Development) -->
-              <div class="bento-card bento-card-3" data-service-trigger="mobile" data-cursor="VIEW">
-                <img src="assets/bento_mobile_dev.gif" alt="Mobile App Development" class="bento-card-bg">
-                <div class="bento-card-overlay"></div>
-
-                <div class="bento-card-top">
-                  <h3 class="bento-card-title bento-card-title-sm">Mobile App Development</h3>
-                  <span class="bento-index">03 // MOBILE</span>
-                </div>
-
-                <div class="bento-card-bottom">
-                  <p class="bento-card-desc">
-                    High-performance cross-platform iOS and Android mobile applications built for fluid user engagement and offline resilience.
-                  </p>
-                  <div class="bento-tech-tags">
-                    <span class="tech-tag">Flutter</span>
-                    <span class="tech-tag">React Native</span>
-                    <span class="tech-tag">REST APIs</span>
-                  </div>
-                  <div class="bento-card-action-row">
-                    <button class="capability-btn" data-service-trigger="mobile">
-                      <span>EXPLORE SERVICE</span>
-                      <span>&rarr;</span>
-                    </button>
-                  </div>
-                </div>
+              <div class="bento-card-top">
+                <span class="bento-index">06 // SPATIAL</span>
+                <span class="bento-badge">Spatial Computing</span>
               </div>
 
-              <!-- Card 4: Bottom Right (04 // COMMERCE — E-Commerce Solutions) -->
-              <div class="bento-card bento-card-4" data-service-trigger="ecommerce" data-cursor="VIEW">
-                <img src="assets/bento_ecommerce.gif" alt="E-Commerce Solutions" class="bento-card-bg">
-                <div class="bento-card-overlay"></div>
-
-                <div class="bento-card-top">
-                  <h3 class="bento-card-title bento-card-title-sm">E-Commerce Solutions</h3>
-                  <span class="bento-index">04 // COMMERCE</span>
+              <div class="bento-card-bottom">
+                <h3 class="bento-card-title bento-card-title-lg">AR/VR Development</h3>
+                <p class="bento-card-desc">
+                  Immersive spatial computing, WebXR environments, 6-DoF interactive simulations, and enterprise XR apps for Vision Pro and Meta Quest.
+                </p>
+                <div class="bento-tech-tags">
+                  <span class="tech-tag">VisionOS</span>
+                  <span class="tech-tag">Meta Quest</span>
+                  <span class="tech-tag">WebXR</span>
+                  <span class="tech-tag">Unity XR</span>
+                  <span class="tech-tag">Spatial Audio</span>
+                  <span class="tech-tag">6-DoF</span>
                 </div>
-
-                <div class="bento-card-bottom">
-                  <p class="bento-card-desc">
-                    High-converting online store architectures with seamless payment gateways, automated inventory sync, and instant checkout.
-                  </p>
-                  <div class="bento-tech-tags">
-                    <span class="tech-tag">WooCommerce</span>
-                    <span class="tech-tag">Shopify</span>
-                    <span class="tech-tag">Stripe</span>
-                  </div>
-                  <div class="bento-card-action-row">
-                    <button class="capability-btn" data-service-trigger="ecommerce">
-                      <span>EXPLORE SERVICE</span>
-                      <span>&rarr;</span>
-                    </button>
-                  </div>
+                <div class="bento-card-action-row">
+                  <button class="capability-btn" data-service-trigger="arvr">
+                    <span>EXPLORE SERVICE</span>
+                    <span>&rarr;</span>
+                  </button>
                 </div>
               </div>
-
             </div>
 
           </div>
 
         </div>
 
-        <!-- BENTO BLOCK 2: DESIGNING (UI/UX Design & 3D Modeling AR/VR) -->
+        <!-- BENTO BLOCK 2: DESIGNING (UI/UX Design & 3D Modeling) -->
         <div class="bento-grid-dual" id="bentoGroupDesign" style="display: none;">
 
-          <!-- Card 5: UI/UX Design -->
+          <!-- Card 7: UI/UX Design -->
           <div class="bento-card bento-card-dual" data-service-trigger="design" data-cursor="VIEW">
             <img src="assets/bento_ui_ux.gif" alt="UI UX Design Systems" class="bento-card-bg">
             <div class="bento-card-overlay"></div>
             
             <div class="bento-card-top">
-              <span class="bento-index">05 // DESIGN</span>
+              <span class="bento-index">07 // DESIGN</span>
               <span class="bento-badge">Design Systems</span>
             </div>
 
@@ -1167,18 +1238,18 @@
             </div>
           </div>
 
-          <!-- Card 6: 3D Modeling & AR/VR -->
+          <!-- Card 8: 3D Modeling -->
           <div class="bento-card bento-card-dual" data-service-trigger="3d" data-cursor="VIEW">
-            <img src="assets/bento_3d_webgl.gif" alt="3D Modeling AR VR" class="bento-card-bg">
+            <img src="assets/bento_3d_webgl.gif" alt="3D Modeling and Digital Assets" class="bento-card-bg">
             <div class="bento-card-overlay"></div>
 
             <div class="bento-card-top">
-              <span class="bento-index">06 // IMMERSIVE</span>
+              <span class="bento-index">08 // IMMERSIVE</span>
               <span class="bento-badge">WebGL Engine</span>
             </div>
 
             <div class="bento-card-bottom">
-              <h3 class="bento-card-title bento-card-title-lg">3D Modeling & AR/VR</h3>
+              <h3 class="bento-card-title bento-card-title-lg">3D Modeling</h3>
               <p class="bento-card-desc">
                 Cinematic WebGL experiences, interactive product configurators, and futuristic 3D digital universe assets built for the modern web.
               </p>
@@ -1186,7 +1257,7 @@
                 <span class="tech-tag">Three.js</span>
                 <span class="tech-tag">WebGL</span>
                 <span class="tech-tag">Blender</span>
-                <span class="tech-tag">WebXR</span>
+                <span class="tech-tag">GLTF / GLB</span>
               </div>
               <div class="bento-card-action-row">
                 <button class="capability-btn" data-service-trigger="3d">
@@ -1202,13 +1273,13 @@
         <!-- BENTO BLOCK 3: MARKETING & SEO (Digital Marketing & SEO / SMM) -->
         <div class="bento-grid-dual" id="bentoGroupMarketing" style="display: none;">
 
-          <!-- Card 7: Digital Marketing & Performance -->
+          <!-- Card 9: Digital Marketing & Performance -->
           <div class="bento-card bento-card-dual" data-service-trigger="marketing" data-cursor="VIEW">
             <img src="assets/bento_marketing.gif" alt="Digital Marketing Growth" class="bento-card-bg">
             <div class="bento-card-overlay"></div>
 
             <div class="bento-card-top">
-              <span class="bento-index">07 // GROWTH</span>
+              <span class="bento-index">09 // GROWTH</span>
               <span class="bento-badge">Performance</span>
             </div>
 
@@ -1232,13 +1303,13 @@
             </div>
           </div>
 
-          <!-- Card 8: SEO & Social Media (SMM) -->
+          <!-- Card 10: SEO & Social Media (SMM) -->
           <div class="bento-card bento-card-dual" data-service-trigger="seo" data-cursor="VIEW">
             <img src="assets/bento_seo_smm.gif" alt="SEO and Social Media" class="bento-card-bg">
             <div class="bento-card-overlay"></div>
 
             <div class="bento-card-top">
-              <span class="bento-index">08 // AUTHORITY</span>
+              <span class="bento-index">10 // AUTHORITY</span>
               <span class="bento-badge">Search Dominance</span>
             </div>
 
@@ -1877,10 +1948,12 @@
                 <select id="contactService" name="service" class="lead-select">
                   <option value="Web Development">Web Development</option>
                   <option value="Mobile App Development">Mobile App Development</option>
+                  <option value="Game Development">Game Development</option>
+                  <option value="AR/VR Development">AR/VR Development</option>
                   <option value="Digital Marketing">Digital Marketing & Growth</option>
                   <option value="Riyadvi Guardian">Riyadvi Guardian Growth System</option>
                   <option value="UI/UX Design">UI/UX Design System</option>
-                  <option value="3D Modeling & AR/VR">3D Modeling & AR/VR</option>
+                  <option value="3D Modeling">3D Modeling</option>
                   <option value="Custom Software Development">Custom Software Development</option>
                   <option value="E-Commerce Architecture">E-Commerce Architecture</option>
                 </select>
@@ -1938,11 +2011,14 @@
           <div class="footer-col">
             <span class="footer-col-title">Services</span>
             <a href="#services">Web Development</a>
-            <a href="#services">Mobile Applications</a>
-            <a href="#services">Digital Marketing</a>
-            <a href="#services">UI/UX Design</a>
-            <a href="#services">3D Modeling & AR/VR</a>
             <a href="#services">Custom Software</a>
+            <a href="#services">Mobile Applications</a>
+            <a href="#services">Game Development</a>
+            <a href="#services">AR/VR Development</a>
+            <a href="#services">E-Commerce Architecture</a>
+            <a href="#services">UI/UX Design</a>
+            <a href="#services">3D Modeling</a>
+            <a href="#services">Digital Marketing</a>
           </div>
 
           <div class="footer-col">
