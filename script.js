@@ -4259,11 +4259,11 @@ void main(void) {
         items: '.contact-channel-item',
         staggerMs: 120
       },
-      // Footer Columns
+      // Footer Nav
       {
-        container: '#footer .footer-columns',
-        items: '.footer-col',
-        staggerMs: 120
+        container: '#footer .footer-nav',
+        items: 'a',
+        staggerMs: 60
       }
     ];
 
