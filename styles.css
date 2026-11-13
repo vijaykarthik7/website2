@@ -4208,6 +4208,13 @@ body {
   justify-content: space-between;
 }
 
+#bentoGroupMarketing.bento-grid-dual,
+.bento-grid-dual:has(> :only-child) {
+  grid-template-columns: 1fr;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 @media (max-width: 1024px) {
   .bento-grid-dual {
     grid-template-columns: 1fr;

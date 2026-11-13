@@ -1657,7 +1657,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     '3d': {
       badge: "08 // 3D ASSETS & CGI",
-      title: "3D Modeling & Digital Assets",
+      title: "3D Modeling Design & Digital Assets",
       desc: "Photorealistic 3D modeling, cinematic rendering, interactive product configurators, and optimized real-time 3D web assets.",
       tags: ["Blender", "Three.js", "Cinema 4D", "ZBrush", "GLTF / GLB", "PBR Texturing", "GLSL Shaders", "3D Optimization"],
       deliverables: [
