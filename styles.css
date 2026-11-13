@@ -3056,6 +3056,195 @@ body {
   text-decoration: none;
 }
 
+/* Award Card Thumbnail / Badge Icon */
+.award-badge-icon-box {
+  background: #ffffff !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  padding: 4px !important;
+  overflow: hidden;
+}
+
+.award-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   OFFICIAL ACCREDITATION & LIVE VERIFICATION STRIP
+   ========================================================================== */
+.verified-partners-strip {
+  margin-top: 48px;
+  background: linear-gradient(135deg, rgba(20, 20, 24, 0.88) 0%, rgba(12, 12, 16, 0.96) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 14px;
+  padding: 32px 36px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.verified-partners-strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.verified-quote-container {
+  max-width: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.verified-pill {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 20px;
+  padding: 4px 14px;
+  text-transform: uppercase;
+}
+
+.verified-feature-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 1.8vw, 21px);
+  font-weight: 500;
+  line-height: 1.45;
+  color: #f4f4f5;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.highlight-dr {
+  color: var(--gold-bright);
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffd700 0%, #ffae19 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.verified-badges-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.verified-badge-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  padding: 12px 22px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.verified-badge-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.18);
+}
+
+.verified-badge-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.badge-plate {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  min-width: 90px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.dr-plate {
+  padding: 5px 12px;
+}
+
+.tb-badge-img {
+  height: 38px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+.dr-badge-img {
+  height: 52px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+  display: block;
+}
+
+.badge-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.badge-partner-name {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.badge-partner-desc {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--gold-champagne);
+  margin-top: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.award-modal-badge-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
 /* Award Modal */
 .award-modal-content {
   max-width: 620px;
@@ -9170,6 +9359,28 @@ body {
 
   .award-card {
     padding: 20px 16px;
+  }
+
+  .verified-partners-strip {
+    margin-top: 24px;
+    padding: 22px 16px;
+    gap: 18px;
+  }
+
+  .verified-badges-row {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .verified-badge-card {
+    width: 100%;
+    padding: 10px 14px;
+  }
+
+  .verified-badge-link {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   /* Trust Orbit Background */

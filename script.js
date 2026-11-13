@@ -1521,6 +1521,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const awardModalTitle = document.getElementById('awardModalTitle');
   const awardModalBody = document.getElementById('awardModalBody');
   const awardVerifyBtn = document.getElementById('awardVerifyBtn');
+  const awardModalBadgeImg = document.getElementById('awardModalBadgeImg');
+  const awardModalDefaultSvg = document.getElementById('awardModalDefaultSvg');
 
   const awardDetails = {
     star: {
@@ -1530,13 +1532,13 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     designrush: {
       title: "DesignRush — Top Web Development Company 2025",
-      body: "Accredited on DesignRush's international B2B index as a leading technology partner engineering scalable architectures and conversion-driven digital products.",
+      body: "“We are proud to be featured on DesignRush for our outstanding work.” Accredited on DesignRush's international B2B index as a premier technology agency engineering scalable architectures and conversion-driven digital products.",
       link: "https://www.designrush.com/"
     },
     techbehemoths: {
       title: "TechBehemoths Global Awards 2025",
       body: "Location: Berlin, Germany. Riyadvi Software Technologies Pvt. Ltd. was officially recognized as global winners across ReactJS, WordPress, and Social Media Marketing (SMM).",
-      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308"
+      link: "https://techbehemoths.com/company/riyadvi-software-technologies-private-limited"
     }
   };
 
@@ -1547,6 +1549,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (awardModalTitle) awardModalTitle.textContent = data.title;
       if (awardModalBody) awardModalBody.textContent = data.body;
       if (awardVerifyBtn) awardVerifyBtn.href = data.link;
+
+      if (awardModalBadgeImg && awardModalDefaultSvg) {
+        if (key === 'designrush') {
+          awardModalBadgeImg.src = 'assets/designrush_badge.png';
+          awardModalBadgeImg.alt = 'DesignRush';
+          awardModalBadgeImg.style.display = 'block';
+          awardModalDefaultSvg.style.display = 'none';
+        } else {
+          awardModalBadgeImg.style.display = 'none';
+          awardModalDefaultSvg.style.display = 'block';
+        }
+      }
+
       if (awardModal) awardModal.classList.add('open');
       AudioEngine.playBeep(750, 'sine', 0.1, 0.03);
     });

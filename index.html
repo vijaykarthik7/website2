@@ -645,14 +645,12 @@
           <!-- Award 2: DesignRush Top Web Dev Company 2025 -->
           <div class="award-card" data-award="designrush" data-cursor="VIEW">
             <span class="award-year-badge">2025 RECOGNIZED</span>
-            <div class="award-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
+            <div class="award-icon-box award-badge-icon-box">
+              <img src="assets/designrush_badge.png" alt="DesignRush" class="award-card-thumb" />
             </div>
             <h3 class="award-title">Top Web Development Company</h3>
             <div class="award-org">DesignRush Global Network</div>
-            <p class="award-desc">Accredited by international B2B platform DesignRush as a premier agency delivering high-performance enterprise web architectures.</p>
+            <p class="award-desc">We are proud to be featured on DesignRush for our outstanding work. Accredited as a premier agency delivering high-performance enterprise web architectures.</p>
             <div class="award-meta-row">
               <span class="award-location">Global Accreditation</span>
               <span class="award-verify-link">View Certificate &rarr;</span>
@@ -674,6 +672,44 @@
             <div class="award-meta-row">
               <span class="award-location">Berlin, Germany</span>
               <span class="award-verify-link">Verify Award &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Partner Accreditations & Live Verification Strip -->
+        <div class="verified-partners-strip">
+          <div class="verified-quote-container">
+            <span class="verified-pill">OFFICIAL ACCREDITATION &amp; HONORS</span>
+            <p class="verified-feature-quote">
+              &ldquo;We are proud to be featured on <span class="highlight-dr">DesignRush</span> for our outstanding work.&rdquo;
+            </p>
+          </div>
+
+          <div class="verified-badges-row">
+            <!-- TechBehemoths Official Live Verification Badge -->
+            <div class="verified-badge-card" data-cursor="VERIFY">
+              <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener" data-techbehemoths-verification class="verified-badge-link" aria-label="TechBehemoths Verification">
+                <div class="badge-plate tb-plate">
+                  <img src="https://cdn.techbehemoths.com/public/static/validation/tb-verified-logo.svg" alt="TechBehemoths Verification" class="badge-img tb-badge-img" loading="lazy" />
+                </div>
+                <div class="badge-card-info">
+                  <span class="badge-partner-name">TechBehemoths Verified</span>
+                  <span class="badge-partner-desc">Official Company Profile &rarr;</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- DesignRush Official Partnership Badge -->
+            <div class="verified-badge-card" data-cursor="VERIFY">
+              <a href="https://www.designrush.com" target="_blank" rel="noopener" class="verified-badge-link" aria-label="DesignRush Top Web Development Company">
+                <div class="badge-plate dr-plate">
+                  <img src="assets/designrush_badge.png" alt="DesignRush" class="badge-img dr-badge-img" loading="lazy" />
+                </div>
+                <div class="badge-card-info">
+                  <span class="badge-partner-name">DesignRush Accredited</span>
+                  <span class="badge-partner-desc">Top Web Development Company 2025 &rarr;</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -1968,6 +2004,10 @@
           <a href="#about">Terms</a>
           <span class="footer-sep">&bull;</span>
           <a href="https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308" target="_blank" rel="noopener noreferrer">Award Certificate</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener" data-techbehemoths-verification>TechBehemoths Verified</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="https://www.designrush.com" target="_blank" rel="noopener">DesignRush Partner</a>
         </div>
       </div>
     </div>
@@ -1977,8 +2017,9 @@
   <div class="modal-backdrop" id="awardModal">
     <div class="modal-content award-modal-content">
       <button class="modal-close" id="awardModalCloseBtn">&times;</button>
-      <div class="award-modal-seal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <div class="award-modal-seal" id="awardModalSeal">
+        <img id="awardModalBadgeImg" src="assets/designrush_badge.png" alt="DesignRush" class="award-modal-badge-img" style="display: none;" />
+        <svg id="awardModalDefaultSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
         </svg>
       </div>
