@@ -1478,7 +1478,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 6. Statistics Counter Animation
   // =========================================================================
-  const statNumbers = document.querySelectorAll('.metric-number[data-count]');
+  const statNumbers = document.querySelectorAll('.metric-number[data-count], .hero-metric-val[data-count]');
   let counted = false;
 
   const countObserver = new IntersectionObserver((entries) => {
@@ -1487,6 +1487,7 @@ document.addEventListener('DOMContentLoaded', () => {
         counted = true;
         statNumbers.forEach((num) => {
           const target = parseInt(num.getAttribute('data-count'), 10);
+          const suffix = num.getAttribute('data-suffix') || '+';
           const duration = 1600;
           const startTime = performance.now();
 
@@ -1495,21 +1496,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const progress = Math.min(1, elapsed / duration);
             const easeOut = 1 - Math.pow(1 - progress, 3);
             const val = Math.floor(easeOut * target);
-            num.textContent = `${val}+`;
+            num.textContent = `${val}${suffix}`;
 
             if (progress < 1) {
               requestAnimationFrame(updateCounter);
             } else {
-              num.textContent = `${target}+`;
+              num.textContent = `${target}${suffix}`;
             }
           }
           requestAnimationFrame(updateCounter);
         });
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.15 });
 
-  const metricsGroup = document.querySelector('.metrics-card-group');
+  const metricsGroup = document.querySelector('.hero-metrics-bar, .metrics-card-group');
   if (metricsGroup) countObserver.observe(metricsGroup);
 
   // =========================================================================
