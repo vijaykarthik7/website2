@@ -8050,7 +8050,7 @@ body {
   box-shadow: 0 0 10px rgba(240, 199, 94, 0.35);
 }
 
-.step-name {
+.stepper-item-btn .step-name {
   font-family: var(--est-font-grotesk);
   font-size: 13px;
   font-weight: 500;
@@ -8738,7 +8738,7 @@ body {
     width: auto;
   }
 
-  .step-name {
+  .stepper-item-btn .step-name {
     font-size: 11px;
   }
 
@@ -8750,7 +8750,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  .step-name {
+  .stepper-item-btn .step-name {
     display: none;
   }
 
@@ -9343,11 +9343,36 @@ body {
   }
 
   .process-step-card {
-    padding: 16px 10px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .process-step-card .step-num {
+    display: block !important;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold-primary);
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .process-step-card .step-name {
-    font-size: 12px;
+    display: block !important;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   /* Awards Section */
@@ -9644,6 +9669,41 @@ body {
 
   .process-steps-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .process-step-card {
+    padding: 16px 16px;
+    min-height: 66px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .process-step-card .step-num {
+    display: block !important;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold-primary);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+    line-height: 1.2;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .process-step-card .step-name {
+    display: block !important;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
