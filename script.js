@@ -4172,11 +4172,7 @@ void main(void) {
       '#contact .center-header .sub-badge',
       '#contact .center-header .section-title',
       '#contact .center-header .section-subtitle',
-      '#contact .contact-lead-form',
-
-      // Footer
-      '#footer .footer-brand',
-      '#footer .footer-bottom'
+      '#contact .contact-lead-form'
     ];
 
     // Registry of card groups: multiple cards that stagger when scrolled into view
@@ -4258,12 +4254,6 @@ void main(void) {
         container: '#contact .contact-channels-box',
         items: '.contact-channel-item',
         staggerMs: 120
-      },
-      // Footer Nav
-      {
-        container: '#footer .footer-nav',
-        items: 'a',
-        staggerMs: 60
       }
     ];
 
@@ -4371,6 +4361,15 @@ void main(void) {
       document.querySelectorAll('[data-reveal], .scroll-reveal').forEach(el => {
         registerItem(el, 0);
       });
+
+      // 4. Bottom of page safety check: reveal remaining items when scrolled to end
+      window.addEventListener('scroll', () => {
+        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 70)) {
+          document.querySelectorAll('.scroll-reveal-item:not(.is-revealed)').forEach(el => {
+            el.classList.add('is-revealed', 'is-settled');
+          });
+        }
+      }, { passive: true });
     }
 
     function refreshGroup(containerEl, staggerMs = 120) {

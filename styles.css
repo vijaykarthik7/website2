@@ -1856,111 +1856,165 @@ body {
    ========================================================================== */
 .footer {
   position: relative;
-  z-index: 20;
-  background: #050505 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 30px 0 22px 0;
+  z-index: 30;
+  background: #050507 !important;
+  border-top: 1px solid rgba(240, 199, 94, 0.22);
+  padding: 38px 0 28px 0;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  clear: both;
 }
 
 .footer-container {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 48px);
   position: relative;
-  z-index: 22;
+  z-index: 32;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .footer-minimal-wrap {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
   gap: 28px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .footer-brand {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 16px;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .footer-brand .logo {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   text-decoration: none;
+}
+
+.footer-brand .logo-emblem {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(240, 199, 94, 0.45));
+}
+
+.footer-brand .logo-text {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ffffff;
 }
 
 .footer-tagline {
   font-family: var(--font-body, 'Space Grotesk', sans-serif);
-  font-size: 12px;
-  color: #7a766f;
+  font-size: 12.5px;
+  color: #a8a49a;
   margin: 0;
   padding-left: 16px;
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
   line-height: 1.4;
   white-space: nowrap;
 }
 
 .footer-nav {
-  display: flex;
+  display: flex !important;
   align-items: center;
   flex-wrap: wrap;
   gap: 22px;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .footer-nav a {
   font-family: var(--font-body, 'Space Grotesk', sans-serif);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 500;
-  color: #9a968d;
+  color: #c5c1b6 !important;
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: color 0.22s ease;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-block !important;
+  transform: none !important;
 }
 
 .footer-nav a:hover {
-  color: var(--gold-champagne, #f0c75e);
+  color: var(--gold-champagne, #f0c75e) !important;
 }
 
 .footer-bottom {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
-  padding-top: 14px;
-  font-size: 11.5px;
-  color: #615e57;
+  padding-top: 18px;
+  font-size: 12px;
+  color: #8c887e;
   gap: 16px;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .footer-copyright {
   margin: 0;
-  font-size: 11.5px;
-  color: #615e57;
+  font-size: 12px;
+  color: #8c887e;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .footer-bottom-links {
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .footer-bottom-links a {
-  color: #7a766f;
+  color: #a8a49a;
   text-decoration: none;
-  font-size: 11.5px;
+  font-size: 12px;
   transition: color 0.2s ease;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .footer-bottom-links a:hover {
-  color: #f4f1ea;
+  color: #ffffff;
 }
 
 .footer-sep {
-  color: #3f3e3a;
+  color: #4a4843;
   font-size: 9px;
   user-select: none;
+}
+
+/* Hard protection against reveal hiding */
+#footer,
+#footer *,
+#footer.footer .scroll-reveal-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  transform: none !important;
 }
 
 /* ==========================================================================
@@ -9294,18 +9348,6 @@ html.lenis, html.lenis body {
 
 .volumetric-studio-section {
   background: radial-gradient(ellipse at 50% 40%, rgba(5, 5, 8, 0.40) 0%, rgba(5, 5, 8, 0.78) 80%, rgba(3, 3, 5, 0.92) 100%) !important;
-}
-
-.footer {
-  position: relative;
-  z-index: 20;
-  background: #050505 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer-container {
-  position: relative;
-  z-index: 22;
 }
 
 
