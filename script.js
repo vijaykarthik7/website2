@@ -4433,3 +4433,991 @@ void main(void) {
 });
 
 
+
+
+// =========================================================================
+// SERVICES SECTION: 3D COVERFLOW CAROUSEL & FULL-SCREEN CHAPTER VIEW ENGINE
+// =========================================================================
+
+(function initServicesCoverflowEngine() {
+  // 1. DATA ARRAY: 9 SERVICES
+  const SERVICES_DATA = [
+    {
+      id: 'web',
+      category: 'development',
+      categoryLabel: 'DEVELOPMENT',
+      num: '01',
+      tag: '01 // CORE',
+      name: 'Web Development',
+      oneLiner: 'Headless, sub-second web apps built for growth.',
+      detailTag: '01 // CORE ARCHITECTURE',
+      detailTitle: 'Web Development Architecture',
+      detailDesc: 'Next-generation responsive web applications engineered with headless CMS, sub-second load times, and custom APIs.',
+      stack: ['React', 'Next.js', 'Node.js', 'TypeScript', 'TailwindCSS', 'GraphQL', 'Headless CMS', 'Edge CDN'],
+      deliverables: [
+        'Sub-second Largest Contentful Paint (LCP < 1.2s)',
+        'Fully responsive & WCAG accessible UI components',
+        'Scalable micro-frontend & modular architecture',
+        'Automated CI/CD pipelines & zero-downtime deployment'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-code-window">
+            <div class="vis-code-header">
+              <div class="vis-code-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="vis-code-filename">WebCore.tsx - Riyadvi Framework</span>
+            </div>
+            <div class="vis-code-body">
+              <div class="code-line"><span class="line-no">01</span><span class="kw">const</span> <span class="var">app</span> = <span class="fn">createServer</span>();</div>
+              <div class="code-line"><span class="line-no">02</span><span class="kw">import</span> { <span class="type">NextApp</span>, <span class="type">React</span> } <span class="kw">from</span> <span class="str">'riyadvi'</span>;</div>
+              <div class="code-line"><span class="line-no">03</span><span class="kw">async function</span> <span class="fn">renderMatrix</span>(<span class="param">stream</span>) {</div>
+              <div class="code-line"><span class="line-no">04</span>  <span class="kw">const</span> <span class="var">pipeline</span> = <span class="kw">await</span> stream.<span class="fn">pipe</span>({</div>
+              <div class="code-line"><span class="line-no">05</span>    latency: <span class="str">'0.4ms'</span>,</div>
+              <div class="code-line"><span class="line-no">06</span>    caching: <span class="str">'edge-optimized'</span>,</div>
+              <div class="code-line"><span class="line-no">07</span>    security: <span class="str">'quantum-tls'</span>,</div>
+              <div class="code-line"><span class="line-no">08</span>  });</div>
+              <div class="code-line"><span class="line-no">09</span>  <span class="kw">return</span> pipeline.<span class="fn">deploy</span>(<span class="str">'global'</span>);</div>
+              <div class="code-line"><span class="line-no">10</span>} <span class="vis-code-cursor"></span></div>
+            </div>
+          </div>
+        `;
+      }
+    },
+    {
+      id: 'custom',
+      category: 'development',
+      categoryLabel: 'DEVELOPMENT',
+      num: '02',
+      tag: '02 // ENTERPRISE',
+      name: 'Custom Software Development',
+      oneLiner: 'Scalable enterprise platforms on secure microservices.',
+      detailTag: '02 // ENTERPRISE SYSTEMS',
+      detailTitle: 'Custom Software & Microservice Architecture',
+      detailDesc: 'Mission-critical enterprise software, bespoke CRM/ERP platforms, microservice architectures, and multi-tenant cloud backends.',
+      stack: ['Node.js', 'Go', 'Python', 'Microservices', 'PostgreSQL', 'Redis', 'Kafka', 'Docker & K8s'],
+      deliverables: [
+        'High-throughput distributed cloud architectures',
+        'ACID-compliant relational & NoSQL data pipelines',
+        'Role-based enterprise security & OAuth2 / SAML SSO',
+        '99.99% uptime guarantee with automated failover'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-nodes-stage">
+            <svg viewBox="0 0 360 220" class="vis-nodes-svg">
+              <line x1="180" y1="35" x2="280" y2="65" class="vis-node-link" />
+              <line x1="180" y1="35" x2="80" y2="75" class="vis-node-link" />
+              <line x1="180" y1="35" x2="180" y2="110" class="vis-node-link" />
+              <line x1="80" y1="75" x2="100" y2="175" class="vis-node-link" />
+              <line x1="180" y1="110" x2="100" y2="175" class="vis-node-link" />
+              <line x1="180" y1="110" x2="260" y2="175" class="vis-node-link" />
+              <line x1="280" y1="65" x2="260" y2="175" class="vis-node-link" />
+              
+              <circle r="3.5" fill="#f0c75e" class="vis-pulse-dot">
+                <animateMotion path="M180,35 L280,65 L260,175" dur="2.4s" repeatCount="indefinite" />
+              </circle>
+              <circle r="3.5" fill="#6fd3a8" class="vis-pulse-dot">
+                <animateMotion path="M180,35 L80,75 L100,175" dur="2.8s" repeatCount="indefinite" />
+              </circle>
+              <circle r="3.5" fill="#f0c75e" class="vis-pulse-dot">
+                <animateMotion path="M180,35 L180,110 L260,175" dur="2s" repeatCount="indefinite" />
+              </circle>
+
+              <g transform="translate(180, 35)">
+                <circle r="16" class="node-ring pulse" />
+                <circle r="11" class="node-core gold" />
+                <text y="22" class="node-label">API Gateway</text>
+              </g>
+              <g transform="translate(280, 65)">
+                <circle r="14" class="node-ring" />
+                <circle r="9" class="node-core" />
+                <text y="20" class="node-label">Auth Microservice</text>
+              </g>
+              <g transform="translate(80, 75)">
+                <circle r="14" class="node-ring" />
+                <circle r="9" class="node-core" />
+                <text y="20" class="node-label">Service Mesh</text>
+              </g>
+              <g transform="translate(180, 110)">
+                <circle r="18" class="node-ring pulse" />
+                <circle r="12" class="node-core gold" />
+                <text y="24" class="node-label">Distributed Cluster</text>
+              </g>
+              <g transform="translate(100, 175)">
+                <circle r="14" class="node-ring" />
+                <circle r="9" class="node-core" />
+                <text y="20" class="node-label">Cache Layer</text>
+              </g>
+              <g transform="translate(260, 175)">
+                <circle r="16" class="node-ring pulse" />
+                <circle r="10" class="node-core" />
+                <text y="22" class="node-label">Cloud DB Node</text>
+              </g>
+            </svg>
+          </div>
+        `;
+      }
+    },
+    {
+      id: 'mobile',
+      category: 'development',
+      categoryLabel: 'DEVELOPMENT',
+      num: '03',
+      tag: '03 // MOBILE',
+      name: 'Mobile App Development',
+      oneLiner: 'Fluid iOS & Android apps with native device synergy.',
+      detailTag: '03 // MOBILE ENGINEERING',
+      detailTitle: 'Cross-Platform & Native Mobile Engineering',
+      detailDesc: 'High-performance iOS and Android applications engineered for silky 60/120fps interactions, offline resilience, and delightful UX.',
+      stack: ['Flutter', 'React Native', 'Swift / iOS', 'Kotlin / Android', 'REST & GraphQL', 'SQLite', 'Firebase', 'App Store CI/CD'],
+      deliverables: [
+        'Consistent 60fps/120fps fluid micro-interactions',
+        'Offline-first data sync & AES-256 local encryption',
+        'Native device integration (Biometrics, GPS, Push, Camera)',
+        'App Store & Google Play compliance, publishing & maintenance'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-phone-wrap">
+            <div class="vis-phone-chassis">
+              <div class="vis-phone-notch"></div>
+              <div class="vis-phone-screen">
+                <div class="vis-phone-header">
+                  <span class="phone-time">9:41</span>
+                  <span class="phone-icons">●●●</span>
+                </div>
+                <div class="vis-phone-list">
+                  <div class="phone-row r1"><span class="row-icon">✦</span><span class="row-title">Analytics Dashboard</span><span class="row-badge">Live</span></div>
+                  <div class="phone-row r2 active"><span class="row-icon">⚡</span><span class="row-title">Cloud Storage Sync</span><span class="row-badge green">100%</span></div>
+                  <div class="phone-row r3"><span class="row-icon">✉</span><span class="row-title">Real-time Messaging</span><span class="row-badge">4 New</span></div>
+                  <div class="phone-row r4"><span class="row-icon">🔒</span><span class="row-title">Biometric Vault</span><span class="row-badge">Active</span></div>
+                </div>
+                <div class="vis-phone-tap-ring"></div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    },
+    {
+      id: 'ecommerce',
+      category: 'development',
+      categoryLabel: 'DEVELOPMENT',
+      num: '04',
+      tag: '04 // COMMERCE',
+      name: 'E-Commerce Solutions',
+      oneLiner: 'Instant checkout funnels engineered for maximum conversion.',
+      detailTag: '04 // COMMERCE ARCHITECTURE',
+      detailTitle: 'Headless E-Commerce & Checkout Engines',
+      detailDesc: 'High-converting online store architectures with sub-second checkout, automated inventory sync, and localized payment rails.',
+      stack: ['Shopify Plus', 'WooCommerce', 'Headless Commerce', 'Stripe API', 'Razorpay', 'Next.js Commerce', 'Algolia Search', 'Klaviyo'],
+      deliverables: [
+        'Sub-second frictionless one-click checkout flows',
+        'Multi-currency & localized automated tax calculations',
+        'Real-time omnichannel inventory & warehouse ERP sync',
+        'Abandoned cart recovery & automated upsell funnels'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-ecom-card">
+            <div class="ecom-top-row">
+              <span class="ecom-engine-label">HEADLESS E-COMMERCE ENGINE</span>
+              <span class="ecom-status-badge">SUB-SECOND CHECKOUT</span>
+            </div>
+            <div class="ecom-price-wrap">
+              <span class="ecom-currency">$</span>
+              <span class="ecom-counter-val">2,480.00</span>
+            </div>
+            <div class="ecom-items-list">
+              <div class="ecom-item-row item1">
+                <span class="item-name">Quantum Silk Architecture</span>
+                <span class="item-price">$1,990.00</span>
+              </div>
+              <div class="ecom-item-row item2">
+                <span class="item-name">Edge CDN &amp; Multi-Region</span>
+                <span class="item-price">$490.00</span>
+              </div>
+            </div>
+            <div class="ecom-sync-bar">
+              <div class="sync-info">
+                <span class="sync-dot"></span>
+                <span class="sync-text">0.04s Instant Stripe / Shopify Sync</span>
+              </div>
+              <div class="sync-progress-track">
+                <div class="sync-progress-line"></div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    },
+    {
+      id: 'ai',
+      category: 'development',
+      categoryLabel: 'DEVELOPMENT',
+      num: '05',
+      tag: '05 // COGNITIVE',
+      name: 'AI & Intelligent Agents',
+      oneLiner: 'Autonomous multi-channel AI agents delivering instant ROI.',
+      detailTag: '05 // ARTIFICIAL INTELLIGENCE',
+      detailTitle: 'Autonomous AI Agents & Intelligent Automation',
+      detailDesc: 'Custom fine-tuned LLM agents, retrieval-augmented generation (RAG) pipelines, and autonomous support workflows integrated into your CRM.',
+      stack: ['OpenAI API', 'Anthropic Claude', 'LangChain', 'LlamaIndex', 'Vector DB (Pinecone)', 'Python', 'FastAPI', 'WhatsApp Cloud API'],
+      deliverables: [
+        '24/7 autonomous customer qualification & triage agents',
+        'Enterprise RAG knowledge base connected to internal documents',
+        'Multi-channel conversational deployment (Web, WhatsApp, Slack)',
+        'Continuous LLM evaluation, safety guardrails & telemetry'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-chat-wrap">
+            <div class="chat-msg user-bubble">
+              <p>Deploy intelligent customer agent to WhatsApp &amp; Web</p>
+            </div>
+            <div class="chat-typing-bubble">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+            <div class="chat-msg agent-bubble">
+              <div class="agent-avatar">AI</div>
+              <div class="agent-text">Agent deployed. Real-time NLP model active across all channels.</div>
+            </div>
+            <div class="chat-status-tags">
+              <span class="chat-tag"><span class="chk">✓</span> Lead qualified</span>
+              <span class="chat-tag"><span class="chk">✓</span> CRM synced</span>
+              <span class="chat-tag"><span class="chk">✓</span> WhatsApp follow-up</span>
+            </div>
+          </div>
+        `;
+      }
+    },
+    {
+      id: 'cloud',
+      category: 'development',
+      categoryLabel: 'DEVELOPMENT',
+      num: '06',
+      tag: '06 // INFRASTRUCTURE',
+      name: 'Cloud & DevOps',
+      oneLiner: 'Zero-downtime automated pipelines with 99.99% uptime.',
+      detailTag: '06 // CLOUD INFRASTRUCTURE',
+      detailTitle: 'Enterprise Cloud Infrastructure & DevOps',
+      detailDesc: 'Automated Kubernetes clusters, terraform infrastructure-as-code, and resilient multi-region architectures with continuous deployment.',
+      stack: ['AWS', 'Google Cloud', 'Kubernetes', 'Docker', 'Terraform', 'GitHub Actions', 'Datadog', 'Cloudflare Edge'],
+      deliverables: [
+        'Automated multi-stage CI/CD pipelines with zero downtime',
+        'Infrastructure-as-Code (IaC) reproducible environments',
+        '99.99% high-availability multi-region cluster topologies',
+        '24/7 automated telemetry, health checks & auto-scaling'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-cloud-wrap">
+            <div class="pipeline-stages-row">
+              <div class="pipe-stage s1 active"><span class="pipe-icon">●</span><span class="pipe-name">Commit</span></div>
+              <div class="pipe-arrow">&rarr;</div>
+              <div class="pipe-stage s2 active"><span class="pipe-icon">●</span><span class="pipe-name">Build</span></div>
+              <div class="pipe-arrow">&rarr;</div>
+              <div class="pipe-stage s3 active"><span class="pipe-icon">●</span><span class="pipe-name">Test</span></div>
+              <div class="pipe-arrow">&rarr;</div>
+              <div class="pipe-stage s4 active"><span class="pipe-icon">●</span><span class="pipe-name">Deploy</span></div>
+              <div class="pipe-arrow">&rarr;</div>
+              <div class="pipe-stage s5 active"><span class="pipe-icon">●</span><span class="pipe-name">Monitor</span></div>
+            </div>
+            <div class="cloud-metrics-row">
+              <div class="uptime-badge">
+                <span class="uptime-val">99.99%</span>
+                <span class="uptime-lbl">HIGH AVAILABILITY</span>
+              </div>
+              <div class="cloud-sparkline-box">
+                <svg viewBox="0 0 160 40" class="sparkline-svg">
+                  <path d="M0,32 Q20,28 40,30 T80,18 T120,22 T160,8" fill="none" stroke="#6fd3a8" stroke-width="2.5" class="sparkline-path" />
+                  <circle cx="160" cy="8" r="4" fill="#6fd3a8" class="sparkline-point" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    },
+    {
+      id: 'design',
+      category: 'designing',
+      categoryLabel: 'DESIGNING',
+      num: '07',
+      tag: '07 // DESIGN',
+      name: 'UI/UX Design',
+      oneLiner: 'Conversion-centered design systems & Figma prototypes.',
+      detailTag: '07 // DESIGN SYSTEMS',
+      detailTitle: 'UI/UX Architecture & Product Design',
+      detailDesc: 'Bespoke design systems, rapid interactive Figma prototypes, and micro-interaction flows centered around conversion rate optimization.',
+      stack: ['Figma', 'Design Systems', 'Interactive Prototypes', 'Wireframing', 'User Research', 'Motion Design', 'Design Tokens', 'Usability Testing'],
+      deliverables: [
+        'Scalable atomic design system with Figma token sync',
+        'High-fidelity interactive prototype click-throughs',
+        'Data-backed UX user journeys & heatmaps analysis',
+        'Pixel-perfect developer handoff specifications'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-wireframe-wrap">
+            <div class="wf-badge-tag"><span class="wf-state-text">Wireframe &rarr; Polished UI</span></div>
+            <div class="wf-artboard">
+              <div class="wf-block wf-header"></div>
+              <div class="wf-block wf-hero"></div>
+              <div class="wf-cards-row">
+                <div class="wf-block wf-card c1"></div>
+                <div class="wf-block wf-card c2"></div>
+                <div class="wf-block wf-card c3"></div>
+              </div>
+              <div class="wf-block wf-btn"></div>
+            </div>
+          </div>
+        `;
+      }
+    },
+    {
+      id: '3d',
+      category: 'designing',
+      categoryLabel: 'DESIGNING',
+      num: '08',
+      tag: '08 // IMMERSIVE',
+      name: '3D & WebGL Experiences',
+      oneLiner: 'Photorealistic 3D configurators & real-time WebGL engines.',
+      detailTag: '08 // 3D & WEBGL',
+      detailTitle: '3D Interactive WebGL & Spatial Assets',
+      detailDesc: 'Photorealistic 3D modeling, cinematic rendering, interactive product configurators, and optimized real-time 3D web assets running at 60 FPS.',
+      stack: ['Three.js', 'WebGL', 'Blender', 'GLSL Shaders', 'GLTF / GLB', 'WebXR', 'GSAP 3D', 'PBR Materials'],
+      deliverables: [
+        'Photorealistic 3D product visualizations & 60 FPS renders',
+        'Ultra-lightweight real-time mesh compression (< 3MB)',
+        'Interactive 360° product configurators for web & e-commerce',
+        'Rigged, textured, and browser-ready 3D asset libraries'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-cube-stage">
+            <div class="vis-cube-badge"><span class="cube-green-dot"></span> WebGL &middot; 60 FPS</div>
+            <div class="vis-cube-viewport">
+              <div class="vis-cube-obj">
+                <div class="cube-face front"></div>
+                <div class="cube-face back"></div>
+                <div class="cube-face right"></div>
+                <div class="cube-face left"></div>
+                <div class="cube-face top"></div>
+                <div class="cube-face bottom"></div>
+                <div class="cube-core-energy"></div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    },
+    {
+      id: 'marketing',
+      category: 'marketing',
+      categoryLabel: 'MARKETING',
+      num: '09',
+      tag: '09 // GROWTH',
+      name: 'Growth Marketing',
+      oneLiner: 'High-ROI acquisition funnels & performance campaigns.',
+      detailTag: '09 // PERFORMANCE MARKETING',
+      detailTitle: 'Growth Marketing & Acquisition Funnels',
+      detailDesc: 'High-ROI multi-channel customer acquisition funnels, paid performance campaigns, and programmatic lead generation delivering predictable growth.',
+      stack: ['Google Ads', 'Meta Ads', 'Lead Funnels', 'ROI Analytics', 'HubSpot', 'Conversion Rate Opt', 'Retargeting', 'A/B Testing'],
+      deliverables: [
+        'Multi-touch attribution & conversion tracking',
+        'Predictive audience cohort targeting & retargeting',
+        'Continuous landing page split-testing (A/B & MVT)',
+        'Lower customer acquisition cost (CAC) & higher ROAS'
+      ],
+      renderVisual: function() {
+        return `
+          <div class="vis-funnel-wrap">
+            <div class="funnel-row f1">
+              <span class="funnel-stage-name">Attract</span>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill bar1" style="width: 100%;"></div></div>
+              <span class="funnel-pct">100%</span>
+            </div>
+            <div class="funnel-row f2">
+              <span class="funnel-stage-name">Capture</span>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill bar2" style="width: 82%;"></div></div>
+              <span class="funnel-pct">82%</span>
+            </div>
+            <div class="funnel-row f3">
+              <span class="funnel-stage-name">Convert</span>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill bar3" style="width: 64%;"></div></div>
+              <span class="funnel-pct">64%</span>
+            </div>
+            <div class="funnel-row f4">
+              <span class="funnel-stage-name">Grow</span>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill bar4" style="width: 46%;"></div></div>
+              <span class="funnel-pct">46%</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+  ];
+
+  // Expose on window for easy editing
+  window.SERVICES_DATA = SERVICES_DATA;
+
+  // DOM Elements
+  const stage = document.getElementById('servicesCoverflowStage');
+  const prevBtn = document.getElementById('svcPrevBtn');
+  const nextBtn = document.getElementById('svcNextBtn');
+  const dotsWrap = document.getElementById('svcDotsWrap');
+  const activeCaption = document.getElementById('svcActiveCaption');
+  const exploreActiveBtn = document.getElementById('svcExploreActiveBtn');
+  const exploreBtnText = document.getElementById('svcExploreBtnText');
+  const filterChips = document.querySelectorAll('.svc-filter-chip');
+
+  // Chapter View Elements
+  const chapterModal = document.getElementById('serviceChapterModal');
+  const chapterCloseBtn = document.getElementById('chapterCloseBtn');
+  const chapterBackBtn = document.getElementById('chapterBackBtn');
+  const chapterHugeIndex = document.getElementById('chapterHugeIndex');
+  const chapterLeftTag = document.getElementById('chapterLeftTag');
+  const chapterLeftName = document.getElementById('chapterLeftName');
+  const chapterLeftVisualStage = document.getElementById('chapterLeftVisualStage');
+  const chapterRightColumn = document.getElementById('chapterRightColumn');
+  const chapterOverviewTag = document.getElementById('chapterOverviewTag');
+  const chapterOverviewTitle = document.getElementById('chapterOverviewTitle');
+  const chapterOverviewLead = document.getElementById('chapterOverviewLead');
+  const chapterTechChips = document.getElementById('chapterTechChips');
+  const chapterDeliverablesGrid = document.getElementById('chapterDeliverablesGrid');
+  const chapterCtaTitle = document.getElementById('chapterCtaTitle');
+  const chapterStartProjectBtn = document.getElementById('chapterStartProjectBtn');
+  const chapterPrevServiceBtn = document.getElementById('chapterPrevServiceBtn');
+  const chapterNextServiceBtn = document.getElementById('chapterNextServiceBtn');
+  const chapterPrevServiceName = document.getElementById('chapterPrevServiceName');
+  const chapterNextServiceName = document.getElementById('chapterNextServiceName');
+
+  if (!stage) return;
+
+  // State
+  let currentFilter = 'all';
+  let filteredServices = SERVICES_DATA;
+  let cardElements = [];
+  let target = 0;
+  let pos = 0;
+  let isDragging = false;
+  let hasDragged = false;
+  let startX = 0;
+  let startPos = 0;
+  let lastMountedIndex = -1;
+  let currentChapterServiceId = null;
+  let chapterObserver = null;
+
+  // 2. BUILD CAROUSEL CARDS
+  function buildCards() {
+    filteredServices = (currentFilter === 'all')
+      ? SERVICES_DATA
+      : SERVICES_DATA.filter(s => s.category === currentFilter);
+
+    stage.innerHTML = '';
+    cardElements = [];
+    lastMountedIndex = -1;
+    target = 0;
+    pos = 0;
+
+    filteredServices.forEach((svc, index) => {
+      const card = document.createElement('div');
+      card.className = 'services-coverflow-card';
+      card.setAttribute('data-service-id', svc.id);
+      card.setAttribute('data-index', index);
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', svc.name + ' - ' + svc.oneLiner);
+
+      card.innerHTML = `
+        <div class="svc-card-top">
+          <span class="svc-card-tag">${svc.tag}</span>
+          <span class="svc-card-category">${svc.categoryLabel}</span>
+        </div>
+        <div class="svc-card-art-box">
+          <div class="svc-giant-number">${svc.num}</div>
+          <div class="svc-live-visual-wrapper" style="display: none;"></div>
+        </div>
+        <div class="svc-card-bottom">
+          <h3 class="svc-card-name">${svc.name}</h3>
+          <p class="svc-card-oneliner">${svc.oneLiner}</p>
+          <div class="svc-card-explore-row">
+            <span class="svc-explore-label">EXPLORE SERVICE</span>
+            <div class="svc-explore-icon-circle">&rarr;</div>
+          </div>
+        </div>
+      `;
+
+      card.addEventListener('click', (e) => {
+        if (hasDragged) return;
+        const clickedIndex = parseInt(card.getAttribute('data-index'), 10);
+        const centerIndex = Math.round(pos);
+        if (clickedIndex === centerIndex) {
+          openChapterView(svc.id, card);
+        } else {
+          target = clickedIndex;
+        }
+      });
+
+      stage.appendChild(card);
+      cardElements.push(card);
+    });
+
+    buildDots();
+    updateCaption();
+    renderCoverflow(true);
+  }
+
+  // 3. BUILD DOTS
+  function buildDots() {
+    if (!dotsWrap) return;
+    dotsWrap.innerHTML = '';
+    filteredServices.forEach((svc, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'svc-dot' + (i === Math.round(pos) ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to service ' + (i + 1));
+      dot.addEventListener('click', () => {
+        target = i;
+      });
+      dotsWrap.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    if (!dotsWrap) return;
+    const centerIndex = Math.max(0, Math.min(filteredServices.length - 1, Math.round(pos)));
+    const dots = dotsWrap.querySelectorAll('.svc-dot');
+    dots.forEach((dot, i) => {
+      if (i === centerIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  function updateCaption() {
+    const centerIndex = Math.max(0, Math.min(filteredServices.length - 1, Math.round(pos)));
+    const svc = filteredServices[centerIndex];
+    if (!svc) return;
+
+    if (activeCaption) {
+      const curNo = String(centerIndex + 1).padStart(2, '0');
+      const totNo = String(filteredServices.length).padStart(2, '0');
+      const catCap = svc.categoryLabel.charAt(0) + svc.categoryLabel.slice(1).toLowerCase();
+      activeCaption.textContent = `${curNo} / ${totNo} · ${catCap}`;
+    }
+
+    if (exploreBtnText) {
+      exploreBtnText.textContent = `Explore ${svc.name} →`;
+    }
+  }
+
+  // 4. COVERFLOW RENDER LOOP
+  function renderCoverflow(forceMount) {
+    if (!cardElements.length) return;
+    const cardWidth = cardElements[0].offsetWidth || 340;
+    const spacing = cardWidth * 0.82;
+    const centerIndex = Math.max(0, Math.min(filteredServices.length - 1, Math.round(pos)));
+
+    cardElements.forEach((card, i) => {
+      const d = i - pos;
+      const absD = Math.abs(d);
+      const sign = Math.sign(d);
+
+      // Positioning formula from spec
+      const translateX = sign * (Math.min(absD, 1) * spacing + Math.max(absD - 1, 0) * spacing * 0.5);
+      const rotateY = Math.max(-58, Math.min(58, -d * 40));
+      const translateZ = -absD * 150;
+      const scale = 1 - Math.min(absD, 2) * 0.06;
+      const opacity = Math.max(0, 1 - absD * 0.32);
+      const zIndex = Math.round(100 - absD * 10);
+      const pointerEvents = opacity < 0.1 ? 'none' : 'auto';
+
+      card.style.transform = `translate3d(calc(-50% + ${translateX.toFixed(2)}px), -50%, ${translateZ.toFixed(2)}px) rotateY(${rotateY.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+      card.style.opacity = opacity.toFixed(3);
+      card.style.zIndex = zIndex;
+      card.style.pointerEvents = pointerEvents;
+
+      if (i === centerIndex) {
+        card.classList.add('is-active');
+      } else {
+        card.classList.remove('is-active');
+      }
+    });
+
+    // Mount / Unmount live animated visual on active card
+    if (centerIndex !== lastMountedIndex || forceMount) {
+      lastMountedIndex = centerIndex;
+      cardElements.forEach((card, i) => {
+        const giantNum = card.querySelector('.svc-giant-number');
+        const visualWrap = card.querySelector('.svc-live-visual-wrapper');
+        const svc = filteredServices[i];
+
+        if (i === centerIndex) {
+          if (giantNum) giantNum.style.display = 'none';
+          if (visualWrap) {
+            visualWrap.style.display = 'flex';
+            visualWrap.innerHTML = svc.renderVisual();
+          }
+        } else {
+          if (giantNum) giantNum.style.display = 'flex';
+          if (visualWrap) {
+            visualWrap.style.display = 'none';
+            visualWrap.innerHTML = ''; // free animation memory
+          }
+        }
+      });
+
+      updateDots();
+      updateCaption();
+    }
+  }
+
+  // Animation Loop (requestAnimationFrame)
+  let isRafRunning = false;
+  function startRafLoop() {
+    if (isRafRunning) return;
+    isRafRunning = true;
+
+    function step() {
+      if (!isDragging) {
+        pos += (target - pos) * 0.13;
+        if (Math.abs(target - pos) < 0.001) {
+          pos = target;
+          renderCoverflow(false);
+          isRafRunning = false;
+          return;
+        }
+      }
+      renderCoverflow(false);
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function triggerMove(newTarget) {
+    target = Math.max(0, Math.min(filteredServices.length - 1, newTarget));
+    startRafLoop();
+  }
+
+  // 5. DRAG & TOUCH CONTROLS
+  stage.addEventListener('pointerdown', (e) => {
+    isDragging = true;
+    hasDragged = false;
+    startX = e.clientX;
+    startPos = pos;
+    stage.classList.add('is-dragging');
+    stage.setPointerCapture(e.pointerId);
+    startRafLoop();
+  });
+
+  stage.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    if (Math.abs(deltaX) > 6) {
+      hasDragged = true;
+    }
+    // 280px drag = 1 card
+    pos = startPos - (deltaX / 280);
+    // Soft rubberband clamping
+    const minPos = -0.5;
+    const maxPos = filteredServices.length - 0.5;
+    if (pos < minPos) pos = minPos + (pos - minPos) * 0.3;
+    if (pos > maxPos) pos = maxPos + (pos - maxPos) * 0.3;
+    target = pos;
+  });
+
+  function endDrag(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    stage.classList.remove('is-dragging');
+    try { stage.releasePointerCapture(e.pointerId); } catch (_) {}
+    triggerMove(Math.round(pos));
+  }
+
+  stage.addEventListener('pointerup', endDrag);
+  stage.addEventListener('pointercancel', endDrag);
+
+  // 6. WHEEL / TRACKPAD HORIZONTAL SCROLL
+  let wheelAccumulator = 0;
+  let wheelTimeout = null;
+  stage.addEventListener('wheel', (e) => {
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (Math.abs(delta) < 8) return;
+    e.preventDefault();
+    wheelAccumulator += delta;
+
+    clearTimeout(wheelTimeout);
+    wheelTimeout = setTimeout(() => {
+      wheelAccumulator = 0;
+    }, 200);
+
+    if (Math.abs(wheelAccumulator) > 40) {
+      const dir = Math.sign(wheelAccumulator);
+      triggerMove(target + dir);
+      wheelAccumulator = 0;
+    }
+  }, { passive: false });
+
+  // 7. ARROW KEYS
+  window.addEventListener('keydown', (e) => {
+    // Only if chapter modal is NOT open
+    if (chapterModal && chapterModal.style.display !== 'none') {
+      if (e.key === 'Escape') {
+        closeChapterView();
+      }
+      return;
+    }
+
+    if (e.key === 'ArrowLeft') {
+      triggerMove(target - 1);
+    } else if (e.key === 'ArrowRight') {
+      triggerMove(target + 1);
+    }
+  });
+
+  // 8. BUTTONS
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => triggerMove(target - 1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => triggerMove(target + 1));
+  }
+
+  if (exploreActiveBtn) {
+    exploreActiveBtn.addEventListener('click', () => {
+      const centerIndex = Math.max(0, Math.min(filteredServices.length - 1, Math.round(pos)));
+      const svc = filteredServices[centerIndex];
+      const card = cardElements[centerIndex];
+      if (svc) {
+        openChapterView(svc.id, card);
+      }
+    });
+  }
+
+  // 9. FILTER CHIPS
+  filterChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => {
+        c.classList.remove('active');
+        c.setAttribute('aria-selected', 'false');
+      });
+      chip.classList.add('active');
+      chip.setAttribute('aria-selected', 'true');
+      currentFilter = chip.getAttribute('data-filter') || 'all';
+      buildCards();
+    });
+  });
+
+  // =========================================================================
+  // CHAPTER VIEW FULL-SCREEN ENGINE
+  // =========================================================================
+
+  function populateChapterView(serviceId) {
+    const svcIndex = SERVICES_DATA.findIndex(s => s.id === serviceId);
+    if (svcIndex === -1) return;
+    const svc = SERVICES_DATA[svcIndex];
+    currentChapterServiceId = svc.id;
+
+    // Left Column
+    if (chapterHugeIndex) chapterHugeIndex.textContent = svc.num;
+    if (chapterLeftTag) chapterLeftTag.textContent = svc.detailTag || svc.tag;
+    if (chapterLeftName) chapterLeftName.textContent = svc.name;
+    if (chapterLeftVisualStage) {
+      chapterLeftVisualStage.innerHTML = svc.renderVisual();
+    }
+
+    // Right Column: Overview
+    if (chapterOverviewTag) chapterOverviewTag.textContent = svc.detailTag || svc.tag;
+    if (chapterOverviewTitle) chapterOverviewTitle.textContent = svc.detailTitle || svc.name;
+    if (chapterOverviewLead) chapterOverviewLead.textContent = svc.detailDesc || svc.oneLiner;
+
+    // Tech Stack Chips
+    if (chapterTechChips) {
+      chapterTechChips.innerHTML = '';
+      (svc.stack || []).forEach((tag, idx) => {
+        const chip = document.createElement('span');
+        chip.className = 'chapter-tech-chip';
+        chip.textContent = tag;
+        chip.style.transitionDelay = (idx * 0.05 + 0.1) + 's';
+        chapterTechChips.appendChild(chip);
+      });
+    }
+
+    // Deliverables Grid
+    if (chapterDeliverablesGrid) {
+      chapterDeliverablesGrid.innerHTML = '';
+      (svc.deliverables || []).forEach((deliv, idx) => {
+        const card = document.createElement('div');
+        card.className = 'chapter-deliverable-card';
+        card.innerHTML = `
+          <div class="deliverable-check-icon">&#10003;</div>
+          <div class="deliverable-text">${deliv}</div>
+        `;
+        chapterDeliverablesGrid.appendChild(card);
+      });
+    }
+
+    // CTA
+    if (chapterCtaTitle) {
+      chapterCtaTitle.textContent = `Ready to start your ${svc.name} project?`;
+    }
+    if (chapterStartProjectBtn) {
+      chapterStartProjectBtn.setAttribute('data-service-preselect', svc.id);
+      chapterStartProjectBtn.href = '#estimator';
+    }
+
+    // Neighbour Cards
+    const prevIdx = (svcIndex - 1 + SERVICES_DATA.length) % SERVICES_DATA.length;
+    const nextIdx = (svcIndex + 1) % SERVICES_DATA.length;
+    const prevSvc = SERVICES_DATA[prevIdx];
+    const nextSvc = SERVICES_DATA[nextIdx];
+
+    if (chapterPrevServiceName) chapterPrevServiceName.textContent = prevSvc.name;
+    if (chapterNextServiceName) chapterNextServiceName.textContent = nextSvc.name;
+
+    if (chapterPrevServiceBtn) {
+      chapterPrevServiceBtn.onclick = () => switchChapter(prevSvc.id);
+    }
+    if (chapterNextServiceBtn) {
+      chapterNextServiceBtn.onclick = () => switchChapter(nextSvc.id);
+    }
+
+    // Setup IntersectionObserver for smooth reveal on scroll
+    setupChapterObserver();
+  }
+
+  function setupChapterObserver() {
+    if (chapterObserver) {
+      chapterObserver.disconnect();
+    }
+
+    const items = chapterModal.querySelectorAll('.svc-reveal-item');
+    chapterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    }, {
+      root: chapterRightColumn,
+      threshold: 0.15
+    });
+
+    items.forEach(item => {
+      item.classList.remove('is-revealed');
+      chapterObserver.observe(item);
+    });
+
+    // Reveal top item immediately
+    setTimeout(() => {
+      const topSection = document.getElementById('chapterOverviewSection');
+      if (topSection) topSection.classList.add('is-revealed');
+    }, 100);
+  }
+
+  function openChapterView(serviceId, sourceCard) {
+    populateChapterView(serviceId);
+    if (!chapterModal) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    chapterModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+
+    if (sourceCard && !prefersReducedMotion) {
+      const rect = sourceCard.getBoundingClientRect();
+      const top = rect.top;
+      const right = window.innerWidth - rect.right;
+      const bottom = window.innerHeight - rect.bottom;
+      const left = rect.left;
+
+      chapterModal.style.transition = 'none';
+      chapterModal.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px round 26px)`;
+      chapterModal.style.opacity = '1';
+
+      // Force layout reflow
+      chapterModal.offsetHeight;
+
+      chapterModal.style.transition = 'clip-path 750ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease';
+      chapterModal.style.clipPath = 'inset(0px 0px 0px 0px round 0px)';
+    } else {
+      chapterModal.style.transition = 'opacity 0.35s ease';
+      chapterModal.style.clipPath = 'none';
+      chapterModal.style.opacity = '1';
+    }
+
+    // Deep link hash
+    history.replaceState(null, null, '#service-' + serviceId);
+
+    if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
+      AudioEngine.playBeep(840, 'sine', 0.12, 0.03);
+    }
+  }
+
+  function switchChapter(serviceId) {
+    const inner = document.getElementById('chapterModalInner');
+    if (inner) {
+      inner.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+      inner.style.opacity = '0';
+      inner.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        populateChapterView(serviceId);
+        if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
+        inner.style.opacity = '1';
+        inner.style.transform = 'translateY(0)';
+        history.replaceState(null, null, '#service-' + serviceId);
+      }, 200);
+    } else {
+      populateChapterView(serviceId);
+      if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
+      history.replaceState(null, null, '#service-' + serviceId);
+    }
+  }
+
+  function closeChapterView() {
+    if (!chapterModal) return;
+    chapterModal.style.transition = 'opacity 0.35s ease';
+    chapterModal.style.opacity = '0';
+
+    setTimeout(() => {
+      chapterModal.style.display = 'none';
+      chapterModal.style.clipPath = 'none';
+      document.body.style.overflow = '';
+      if (chapterObserver) chapterObserver.disconnect();
+      if (window.location.hash.startsWith('#service-')) {
+        history.replaceState(null, null, '#services');
+      }
+    }, 350);
+  }
+
+  if (chapterCloseBtn) chapterCloseBtn.addEventListener('click', closeChapterView);
+  if (chapterBackBtn) chapterBackBtn.addEventListener('click', closeChapterView);
+
+  // Deep Link On Load & Hashchange
+  function checkDeepLink() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#service-')) {
+      const svcId = hash.replace('#service-', '').trim();
+      const match = SERVICES_DATA.find(s => s.id === svcId);
+      if (match) {
+        setTimeout(() => {
+          openChapterView(match.id, null);
+        }, 300);
+      }
+    }
+  }
+
+  window.addEventListener('hashchange', checkDeepLink);
+
+  // Initialize
+  buildCards();
+  checkDeepLink();
+})();

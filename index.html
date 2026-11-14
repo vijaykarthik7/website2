@@ -729,330 +729,50 @@
     <!-- Sections 12 & 13: Digital Capability Universe / Services Bento Grid -->
     <section class="section-capabilities" id="services">
       <div class="section-container">
+        <!-- Services Section Header -->
+        <div class="services-header-wrap">
+          <div class="services-pill-badge">WHAT WE DO</div>
+          <h2 class="services-main-heading">Services built for <span class="gold-gradient">real growth</span></h2>
+          <p class="services-sub-heading">Drag, scroll or use the arrows. Click the centre card to open its full story.</p>
 
-        <!-- Restored Original Header Row with Bento Pill Action -->
-        <div class="design-header-row bento-services-header">
-          <div class="design-title-group">
-            <span class="sub-badge">CAPABILITY UNIVERSE</span>
-            <h2 class="section-title">Digital Capability Universe</h2>
-            <p class="section-subtitle">Full-spectrum technology, engineering, and digital growth services crafted for ambitious companies.</p>
+          <!-- Filter Chips -->
+          <div class="services-filter-row" role="tablist" aria-label="Filter services by domain">
+            <button class="svc-filter-chip active" data-filter="all" role="tab" aria-selected="true">All (9)</button>
+            <button class="svc-filter-chip" data-filter="development" role="tab" aria-selected="false">Development (6)</button>
+            <button class="svc-filter-chip" data-filter="designing" role="tab" aria-selected="false">Designing (2)</button>
+            <button class="svc-filter-chip" data-filter="marketing" role="tab" aria-selected="false">Marketing (1)</button>
           </div>
-          <a href="#contact" class="bento-pill-cta" data-cursor="ACTION">
-            <span>Explore All Services</span>
-            <span class="link-arrow">&rarr;</span>
-          </a>
         </div>
 
-        <!-- Bento Category Tabs -->
-        <div class="bento-category-tabs">
-          <button class="bento-tab active" data-bento-tab="development">Development (6)</button>
-          <button class="bento-tab" data-bento-tab="designing">Designing (2)</button>
-          <button class="bento-tab" data-bento-tab="marketing">Marketing (1)</button>
+        <!-- 3D Coverflow Container -->
+        <div class="services-coverflow-container">
+          <!-- The 3D Coverflow Stage -->
+          <div class="services-coverflow-stage" id="servicesCoverflowStage" tabindex="0" role="region" aria-label="3D Services Coverflow Carousel">
+            <!-- Cards rendered dynamically by JS -->
+          </div>
+
+          <!-- Soft gold elliptical glow under the stage -->
+          <div class="services-stage-glow" aria-hidden="true"></div>
+
+          <!-- Controls: Prev / Pagination Dots / Next -->
+          <div class="services-nav-controls">
+            <button class="svc-nav-btn prev" id="svcPrevBtn" aria-label="Previous Service">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </button>
+            <div class="services-pagination-dots" id="svcDotsWrap" role="tablist" aria-label="Carousel pagination"></div>
+            <button class="svc-nav-btn next" id="svcNextBtn" aria-label="Next Service">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+
+          <!-- Caption & Explore Active Service CTA -->
+          <div class="services-bottom-action">
+            <div class="services-active-caption" id="svcActiveCaption">01 / 09 &middot; Development</div>
+            <button class="services-explore-active-btn" id="svcExploreActiveBtn">
+              <span id="svcExploreBtnText">Explore Web Development &rarr;</span>
+            </button>
+          </div>
         </div>
-
-        <!-- BENTO BLOCK 1: DEVELOPMENT (Web, Custom Software, Mobile Apps, E-Commerce, Game Dev, AR/VR) -->
-        <div class="bento-group-development" id="bentoGroupDevelopment">
-
-          <div class="bento-grid">
-            <!-- Card 1: Left Column Tall Portrait (01 // CORE — Web Development) -->
-            <div class="bento-col-left">
-              <div class="bento-card bento-card-1" data-service-trigger="web" data-cursor="VIEW">
-                <img src="assets/bento_web_dev.gif" alt="Web Development Architecture" class="bento-card-bg">
-                <div class="bento-card-overlay"></div>
-                
-                <div class="bento-card-top">
-                  <span class="bento-index">01 // CORE</span>
-                  <span class="bento-badge">Web Architecture</span>
-                </div>
-
-                <div class="bento-card-bottom">
-                  <h3 class="bento-card-title bento-hero-title">Web Development</h3>
-                  <p class="bento-card-desc">
-                    Next-generation responsive web applications engineered with headless CMS, sub-second load times, and custom APIs.
-                  </p>
-                  <div class="bento-tech-tags">
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Next.js</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">TypeScript</span>
-                  </div>
-                  <div class="bento-card-action-row">
-                    <button class="capability-btn" data-service-trigger="web">
-                      <span>EXPLORE SERVICE</span>
-                      <span>&rarr;</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column: Top Wide Landscape + Bottom Split Row -->
-            <div class="bento-col-right">
-
-              <!-- Card 2: Top Wide Landscape (02 // ENTERPRISE — Custom Software Development) -->
-              <div class="bento-card bento-card-2" data-service-trigger="custom" data-cursor="VIEW">
-                <img src="assets/bento_custom_software.gif" alt="Custom Software Cloud Architecture" class="bento-card-bg">
-                <div class="bento-card-overlay"></div>
-
-                <div class="bento-card-top">
-                  <h3 class="bento-card-title bento-card-title-lg">Custom Software Development</h3>
-                  <span class="bento-index">02 // ENTERPRISE</span>
-                </div>
-
-                <div class="bento-card-bottom bento-bottom-landscape">
-                  <p class="bento-card-desc bento-desc-landscape">
-                    Mission-critical enterprise software, bespoke CRM/ERP platforms, microservice architectures, and multi-tenant cloud backends.
-                  </p>
-                  <div class="bento-tech-tags">
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Microservices</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">AWS Cloud</span>
-                  </div>
-                  <div class="bento-card-action-row">
-                    <button class="capability-btn" data-service-trigger="custom">
-                      <span>EXPLORE SERVICE</span>
-                      <span>&rarr;</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Bottom Row: Card 3 & Card 4 Side-by-Side -->
-              <div class="bento-right-bottom-row">
-
-                <!-- Card 3: Bottom Left (03 // MOBILE — Mobile App Development) -->
-                <div class="bento-card bento-card-3" data-service-trigger="mobile" data-cursor="VIEW">
-                  <img src="assets/bento_mobile_dev.gif" alt="Mobile App Development" class="bento-card-bg">
-                  <div class="bento-card-overlay"></div>
-
-                  <div class="bento-card-top">
-                    <h3 class="bento-card-title bento-card-title-sm">Mobile App Development</h3>
-                    <span class="bento-index">03 // MOBILE</span>
-                  </div>
-
-                  <div class="bento-card-bottom">
-                    <p class="bento-card-desc">
-                      High-performance cross-platform iOS and Android mobile applications built for fluid user engagement and offline resilience.
-                    </p>
-                    <div class="bento-tech-tags">
-                      <span class="tech-tag">Flutter</span>
-                      <span class="tech-tag">React Native</span>
-                      <span class="tech-tag">REST APIs</span>
-                    </div>
-                    <div class="bento-card-action-row">
-                      <button class="capability-btn" data-service-trigger="mobile">
-                        <span>EXPLORE SERVICE</span>
-                        <span>&rarr;</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 4: Bottom Right (04 // COMMERCE — E-Commerce Solutions) -->
-                <div class="bento-card bento-card-4" data-service-trigger="ecommerce" data-cursor="VIEW">
-                  <img src="assets/bento_ecommerce.gif" alt="E-Commerce Solutions" class="bento-card-bg">
-                  <div class="bento-card-overlay"></div>
-
-                  <div class="bento-card-top">
-                    <h3 class="bento-card-title bento-card-title-sm">E-Commerce Solutions</h3>
-                    <span class="bento-index">04 // COMMERCE</span>
-                  </div>
-
-                  <div class="bento-card-bottom">
-                    <p class="bento-card-desc">
-                      High-converting online store architectures with seamless payment gateways, automated inventory sync, and instant checkout.
-                    </p>
-                    <div class="bento-tech-tags">
-                      <span class="tech-tag">WooCommerce</span>
-                      <span class="tech-tag">Shopify</span>
-                      <span class="tech-tag">Stripe</span>
-                    </div>
-                    <div class="bento-card-action-row">
-                      <button class="capability-btn" data-service-trigger="ecommerce">
-                        <span>EXPLORE SERVICE</span>
-                        <span>&rarr;</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Extra Row: Card 5 (Game Development) & Card 6 (AR/VR Development) -->
-          <div class="bento-grid-dual bento-dev-extra-row">
-
-            <!-- Card 5: Game Development -->
-            <div class="bento-card bento-card-dual" data-service-trigger="gamedev" data-cursor="VIEW">
-              <img src="assets/bento_game_dev.gif" alt="Game Development Engine" class="bento-card-bg">
-              <div class="bento-card-overlay"></div>
-
-              <div class="bento-card-top">
-                <span class="bento-index">05 // INTERACTIVE</span>
-                <span class="bento-badge">Realtime Engine</span>
-              </div>
-
-              <div class="bento-card-bottom">
-                <h3 class="bento-card-title bento-card-title-lg">Game Development</h3>
-                <p class="bento-card-desc">
-                  High-fidelity 2D/3D games, custom physics, multiplayer networking, and realtime graphics built on Unreal Engine and Unity.
-                </p>
-                <div class="bento-tech-tags">
-                  <span class="tech-tag">Unreal Engine 5</span>
-                  <span class="tech-tag">Unity</span>
-                  <span class="tech-tag">C++</span>
-                  <span class="tech-tag">C#</span>
-                  <span class="tech-tag">Shaders</span>
-                  <span class="tech-tag">Multiplayer</span>
-                </div>
-                <div class="bento-card-action-row">
-                  <button class="capability-btn" data-service-trigger="gamedev">
-                    <span>EXPLORE SERVICE</span>
-                    <span>&rarr;</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 6: AR/VR Development -->
-            <div class="bento-card bento-card-dual" data-service-trigger="arvr" data-cursor="VIEW">
-              <img src="assets/bento_ar_vr.gif" alt="AR VR Spatial Development" class="bento-card-bg">
-              <div class="bento-card-overlay"></div>
-
-              <div class="bento-card-top">
-                <span class="bento-index">06 // SPATIAL</span>
-                <span class="bento-badge">Spatial Computing</span>
-              </div>
-
-              <div class="bento-card-bottom">
-                <h3 class="bento-card-title bento-card-title-lg">AR/VR Development</h3>
-                <p class="bento-card-desc">
-                  Immersive spatial computing, WebXR environments, 6-DoF interactive simulations, and enterprise XR apps for Vision Pro and Meta Quest.
-                </p>
-                <div class="bento-tech-tags">
-                  <span class="tech-tag">VisionOS</span>
-                  <span class="tech-tag">Meta Quest</span>
-                  <span class="tech-tag">WebXR</span>
-                  <span class="tech-tag">Unity XR</span>
-                  <span class="tech-tag">Spatial Audio</span>
-                  <span class="tech-tag">6-DoF</span>
-                </div>
-                <div class="bento-card-action-row">
-                  <button class="capability-btn" data-service-trigger="arvr">
-                    <span>EXPLORE SERVICE</span>
-                    <span>&rarr;</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- BENTO BLOCK 2: DESIGNING (UI/UX Design & 3D Modeling Design) -->
-        <div class="bento-grid-dual" id="bentoGroupDesign" style="display: none;">
-
-          <!-- Card 7: UI/UX Design -->
-          <div class="bento-card bento-card-dual" data-service-trigger="design" data-cursor="VIEW">
-            <img src="assets/bento_ui_ux.gif" alt="UI UX Design Systems" class="bento-card-bg">
-            <div class="bento-card-overlay"></div>
-            
-            <div class="bento-card-top">
-              <span class="bento-index">07 // DESIGN</span>
-              <span class="bento-badge">Design Systems</span>
-            </div>
-
-            <div class="bento-card-bottom">
-              <h3 class="bento-card-title bento-card-title-lg">UI/UX Design</h3>
-              <p class="bento-card-desc">
-                Bespoke design systems, rapid interactive Figma prototypes, and micro-interaction flows centered around conversion rate optimization.
-              </p>
-              <div class="bento-tech-tags">
-                <span class="tech-tag">Figma</span>
-                <span class="tech-tag">Design Systems</span>
-                <span class="tech-tag">Prototypes</span>
-                <span class="tech-tag">User Testing</span>
-              </div>
-              <div class="bento-card-action-row">
-                <button class="capability-btn" data-service-trigger="design">
-                  <span>EXPLORE SERVICE</span>
-                  <span>&rarr;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 8: 3D Modeling Design -->
-          <div class="bento-card bento-card-dual" data-service-trigger="3d" data-cursor="VIEW">
-            <img src="assets/bento_3d_webgl.gif" alt="3D Modeling Design and Digital Assets" class="bento-card-bg">
-            <div class="bento-card-overlay"></div>
-
-            <div class="bento-card-top">
-              <span class="bento-index">08 // IMMERSIVE</span>
-              <span class="bento-badge">WebGL Engine</span>
-            </div>
-
-            <div class="bento-card-bottom">
-              <h3 class="bento-card-title bento-card-title-lg">3D Modeling Design</h3>
-              <p class="bento-card-desc">
-                Cinematic WebGL experiences, interactive product configurators, and futuristic 3D digital universe assets built for the modern web.
-              </p>
-              <div class="bento-tech-tags">
-                <span class="tech-tag">Three.js</span>
-                <span class="tech-tag">WebGL</span>
-                <span class="tech-tag">Blender</span>
-                <span class="tech-tag">GLTF / GLB</span>
-              </div>
-              <div class="bento-card-action-row">
-                <button class="capability-btn" data-service-trigger="3d">
-                  <span>EXPLORE SERVICE</span>
-                  <span>&rarr;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- BENTO BLOCK 3: MARKETING (Digital Marketing & Performance) -->
-        <div class="bento-grid-dual" id="bentoGroupMarketing" style="display: none;">
-
-          <!-- Card 9: Digital Marketing & Performance -->
-          <div class="bento-card bento-card-dual" data-service-trigger="marketing" data-cursor="VIEW">
-            <img src="assets/bento_marketing.gif" alt="Digital Marketing Growth" class="bento-card-bg">
-            <div class="bento-card-overlay"></div>
-
-            <div class="bento-card-top">
-              <span class="bento-index">09 // GROWTH</span>
-              <span class="bento-badge">Performance</span>
-            </div>
-
-            <div class="bento-card-bottom">
-              <h3 class="bento-card-title bento-card-title-lg">Digital Marketing & Performance</h3>
-              <p class="bento-card-desc">
-                High-ROI multi-channel customer acquisition funnels, paid performance campaigns, and programmatic lead generation.
-              </p>
-              <div class="bento-tech-tags">
-                <span class="tech-tag">Google Ads</span>
-                <span class="tech-tag">Meta Ads</span>
-                <span class="tech-tag">Lead Funnels</span>
-                <span class="tech-tag">ROI Analytics</span>
-              </div>
-              <div class="bento-card-action-row">
-                <button class="capability-btn" data-service-trigger="marketing">
-                  <span>EXPLORE SERVICE</span>
-                  <span>&rarr;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
     </section>
 
@@ -2053,59 +1773,140 @@
     </div>
   </div>
 
-  <!-- Service Detail Lifecycle Modal -->
-  <div class="modal-backdrop" id="serviceLifecycleModal">
-    <div class="modal-content service-detail-modal">
-      <button class="modal-close" id="serviceModalCloseBtn" aria-label="Close details modal">&times;</button>
-      <div class="service-modal-inner">
-        <div class="service-modal-header">
-          <span class="sub-badge" id="serviceModalBadge">01 // CORE ARCHITECTURE</span>
-          <h3 class="award-modal-title" id="serviceModalTitle" style="text-align: left; margin-top: 10px;">Web Development Architecture</h3>
-          <p class="service-modal-lead" id="serviceModalDesc">
-            Next-generation responsive web applications engineered with headless CMS, sub-second load times, and custom APIs.
-          </p>
+    <!-- Full-Screen Chapter View Modal -->
+  <div class="service-chapter-modal" id="serviceChapterModal" aria-hidden="true" style="display: none;">
+    <div class="chapter-modal-inner" id="chapterModalInner">
+      
+      <!-- LEFT COLUMN: Sticky Visual Showcase -->
+      <aside class="chapter-left-column">
+        <div class="chapter-huge-index" id="chapterHugeIndex">01</div>
+        <div class="chapter-left-top">
+          <button class="chapter-back-btn" id="chapterBackBtn" aria-label="Back to all services">
+            &larr; ALL SERVICES
+          </button>
+        </div>
+        
+        <div class="chapter-left-visual-stage" id="chapterLeftVisualStage">
+          <!-- Active Service Live Animated Visual is mounted here -->
         </div>
 
-        <!-- Tech Stack Tags in Modal -->
-        <div class="service-modal-tech-box">
-          <span class="service-modal-section-label">CORE TECHNOLOGY STACK &amp; TOOLS</span>
-          <div class="service-modal-tags" id="serviceModalTags"></div>
+        <div class="chapter-left-bottom">
+          <div class="chapter-service-tag" id="chapterLeftTag">01 // CORE ARCHITECTURE</div>
+          <h2 class="chapter-service-name" id="chapterLeftName">Web Development Architecture</h2>
         </div>
+      </aside>
 
-        <!-- Key Deliverables Grid -->
-        <div class="service-modal-deliverables-box">
-          <span class="service-modal-section-label">KEY DELIVERABLES &amp; CAPABILITIES</span>
-          <div class="service-modal-deliverables" id="serviceModalDeliverables"></div>
-        </div>
+      <!-- RIGHT COLUMN: Scrolling Detailed Chapter Content -->
+      <main class="chapter-right-column" id="chapterRightColumn">
+        <button class="chapter-close-btn" id="chapterCloseBtn" aria-label="Close chapter view">&times;</button>
+        
+        <div class="chapter-right-content">
+          <!-- Section 1: Overview -->
+          <section class="chapter-content-section svc-reveal-item" id="chapterOverviewSection">
+            <span class="chapter-pill-tag" id="chapterOverviewTag">01 // CORE ARCHITECTURE</span>
+            <h1 class="chapter-overview-title" id="chapterOverviewTitle">Web Development Architecture</h1>
+            <p class="chapter-overview-lead" id="chapterOverviewLead">
+              Next-generation responsive web applications engineered with headless CMS, sub-second load times, and custom APIs.
+            </p>
+          </section>
 
-        <!-- Execution Lifecycle Roadmap -->
-        <div class="service-modal-lifecycle-box">
-          <span class="service-modal-section-label">ENGINEERING EXECUTION ROADMAP</span>
-          <div class="lifecycle-flow">
-            <div class="lifecycle-step">01. Strategy</div>
-            <span class="lifecycle-arrow">&rarr;</span>
-            <div class="lifecycle-step">02. UX</div>
-            <span class="lifecycle-arrow">&rarr;</span>
-            <div class="lifecycle-step">03. UI</div>
-            <span class="lifecycle-arrow">&rarr;</span>
-            <div class="lifecycle-step">04. Development</div>
-            <span class="lifecycle-arrow">&rarr;</span>
-            <div class="lifecycle-step">05. Testing</div>
-            <span class="lifecycle-arrow">&rarr;</span>
-            <div class="lifecycle-step">06. Deployment</div>
-            <span class="lifecycle-arrow">&rarr;</span>
-            <div class="lifecycle-step">07. Optimization</div>
-            <span class="lifecycle-arrow">&rarr;</span>
-            <div class="lifecycle-step">08. Maintenance</div>
-          </div>
-        </div>
+          <!-- Section 2: Core Technology Stack & Tools -->
+          <section class="chapter-content-section svc-reveal-item" id="chapterTechSection">
+            <h3 class="chapter-section-label">CORE TECHNOLOGY STACK &amp; TOOLS</h3>
+            <div class="chapter-tech-chips" id="chapterTechChips">
+              <!-- Dynamically generated stack chips -->
+            </div>
+          </section>
 
-        <div class="service-modal-cta-row">
-          <a href="#contact" class="btn-talk" id="serviceModalActionBtn">Start This Project &rarr;</a>
+          <!-- Section 3: Key Deliverables & Capabilities -->
+          <section class="chapter-content-section svc-reveal-item" id="chapterDeliverablesSection">
+            <h3 class="chapter-section-label">KEY DELIVERABLES &amp; CAPABILITIES</h3>
+            <div class="chapter-deliverables-grid" id="chapterDeliverablesGrid">
+              <!-- Dynamically generated deliverable cards -->
+            </div>
+          </section>
+
+          <!-- Section 4: Engineering Execution Roadmap -->
+          <section class="chapter-content-section svc-reveal-item" id="chapterRoadmapSection">
+            <h3 class="chapter-section-label">ENGINEERING EXECUTION ROADMAP</h3>
+            <div class="chapter-timeline-wrap">
+              <div class="chapter-timeline-track" id="chapterTimelineTrack"></div>
+              <div class="chapter-timeline-steps">
+                <div class="chapter-timeline-step" style="--step-i: 0;">
+                  <div class="step-marker"><span class="step-dot"></span></div>
+                  <div class="step-info">
+                    <h4 class="step-title">01. Strategy</h4>
+                    <p class="step-sub">Goals, scope &amp; success metrics</p>
+                  </div>
+                </div>
+                <div class="chapter-timeline-step" style="--step-i: 1;">
+                  <div class="step-marker"><span class="step-dot"></span></div>
+                  <div class="step-info">
+                    <h4 class="step-title">02. UX</h4>
+                    <p class="step-sub">Flows, wireframes &amp; research</p>
+                  </div>
+                </div>
+                <div class="chapter-timeline-step" style="--step-i: 2;">
+                  <div class="step-marker"><span class="step-dot"></span></div>
+                  <div class="step-info">
+                    <h4 class="step-title">03. UI</h4>
+                    <p class="step-sub">Design system &amp; visuals</p>
+                  </div>
+                </div>
+                <div class="chapter-timeline-step" style="--step-i: 3;">
+                  <div class="step-marker"><span class="step-dot"></span></div>
+                  <div class="step-info">
+                    <h4 class="step-title">04. Development</h4>
+                    <p class="step-sub">Sprints, reviews &amp; demos</p>
+                  </div>
+                </div>
+                <div class="chapter-timeline-step" style="--step-i: 4;">
+                  <div class="step-marker"><span class="step-dot"></span></div>
+                  <div class="step-info">
+                    <h4 class="step-title">05. Testing</h4>
+                    <p class="step-sub">QA, performance &amp; security</p>
+                  </div>
+                </div>
+                <div class="chapter-timeline-step" style="--step-i: 5;">
+                  <div class="step-marker"><span class="step-dot"></span></div>
+                  <div class="step-info">
+                    <h4 class="step-title">06. Deployment</h4>
+                    <p class="step-sub">Launch, monitoring &amp; handover</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 5: CTA Card & Neighbour Navigation -->
+          <section class="chapter-content-section svc-reveal-item" id="chapterCtaSection">
+            <div class="chapter-cta-card">
+              <div class="chapter-cta-glow"></div>
+              <h3 class="chapter-cta-title" id="chapterCtaTitle">Ready to start your Web Development project?</h3>
+              <p class="chapter-cta-sub">Let's engineer an exceptional digital product tailored to your business goals.</p>
+              <!-- TODO: Link to project estimator with service pre-selected -->
+              <a href="#estimator" class="chapter-start-project-btn" id="chapterStartProjectBtn">
+                START THIS PROJECT &rarr;
+              </a>
+            </div>
+
+            <div class="chapter-nav-cards">
+              <button class="chapter-neighbour-card prev" id="chapterPrevServiceBtn">
+                <span class="neighbour-sub">&larr; PREVIOUS SERVICE</span>
+                <span class="neighbour-title" id="chapterPrevServiceName">Custom Software</span>
+              </button>
+              <button class="chapter-neighbour-card next" id="chapterNextServiceBtn">
+                <span class="neighbour-sub">NEXT SERVICE &rarr;</span>
+                <span class="neighbour-title" id="chapterNextServiceName">Mobile App</span>
+              </button>
+            </div>
+          </section>
         </div>
-      </div>
+      </main>
+
     </div>
   </div>
+
 
   <!-- GSAP & ScrollTrigger Animation Engine -->
   <script src="assets/gsap.min.js"></script>
