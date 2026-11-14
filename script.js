@@ -5385,8 +5385,15 @@ void main(void) {
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    chapterModal.style.display = 'block';
+    // Prevent background scrolling completely while modal is open
+    document.documentElement.classList.add('service-modal-open');
+    document.body.classList.add('service-modal-open');
     document.body.style.overflow = 'hidden';
+    if (window.lenis) {
+      window.lenis.stop();
+    }
+
+    chapterModal.style.display = 'block';
 
     if (sourceCard && !prefersReducedMotion) {
       const rect = sourceCard.getBoundingClientRect();
@@ -5453,12 +5460,36 @@ void main(void) {
     setTimeout(() => {
       chapterModal.style.display = 'none';
       chapterModal.style.clipPath = 'none';
+      document.documentElement.classList.remove('service-modal-open');
+      document.body.classList.remove('service-modal-open');
       document.body.style.overflow = '';
+      if (window.lenis) {
+        window.lenis.start();
+      }
       if (chapterObserver) chapterObserver.disconnect();
       if (window.location.hash.startsWith('#service-')) {
         history.replaceState(null, null, '#services');
       }
     }, 350);
+  }
+
+  // Isolate wheel and touch events within the modal so background never scrolls
+  if (chapterModal) {
+    chapterModal.addEventListener('wheel', (e) => {
+      const isRightColumn = e.target.closest('#chapterRightColumn');
+      if (!isRightColumn) {
+        e.preventDefault();
+      }
+      e.stopPropagation();
+    }, { passive: false });
+
+    chapterModal.addEventListener('touchmove', (e) => {
+      const isRightColumn = e.target.closest('#chapterRightColumn');
+      if (!isRightColumn) {
+        e.preventDefault();
+      }
+      e.stopPropagation();
+    }, { passive: false });
   }
 
   if (chapterCloseBtn) chapterCloseBtn.addEventListener('click', closeChapterView);

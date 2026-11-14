@@ -11545,12 +11545,20 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
 /* ==========================================================================
    THE CHAPTER VIEW (FULL-SCREEN MODAL & CHAPTER LAYOUT)
    ========================================================================== */
+html.service-modal-open,
+body.service-modal-open {
+  overflow: hidden !important;
+  height: 100% !important;
+  overscroll-behavior: none !important;
+}
+
 .service-chapter-modal {
   position: fixed;
   inset: 0;
   z-index: 99999;
   background: #07070a;
   overflow: hidden;
+  overscroll-behavior: contain;
   will-change: clip-path, opacity;
 }
 
@@ -11672,6 +11680,8 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
 .chapter-right-column {
   position: relative;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   height: 100%;
   padding: 48px 48px 80px 48px;
   scroll-behavior: smooth;
