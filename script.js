@@ -4976,12 +4976,13 @@ void main(void) {
 
       card.addEventListener('click', (e) => {
         if (hasDragged) return;
-        const clickedIndex = parseInt(card.getAttribute('data-index'), 10);
-        const centerIndex = Math.round(pos);
-        if (clickedIndex === centerIndex) {
+        openChapterView(svc.id, card);
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
           openChapterView(svc.id, card);
-        } else {
-          target = clickedIndex;
         }
       });
 
@@ -5128,42 +5129,69 @@ void main(void) {
   }
 
   // 5. DRAG & TOUCH CONTROLS
+  let isPointerDown = false;
+  let downTargetCard = null;
+
   stage.addEventListener('pointerdown', (e) => {
-    isDragging = true;
+    if (e.button !== 0 && e.pointerType === 'mouse') return;
+    isPointerDown = true;
+    isDragging = false;
     hasDragged = false;
     startX = e.clientX;
     startPos = pos;
-    stage.classList.add('is-dragging');
-    stage.setPointerCapture(e.pointerId);
-    startRafLoop();
+    downTargetCard = e.target.closest('.services-coverflow-card');
   });
 
   stage.addEventListener('pointermove', (e) => {
-    if (!isDragging) return;
+    if (!isPointerDown) return;
     const deltaX = e.clientX - startX;
-    if (Math.abs(deltaX) > 6) {
+    if (!hasDragged && Math.abs(deltaX) > 8) {
       hasDragged = true;
+      isDragging = true;
+      stage.classList.add('is-dragging');
+      try { stage.setPointerCapture(e.pointerId); } catch (_) {}
+      startRafLoop();
     }
-    // 280px drag = 1 card
-    pos = startPos - (deltaX / 280);
-    // Soft rubberband clamping
-    const minPos = -0.5;
-    const maxPos = filteredServices.length - 0.5;
-    if (pos < minPos) pos = minPos + (pos - minPos) * 0.3;
-    if (pos > maxPos) pos = maxPos + (pos - maxPos) * 0.3;
-    target = pos;
+    if (isDragging) {
+      // 280px drag = 1 card
+      pos = startPos - (deltaX / 280);
+      // Soft rubberband clamping
+      const minPos = -0.5;
+      const maxPos = filteredServices.length - 0.5;
+      if (pos < minPos) pos = minPos + (pos - minPos) * 0.3;
+      if (pos > maxPos) pos = maxPos + (pos - maxPos) * 0.3;
+      target = pos;
+    }
   });
 
-  function endDrag(e) {
-    if (!isDragging) return;
+  function endPointer(e) {
+    if (!isPointerDown) return;
+    const wasDragging = hasDragged;
+    isPointerDown = false;
     isDragging = false;
     stage.classList.remove('is-dragging');
-    try { stage.releasePointerCapture(e.pointerId); } catch (_) {}
-    triggerMove(Math.round(pos));
+    try {
+      if (stage.hasPointerCapture && stage.hasPointerCapture(e.pointerId)) {
+        stage.releasePointerCapture(e.pointerId);
+      }
+    } catch (_) {}
+
+    if (wasDragging) {
+      triggerMove(Math.round(pos));
+    } else {
+      // Direct click or tap on card
+      const targetCard = e.target.closest('.services-coverflow-card') || downTargetCard;
+      if (targetCard) {
+        const svcId = targetCard.getAttribute('data-service-id');
+        if (svcId) {
+          openChapterView(svcId, targetCard);
+        }
+      }
+    }
   }
 
-  stage.addEventListener('pointerup', endDrag);
-  stage.addEventListener('pointercancel', endDrag);
+  stage.addEventListener('pointerup', endPointer);
+  stage.addEventListener('pointercancel', endPointer);
 
   // 6. WHEEL / TRACKPAD HORIZONTAL SCROLL
   let wheelAccumulator = 0;
@@ -5344,8 +5372,16 @@ void main(void) {
   }
 
   function openChapterView(serviceId, sourceCard) {
+    if (!serviceId) {
+      const centerIndex = Math.max(0, Math.min(filteredServices.length - 1, Math.round(pos)));
+      serviceId = filteredServices[centerIndex]?.id || 'web';
+    }
     populateChapterView(serviceId);
     if (!chapterModal) return;
+
+    // Immediately reveal all chapter sections so content is 100% visible
+    const items = chapterModal.querySelectorAll('.svc-reveal-item');
+    items.forEach(el => el.classList.add('is-revealed'));
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -5354,25 +5390,31 @@ void main(void) {
 
     if (sourceCard && !prefersReducedMotion) {
       const rect = sourceCard.getBoundingClientRect();
-      const top = rect.top;
-      const right = window.innerWidth - rect.right;
-      const bottom = window.innerHeight - rect.bottom;
-      const left = rect.left;
+      const top = Math.max(0, Math.round(rect.top));
+      const right = Math.max(0, Math.round(window.innerWidth - rect.right));
+      const bottom = Math.max(0, Math.round(window.innerHeight - rect.bottom));
+      const left = Math.max(0, Math.round(rect.left));
 
       chapterModal.style.transition = 'none';
       chapterModal.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px round 26px)`;
       chapterModal.style.opacity = '1';
 
-      // Force layout reflow
-      chapterModal.offsetHeight;
-
-      chapterModal.style.transition = 'clip-path 750ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease';
-      chapterModal.style.clipPath = 'inset(0px 0px 0px 0px round 0px)';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          chapterModal.style.transition = 'clip-path 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease';
+          chapterModal.style.clipPath = 'inset(0px 0px 0px 0px round 0px)';
+          setTimeout(() => {
+            chapterModal.style.clipPath = 'none';
+          }, 550);
+        });
+      });
     } else {
       chapterModal.style.transition = 'opacity 0.35s ease';
       chapterModal.style.clipPath = 'none';
       chapterModal.style.opacity = '1';
     }
+
+    if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
 
     // Deep link hash
     history.replaceState(null, null, '#service-' + serviceId);
