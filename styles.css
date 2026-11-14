@@ -10169,7 +10169,7 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   position: relative;
   z-index: 10;
 }
@@ -10261,7 +10261,7 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
 .services-coverflow-stage {
   position: relative;
   width: 100%;
-  height: 540px;
+  height: 520px;
   perspective: 1500px;
   transform-style: preserve-3d;
   overflow: visible;
@@ -10282,8 +10282,7 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
   width: 340px;
   max-width: 74vw;
   height: 450px;
-  margin-left: -170px;
-  margin-top: -225px;
+  margin: 0;
   border-radius: 26px;
   background: var(--svc-card-bg);
   border: 1px solid var(--svc-card-border);
@@ -10432,15 +10431,18 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
 }
 
 .svc-explore-icon-circle {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 1px solid rgba(240, 199, 94, 0.4);
+  border: 1px solid rgba(240, 199, 94, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--svc-gold);
-  font-size: 14px;
+  font-size: 16px;
+  font-family: var(--svc-font-mono);
+  font-weight: 400;
+  line-height: 1;
   transition: all 0.25s var(--svc-ease-out);
   background: rgba(240, 199, 94, 0.05);
 }
@@ -10448,7 +10450,7 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
 .services-coverflow-card:hover .svc-explore-icon-circle {
   background: var(--svc-gold);
   color: #07070a;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   border-color: var(--svc-gold);
   box-shadow: 0 0 14px rgba(240, 199, 94, 0.5);
 }
@@ -10638,6 +10640,8 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
 .vis-code-body .code-line:nth-child(8) { animation-delay: 0.75s; }
 .vis-code-body .code-line:nth-child(9) { animation-delay: 0.85s; }
 .vis-code-body .code-line:nth-child(10) { animation-delay: 0.95s; }
+.vis-code-body .code-line:nth-child(11) { animation-delay: 1.05s; }
+.vis-code-body .code-line:nth-child(12) { animation-delay: 1.15s; }
 
 @keyframes codeLineFade {
   to { opacity: 1; transform: translateY(0); }
@@ -11889,14 +11893,13 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
    ========================================================================== */
 @media (max-width: 900px) {
   .services-coverflow-stage {
-    height: 500px;
+    height: 480px;
   }
 
   .services-coverflow-card {
     height: 430px;
     width: min(320px, 78vw);
-    margin-left: calc(min(320px, 78vw) * -0.5);
-    margin-top: -215px;
+    margin: 0;
     border-radius: 22px;
     padding: 20px;
   }
@@ -11955,12 +11958,12 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
 
 @media (max-width: 480px) {
   .services-coverflow-stage {
-    height: 470px;
+    height: 450px;
   }
 
   .services-coverflow-card {
     height: 410px;
-    margin-top: -205px;
+    margin: 0;
   }
 
   .svc-card-art-box {

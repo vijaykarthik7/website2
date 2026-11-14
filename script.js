@@ -4474,14 +4474,16 @@ void main(void) {
             <div class="vis-code-body">
               <div class="code-line"><span class="line-no">01</span><span class="kw">const</span> <span class="var">app</span> = <span class="fn">createServer</span>();</div>
               <div class="code-line"><span class="line-no">02</span><span class="kw">import</span> { <span class="type">NextApp</span>, <span class="type">React</span> } <span class="kw">from</span> <span class="str">'riyadvi'</span>;</div>
-              <div class="code-line"><span class="line-no">03</span><span class="kw">async function</span> <span class="fn">renderMatrix</span>(<span class="param">stream</span>) {</div>
-              <div class="code-line"><span class="line-no">04</span>  <span class="kw">const</span> <span class="var">pipeline</span> = <span class="kw">await</span> stream.<span class="fn">pipe</span>({</div>
-              <div class="code-line"><span class="line-no">05</span>    latency: <span class="str">'0.4ms'</span>,</div>
-              <div class="code-line"><span class="line-no">06</span>    caching: <span class="str">'edge-optimized'</span>,</div>
-              <div class="code-line"><span class="line-no">07</span>    security: <span class="str">'quantum-tls'</span>,</div>
-              <div class="code-line"><span class="line-no">08</span>  });</div>
-              <div class="code-line"><span class="line-no">09</span>  <span class="kw">return</span> pipeline.<span class="fn">deploy</span>(<span class="str">'global'</span>);</div>
-              <div class="code-line"><span class="line-no">10</span>} <span class="vis-code-cursor"></span></div>
+              <div class="code-line"><span class="line-no">03</span><span class="kw">async function</span> <span class="fn">renderMatrix</span>(<span class="param">stream</span>)</div>
+              <div class="code-line"><span class="line-no">04</span>{</div>
+              <div class="code-line"><span class="line-no">05</span>  <span class="kw">const</span> <span class="var">pipeline</span> = <span class="kw">await</span></div>
+              <div class="code-line"><span class="line-no">06</span>  stream.<span class="fn">pipe</span>({</div>
+              <div class="code-line"><span class="line-no">07</span>    latency: <span class="str">'0.4ms'</span>,</div>
+              <div class="code-line"><span class="line-no">08</span>    caching: <span class="str">'edge-optimized'</span>,</div>
+              <div class="code-line"><span class="line-no">09</span>    security: <span class="str">'quantum-tls'</span>,</div>
+              <div class="code-line"><span class="line-no">10</span>  });</div>
+              <div class="code-line"><span class="line-no">11</span>  <span class="kw">return</span> pipeline.<span class="fn">deploy</span>(<span class="str">'global'</span>);</div>
+              <div class="code-line"><span class="line-no">12</span>} <span class="vis-code-cursor"></span></div>
             </div>
           </div>
         `;
@@ -4900,7 +4902,7 @@ void main(void) {
   if (!stage) return;
 
   // State
-  let currentFilter = 'all';
+  let currentFilter = 'development';
   let filteredServices = SERVICES_DATA;
   let cardElements = [];
   let target = 0;
@@ -4948,7 +4950,7 @@ void main(void) {
           <p class="svc-card-oneliner">${svc.oneLiner}</p>
           <div class="svc-card-explore-row">
             <span class="svc-explore-label">EXPLORE SERVICE</span>
-            <div class="svc-explore-icon-circle">&rarr;</div>
+            <div class="svc-explore-icon-circle">+</div>
           </div>
         </div>
       `;
