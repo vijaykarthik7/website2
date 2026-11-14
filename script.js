@@ -315,11 +315,12 @@ document.addEventListener('DOMContentLoaded', () => {
       render();
     });
 
-    // Step 1B: Immediately load frame 175 so the full connection contact frame is always cached
-    loadFrame(TOTAL_FRAMES);
+    // Step 1B: Immediately load Frame 105 (Peak connection touch frame with radiant golden portal)
+    const CONNECTION_FRAME = 105;
+    loadFrame(CONNECTION_FRAME);
 
-    // Step 2: Progressive Keyframe Stride (Loads anchor frames across full scroll arc in <150ms)
-    const keyframes = [15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 175];
+    // Step 2: Progressive Keyframe Stride across approach & connection peak (<150ms)
+    const keyframes = [15, 30, 45, 60, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 130];
     keyframes.forEach(k => loadFrame(k));
 
     // Step 3: Stream all remaining frames progressively in background without skipping
@@ -337,9 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(loadNextBatch, 25);
       }
     }
-    setTimeout(loadNextBatch, 80);
+    setTimeout(loadNextBatch, 60);
 
-    // Scroll progress smoothly spans from Hero top across About Us timeline
+    // Scroll progress smoothly spans from Hero top into About Us timeline
     const aboutSection = document.getElementById('about');
     const videoHeroStage = document.getElementById('videoHeroStage');
 
@@ -349,32 +350,37 @@ document.addEventListener('DOMContentLoaded', () => {
         progress = Math.max(0, Math.min(1, forcedProgress));
       } else if (aboutSection && heroSection) {
         const startY = 0;
-        // Reach touching contact as user scrolls through hero into timeline header
         const isMobile = window.innerWidth <= 768;
+        // Reach full connection contact as user scrolls through hero into timeline header
         const endY = isMobile 
-          ? (aboutSection.offsetTop - window.innerHeight * 0.25) 
-          : (aboutSection.offsetTop + window.innerHeight * 0.2);
+          ? (aboutSection.offsetTop + window.innerHeight * 0.35) 
+          : (heroSection.offsetHeight * 0.95);
         const currentY = window.scrollY || window.pageYOffset || 0;
         progress = Math.max(0, Math.min(1, (currentY - startY) / Math.max(1, endY - startY)));
       } else {
         const currentY = window.scrollY || window.pageYOffset || 0;
-        progress = Math.max(0, Math.min(1, currentY / (window.innerHeight * 0.85)));
+        progress = Math.max(0, Math.min(1, currentY / (window.innerHeight * 0.9)));
       }
 
-      // Map progress [0, 1] to frames [1, 175]
-      targetFrame = 1 + progress * (TOTAL_FRAMES - 1);
+      // Map progress [0, 1] to frames [1, 105] (Smooth, majestic approach to full connection touch)
+      targetFrame = 1 + progress * (CONNECTION_FRAME - 1);
 
-      // Cue hint fade immediately when scroll starts
+      // Cue hint fade smoothly when scroll starts past 35px
+      const currentScrollY = window.scrollY || window.pageYOffset || 0;
       if (scrollDownHint) {
-        scrollDownHint.style.opacity = progress > 0.04 ? '0' : '0.85';
-        scrollDownHint.style.transform = `translateX(-50%) translateY(${progress * 20}px)`;
+        if (currentScrollY > 35) {
+          scrollDownHint.style.opacity = '0';
+          scrollDownHint.style.pointerEvents = 'none';
+        } else {
+          scrollDownHint.style.opacity = '0.9';
+        }
       }
 
       // Cinematic text fade:
-      // Keep hero headline, buttons, and stats clear on load, then gracefully fade out (0.02 to 0.22)
+      // Keep hero headline, buttons, and stats clear on load, then gracefully fade out (0.05 to 0.35)
       // as the user scrolls away from Hero into About Us
-      const overlayFade = progress < 0.02 ? 1 : Math.max(0, 1 - (progress - 0.02) / 0.20);
-      const translateY = -progress * 35;
+      const overlayFade = progress < 0.05 ? 1 : Math.max(0, 1 - (progress - 0.05) / 0.35);
+      const translateY = -progress * 30;
 
       if (heroEditorialCenter) {
         heroEditorialCenter.style.opacity = overlayFade.toFixed(2);
@@ -400,71 +406,58 @@ document.addEventListener('DOMContentLoaded', () => {
         heroRightColumn.style.pointerEvents = overlayFade < 0.1 ? 'none' : 'auto';
       }
 
-      // When animation starts (scrolling from Hero into About Us timeline):
-      // Keep robotic hands & golden cybernetic background visible and clear
+      // Keep VideoHero canvas clear, radiant & visible throughout Hero and About Us
       const vCanvas = document.getElementById('videoHeroCanvas');
       if (vCanvas) {
-        if (progress <= 0.08) {
-          vCanvas.style.opacity = '0.82';
-          vCanvas.style.filter = 'brightness(0.88) contrast(0.96)';
-        } else {
-          const dullFactor = Math.max(0.75, 0.82 - (progress - 0.08) * 0.15);
-          vCanvas.style.opacity = dullFactor.toFixed(2);
-          vCanvas.style.filter = `brightness(${(0.85 + (dullFactor - 0.75) * 0.6).toFixed(2)}) contrast(0.96)`;
-        }
+        vCanvas.style.opacity = '0.88';
+        vCanvas.style.filter = 'brightness(0.92) contrast(1.02)';
       }
 
       // Ambient warm golden glow throughout timeline
       if (videoHeroAmbient) {
-        if (progress <= 0.08) {
-          videoHeroAmbient.style.opacity = '0.6';
-          videoHeroAmbient.style.transform = 'translate(-50%, -50%) scale(1)';
-          videoHeroAmbient.style.background = 'radial-gradient(circle, rgba(244, 211, 107, 0.16) 0%, rgba(212, 175, 55, 0.05) 45%, transparent 70%)';
-        } else {
-          const ambVal = Math.max(0.48, 0.6 - (progress - 0.08) * 0.22);
-          videoHeroAmbient.style.opacity = ambVal.toFixed(2);
-          videoHeroAmbient.style.transform = 'translate(-50%, -50%) scale(1)';
-          videoHeroAmbient.style.background = 'radial-gradient(circle, rgba(244, 211, 107, 0.22) 0%, rgba(212, 175, 55, 0.07) 48%, transparent 70%)';
-        }
+        const ambVal = Math.min(0.65, 0.45 + progress * 0.20);
+        videoHeroAmbient.style.opacity = ambVal.toFixed(2);
+        videoHeroAmbient.style.transform = 'translate(-50%, -50%) scale(1)';
+        videoHeroAmbient.style.background = 'radial-gradient(circle, rgba(244, 211, 107, 0.22) 0%, rgba(212, 175, 55, 0.07) 50%, transparent 70%)';
       }
 
-      // Audio micro-haptic when fingers make initial connection (around progress 0.28 to 0.45)
-      if (progress >= 0.28 && progress <= 0.45) {
+      // Audio micro-haptic when fingers make full connection touch (progress >= 0.82)
+      if (progress >= 0.82) {
         if (!hasPlayedTouchChime) {
-          AudioEngine.playBeep(1120, 'sine', 0.15, 0.025);
+          AudioEngine.playBeep(1120, 'sine', 0.16, 0.03);
           hasPlayedTouchChime = true;
         }
-      } else if (progress < 0.20 || progress > 0.60) {
+      } else if (progress < 0.65) {
         hasPlayedTouchChime = false;
       }
     }
 
-    // ScrollTrigger: Smoothly connects Frame 1 to 175 across Hero and About Us timeline
+    // ScrollTrigger: Smoothly connects Frame 1 to 105 across Hero and into About Us timeline
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && heroSection && aboutSection) {
       gsap.registerPlugin(ScrollTrigger);
 
       const isMobile = window.innerWidth <= 768;
-      // Complete the hand touching animation (Frame 1 to 175) dynamically as user scrolls through Hero into About
+      // Complete the hand touching animation (Frame 1 to 105) dynamically as user scrolls through Hero into About
       ScrollTrigger.create({
         trigger: heroSection,
         start: "top top",
         endTrigger: aboutSection,
-        end: isMobile ? "top 25%" : "top -20%",
-        scrub: 0.15,
+        end: isMobile ? "top -40%" : "top -35%",
+        scrub: 0.18,
         onUpdate: (self) => {
           updateScrollProgress(self.progress);
         }
       });
 
-      // Keep VideoHero canvas visible during connection, then gracefully fade out as user enters timeline milestones
+      // Keep VideoHero canvas visible through ALL About Us milestones, then gracefully fade out ONLY when reaching Awards (Rocket handover)
       ScrollTrigger.create({
         trigger: aboutSection,
-        start: isMobile ? "top 15%" : "top -30%",
-        end: isMobile ? "top -65%" : "top -120%",
+        start: "bottom 85%",
+        end: "bottom 15%",
         scrub: true,
         onUpdate: (self) => {
           if (videoHeroStage) {
-            const op = Math.max(0, 1 - self.progress * 1.3);
+            const op = Math.max(0, 1 - self.progress * 1.25);
             videoHeroStage.style.opacity = op.toFixed(2);
             videoHeroStage.style.visibility = op < 0.01 ? 'hidden' : 'visible';
           }
@@ -472,9 +465,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Direct scroll listener for smooth fallback & Lenis updates
     window.addEventListener('scroll', () => {
-      if (typeof ScrollTrigger !== 'undefined' && ScrollTrigger.getAll().length > 0) return;
-      updateScrollProgress();
+      const currentScrollY = window.scrollY || window.pageYOffset || 0;
+      if (scrollDownHint) {
+        if (currentScrollY > 35) {
+          scrollDownHint.style.opacity = '0';
+          scrollDownHint.style.pointerEvents = 'none';
+        } else {
+          scrollDownHint.style.opacity = '0.9';
+        }
+      }
+      if (typeof ScrollTrigger === 'undefined' || ScrollTrigger.getAll().length === 0) {
+        updateScrollProgress();
+      }
     }, { passive: true });
 
         window.addEventListener('resize', resizeCanvas);
