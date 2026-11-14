@@ -4449,16 +4449,17 @@ void main(void) {
       num: '01',
       tag: '01 // CORE',
       name: 'Web Development',
-      oneLiner: 'Headless, sub-second web apps built for growth.',
+      oneLiner: 'We build high-performance, responsive, and scalable websites that deliver exceptional digital experiences.',
       detailTag: '01 // CORE ARCHITECTURE',
-      detailTitle: 'Web Development Architecture',
-      detailDesc: 'Next-generation responsive web applications engineered with headless CMS, sub-second load times, and custom APIs.',
+      detailTitle: 'Web Development',
+      detailDesc: 'We build high-performance, responsive, and scalable websites that deliver exceptional digital experiences. From modern business websites to complex web applications, we combine cutting-edge technologies with intuitive functionality to help businesses establish a powerful online presence.',
       stack: ['React', 'Next.js', 'Node.js', 'TypeScript', 'TailwindCSS', 'GraphQL', 'Headless CMS', 'Edge CDN'],
       deliverables: [
-        'Sub-second Largest Contentful Paint (LCP < 1.2s)',
-        'Fully responsive & WCAG accessible UI components',
-        'Scalable micro-frontend & modular architecture',
-        'Automated CI/CD pipelines & zero-downtime deployment'
+        'Custom Website Development',
+        'Responsive Web Design',
+        'Full-Stack Web Applications',
+        'API Integration & Development',
+        'Website Optimization & Maintenance'
       ],
       renderVisual: function() {
         return `
@@ -4496,16 +4497,17 @@ void main(void) {
       num: '02',
       tag: '02 // ENTERPRISE',
       name: 'Custom Software Development',
-      oneLiner: 'Scalable enterprise platforms on secure microservices.',
+      oneLiner: 'We transform complex business requirements into powerful, tailor-made software solutions.',
       detailTag: '02 // ENTERPRISE SYSTEMS',
-      detailTitle: 'Custom Software & Microservice Architecture',
-      detailDesc: 'Mission-critical enterprise software, bespoke CRM/ERP platforms, microservice architectures, and multi-tenant cloud backends.',
+      detailTitle: 'Custom Software Development',
+      detailDesc: 'We transform complex business requirements into powerful, tailor-made software solutions. Our custom applications streamline workflows, automate operations, and improve productivity through scalable architecture and intelligent technology designed around your business needs.',
       stack: ['Node.js', 'Go', 'Python', 'Microservices', 'PostgreSQL', 'Redis', 'Kafka', 'Docker & K8s'],
       deliverables: [
-        'High-throughput distributed cloud architectures',
-        'ACID-compliant relational & NoSQL data pipelines',
-        'Role-based enterprise security & OAuth2 / SAML SSO',
-        '99.99% uptime guarantee with automated failover'
+        'Business Management Systems',
+        'Enterprise Software Solutions',
+        'Workflow Automation',
+        'CRM & ERP Development',
+        'Custom API & Backend Solutions'
       ],
       renderVisual: function() {
         return `
@@ -4571,16 +4573,17 @@ void main(void) {
       num: '03',
       tag: '03 // MOBILE',
       name: 'Mobile App Development',
-      oneLiner: 'Fluid iOS & Android apps with native device synergy.',
+      oneLiner: 'We create feature-rich mobile applications that connect businesses with customers anytime, anywhere.',
       detailTag: '03 // MOBILE ENGINEERING',
-      detailTitle: 'Cross-Platform & Native Mobile Engineering',
-      detailDesc: 'High-performance iOS and Android applications engineered for silky 60/120fps interactions, offline resilience, and delightful UX.',
+      detailTitle: 'Mobile App Development',
+      detailDesc: 'We create feature-rich mobile applications that connect businesses with customers anytime, anywhere. Our applications combine seamless performance, intuitive interfaces, and reliable functionality to deliver engaging experiences across mobile platforms.',
       stack: ['Flutter', 'React Native', 'Swift / iOS', 'Kotlin / Android', 'REST & GraphQL', 'SQLite', 'Firebase', 'App Store CI/CD'],
       deliverables: [
-        'Consistent 60fps/120fps fluid micro-interactions',
-        'Offline-first data sync & AES-256 local encryption',
-        'Native device integration (Biometrics, GPS, Push, Camera)',
-        'App Store & Google Play compliance, publishing & maintenance'
+        'Android Application Development',
+        'iOS Application Development',
+        'Cross-Platform App Development',
+        'Mobile UI/UX Design',
+        'App Integration & Maintenance'
       ],
       renderVisual: function() {
         return `
@@ -4612,16 +4615,17 @@ void main(void) {
       num: '04',
       tag: '04 // COMMERCE',
       name: 'E-Commerce Solutions',
-      oneLiner: 'Instant checkout funnels engineered for maximum conversion.',
+      oneLiner: 'We develop powerful e-commerce platforms that turn visitors into customers.',
       detailTag: '04 // COMMERCE ARCHITECTURE',
-      detailTitle: 'Headless E-Commerce & Checkout Engines',
-      detailDesc: 'High-converting online store architectures with sub-second checkout, automated inventory sync, and localized payment rails.',
+      detailTitle: 'E-Commerce Solutions',
+      detailDesc: 'We develop powerful e-commerce platforms that turn visitors into customers. From intuitive product discovery to secure checkout experiences, we build scalable online stores designed to simplify shopping, manage operations, and accelerate business growth.',
       stack: ['Shopify Plus', 'WooCommerce', 'Headless Commerce', 'Stripe API', 'Razorpay', 'Next.js Commerce', 'Algolia Search', 'Klaviyo'],
       deliverables: [
-        'Sub-second frictionless one-click checkout flows',
-        'Multi-currency & localized automated tax calculations',
-        'Real-time omnichannel inventory & warehouse ERP sync',
-        'Abandoned cart recovery & automated upsell funnels'
+        'Custom E-Commerce Websites',
+        'Online Store Development',
+        'Shopping Cart & Checkout Integration',
+        'Payment Gateway Integration',
+        'Inventory & Order Management'
       ],
       renderVisual: function() {
         return `
@@ -4664,16 +4668,17 @@ void main(void) {
       num: '05',
       tag: '05 // GAMING',
       name: 'Game Development',
-      oneLiner: 'Immersive 2D/3D games with physics engines & low-latency netcode.',
+      oneLiner: 'We bring creative ideas to life through immersive, interactive, and engaging gaming experiences.',
       detailTag: '05 // GAME ARCHITECTURE',
-      detailTitle: 'Cross-Platform Game Development & Interactive Worlds',
-      detailDesc: 'Next-gen 2D/3D game design and engineering using Unity, Unreal Engine, and WebGL with custom shaders, real-time physics, multiplayer netcode, and cross-platform publishing.',
+      detailTitle: 'Game Development',
+      detailDesc: 'We bring creative ideas to life through immersive, interactive, and engaging gaming experiences. Combining innovative gameplay mechanics, captivating visuals, and advanced development technologies, we create games that entertain users and deliver memorable digital experiences.',
       stack: ['Unity 3D', 'Unreal Engine 5', 'C# / C++', 'WebGL / Three.js', 'Godot', 'Multiplayer Netcode', 'ShaderLab / HLSL', 'Blender'],
       deliverables: [
-        '60/120 FPS high-fidelity cross-platform gameplay',
-        'Low-latency authoritative multiplayer networking',
-        'Custom PBR materials, post-processing & spatial audio',
-        'Seamless publishing to Steam, iOS, Android & Web'
+        '2D & 3D Game Development',
+        'Game Design & Mechanics',
+        'Interactive Gameplay Experiences',
+        'Character & Environment Design',
+        'Game Optimization & Testing'
       ],
       renderVisual: function() {
         return `
@@ -4716,16 +4721,17 @@ void main(void) {
       num: '06',
       tag: '06 // SPATIAL',
       name: 'AR/VR Development',
-      oneLiner: 'Spatial computing, WebXR & enterprise virtual simulations.',
+      oneLiner: 'We create immersive Augmented Reality and Virtual Reality experiences connecting digital and physical worlds.',
       detailTag: '06 // SPATIAL COMPUTING',
-      detailTitle: 'Immersive Augmented & Virtual Reality Solutions',
-      detailDesc: 'State-of-the-art spatial computing, interactive AR product configurators, and VR training simulations for Apple Vision Pro, Meta Quest, and mobile WebXR.',
+      detailTitle: 'AR/VR Development',
+      detailDesc: 'We create immersive Augmented Reality and Virtual Reality experiences that connect the digital and physical worlds. From interactive simulations to virtual environments, our solutions help businesses transform how people explore, learn, interact, and experience technology.',
       stack: ['WebXR', 'Unity XR', 'OpenXR', 'VisionOS', 'Three.js / WebGL', 'ARKit & ARCore', 'Spatial Audio', 'Hand Tracking'],
       deliverables: [
-        'Photorealistic spatial 3D environments with 6-DoF tracking',
-        'Frictionless browser WebXR AR product visualization',
-        'Enterprise VR training simulators & interactive twins',
-        'Gesture, eye-tracking & haptic feedback integration'
+        'Augmented Reality Applications',
+        'Virtual Reality Experiences',
+        'Interactive 3D Environments',
+        'Virtual Product Demonstrations',
+        'AR/VR Simulations & Training'
       ],
       renderVisual: function() {
         return `
@@ -4762,16 +4768,17 @@ void main(void) {
       num: '07',
       tag: '07 // DESIGN',
       name: 'UI/UX Design',
-      oneLiner: 'Conversion-centered design systems & Figma prototypes.',
+      oneLiner: 'We design meaningful digital experiences that combine visual creativity with effortless usability.',
       detailTag: '07 // DESIGN SYSTEMS',
-      detailTitle: 'UI/UX Architecture & Product Design',
-      detailDesc: 'Bespoke design systems, rapid interactive Figma prototypes, and micro-interaction flows centered around conversion rate optimization.',
+      detailTitle: 'UI/UX Design',
+      detailDesc: 'We design meaningful digital experiences that combine visual creativity with effortless usability. Through user-focused research, modern interface design, and intuitive navigation, we create digital products that engage users, strengthen brand identity, and make every interaction seamless.',
       stack: ['Figma', 'Design Systems', 'Interactive Prototypes', 'Wireframing', 'User Research', 'Motion Design', 'Design Tokens', 'Usability Testing'],
       deliverables: [
-        'Scalable atomic design system with Figma token sync',
-        'High-fidelity interactive prototype click-throughs',
-        'Data-backed UX user journeys & heatmaps analysis',
-        'Pixel-perfect developer handoff specifications'
+        'User Interface (UI) Design',
+        'User Experience (UX) Design',
+        'Website & App Design',
+        'Wireframing & Prototyping',
+        'Design Systems & Branding'
       ],
       renderVisual: function() {
         return `
@@ -4798,16 +4805,17 @@ void main(void) {
       num: '08',
       tag: '08 // IMMERSIVE',
       name: '3D Modeling',
-      oneLiner: 'Photorealistic 3D assets, hard-surface modeling & cinematic rendering.',
+      oneLiner: 'We transform concepts and ideas into detailed, realistic, and visually compelling 3D models.',
       detailTag: '08 // 3D MODELING & CGI',
-      detailTitle: '3D Modeling, Hard-Surface & CGI Visuals',
-      detailDesc: 'Photorealistic 3D modeling, texturing, hard-surface industrial design, character modeling, and photorealistic CGI rendering for web and enterprise.',
+      detailTitle: '3D Modeling',
+      detailDesc: 'We transform concepts and ideas into detailed, realistic, and visually compelling 3D models. From product visualization to architectural and digital assets, we combine precision, creativity, and advanced 3D techniques to bring every concept to life.',
       stack: ['Blender', 'Cinema 4D', 'ZBrush', 'Substance Painter', 'Three.js / WebGL', 'PBR Shaders', 'GLTF / USDZ', 'KeyShot'],
       deliverables: [
-        'Photorealistic hard-surface & organic 3D models',
-        'Optimized 60 FPS real-time web meshes (< 3MB GLB)',
-        '8K PBR texture maps (Albedo, Normal, Roughness, Metal)',
-        'Cinematic lighting, product turnarounds & AR-ready USDZ'
+        '3D Product Modeling',
+        '3D Asset Creation',
+        'Architectural Visualization',
+        '3D Texturing & Rendering',
+        '3D Animation & Visualization'
       ],
       renderVisual: function() {
         return `
@@ -4835,16 +4843,17 @@ void main(void) {
       num: '09',
       tag: '09 // GROWTH',
       name: 'Digital Marketing',
-      oneLiner: 'High-ROI acquisition funnels, SEO & multi-channel performance campaigns.',
+      oneLiner: 'We help businesses strengthen their online presence, reach the right audience, and generate meaningful growth.',
       detailTag: '09 // DIGITAL MARKETING',
-      detailTitle: 'Digital Marketing, Performance Ads & Growth Funnels',
-      detailDesc: 'Data-driven digital marketing campaigns, Google & Meta performance ads, programmatic SEO, and high-converting acquisition funnels designed for measurable revenue growth.',
+      detailTitle: 'Digital Marketing',
+      detailDesc: 'We help businesses strengthen their online presence, reach the right audience, and generate meaningful growth through strategic digital marketing. By combining creativity, data-driven insights, and targeted campaigns, we turn digital visibility into measurable business opportunities.',
       stack: ['Google Ads', 'Meta Ads', 'Technical SEO', 'Conversion Rate Opt', 'HubSpot / Klaviyo', 'GA4 & Attribution', 'A/B Testing', 'Content Strategy'],
       deliverables: [
-        'Multi-channel performance ad campaigns with high ROAS',
-        'Data-backed SEO audits & first-page ranking architectures',
-        'Automated email & omnichannel retargeting funnels',
-        'Real-time executive analytics & CAC/LTV attribution dashboards'
+        'Search Engine Optimization (SEO)',
+        'Social Media Marketing',
+        'Search Engine Marketing (SEM)',
+        'Content Marketing',
+        'Performance Marketing & Analytics'
       ],
       renderVisual: function() {
         return `
