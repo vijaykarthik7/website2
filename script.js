@@ -316,11 +316,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Step 1B: Immediately load Frame 105 (Peak connection touch frame with radiant golden portal)
-    const CONNECTION_FRAME = 105;
-    loadFrame(CONNECTION_FRAME);
+    loadFrame(105);
 
     // Step 2: Progressive Keyframe Stride across approach & connection peak (<150ms)
-    const keyframes = [15, 30, 45, 60, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 130];
+    const keyframes = [15, 30, 45, 60, 75, 80, 85, 90, 95, 100, 105, 115, 125, 135, 145, 155, 165, 175];
     keyframes.forEach(k => loadFrame(k));
 
     // Step 3: Stream all remaining frames progressively in background without skipping
@@ -350,20 +349,28 @@ document.addEventListener('DOMContentLoaded', () => {
         progress = Math.max(0, Math.min(1, forcedProgress));
       } else if (aboutSection && heroSection) {
         const startY = 0;
-        const isMobile = window.innerWidth <= 768;
-        // Reach full connection contact as user scrolls through hero into timeline header
-        const endY = isMobile 
-          ? (aboutSection.offsetTop + window.innerHeight * 0.35) 
-          : (heroSection.offsetHeight * 0.95);
+        const totalDist = (aboutSection.offsetTop + aboutSection.offsetHeight) - window.innerHeight * 0.95;
         const currentY = window.scrollY || window.pageYOffset || 0;
-        progress = Math.max(0, Math.min(1, (currentY - startY) / Math.max(1, endY - startY)));
+        progress = Math.max(0, Math.min(1, (currentY - startY) / Math.max(1, totalDist - startY)));
       } else {
         const currentY = window.scrollY || window.pageYOffset || 0;
-        progress = Math.max(0, Math.min(1, currentY / (window.innerHeight * 0.9)));
+        progress = Math.max(0, Math.min(1, currentY / (window.innerHeight * 2.5)));
       }
 
-      // Map progress [0, 1] to frames [1, 105] (Smooth, majestic approach to full connection touch)
-      targetFrame = 1 + progress * (CONNECTION_FRAME - 1);
+      // Smooth Continuous Dual-Stage Scrub across Hero & all Timeline Milestones:
+      // Stage 1 (progress 0.0 -> 0.28): Hands approach and connect at Frame 105 (golden portal bursts open at About Us header)
+      // Stage 2 (progress 0.28 -> 1.0): Fluid continuous scrub across cosmic halo & empowered synthesis through all timeline milestones (Frame 105 -> 175)
+      // NEVER gets stuck, frozen or paused anywhere in the scroll!
+      const p_split = 0.28;
+      let calculatedFrame;
+      if (progress <= p_split) {
+        const sub = progress / p_split;
+        calculatedFrame = 1 + sub * (105 - 1);
+      } else {
+        const sub = (progress - p_split) / (1 - p_split);
+        calculatedFrame = 105 + sub * (TOTAL_FRAMES - 105);
+      }
+      targetFrame = Math.max(1, Math.min(TOTAL_FRAMES, calculatedFrame));
 
       // Cue hint fade smoothly when scroll starts past 35px
       const currentScrollY = window.scrollY || window.pageYOffset || 0;
@@ -377,10 +384,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Cinematic text fade:
-      // Keep hero headline, buttons, and stats clear on load, then gracefully fade out (0.05 to 0.35)
+      // Keep hero headline, buttons, and stats clear on load, then gracefully fade out (0.02 to 0.20 of overall journey)
       // as the user scrolls away from Hero into About Us
-      const overlayFade = progress < 0.05 ? 1 : Math.max(0, 1 - (progress - 0.05) / 0.35);
-      const translateY = -progress * 30;
+      const overlayFade = progress < 0.02 ? 1 : Math.max(0, 1 - (progress - 0.02) / 0.18);
+      const translateY = -progress * 80;
 
       if (heroEditorialCenter) {
         heroEditorialCenter.style.opacity = overlayFade.toFixed(2);
@@ -421,28 +428,27 @@ document.addEventListener('DOMContentLoaded', () => {
         videoHeroAmbient.style.background = 'radial-gradient(circle, rgba(244, 211, 107, 0.22) 0%, rgba(212, 175, 55, 0.07) 50%, transparent 70%)';
       }
 
-      // Audio micro-haptic when fingers make full connection touch (progress >= 0.82)
-      if (progress >= 0.82) {
+      // Audio micro-haptic when fingers make full connection touch (around progress 0.26 to 0.35)
+      if (progress >= 0.26 && progress <= 0.35) {
         if (!hasPlayedTouchChime) {
           AudioEngine.playBeep(1120, 'sine', 0.16, 0.03);
           hasPlayedTouchChime = true;
         }
-      } else if (progress < 0.65) {
+      } else if (progress < 0.20 || progress > 0.45) {
         hasPlayedTouchChime = false;
       }
     }
 
-    // ScrollTrigger: Smoothly connects Frame 1 to 105 across Hero and into About Us timeline
+    // ScrollTrigger: Smoothly animates Frame 1 to 175 across Hero and all About Us milestones without sticking
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && heroSection && aboutSection) {
       gsap.registerPlugin(ScrollTrigger);
 
-      const isMobile = window.innerWidth <= 768;
-      // Complete the hand touching animation (Frame 1 to 105) dynamically as user scrolls through Hero into About
+      // Complete hand touching and full cinematic journey (Frame 1 to 175) across Hero and entire About section
       ScrollTrigger.create({
         trigger: heroSection,
         start: "top top",
         endTrigger: aboutSection,
-        end: isMobile ? "top -40%" : "top -35%",
+        end: "bottom 95%",
         scrub: 0.18,
         onUpdate: (self) => {
           updateScrollProgress(self.progress);
