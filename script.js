@@ -4658,88 +4658,98 @@ void main(void) {
       }
     },
     {
-      id: 'ai',
+      id: 'gamedev',
       category: 'development',
       categoryLabel: 'DEVELOPMENT',
       num: '05',
-      tag: '05 // COGNITIVE',
-      name: 'AI & Intelligent Agents',
-      oneLiner: 'Autonomous multi-channel AI agents delivering instant ROI.',
-      detailTag: '05 // ARTIFICIAL INTELLIGENCE',
-      detailTitle: 'Autonomous AI Agents & Intelligent Automation',
-      detailDesc: 'Custom fine-tuned LLM agents, retrieval-augmented generation (RAG) pipelines, and autonomous support workflows integrated into your CRM.',
-      stack: ['OpenAI API', 'Anthropic Claude', 'LangChain', 'LlamaIndex', 'Vector DB (Pinecone)', 'Python', 'FastAPI', 'WhatsApp Cloud API'],
+      tag: '05 // GAMING',
+      name: 'Game Development',
+      oneLiner: 'Immersive 2D/3D games with physics engines & low-latency netcode.',
+      detailTag: '05 // GAME ARCHITECTURE',
+      detailTitle: 'Cross-Platform Game Development & Interactive Worlds',
+      detailDesc: 'Next-gen 2D/3D game design and engineering using Unity, Unreal Engine, and WebGL with custom shaders, real-time physics, multiplayer netcode, and cross-platform publishing.',
+      stack: ['Unity 3D', 'Unreal Engine 5', 'C# / C++', 'WebGL / Three.js', 'Godot', 'Multiplayer Netcode', 'ShaderLab / HLSL', 'Blender'],
       deliverables: [
-        '24/7 autonomous customer qualification & triage agents',
-        'Enterprise RAG knowledge base connected to internal documents',
-        'Multi-channel conversational deployment (Web, WhatsApp, Slack)',
-        'Continuous LLM evaluation, safety guardrails & telemetry'
+        '60/120 FPS high-fidelity cross-platform gameplay',
+        'Low-latency authoritative multiplayer networking',
+        'Custom PBR materials, post-processing & spatial audio',
+        'Seamless publishing to Steam, iOS, Android & Web'
       ],
       renderVisual: function() {
         return `
-          <div class="vis-chat-wrap">
-            <div class="chat-msg user-bubble">
-              <p>Deploy intelligent customer agent to WhatsApp &amp; Web</p>
+          <div class="vis-game-wrap">
+            <div class="game-hud-bar">
+              <span class="game-hud-lvl">STAGE 05 // BOSS RAID</span>
+              <span class="game-hud-fps"><span class="game-fps-dot"></span> 120 FPS</span>
             </div>
-            <div class="chat-typing-bubble">
-              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <div class="game-screen-arena">
+              <div class="game-grid-plane"></div>
+              <div class="game-target t1"></div>
+              <div class="game-target t2"></div>
+              <div class="game-laser-beam"></div>
+              <div class="game-ship-fighter">
+                <div class="ship-wing-left"></div>
+                <div class="ship-cockpit"></div>
+                <div class="ship-wing-right"></div>
+                <div class="ship-thruster"></div>
+              </div>
             </div>
-            <div class="chat-msg agent-bubble">
-              <div class="agent-avatar">AI</div>
-              <div class="agent-text">Agent deployed. Real-time NLP model active across all channels.</div>
-            </div>
-            <div class="chat-status-tags">
-              <span class="chat-tag"><span class="chk">✓</span> Lead qualified</span>
-              <span class="chat-tag"><span class="chk">✓</span> CRM synced</span>
-              <span class="chat-tag"><span class="chk">✓</span> WhatsApp follow-up</span>
+            <div class="game-hud-bottom">
+              <div class="game-bar-group">
+                <span class="game-bar-lbl">SHIELD</span>
+                <div class="game-bar-track"><div class="game-bar-fill gold" style="width: 88%;"></div></div>
+              </div>
+              <div class="game-bar-group">
+                <span class="game-bar-lbl">HEALTH</span>
+                <div class="game-bar-track"><div class="game-bar-fill green" style="width: 100%;"></div></div>
+              </div>
+              <span class="game-engine-tag">UNREAL / UNITY</span>
             </div>
           </div>
         `;
       }
     },
     {
-      id: 'cloud',
+      id: 'arvr',
       category: 'development',
       categoryLabel: 'DEVELOPMENT',
       num: '06',
-      tag: '06 // INFRASTRUCTURE',
-      name: 'Cloud & DevOps',
-      oneLiner: 'Zero-downtime automated pipelines with 99.99% uptime.',
-      detailTag: '06 // CLOUD INFRASTRUCTURE',
-      detailTitle: 'Enterprise Cloud Infrastructure & DevOps',
-      detailDesc: 'Automated Kubernetes clusters, terraform infrastructure-as-code, and resilient multi-region architectures with continuous deployment.',
-      stack: ['AWS', 'Google Cloud', 'Kubernetes', 'Docker', 'Terraform', 'GitHub Actions', 'Datadog', 'Cloudflare Edge'],
+      tag: '06 // SPATIAL',
+      name: 'AR/VR Development',
+      oneLiner: 'Spatial computing, WebXR & enterprise virtual simulations.',
+      detailTag: '06 // SPATIAL COMPUTING',
+      detailTitle: 'Immersive Augmented & Virtual Reality Solutions',
+      detailDesc: 'State-of-the-art spatial computing, interactive AR product configurators, and VR training simulations for Apple Vision Pro, Meta Quest, and mobile WebXR.',
+      stack: ['WebXR', 'Unity XR', 'OpenXR', 'VisionOS', 'Three.js / WebGL', 'ARKit & ARCore', 'Spatial Audio', 'Hand Tracking'],
       deliverables: [
-        'Automated multi-stage CI/CD pipelines with zero downtime',
-        'Infrastructure-as-Code (IaC) reproducible environments',
-        '99.99% high-availability multi-region cluster topologies',
-        '24/7 automated telemetry, health checks & auto-scaling'
+        'Photorealistic spatial 3D environments with 6-DoF tracking',
+        'Frictionless browser WebXR AR product visualization',
+        'Enterprise VR training simulators & interactive twins',
+        'Gesture, eye-tracking & haptic feedback integration'
       ],
       renderVisual: function() {
         return `
-          <div class="vis-cloud-wrap">
-            <div class="pipeline-stages-row">
-              <div class="pipe-stage s1 active"><span class="pipe-icon">●</span><span class="pipe-name">Commit</span></div>
-              <div class="pipe-arrow">&rarr;</div>
-              <div class="pipe-stage s2 active"><span class="pipe-icon">●</span><span class="pipe-name">Build</span></div>
-              <div class="pipe-arrow">&rarr;</div>
-              <div class="pipe-stage s3 active"><span class="pipe-icon">●</span><span class="pipe-name">Test</span></div>
-              <div class="pipe-arrow">&rarr;</div>
-              <div class="pipe-stage s4 active"><span class="pipe-icon">●</span><span class="pipe-name">Deploy</span></div>
-              <div class="pipe-arrow">&rarr;</div>
-              <div class="pipe-stage s5 active"><span class="pipe-icon">●</span><span class="pipe-name">Monitor</span></div>
+          <div class="vis-arvr-wrap">
+            <div class="arvr-hud-header">
+              <span class="arvr-engine-title">SPATIAL ENGINE // 6-DoF</span>
+              <span class="arvr-status-pill"><span class="arvr-pulse-dot"></span> TRACKING</span>
             </div>
-            <div class="cloud-metrics-row">
-              <div class="uptime-badge">
-                <span class="uptime-val">99.99%</span>
-                <span class="uptime-lbl">HIGH AVAILABILITY</span>
+            <div class="arvr-viewport">
+              <div class="arvr-holo-ring r-outer"></div>
+              <div class="arvr-holo-ring r-inner"></div>
+              <div class="arvr-reticle">
+                <span class="reticle-line h"></span>
+                <span class="reticle-line v"></span>
+                <div class="reticle-center"></div>
               </div>
-              <div class="cloud-sparkline-box">
-                <svg viewBox="0 0 160 40" class="sparkline-svg">
-                  <path d="M0,32 Q20,28 40,30 T80,18 T120,22 T160,8" fill="none" stroke="#6fd3a8" stroke-width="2.5" class="sparkline-path" />
-                  <circle cx="160" cy="8" r="4" fill="#6fd3a8" class="sparkline-point" />
-                </svg>
-              </div>
+              <div class="arvr-point p1"></div>
+              <div class="arvr-point p2"></div>
+              <div class="arvr-point p3"></div>
+              <div class="arvr-point p4"></div>
+            </div>
+            <div class="arvr-hud-footer">
+              <div class="arvr-coords">X: 0.42 &nbsp;Y: 1.18 &nbsp;Z: -0.85</div>
+              <div class="arvr-latency">4ms WebXR / VisionOS</div>
             </div>
           </div>
         `;
@@ -4787,22 +4797,22 @@ void main(void) {
       categoryLabel: 'DESIGNING',
       num: '08',
       tag: '08 // IMMERSIVE',
-      name: '3D & WebGL Experiences',
-      oneLiner: 'Photorealistic 3D configurators & real-time WebGL engines.',
-      detailTag: '08 // 3D & WEBGL',
-      detailTitle: '3D Interactive WebGL & Spatial Assets',
-      detailDesc: 'Photorealistic 3D modeling, cinematic rendering, interactive product configurators, and optimized real-time 3D web assets running at 60 FPS.',
-      stack: ['Three.js', 'WebGL', 'Blender', 'GLSL Shaders', 'GLTF / GLB', 'WebXR', 'GSAP 3D', 'PBR Materials'],
+      name: '3D Modeling',
+      oneLiner: 'Photorealistic 3D assets, hard-surface modeling & cinematic rendering.',
+      detailTag: '08 // 3D MODELING & CGI',
+      detailTitle: '3D Modeling, Hard-Surface & CGI Visuals',
+      detailDesc: 'Photorealistic 3D modeling, texturing, hard-surface industrial design, character modeling, and photorealistic CGI rendering for web and enterprise.',
+      stack: ['Blender', 'Cinema 4D', 'ZBrush', 'Substance Painter', 'Three.js / WebGL', 'PBR Shaders', 'GLTF / USDZ', 'KeyShot'],
       deliverables: [
-        'Photorealistic 3D product visualizations & 60 FPS renders',
-        'Ultra-lightweight real-time mesh compression (< 3MB)',
-        'Interactive 360° product configurators for web & e-commerce',
-        'Rigged, textured, and browser-ready 3D asset libraries'
+        'Photorealistic hard-surface & organic 3D models',
+        'Optimized 60 FPS real-time web meshes (< 3MB GLB)',
+        '8K PBR texture maps (Albedo, Normal, Roughness, Metal)',
+        'Cinematic lighting, product turnarounds & AR-ready USDZ'
       ],
       renderVisual: function() {
         return `
           <div class="vis-cube-stage">
-            <div class="vis-cube-badge"><span class="cube-green-dot"></span> WebGL &middot; 60 FPS</div>
+            <div class="vis-cube-badge"><span class="cube-green-dot"></span> 3D MESH &middot; 60 FPS</div>
             <div class="vis-cube-viewport">
               <div class="vis-cube-obj">
                 <div class="cube-face front"></div>
@@ -4824,17 +4834,17 @@ void main(void) {
       categoryLabel: 'MARKETING',
       num: '09',
       tag: '09 // GROWTH',
-      name: 'Growth Marketing',
-      oneLiner: 'High-ROI acquisition funnels & performance campaigns.',
-      detailTag: '09 // PERFORMANCE MARKETING',
-      detailTitle: 'Growth Marketing & Acquisition Funnels',
-      detailDesc: 'High-ROI multi-channel customer acquisition funnels, paid performance campaigns, and programmatic lead generation delivering predictable growth.',
-      stack: ['Google Ads', 'Meta Ads', 'Lead Funnels', 'ROI Analytics', 'HubSpot', 'Conversion Rate Opt', 'Retargeting', 'A/B Testing'],
+      name: 'Digital Marketing',
+      oneLiner: 'High-ROI acquisition funnels, SEO & multi-channel performance campaigns.',
+      detailTag: '09 // DIGITAL MARKETING',
+      detailTitle: 'Digital Marketing, Performance Ads & Growth Funnels',
+      detailDesc: 'Data-driven digital marketing campaigns, Google & Meta performance ads, programmatic SEO, and high-converting acquisition funnels designed for measurable revenue growth.',
+      stack: ['Google Ads', 'Meta Ads', 'Technical SEO', 'Conversion Rate Opt', 'HubSpot / Klaviyo', 'GA4 & Attribution', 'A/B Testing', 'Content Strategy'],
       deliverables: [
-        'Multi-touch attribution & conversion tracking',
-        'Predictive audience cohort targeting & retargeting',
-        'Continuous landing page split-testing (A/B & MVT)',
-        'Lower customer acquisition cost (CAC) & higher ROAS'
+        'Multi-channel performance ad campaigns with high ROAS',
+        'Data-backed SEO audits & first-page ranking architectures',
+        'Automated email & omnichannel retargeting funnels',
+        'Real-time executive analytics & CAC/LTV attribution dashboards'
       ],
       renderVisual: function() {
         return `
@@ -5402,6 +5412,18 @@ void main(void) {
 
   if (chapterCloseBtn) chapterCloseBtn.addEventListener('click', closeChapterView);
   if (chapterBackBtn) chapterBackBtn.addEventListener('click', closeChapterView);
+  if (chapterStartProjectBtn) {
+    chapterStartProjectBtn.addEventListener('click', () => {
+      const match = SERVICES_DATA.find(s => s.id === currentChapterServiceId);
+      closeChapterView();
+      if (match) {
+        const contactSelect = document.getElementById('contactService');
+        if (contactSelect) {
+          contactSelect.value = match.name;
+        }
+      }
+    });
+  }
 
   // Deep Link On Load & Hashchange
   function checkDeepLink() {
