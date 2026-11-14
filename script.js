@@ -315,32 +315,29 @@ document.addEventListener('DOMContentLoaded', () => {
       render();
     });
 
-    // Step 2: Progressive Keyframe Stride (Loads anchor frames across full scroll arc in <200ms)
-    const isMobileHero = window.innerWidth <= 768;
-    const strideStep = isMobileHero ? 15 : 10;
-    const keyframes = [];
-    for (let k = strideStep; k <= TOTAL_FRAMES; k += strideStep) {
-      keyframes.push(k);
-    }
+    // Step 1B: Immediately load frame 175 so the full connection contact frame is always cached
+    loadFrame(TOTAL_FRAMES);
+
+    // Step 2: Progressive Keyframe Stride (Loads anchor frames across full scroll arc in <150ms)
+    const keyframes = [15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 175];
     keyframes.forEach(k => loadFrame(k));
 
-    // Step 3: Stream all remaining frames progressively in background
+    // Step 3: Stream all remaining frames progressively in background without skipping
     let nextIdxToLoad = 2;
-    const heroStep = isMobileHero ? 2 : 1;
     function loadNextBatch() {
       let count = 0;
-      while (nextIdxToLoad <= TOTAL_FRAMES && count < (isMobileHero ? 3 : 5)) {
+      while (nextIdxToLoad <= TOTAL_FRAMES && count < 6) {
         if (!frames[nextIdxToLoad]) {
           loadFrame(nextIdxToLoad);
           count++;
         }
-        nextIdxToLoad += heroStep;
+        nextIdxToLoad += 1;
       }
       if (nextIdxToLoad <= TOTAL_FRAMES) {
-        setTimeout(loadNextBatch, isMobileHero ? 50 : 35);
+        setTimeout(loadNextBatch, 25);
       }
     }
-    setTimeout(loadNextBatch, 150);
+    setTimeout(loadNextBatch, 80);
 
     // Scroll progress smoothly spans from Hero top across About Us timeline
     const aboutSection = document.getElementById('about');
@@ -352,13 +349,16 @@ document.addEventListener('DOMContentLoaded', () => {
         progress = Math.max(0, Math.min(1, forcedProgress));
       } else if (aboutSection && heroSection) {
         const startY = 0;
-        // Reach touching contact as user progresses through timeline and methodology
-        const endY = aboutSection.offsetTop + aboutSection.offsetHeight * 0.88;
+        // Reach touching contact as user scrolls through hero into timeline header
+        const isMobile = window.innerWidth <= 768;
+        const endY = isMobile 
+          ? (aboutSection.offsetTop - window.innerHeight * 0.25) 
+          : (aboutSection.offsetTop + window.innerHeight * 0.2);
         const currentY = window.scrollY || window.pageYOffset || 0;
         progress = Math.max(0, Math.min(1, (currentY - startY) / Math.max(1, endY - startY)));
       } else {
         const currentY = window.scrollY || window.pageYOffset || 0;
-        progress = Math.max(0, Math.min(1, currentY / (window.innerHeight * 2.8)));
+        progress = Math.max(0, Math.min(1, currentY / (window.innerHeight * 0.85)));
       }
 
       // Map progress [0, 1] to frames [1, 175]
@@ -378,7 +378,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (heroEditorialCenter) {
         heroEditorialCenter.style.opacity = overlayFade.toFixed(2);
-        heroEditorialCenter.style.transform = `translateX(-50%) translateY(${translateY}px)`;
+        const isMobile = window.innerWidth <= 768;
+        heroEditorialCenter.style.transform = isMobile 
+          ? `translateY(${translateY}px)` 
+          : `translateX(-50%) translateY(${translateY}px)`;
         heroEditorialCenter.style.pointerEvents = overlayFade < 0.1 ? 'none' : 'auto';
       }
       if (heroTypographyLayer) {
@@ -440,22 +443,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && heroSection && aboutSection) {
       gsap.registerPlugin(ScrollTrigger);
 
+      const isMobile = window.innerWidth <= 768;
+      // Complete the hand touching animation (Frame 1 to 175) dynamically as user scrolls through Hero into About
       ScrollTrigger.create({
         trigger: heroSection,
         start: "top top",
         endTrigger: aboutSection,
-        end: "bottom 85%",
-        scrub: 0.2,
+        end: isMobile ? "top 25%" : "top -20%",
+        scrub: 0.15,
         onUpdate: (self) => {
           updateScrollProgress(self.progress);
         }
       });
 
-      // Keep VideoHero canvas active through all About Us milestones and 6-step engineering methodology
+      // Keep VideoHero canvas visible during connection, then gracefully fade out as user enters timeline milestones
       ScrollTrigger.create({
         trigger: aboutSection,
-        start: "bottom 60%",
-        end: "bottom 5%",
+        start: isMobile ? "top 15%" : "top -30%",
+        end: isMobile ? "top -65%" : "top -120%",
         scrub: true,
         onUpdate: (self) => {
           if (videoHeroStage) {
