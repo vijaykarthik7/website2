@@ -11548,7 +11548,6 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
 html.service-modal-open,
 body.service-modal-open {
   overflow: hidden !important;
-  height: 100% !important;
   overscroll-behavior: none !important;
 }
 

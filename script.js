@@ -4921,7 +4921,7 @@ void main(void) {
   if (!stage) return;
 
   // State
-  let currentFilter = 'development';
+  let currentFilter = 'all';
   let filteredServices = SERVICES_DATA;
   let cardElements = [];
   let target = 0;
@@ -4933,6 +4933,7 @@ void main(void) {
   let lastMountedIndex = -1;
   let currentChapterServiceId = null;
   let chapterObserver = null;
+  let savedScrollY = 0;
 
   // 2. BUILD CAROUSEL CARDS
   function buildCards() {
@@ -5385,6 +5386,9 @@ void main(void) {
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Save exact scroll position before modal locks the body
+    savedScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
     // Prevent background scrolling completely while modal is open
     document.documentElement.classList.add('service-modal-open');
     document.body.classList.add('service-modal-open');
@@ -5465,10 +5469,18 @@ void main(void) {
       document.body.style.overflow = '';
       if (window.lenis) {
         window.lenis.start();
+        window.lenis.resize();
+      }
+      if (savedScrollY > 0) {
+        window.scrollTo(0, savedScrollY);
+        if (window.lenis) {
+          window.lenis.scrollTo(savedScrollY, { immediate: true });
+        }
       }
       if (chapterObserver) chapterObserver.disconnect();
-      if (window.location.hash.startsWith('#service-')) {
-        history.replaceState(null, null, '#services');
+      if (window.location.hash.startsWith('#service-') || window.location.hash === '#services') {
+        const cleanUrl = window.location.pathname + window.location.search;
+        history.replaceState(null, null, cleanUrl);
       }
     }, 350);
   }
@@ -5493,7 +5505,21 @@ void main(void) {
   }
 
   if (chapterCloseBtn) chapterCloseBtn.addEventListener('click', closeChapterView);
-  if (chapterBackBtn) chapterBackBtn.addEventListener('click', closeChapterView);
+  if (chapterBackBtn) {
+    chapterBackBtn.addEventListener('click', () => {
+      // Revert filter to 'all' so all services are visible when coming back
+      if (currentFilter !== 'all') {
+        currentFilter = 'all';
+        filterChips.forEach(c => {
+          const isAll = (c.getAttribute('data-filter') || 'all') === 'all';
+          c.classList.toggle('active', isAll);
+          c.setAttribute('aria-selected', isAll ? 'true' : 'false');
+        });
+        buildCards();
+      }
+      closeChapterView();
+    });
+  }
   if (chapterStartProjectBtn) {
     chapterStartProjectBtn.addEventListener('click', () => {
       const match = SERVICES_DATA.find(s => s.id === currentChapterServiceId);
@@ -5518,6 +5544,9 @@ void main(void) {
           openChapterView(match.id, null);
         }, 300);
       }
+    } else if (hash === '#services') {
+      const cleanUrl = window.location.pathname + window.location.search;
+      history.replaceState(null, null, cleanUrl);
     }
   }
 
