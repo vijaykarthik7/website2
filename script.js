@@ -4925,6 +4925,7 @@ void main(void) {
   const chapterOverviewTitle = document.getElementById('chapterOverviewTitle');
   const chapterOverviewLead = document.getElementById('chapterOverviewLead');
   const chapterTechChips = document.getElementById('chapterTechChips');
+  const chapterToolInspector = document.getElementById('chapterToolInspector');
   const chapterDeliverablesGrid = document.getElementById('chapterDeliverablesGrid');
   const chapterCtaTitle = document.getElementById('chapterCtaTitle');
   const chapterStartProjectBtn = document.getElementById('chapterStartProjectBtn');
@@ -5280,6 +5281,1079 @@ void main(void) {
     });
   });
 
+  
+  // =========================================================================
+  // RIYADVI SERVICE KNOWLEDGE BASE: TOOLS & DELIVERABLES DEEP-DIVE REPOSITORY
+  // =========================================================================
+
+  const TECH_TOOLS_DATA = {
+    'React': {
+      name: 'React',
+      category: 'UI Component Architecture',
+      logo: '<svg viewBox="-11.5 -10.23174 23 20.46348"><circle cx="0" cy="0" r="2.05" fill="#61dafb"/><g stroke="#61dafb" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg>',
+      what: 'A declarative, component-driven JavaScript library created by Meta for engineering responsive, reactive web applications.',
+      why: 'Powers lightning-fast single-page web applications with virtual DOM diffing, reusable UI components, and massive ecosystem scalability.',
+      details: ['Sub-millisecond UI updates via Virtual DOM', 'Modular component reusability reducing dev cycles', 'Strict TypeScript compatibility for bug-free code', 'Seamless mobile sharing via React Native']
+    },
+    'Next.js': {
+      name: 'Next.js',
+      category: 'Production React Framework',
+      logo: '<svg viewBox="0 0 180 180"><mask height="180" id="mask-nxt" maskUnits="userSpaceOnUse" width="180" x="0" y="0"><circle cx="90" cy="90" fill="black" r="90"/></mask><g mask="url(#mask-nxt)"><circle cx="90" cy="90" fill="#000" r="90" stroke="#f0c75e" stroke-width="5"/><path d="M149.508 157.438L69.1478 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.137 149.508 157.438Z" fill="#fff"/><rect fill="#fff" height="72" width="12" x="115" y="54"/></g></svg>',
+      what: 'The industry-standard full-stack React framework developed by Vercel for enterprise production environments.',
+      why: 'Combines Server-Side Rendering (SSR) and Static Site Generation (SSG) to achieve sub-second loading speeds, perfect Google Lighthouse scores, and optimal SEO ranking.',
+      details: ['Hybrid SSR and Static Site Generation', 'Automated image and font optimization', 'Zero-config Edge API routes & Server Actions', 'App Router architecture with streaming SSR']
+    },
+    'Node.js': {
+      name: 'Node.js',
+      category: 'Asynchronous JavaScript Runtime',
+      logo: '<svg viewBox="0 0 256 289"><path d="M128 0L8.2 69.2v149.9L128 288.3l119.8-69.2V69.2L128 0zm71.7 187.6c-4.8 8.1-11.4 14.8-19.7 20.1-8.3 5.3-17.7 8-28.2 8-11.8 0-21.9-3.2-30.3-9.5-8.4-6.3-13.8-14.8-16.2-25.5l18.5-7.6c1.6 6.8 5 12.1 10.3 15.9 5.3 3.8 11.2 5.7 17.7 5.7 6.4 0 11.9-1.5 16.5-4.5 4.6-3 6.9-7.2 6.9-12.6 0-3.9-1.4-7.2-4.2-9.8-2.8-2.6-7.8-5-15-7.2l-14.3-4.4c-11.9-3.7-20.5-8.8-25.8-15.3-5.3-6.5-8-14.4-8-23.7 0-9.9 3.9-18.3 11.7-25.2 7.8-6.9 17.5-10.4 29.1-10.4 10.5 0 19.6 3 27.3 9 7.7 6 12.6 13.9 14.7 23.7l-18.2 7.4c-1.3-5.5-4.1-9.9-8.4-13.2-4.3-3.3-9.4-5-15.4-5-5.5 0-10.1 1.4-13.8 4.2-3.7 2.8-5.6 6.6-5.6 11.4 0 3.7 1.3 6.8 3.9 9.3 2.6 2.5 7.3 4.8 14.1 6.9l14.3 4.4c12.4 3.8 21.3 9.1 26.7 15.9 5.4 6.8 8.1 14.8 8.1 24.1.1 9.9-3.7 18.2-11.3 24.8z" fill="#68A063"/></svg>',
+      what: 'An open-source, cross-platform JavaScript runtime engine built on Google Chrome’s high-speed V8 engine.',
+      why: 'Enables high-throughput, non-blocking I/O microservices and REST/GraphQL APIs capable of handling tens of thousands of concurrent users with minimal server overhead.',
+      details: ['Event-driven non-blocking I/O loop', 'Unified JavaScript stack across frontend & backend', 'Vast NPM ecosystem of audited packages', 'Microservices and serverless ready']
+    },
+    'TypeScript': {
+      name: 'TypeScript',
+      category: 'Strict Typed Engineering',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" fill="#3178C6" rx="36"/><path d="M150 113.6h-34v82h-22v-82H60V96h90v17.6zm80.2 36.6c0 10.8-3.7 19.6-11.1 26.4-7.4 6.8-17.5 10.2-30.3 10.2-11.2 0-20.8-2.5-28.8-7.5v-19c8 6.4 17.4 9.6 28.2 9.6 6.6 0 11.6-1.5 15-4.5 3.4-3 5.1-7.2 5.1-12.6 0-4.6-1.5-8.5-4.5-11.7-3-3.2-8.5-6.5-16.5-9.9-10.8-4.6-18.4-9.8-22.8-15.6-4.4-5.8-6.6-13.2-6.6-22.2 0-10.4 3.7-18.8 11.1-25.2 7.4-6.4 17.1-9.6 29.1-9.6 9.8 0 18.8 2.2 27 6.6v18.2c-7.6-5.2-16.2-7.8-25.8-7.8-6.2 0-11 1.4-14.4 4.2-3.4 2.8-5.1 6.8-5.1 12 0 4.4 1.4 8.1 4.2 11.1 2.8 3 8.2 6.2 16.2 9.6 11 4.6 18.8 9.9 23.4 15.9 4.6 6 6.9 13.4 6.9 22.2z" fill="#FFF"/></svg>',
+      what: 'A strongly typed programming language developed by Microsoft that builds on JavaScript by adding static type syntax.',
+      why: 'Prevents over 75% of runtime bugs during development, provides intelligent autocomplete, and ensures clean contracts across complex enterprise codebases.',
+      details: ['Static type checking eliminates runtime exceptions', 'Self-documenting interface definitions', 'Enhanced refactoring speed and developer velocity', 'Seamless compatibility with all JavaScript packages']
+    },
+    'TailwindCSS': {
+      name: 'TailwindCSS',
+      category: 'Atomic Styling Framework',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" fill="#38BDF8"/></svg>',
+      what: 'A modern, utility-first CSS framework designed for building bespoke, responsive user interfaces without writing repetitive custom CSS.',
+      why: 'Produces ultra-compact production CSS bundles (< 10 KB) through automated dead-code purging, eliminating CSS bloat and enforcing exact design system harmony.',
+      details: ['Just-In-Time (JIT) compiler for lightning builds', 'Flawless responsive breakpoints for mobile/desktop', 'Zero CSS bloat via automated purge scanning', 'Consistent design tokens for spacing & typography']
+    },
+    'GraphQL': {
+      name: 'GraphQL',
+      category: 'Data Query Specification',
+      logo: '<svg viewBox="0 0 400 400"><path fill="#E10098" d="M57.468 302.007l-13.376-23.169L200 46.846l155.908 231.992-13.376 23.169L200 93.184z"/><path fill="#E10098" d="M369.284 278.838l-13.376-23.169L200 353.154 44.092 255.669l-13.376 23.169L200 399.492z"/><circle fill="#E10098" cx="200" cy="46.846" r="32"/><circle fill="#E10098" cx="355.908" cy="278.838" r="32"/><circle fill="#E10098" cx="44.092" cy="278.838" r="32"/></svg>',
+      what: 'An open-source data query and manipulation language for APIs, along with a server runtime for executing queries with existing data.',
+      why: 'Allows clients to request precisely the exact data required and nothing more, saving client bandwidth and aggregating multiple database requests into a single network payload.',
+      details: ['Zero over-fetching and zero under-fetching', 'Single consolidated endpoint across all services', 'Strongly-typed schema contracts with introspection', 'Real-time WebSocket subscriptions support']
+    },
+    'Headless CMS': {
+      name: 'Headless CMS',
+      category: 'Decoupled Content Architecture',
+      logo: '<svg viewBox="0 0 24 24"><path d="M4 4h16v4H4V4zm0 6h16v4H4v-4zm0 6h10v4H4v-4z" fill="#f0c75e"/><circle cx="18" cy="18" r="3" fill="#68A063"/></svg>',
+      what: 'An API-first content management system (Sanity, Strapi, Contentful) separating editorial workflows from the frontend presentation layer.',
+      why: 'Gives marketing teams the power to edit and publish content instantly while keeping the website immune to WordPress vulnerabilities and 10x faster.',
+      details: ['Zero plugin bloat or database bottlenecks', 'Multi-channel omnichannel content syndication', 'Real-time live previews before publishing', 'Bank-grade security with decoupled API layers']
+    },
+    'Edge CDN': {
+      name: 'Edge CDN',
+      category: 'Global Content Delivery',
+      logo: '<svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z" fill="#f0c75e"/></svg>',
+      what: 'A global network of edge computing servers (Cloudflare, AWS CloudFront) distributed across 300+ metropolitan hubs worldwide.',
+      why: 'Caches and serves static assets and API responses within 20 milliseconds of users anywhere on Earth, eliminating server lag.',
+      details: ['Sub-25ms global content delivery latency', 'Integrated Layer 3/4/7 DDoS attack mitigation', 'Automated Brotli compression & WebP conversion', 'Serverless Edge Workers for instant redirects']
+    },
+    'Go': {
+      name: 'Go / Golang',
+      category: 'Concurrent Backend Language',
+      logo: '<svg viewBox="0 0 256 96"><path d="M37.4 51.5c-1.3 6.6-6 10.3-13.4 10.3-9.5 0-15.6-7.3-15.6-17.5 0-10.3 6.1-17.6 15.6-17.6 7.7 0 12.3 4.2 13.5 10.8h8.8C45 28.7 36 20 24 20 10.7 20 0 30.6 0 44.3c0 13.6 10.5 24.3 24 24.3 11.9 0 21.2-8.5 22.3-21.3h-8.9v4.2zm45.2-7.2c0-13.7-10.7-24.3-24-24.3S34.6 30.6 34.6 44.3c0 13.6 10.7 24.3 24 24.3s24-10.7 24-24.3zm-8.8 0c0 10.2-6.1 17.5-15.2 17.5s-15.2-7.3-15.2-17.5c0-10.2 6.1-17.5 15.2-17.5s15.2 7.3 15.2 17.5z" fill="#00ADD8"/></svg>',
+      what: 'An open-source, compiled language designed by Google for extreme concurrency, speed, and simplicity.',
+      why: 'Used for mission-critical backend systems and microservices where microsecond performance and high concurrency are required.',
+      details: ['Goroutines enabling millions of lightweight threads', 'Compiled directly to bare-metal machine code', 'Minimal memory footprint under heavy server loads', 'Native gRPC and cloud microservices integration']
+    },
+    'Python': {
+      name: 'Python',
+      category: 'AI & Data Engineering',
+      logo: '<svg viewBox="0 0 256 255"><path d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V28.187S194.202.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z" fill="#366D9C"/><path d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.71c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v61.472s-4.767 28.436 62.519 28.436zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z" fill="#FFD43B"/></svg>',
+      what: 'A high-level, versatile programming language renowned for data science, artificial intelligence, and automated scripting.',
+      why: 'Powers our backend automation, predictive analytics pipelines, data scraping engines, and machine learning models.',
+      details: ['Industry standard for AI, ML, and data processing', 'Rapid API prototyping with FastAPI & Django', 'Extensive statistical and computational libraries', 'Seamless integration with cloud computing engines']
+    },
+    'Microservices': {
+      name: 'Microservices',
+      category: 'Distributed Architecture',
+      logo: '<svg viewBox="0 0 24 24"><path d="M3 3h7v7H3V3zm11 0h7v7h-7V3zm-11 11h7v7H3v-7zm11 0h7v7h-7v-7z" fill="none" stroke="#f0c75e" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="#68A063"/></svg>',
+      what: 'An architectural pattern structuring an application as a collection of independently deployable, loosely coupled services.',
+      why: 'Prevents single points of failure, allows targeted horizontal scaling of high-demand features, and accelerates team deployment cycles.',
+      details: ['Isolated failure domains prevent full system outages', 'Independent scaling of specific high-traffic modules', 'Flexible technology stack choice per service', 'Continuous independent CI/CD deployments']
+    },
+    'PostgreSQL': {
+      name: 'PostgreSQL',
+      category: 'Enterprise Relational Database',
+      logo: '<svg viewBox="0 0 256 264"><path d="M125.7 0C56.2 0 0 57.5 0 128.5c0 40 18.4 75.6 47.1 98.7l.7.5 21.6-26.7-.7-.5c-20.7-16.7-34-42.3-34-72 0-49.8 39.5-90.2 88.2-90.2 48.7 0 88.2 40.4 88.2 90.2 0 23.3-8.2 44.6-21.8 61.1l26.2 19.3c18.8-22.9 30.2-52.2 30.2-80.4C245.7 57.5 192.2 0 125.7 0z" fill="#336791"/></svg>',
+      what: 'The world’s most advanced open-source object-relational database system known for reliability, robust feature sets, and data integrity.',
+      why: 'Guarantees strict ACID compliance, complex relational queries, native JSONB indexing, and rock-solid enterprise transaction processing.',
+      details: ['100% ACID compliant data transaction safety', 'Native JSONB support for hybrid document storage', 'Advanced indexing (B-Tree, GIN, GiST)', 'High-availability replication and point-in-time recovery']
+    },
+    'Redis': {
+      name: 'Redis',
+      category: 'In-Memory Cache & Key-Value',
+      logo: '<svg viewBox="0 0 256 220"><path d="M256 160.6l-128 59.4-128-59.4L0 60.4 128 1l128 59.4v100.2z" fill="#D82C20"/><path d="M128 36.4L33.7 80.2l94.3 43.8 94.3-43.8L128 36.4z" fill="#FFF"/></svg>',
+      what: 'An ultra-fast, in-memory data store used as a database, cache, streaming engine, and message broker.',
+      why: 'Reduces database load by up to 90% and provides sub-millisecond query responses for user sessions, shopping carts, and live counters.',
+      details: ['Sub-millisecond data retrieval speeds in RAM', 'Pub/Sub messaging for real-time notifications', 'Session state management across clustered servers', 'Automated cache expiration and eviction policies']
+    },
+    'Kafka': {
+      name: 'Kafka',
+      category: 'Distributed Event Streaming',
+      logo: '<svg viewBox="0 0 256 360"><circle cx="128" cy="180" r="40" fill="#231F20"/><circle cx="50" cy="80" r="30" fill="#f0c75e"/><circle cx="206" cy="80" r="30" fill="#f0c75e"/><circle cx="50" cy="280" r="30" fill="#f0c75e"/><circle cx="206" cy="280" r="30" fill="#f0c75e"/></svg>',
+      what: 'A distributed event store and stream-processing platform for high-performance data pipelines and streaming analytics.',
+      why: 'Handles millions of events per second with fault tolerance, powering real-time financial tracking, event queues, and microservice messaging.',
+      details: ['Processes millions of events per second', 'Persistent, ordered, and immutable message logs', 'Fault-tolerant distributed cluster architecture', 'Decouples producer and consumer services']
+    },
+    'Docker & K8s': {
+      name: 'Docker & Kubernetes',
+      category: 'Containerization & Orchestration',
+      logo: '<svg viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186" fill="#2496ED"/></svg>',
+      what: 'Enterprise containerization packaging applications with their dependencies, managed by Kubernetes automated cluster orchestration.',
+      why: 'Eliminates "works on my machine" issues and provides auto-healing, auto-scaling cloud deployments with zero downtime updates.',
+      details: ['Automated horizontal container scaling', 'Zero-downtime rolling canary deployments', 'Self-healing cluster restarts for crashed pods', 'Consistent environments from dev to production']
+    },
+    'Flutter': {
+      name: 'Flutter',
+      category: 'Cross-Platform Mobile UI',
+      logo: '<svg viewBox="0 0 256 317"><path d="M157.6 0L0 157.6l48.8 48.8L255.2 0H157.6z" fill="#47C5FB"/><path d="M157.6 157.6L77.9 237.3l48.8 48.8 30.9-30.9 97.6-97.6H157.6z" fill="#47C5FB"/><path d="M126.7 286.1l30.9 30.9h97.6l-79.7-79.7-48.8 48.8z" fill="#00569E"/></svg>',
+      what: 'Google’s open-source UI software development kit for crafting natively compiled mobile, web, and desktop apps from a single codebase.',
+      why: 'Delivers buttery 60/120fps native performance across iOS and Android while slashing development and maintenance costs in half.',
+      details: ['Single unified Dart codebase for iOS & Android', 'Impeller hardware-accelerated 120 FPS rendering', 'Rich widget catalog matching native iOS/Material design', 'Stateful Hot Reload for rapid UI iterations']
+    },
+    'React Native': {
+      name: 'React Native',
+      category: 'Native Mobile Framework',
+      logo: '<svg viewBox="-11.5 -10.23174 23 20.46348"><circle cx="0" cy="0" r="2.05" fill="#61dafb"/><g stroke="#61dafb" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg>',
+      what: 'Meta’s framework for writing native iOS and Android mobile applications using React and JavaScript.',
+      why: 'Enables rapid mobile shipping with true native UI components, native device API access, and cross-platform code sharing with web apps.',
+      details: ['Direct access to native device sensors and hardware', 'Share up to 80% code between web and mobile platforms', 'Over-the-air (OTA) updates bypassing app store delays', 'Backed by Meta, Shopify, and Microsoft']
+    },
+    'Swift / iOS': {
+      name: 'Swift / iOS',
+      category: 'Apple Native Platform',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="48" fill="#F05138"/><path d="M196.2 195.3c-23.7 23.3-64.8 28.5-98.8 11.2C65.5 190.2 45 162.7 39.8 140c-.7-3.1 3-5.3 5-3 23.3 27 57.7 38.3 88.5 28.3 3.5-1.1 5.8-5 4-8.3-9-16.7-27.5-35.3-51.2-46.7-4.2-2-1.3-8.3 3.3-7.7 25.3 3.5 53.7 18 69.8 37.3 1.8 2.2 5.3 1.5 6.2-1.3 6.3-20.3 5.3-48.2-12.8-70.8-2.3-2.8 1-6.7 4.2-5 34.3 18.7 54.7 56.5 45.7 94.7-1 4.2 2.3 8.3 6.5 7.7 15.3-2 30-10.7 40.7-22.3 3.2-3.5 8.7.3 7 4.5-9.8 24.3-30.8 45.3-50.7 48.7z" fill="#FFF"/></svg>',
+      what: 'Apple’s native programming language and development toolchain for building high-performance apps across iPhone, iPad, Apple Watch, and Mac.',
+      why: 'Provides maximum access to Apple hardware, iOS 18+ spatial design patterns, Secure Enclave, Apple Pay, and native widget ecosystems.',
+      details: ['SwiftUI declarative reactive interface architecture', 'Direct Metal GPU acceleration for games & heavy visuals', 'Hardware-backed biometric authentication (FaceID)', 'Seamless Apple Watch, iPad, and CarPlay extensions']
+    },
+    'Kotlin / Android': {
+      name: 'Kotlin / Android',
+      category: 'Google Android Platform',
+      logo: '<svg viewBox="0 0 256 256"><path d="M256 256H0V0h256L128 128z" fill="#7F52FF"/><path d="M128 128L0 256V0z" fill="#E2445C"/></svg>',
+      what: 'Google’s preferred, modern programming language for native Android operating system development.',
+      why: 'Guarantees concise, null-safe native Android performance with Jetpack Compose UI, deep background service support, and Play Store optimization.',
+      details: ['Jetpack Compose modern declarative Android UI', 'Built-in null safety preventing app crash null-pointers', 'Optimized for 10,000+ diverse Android device models', 'Deep integration with Google Play In-App Billing']
+    },
+    'REST & GraphQL': {
+      name: 'REST & GraphQL',
+      category: 'Hybrid API Architecture',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z" fill="#f0c75e"/></svg>',
+      what: 'Dual-protocol API design providing standard REST endpoints for simple integrations and GraphQL for complex nested client queries.',
+      why: 'Gives client apps flexibility to fetch bulk data with zero round trips while maintaining backward compatibility with third-party software.',
+      details: ['Universal compatibility across mobile and web clients', 'High cacheability on Edge CDN servers', 'Strict OpenAPI and GraphQL schema specifications', 'Token-based rate limiting and DDoS protection']
+    },
+    'SQLite': {
+      name: 'SQLite',
+      category: 'Embedded Local Database',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#003B57"/><path d="M128 60c-40 0-70 12-70 28v80c0 16 30 28 70 28s70-12 70-28V88c0-16-30-28-70-28zm0 18c35 0 54 9 54 10s-19 10-54 10-54-9-54-10 19-10 54-10z" fill="#00A9E0"/></svg>',
+      what: 'A lightweight, zero-configuration SQL database engine embedded directly into mobile devices and client applications.',
+      why: 'Enables 100% offline-first application capabilities, allowing mobile users to view and edit data without an active internet connection.',
+      details: ['Zero latency local database reads directly in app', 'Offline data persistence with background cloud sync', 'Full SQL query syntax on mobile devices', 'Encrypted database storage via SQLCipher']
+    },
+    'Firebase': {
+      name: 'Firebase',
+      category: 'Google Cloud Mobile Backend',
+      logo: '<svg viewBox="0 0 256 353"><path d="M0 283.4L37.8 45.9c.7-4.4 6-6.2 9.2-3.1l41.6 40.7L0 283.4z" fill="#FFA000"/><path d="M136.6 142.4L96.8 66c-1.9-3.7-7.2-3.7-9.1 0L0 283.4l136.6-141z" fill="#F57C00"/><path d="M0 283.4l123.7 69.1c2.7 1.5 5.9 1.5 8.6 0L256 283.4 136.6 142.4 0 283.4z" fill="#FFCA28"/></svg>',
+      what: 'Google’s comprehensive platform for mobile application infrastructure, live synchronization, authentication, and analytics.',
+      why: 'Provides real-time database sync, push notification dispatching, remote crash reporting, and user analytics with zero server maintenance.',
+      details: ['Cloud Firestore real-time client data synchronization', 'Firebase Cloud Messaging (FCM) push notifications', 'Crashlytics real-time exception tracking', 'Secure Google, Apple, and phone authentication']
+    },
+    'App Store CI/CD': {
+      name: 'App Store CI/CD',
+      category: 'Automated Mobile DevOps',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 3.5l-5-2.5V17l5 2.5 5-2.5v-5l-5 2.5z" fill="#f0c75e"/></svg>',
+      what: 'Automated continuous integration and deployment pipelines (Fastlane, GitHub Actions) for Apple App Store and Google Play.',
+      why: 'Eliminates manual build errors, runs automated test suites on real virtual devices, and automates screenshot and binary releases.',
+      details: ['One-click or automated git-tag app store releases', 'Automated code signing and certificate management', 'Beta distribution via TestFlight and Play Console', 'Pre-release unit, widget, and integration testing']
+    },
+    'Shopify Plus': {
+      name: 'Shopify Plus',
+      category: 'Enterprise E-Commerce Engine',
+      logo: '<svg viewBox="0 0 256 292"><path d="M217.7 44.8c-.5-.4-1.3-.4-1.8 0L193.3 63c-3-8.8-10.6-14.8-20.5-14.8-1.5 0-3 .2-4.5.5C163.5 19.8 141.2 0 114.5 0 94.6 0 76.5 11.7 68.3 29.8 54.1 33.5 45.4 46.5 45 61.3L15.3 84.7c-1.1.9-1.3 2.5-.5 3.7l64.3 200.5c.6 1.8 2.3 3.1 4.2 3.1h139.4c1.9 0 3.6-1.3 4.2-3.1l64.3-200.5c.8-1.2.6-2.8-.5-3.7L217.7 44.8z" fill="#95BF47"/></svg>',
+      what: 'The leading enterprise commerce platform powering world-class retail brands with 99.99% uptime and unlimited checkout bandwidth.',
+      why: 'Handles massive flash-sale volume (over 10,000 orders/minute) with PCI-DSS Level 1 security and automated international currency conversion.',
+      details: ['Handles 10,000+ orders per minute during flash sales', 'Shopify Scripts and custom checkout customization', 'Multi-currency and multi-language global storefronts', 'Wholesale B2B and direct-to-consumer in one store']
+    },
+    'WooCommerce': {
+      name: 'WooCommerce',
+      category: 'Customizable Open E-Commerce',
+      logo: '<svg viewBox="0 0 256 153"><path d="M228.6 0H27.4C12.3 0 0 12.3 0 27.4v98.2c0 15.1 12.3 27.4 27.4 27.4h201.2c15.1 0 27.4-12.3 27.4-27.4V27.4C256 12.3 243.7 0 228.6 0z" fill="#96588A"/><path d="M47.7 43.8c4.6 18.5 12.4 39.8 19.3 57.6h.4c7-17.8 14.7-39.1 19.3-57.6h17.8L77.6 109H60L30.9 43.8h16.8zm75.4 34.6c0-19.7 13.9-35.8 33.8-35.8 19.9 0 33.8 16.1 33.8 35.8 0 19.7-13.9 35.8-33.8 35.8-19.9 0-33.8-16.1-33.8-35.8zm50.8 0c0-11.8-7.5-20.9-17-20.9s-17 9.1-17 20.9c0 11.8 7.5 20.9 17 20.9s17-9.1 17-20.9z" fill="#FFF"/></svg>',
+      what: 'An open-source, fully customizable eCommerce platform that gives businesses 100% ownership of their store data and hosting.',
+      why: 'Perfect for custom product configurations, bespoke checkout flows, zero monthly transaction fee models, and unlimited customizations.',
+      details: ['Zero percentage-based transaction fees', '100% data ownership and self-hosted control', 'Unlimited custom product variations and attributes', 'Extensive payment gateway and shipping integrations']
+    },
+    'Headless Commerce': {
+      name: 'Headless Commerce',
+      category: 'Decoupled Shopping Engine',
+      logo: '<svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" fill="#f0c75e"/></svg>',
+      what: 'An architectural approach separating the customer-facing frontend storefront from the backend commerce management system.',
+      why: 'Enables sub-second page transitions, rich 3D product customizers, and freedom to change backend systems without rebuilding the frontend.',
+      details: ['Instant sub-second catalog navigation and filters', 'Custom checkout workflows and one-click buying', 'Multi-brand storefronts sharing one backend inventory', 'Maximum conversion rates via bespoke UX design']
+    },
+    'Stripe API': {
+      name: 'Stripe API',
+      category: 'Global Payment Infrastructure',
+      logo: '<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#635BFF"/><path d="M19.6 15.6c0-1.8 1.5-2.5 3.9-2.5 3.5 0 7.9 1.1 11.4 3V8.8c-3.8-1.5-7.6-2.2-11.4-2.2-9.4 0-15.6 4.9-15.6 13.1 0 12.8 17.5 10.7 17.5 16.3 0 2.2-1.9 2.9-4.6 2.9-4 0-9.2-1.7-13.3-3.9v7.4c4.6 2 9.2 2.9 13.3 2.9 9.7 0 16.5-4.8 16.5-13.3-.1-13.6-17.7-11.2-17.7-16.4z" fill="#FFF"/></svg>',
+      what: 'The gold-standard financial infrastructure platform powering online payments, subscriptions, and payouts in 135+ currencies.',
+      why: 'Provides frictionless one-click Apple Pay, Google Pay, credit cards, automated fraud detection via Stripe Radar, and recurring billing.',
+      details: ['Accepts Apple Pay, Google Pay, cards, & local methods', 'Radar AI real-time fraud and chargeback protection', 'Automated recurring billing, subscriptions, & invoicing', 'PCI-DSS Service Provider Level 1 compliance']
+    },
+    'Razorpay': {
+      name: 'Razorpay',
+      category: 'Smart Payment Gateway',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#0C2340"/><path d="M140 36L70 170h54l-20 50 86-134h-50z" fill="#02A6FD"/></svg>',
+      what: 'India’s leading omnichannel payment gateway supporting UPI, Netbanking, Cards, Wallets, and EMI options.',
+      why: 'Delivers the highest payment success rates in the Asian market with instant UPI QR codes, intent flows, and instant bank settlements.',
+      details: ['Instant UPI AutoPay and QR code checkouts', '100+ payment modes across all Indian banks', 'Smart dynamic routing for maximum payment success rates', 'Instant customer refund APIs and webhook automation']
+    },
+    'Next.js Commerce': {
+      name: 'Next.js Commerce',
+      category: 'High-Speed Storefront Architecture',
+      logo: '<svg viewBox="0 0 180 180"><circle cx="90" cy="90" fill="#000" r="90" stroke="#f0c75e" stroke-width="5"/><path d="M149.508 157.438L69.1478 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.137 149.508 157.438Z" fill="#fff"/></svg>',
+      what: 'An enterprise-grade headless e-commerce starter kit developed by Vercel for building blazing fast online storefronts.',
+      why: 'Provides instant search, dynamic filter facets, and edge-rendered product detail pages that load instantaneously.',
+      details: ['Edge-cached product catalog pages', 'Instant optimistic cart updates', 'Algolia and MeiliSearch out of the box', 'Seamless Shopify and BigCommerce backends']
+    },
+    'Algolia Search': {
+      name: 'Algolia Search',
+      category: 'Real-Time Neural Search Engine',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#5468FF"/><path d="M128 48a80 80 0 1056.6 136.6l31.4 31.4a8 8 0 0011.4-11.4l-31.4-31.4A80 80 0 00128 48zm0 16a64 64 0 110 128 64 64 0 010-128z" fill="#FFF"/></svg>',
+      what: 'A lightning-fast, AI-powered search-as-a-service engine that delivers real-time search results within milliseconds.',
+      why: 'Boosts e-commerce conversion rates by showing instant, typo-tolerant search results and dynamic filters as users type every letter.',
+      details: ['Sub-15ms search response times across millions of SKUs', 'Typo tolerance and semantic AI query understanding', 'Dynamic merchandising rules and sponsored pinning', 'Personalized recommendations based on browsing history']
+    },
+    'Klaviyo': {
+      name: 'Klaviyo',
+      category: 'E-Commerce Marketing Automation',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#252525"/><path d="M60 60h136v40H60V60zm0 68h90v40H60v-40z" fill="#f0c75e"/></svg>',
+      what: 'An intelligent customer data platform and marketing automation system built specifically for e-commerce brands.',
+      why: 'Recovers abandoned shopping carts, sends automated post-purchase upsells, and segments customers to drive 30%+ more revenue.',
+      details: ['Automated abandoned checkout recovery sequences', 'Deep predictive purchase value segmentation', 'Omnichannel SMS and email behavioral triggers', 'Direct revenue attribution tracking per campaign']
+    },
+    'Unity 3D': {
+      name: 'Unity 3D',
+      category: 'Real-Time 3D Game Engine',
+      logo: '<svg viewBox="0 0 256 256"><path d="M128 12.3L23.4 72.7v120.9L128 254l104.6-60.4V72.7L128 12.3zm0 33.3l69.7 40.2-26.8 15.5-42.9-24.8-42.9 24.8-26.8-15.5 69.7-40.2zm-75.5 63.8l26.8 15.5v49.5l-26.8-15.5V109.4zm85.5 97.4l-32.9-19v-31l32.9 19 32.9-19v31l-32.9 19zm65.5-47.9l-26.8 15.5v-49.5l26.8-15.5v49.5z" fill="#FFF"/></svg>',
+      what: 'The world’s most versatile real-time 3D development platform used by millions of developers for games and simulations.',
+      why: 'Deploys games and interactive 3D simulations across 20+ platforms (Mobile, PC, Console, WebGL, AR/VR) with a single codebase.',
+      details: ['Universal Render Pipeline (URP) for mobile & desktop', 'PhysX physics engine for realistic rigid-body simulation', 'Robust C# scripting architecture and visual scripting', 'Massive asset store ecosystem accelerating timelines']
+    },
+    'Unreal Engine 5': {
+      name: 'Unreal Engine 5',
+      category: 'Photorealistic Cinematic Engine',
+      logo: '<svg viewBox="0 0 256 256"><circle cx="128" cy="128" r="120" fill="#0E1128" stroke="#f0c75e" stroke-width="6"/><path d="M128 50c-43 0-78 35-78 78s35 78 78 78c33 0 61-20 72-49l-26-8c-8 20-27 34-46 34-30 0-54-24-54-55s24-55 54-55c19 0 36 10 45 25l-22 13 65 14 10-63-22 13c-14-23-38-38-76-38z" fill="#FFF"/></svg>',
+      what: 'Epic Games’ state-of-the-art 3D creation tool delivering photorealistic visuals and immersive interactive experiences.',
+      why: 'Powers AAA console-grade games and high-end interactive virtual worlds with revolutionary Nanite virtualized geometry and Lumen lighting.',
+      details: ['Lumen dynamic global illumination with real-time bounces', 'Nanite virtualized micropolygon geometry', 'Chaos physics and destruction simulation', 'C++ and Blueprint visual scripting architecture']
+    },
+    'C# / C++': {
+      name: 'C# / C++',
+      category: 'High-Performance Systems Languages',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#178600"/><path d="M150 90c-10-10-25-15-40-15-30 0-50 20-50 53s20 53 50 53c15 0 30-5 40-15l15 15c-15 15-35 22-55 22-42 0-72-28-72-75s30-75 72-75c20 0 40 7 55 22l-15 15zm40 25h12v12h12v12h-12v12h-12v-12h-12v-12h12v-12zm-30 0h12v12h12v12h-12v12h-12v-12h-12v-12h12v-12z" fill="#FFF"/></svg>',
+      what: 'The foundational high-performance programming languages for real-time game development, graphics rendering, and physics computation.',
+      why: 'Provides direct hardware memory control, minimal garbage collection pauses, and execution speeds essential for 60/120fps games.',
+      details: ['Zero-overhead hardware abstractions and pointers', 'Deterministic memory management for smooth framerates', 'High-performance cache-friendly data structures', 'Direct GPU pipeline shader and graphics API access']
+    },
+    'WebGL / Three.js': {
+      name: 'WebGL / Three.js',
+      category: 'In-Browser 3D Graphics',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#040404"/><path d="M60 190L128 60l68 130H60z" fill="none" stroke="#f0c75e" stroke-width="12"/><circle cx="128" cy="140" r="18" fill="#61dafb"/></svg>',
+      what: 'JavaScript 3D library and low-level browser API that renders GPU-accelerated 3D graphics inside any modern web browser without plugins.',
+      why: 'Allows visitors to interact with 3D product models, architectural walkthroughs, and browser games directly on mobile and desktop web pages.',
+      details: ['Zero plugin requirement running on mobile and desktop', 'Custom GLSL vertex and fragment shader materials', 'GLTF/USDZ 3D model loaders with PBR textures', 'Smooth 60 FPS animation via requestAnimationFrame']
+    },
+    'Godot': {
+      name: 'Godot',
+      category: 'Lightweight Open Game Engine',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#478CBF"/><circle cx="90" cy="140" r="20" fill="#FFF"/><circle cx="166" cy="140" r="20" fill="#FFF"/><circle cx="90" cy="140" r="10" fill="#000"/><circle cx="166" cy="140" r="10" fill="#000"/><path d="M100 180h56v10h-56z" fill="#FFF"/></svg>',
+      what: 'A lightweight, feature-packed open-source 2D and 3D game engine designed with dedicated node-based scene architecture.',
+      why: 'Ideal for 2D platformers, lightweight casual mobile games, and rapid game mechanics prototyping with small executable sizes.',
+      details: ['Pure dedicated 2D physics and rendering engine', 'Lightweight engine executable under 50 MB', 'Node and Scene tree hierarchical architecture', 'Zero royalty fees and 100% open-source freedom']
+    },
+    'Multiplayer Netcode': {
+      name: 'Multiplayer Netcode',
+      category: 'Real-Time Game Synchronization',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#f0c75e"/></svg>',
+      what: 'Client-server networking architecture with state synchronization, client-side prediction, and lag compensation.',
+      why: 'Ensures snappy, competitive online multiplayer gameplay where players across different continents experience synchronized action without rubber-banding.',
+      details: ['Client-side prediction and server reconciliation', 'Lag compensation and rollback netcode algorithms', 'Binary UDP packet serialization for low bandwidth', 'Lobby matchmaking and dedicated authoritative servers']
+    },
+    'ShaderLab / HLSL': {
+      name: 'ShaderLab / HLSL',
+      category: 'GPU Graphic Shader Programming',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 3L2 12l10 9 10-9-10-9zm0 3.5L18.5 12 12 17.5 5.5 12 12 6.5z" fill="#f0c75e"/></svg>',
+      what: 'High-Level Shader Languages executed directly on graphics processing units (GPUs) to compute custom lighting, materials, and visual FX.',
+      why: 'Creates custom stylized art, water reflections, hologram effects, energy shields, and cinematic visual atmospheres.',
+      details: ['Real-time compute shaders for millions of particles', 'Custom procedural materials and dynamic noise textures', 'Screen-space post-processing visual filters', 'Direct GPU hardware optimization for mobile thermal limits']
+    },
+    'Blender': {
+      name: 'Blender',
+      category: '3D Creation & Animation Suite',
+      logo: '<svg viewBox="0 0 256 208"><circle cx="128" cy="128" r="32" fill="#E87D0D"/><path d="M128 32C75 32 32 75 32 128s43 96 96 96 96-43 96-96c0-21-7-41-19-57l35-35c4-4 4-10 0-14s-10-4-14 0l-37 37c-17-17-38-27-61-27z" fill="#E87D0D"/><circle cx="128" cy="128" r="16" fill="#FFF"/></svg>',
+      what: 'The world-leading open-source 3D computer graphics software toolset used for modeling, rigging, animation, rendering, and compositing.',
+      why: 'Enables our 3D artists to create hyper-detailed polygonal meshes, UV unwraps, skeletal character rigs, and photorealistic asset renders.',
+      details: ['Advanced polygonal and subdivision surface modeling', 'Full character armature skeletal rigging and skinning', 'Cycles photorealistic ray-tracing render engine', 'Non-Linear Animation (NLA) editors for game assets']
+    },
+    'WebXR': {
+      name: 'WebXR',
+      category: 'Immersive Web Standard',
+      logo: '<svg viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-11 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm8 0c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#f0c75e"/></svg>',
+      what: 'A web standard API providing direct access to Virtual Reality (VR) and Augmented Reality (AR) headsets in web browsers.',
+      why: 'Allows users on Apple Vision Pro, Meta Quest, and smartphones to experience interactive 3D and AR environments instantly without app downloads.',
+      details: ['Zero app installation required directly in mobile browsers', 'Compatible with Meta Quest, Apple Vision Pro, & Android', '6 Degrees of Freedom (6-DoF) head and controller tracking', 'Spatial environment plane detection and anchoring']
+    },
+    'Unity XR': {
+      name: 'Unity XR',
+      category: 'Multi-Headset Spatial Engine',
+      logo: '<svg viewBox="0 0 256 256"><path d="M128 12.3L23.4 72.7v120.9L128 254l104.6-60.4V72.7L128 12.3zm0 33.3l69.7 40.2-26.8 15.5-42.9-24.8-42.9 24.8-26.8-15.5 69.7-40.2z" fill="#FFF"/></svg>',
+      what: 'Unity’s integrated extended reality framework providing cross-platform VR/AR headset deployment.',
+      why: 'Allows building complex virtual training simulators, industrial digital twins, and VR games deployed across Quest, HTC Vive, and Pico.',
+      details: ['XR Interaction Toolkit for grabbing, teleporting, & UI', 'Single project deployment to Quest, Vive, & VisionOS', 'Optimized foveated rendering for maximum sharpness', 'Multi-user shared spatial coordinate tracking']
+    },
+    'OpenXR': {
+      name: 'OpenXR',
+      category: 'Open Cross-Platform XR Standard',
+      logo: '<svg viewBox="0 0 256 128"><path d="M128 0L24 64l104 64 104-64L128 0zm0 30l55 34-55 34-55-34 55-34z" fill="#00AEEF"/></svg>',
+      what: 'A royalty-free, open standard from the Khronos Group providing high-performance access to XR hardware platforms.',
+      why: 'Future-proofs spatial applications by eliminating proprietary vendor lock-in across headsets and AR glasses.',
+      details: ['Universal industry standard supported by all major brands', 'Low latency direct hardware driver communication', 'Cross-platform hand tracking and spatial anchor extensions', 'Guaranteed future hardware backwards compatibility']
+    },
+    'VisionOS': {
+      name: 'VisionOS',
+      category: 'Apple Spatial Computing Platform',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="50" fill="#000"/><circle cx="128" cy="128" r="70" fill="none" stroke="#f0c75e" stroke-width="8"/><circle cx="128" cy="128" r="30" fill="#FFF"/></svg>',
+      what: 'Apple’s spatial operating system engineered for Apple Vision Pro with revolutionary eye tracking and hand gestures.',
+      why: 'Builds ultra-luxury spatial commerce, digital showroom environments, and productive spatial apps with photorealistic passthrough.',
+      details: ['Intuitive look-and-pinch gesture interaction', 'RealityKit photorealistic PBR rendering and shadows', 'Shared spatial audio positioning relative to room geometry', 'Seamless integration with iOS and iPadOS ecosystems']
+    },
+    'ARKit & ARCore': {
+      name: 'ARKit & ARCore',
+      category: 'Mobile Augmented Reality',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="#f0c75e" stroke-width="2"/></svg>',
+      what: 'Native mobile Augmented Reality software kits by Apple (ARKit) and Google (ARCore) using smartphone cameras and LiDAR.',
+      why: 'Allows over 2 billion mobile users to preview furniture in their living room, try on glasses, or view digital interactive guides.',
+      details: ['LiDAR and camera-based horizontal/vertical plane detection', 'Environmental real-time lighting estimation & shadows', 'True-to-scale millimeter real world dimensions', 'Face tracking and gesture recognition']
+    },
+    'Spatial Audio': {
+      name: 'Spatial Audio',
+      category: '3D Binaural Sound Architecture',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z" fill="#f0c75e"/><path d="M19 12c0 2.21-.9 4.21-2.34 5.66l1.41 1.41C19.9 17.25 21 14.76 21 12s-1.1-5.25-2.93-7.07l-1.41 1.41C18.1 7.79 19 9.79 19 12z" fill="#68A063"/></svg>',
+      what: 'HRTF (Head-Related Transfer Function) acoustic processing that positions sounds realistically in three-dimensional physical space.',
+      why: 'Dramatically enhances immersion by making users perceive audio coming from specific physical locations in their room.',
+      details: ['Binaural spatial localization tailored to human hearing', 'Dynamic Doppler shift and distance attenuation physics', 'Real-time room acoustic reverb based on room materials', 'Head-tracked rotation matching user orientation']
+    },
+    'Hand Tracking': {
+      name: 'Hand Tracking',
+      category: 'Computer Vision Interaction',
+      logo: '<svg viewBox="0 0 24 24"><path d="M21 9c0-.55-.45-1-1-1s-1 .45-1 1v4.5l-2.48-1.7c-.38-.26-.88-.29-1.28-.08-.5.26-.74.83-.56 1.36L16.2 17H11c-.55 0-1 .45-1 1s.45 1 1 1h6.5c.83 0 1.58-.42 2-1.1l3.05-5.2c.28-.48.45-1.04.45-1.7V9zm-8-5c0-.55-.45-1-1-1s-1 .45-1 1v6h2V4zm-4 2c0-.55-.45-1-1-1s-1 .45-1 1v4h2V6z" fill="#f0c75e"/></svg>',
+      what: 'Computer vision algorithms using headset cameras to detect and track 26 individual skeletal joints on each human hand in real time.',
+      why: 'Enables controller-free, natural interactions where users pinch, grab, push buttons, and manipulate digital objects naturally.',
+      details: ['Sub-millimeter finger joint skeletal tracking', 'Natural pinch and grasp gesture recognition', 'Zero hardware controller requirements', 'Haptic audio-visual confirmation feedback']
+    },
+    'Figma': {
+      name: 'Figma',
+      category: 'Collaborative Product Design',
+      logo: '<svg viewBox="0 0 200 300"><path d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50z" fill="#0ACF83"/><path d="M0 150c0-27.6 22.4-50 50-50h50v100H50c-27.6 0-50-22.4-50-50z" fill="#A259FF"/><path d="M0 50C0 22.4 22.4 0 50 0h50v100H50C22.4 100 0 77.6 0 50z" fill="#F24E1E"/><path d="M100 0h50c27.6 0 50 22.4 50 50s-22.4 50-50 50h-50V0z" fill="#FF7262"/><path d="M200 150c0 27.6-22.4 50-50 50s-50-22.4-50-50 22.4-50 50-50 50 22.4 50 50z" fill="#1ABCFE"/></svg>',
+      what: 'The industry-standard cloud-native interface design, prototyping, and design system collaboration platform.',
+      why: 'Enables our designers, engineers, and clients to co-design in real time, review prototypes, and inspect design tokens for development.',
+      details: ['Real-time multiplayer design collaboration', 'Auto-Layout 5.0 mirroring CSS flexbox architecture', 'Interactive component variant state matrices', 'Direct design-to-code token synchronization']
+    },
+    'Design Systems': {
+      name: 'Design Systems',
+      category: 'Scalable UI Standardization',
+      logo: '<svg viewBox="0 0 24 24"><path d="M4 6h16V4H4c-1.1 0-2 .9-2 2v11H0v3h14v-3H4V6zm19 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z" fill="#f0c75e"/></svg>',
+      what: 'A centralized repository of reusable UI components, design guidelines, color palettes, and typographic hierarchies.',
+      why: 'Guarantees 100% visual and functional consistency across web and mobile apps while speeding up feature releases by 3x.',
+      details: ['Single source of truth for all brand assets and UI', 'Eliminates design discrepancies across product teams', 'Accelerates developer onboarding and component reuse', 'Built with accessibility (WCAG 2.1 AA) baked in']
+    },
+    'Interactive Prototypes': {
+      name: 'Interactive Prototypes',
+      category: 'Simulated User Flows',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="#f0c75e"/></svg>',
+      what: 'High-fidelity, clickable simulations of mobile and web applications with real micro-animations, transitions, and user inputs.',
+      why: 'Tests usability and user journeys before writing a single line of backend code, saving thousands of dollars in redevelopment.',
+      details: ['Realistic touch gestures and micro-interactions', 'Accurate simulation of conditional logic and forms', 'Pre-development stakeholder sign-off and alignment', 'User testing validation with recorded task funnels']
+    },
+    'Wireframing': {
+      name: 'Wireframing',
+      category: 'Information Architecture',
+      logo: '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H6v-4h6v4zm0-6H6V7h6v4zm6 6h-4v-4h4v4zm0-6h-4V7h4v4z" fill="#f0c75e"/></svg>',
+      what: 'Low-fidelity structural blueprints mapping screen layout, content prioritization, navigation hierarchies, and conversion zones.',
+      why: 'Focuses on user journey logic and cognitive load without visual distractions, establishing solid UX foundations early.',
+      details: ['Low-fidelity structural blueprints of key user paths', 'Eliminates cognitive friction before styling phases', 'Optimized visual hierarchy and button placement', 'Rapid feedback loops with minimal turnaround time']
+    },
+    'User Research': {
+      name: 'User Research',
+      category: 'Data-Driven UX Discovery',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#f0c75e"/></svg>',
+      what: 'Systematic study of target users through behavioral analytics, customer interviews, survey data, and heatmaps.',
+      why: 'Bases design decisions on verified user data rather than guesswork, directly improving customer retention and purchase intent.',
+      details: ['In-depth customer discovery interviews and personas', 'Heatmap and click-tracking behavioral audits', 'Competitor benchmarking and opportunity gap analysis', 'Empathy maps identifying core customer pain points']
+    },
+    'Motion Design': {
+      name: 'Motion Design',
+      category: 'Kinetic UI & Micro-Interactions',
+      logo: '<svg viewBox="0 0 24 24"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.04-4.09l-2.54-1.49C16.14 17.82 14.2 19 12 19z" fill="#f0c75e"/></svg>',
+      what: 'Fluid micro-animations, transitions, and gesture responses that give digital interfaces a living, responsive feel.',
+      why: 'Guides user attention to primary calls to action, confirms input actions, and creates a high-end luxury feel.',
+      details: ['Physics-based spring curve transitions and damping', 'Visual feedback confirming successful user actions', 'Engaging scroll-linked spatial transformations', 'Lottie / Rive vector animations under 20 KB']
+    },
+    'Design Tokens': {
+      name: 'Design Tokens',
+      category: 'Cross-Platform Style Constants',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#f0c75e"/></svg>',
+      what: 'Platform-agnostic key-value pairs (colors, spacing, typography, shadows) exported from Figma directly to code.',
+      why: 'Enables changing a brand color or spacing value once in design and having it instantly propagate across web, iOS, and Android.',
+      details: ['Automated JSON synchronization from Figma to GitHub', 'Zero manual CSS/Swift style synchronization errors', 'Enforces strict global brand consistency', 'Supports dynamic dark mode and high-contrast themes']
+    },
+    'Usability Testing': {
+      name: 'Usability Testing',
+      category: 'Empirical UX Validation',
+      logo: '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0ACF83"/></svg>',
+      what: 'Observing real representative users as they attempt to accomplish specific tasks on interactive prototypes.',
+      why: 'Identifies navigational roadblocks, checkout drop-off triggers, and confusing wording before commercial deployment.',
+      details: ['Quantitative task completion rate measurements', 'Time-on-task and cognitive friction benchmarks', 'Recorded screen sessions and audio think-aloud commentary', 'Iterative usability score improvement cycles']
+    },
+    'Cinema 4D': {
+      name: 'Cinema 4D',
+      category: 'Motion Graphics 3D Engine',
+      logo: '<svg viewBox="0 0 256 256"><circle cx="128" cy="128" r="120" fill="#001B44"/><path d="M128 50a78 78 0 100 156 78 78 0 000-156zm0 126a48 48 0 110-96 48 48 0 010 96z" fill="#f0c75e"/></svg>',
+      what: 'Maxon’s professional 3D package famous for procedural MoGraph tools, dynamic simulations, and broadcast motion graphics.',
+      why: 'Powers our complex procedural animations, floating tech product visuals, dynamic typography, and commercial splash sequences.',
+      details: ['MoGraph toolset for procedural cloning and effectors', 'Redshift GPU photorealistic rendering engine integration', 'Soft body, cloth, and fluid dynamics simulations', 'Seamless workflow exchange with After Effects']
+    },
+    'ZBrush': {
+      name: 'ZBrush',
+      category: 'Digital Sculpting Standard',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#2B2B2B"/><path d="M60 70h136l-80 116h80" fill="none" stroke="#f0c75e" stroke-width="20" stroke-linecap="round"/></svg>',
+      what: 'The industry-standard digital sculpting tool that combines 3D/2.5D modeling, texturing, and painting with millions of polygons.',
+      why: 'Used to sculpt organic characters, intricate product ergonomics, and hyper-detailed skin/surface textures that traditional CAD cannot create.',
+      details: ['Sculpts up to 100 million polygons per subtool', 'DynaMesh real-time topology reconstruction', 'ZRemesher automated quad topology optimization', 'High-poly to low-poly normal map baking']
+    },
+    'Substance Painter': {
+      name: 'Substance Painter',
+      category: 'PBR 3D Texture Painting',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#E65100"/><path d="M70 70h116v116H70z" fill="#FFF"/><path d="M90 90h76v76H90z" fill="#E65100"/></svg>',
+      what: 'Adobe’s reference 3D texturing software allowing artists to paint photorealistic materials onto 3D models in real time.',
+      why: 'Generates physical micro-scratches, metallic reflections, wear-and-tear, and custom PBR map layers matching real-world physics.',
+      details: ['Physically Based Rendering (PBR) metal/roughness workflow', 'Smart Materials that automatically adapt to mesh curvature', '4K/8K texture map baking (AO, Normal, Curvature)', 'Export presets for Unreal, Unity, Three.js, and GLTF']
+    },
+    'PBR Shaders': {
+      name: 'PBR Shaders',
+      category: 'Physically Based Rendering Materials',
+      logo: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#f0c75e" stroke-width="2"/><path d="M12 2a10 10 0 000 20v-20z" fill="#f0c75e"/></svg>',
+      what: 'Material models that simulate real-world light physics: albedo, roughness, metallic, normal, ambient occlusion, and subsurface scattering.',
+      why: 'Ensures 3D models react realistically under any lighting condition, whether in bright daylight, neon night scenes, or studio spots.',
+      details: ['Energy conservation law compliant light calculations', 'Micro-facet surface roughness physics simulations', 'Consistent visual fidelity across all 3D viewports', 'Accurate metal conductor vs dielectric material behavior']
+    },
+    'GLTF / USDZ': {
+      name: 'GLTF / USDZ',
+      category: 'Compact 3D File Standards',
+      logo: '<svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 3.5l-5-2.5V17l5 2.5 5-2.5v-5l-5 2.5z" fill="#f0c75e"/></svg>',
+      what: 'Optimized 3D transmission formats known as the "JPEG of 3D", supported natively by iOS AR Quick Look and WebGL browsers.',
+      why: 'Compresses heavy 3D models down to a few megabytes for sub-second downloads on smartphones without losing textural quality.',
+      details: ['Draco geometric compression reducing file size by 70%', 'Embedded textures, animations, and PBR materials', 'Direct AR Quick Look preview on all iPhones (USDZ)', 'Open Khronos standard supported across all browsers (GLTF)']
+    },
+    'KeyShot': {
+      name: 'KeyShot',
+      category: 'Photorealistic Product Rendering',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#003E7E"/><circle cx="128" cy="128" r="60" fill="#f0c75e"/></svg>',
+      what: 'Real-time ray-tracing software specifically designed for luxury product visualization, automotive CAD rendering, and marketing imagery.',
+      why: 'Transforms industrial CAD models into studio-lit, camera-ready marketing shots with accurate optical dispersion and caustics.',
+      details: ['Real-time scientific ray-tracing preview engine', 'Scientifically accurate material index of refraction (IOR)', 'Virtual studio lighting HDRI environment creator', 'Automated product colorway configuration batch rendering']
+    },
+    'Google Ads': {
+      name: 'Google Ads',
+      category: 'High-Intent Search Advertising',
+      logo: '<svg viewBox="0 0 256 256"><path d="M43.8 181.8l63.8-110.5c7.3-12.7 23.5-17.1 36.2-9.8l10.9 6.3c12.7 7.3 17.1 23.5 9.8 36.2L100.7 214.5c-7.3 12.7-23.5 17.1-36.2 9.8L53.6 218c-12.7-7.3-17.1-23.5-9.8-36.2z" fill="#FBBC04"/><path d="M212.2 181.8l-63.8-110.5c-7.3-12.7-23.5-17.1-36.2-9.8l-10.9 6.3c12.7 7.3 17.1 23.5 9.8 36.2l63.8 110.5c7.3 12.7 23.5 17.1 36.2 9.8l10.9-6.3c12.7-7.3 17.1-23.5 9.8-36.2z" fill="#4285F4"/><circle cx="58.7" cy="201.2" r="30.2" fill="#34A853"/></svg>',
+      what: 'Google’s advertising platform displaying targeted ads across Google Search, YouTube, Display Network, and Performance Max campaigns.',
+      why: 'Captures customers at the precise moment they are actively searching for your exact services with high buying intent.',
+      details: ['High-intent search keyword targeting with negative match lists', 'Performance Max automated multi-channel machine learning', 'Target ROAS (Return On Ad Spend) automated bidding', 'Conversion tracking synced directly with CRM sales data']
+    },
+    'Meta Ads': {
+      name: 'Meta Ads',
+      category: 'Social Audience Acquisition',
+      logo: '<svg viewBox="0 0 256 256"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128c70.7 0 128-57.3 128-128S198.7 0 128 0zm68 135c-7.5 13-19.4 20.8-32.6 20.8-17.8 0-30.8-14.3-43.4-32.3-11.8-16.7-22.3-28.7-34.4-28.7-10.5 0-18.7 7.7-24.5 18.2l-18-9.8c8.9-16.3 23-28.4 42.5-28.4 21 0 35.8 16.5 48.6 34.6 10.9 15.5 20.6 26.4 30.2 26.4 7.6 0 13.9-4.8 19-14.2l12.6 13.4z" fill="#0081FB"/></svg>',
+      what: 'Behavioral targeting advertising platform on Instagram and Facebook reaching over 3 billion active monthly users.',
+      why: 'Builds brand awareness, tests video creative hooks, and retargets website visitors with personalized carousel offers.',
+      details: ['Lookalike audiences based on high-value customers', 'Dynamic product retargeting based on viewed items', 'High-converting Instagram Reels and Stories video ads', 'Meta Conversions API (CAPI) for cookie-independent tracking']
+    },
+    'Technical SEO': {
+      name: 'Technical SEO',
+      category: 'Search Engine Optimization',
+      logo: '<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#f0c75e"/></svg>',
+      what: 'Optimizing website code, server architecture, structured data schemas, and crawl efficiency for search engine bots.',
+      why: 'Secures sustainable organic Google page #1 rankings without ongoing advertising costs.',
+      details: ['JSON-LD structured schema markup (Organization, Product, FAQ)', 'Core Web Vitals performance optimization (LCP, INP, CLS)', 'Automated XML sitemaps, canonical tags, and robots.txt', 'Zero broken links and optimized internal link distribution']
+    },
+    'Conversion Rate Opt': {
+      name: 'Conversion Rate Opt (CRO)',
+      category: 'Revenue Optimization Science',
+      logo: '<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="#0ACF83"/></svg>',
+      what: 'Systematic analysis and optimization of web pages to increase the percentage of visitors who convert into paying leads.',
+      why: 'Doubles or triples your revenue from existing website traffic without having to spend extra money on ads.',
+      details: ['Checkout funnel drop-off analysis and friction removal', 'Persuasive copywriting and value proposition refinement', 'High-contrast Call-To-Action (CTA) placement testing', 'Form field optimization reducing abandonment']
+    },
+    'HubSpot / Klaviyo': {
+      name: 'HubSpot / Klaviyo',
+      category: 'CRM & Lead Nurturing',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#FF7A59"/><circle cx="128" cy="128" r="40" fill="#FFF"/></svg>',
+      what: 'Enterprise customer relationship management and automated email/SMS lead nurturing software.',
+      why: 'Automatically follows up with new leads within 60 seconds, nurtures prospects through email drip sequences, and tracks deal pipelines.',
+      details: ['Instant automated lead response sequences', 'Behavioral email workflows based on page visits', 'Automated sales pipeline deal stage progression', 'Detailed attribution reporting from first click to closed sale']
+    },
+    'GA4 & Attribution': {
+      name: 'GA4 & Attribution',
+      category: 'Advanced Web Analytics',
+      logo: '<svg viewBox="0 0 256 256"><rect width="256" height="256" rx="40" fill="#F9AB00"/><path d="M150 170V80h-24v90h24zm40 0V50h-24v120h24zm-80 0v-50H86v50h24z" fill="#FFF"/></svg>',
+      what: 'Google Analytics 4 event-driven tracking and multi-touch revenue attribution modeling.',
+      why: 'Provides crystal-clear visibility into which marketing channels produce actual profitable revenue versus wasted ad spend.',
+      details: ['Custom event tracking for button clicks, video plays, and forms', 'Data-driven multi-touch attribution modeling', 'Cross-device user journey tracking', 'Automated anomaly detection alerts for revenue changes']
+    },
+    'A/B Testing': {
+      name: 'A/B Testing',
+      category: 'Split Experimentation Science',
+      logo: '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="#f0c75e"/></svg>',
+      what: 'Simultaneously testing two variations of a headline, offer, or landing page against live traffic to see which performs better.',
+      why: 'Replaces opinion-based arguments with cold statistical evidence, ensuring every redesign measurably grows revenue.',
+      details: ['95%+ statistical significance confidence intervals', 'Simultaneous variant split testing on live visitor traffic', 'Heatmap and scroll-depth analysis on both variations', 'Continuous compound conversion rate growth']
+    },
+    'Content Strategy': {
+      name: 'Content Strategy',
+      category: 'Brand Authority & Inbound Funnels',
+      logo: '<svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="#f0c75e"/></svg>',
+      what: 'Strategic planning, creation, and distribution of high-value technical articles, case studies, video hooks, and whitepapers.',
+      why: 'Positions your company as the authoritative market leader, builds buyer trust, and drives organic inbound leads.',
+      details: ['Top-of-funnel educational search content', 'Commercial investigation guides and comparison matrices', 'Customer case studies proving tangible ROI metrics', 'Repurposing master content into LinkedIn, video, & newsletters']
+    }
+  };
+
+  // Helper function to get tool data with intelligent fallback
+  function getToolData(name) {
+    if (TECH_TOOLS_DATA[name]) return TECH_TOOLS_DATA[name];
+    
+    // Check aliases
+    const clean = name.trim();
+    for (const key of Object.keys(TECH_TOOLS_DATA)) {
+      if (clean.toLowerCase() === key.toLowerCase() || clean.includes(key) || key.includes(clean)) {
+        return TECH_TOOLS_DATA[key];
+      }
+    }
+
+    // High-tech fallback
+    return {
+      name: name,
+      category: 'Core Engineering Tool',
+      logo: '<svg viewBox="0 0 24 24"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" fill="none" stroke="#f0c75e" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="#f0c75e"/></svg>',
+      what: `An industry-standard technology utilized in our engineering pipeline for reliable, high-speed execution of ${name}.`,
+      why: `Selected for its proven reliability, modern developer tooling, and strict adherence to enterprise performance benchmarks.`,
+      details: ['Production-verified stability and performance', 'Clean modular architecture and maintainability', 'High compatibility with our core framework stack', 'Continuous updates and active security auditing']
+    };
+  }
+
+  // =========================================================================
+  // DELIVERABLES DATABASE (What It Means, What We Deliver, Business Impact)
+  // =========================================================================
+
+  const DELIVERABLES_DATA = {
+    // 1. Web Development
+    'Custom Website Development': {
+      meaning: 'Building a bespoke, ground-up digital platform tailored specifically to your brand identity, business workflows, and audience goals — completely free from cookie-cutter WordPress themes, bloated templates, or restrictive page-builder plugins.',
+      inclusions: [
+        'Tailored UI/UX architecture designed specifically for brand conversion goals',
+        'Clean, modular, and semantic codebase engineered for extreme speed and scalability',
+        'Custom headless CMS or admin portal integration for effortless content management',
+        'Enterprise-grade security, OWASP compliance, and zero vulnerability plugin bloat'
+      ],
+      impact: 'Differentiates your brand from competitors, scales without software limits, and maximizes your online conversion rates.'
+    },
+    'Responsive Web Design': {
+      meaning: 'Engineering adaptive, fluid interface layouts that dynamically recalibrate typography, navigation structures, touch targets, and visual media across smartphones, tablets, laptops, and ultra-wide 4K desktop screens.',
+      inclusions: [
+        'Fluid clamp typography and proportional layout scaling across all screen sizes',
+        'Touch-optimized swipe gestures and thumb-zone friendly mobile navigation',
+        'Dynamic responsive image serving (WebP/AVIF) matching device resolution',
+        'Cross-browser rendering tests across iOS Safari, Android Chrome, and Desktop'
+      ],
+      impact: 'Guarantees that 100% of mobile visitors have a frictionless browsing and purchasing experience, directly lowering bounce rates.'
+    },
+    'Full-Stack Web Applications': {
+      meaning: 'Engineering complete, multi-tier web platforms that combine reactive user-facing frontends with scalable backend servers, database systems, user authentication, and third-party cloud integrations.',
+      inclusions: [
+        'Multi-role secure authentication (OAuth 2.0, JWT, Magic Links, Role-Based Access)',
+        'Relational or NoSQL database architecture with automated backups and replication',
+        'Real-time WebSocket event dispatching for live updates, notifications, and data sync',
+        'Comprehensive administrative dashboards with analytics, user management, and exports'
+      ],
+      impact: 'Replaces multiple expensive third-party SaaS subscriptions with your own proprietary, custom-built business infrastructure.'
+    },
+    'API Integration & Development': {
+      meaning: 'Connecting your platform seamlessly with external services (payment gateways, CRMs, logistics, ERPs, SMS/email) and engineering custom RESTful or GraphQL endpoints for third-party consumers.',
+      inclusions: [
+        'Secure webhook listeners with fault-tolerant retry queues and deduplication',
+        'End-to-end payload encryption and OAuth token refresh flows',
+        'Standardized OpenAPI (Swagger) documentation and developer sandbox testing',
+        'High-speed response caching and API rate limiting to protect backend servers'
+      ],
+      impact: 'Automates manual data transfers between business systems, saving hundreds of hours in human labor and eliminating data entry errors.'
+    },
+    'Website Optimization & Maintenance': {
+      meaning: 'Continuous technical monitoring, speed audits, security patch applications, and database optimizations ensuring your web application maintains sub-second loading speeds and 99.99% uptime.',
+      inclusions: [
+        'Google Core Web Vitals optimization (LCP under 1.2s, INP under 50ms, zero CLS)',
+        'JavaScript bundle size reduction, code-splitting, and asset tree-shaking',
+        '24/7 automated uptime and latency monitoring with incident alerting',
+        'Routine database vacuuming, index optimization, and encrypted automated backups'
+      ],
+      impact: 'Protects organic search engine rankings, prevents downtime revenue loss, and guarantees customer trust.'
+    },
+
+    // 2. Custom Software Development
+    'Business Management Systems': {
+      meaning: 'Bespoke operational software engineered around your company’s exact internal workflows, approvals, billing rules, and departmental hierarchies.',
+      inclusions: [
+        'Centralized company dashboard tracking live revenue, projects, and inventory',
+        'Role-based permission controls (RBAC) ensuring employees see only authorized data',
+        'Automated document generation (PDF invoices, contracts, compliance reports)',
+        'Audit logging tracking every user action for accountability and compliance'
+      ],
+      impact: 'Eliminates messy spreadsheets and disconnected tools, giving executives total real-time control over their business operations.'
+    },
+    'Enterprise Software Solutions': {
+      meaning: 'Large-scale, distributed software architecture engineered for mission-critical reliability, multi-tenant security, and high-volume data processing.',
+      inclusions: [
+        'Microservices or modular monolith architecture designed for high availability',
+        'Enterprise single sign-on (SSO) supporting Okta, Microsoft Azure AD, and SAML',
+        'Zero-downtime database migrations and automated failover clustering',
+        'Rigorous SOC 2 and GDPR compliance data handling standards'
+      ],
+      impact: 'Provides enterprise-grade scalability that empowers your company to handle rapid corporate growth without system breakdowns.'
+    },
+    'Workflow Automation': {
+      meaning: 'Engineering automated digital pipelines that replace repetitive manual tasks with background event-driven triggers, notifications, and validations.',
+      inclusions: [
+        'Multi-stage approval flows with automated email and Slack notifications',
+        'Scheduled cron background jobs for automated report generation and data syncing',
+        'Smart input validation and optical character recognition (OCR) document scanning',
+        'Automated customer onboarding sequences and contract generation'
+      ],
+      impact: 'Dramatically reduces human operational overhead, eliminates costly manual errors, and speeds up task execution by 10x.'
+    },
+    'CRM & ERP Development': {
+      meaning: 'Proprietary Customer Relationship Management and Enterprise Resource Planning platforms built to match your unique sales pipeline and inventory logistics.',
+      inclusions: [
+        'Custom lead capture funnels with automated scoring and sales rep assignment',
+        'Real-time inventory tracking with threshold alerts and purchase order generation',
+        'Integrated customer interaction timeline (emails, calls, purchases, tickets)',
+        'Custom forecasting algorithms calculating projected quarterly revenue'
+      ],
+      impact: 'Gives your sales and operations teams a tailor-made tool that increases deal closing rates and optimizes inventory costs.'
+    },
+    'Custom API & Backend Solutions': {
+      meaning: 'High-throughput, secure backend server architectures engineered in Go, Node.js, or Python to power complex business logic and serve millions of requests.',
+      inclusions: [
+        'Horizontally scalable containerized backend services running on Docker/K8s',
+        'Sub-millisecond data caching layer via distributed Redis clusters',
+        'Asynchronous event queues (RabbitMQ/Kafka) for heavy computation jobs',
+        'Bank-grade SSL/TLS encryption, JWT authentication, and rate limiting'
+      ],
+      impact: 'Forms the rock-solid engine powering your entire digital business, built to handle millions of daily users without breaking a sweat.'
+    },
+
+    // 3. Mobile App Development
+    'Android Application Development': {
+      meaning: 'Native and modern Android apps engineered in Kotlin and Jetpack Compose, optimized to run flawlessly across thousands of diverse smartphone models.',
+      inclusions: [
+        'Modern declarative UI built with Jetpack Compose matching Material Design 3',
+        'Deep Android OS integration (Background services, WorkManager, App Widgets)',
+        'Google Play Store compliance, in-app billing, and Play Integrity security',
+        'Battery-efficient background processing and offline SQLite caching'
+      ],
+      impact: 'Taps into the worldwide Android user base with a smooth, 5-star rated app that customers love using daily.'
+    },
+    'iOS Application Development': {
+      meaning: 'Premium native iOS applications crafted in Swift and SwiftUI, taking full advantage of Apple’s hardware, security, and fluid gesture animations.',
+      inclusions: [
+        'SwiftUI reactive interface architecture designed for iPhone, iPad, and Watch',
+        'Native Apple Pay checkout and Face ID / Touch ID biometric authentication',
+        'Interactive iOS Home Screen widgets and Live Activities dynamic island updates',
+        'Apple App Store review preparation, guidelines compliance, and TestFlight betas'
+      ],
+      impact: 'Positions your brand at the highest echelon of the market, monetizing high-spending Apple consumers with a luxury mobile experience.'
+    },
+    'Cross-Platform App Development': {
+      meaning: 'Building dual iOS and Android mobile apps from a single, unified codebase using Flutter or React Native, saving months of development time.',
+      inclusions: [
+        'Single codebase powering simultaneous iOS and Android releases',
+        'Natively compiled 60/120 FPS performance with hardware GPU acceleration',
+        'Shared business logic, state management, and API networking layers',
+        'Substantially reduced development timeline and long-term maintenance overhead'
+      ],
+      impact: 'Cuts your mobile development costs by up to 50% while shipping to both major app stores twice as fast.'
+    },
+    'Mobile UI/UX Design': {
+      meaning: 'Designing mobile interfaces that prioritize ergonomics, thumb-zone accessibility, rapid visual clarity, and addictive micro-interactions.',
+      inclusions: [
+        'Ergonomic thumb-friendly navigation structures and swipeable bottom sheets',
+        'High-contrast typography readable in bright sunlight on mobile displays',
+        'Haptic vibration feedback confirming button taps and successful transactions',
+        'Interactive Figma prototype validation with real user testing sessions'
+      ],
+      impact: 'Maximizes daily active users (DAU) and app store retention by making your mobile app intuitive and delightful to navigate.'
+    },
+    'App Integration & Maintenance': {
+      meaning: 'Ongoing mobile OS version compatibility updates, crash monitoring, third-party SDK maintenance, and push notification management.',
+      inclusions: [
+        'Annual iOS and Android OS major version compatibility and API upgrades',
+        'Real-time crash tracking via Firebase Crashlytics with automated bug triage',
+        'Segmented push notification broadcast system via Firebase Cloud Messaging',
+        'Continuous performance monitoring for memory leaks and battery consumption'
+      ],
+      impact: 'Ensures your app never breaks when Apple or Google release new OS updates, maintaining high app store ratings and user retention.'
+    },
+
+    // 4. E-Commerce Solutions
+    'Custom E-Commerce Websites': {
+      meaning: 'Custom-built, high-converting digital storefronts engineered with sub-second page loads, custom product builders, and frictionless checkout flows.',
+      inclusions: [
+        'Bespoke product page designs with image zoom, 360-degree spins, and variant selectors',
+        'Optimistic instant add-to-cart drawers and multi-currency price conversion',
+        'Sub-second search facets filtering by size, color, brand, and price in real time',
+        'Custom promotional banners, bundle deals, and tiered volume discount logic'
+      ],
+      impact: 'Elevates your digital brand above commoditized stores, dramatically boosting average order value (AOV) and conversion percentages.'
+    },
+    'Online Store Development': {
+      meaning: 'Full-service development of scalable Shopify Plus or WooCommerce stores, complete with inventory management, taxes, and shipping integrations.',
+      inclusions: [
+        'Automated sales tax calculation (Avalara / TaxJar) and global VAT compliance',
+        'Live carrier shipping rate calculators (FedEx, UPS, DHL, BlueDart) with tracking',
+        'Customer self-service portals for order tracking, reorders, and returns',
+        'Automated transactional emails for order confirmations, shipping, and delivery'
+      ],
+      impact: 'Gives your business a reliable, 24/7 automated revenue engine that handles thousands of daily orders seamlessly.'
+    },
+    'Shopping Cart & Checkout Integration': {
+      meaning: 'Engineering streamlined, distraction-free checkout funnels optimized to eliminate shopping cart abandonment and maximize completed orders.',
+      inclusions: [
+        'One-click express checkout options (Apple Pay, Google Pay, Shop Pay, PayPal)',
+        'Address autocomplete APIs (Google Places) reducing mobile typing friction',
+        'Transparent shipping costs and estimated delivery dates upfront before payment',
+        'Automated abandoned cart recovery workflows saving lost sales'
+      ],
+      impact: 'Recovers thousands of dollars in lost revenue every month by converting hesitant shoppers into paid customers.'
+    },
+    'Payment Gateway Integration': {
+      meaning: 'Integrating multi-currency, secure payment gateways (Stripe, Razorpay, PayPal) with automated recurring subscriptions and fraud prevention.',
+      inclusions: [
+        'Multi-currency processing supporting 135+ global currencies and local cards',
+        'Recurring subscription billing logic with customer self-service cancellation/upgrades',
+        'AI-backed fraud protection (Stripe Radar) preventing chargebacks and stolen card fraud',
+        'Instant refund processing and automated ledger synchronization with accounting'
+      ],
+      impact: 'Provides your customers with their preferred, trusted payment methods while eliminating payment failure and chargeback risks.'
+    },
+    'Inventory & Order Management': {
+      meaning: 'Synchronizing stock levels in real time across your online store, physical warehouses, retail POS terminals, and third-party marketplaces.',
+      inclusions: [
+        'Real-time multi-warehouse inventory synchronization preventing overselling',
+        'Automated low-stock alerts and purchase order generation for suppliers',
+        'Barcode scanner integration for rapid warehouse picking and packing',
+        'Centralized order fulfillment status updates sent automatically to customers'
+      ],
+      impact: 'Eliminates costly stockouts, prevents accidental overselling, and slashes warehouse order fulfillment times.'
+    },
+
+    // 5. Game Development
+    '2D & 3D Game Development': {
+      meaning: 'Full-cycle game production across Unity and Unreal Engine, creating captivating gameplay loops, fluid physics, and polished visuals.',
+      inclusions: [
+        'Complete game architecture built in clean C# or C++ with modular component design',
+        'Dynamic camera controllers, player locomotion, and interactive obstacle mechanics',
+        'Optimized draw calls and GPU batching ensuring smooth 60/120 FPS on target hardware',
+        'Cross-platform deployment to PC, Android, iOS, and WebGL browsers'
+      ],
+      impact: 'Brings your creative game vision to life as a commercially viable, addictive product that commands user engagement.'
+    },
+    'Game Design & Mechanics': {
+      meaning: 'Designing the mathematical rules, reward loops, player progression systems, and difficulty curves that keep players engaged for hours.',
+      inclusions: [
+        'Comprehensive Game Design Document (GDD) detailing all systems and character balancing',
+        'Addictive core game loop design with dopamine-rewarding milestones and feedback',
+        'Balanced progression leveling formulas and in-game economy tuning',
+        'Prototype greybox testing validating fun mechanics before artistic asset production'
+      ],
+      impact: 'Ensures the game is genuinely fun and engaging before investing heavily in visual art, maximizing player retention.'
+    },
+    'Interactive Gameplay Experiences': {
+      meaning: 'Crafting responsive player interactions, kinetic combat systems, satisfying button feedbacks, and immersive world storytelling.',
+      inclusions: [
+        'Juicy feedback design (screen shake, hit-stop, particle bursts, controller rumble)',
+        'Interactive environmental destruction and dynamic physics-based obstacles',
+        'Branching dialogue systems and in-game interactive cinematic sequences',
+        'Intuitive input mapping supporting touchscreens, gamepads, and keyboard/mouse'
+      ],
+      impact: 'Turns a good game into an unforgettable, shareable experience that players recommend to their friends.'
+    },
+    'Character & Environment Design': {
+      meaning: 'Creating memorable 2D/3D characters, weapon models, atmospheric environments, and stylized or photorealistic visual worlds.',
+      inclusions: [
+        'Concept art sheets detailing character silhouettes, colors, and personality expressions',
+        'Optimized 3D game models with clean quad topology and low draw-call materials',
+        'Dynamic lighting setups, volumetric fog, and ambient atmospheric audio',
+        'Modular environment tile sets enabling rapid procedural level design'
+      ],
+      impact: 'Gives your game a distinctive, recognizable visual identity that stands out in crowded app stores and gaming marketplaces.'
+    },
+    'Game Optimization & Testing': {
+      meaning: 'Rigorous profiling of CPU/GPU bottlenecks, memory leaks, physics simulations, and QA playtesting across target devices.',
+      inclusions: [
+        'Deep Unity/Unreal Profiler audits eliminating framerate stutter and memory spikes',
+        'LOD (Level of Detail) mesh setups and occlusion culling for vast environments',
+        'Automated stress-testing simulating hundreds of concurrent on-screen entities',
+        'Comprehensive device matrix QA testing across low-end and high-end hardware'
+      ],
+      impact: 'Prevents negative app store reviews by ensuring your game runs buttery smooth without heating up devices or crashing.'
+    },
+
+    // 6. AR/VR Development
+    'Augmented Reality Applications': {
+      meaning: 'Interactive mobile and headset AR applications that overlay 3D digital objects, data visualizations, and guides onto the physical world.',
+      inclusions: [
+        'True-to-scale 3D product projection on floors, tables, and walls in real time',
+        'Surface plane detection, environmental occlusion, and real-time shadow casting',
+        'Gesture-based object scaling, 360-degree rotation, and colorway customization',
+        'Instant browser WebXR AR access without requiring native app downloads'
+      ],
+      impact: 'Boosts customer purchase confidence and reduces returns by 40% by letting buyers test products in their physical room before buying.'
+    },
+    'Virtual Reality Experiences': {
+      meaning: 'Fully immersive, 360-degree digital worlds for Meta Quest, HTC Vive, and Apple Vision Pro that transport users into interactive simulations.',
+      inclusions: [
+        'High-framerate (90/120 Hz) stereoscopic 3D environments preventing motion sickness',
+        'Intuitive physical controller interactions (picking up tools, opening doors, turning knobs)',
+        'Spatialized 3D audio providing directional acoustic immersion',
+        'Multiplayer collaborative virtual rooms where remote teams meet as avatars'
+      ],
+      impact: 'Revolutionizes employee training and client presentations by immersing people in safe, repeatable, photorealistic virtual environments.'
+    },
+    'Interactive 3D Environments': {
+      meaning: 'Explorable virtual showrooms, architectural walkthroughs, and branded digital worlds running inside web browsers or native apps.',
+      inclusions: [
+        'First-person or orbit camera navigation with collision detection and floor constraints',
+        'Interactive hot-spots that reveal specs, videos, or pricing upon approach',
+        'Photorealistic baked lighting combined with real-time reflections and shadows',
+        'Optimized for instant browser loading on standard mobile and laptop hardware'
+      ],
+      impact: 'Enables real estate developers, automotive brands, and luxury retailers to showcase multi-million dollar spaces before construction begins.'
+    },
+    'Virtual Product Demonstrations': {
+      meaning: 'Digital 3D twins of complex industrial machinery, consumer electronics, or medical devices that users can inspect and test interactively.',
+      inclusions: [
+        'Interactive exploded view animations revealing internal gears, chips, and components',
+        'Step-by-step interactive operation guides demonstrating product features',
+        'Customizable material and color configurations with instant visual updates',
+        'Direct link to "Request Quote" or "Buy Now" checkout workflows'
+      ],
+      impact: 'Eliminates the astronomical cost of shipping physical heavy machinery to trade shows, empowering your sales team worldwide.'
+    },
+    'AR/VR Simulations & Training': {
+      meaning: 'Gamified, metric-tracked virtual reality training modules for industrial safety, medical procedures, flight simulation, and equipment operation.',
+      inclusions: [
+        'Physics-accurate simulation of hazardous real-world scenarios in 100% safety',
+        'Automated scoring tracking procedure time, precision, and safety protocol adherence',
+        'Instant replay and error breakdown for instructors and compliance certification',
+        'Substantially reduced training facility, travel, and consumable material costs'
+      ],
+      impact: 'Reduces on-the-job industrial accidents while training staff 4x faster compared to traditional classroom manuals.'
+    },
+
+    // 7. UI/UX Design
+    'User Interface (UI) Design': {
+      meaning: 'Crafting visually stunning, high-contrast, modern interface layouts with intentional typography, color theory, iconography, and spatial breathing room.',
+      inclusions: [
+        'High-fidelity screen mockups in Figma crafted to pixel-perfection',
+        'Harmonious typographic hierarchies establishing effortless visual scannability',
+        'Bespoke iconography and micro-graphic illustrations tailored to your brand',
+        'Dark mode and light mode color palette specifications with WCAG AA contrast'
+      ],
+      impact: 'Instills instant credibility and luxury appeal, making prospective customers feel your product is world-class from the very first second.'
+    },
+    'User Experience (UX) Design': {
+      meaning: 'Engineering intuitive user journeys, eliminating confusing roadblocks, and making complex workflows feel effortless and logical.',
+      inclusions: [
+        'Customer journey mapping and task flow optimization from signup to checkout',
+        'Information architecture and intuitive navigation categorization',
+        'Friction-audit of existing screens identifying where users get confused or drop off',
+        'Cognitive load reduction ensuring every screen has one clear, primary call to action'
+      ],
+      impact: 'Dramatically improves software adoption, reduces user frustration support tickets, and increases long-term customer retention.'
+    },
+    'Website & App Design': {
+      meaning: 'Holistic product design spanning marketing landing pages, mobile apps, and SaaS dashboards to ensure a unified digital experience.',
+      inclusions: [
+        'Responsive layout mockups across desktop, tablet, and mobile viewport widths',
+        'Conversion-focused landing page layouts with high-visibility CTA sections',
+        'Intuitive form input styling, validation error messaging, and success dialogs',
+        'Export-ready developer design assets with automated CSS inspect values'
+      ],
+      impact: 'Unifies all your customer touchpoints into a cohesive, high-converting digital experience that commands premium pricing.'
+    },
+    'Wireframing & Prototyping': {
+      meaning: 'Creating clickable, interactive mockups that simulate real app transitions, gestures, and user inputs before starting code development.',
+      inclusions: [
+        'Low-fidelity wireframe blueprints validating content placement and logic early',
+        'High-fidelity clickable Figma prototypes with realistic page transitions',
+        'Interactive component states (hover, active, disabled, loading, error)',
+        'Shareable prototype links for client stakeholder reviews and user feedback'
+      ],
+      impact: 'Saves thousands of dollars in wasted engineering rework by validating and perfecting product design before coding begins.'
+    },
+    'Design Systems & Branding': {
+      meaning: 'Building comprehensive UI component libraries and brand style guides that allow engineering teams to ship new screens with 100% consistency.',
+      inclusions: [
+        'Centralized Figma component library with variants, auto-layout, and props',
+        'Standardized design tokens for colors, spacing, radius, and elevation shadows',
+        'Brand voice, logo usage guidelines, and illustration rules documentation',
+        'Direct synchronization with frontend React/Tailwind component systems'
+      ],
+      impact: 'Speeds up future product feature development by 3x while ensuring zero visual discrepancies across growing teams.'
+    },
+
+    // 8. 3D Modeling
+    '3D Product Modeling': {
+      meaning: 'Transforming industrial CAD drawings, real-world sketches, or photos into hyper-realistic, mathematically precise 3D digital models.',
+      inclusions: [
+        'Millimeter-accurate polygonal modeling based on technical manufacturing blueprints',
+        'Subdivision surface smoothing for flawless curvature under extreme camera close-ups',
+        'Optimized low-poly mesh variants baked with high-poly normal maps for web performance',
+        'Clean, non-overlapping UV unwrapping prepared for realistic texture painting'
+      ],
+      impact: 'Allows you to launch marketing campaigns, create 3D ads, and take pre-orders months before physical manufacturing begins.'
+    },
+    '3D Asset Creation': {
+      meaning: 'Producing production-ready 3D game props, environmental architecture, weapons, and vehicles optimized for real-time graphics engines.',
+      inclusions: [
+        'Clean quad topology optimized for efficient GPU vertex and raster processing',
+        'PBR texture sets (Albedo, Normal, Roughness, Metallic, Ambient Occlusion)',
+        'Level of Detail (LOD) mesh tiers automatically switching based on camera distance',
+        'Clean pivot points, real-world scale alignment, and asset store standard naming'
+      ],
+      impact: 'Fills your game or virtual world with rich, immersive assets without causing framerate stutter or memory crashes.'
+    },
+    'Architectural Visualization': {
+      meaning: 'Photorealistic 3D interior and exterior architectural renderings that bring floor plans to life with realistic sunlight, materials, and furnishings.',
+      inclusions: [
+        'Precise 3D modeling of buildings, facades, structural pillars, and landscapes',
+        'Physically accurate sun positioning, atmospheric lighting, and night illumination',
+        'Interior staging with luxury designer furniture, fabrics, and decor styling',
+        'High-resolution 4K/8K still renders and cinematic camera fly-through animations'
+      ],
+      impact: 'Sells residential and commercial real estate properties off-plan before construction crews even break ground.'
+    },
+    '3D Texturing & Rendering': {
+      meaning: 'Applying real-world physical materials (leather, brushed titanium, polished marble, glass) and computing photorealistic ray-traced renders.',
+      inclusions: [
+        'Hand-crafted PBR material maps capturing micro-scratches, dust, and reflections',
+        'Subsurface scattering simulation for realistic skin, marble, and organic surfaces',
+        'Ray-traced depth of field, caustics, and optical lens dispersion effects',
+        'Render passes (Beauty, Shadow, Reflection, Cryptomatte) for advanced compositing'
+      ],
+      impact: 'Delivers imagery indistinguishable from high-end studio photography at a fraction of the cost of physical photoshoots.'
+    },
+    '3D Animation & Visualization': {
+      meaning: 'Creating fluid, kinetic 3D motion sequences: exploded product assemblies, character animations, mechanical demonstrations, and commercial reveals.',
+      inclusions: [
+        'Skeletal rigging with inverse kinematics (IK/FK) for fluid organic and character motion',
+        'Mechanical gear, hinge, and piston constraint setups for industrial machinery',
+        'Cinematic camera choreography with dynamic focal lengths, cuts, and motion blur',
+        'Full HD / 4K 60 FPS video render delivery formatted for commercial broadcasts'
+      ],
+      impact: 'Captivates audience attention on social media and investor decks, visually explaining complex tech features in seconds.'
+    },
+
+    // 9. Digital Marketing
+    'Search Engine Optimization (SEO)': {
+      meaning: 'Comprehensive technical, on-page, and authority optimization engineered to rank your website at the top of Google for high-intent search keywords.',
+      inclusions: [
+        'In-depth competitor keyword gap analysis targeting terms with high commercial intent',
+        'Technical website architecture audit (Core Web Vitals, crawl budget, sitemaps)',
+        'Strategic content creation answering exact customer buying queries',
+        'High-authority backlink outreach and digital PR placements on industry publications'
+      ],
+      impact: 'Delivers an endless stream of highly qualified inbound customer leads every month with zero ongoing cost per click.'
+    },
+    'Social Media Marketing': {
+      meaning: 'Strategic brand storytelling, short-form video hooks, and community building across Instagram, LinkedIn, YouTube, and X.',
+      inclusions: [
+        'Monthly editorial content calendars aligned with sales promotions and industry trends',
+        'High-retention short-form video production (Instagram Reels, TikToks, YouTube Shorts)',
+        'Compelling copywriting crafted to spark comments, shares, and website clicks',
+        'Proactive community engagement responding to inquiries and building brand affinity'
+      ],
+      impact: 'Builds an engaged, loyal community around your brand that drives organic word-of-mouth sales and customer trust.'
+    },
+    'Search Engine Marketing (SEM)': {
+      meaning: 'Managing highly targeted Google Search, Shopping, and YouTube paid ad campaigns with laser precision to capture ready-to-buy prospects.',
+      inclusions: [
+        'Granular keyword bidding targeting users ready to purchase right now',
+        'Continuous negative keyword pruning eliminating wasted advertising budget',
+        'High-converting responsive search ad copy with automated dynamic asset insertion',
+        'Real-time conversion tracking synced with your CRM to optimize for actual closed revenue'
+      ],
+      impact: 'Generates immediate customer inquiries and sales within 24 hours of campaign launch with transparent, measurable ROI.'
+    },
+    'Content Marketing': {
+      meaning: 'Producing authoritative, insightful industry content (case studies, whitepapers, comparison guides) that educates prospects into buying from you.',
+      inclusions: [
+        'Detailed customer case studies demonstrating measurable ROI and transformation',
+        'Comparative buying guides highlighting your unique technological advantages',
+        'Search-optimized long-form pillar articles establishing undisputed market leadership',
+        'Lead magnet creation (PDF guides, templates, calculators) capturing corporate emails'
+      ],
+      impact: 'Shortens complex B2B sales cycles by addressing objections upfront and educating decision-makers before they even speak to sales.'
+    },
+    'Performance Marketing & Analytics': {
+      meaning: 'Data-driven paid social acquisition (Meta Ads, LinkedIn Ads) combined with advanced funnel tracking, attribution modeling, and conversion rate testing.',
+      inclusions: [
+        'Targeted audience segmentation (Lookalikes, website retargeting, email list matching)',
+        'Rigorous creative hook A/B testing finding the lowest cost-per-acquisition winners',
+        'Google Analytics 4 custom event tracking tracking every step of your buying funnel',
+        'Executive dashboard reporting weekly customer acquisition costs (CAC) and ROAS'
+      ],
+      impact: 'Scales your revenue predictably like a machine, knowing that every dollar invested in marketing returns multiple dollars in net profit.'
+    }
+  };
+
+  // Helper function to get deliverable data with intelligent fallback
+  function getDeliverableData(name) {
+    if (DELIVERABLES_DATA[name]) return DELIVERABLES_DATA[name];
+
+    const clean = name.trim();
+    for (const key of Object.keys(DELIVERABLES_DATA)) {
+      if (clean.toLowerCase() === key.toLowerCase() || clean.includes(key) || key.includes(clean)) {
+        return DELIVERABLES_DATA[key];
+      }
+    }
+
+    return {
+      meaning: `Professional ${name} tailored to your business needs, engineered with modern industry best practices and strict quality assurance.`,
+      inclusions: [
+        'Tailored engineering and design aligned with your brand objectives',
+        'Rigorous testing and quality validation across target environments',
+        'Standardized documentation and smooth operational handover',
+        'Dedicated post-launch warranty and technical support'
+      ],
+      impact: 'Provides your business with reliable digital capabilities that streamline operations and accelerate customer revenue.'
+    };
+  }
+
+
   // =========================================================================
   // CHAPTER VIEW FULL-SCREEN ENGINE
   // =========================================================================
@@ -5303,29 +6377,93 @@ void main(void) {
     if (chapterOverviewTitle) chapterOverviewTitle.textContent = svc.detailTitle || svc.name;
     if (chapterOverviewLead) chapterOverviewLead.textContent = svc.detailDesc || svc.oneLiner;
 
-    // Tech Stack Chips
+    // Tech Stack Chips with Interactive Deep-Dive Logos & Explanations
     if (chapterTechChips) {
       chapterTechChips.innerHTML = '';
+      if (chapterToolInspector) {
+        chapterToolInspector.style.display = 'none';
+        chapterToolInspector.innerHTML = '';
+      }
+      activeToolName = null;
+
       (svc.stack || []).forEach((tag, idx) => {
-        const chip = document.createElement('span');
+        const toolData = getToolData(tag);
+        const chip = document.createElement('button');
+        chip.type = 'button';
         chip.className = 'chapter-tech-chip';
-        chip.textContent = tag;
+        chip.setAttribute('data-tool', tag);
+        chip.setAttribute('aria-expanded', 'false');
+        chip.setAttribute('aria-label', `View details and logo for ${tag}`);
         chip.style.transitionDelay = (idx * 0.05 + 0.1) + 's';
+
+        chip.innerHTML = `
+          <span class="chip-mini-logo">${toolData.logo}</span>
+          <span class="chip-label">${tag}</span>
+          <span class="chip-expand-dot">+</span>
+        `;
+
+        chip.addEventListener('click', (e) => {
+          e.stopPropagation();
+          handleToolChipClick(tag, chip);
+        });
+
         chapterTechChips.appendChild(chip);
       });
     }
 
-    // Deliverables Grid
+    // Deliverables Grid with Interactive Expandable Deep-Dive Cards
     if (chapterDeliverablesGrid) {
       chapterDeliverablesGrid.innerHTML = '';
       (svc.deliverables || []).forEach((deliv, idx) => {
+        const delivData = getDeliverableData(deliv);
         const card = document.createElement('div');
         card.className = 'chapter-deliverable-card';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-expanded', 'false');
+        card.setAttribute('aria-label', `${deliv} - Click to expand details`);
         card.style.transitionDelay = (idx * 0.08 + 0.1) + 's';
+
         card.innerHTML = `
-          <div class="deliverable-check-icon">&#10003;</div>
-          <div class="deliverable-text">${deliv}</div>
+          <div class="deliverable-header">
+            <div class="deliverable-check-icon">&#10003;</div>
+            <div class="deliverable-text">${deliv}</div>
+            <div class="deliverable-toggle-hint">
+              <span class="deliverable-hint-text">Details</span>
+              <div class="deliverable-plus-icon">+</div>
+            </div>
+          </div>
+          <div class="deliverable-expand-drawer">
+            <div class="deliverable-inner-content">
+              <div class="deliv-info-block">
+                <span class="deliv-block-label">WHAT IT MEANS</span>
+                <p class="deliv-block-desc">${delivData.meaning}</p>
+              </div>
+              <div class="deliv-info-block">
+                <span class="deliv-block-label">WHAT WE DELIVER</span>
+                <ul class="deliv-list">
+                  ${delivData.inclusions.map(inc => `<li><span class="deliv-bullet">&bull;</span> <span>${inc}</span></li>`).join('')}
+                </ul>
+              </div>
+              <div class="deliv-info-block deliv-impact-box">
+                <span class="deliv-block-label">BUSINESS VALUE</span>
+                <p class="deliv-block-desc">${delivData.impact}</p>
+              </div>
+            </div>
+          </div>
         `;
+
+        card.addEventListener('click', () => {
+          handleDeliverableCardClick(card, deliv);
+        });
+
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleDeliverableCardClick(card, deliv);
+          }
+        });
+
         chapterDeliverablesGrid.appendChild(card);
       });
     }
@@ -5368,8 +6506,118 @@ void main(void) {
     return chapterRightColumn;
   }
 
+  let activeToolName = null;
+
+  function handleToolChipClick(toolName, chipEl) {
+    if (!chapterToolInspector) return;
+
+    if (activeToolName === toolName) {
+      activeToolName = null;
+      chipEl.classList.remove('is-active');
+      chipEl.setAttribute('aria-expanded', 'false');
+      chapterToolInspector.style.display = 'none';
+      chapterToolInspector.innerHTML = '';
+      return;
+    }
+
+    activeToolName = toolName;
+    const allChips = chapterTechChips.querySelectorAll('.chapter-tech-chip');
+    allChips.forEach(c => {
+      c.classList.remove('is-active');
+      c.setAttribute('aria-expanded', 'false');
+    });
+    chipEl.classList.add('is-active');
+    chipEl.setAttribute('aria-expanded', 'true');
+
+    const toolData = getToolData(toolName);
+
+    chapterToolInspector.innerHTML = `
+      <div class="tool-inspector-card">
+        <div class="tool-inspector-header">
+          <div class="tool-inspector-logo-wrap">
+            ${toolData.logo}
+          </div>
+          <div class="tool-inspector-title-group">
+            <div class="tool-inspector-badge">${toolData.category}</div>
+            <h4 class="tool-inspector-title">${toolData.name}</h4>
+          </div>
+          <button type="button" class="tool-inspector-close-btn" aria-label="Close details" id="toolInspectorCloseBtn">&times;</button>
+        </div>
+        <div class="tool-inspector-body">
+          <div class="tool-info-block">
+            <span class="tool-block-label">WHAT IS THIS TOOL?</span>
+            <p class="tool-block-desc">${toolData.what}</p>
+          </div>
+          <div class="tool-info-block">
+            <span class="tool-block-label">WHY WE USE IT:</span>
+            <p class="tool-block-desc">${toolData.why}</p>
+          </div>
+          <div class="tool-info-block">
+            <span class="tool-block-label">KEY CAPABILITIES &amp; HIGHLIGHTS:</span>
+            <ul class="tool-highlights-list">
+              ${toolData.details.map(d => `<li><span class="tool-bullet">✦</span> <span>${d}</span></li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </div>
+    `;
+    chapterToolInspector.style.display = 'block';
+
+    const closeBtn = document.getElementById('toolInspectorCloseBtn');
+    if (closeBtn) {
+      closeBtn.onclick = (e) => {
+        e.stopPropagation();
+        activeToolName = null;
+        chipEl.classList.remove('is-active');
+        chipEl.setAttribute('aria-expanded', 'false');
+        chapterToolInspector.style.display = 'none';
+        chapterToolInspector.innerHTML = '';
+      };
+    }
+  }
+
+  function handleDeliverableCardClick(cardEl, delivName) {
+    const isExpanded = cardEl.classList.contains('is-expanded');
+
+    if (chapterDeliverablesGrid) {
+      const allCards = chapterDeliverablesGrid.querySelectorAll('.chapter-deliverable-card');
+      allCards.forEach(c => {
+        if (c !== cardEl) {
+          c.classList.remove('is-expanded');
+          c.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    if (isExpanded) {
+      cardEl.classList.remove('is-expanded');
+      cardEl.setAttribute('aria-expanded', 'false');
+    } else {
+      cardEl.classList.add('is-expanded');
+      cardEl.setAttribute('aria-expanded', 'true');
+    }
+  }
+
   function resetChapterAnimations() {
     if (!chapterModal) return;
+
+    activeToolName = null;
+    if (chapterToolInspector) {
+      chapterToolInspector.style.display = 'none';
+      chapterToolInspector.innerHTML = '';
+    }
+
+    const allChips = chapterModal.querySelectorAll('.chapter-tech-chip');
+    allChips.forEach(c => {
+      c.classList.remove('is-active');
+      c.setAttribute('aria-expanded', 'false');
+    });
+
+    const allCards = chapterModal.querySelectorAll('.chapter-deliverable-card');
+    allCards.forEach(c => {
+      c.classList.remove('is-expanded');
+      c.setAttribute('aria-expanded', 'false');
+    });
 
     // Remove is-revealed from all sections
     const items = chapterModal.querySelectorAll('.svc-reveal-item');
