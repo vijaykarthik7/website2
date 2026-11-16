@@ -5321,6 +5321,7 @@ void main(void) {
       (svc.deliverables || []).forEach((deliv, idx) => {
         const card = document.createElement('div');
         card.className = 'chapter-deliverable-card';
+        card.style.transitionDelay = (idx * 0.08 + 0.1) + 's';
         card.innerHTML = `
           <div class="deliverable-check-icon">&#10003;</div>
           <div class="deliverable-text">${deliv}</div>
@@ -5354,37 +5355,152 @@ void main(void) {
       chapterNextServiceBtn.onclick = () => switchChapter(nextSvc.id);
     }
 
-    // Setup IntersectionObserver for smooth reveal on scroll
-    setupChapterObserver();
+    // Initialize animation states for newly loaded service
+    resetChapterAnimations();
+  }
+
+  let chapterScrollTicking = false;
+
+  function getActiveChapterScrollContainer() {
+    if (window.innerWidth <= 900) {
+      return document.getElementById('chapterModalInner') || chapterRightColumn;
+    }
+    return chapterRightColumn;
+  }
+
+  function resetChapterAnimations() {
+    if (!chapterModal) return;
+
+    // Remove is-revealed from all sections
+    const items = chapterModal.querySelectorAll('.svc-reveal-item');
+    items.forEach(el => el.classList.remove('is-revealed'));
+
+    // Remove step-reached from all timeline steps
+    const steps = chapterModal.querySelectorAll('.chapter-timeline-step');
+    steps.forEach(s => s.classList.remove('step-reached'));
+
+    // Reset timeline track
+    const track = document.getElementById('chapterTimelineTrack');
+    if (track) {
+      track.style.height = '0px';
+      track.classList.remove('has-progress');
+    }
+
+    // Measure and set background track height accurately between marker 1 and marker 6
+    requestAnimationFrame(() => {
+      const wrap = document.getElementById('chapterTimelineWrap');
+      const trackBg = document.getElementById('chapterTimelineTrackBg');
+      if (wrap && trackBg) {
+        const allSteps = wrap.querySelectorAll('.chapter-timeline-step');
+        if (allSteps.length >= 2) {
+          const firstStep = allSteps[0];
+          const lastStep = allSteps[allSteps.length - 1];
+          const totalDistance = lastStep.offsetTop - firstStep.offsetTop;
+          trackBg.style.top = (firstStep.offsetTop + 12) + 'px';
+          trackBg.style.height = totalDistance + 'px';
+          if (track) {
+            track.style.top = (firstStep.offsetTop + 12) + 'px';
+          }
+        }
+      }
+    });
+  }
+
+  function onChapterScroll() {
+    if (!chapterScrollTicking) {
+      requestAnimationFrame(() => {
+        updateChapterScrollState();
+        chapterScrollTicking = false;
+      });
+      chapterScrollTicking = true;
+    }
+  }
+
+  function updateChapterScrollState() {
+    if (!chapterModal || chapterModal.style.display === 'none') return;
+
+    const scrollContainer = getActiveChapterScrollContainer();
+    if (!scrollContainer) return;
+
+    const containerRect = scrollContainer.getBoundingClientRect();
+    const containerHeight = scrollContainer.clientHeight || window.innerHeight;
+
+    // 1. REVEAL SECTIONS & CARDS AS USER SCROLLS DOWN
+    const items = chapterModal.querySelectorAll('.svc-reveal-item');
+    const revealThreshold = containerRect.top + containerHeight * 0.88;
+
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top <= revealThreshold) {
+        item.classList.add('is-revealed');
+      }
+    });
+
+    // 2. TIMELINE ANIMATED CONNECTING LINE & STEP LIGHTING (1 -> 2 -> 3 -> 4 -> 5 -> 6)
+    const wrap = document.getElementById('chapterTimelineWrap');
+    const track = document.getElementById('chapterTimelineTrack');
+    const trackBg = document.getElementById('chapterTimelineTrackBg');
+    if (!wrap || !track) return;
+
+    const steps = wrap.querySelectorAll('.chapter-timeline-step');
+    if (steps.length === 0) return;
+
+    const firstStep = steps[0];
+    const lastStep = steps[steps.length - 1];
+    const firstMarker = firstStep.querySelector('.step-marker');
+    const lastMarker = lastStep.querySelector('.step-marker');
+    if (!firstMarker || !lastMarker) return;
+
+    const totalTrackLength = lastStep.offsetTop - firstStep.offsetTop;
+
+    if (trackBg) {
+      trackBg.style.top = (firstStep.offsetTop + 12) + 'px';
+      trackBg.style.height = totalTrackLength + 'px';
+    }
+    track.style.top = (firstStep.offsetTop + 12) + 'px';
+
+    const m0Rect = firstMarker.getBoundingClientRect();
+    const mLastRect = lastMarker.getBoundingClientRect();
+    const m0CenterY = m0Rect.top + m0Rect.height / 2;
+    const mLastCenterY = mLastRect.top + mLastRect.height / 2;
+
+    // Trigger focus line at 62% down the container
+    const triggerY = containerRect.top + containerHeight * 0.62;
+
+    // Calculate progression from step 1 to step 6
+    let progress = 0;
+    if (mLastCenterY > m0CenterY) {
+      progress = (triggerY - m0CenterY) / (mLastCenterY - m0CenterY);
+      progress = Math.max(0, Math.min(1, progress));
+    }
+
+    const currentHeight = progress * totalTrackLength;
+    track.style.height = currentHeight + 'px';
+
+    if (progress > 0.01) {
+      track.classList.add('has-progress');
+    } else {
+      track.classList.remove('has-progress');
+    }
+
+    // Step-by-step lighting up as the line reaches each circle
+    steps.forEach((step) => {
+      const marker = step.querySelector('.step-marker');
+      if (!marker) return;
+      const markerRect = marker.getBoundingClientRect();
+      const markerCenterY = markerRect.top + markerRect.height / 2;
+
+      // When the trigger line reaches or passes the step marker
+      if (triggerY >= markerCenterY - 6) {
+        step.classList.add('step-reached');
+      } else {
+        step.classList.remove('step-reached');
+      }
+    });
   }
 
   function setupChapterObserver() {
-    if (chapterObserver) {
-      chapterObserver.disconnect();
-    }
-
-    const items = chapterModal.querySelectorAll('.svc-reveal-item');
-    chapterObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
-        }
-      });
-    }, {
-      root: chapterRightColumn,
-      threshold: 0.15
-    });
-
-    items.forEach(item => {
-      item.classList.remove('is-revealed');
-      chapterObserver.observe(item);
-    });
-
-    // Reveal top item immediately
-    setTimeout(() => {
-      const topSection = document.getElementById('chapterOverviewSection');
-      if (topSection) topSection.classList.add('is-revealed');
-    }, 100);
+    resetChapterAnimations();
   }
 
   function openChapterView(serviceId, sourceCard) {
@@ -5395,9 +5511,7 @@ void main(void) {
     populateChapterView(serviceId);
     if (!chapterModal) return;
 
-    // Immediately reveal all chapter sections so content is 100% visible
-    const items = chapterModal.querySelectorAll('.svc-reveal-item');
-    items.forEach(el => el.classList.add('is-revealed'));
+    resetChapterAnimations();
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -5441,6 +5555,15 @@ void main(void) {
     }
 
     if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
+    const modalInner = document.getElementById('chapterModalInner');
+    if (modalInner) modalInner.scrollTop = 0;
+
+    // Smoothly reveal top overview section and initialize scroll view states
+    setTimeout(() => {
+      const topSection = document.getElementById('chapterOverviewSection');
+      if (topSection) topSection.classList.add('is-revealed');
+      updateChapterScrollState();
+    }, 120);
 
     // Deep link hash
     history.replaceState(null, null, '#service-' + serviceId);
@@ -5459,15 +5582,29 @@ void main(void) {
 
       setTimeout(() => {
         populateChapterView(serviceId);
+        resetChapterAnimations();
         if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
+        inner.scrollTop = 0;
         inner.style.opacity = '1';
         inner.style.transform = 'translateY(0)';
         history.replaceState(null, null, '#service-' + serviceId);
+
+        setTimeout(() => {
+          const topSection = document.getElementById('chapterOverviewSection');
+          if (topSection) topSection.classList.add('is-revealed');
+          updateChapterScrollState();
+        }, 120);
       }, 200);
     } else {
       populateChapterView(serviceId);
+      resetChapterAnimations();
       if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
       history.replaceState(null, null, '#service-' + serviceId);
+      setTimeout(() => {
+        const topSection = document.getElementById('chapterOverviewSection');
+        if (topSection) topSection.classList.add('is-revealed');
+        updateChapterScrollState();
+      }, 120);
     }
   }
 
@@ -5492,7 +5629,7 @@ void main(void) {
           window.lenis.scrollTo(savedScrollY, { immediate: true });
         }
       }
-      if (chapterObserver) chapterObserver.disconnect();
+      resetChapterAnimations();
       if (window.location.hash.startsWith('#service-') || window.location.hash === '#services') {
         const cleanUrl = window.location.pathname + window.location.search;
         history.replaceState(null, null, cleanUrl);
@@ -5500,19 +5637,31 @@ void main(void) {
     }, 350);
   }
 
+  // Attach scroll listeners to both potential scrolling containers
+  if (chapterRightColumn) {
+    chapterRightColumn.addEventListener('scroll', onChapterScroll, { passive: true });
+  }
+  const modalInnerEl = document.getElementById('chapterModalInner');
+  if (modalInnerEl) {
+    modalInnerEl.addEventListener('scroll', onChapterScroll, { passive: true });
+  }
+  window.addEventListener('resize', onChapterScroll, { passive: true });
+
   // Isolate wheel and touch events within the modal so background never scrolls
   if (chapterModal) {
     chapterModal.addEventListener('wheel', (e) => {
-      const isRightColumn = e.target.closest('#chapterRightColumn');
-      if (!isRightColumn) {
+      const isScrollable = e.target.closest('#chapterRightColumn') ||
+                           (window.innerWidth <= 900 && e.target.closest('#chapterModalInner'));
+      if (!isScrollable) {
         e.preventDefault();
       }
       e.stopPropagation();
     }, { passive: false });
 
     chapterModal.addEventListener('touchmove', (e) => {
-      const isRightColumn = e.target.closest('#chapterRightColumn');
-      if (!isRightColumn) {
+      const isScrollable = e.target.closest('#chapterRightColumn') ||
+                           (window.innerWidth <= 900 && e.target.closest('#chapterModalInner'));
+      if (!isScrollable) {
         e.preventDefault();
       }
       e.stopPropagation();
@@ -5547,6 +5696,11 @@ void main(void) {
       }
     });
   }
+
+  // Expose chapter view controls globally
+  window.openChapterView = openChapterView;
+  window.switchChapter = switchChapter;
+  window.closeChapterView = closeChapterView;
 
   // Deep Link On Load & Hashchange
   function checkDeepLink() {
