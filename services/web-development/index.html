@@ -41,7 +41,91 @@
       <nav class="svc-nav-menu" aria-label="Primary Navigation">
         <a href="/index.html#home" class="svc-nav-link">Home</a>
         <a href="/index.html#about" class="svc-nav-link">About Us</a>
-        <a href="/index.html#services" class="svc-nav-link" style="color: var(--svc-gold);">Services</a>
+        <div class="nav-dropdown-wrapper" id="navServicesDropdown">
+          <a href="/index.html#services" class="svc-nav-link active nav-has-dropdown" data-nav="services" id="navServicesLink">
+            Services
+            <svg class="nav-dropdown-caret" width="9" height="5" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="nav-dropdown-panel" aria-label="Services Menu">
+            <div class="nav-dropdown-header">
+              <span class="dropdown-header-tag">DISCOVER CAPABILITIES</span>
+              <span class="dropdown-header-count">9 SERVICES</span>
+            </div>
+            <div class="nav-dropdown-grid">
+              <a href="/services/web-development" class="nav-dropdown-card active">
+                <span class="dropdown-card-num">01</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">Web Development</span>
+                  <span class="dropdown-card-desc">Modern web apps, portals & headless platforms</span>
+                </div>
+              </a>
+              <a href="/services/custom-software-development" class="nav-dropdown-card">
+                <span class="dropdown-card-num">02</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">Custom Software</span>
+                  <span class="dropdown-card-desc">Tailored enterprise systems, APIs & workflows</span>
+                </div>
+              </a>
+              <a href="/services/mobile-app-development" class="nav-dropdown-card">
+                <span class="dropdown-card-num">03</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">Mobile App Development</span>
+                  <span class="dropdown-card-desc">High-performance iOS, Android & cross-platform</span>
+                </div>
+              </a>
+              <a href="/services/ecommerce-solutions" class="nav-dropdown-card">
+                <span class="dropdown-card-num">04</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">E-Commerce Solutions</span>
+                  <span class="dropdown-card-desc">High-conversion storefronts & global payments</span>
+                </div>
+              </a>
+              <a href="/services/game-development" class="nav-dropdown-card">
+                <span class="dropdown-card-num">05</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">Game Development</span>
+                  <span class="dropdown-card-desc">Engaging 2D/3D games, mechanics & simulations</span>
+                </div>
+              </a>
+              <a href="/services/ar-vr-development" class="nav-dropdown-card">
+                <span class="dropdown-card-num">06</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">AR/VR Development</span>
+                  <span class="dropdown-card-desc">Immersive spatial computing & interactive reality</span>
+                </div>
+              </a>
+              <a href="/services/ui-ux-design" class="nav-dropdown-card">
+                <span class="dropdown-card-num">07</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">UI/UX Design</span>
+                  <span class="dropdown-card-desc">Human-centered interfaces & design systems</span>
+                </div>
+              </a>
+              <a href="/services/3d-modeling" class="nav-dropdown-card">
+                <span class="dropdown-card-num">08</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">3D Modeling</span>
+                  <span class="dropdown-card-desc">Photorealistic assets, shaders & interactive 3D</span>
+                </div>
+              </a>
+              <a href="/services/digital-marketing" class="nav-dropdown-card">
+                <span class="dropdown-card-num">09</span>
+                <div class="dropdown-card-text">
+                  <span class="dropdown-card-title">Digital Marketing</span>
+                  <span class="dropdown-card-desc">Data-driven growth, SEO & performance campaigns</span>
+                </div>
+              </a>
+            </div>
+            <div class="nav-dropdown-footer">
+              <a href="/index.html#services" class="dropdown-view-all-link">
+                <span>Explore 3D Services Coverflow</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
         <a href="/index.html#industries" class="svc-nav-link">Industries</a>
         <a href="/index.html#portfolio" class="svc-nav-link">Portfolio</a>
         <a href="/index.html#estimator" class="svc-nav-link">Estimator</a>

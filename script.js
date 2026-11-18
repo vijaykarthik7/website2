@@ -1445,18 +1445,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     lastScrollTop = Math.max(0, st);
 
-    // Active indicator tracking
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((sec) => {
-      const top = sec.offsetTop - 120;
-      const height = sec.offsetHeight;
-      const id = sec.getAttribute('id');
-      if (st >= top && st < top + height) {
-        document.querySelectorAll('.nav-link').forEach((link) => {
-          link.classList.toggle('active', link.getAttribute('data-nav') === id);
-        });
+    // Active indicator tracking across sections using exact viewport coordinates
+    const pageSections = document.querySelectorAll('main > section[id], section[id]:not(.chapter-content-section)');
+    let activeSecId = null;
+    const scrollInspectionY = 140; // line of inspection near top of viewport below floating navbar
+    pageSections.forEach((sec) => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= scrollInspectionY && rect.bottom > scrollInspectionY) {
+        activeSecId = sec.getAttribute('id');
       }
     });
+    // Fallback: if scrolled near very top, activate 'home'
+    if (!activeSecId && st < 200) {
+      activeSecId = 'home';
+    }
+    if (activeSecId) {
+      document.querySelectorAll('.nav-link').forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('data-nav') === activeSecId);
+      });
+    }
   }, { passive: true });
 
   // Mobile Menu Toggle with Body Lock & Smooth Navigation
@@ -5209,6 +5216,10 @@ void main(void) {
       if (targetCard) {
         const svcId = targetCard.getAttribute('data-service-id');
         if (svcId) {
+          if (svcId === 'web') {
+            window.location.href = '/services/web-development';
+            return;
+          }
           openChapterView(svcId, targetCard);
         }
       }
@@ -6825,9 +6836,6 @@ void main(void) {
       updateChapterScrollState();
     }, 120);
 
-    // Deep link hash
-    history.replaceState(null, null, '#service-' + serviceId);
-
     if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
       AudioEngine.playBeep(840, 'sine', 0.12, 0.03);
     }
@@ -6847,7 +6855,6 @@ void main(void) {
         inner.scrollTop = 0;
         inner.style.opacity = '1';
         inner.style.transform = 'translateY(0)';
-        history.replaceState(null, null, '#service-' + serviceId);
 
         setTimeout(() => {
           const topSection = document.getElementById('chapterOverviewSection');
@@ -6859,7 +6866,6 @@ void main(void) {
       populateChapterView(serviceId);
       resetChapterAnimations();
       if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
-      history.replaceState(null, null, '#service-' + serviceId);
       setTimeout(() => {
         const topSection = document.getElementById('chapterOverviewSection');
         if (topSection) topSection.classList.add('is-revealed');
@@ -6965,17 +6971,26 @@ void main(void) {
   // Deep Link On Load & Hashchange
   function checkDeepLink() {
     const hash = window.location.hash;
-    if (hash && hash.startsWith('#service-')) {
-      const svcId = hash.replace('#service-', '').trim();
-      const match = SERVICES_DATA.find(s => s.id === svcId);
-      if (match) {
-        setTimeout(() => {
-          openChapterView(match.id, null);
-        }, 300);
-      }
-    } else if (hash === '#services') {
+    if (hash && (hash.startsWith('#service-') || hash === '#services')) {
       const cleanUrl = window.location.pathname + window.location.search;
       history.replaceState(null, null, cleanUrl);
+      if (chapterModal) {
+        chapterModal.style.display = 'none';
+        chapterModal.style.opacity = '0';
+        document.documentElement.classList.remove('service-modal-open');
+        document.body.classList.remove('service-modal-open');
+        document.body.style.overflow = '';
+      }
+      const svcSection = document.getElementById('services');
+      if (svcSection) {
+        setTimeout(() => {
+          if (window.lenis) {
+            window.lenis.scrollTo(svcSection, { offset: -70 });
+          } else {
+            svcSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 120);
+      }
     }
   }
 
