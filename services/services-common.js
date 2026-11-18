@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
    1. SUBNAV SCROLLSPY & ACTIVE SECTION INDICATOR
    ========================================================================== */
 function initSubnavScrollSpy() {
-  const subnav = document.getElementById('svcSubnav');
-  const navLinks = document.querySelectorAll('.svc-subnav-item');
+  const subnav = document.getElementById('serviceSubnav') || document.getElementById('svcSubnav');
+  const navLinks = document.querySelectorAll('.svc-subnav-anchor, .svc-subnav-item');
   if (!navLinks.length) return;
 
   const sectionIds = Array.from(navLinks).map(link => {
@@ -184,10 +184,12 @@ function initScrollFadeUp() {
     '.svc-insight-col',
     '.svc-capability-card',
     '.svc-expertise-box',
+    '.svc-expertise-card',
     '.svc-article-card',
     '.svc-tech-card',
     '.svc-process-step',
     '.svc-cta-banner',
+    '.svc-cta-box',
     '.svc-fade-up'
   ].join(', ');
 
@@ -197,7 +199,7 @@ function initScrollFadeUp() {
   // Stagger delays for horizontal grids and groups
   const gridContainers = document.querySelectorAll('.svc-insights-strip, .svc-expertise-grid, .svc-tech-grid, .svc-carousel-track');
   gridContainers.forEach(container => {
-    const children = container.querySelectorAll('.svc-insight-col, .svc-expertise-box, .svc-tech-card, .svc-article-card');
+    const children = container.querySelectorAll('.svc-insight-col, .svc-expertise-box, .svc-expertise-card, .svc-tech-card, .svc-article-card');
     children.forEach((child, index) => {
       const delay = (index % 4) * 100; // 0ms, 100ms, 200ms, 300ms
       child.style.setProperty('--reveal-delay', `${delay}ms`);
