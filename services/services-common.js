@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTrendingCarousel();
   initReadingProgressBar();
   initSmoothAnchorScrolling();
+  initScrollFadeUp();
 });
 
 /* ==========================================================================
@@ -166,4 +167,86 @@ function initReadingProgressBar() {
       bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
     }
   }, { passive: true });
+}
+
+/* ==========================================================================
+   5. SCROLL-DRIVEN FADE-UP ANIMATION ENGINE (ALL SERVICE PAGES)
+   ========================================================================== */
+function initScrollFadeUp() {
+  // Mark HTML ready so initial hiding styles kick in cleanly
+  document.documentElement.classList.add('svc-scroll-ready');
+
+  // Select all major service page sections, cards, and content blocks
+  const targetSelectors = [
+    '.svc-section-header',
+    '.svc-narrative-card',
+    '.svc-diagnostic-box',
+    '.svc-insight-col',
+    '.svc-capability-card',
+    '.svc-expertise-box',
+    '.svc-article-card',
+    '.svc-tech-card',
+    '.svc-process-step',
+    '.svc-cta-banner',
+    '.svc-fade-up'
+  ].join(', ');
+
+  const elements = document.querySelectorAll(targetSelectors);
+  if (!elements.length) return;
+
+  // Stagger delays for horizontal grids and groups
+  const gridContainers = document.querySelectorAll('.svc-insights-strip, .svc-expertise-grid, .svc-tech-grid, .svc-carousel-track');
+  gridContainers.forEach(container => {
+    const children = container.querySelectorAll('.svc-insight-col, .svc-expertise-box, .svc-tech-card, .svc-article-card');
+    children.forEach((child, index) => {
+      const delay = (index % 4) * 100; // 0ms, 100ms, 200ms, 300ms
+      child.style.setProperty('--reveal-delay', `${delay}ms`);
+    });
+  });
+
+  // Stagger for narrative challenge cards
+  const narrativeCards = document.querySelectorAll('.svc-narrative-card');
+  narrativeCards.forEach((card, index) => {
+    card.style.setProperty('--reveal-delay', `${index * 110}ms`);
+  });
+
+  // Stagger for process steps
+  const processSteps = document.querySelectorAll('.svc-process-step');
+  processSteps.forEach((step, index) => {
+    step.style.setProperty('--reveal-delay', `${Math.min(250, index * 60)}ms`);
+  });
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.02
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.classList.add('is-revealed');
+
+        // Once settled after transition, remove will-change and filters
+        setTimeout(() => {
+          el.classList.add('is-settled');
+        }, 900);
+
+        obs.unobserve(el);
+      }
+    });
+  }, observerOptions);
+
+  elements.forEach(el => {
+    el.classList.add('svc-fade-up');
+
+    // If already in the upper viewport on initial load, reveal immediately without jump
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) {
+      el.classList.add('is-revealed', 'is-settled');
+    } else {
+      observer.observe(el);
+    }
+  });
 }
