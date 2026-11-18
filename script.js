@@ -4993,12 +4993,20 @@ void main(void) {
 
       card.addEventListener('click', (e) => {
         if (hasDragged) return;
+        if (svc.id === 'web') {
+          window.location.href = '/services/web-development';
+          return;
+        }
         openChapterView(svc.id, card);
       });
 
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
+          if (svc.id === 'web') {
+            window.location.href = '/services/web-development';
+            return;
+          }
           openChapterView(svc.id, card);
         }
       });
@@ -5262,6 +5270,10 @@ void main(void) {
       const svc = filteredServices[centerIndex];
       const card = cardElements[centerIndex];
       if (svc) {
+        if (svc.id === 'web') {
+          window.location.href = '/services/web-development';
+          return;
+        }
         openChapterView(svc.id, card);
       }
     });

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Is Changing How Websites Are Built. Who Checks the Work? | Riyadvi Web Insights</title>
+  <meta name="description" content="Exploring generative coding assistants, automated web synthesis, and why enterprise resilience still hinges on human verification of security, maintainability, and accessibility.">
+  <link rel="canonical" href="https://riyadvisoftwaretechnologies.com/services/web-development/insights/ai-is-changing-how-websites-are-built-who-checks-the-work">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="AI Is Changing How Websites Are Built. Who Checks the Work? | Riyadvi">
+  <meta property="og:description" content="Generative AI accelerates code drafting, but enterprise engineering demands human verification of security, accessibility, and architectural boundaries.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://riyadvisoftwaretechnologies.com/services/web-development/insights/ai-is-changing-how-websites-are-built-who-checks-the-work">
+  <meta property="og:image" content="/assets/riyadvilogo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/services/services-common.css?v=1.0">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="svcReadingProgress" style="position: fixed; top: 0; left: 0; height: 3px; background: var(--svc-gold); z-index: 9999; width: 0%; transition: width 0.1s linear;"></div>
+
+  <!-- Ambient Light FX -->
+  <div class="svc-ambient-background" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="svc-global-navbar" id="topNavbar">
+    <div class="svc-container svc-nav-inner">
+      <a href="/index.html#home" class="svc-brand-logo" aria-label="Riyadvi Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem">
+        <div>
+          <span class="svc-brand-text">RIYADVI</span>
+          <span class="svc-brand-subtext">Software Technologies</span>
+        </div>
+      </a>
+
+      <nav class="svc-nav-menu" aria-label="Primary Navigation">
+        <a href="/index.html#home" class="svc-nav-link">Home</a>
+        <a href="/index.html#about" class="svc-nav-link">About Us</a>
+        <a href="/services/web-development" class="svc-nav-link" style="color: var(--svc-gold);">Web Development</a>
+        <a href="/index.html#services" class="svc-nav-link">All Services</a>
+        <a href="/index.html#contact" class="svc-nav-link">Contact</a>
+      </nav>
+
+      <div class="svc-nav-actions">
+        <a href="/index.html#contact" class="svc-nav-cta">Let's Talk</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Article Header -->
+    <article class="svc-article-hero">
+      <div class="svc-container">
+        <nav class="svc-article-breadcrumb" aria-label="Breadcrumb">
+          <a href="/index.html#services">Services</a>
+          <span>&rarr;</span>
+          <a href="/services/web-development">Web Development</a>
+          <span>&rarr;</span>
+          <span style="color: var(--svc-gold);">Insights</span>
+        </nav>
+
+        <span class="svc-pill-badge">RESEARCH &middot; GOVERNANCE &middot; 8 MIN READ</span>
+        <h1 class="svc-article-headline">AI Is Changing How Websites Are Built. Who Checks the Work?</h1>
+
+        <div class="svc-article-meta-bar">
+          <div>Published: <span class="accent">November 2026</span></div>
+          <div>Review Status: <span class="accent">Verified Engineering Research</span></div>
+          <div>Domain: <span class="accent">AI Code Synthesis &middot; OWASP Security &middot; QA Auditing</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article Content Layout -->
+    <div class="svc-container">
+      <div class="svc-article-layout">
+        <!-- Main Article Text -->
+        <div class="svc-article-body">
+          <p class="svc-section-lead" style="margin-bottom: 32px; color: #FFFFFF; font-weight: 500;">
+            The velocity of frontend and backend web development has been undeniably transformed by Large Language Models and automated code synthesizers. However, as the cost of generating source code drops toward zero, the economic and operational value of verifying, securing, and maintaining that code has skyrocketed.
+          </p>
+
+          <h2>The Acceleration Paradox: Rapid Drafting vs Subtle Rot</h2>
+          <p>
+            Modern AI coding assistants excel at eliminating routine friction. They draft boilerplate React components in seconds, generate regular expressions, propose Tailwind utility configurations, and translate database schemas into TypeScript interfaces.
+          </p>
+          <p>
+            Yet beneath this apparent productivity lies a subtle and pervasive engineering hazard: <em>hallucinated plausibility</em>. An AI assistant produces code that looks syntactically pristine and passes standard linters, but may embed critical architectural flaws that only manifest under real-world production stress, concurrency surges, or adversarial security probing.
+          </p>
+
+          <blockquote>
+            "AI can generate a hundred lines of frontend code in four seconds. But it cannot testify in court when a security vulnerability leaks customer data, nor can it troubleshoot a distributed memory leak at 2:00 AM."
+          </blockquote>
+
+          <h2>The Three Invisible Vulnerabilities in AI-Generated Web Code</h2>
+          <p>
+            When enterprise engineering teams conduct thorough manual reviews of AI-assisted web builds, three recurring vulnerabilities consistently surface:
+          </p>
+          <ul>
+            <li><strong>1. Security Boundary Erosion &amp; Insecure Defaults:</strong> AI models frequently suggest client-side workarounds for server-side authorization boundaries, inadvertently expose API secret keys in public bundles, or rely on outdated cryptographic methods trained on years of legacy StackOverflow snippets.</li>
+            <li><strong>2. Accessibility Token Hallucination:</strong> While models can easily sprinkle <code>aria-label</code> tags across HTML elements, they rarely understand the true state machine required for assistive technology. They generate custom dropdowns that trap keyboard focus, omit live announcements for screen readers, and fail WCAG 2.2 color contrast requirements on dynamic backgrounds.</li>
+            <li><strong>3. Supply Chain Dependency Bloat:</strong> AI models often suggest installing outdated, deprecated, or non-existent npm packages (package hallucination), opening the door to malicious package squatting and unmaintained transit dependencies.</li>
+          </ul>
+
+          <div class="svc-article-callout">
+            <div class="svc-article-callout-title">The OWASP Foundation Perspective</div>
+            <p style="margin-bottom: 0; font-size: 15px; color: #cfcfe0;">
+              According to the OWASP Top 10 for Large Language Model Applications, insecure output handling and overreliance on unvetted generated code represent top enterprise risks. Unchecked AI code commonly bypasses contextual sanitation, reintroducing SQL injection and Cross-Site Scripting (XSS) into modern web stacks.
+            </p>
+          </div>
+
+          <h2>Establishing Rigorous Engineering Governance</h2>
+          <p>
+            Forward-thinking technology consultancies do not ban AI tools; rather, they establish strict governance frameworks that treat AI outputs with the same defensive skepticism applied to junior developer pull requests:
+          </p>
+          <ol>
+            <li><strong>Zero-Trust Code Verification:</strong> No generated snippet reaches production without explicit, sign-off from a senior architect who understands the complete security and performance implications of every line.</li>
+            <li><strong>Automated Static &amp; Dynamic Security Scans:</strong> Continuous deployment pipelines must enforce automated vulnerability scanning (e.g., Snyk, SonarQube, GitHub Dependabot) before code merges into main branches.</li>
+            <li><strong>Strict Accessibility Benchmarking:</strong> Automated Lighthouse and Axe Core accessibility suites must pass with zero critical errors, backed by real manual keyboard traversal audits.</li>
+          </ol>
+
+          <h2>The Enduring Necessity of Systems Thinking</h2>
+          <p>
+            Software engineering is not the mechanical act of typing syntax; it is the deliberate discipline of understanding business constraints, user psychology, failure modes, and long-term maintainability. AI models lack intent, architectural context, and accountability.
+          </p>
+          <p>
+            When an organization commissions a high-stakes web platform, they are not paying for lines of code. They are paying for the judgment that decides what code <em>should not</em> be written, how APIs will scale when traffic increases tenfold, and how user privacy is preserved across global regulatory environments.
+          </p>
+
+          <h2>Closing Perspective</h2>
+          <p>
+            AI is an extraordinary accelerator for teams with the deep technical discipline required to evaluate its output. But when used as a substitute for foundational engineering competence, it merely accelerates the accumulation of catastrophic technical debt. In modern enterprise web development, the true competitive differentiator is not who drafts code fastest—it is who checks the work best.
+          </p>
+
+          <div class="svc-article-references">
+            <h4>Cited Engineering Standards &amp; Research:</h4>
+            <ol>
+              <li>OWASP Foundation. "OWASP Top 10 for Large Language Model Applications." Security Advisory, 2024–2026.</li>
+              <li>IEEE Software. "The Impact of AI Code Generation Tools on Code Quality and Security: An Empirical Investigation."</li>
+              <li>Snyk Cybersecurity Research. "State of Open Source Security: AI-Generated Dependencies &amp; Slopsquatting Risks."</li>
+              <li>World Wide Web Consortium (W3C). "Web Content Accessibility Guidelines (WCAG) 2.2 AA Conformance."</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <aside class="svc-article-sidebar">
+          <div class="svc-sidebar-card">
+            <h3 class="svc-sidebar-title">Article Topics</h3>
+            <ul class="svc-toc-list">
+              <li>&bull; The Acceleration Paradox</li>
+              <li>&bull; Invisible AI Vulnerabilities</li>
+              <li>&bull; OWASP Security Advisory</li>
+              <li>&bull; Engineering Governance</li>
+              <li>&bull; The Value of Systems Thinking</li>
+              <li>&bull; Cited References</li>
+            </ul>
+          </div>
+
+          <div class="svc-sidebar-card" style="border-color: var(--svc-gold-border);">
+            <span class="svc-pill-badge" style="font-size: 9px; padding: 4px 10px;">CODE AUDIT</span>
+            <h3 class="svc-sidebar-title" style="margin-top: 10px;">Security &amp; QA Review</h3>
+            <p style="font-size: 13.5px; color: var(--svc-text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Concerned about security debt or accessibility flaws in your existing web codebase?
+            </p>
+            <a href="/index.html#contact" class="svc-btn svc-btn-primary" style="width: 100%; font-size: 12px; padding: 10px 18px;">Request Code Audit &rarr;</a>
+          </div>
+
+          <div class="svc-sidebar-card">
+            <h3 class="svc-sidebar-title">Related Insights</h3>
+            <ul class="svc-toc-list">
+              <li><a href="/services/web-development/insights/the-shift-toward-server-first-web-experiences">&rarr; Shift Toward Server-First Experiences</a></li>
+              <li><a href="/services/web-development/insights/why-performance-is-becoming-a-design-decision">&rarr; Why Performance Is a Design Decision</a></li>
+              <li><a href="/services/web-development/insights/the-next-generation-of-interactive-web-experiences">&rarr; Next-Gen Interactive Web Experiences</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Brand Footer -->
+  <footer class="svc-global-footer">
+    <div class="svc-container">
+      <div class="svc-footer-top">
+        <div class="svc-brand-logo">
+          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem">
+          <div>
+            <span class="svc-brand-text">RIYADVI</span>
+            <span class="svc-brand-subtext">Software Technologies</span>
+          </div>
+        </div>
+
+        <nav class="svc-footer-links" aria-label="Footer Services Navigation">
+          <a href="/services/web-development" style="color: var(--svc-gold);">Web Development</a>
+          <a href="/index.html#services">Custom Software</a>
+          <a href="/index.html#services">Mobile Apps</a>
+          <a href="/index.html#services">E-Commerce</a>
+          <a href="/index.html#services">All Services</a>
+        </nav>
+      </div>
+
+      <div class="svc-footer-bottom">
+        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
+        <p><a href="/services/web-development" style="color: var(--svc-gold);">&larr; Return to Web Development Overview</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/services/services-common.js?v=1.0"></script>
+</body>
+</html>

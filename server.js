@@ -52,8 +52,23 @@ const server = http.createServer((req, res) => {
     pathname = '/index.html';
   }
 
-  const safePath = path.normalize(pathname).replace(/^(\.\.[\/\\])+/, '');
-  const filePath = path.join(ROOT_DIR, safePath);
+  let safePath = path.normalize(pathname).replace(/^(\.\.[\/\\])+/, '');
+  let filePath = path.join(ROOT_DIR, safePath);
+
+  // Clean URL and directory resolution (e.g., /services/web-development -> /services/web-development/index.html)
+  if (fs.existsSync(filePath)) {
+    try {
+      const stats = fs.statSync(filePath);
+      if (stats.isDirectory()) {
+        const dirIndex = path.join(filePath, 'index.html');
+        if (fs.existsSync(dirIndex)) {
+          filePath = dirIndex;
+        }
+      }
+    } catch (e) {}
+  } else if (fs.existsSync(filePath + '.html')) {
+    filePath = filePath + '.html';
+  }
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
