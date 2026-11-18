@@ -4420,6 +4420,7 @@ void main(void) {
 
   function navigateToService(serviceId) {
     const targetUrl = SERVICE_URL_MAP[serviceId] || '/services/web-development';
+    console.log('[NAV] navigateToService called with:', serviceId, '->', targetUrl);
     window.location.href = targetUrl;
   }
 
@@ -4443,8 +4444,10 @@ void main(void) {
     pos = 0;
 
     filteredServices.forEach((svc, index) => {
-      const card = document.createElement('div');
+      const card = document.createElement('a');
       card.className = 'services-coverflow-card';
+      const svcUrl = SERVICE_URL_MAP[svc.id] || '/services/web-development';
+      card.href = svcUrl;
       card.setAttribute('data-service-id', svc.id);
       card.setAttribute('data-index', index);
       card.setAttribute('role', 'button');
@@ -4472,7 +4475,11 @@ void main(void) {
       `;
 
       card.addEventListener('click', (e) => {
-        if (hasDragged) return;
+        if (hasDragged) {
+          e.preventDefault();
+          return;
+        }
+        e.preventDefault();
         navigateToService(svc.id);
       });
 
@@ -4532,6 +4539,11 @@ void main(void) {
     if (exploreBtnText) {
       exploreBtnText.textContent = `Explore ${svc.name} \u2192`;
     }
+
+    if (exploreActiveBtn) {
+      const targetUrl = SERVICE_URL_MAP[svc.id] || '/services/web-development';
+      exploreActiveBtn.setAttribute('href', targetUrl);
+    }
   }
 
   // 5. 3D COVERFLOW RENDER LOOP
@@ -4587,49 +4599,59 @@ void main(void) {
     renderCoverflow(false);
   }
 
-  // Pointer / Drag Interaction
+  // Pointer / Drag Interaction (Desktop Mouse & Mobile Touch)
+  const container = document.querySelector('.services-coverflow-container') || stage;
   let isPointerDown = false;
   let downTargetCard = null;
+  let startY = 0;
 
-  stage.addEventListener('pointerdown', (e) => {
+  function onPointerDown(e) {
+    if (e.button && e.button !== 0) return;
     isPointerDown = true;
     hasDragged = false;
     startX = e.clientX;
+    startY = e.clientY;
     startPos = pos;
     downTargetCard = e.target.closest('.services-coverflow-card');
-    stage.classList.add('is-dragging');
-    try {
-      stage.setPointerCapture(e.pointerId);
-    } catch (_) {}
-  });
 
-  stage.addEventListener('pointermove', (e) => {
+    window.addEventListener('pointermove', onPointerMove, { passive: true });
+    window.addEventListener('pointerup', onPointerUp);
+    window.addEventListener('pointercancel', onPointerUp);
+    window.addEventListener('mousemove', onPointerMove, { passive: true });
+    window.addEventListener('mouseup', onPointerUp);
+  }
+
+  function onPointerMove(e) {
     if (!isPointerDown) return;
     const dx = e.clientX - startX;
-    if (Math.abs(dx) > 6) {
+    const dy = e.clientY - startY;
+    if (Math.hypot(dx, dy) > 12) {
       hasDragged = true;
+      stage.classList.add('is-dragging');
     }
-    const sensitivity = window.innerWidth <= 768 ? 200 : 280;
-    target = startPos - (dx / sensitivity);
-    renderCoverflow(false);
-  });
+    if (hasDragged) {
+      const sensitivity = window.innerWidth <= 768 ? 200 : 280;
+      target = startPos - (dx / sensitivity);
+      renderCoverflow(false);
+    }
+  }
 
-  function endPointer(e) {
-    if (!isPointerDown) return;
+  function onPointerUp(e) {
+    window.removeEventListener('pointermove', onPointerMove);
+    window.removeEventListener('pointerup', onPointerUp);
+    window.removeEventListener('pointercancel', onPointerUp);
+    window.removeEventListener('mousemove', onPointerMove);
+    window.removeEventListener('mouseup', onPointerUp);
+
     const wasDragging = hasDragged;
     isPointerDown = false;
-    isDragging = false;
     stage.classList.remove('is-dragging');
-    try {
-      if (stage.hasPointerCapture && stage.hasPointerCapture(e.pointerId)) {
-        stage.releasePointerCapture(e.pointerId);
-      }
-    } catch (_) {}
 
     if (wasDragging) {
       triggerMove(Math.round(pos));
     } else {
-      const targetCard = e.target.closest('.services-coverflow-card') || downTargetCard;
+      // Direct click / tap on card
+      const targetCard = (e.target && e.target.closest) ? e.target.closest('.services-coverflow-card') : downTargetCard;
       if (targetCard) {
         const svcId = targetCard.getAttribute('data-service-id');
         if (svcId) {
@@ -4637,10 +4659,13 @@ void main(void) {
         }
       }
     }
+    setTimeout(() => {
+      hasDragged = false;
+    }, 60);
   }
 
-  stage.addEventListener('pointerup', endPointer);
-  stage.addEventListener('pointercancel', endPointer);
+  container.addEventListener('pointerdown', onPointerDown);
+  container.addEventListener('mousedown', onPointerDown);
 
   // Wheel / Trackpad Horizontal Scroll
   let wheelAccumulator = 0;
@@ -4681,7 +4706,8 @@ void main(void) {
   }
 
   if (exploreActiveBtn) {
-    exploreActiveBtn.addEventListener('click', () => {
+    exploreActiveBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       const centerIndex = Math.max(0, Math.min(filteredServices.length - 1, Math.round(pos)));
       const svc = filteredServices[centerIndex];
       if (svc) {

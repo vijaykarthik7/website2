@@ -10639,6 +10639,7 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
   cursor: grab;
   outline: none;
   touch-action: pan-y;
+  pointer-events: none;
 }
 
 .services-coverflow-stage.is-dragging {
@@ -10667,6 +10668,9 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
   overflow: hidden;
   will-change: transform, opacity;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: auto;
+  text-decoration: none;
+  color: inherit;
 }
 
 .services-coverflow-card::before {
@@ -10957,6 +10961,10 @@ html.scroll-reveal-active .industry-hud-row.active { transform: translateX(14px)
   transition: all 0.25s var(--svc-ease-out);
   box-shadow: 0 4px 22px rgba(240, 199, 94, 0.32);
   letter-spacing: 0.02em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .services-explore-active-btn:hover {
