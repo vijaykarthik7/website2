@@ -27,7 +27,7 @@
   <!-- Modern Geometric Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=9.3">
+  <link rel="stylesheet" href="styles.css?v=9.4">
 
   <!-- JSON-LD Organization Schema Markup -->
   <script type="application/ld+json">
@@ -1857,157 +1857,11 @@
     </div>
   </div>
 
-    <!-- Full-Screen Chapter View Modal -->
-  <div class="service-chapter-modal" id="serviceChapterModal" aria-hidden="true" data-lenis-prevent="true" style="display: none;">
-    <div class="chapter-modal-inner" id="chapterModalInner" data-lenis-prevent="true">
-      
-      <!-- LEFT COLUMN: Sticky Visual Showcase -->
-      <aside class="chapter-left-column">
-        <div class="chapter-huge-index" id="chapterHugeIndex">01</div>
-        <div class="chapter-left-top">
-          <button class="chapter-back-btn" id="chapterBackBtn" aria-label="Back to all services">
-            &larr; ALL SERVICES
-          </button>
-        </div>
-        
-        <div class="chapter-left-visual-stage" id="chapterLeftVisualStage">
-          <!-- Active Service Live Animated Visual is mounted here -->
-        </div>
-
-        <div class="chapter-left-bottom">
-          <div class="chapter-service-tag" id="chapterLeftTag">01 // CORE ARCHITECTURE</div>
-          <h2 class="chapter-service-name" id="chapterLeftName">Web Development Architecture</h2>
-        </div>
-      </aside>
-
-      <!-- RIGHT COLUMN: Scrolling Detailed Chapter Content -->
-      <main class="chapter-right-column" id="chapterRightColumn" data-lenis-prevent="true">
-        <button class="chapter-close-btn" id="chapterCloseBtn" aria-label="Close chapter view">&times;</button>
-        
-        <div class="chapter-right-content">
-          <!-- Section 1: Overview -->
-          <section class="chapter-content-section svc-reveal-item" id="chapterOverviewSection">
-            <span class="chapter-pill-tag" id="chapterOverviewTag">01 // CORE ARCHITECTURE</span>
-            <h1 class="chapter-overview-title" id="chapterOverviewTitle">Web Development Architecture</h1>
-            <p class="chapter-overview-lead" id="chapterOverviewLead">
-              Next-generation responsive web applications engineered with headless CMS, sub-second load times, and custom APIs.
-            </p>
-          </section>
-
-          <!-- Section 2: Core Technology Stack & Tools -->
-          <section class="chapter-content-section svc-reveal-item" id="chapterTechSection">
-            <div class="chapter-section-header-row">
-              <h3 class="chapter-section-label">CORE TECHNOLOGY STACK &amp; TOOLS</h3>
-              <span class="chapter-section-hint">Click any tool to view details &amp; logo &rarr;</span>
-            </div>
-            <div class="chapter-tech-chips" id="chapterTechChips">
-              <!-- Dynamically generated stack chips with logos -->
-            </div>
-            <!-- Tool Deep-Dive Inspector (revealed on chip click) -->
-            <div class="chapter-tool-inspector" id="chapterToolInspector" style="display: none;"></div>
-          </section>
-
-          <!-- Section 3: What We Deliver -->
-          <section class="chapter-content-section svc-reveal-item" id="chapterDeliverablesSection">
-            <div class="chapter-section-header-row">
-              <h3 class="chapter-section-label">WHAT WE DELIVER</h3>
-              <span class="chapter-section-hint">Click any card to expand details &rarr;</span>
-            </div>
-            <div class="chapter-deliverables-grid" id="chapterDeliverablesGrid">
-              <!-- Dynamically generated deliverable cards with details -->
-            </div>
-          </section>
-
-          <!-- Section 4: Engineering Execution Roadmap -->
-          <section class="chapter-content-section svc-reveal-item" id="chapterRoadmapSection">
-            <h3 class="chapter-section-label">ENGINEERING EXECUTION ROADMAP</h3>
-            <div class="chapter-timeline-wrap" id="chapterTimelineWrap">
-              <div class="chapter-timeline-track-bg" id="chapterTimelineTrackBg"></div>
-              <div class="chapter-timeline-track" id="chapterTimelineTrack">
-                <div class="chapter-timeline-glow-head"></div>
-              </div>
-              <div class="chapter-timeline-steps">
-                <div class="chapter-timeline-step" style="--step-i: 0;">
-                  <div class="step-marker"><span class="step-dot"></span></div>
-                  <div class="step-info">
-                    <h4 class="step-title">01. Strategy</h4>
-                    <p class="step-sub">Goals, scope &amp; success metrics</p>
-                  </div>
-                </div>
-                <div class="chapter-timeline-step" style="--step-i: 1;">
-                  <div class="step-marker"><span class="step-dot"></span></div>
-                  <div class="step-info">
-                    <h4 class="step-title">02. UX</h4>
-                    <p class="step-sub">Flows, wireframes &amp; research</p>
-                  </div>
-                </div>
-                <div class="chapter-timeline-step" style="--step-i: 2;">
-                  <div class="step-marker"><span class="step-dot"></span></div>
-                  <div class="step-info">
-                    <h4 class="step-title">03. UI</h4>
-                    <p class="step-sub">Design system &amp; visuals</p>
-                  </div>
-                </div>
-                <div class="chapter-timeline-step" style="--step-i: 3;">
-                  <div class="step-marker"><span class="step-dot"></span></div>
-                  <div class="step-info">
-                    <h4 class="step-title">04. Development</h4>
-                    <p class="step-sub">Sprints, reviews &amp; demos</p>
-                  </div>
-                </div>
-                <div class="chapter-timeline-step" style="--step-i: 4;">
-                  <div class="step-marker"><span class="step-dot"></span></div>
-                  <div class="step-info">
-                    <h4 class="step-title">05. Testing</h4>
-                    <p class="step-sub">QA, performance &amp; security</p>
-                  </div>
-                </div>
-                <div class="chapter-timeline-step" style="--step-i: 5;">
-                  <div class="step-marker"><span class="step-dot"></span></div>
-                  <div class="step-info">
-                    <h4 class="step-title">06. Deployment</h4>
-                    <p class="step-sub">Launch, monitoring &amp; handover</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section 5: CTA Card & Neighbour Navigation -->
-          <section class="chapter-content-section svc-reveal-item" id="chapterCtaSection">
-            <div class="chapter-cta-card">
-              <div class="chapter-cta-glow"></div>
-              <h3 class="chapter-cta-title" id="chapterCtaTitle">Ready to start your Web Development project?</h3>
-              <p class="chapter-cta-sub">Let's engineer an exceptional digital product tailored to your business goals.</p>
-              <!-- TODO: Link to project estimator with service pre-selected -->
-              <a href="#estimator" class="chapter-start-project-btn" id="chapterStartProjectBtn">
-                START THIS PROJECT &rarr;
-              </a>
-            </div>
-
-            <div class="chapter-nav-cards">
-              <button class="chapter-neighbour-card prev" id="chapterPrevServiceBtn">
-                <span class="neighbour-sub">&larr; PREVIOUS SERVICE</span>
-                <span class="neighbour-title" id="chapterPrevServiceName">Custom Software</span>
-              </button>
-              <button class="chapter-neighbour-card next" id="chapterNextServiceBtn">
-                <span class="neighbour-sub">NEXT SERVICE &rarr;</span>
-                <span class="neighbour-title" id="chapterNextServiceName">Mobile App</span>
-              </button>
-            </div>
-          </section>
-        </div>
-      </main>
-
-    </div>
-  </div>
-
-
   <!-- GSAP & ScrollTrigger Animation Engine -->
   <script src="assets/gsap.min.js"></script>
   <script src="assets/ScrollTrigger.min.js"></script>
   <!-- Lenis Smooth Inertial Scroll -->
   <script src="assets/lenis.min.js"></script>
-  <script src="script.js?v=9.3"></script>
+  <script src="script.js?v=9.4"></script>
 </body>
 </html>

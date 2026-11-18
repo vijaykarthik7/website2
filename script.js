@@ -4958,6 +4958,24 @@ void main(void) {
   let chapterObserver = null;
   let savedScrollY = 0;
 
+  // Direct Dedicated Service Routes Mapping (All 9 Services)
+  const SERVICE_URL_MAP = {
+    'web': '/services/web-development',
+    'custom': '/services/custom-software-development',
+    'mobile': '/services/mobile-app-development',
+    'ecommerce': '/services/ecommerce-solutions',
+    'gamedev': '/services/game-development',
+    'arvr': '/services/ar-vr-development',
+    'design': '/services/ui-ux-design',
+    '3d': '/services/3d-modeling',
+    'marketing': '/services/digital-marketing'
+  };
+
+  function navigateToService(serviceId) {
+    const targetUrl = SERVICE_URL_MAP[serviceId] || '/services/web-development';
+    window.location.href = targetUrl;
+  }
+
   // 2. BUILD CAROUSEL CARDS
   function buildCards() {
     filteredServices = (currentFilter === 'all')
@@ -5000,21 +5018,13 @@ void main(void) {
 
       card.addEventListener('click', (e) => {
         if (hasDragged) return;
-        if (svc.id === 'web') {
-          window.location.href = '/services/web-development';
-          return;
-        }
-        openChapterView(svc.id, card);
+        navigateToService(svc.id);
       });
 
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          if (svc.id === 'web') {
-            window.location.href = '/services/web-development';
-            return;
-          }
-          openChapterView(svc.id, card);
+          navigateToService(svc.id);
         }
       });
 
@@ -5216,11 +5226,7 @@ void main(void) {
       if (targetCard) {
         const svcId = targetCard.getAttribute('data-service-id');
         if (svcId) {
-          if (svcId === 'web') {
-            window.location.href = '/services/web-development';
-            return;
-          }
-          openChapterView(svcId, targetCard);
+          navigateToService(svcId);
         }
       }
     }
@@ -5279,13 +5285,8 @@ void main(void) {
     exploreActiveBtn.addEventListener('click', () => {
       const centerIndex = Math.max(0, Math.min(filteredServices.length - 1, Math.round(pos)));
       const svc = filteredServices[centerIndex];
-      const card = cardElements[centerIndex];
       if (svc) {
-        if (svc.id === 'web') {
-          window.location.href = '/services/web-development';
-          return;
-        }
-        openChapterView(svc.id, card);
+        navigateToService(svc.id);
       }
     });
   }
@@ -6774,193 +6775,17 @@ void main(void) {
     resetChapterAnimations();
   }
 
-  function openChapterView(serviceId, sourceCard) {
-    if (!serviceId) {
-      const centerIndex = Math.max(0, Math.min(filteredServices.length - 1, Math.round(pos)));
-      serviceId = filteredServices[centerIndex]?.id || 'web';
-    }
-    populateChapterView(serviceId);
-    if (!chapterModal) return;
-
-    resetChapterAnimations();
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Save exact scroll position before modal locks the body
-    savedScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-
-    // Prevent background scrolling completely while modal is open
-    document.documentElement.classList.add('service-modal-open');
-    document.body.classList.add('service-modal-open');
-    document.body.style.overflow = 'hidden';
-    if (window.lenis) {
-      window.lenis.stop();
-    }
-
-    chapterModal.style.display = 'block';
-
-    if (sourceCard && !prefersReducedMotion) {
-      const rect = sourceCard.getBoundingClientRect();
-      const top = Math.max(0, Math.round(rect.top));
-      const right = Math.max(0, Math.round(window.innerWidth - rect.right));
-      const bottom = Math.max(0, Math.round(window.innerHeight - rect.bottom));
-      const left = Math.max(0, Math.round(rect.left));
-
-      chapterModal.style.transition = 'none';
-      chapterModal.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px round 26px)`;
-      chapterModal.style.opacity = '1';
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          chapterModal.style.transition = 'clip-path 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease';
-          chapterModal.style.clipPath = 'inset(0px 0px 0px 0px round 0px)';
-          setTimeout(() => {
-            chapterModal.style.clipPath = 'none';
-          }, 550);
-        });
-      });
-    } else {
-      chapterModal.style.transition = 'opacity 0.35s ease';
-      chapterModal.style.clipPath = 'none';
-      chapterModal.style.opacity = '1';
-    }
-
-    if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
-    const modalInner = document.getElementById('chapterModalInner');
-    if (modalInner) modalInner.scrollTop = 0;
-
-    // Smoothly reveal top overview section and initialize scroll view states
-    setTimeout(() => {
-      const topSection = document.getElementById('chapterOverviewSection');
-      if (topSection) topSection.classList.add('is-revealed');
-      updateChapterScrollState();
-    }, 120);
-
-    if (typeof AudioEngine !== 'undefined' && AudioEngine.playBeep) {
-      AudioEngine.playBeep(840, 'sine', 0.12, 0.03);
-    }
+  // Dedicated Service Navigation (Replaces old modal chapter view completely)
+  function openChapterView(serviceId) {
+    navigateToService(serviceId);
   }
 
   function switchChapter(serviceId) {
-    const inner = document.getElementById('chapterModalInner');
-    if (inner) {
-      inner.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
-      inner.style.opacity = '0';
-      inner.style.transform = 'translateY(10px)';
-
-      setTimeout(() => {
-        populateChapterView(serviceId);
-        resetChapterAnimations();
-        if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
-        inner.scrollTop = 0;
-        inner.style.opacity = '1';
-        inner.style.transform = 'translateY(0)';
-
-        setTimeout(() => {
-          const topSection = document.getElementById('chapterOverviewSection');
-          if (topSection) topSection.classList.add('is-revealed');
-          updateChapterScrollState();
-        }, 120);
-      }, 200);
-    } else {
-      populateChapterView(serviceId);
-      resetChapterAnimations();
-      if (chapterRightColumn) chapterRightColumn.scrollTop = 0;
-      setTimeout(() => {
-        const topSection = document.getElementById('chapterOverviewSection');
-        if (topSection) topSection.classList.add('is-revealed');
-        updateChapterScrollState();
-      }, 120);
-    }
+    navigateToService(serviceId);
   }
 
   function closeChapterView() {
-    if (!chapterModal) return;
-    chapterModal.style.transition = 'opacity 0.35s ease';
-    chapterModal.style.opacity = '0';
-
-    setTimeout(() => {
-      chapterModal.style.display = 'none';
-      chapterModal.style.clipPath = 'none';
-      document.documentElement.classList.remove('service-modal-open');
-      document.body.classList.remove('service-modal-open');
-      document.body.style.overflow = '';
-      if (window.lenis) {
-        window.lenis.start();
-        window.lenis.resize();
-      }
-      if (savedScrollY > 0) {
-        window.scrollTo(0, savedScrollY);
-        if (window.lenis) {
-          window.lenis.scrollTo(savedScrollY, { immediate: true });
-        }
-      }
-      resetChapterAnimations();
-      if (window.location.hash.startsWith('#service-') || window.location.hash === '#services') {
-        const cleanUrl = window.location.pathname + window.location.search;
-        history.replaceState(null, null, cleanUrl);
-      }
-    }, 350);
-  }
-
-  // Attach scroll listeners to both potential scrolling containers
-  if (chapterRightColumn) {
-    chapterRightColumn.addEventListener('scroll', onChapterScroll, { passive: true });
-  }
-  const modalInnerEl = document.getElementById('chapterModalInner');
-  if (modalInnerEl) {
-    modalInnerEl.addEventListener('scroll', onChapterScroll, { passive: true });
-  }
-  window.addEventListener('resize', onChapterScroll, { passive: true });
-
-  // Isolate wheel and touch events within the modal so background never scrolls
-  if (chapterModal) {
-    chapterModal.addEventListener('wheel', (e) => {
-      const isScrollable = e.target.closest('#chapterRightColumn') ||
-                           (window.innerWidth <= 900 && e.target.closest('#chapterModalInner'));
-      if (!isScrollable) {
-        e.preventDefault();
-      }
-      e.stopPropagation();
-    }, { passive: false });
-
-    chapterModal.addEventListener('touchmove', (e) => {
-      const isScrollable = e.target.closest('#chapterRightColumn') ||
-                           (window.innerWidth <= 900 && e.target.closest('#chapterModalInner'));
-      if (!isScrollable) {
-        e.preventDefault();
-      }
-      e.stopPropagation();
-    }, { passive: false });
-  }
-
-  if (chapterCloseBtn) chapterCloseBtn.addEventListener('click', closeChapterView);
-  if (chapterBackBtn) {
-    chapterBackBtn.addEventListener('click', () => {
-      // Revert filter to 'all' so all services are visible when coming back
-      if (currentFilter !== 'all') {
-        currentFilter = 'all';
-        filterChips.forEach(c => {
-          const isAll = (c.getAttribute('data-filter') || 'all') === 'all';
-          c.classList.toggle('active', isAll);
-          c.setAttribute('aria-selected', isAll ? 'true' : 'false');
-        });
-        buildCards();
-      }
-      closeChapterView();
-    });
-  }
-  if (chapterStartProjectBtn) {
-    chapterStartProjectBtn.addEventListener('click', () => {
-      const match = SERVICES_DATA.find(s => s.id === currentChapterServiceId);
-      closeChapterView();
-      if (match) {
-        const contactSelect = document.getElementById('contactService');
-        if (contactSelect) {
-          contactSelect.value = match.name;
-        }
-      }
-    });
+    // No-op: old modal completely removed
   }
 
   // Expose chapter view controls globally
@@ -6968,19 +6793,12 @@ void main(void) {
   window.switchChapter = switchChapter;
   window.closeChapterView = closeChapterView;
 
-  // Deep Link On Load & Hashchange
+  // Deep Link On Load & Hashchange: strip any old #service- hash and scroll cleanly to #services
   function checkDeepLink() {
     const hash = window.location.hash;
     if (hash && (hash.startsWith('#service-') || hash === '#services')) {
-      const cleanUrl = window.location.pathname + window.location.search;
+      const cleanUrl = window.location.pathname;
       history.replaceState(null, null, cleanUrl);
-      if (chapterModal) {
-        chapterModal.style.display = 'none';
-        chapterModal.style.opacity = '0';
-        document.documentElement.classList.remove('service-modal-open');
-        document.body.classList.remove('service-modal-open');
-        document.body.style.overflow = '';
-      }
       const svcSection = document.getElementById('services');
       if (svcSection) {
         setTimeout(() => {
@@ -6989,7 +6807,7 @@ void main(void) {
           } else {
             svcSection.scrollIntoView({ behavior: 'smooth' });
           }
-        }, 120);
+        }, 100);
       }
     }
   }
