@@ -14,119 +14,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=11.0">
+  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
 </head>
 <body class="svc-page-body">
 
-  <!-- GLOBAL PERSISTENT HEADER -->
-  <header class="svc-header" id="topHeader">
-    <div class="svc-header-container">
-      <a href="/index.html" class="svc-brand">
-        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        <div class="svc-brand-text">
-          <span class="svc-brand-name">RIYADVI</span>
-          <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
-        </div>
-      </a>
-
-      <nav class="svc-main-nav">
-        <a href="/index.html#home" class="svc-nav-link">Home</a>
-        <a href="/index.html#about" class="svc-nav-link">About Us</a>
-        <div class="nav-dropdown-wrapper active">
-          <a href="/index.html#services" class="svc-nav-link nav-has-dropdown active">
-            Services
-            <svg class="nav-dropdown-caret" width="9" height="5" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <div class="nav-dropdown-panel">
-            <div class="nav-dropdown-header">
-              <span class="dropdown-header-tag">DISCOVER CAPABILITIES</span>
-              <span class="dropdown-header-count">9 SERVICES</span>
-            </div>
-            <div class="nav-dropdown-grid">
-              <a href="/services/web-development" class="nav-dropdown-card active">
-                <span class="dropdown-card-num">01</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">Web Development</span>
-                  <span class="dropdown-card-desc">Modern web apps, portals & headless platforms</span>
-                </div>
-              </a>
-              <a href="/services/custom-software-development" class="nav-dropdown-card ">
-                <span class="dropdown-card-num">02</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">Custom Software</span>
-                  <span class="dropdown-card-desc">Tailored enterprise systems, APIs & workflows</span>
-                </div>
-              </a>
-              <a href="/services/mobile-app-development" class="nav-dropdown-card ">
-                <span class="dropdown-card-num">03</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">Mobile App Development</span>
-                  <span class="dropdown-card-desc">High-performance iOS, Android & cross-platform</span>
-                </div>
-              </a>
-              <a href="/services/ecommerce-solutions" class="nav-dropdown-card ">
-                <span class="dropdown-card-num">04</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">E-Commerce Solutions</span>
-                  <span class="dropdown-card-desc">High-conversion storefronts & global payments</span>
-                </div>
-              </a>
-              <a href="/services/game-development" class="nav-dropdown-card ">
-                <span class="dropdown-card-num">05</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">Game Development</span>
-                  <span class="dropdown-card-desc">Engaging 2D/3D games, mechanics & simulations</span>
-                </div>
-              </a>
-              <a href="/services/ar-vr-development" class="nav-dropdown-card ">
-                <span class="dropdown-card-num">06</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">AR/VR Development</span>
-                  <span class="dropdown-card-desc">Immersive spatial computing & interactive reality</span>
-                </div>
-              </a>
-              <a href="/services/ui-ux-design" class="nav-dropdown-card ">
-                <span class="dropdown-card-num">07</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">UI/UX Design</span>
-                  <span class="dropdown-card-desc">Human-centered interfaces & design systems</span>
-                </div>
-              </a>
-              <a href="/services/3d-modeling" class="nav-dropdown-card ">
-                <span class="dropdown-card-num">08</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">3D Modeling</span>
-                  <span class="dropdown-card-desc">Photorealistic assets, shaders & interactive 3D</span>
-                </div>
-              </a>
-              <a href="/services/digital-marketing" class="nav-dropdown-card ">
-                <span class="dropdown-card-num">09</span>
-                <div class="dropdown-card-text">
-                  <span class="dropdown-card-title">Digital Marketing</span>
-                  <span class="dropdown-card-desc">Data-driven growth, SEO & performance campaigns</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <a href="/index.html#industries" class="svc-nav-link">Industries</a>
-        <a href="/index.html#portfolio" class="svc-nav-link">Portfolio</a>
-        <a href="/index.html#estimator" class="svc-nav-link">Estimator</a>
-        <a href="/index.html#contact" class="svc-nav-link">Contact</a>
-      </nav>
-
-      <a href="/index.html#estimator" class="svc-header-cta">Let's Talk</a>
-    </div>
-  </header>
-
-  <!-- SECONDARY SERVICE SUBNAV -->
+  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
   <nav class="svc-subnav-bar" id="serviceSubnav">
     <div class="svc-subnav-container">
       <div class="svc-subnav-left">
+        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
+          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
+        </a>
+        <span class="svc-subnav-divider" aria-hidden="true"></span>
         <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           ALL SERVICES
         </a>
+        <span class="svc-subnav-divider" aria-hidden="true"></span>
         <span class="svc-subnav-title">01 // WEB DEVELOPMENT</span>
       </div>
 

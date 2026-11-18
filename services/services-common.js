@@ -28,7 +28,7 @@ function initSubnavScrollSpy() {
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   function onScroll() {
-    const scrollPos = window.scrollY + 160;
+    const scrollPos = window.scrollY + 90;
 
     let currentSectionId = null;
     for (let i = sections.length - 1; i >= 0; i--) {
@@ -81,8 +81,8 @@ function initSmoothAnchorScrolling() {
       const targetEl = document.getElementById(targetId);
       if (targetEl) {
         e.preventDefault();
-        // Calculate offset (Global navbar + Sticky Subnav = ~132px)
-        const headerOffset = 130;
+        // Calculate offset (Sticky Subnav = ~56px + breathing room)
+        const headerOffset = 68;
         const elementPosition = targetEl.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
