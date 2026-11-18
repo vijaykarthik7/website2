@@ -4296,7 +4296,8 @@ void main(void) {
       num: '01',
       tag: '01 // CORE',
       name: 'Web Development',
-      oneLiner: 'We build high-performance, responsive, and scalable websites that deliver exceptional digital experiences.'
+      oneLiner: 'We build high-performance, responsive, and scalable websites that deliver exceptional digital experiences.',
+      image: 'assets/bento_web_dev.gif'
     },
     {
       id: 'custom',
@@ -4305,7 +4306,8 @@ void main(void) {
       num: '02',
       tag: '02 // ENTERPRISE',
       name: 'Custom Software Development',
-      oneLiner: 'We transform complex business requirements into powerful, tailor-made software solutions.'
+      oneLiner: 'We transform complex business requirements into powerful, tailor-made software solutions.',
+      image: 'assets/bento_custom_software.gif'
     },
     {
       id: 'mobile',
@@ -4314,7 +4316,8 @@ void main(void) {
       num: '03',
       tag: '03 // MOBILE',
       name: 'Mobile App Development',
-      oneLiner: 'We create feature-rich mobile applications that connect businesses with customers.'
+      oneLiner: 'We create feature-rich mobile applications that connect businesses with customers.',
+      image: 'assets/bento_mobile_dev.gif'
     },
     {
       id: 'ecommerce',
@@ -4323,7 +4326,8 @@ void main(void) {
       num: '04',
       tag: '04 // COMMERCE',
       name: 'E-Commerce Solutions',
-      oneLiner: 'We develop powerful e-commerce platforms that turn visitors into customers.'
+      oneLiner: 'We develop powerful e-commerce platforms that turn visitors into customers.',
+      image: 'assets/bento_ecommerce.gif'
     },
     {
       id: 'gamedev',
@@ -4332,7 +4336,8 @@ void main(void) {
       num: '05',
       tag: '05 // GAMING',
       name: 'Game Development',
-      oneLiner: 'We bring creative ideas to life through immersive, interactive, and engaging gaming experiences.'
+      oneLiner: 'We bring creative ideas to life through immersive, interactive, and engaging gaming experiences.',
+      image: 'assets/bento_game_dev.gif'
     },
     {
       id: 'arvr',
@@ -4341,7 +4346,8 @@ void main(void) {
       num: '06',
       tag: '06 // IMMERSIVE',
       name: 'AR/VR Development',
-      oneLiner: 'We create immersive Augmented Reality and Virtual Reality experiences that connect digital with reality.'
+      oneLiner: 'We create immersive Augmented Reality and Virtual Reality experiences that connect digital with reality.',
+      image: 'assets/bento_ar_vr.gif'
     },
     {
       id: 'design',
@@ -4350,7 +4356,8 @@ void main(void) {
       num: '07',
       tag: '07 // EXPERIENCE',
       name: 'UI/UX Design',
-      oneLiner: 'We design meaningful digital experiences that combine visual creativity with effortless functionality.'
+      oneLiner: 'We design meaningful digital experiences that combine visual creativity with effortless functionality.',
+      image: 'assets/bento_ui_ux.gif'
     },
     {
       id: '3d',
@@ -4359,7 +4366,8 @@ void main(void) {
       num: '08',
       tag: '08 // VISUALIZATION',
       name: '3D Modeling',
-      oneLiner: 'We transform concepts and ideas into detailed, realistic, and visually compelling 3D models.'
+      oneLiner: 'We transform concepts and ideas into detailed, realistic, and visually compelling 3D models.',
+      image: 'assets/bento_3d_webgl.gif'
     },
     {
       id: 'marketing',
@@ -4368,7 +4376,8 @@ void main(void) {
       num: '09',
       tag: '09 // GROWTH',
       name: 'Digital Marketing',
-      oneLiner: 'We help businesses strengthen their online presence, reach the right audience, and achieve measurable growth.'
+      oneLiner: 'We help businesses strengthen their online presence, reach the right audience, and achieve measurable growth.',
+      image: 'assets/bento_marketing.gif'
     }
   ];
 
@@ -4448,8 +4457,9 @@ void main(void) {
           <span class="svc-card-category">${svc.categoryLabel}</span>
         </div>
         <div class="svc-card-art-box">
+          <img src="${svc.image}" alt="${svc.name} Digital Visual" class="svc-card-bg-img" loading="lazy">
+          <div class="svc-card-art-overlay"></div>
           <div class="svc-giant-number">${svc.num}</div>
-          <div class="svc-live-visual-wrapper" style="display: none;"></div>
         </div>
         <div class="svc-card-bottom">
           <h3 class="svc-card-name">${svc.name}</h3>
