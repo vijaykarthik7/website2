@@ -289,22 +289,22 @@ export const appConfig = {
               </div>
               <div class="svc-preview-visual-box">
                 <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="48" width="60" height="34" rx="6" fill="#14141e" stroke="#f0c75e" stroke-width="1.5"/>
-        <text x="50" y="69" fill="#f0c75e" font-size="9" font-family="monospace" text-anchor="middle">INGRESS</text>
-        
-        <line x1="80" y1="65" x2="110" y2="65" stroke="#f0c75e" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <polygon points="108,62 114,65 108,68" fill="#f0c75e"/>
-        
-        <rect x="110" y="32" width="70" height="66" rx="8" fill="#11111a" stroke="#6fd3a8" stroke-width="1.5"/>
-        <text x="145" y="55" fill="#FFFFFF" font-size="8" font-family="monospace" text-anchor="middle">PIPELINE</text>
-        <text x="145" y="70" fill="#a4a4b2" font-size="7" font-family="monospace" text-anchor="middle">PARALLEL</text>
-        <text x="145" y="83" fill="#6fd3a8" font-size="7" font-family="monospace" text-anchor="middle">384 MB/s</text>
-        
-        <line x1="180" y1="65" x2="210" y2="65" stroke="#f0c75e" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <polygon points="208,62 214,65 208,68" fill="#f0c75e"/>
-        
-        <rect x="210" y="48" width="55" height="34" rx="6" fill="#14141e" stroke="#f0c75e" stroke-width="1.5"/>
-        <text x="237" y="69" fill="#f0c75e" font-size="9" font-family="monospace" text-anchor="middle">EGRESS</text>
+        <rect x="20" y="35" width="65" height="55" rx="6" fill="#10101c" stroke="#C9A45C" stroke-width="1.3"/>
+        <text x="52" y="55" fill="#C9A45C" font-size="7.5" font-family="monospace" text-anchor="middle">CODEBASE</text>
+        <text x="52" y="68" fill="#ffffff" font-size="6.5" font-family="monospace" text-anchor="middle">Dart / TS</text>
+        <text x="52" y="78" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">90% Reused</text>
+        <line x1="85" y1="62" x2="115" y2="62" stroke="#C9A45C" stroke-width="1.5"/>
+        <rect x="119" y="30" width="60" height="65" rx="6" fill="#141422" stroke="#4eedc4" stroke-width="1.3"/>
+        <text x="149" y="48" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">IMPELLER</text>
+        <text x="149" y="58" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">GPU ENGINE</text>
+        <text x="149" y="80" fill="#27c93f" font-size="7" font-family="monospace" font-weight="700" text-anchor="middle">120 FPS</text>
+        <line x1="179" y1="48" x2="205" y2="40" stroke="#4eedc4" stroke-width="1.2"/>
+        <line x1="179" y1="76" x2="205" y2="84" stroke="#4eedc4" stroke-width="1.2"/>
+        <rect x="205" y="25" width="60" height="28" rx="4" fill="#0d141c" stroke="#5ac8fa" stroke-width="1"/>
+        <text x="235" y="42" fill="#5ac8fa" font-size="7" font-family="monospace" text-anchor="middle">APPLE iOS</text>
+        <rect x="205" y="70" width="60" height="28" rx="4" fill="#0c1810" stroke="#27c93f" stroke-width="1"/>
+        <text x="235" y="87" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">ANDROID</text>
+        <text x="140" y="116" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">AOT NATIVE COMPILATION PIPELINE</text>
       </svg>
               </div>
               <div class="svc-preview-metric-list">
@@ -354,34 +354,18 @@ export const appConfig = {
               </div>
               <div class="svc-preview-visual-box">
                 <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="grad-node" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#f0c75e" stop-opacity="0.8"/>
-            <stop offset="100%" stop-color="#6fd3a8" stop-opacity="0.3"/>
-          </linearGradient>
-        </defs>
-        <line x1="40" y1="65" x2="100" y2="35" stroke="rgba(240,199,94,0.3)" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <line x1="40" y1="65" x2="100" y2="95" stroke="rgba(240,199,94,0.3)" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <line x1="100" y1="35" x2="180" y2="35" stroke="rgba(240,199,94,0.4)" stroke-width="1.5"/>
-        <line x1="100" y1="95" x2="180" y2="95" stroke="rgba(240,199,94,0.4)" stroke-width="1.5"/>
-        <line x1="180" y1="35" x2="240" y2="65" stroke="rgba(240,199,94,0.3)" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <line x1="180" y1="95" x2="240" y2="65" stroke="rgba(240,199,94,0.3)" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <line x1="100" y1="35" x2="180" y2="95" stroke="rgba(111,211,168,0.25)" stroke-width="1"/>
-        <line x1="100" y1="95" x2="180" y2="35" stroke="rgba(111,211,168,0.25)" stroke-width="1"/>
-        
-        <circle cx="40" cy="65" r="9" fill="#14141e" stroke="#f0c75e" stroke-width="2"/>
-        <circle cx="100" cy="35" r="8" fill="#14141e" stroke="#6fd3a8" stroke-width="2"/>
-        <circle cx="100" cy="95" r="8" fill="#14141e" stroke="#6fd3a8" stroke-width="2"/>
-        <circle cx="180" cy="35" r="8" fill="#14141e" stroke="#6fd3a8" stroke-width="2"/>
-        <circle cx="180" cy="95" r="8" fill="#14141e" stroke="#6fd3a8" stroke-width="2"/>
-        <circle cx="240" cy="65" r="10" fill="#14141e" stroke="#f0c75e" stroke-width="2"/>
-        
-        <text x="40" y="69" fill="#f0c75e" font-size="8" font-family="monospace" text-anchor="middle">API</text>
-        <text x="100" y="38" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">AUTH</text>
-        <text x="100" y="98" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">QUEUE</text>
-        <text x="180" y="38" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">SYNC</text>
-        <text x="180" y="98" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">EVENT</text>
-        <text x="240" y="69" fill="#f0c75e" font-size="8" font-family="monospace" text-anchor="middle">DB</text>
+        <rect x="30" y="20" width="220" height="25" rx="4" fill="#141422" stroke="#C9A45C" stroke-width="1.2"/>
+        <text x="140" y="36" fill="#C9A45C" font-size="8" font-family="monospace" font-weight="700" text-anchor="middle">SWIFTUI &amp; JETPACK COMPOSE</text>
+        <rect x="30" y="52" width="65" height="42" rx="4" fill="#0f1620" stroke="#5ac8fa" stroke-width="1"/>
+        <text x="62" y="68" fill="#5ac8fa" font-size="7" font-family="monospace" text-anchor="middle">METAL / VULKAN</text>
+        <text x="62" y="80" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">Direct GPU</text>
+        <rect x="107" y="52" width="65" height="42" rx="4" fill="#101814" stroke="#27c93f" stroke-width="1"/>
+        <text x="140" y="68" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">CORE BLUETOOTH</text>
+        <text x="140" y="80" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">BLE 5.3 Low Pwr</text>
+        <rect x="185" y="52" width="65" height="42" rx="4" fill="#181216" stroke="#C9A45C" stroke-width="1"/>
+        <text x="217" y="68" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">SECURE ENCLAVE</text>
+        <text x="217" y="80" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">FaceID / Biometric</text>
+        <text x="140" y="115" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">BARE-METAL OS INTEGRATION</text>
       </svg>
               </div>
               <div class="svc-preview-metric-list">
@@ -431,20 +415,19 @@ export const appConfig = {
               </div>
               <div class="svc-preview-visual-box">
                 <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <line x1="25" y1="105" x2="255" y2="105" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <line x1="25" y1="75" x2="255" y2="75" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="2,2"/>
-        <line x1="25" y1="45" x2="255" y2="45" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="2,2"/>
-        
-        <path d="M30 95 Q 70 85, 110 55 T 190 40 T 250 20" fill="none" stroke="#f0c75e" stroke-width="2.5"/>
-        <path d="M30 95 Q 70 85, 110 55 T 190 40 T 250 20 L 250 105 L 30 105 Z" fill="rgba(240,199,94,0.07)"/>
-        
-        <circle cx="110" cy="55" r="4" fill="#f0c75e"/>
-        <circle cx="190" cy="40" r="4" fill="#f0c75e"/>
-        <circle cx="250" cy="20" r="5" fill="#6fd3a8"/>
-        
-        <text x="110" y="48" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">+185%</text>
-        <text x="190" y="32" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">+320%</text>
-        <text x="245" y="14" fill="#6fd3a8" font-size="8" font-family="monospace" text-anchor="end">PEAK SCALE</text>
+        <rect x="25" y="35" width="70" height="60" rx="6" fill="#12121c" stroke="#C9A45C" stroke-width="1.3"/>
+        <text x="60" y="54" fill="#C9A45C" font-size="7.5" font-family="monospace" text-anchor="middle">LOCAL SQLITE</text>
+        <text x="60" y="66" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">SQLCipher Enc</text>
+        <text x="60" y="78" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">vClock: [T:14]</text>
+        <path d="M 95 52 L 175 52" stroke="#4eedc4" stroke-width="1.5"/>
+        <text x="135" y="46" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">PUSH DIFFS</text>
+        <path d="M 175 74 L 95 74" stroke="#C9A45C" stroke-width="1.5"/>
+        <text x="135" y="85" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">PULL MERGE</text>
+        <rect x="185" y="35" width="70" height="60" rx="6" fill="#0d1612" stroke="#27c93f" stroke-width="1.3"/>
+        <text x="220" y="54" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">CLOUD DB</text>
+        <text x="220" y="66" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">Postgres Edge</text>
+        <text x="220" y="78" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">Resolved: 100%</text>
+        <text x="140" y="118" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">ZERO DATA LOSS OFFLINE RESILIENCE</text>
       </svg>
               </div>
               <div class="svc-preview-metric-list">
@@ -494,21 +477,19 @@ export const appConfig = {
               </div>
               <div class="svc-preview-visual-box">
                 <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="140,20 205,55 140,90 75,55" fill="rgba(240,199,94,0.08)" stroke="#f0c75e" stroke-width="1.5"/>
-        <line x1="140" y1="20" x2="140" y2="90" stroke="rgba(240,199,94,0.3)" stroke-width="1"/>
-        <line x1="75" y1="55" x2="205" y2="55" stroke="rgba(240,199,94,0.3)" stroke-width="1"/>
-        
-        <line x1="75" y1="55" x2="75" y2="95" stroke="rgba(240,199,94,0.5)" stroke-width="1.5"/>
-        <line x1="205" y1="55" x2="205" y2="95" stroke="rgba(240,199,94,0.5)" stroke-width="1.5"/>
-        <line x1="140" y1="90" x2="140" y2="120" stroke="rgba(240,199,94,0.5)" stroke-width="1.5"/>
-        
-        <polygon points="140,120 205,95 205,55 140,90" fill="rgba(240,199,94,0.04)" stroke="#f0c75e" stroke-width="1.2"/>
-        <polygon points="140,120 75,95 75,55 140,90" fill="rgba(240,199,94,0.12)" stroke="#f0c75e" stroke-width="1.2"/>
-        
-        <circle cx="140" cy="20" r="3" fill="#6fd3a8"/>
-        <circle cx="205" cy="55" r="3" fill="#6fd3a8"/>
-        <circle cx="75" cy="55" r="3" fill="#6fd3a8"/>
-        <circle cx="140" cy="90" r="3.5" fill="#f0c75e"/>
+        <rect x="25" y="40" width="55" height="48" rx="6" fill="#141420" stroke="#C9A45C" stroke-width="1.2"/>
+        <text x="52" y="60" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">APPLE PAY</text>
+        <text x="52" y="72" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">&amp; GOOGLE PAY</text>
+        <line x1="80" y1="64" x2="115" y2="64" stroke="#C9A45C" stroke-width="1.4"/>
+        <circle cx="140" cy="64" r="22" fill="#0e1a14" stroke="#27c93f" stroke-width="1.5"/>
+        <text x="140" y="62" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">TOKEN</text>
+        <text x="140" y="70" fill="#ffffff" font-size="5.5" font-family="monospace" text-anchor="middle">ENCLAVE</text>
+        <line x1="162" y1="64" x2="195" y2="64" stroke="#27c93f" stroke-width="1.4"/>
+        <rect x="200" y="40" width="60" height="48" rx="6" fill="#101822" stroke="#4eedc4" stroke-width="1.2"/>
+        <text x="230" y="58" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">STRIPE</text>
+        <text x="230" y="68" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">SETTLEMENT</text>
+        <text x="230" y="78" fill="#27c93f" font-size="5.5" font-family="monospace" text-anchor="middle">3DS2 Verified</text>
+        <text x="140" y="115" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">PCI-DSS SAQ-A ENCRYPTED HANDSHAKE</text>
       </svg>
               </div>
               <div class="svc-preview-metric-list">
@@ -558,22 +539,20 @@ export const appConfig = {
               </div>
               <div class="svc-preview-visual-box">
                 <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="48" width="60" height="34" rx="6" fill="#14141e" stroke="#f0c75e" stroke-width="1.5"/>
-        <text x="50" y="69" fill="#f0c75e" font-size="9" font-family="monospace" text-anchor="middle">INGRESS</text>
-        
-        <line x1="80" y1="65" x2="110" y2="65" stroke="#f0c75e" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <polygon points="108,62 114,65 108,68" fill="#f0c75e"/>
-        
-        <rect x="110" y="32" width="70" height="66" rx="8" fill="#11111a" stroke="#6fd3a8" stroke-width="1.5"/>
-        <text x="145" y="55" fill="#FFFFFF" font-size="8" font-family="monospace" text-anchor="middle">PIPELINE</text>
-        <text x="145" y="70" fill="#a4a4b2" font-size="7" font-family="monospace" text-anchor="middle">PARALLEL</text>
-        <text x="145" y="83" fill="#6fd3a8" font-size="7" font-family="monospace" text-anchor="middle">384 MB/s</text>
-        
-        <line x1="180" y1="65" x2="210" y2="65" stroke="#f0c75e" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <polygon points="208,62 214,65 208,68" fill="#f0c75e"/>
-        
-        <rect x="210" y="48" width="55" height="34" rx="6" fill="#14141e" stroke="#f0c75e" stroke-width="1.5"/>
-        <text x="237" y="69" fill="#f0c75e" font-size="9" font-family="monospace" text-anchor="middle">EGRESS</text>
+        <circle cx="50" cy="65" r="24" fill="#141424" stroke="#C9A45C" stroke-width="1.4"/>
+        <text x="50" y="62" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">DISPATCH</text>
+        <text x="50" y="72" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">SERVER</text>
+        <path d="M 74 52 Q 110 35 145 35" fill="none" stroke="#5ac8fa" stroke-width="1.3"/>
+        <path d="M 74 78 Q 110 95 145 95" fill="none" stroke="#27c93f" stroke-width="1.3"/>
+        <rect x="145" y="24" width="75" height="26" rx="4" fill="#0d141e" stroke="#5ac8fa" stroke-width="1"/>
+        <text x="182" y="40" fill="#5ac8fa" font-size="6.5" font-family="monospace" text-anchor="middle">APNs (iOS)</text>
+        <rect x="145" y="80" width="75" height="26" rx="4" fill="#0c1810" stroke="#27c93f" stroke-width="1"/>
+        <text x="182" y="96" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">FCM (Android)</text>
+        <circle cx="250" cy="65" r="16" fill="#141420" stroke="#C9A45C" stroke-width="1.5"/>
+        <text x="250" y="68" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">APP</text>
+        <line x1="220" y1="37" x2="245" y2="52" stroke="#5ac8fa" stroke-width="1"/>
+        <line x1="220" y1="93" x2="245" y2="78" stroke="#27c93f" stroke-width="1"/>
+        <text x="140" y="68" fill="#4eedc4" font-size="6.5" font-family="monospace" text-anchor="middle">&lt;42ms DISPATCH</text>
       </svg>
               </div>
               <div class="svc-preview-metric-list">
@@ -623,34 +602,22 @@ export const appConfig = {
               </div>
               <div class="svc-preview-visual-box">
                 <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="grad-node" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#f0c75e" stop-opacity="0.8"/>
-            <stop offset="100%" stop-color="#6fd3a8" stop-opacity="0.3"/>
-          </linearGradient>
-        </defs>
-        <line x1="40" y1="65" x2="100" y2="35" stroke="rgba(240,199,94,0.3)" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <line x1="40" y1="65" x2="100" y2="95" stroke="rgba(240,199,94,0.3)" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <line x1="100" y1="35" x2="180" y2="35" stroke="rgba(240,199,94,0.4)" stroke-width="1.5"/>
-        <line x1="100" y1="95" x2="180" y2="95" stroke="rgba(240,199,94,0.4)" stroke-width="1.5"/>
-        <line x1="180" y1="35" x2="240" y2="65" stroke="rgba(240,199,94,0.3)" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <line x1="180" y1="95" x2="240" y2="65" stroke="rgba(240,199,94,0.3)" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <line x1="100" y1="35" x2="180" y2="95" stroke="rgba(111,211,168,0.25)" stroke-width="1"/>
-        <line x1="100" y1="95" x2="180" y2="35" stroke="rgba(111,211,168,0.25)" stroke-width="1"/>
-        
-        <circle cx="40" cy="65" r="9" fill="#14141e" stroke="#f0c75e" stroke-width="2"/>
-        <circle cx="100" cy="35" r="8" fill="#14141e" stroke="#6fd3a8" stroke-width="2"/>
-        <circle cx="100" cy="95" r="8" fill="#14141e" stroke="#6fd3a8" stroke-width="2"/>
-        <circle cx="180" cy="35" r="8" fill="#14141e" stroke="#6fd3a8" stroke-width="2"/>
-        <circle cx="180" cy="95" r="8" fill="#14141e" stroke="#6fd3a8" stroke-width="2"/>
-        <circle cx="240" cy="65" r="10" fill="#14141e" stroke="#f0c75e" stroke-width="2"/>
-        
-        <text x="40" y="69" fill="#f0c75e" font-size="8" font-family="monospace" text-anchor="middle">API</text>
-        <text x="100" y="38" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">AUTH</text>
-        <text x="100" y="98" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">QUEUE</text>
-        <text x="180" y="38" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">SYNC</text>
-        <text x="180" y="98" fill="#FFFFFF" font-size="7" font-family="monospace" text-anchor="middle">EVENT</text>
-        <text x="240" y="69" fill="#f0c75e" font-size="8" font-family="monospace" text-anchor="middle">DB</text>
+        <rect x="15" y="48" width="48" height="34" rx="4" fill="#101018" stroke="#C9A45C" stroke-width="1"/>
+        <text x="39" y="64" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">GIT PUSH</text>
+        <text x="39" y="73" fill="#727284" font-size="5.5" font-family="monospace" text-anchor="middle">Commit</text>
+        <line x1="63" y1="65" x2="78" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
+        <rect x="78" y="48" width="48" height="34" rx="4" fill="#101018" stroke="#4eedc4" stroke-width="1"/>
+        <text x="102" y="64" fill="#4eedc4" font-size="6.5" font-family="monospace" text-anchor="middle">TESTS</text>
+        <text x="102" y="73" fill="#27c93f" font-size="5.5" font-family="monospace" text-anchor="middle">88.5% Pass</text>
+        <line x1="126" y1="65" x2="141" y2="65" stroke="#4eedc4" stroke-width="1.2"/>
+        <rect x="141" y="48" width="52" height="34" rx="4" fill="#101018" stroke="#C9A45C" stroke-width="1"/>
+        <text x="167" y="64" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">FASTLANE</text>
+        <text x="167" y="73" fill="#727284" font-size="5.5" font-family="monospace" text-anchor="middle">Sign &amp; Build</text>
+        <line x1="193" y1="65" x2="208" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
+        <rect x="208" y="48" width="56" height="34" rx="4" fill="#0d1810" stroke="#27c93f" stroke-width="1.3"/>
+        <text x="236" y="64" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">RELEASE</text>
+        <text x="236" y="73" fill="#27c93f" font-size="5.5" font-family="monospace" text-anchor="middle">App Store</text>
+        <text x="140" y="112" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">AUTOMATED ZERO-TOUCH RELEASE TRAIN</text>
       </svg>
               </div>
               <div class="svc-preview-metric-list">
