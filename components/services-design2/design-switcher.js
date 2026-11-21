@@ -49,7 +49,7 @@
     const link = document.createElement('link');
     link.id = 'd2-switcher-styles';
     link.rel = 'stylesheet';
-    link.href = '/components/services-design2/design-switcher.css';
+    link.href = '/services/design2/design-switcher.css';
     document.head.appendChild(link);
   }
 

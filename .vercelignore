@@ -5,6 +5,6 @@ assets/VideoHero
 assets/VideoHero...
 assets/*.mp4
 scratch/
-components/
+components/ui/
 lib/
 
