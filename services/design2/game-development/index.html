@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Game Development | Riyadvi Software Technologies (Design 2)</title>
+  <meta name="description" content="Building Worlds That Respond to the Player. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  <link rel="stylesheet" href="/components/services-design2/design-switcher.css?v=1.0">
+</head>
+<body class="d2-body">
+
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">05 // Game Development</span>
+      </div>
+
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
+          <div>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              05 // INTERACTIVE WORLDS & GAMEPLAY ENGINEERING
+            </div>
+            <h1 class="d2-svc-hero-title">A game becomes memorable when the world responds to what the player does.</h1>
+            <p class="d2-svc-hero-lead">Games are built from relationships between action, response, challenge, and reward. A movement mechanic can change how a world feels. A sound can communicate success or danger. A carefully designed level can teach a player something without requiring a single line of instruction. Developing these experiences requires more than visual production. It brings together gameplay systems, interaction design, animation, physics, technical performance, and iterative testing. From an early playable prototype to a complete interactive world, each decision contributes to how the player experiences the game.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
+                </div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Deterministic Physics &amp; Real-Time Multiplayer Netcode</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
+                </div>
+              </div>
+
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">TICK RATE</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">64 Hz</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">RENDER TARGET</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">60/120 FPS</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">FRAME BUDGET</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">16.6ms</div>
+                  </div>
+                
+              </div>
+
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { GameEngine, NetcodePipeline } from '@riyadvi/games';
+export const gameRuntime = new GameEngine({
+  engine: 'unreal-custom-subsystem',
+  rendering: 'nanite-lumen-hardware-rt',
+  netcode: { tickRate: 64, prediction: 'client-reconciliation' },
+  physics: 'deterministic-rigid-body-substepping'
+});
+// 60 FPS deterministic gameplay loop active with spatial sound occlusion</code></pre>
+              </div>
+
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">Beautiful graphics attract attention. Meaningful gameplay keeps it.</h2>
+            <p class="d2-reality-desc">The gaming industry is littered with visually striking titles that players abandon within two hours. Without tight tactile controls, rewarding gameplay loops, and rock-solid multiplayer netcode, even multi-million dollar assets fail to retain players.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
+
+          <div class="d2-reality-stagger">
+            
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Floaty Mechanics and Unresponsive Player Controls</h3>
+      </div>
+      <p class="d2-reality-card-body">Subtle input lag, poor jump deceleration curves, and disconnected character animations break player immersion and transform challenging gameplay into frustrating punishment.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Multiplayer Desynchronization and Rubberbanding</h3>
+      </div>
+      <p class="d2-reality-card-body">Naive multiplayer network code without client-side prediction and server reconciliation results in jarring hit registration failures, phantom damage, and enraged player communities.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Uncontrolled Frame Drops and Thermal Throttling</h3>
+      </div>
+      <p class="d2-reality-card-body">Failing to establish strict polygonal and draw-call budgets early leads to catastrophic frame rate dips during intense particle-heavy combat scenes, particularly on mobile and consoles.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Scope Creep and Incomplete Core Gameplay Loops</h3>
+      </div>
+      <p class="d2-reality-card-body">Over-investing in procedural world generation and lore before proving that the 30-second core gameplay loop is inherently enjoyable results in bloated, delayed, and hollow productions.</p>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in Game Development, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
+        </div>
+
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
+            
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>Mobile Game Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>2D Game Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>3D Game Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>Multiplayer Game Systems</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>Level and Environment Design</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>Game Optimization and Testing</span>
+    </button>
+  
+          </div>
+
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Tactile Touch Mechanics and Battery-Optimized 3D</h3>
+        <p class="d2-cap-stage-expl">Developing addictive, highly optimized mobile games for iOS and Android that deliver console-quality graphics within strict thermal and memory budgets.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Mobile games frequently overheat devices and drain batteries within 20 minutes of play.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Bespoke Unity/Unreal mobile pipelines with ASTC texture compression, LOD systems, and gesture-driven controls.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Fast-paced mobile puzzle-RPG downloaded over 1.5 million times with 4.8-star average store rating.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Native iOS &amp; Android Builds, LiveOps Integration, In-App Purchase Pipeline, Ad Mediation.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Hand-Crafted Pixel and Vector Mechanics with Deep Physics</h3>
+        <p class="d2-cap-stage-expl">Engineering responsive 2D platformers, Metroidvanias, and tactical strategy games featuring frame-accurate hitboxes, skeletal 2D animation, and dynamic lighting.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">2D games often feel flat and floaty without custom gravity substepping and particle punch.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Custom 2D physics controllers, Spine 2D skeletal animation, and normal-mapped 2D lighting shaders.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Stylized 2D roguelike action platformer launched globally on Steam and Nintendo Switch.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Complete Game Build, Steam/Console SDK Integration, Sound FX and Soundtrack Implementation.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Immersive Real-Time Environments Powered by Unreal &amp; Unity</h3>
+        <p class="d2-cap-stage-expl">From third-person action games to complex simulations: developing rich 3D worlds with physical shaders, atmospheric post-processing, and dynamic AI behaviors.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">High-fidelity 3D assets quickly cause stuttering without rigorous occlusion culling and LOD authoring.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Unreal Engine 5 Nanite geometry, Lumen dynamic global illumination, and custom Behavior Tree AI systems.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Atmospheric survival exploration game featuring dynamic weather, procedural hazards, and complex wildlife AI.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Console/PC Master Builds, Custom Shader Library, AI Behavior Trees, Master Audio Mix.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Low-Latency Netcode and Scalable Matchmaking Servers</h3>
+        <p class="d2-cap-stage-expl">Engineering rock-solid authoritative multiplayer backends with client-side prediction, entity interpolation, and global matchmaking infrastructure.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Multiplayer games collapse under high player concurrency and latency-induced synchronization drift.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">UDP-based network protocols with client prediction, lag compensation rollback, and containerized match servers on Agones/K8s.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">4-player cooperative tactical shooter maintaining sub-40ms latency synchronization across international player sessions.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Authoritative Server Architecture, Matchmaking Microservice, Anti-Cheat Integration.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Non-Verbal Guidance and Spatial Storytelling</h3>
+        <p class="d2-cap-stage-expl">Crafting memorable game environments that guide player curiosity through subtle architectural lighting, visual landmarks, and escalating pacing curves.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Players become disoriented in poorly lit levels, relying on artificial mini-map arrows that shatter immersion.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Iterative greybox level blocking, sightline composition, organic breadcrumb trails, and environmental narrative pacing.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Multi-tiered sci-fi research facility level that intuitively teaches mechanics through environmental hazards.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Greybox Level Blocks, Fully Dressed 3D Environments, Lighting Pass &amp; Occlusion Volumes.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Frame-Budget Enforcement and Continuous Playtesting</h3>
+        <p class="d2-cap-stage-expl">Rigorous profiling of draw calls, memory bandwidth, shader complexity, and physics step times to guarantee locked 60 FPS performance on target hardware.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Late-stage optimization often requires slashing assets and sacrificing creative visual fidelity.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Continuous automated profiling runs on physical target consoles/phones, RenderDoc shader analysis, and blind playtesting.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Optimizing a complex 3D VR simulation from 38 FPS to a locked 90 FPS on standalone Meta Quest hardware.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">RenderDoc Profiling Audit, Automated Stress Test Suites, QA Playtesting Matrix.</div>
+        </div>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              Our gaming engineering capabilities combine industry-standard commercial game engines with bespoke low-level C++ systems and physics optimization.
+            </p>
+            <div class="d2-tech-list">
+              
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Game Engines: Unreal Engine 5 (C++, Blueprints, Lumen, Nanite) and Unity 6 (C#, DOTS, Universal Render Pipeline).</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Asset Creation: Blender, Autodesk Maya, ZBrush, Substance 3D Painter, and Houdini procedural tools.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Multiplayer & Cloud: Mirror, Photon Fusion, Agones, AWS GameLift, and Nakama OSS game server.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Audio & Motion: FMOD, Wwise spatial audio integration, and motion capture clean-up pipelines.</div>
+    </div>
+  
+            </div>
+          </div>
+
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
+              </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
+
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
+              </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in Game Development.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">GAME TECH &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">How AI-Assisted Tools Are Changing Game Production</h3>
+        <p class="d2-card-summary">Examining the real impact of generative AI in level design, NPC dialogue synthesis, and automated QA bug discovery.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/game-development/insights/how-ai-assisted-tools-are-changing-game-production" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">INDUSTRY &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">Why Smaller, Focused Games Are Attracting Attention</h3>
+        <p class="d2-card-summary">Why player fatigue with 100-hour open-world titles is driving massive commercial success for polished, 6-hour narrative indie experiences.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/game-development/insights/why-smaller-focused-games-are-attracting-attention" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">GRAPHICS &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">The Evolution of Real-Time Rendering</h3>
+        <p class="d2-card-summary">Deconstructing hardware raytracing, path tracing, and mesh shaders in modern game engines and their practical performance budgets.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/game-development/insights/the-evolution-of-real-time-rendering" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">NETCODE &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">Designing Multiplayer Experiences That Feel Reliable</h3>
+        <p class="d2-card-summary">The engineering mechanics behind client prediction, rollback netcode, and entity interpolation in competitive games.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/game-development/insights/designing-multiplayer-experiences-that-feel-reliable" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
+        </div>
+
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Concept &amp; Game Design Document</div>
+      <div class="d2-step-body">Defining the core gameplay fantasy, 30-second loop, target audience, visual art direction, and technical platforms.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Game Design Document (GDD), Visual Moodboards, Mechanics Spec.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Greybox Playable Prototype</div>
+      <div class="d2-step-body">Building a stripped-down, untextured playable prototype to validate that the movement and core mechanics are fun in isolation.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Playable Greybox Build, Controller Tuning Matrix, Player Feedback Report.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">Production Pipeline &amp; Art Pass</div>
+      <div class="d2-step-body">Establishing 3D asset pipelines, character rigging, environmental dressing, shader development, and dynamic lighting.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Rigged 3D Character Models, Environmental Art Kit, Master Shaders.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">Gameplay Engineering &amp; Audio</div>
+      <div class="d2-step-body">Coding player abilities, enemy AI state machines, UI menus, and integrating dynamic Wwise/FMOD spatial audio mixes.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Feature-Complete Game Build, AI Behavior Trees, Integrated Audio Bank.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Balancing, QA &amp; Performance Lock</div>
+      <div class="d2-step-body">Conducting blind playtesting sessions, tuning weapon/ability balance, and profiling draw calls to lock framerates.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>QA Bug Sign-Off, Locked 60 FPS Profiling Report, Localization Passes.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">Platform Certification &amp; Launch</div>
+      <div class="d2-step-body">Navigating Steam, Nintendo, Sony, and Xbox certification checklists and configuring LiveOps analytics for day-one release.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Gold Master Build, Console Certification Approvals, Launch Marketing Assets.</div>
+      </div>
+    </div>
+  
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What kind of world do you want players to remember?</h2>
+          <p class="d2-cta-lead">Great games are engineered through relentless mechanical iteration, tight feedback loops, and technical discipline. Let's build an interactive world that players will never forget.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
+            </div>
+          </div>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
+        </div>
+      </div>
+
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  <script src="/components/services-design2/design-switcher.js?v=1.0"></script>
+</body>
+</html>
