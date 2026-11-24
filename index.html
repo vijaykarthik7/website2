@@ -31,6 +31,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css?v=10.0">
+  <!-- Design 2 Prototype: Hall of Excellence Stylesheet -->
+  <link rel="stylesheet" href="/services/design2/hall-of-excellence.css?v=1.0">
 
   <!-- JSON-LD Organization Schema Markup -->
   <script type="application/ld+json">
@@ -962,6 +964,170 @@
         </div>
       </div>
     </section>
+
+    <!-- ==========================================================================
+         Section 10 (Design 2 Prototype): Hall of Excellence Awards Exhibition
+         Cinematic Black & Champagne Gold 3D Digital Museum & Curved Carousel
+         ========================================================================== -->
+    <section class="section-awards-d2" id="awardsDesign2" style="display: none;" aria-label="Hall of Excellence — Awards and Recognitions">
+      <!-- Ambient Lighting & Atmospheric Stage -->
+      <div class="d2-hall-bg-ambient" aria-hidden="true">
+        <div class="d2-ambient-spotlight"></div>
+        <div class="d2-ambient-beam"></div>
+      </div>
+
+      <div class="d2-hall-container">
+        <!-- 1. UPPER AREA: THREE-PART COMPOSITION -->
+        <div class="d2-upper-composition">
+          <!-- Left: Introduction -->
+          <div class="d2-hall-intro">
+            <div class="d2-intro-label-wrap">
+              <span class="d2-intro-line"></span>
+              <span class="d2-intro-label">AWARDS &amp; RECOGNITIONS</span>
+              <span class="d2-intro-line right"></span>
+            </div>
+            <h2 class="d2-intro-heading">
+              <span class="d2-heading-white">Our Journey of</span>
+              <span class="d2-heading-gold">Excellence</span>
+            </h2>
+            <p class="d2-intro-desc">
+              Industry recognition that reflects our commitment to quality, innovation, and impactful digital solutions.
+            </p>
+            <div class="d2-stats-row">
+              <div class="d2-stat-item">
+                <div class="d2-stat-icon-wrap">
+                  <svg viewBox="0 0 24 24"><path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2"></path><path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+                </div>
+                <div class="d2-stat-text">
+                  <span class="d2-stat-number" data-target="9" data-suffix="+">9+</span>
+                  <span class="d2-stat-label">Awards</span>
+                </div>
+              </div>
+              <div class="d2-stat-divider"></div>
+              <div class="d2-stat-item">
+                <div class="d2-stat-icon-wrap">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="d2-stat-text">
+                  <span class="d2-stat-number" data-target="5" data-suffix="+">5+</span>
+                  <span class="d2-stat-label">Certifications</span>
+                </div>
+              </div>
+              <div class="d2-stat-divider"></div>
+              <div class="d2-stat-item">
+                <div class="d2-stat-icon-wrap">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+                <div class="d2-stat-text">
+                  <span class="d2-stat-number" data-target="100" data-suffix="%">100%</span>
+                  <span class="d2-stat-label">Verified</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center: Interactive 3D Trophy Showcase -->
+          <div class="d2-hall-trophy-stage" id="d2TrophyStage">
+            <div class="d2-trophy-orbit-rings" aria-hidden="true">
+              <div class="d2-orbit-ring ring-1"></div>
+              <div class="d2-orbit-ring ring-2"></div>
+              <div class="d2-orbit-ring ring-3"></div>
+            </div>
+            <div class="d2-trophy-wrapper">
+              <div class="d2-trophy-glow"></div>
+              <img src="assets/awards/trophy_isolated_clean.png" alt="Riyadvi Golden Trophy of Excellence" class="d2-trophy-img" />
+            </div>
+            <div class="d2-trophy-podium" aria-hidden="true">
+              <div class="d2-podium-tier d2-podium-tier-1"></div>
+              <div class="d2-podium-tier d2-podium-tier-2"></div>
+              <div class="d2-podium-tier d2-podium-tier-3"></div>
+              <div class="d2-podium-light-pulse"></div>
+            </div>
+          </div>
+
+          <!-- Right: Dynamic Featured Award Panel -->
+          <div class="d2-hall-featured-panel" id="d2FeaturedPanel">
+            <!-- Dynamically populated by hall-of-excellence.js -->
+          </div>
+        </div>
+
+        <!-- 2. MIDDLE AREA: INTERACTIVE CURVED AWARDS CAROUSEL -->
+        <div class="d2-hall-carousel-section">
+          <div class="d2-platform-stage">
+            <div class="d2-platform-ellipse" aria-hidden="true"></div>
+
+            <button type="button" class="d2-carousel-nav-btn prev-btn" aria-label="Previous Award">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+
+            <div class="d2-carousel-track-wrapper">
+              <div class="d2-carousel-track">
+                <!-- Dynamically populated by hall-of-excellence.js -->
+              </div>
+            </div>
+
+            <button type="button" class="d2-carousel-nav-btn next-btn" aria-label="Next Award">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6"></path></svg>
+            </button>
+          </div>
+
+          <!-- Dots Pagination -->
+          <div class="d2-carousel-pagination" role="tablist" aria-label="Awards pagination"></div>
+        </div>
+
+        <!-- 3. BOTTOM AREA: OFFICIAL RECOGNITION STRIP -->
+        <div class="d2-hall-recognition-strip">
+          <div class="d2-strip-left">
+            <div class="d2-strip-trophy-icon">
+              <svg viewBox="0 0 24 24"><path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2"></path><path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+            </div>
+            <p class="d2-strip-text">
+              <strong>Riyadvi Software Technologies</strong> is the 2025 award-winning company in India for its <strong>WordPress, ReactJs</strong> and <strong>SMM</strong> services.
+            </p>
+          </div>
+
+          <div class="d2-strip-center-label">
+            Official Accreditations &amp; Networks
+          </div>
+
+          <div class="d2-strip-badges-row">
+            <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener noreferrer" class="d2-partner-badge-pill tb-verified" aria-label="TechBehemoths Verified">
+              <img src="https://cdn.techbehemoths.com/public/static/validation/tb-verified-logo.svg" alt="TechBehemoths Verified" class="d2-badge-icon-img" />
+              <span class="d2-badge-pill-text">TechBehemoths Verified</span>
+            </a>
+            <a href="https://www.designrush.com" target="_blank" rel="noopener noreferrer" class="d2-partner-badge-pill dr-accredited" aria-label="DesignRush Accredited">
+              <img src="assets/awards/award_designrush_2025.png" alt="DesignRush" class="d2-badge-icon-img" />
+              <span class="d2-badge-pill-text">DesignRush Accredited</span>
+            </a>
+            <a href="assets/awards/Official_Certificate_of_Excellence_TechBehemoths_Global_Awards_2025.pdf" target="_blank" rel="noopener noreferrer" class="d2-partner-badge-pill tb-laurel-badge" aria-label="TechBehemoths Awards 2025">
+              <img src="assets/awards/award_tb_reactjs_laurel.png" alt="TechBehemoths Awards" class="d2-badge-icon-img" />
+              <span class="d2-badge-pill-text">TechBehemoths AWARDS 2025</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fullscreen Award & PDF Lightbox Dialog -->
+    <div class="d2-lightbox-overlay" id="d2AwardLightbox" role="dialog" aria-modal="true" aria-label="Award Certificate Viewer">
+      <div class="d2-lightbox-dialog">
+        <div class="d2-lightbox-header">
+          <div class="d2-lightbox-title-box">
+            <h3 class="d2-lightbox-title">Award Title</h3>
+            <span class="d2-lightbox-subtitle">Award Organization</span>
+          </div>
+          <button type="button" class="d2-lightbox-close-btn" aria-label="Close Lightbox">&times;</button>
+        </div>
+        <div class="d2-lightbox-body">
+          <!-- Image or PDF embedded dynamically -->
+        </div>
+        <div class="d2-lightbox-footer">
+          <div class="d2-lightbox-actions">
+            <!-- Dynamic Buttons -->
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <!-- Energy Line Divider -->
@@ -2032,6 +2198,8 @@
   <script src="assets/lenis.min.js"></script>
   <script src="script.js?v=10.0"></script>
   <!-- Design 1 / Design 2 Prototype Switcher -->
+  <!-- Design 2 Prototype: Hall of Excellence Script -->
+  <script src="/services/design2/hall-of-excellence.js?v=1.0" defer></script>
   <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
 </body>
 </html>
