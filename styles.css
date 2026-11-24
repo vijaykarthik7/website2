@@ -3129,12 +3129,49 @@ body {
 
 .awards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 22px;
   margin-top: 36px;
-  max-width: 980px;
+  max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Card layout on desktop: Row 1 = 2 items (span 3), Row 2 = 3 items (span 2) */
+@media (min-width: 992px) {
+  .awards-grid .award-card:nth-child(1),
+  .awards-grid .award-card:nth-child(2) {
+    grid-column: span 3;
+  }
+  .awards-grid .award-card:nth-child(3),
+  .awards-grid .award-card:nth-child(4),
+  .awards-grid .award-card:nth-child(5) {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 991px) {
+  .awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .awards-grid .award-card:nth-child(1),
+  .awards-grid .award-card:nth-child(2),
+  .awards-grid .award-card:nth-child(3),
+  .awards-grid .award-card:nth-child(4) {
+    grid-column: span 1;
+  }
+  .awards-grid .award-card:nth-child(5) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+  .awards-grid .award-card {
+    grid-column: span 1;
+  }
 }
 
 .award-card {
@@ -3188,9 +3225,9 @@ body {
 }
 
 .award-icon-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 6px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
   background: rgba(212, 175, 55, 0.08);
   border: 1px solid rgba(212, 175, 55, 0.2);
   display: flex;
@@ -3252,10 +3289,33 @@ body {
 
 /* Award Card Thumbnail / Badge Icon */
 .award-badge-icon-box {
-  background: #ffffff !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
-  padding: 4px !important;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
   overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.award-badge-light {
+  background: #ffffff !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  padding: 4px !important;
+}
+
+.award-badge-dark {
+  background: #111116 !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  padding: 2px !important;
+}
+
+.award-thumb-plaque {
+  background: #111116 !important;
+  border: 1px solid rgba(212, 175, 55, 0.5) !important;
+  padding: 0 !important;
 }
 
 .award-card-thumb {
@@ -3263,6 +3323,44 @@ body {
   height: 100%;
   object-fit: contain;
   display: block;
+}
+
+.award-thumb-plaque .award-card-thumb {
+  object-fit: cover;
+}
+
+/* Official TechBehemoths 2025 Winner Showcase Banner */
+.award-winner-banner-wrap {
+  margin-top: 32px;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.1);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  background: #0b0b0e;
+}
+
+.award-winner-banner-wrap:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 55, 0.25);
+}
+
+.award-winner-banner-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.award-tb-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* ==========================================================================
@@ -3430,13 +3528,14 @@ body {
 }
 
 .award-modal-badge-img {
-  width: 72px;
-  height: 72px;
+  max-width: 140px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  background: #ffffff;
   border-radius: 10px;
-  padding: 6px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  display: block;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
 /* Award Modal */
@@ -3458,6 +3557,16 @@ body {
   justify-content: center;
   color: var(--gold-bright);
   box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+  transition: all 0.3s ease;
+}
+
+.award-modal-seal.has-image {
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .award-modal-seal svg {

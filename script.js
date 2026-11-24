@@ -1545,22 +1545,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const awardVerifyBtn = document.getElementById('awardVerifyBtn');
   const awardModalBadgeImg = document.getElementById('awardModalBadgeImg');
   const awardModalDefaultSvg = document.getElementById('awardModalDefaultSvg');
+  const awardModalSeal = document.getElementById('awardModalSeal');
 
   const awardDetails = {
     star: {
-      title: "Star Excellence Awards 2021",
-      body: "Recognized by the National Integrity Cultural Academy for outstanding contribution to digital innovation, technical excellence, and sustainable enterprise solutions.",
-      link: "https://riyadvisoftwaretechnologies.com/"
+      title: "Star of Excellence Award 2021",
+      body: "Conferred by the National Integrity Cultural Academy and The Peaks Magazine to Thiru. R. Bhoopathy, Proprietor of M/s. Riya Software Solutions, Chennai. Honored for pioneering entrepreneurship, digital innovation, technical excellence, and sustainable enterprise solutions.",
+      image: "assets/awards/award_star_excellence_plaque.jpg",
+      link: "https://riyadvisoftwaretechnologies.com/",
+      btnText: "VIEW COMPANY CREDENTIALS",
+      imageStyle: "max-width: 140px; max-height: 170px; object-fit: cover; border-radius: 8px; border: 1.5px solid rgba(212, 175, 55, 0.5);"
     },
     designrush: {
       title: "DesignRush — Top Web Development Company 2025",
-      body: "“We are proud to be featured on DesignRush for our outstanding work.” Accredited on DesignRush's international B2B index as a premier technology agency engineering scalable architectures and conversion-driven digital products.",
-      link: "https://www.designrush.com/"
+      body: "“We are proud to be featured on DesignRush for our outstanding work.” Accredited on DesignRush's international B2B index as a premier technology agency engineering scalable architectures, high-performance web products, and modern digital platforms.",
+      image: "assets/awards/award_designrush_2025.png",
+      link: "https://www.designrush.com/",
+      btnText: "VERIFY DESIGNRUSH ACCREDITATION",
+      imageStyle: "max-width: 120px; max-height: 120px; background: #ffffff; padding: 10px; border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.4);"
+    },
+    'techbehemoths-react': {
+      title: "TechBehemoths Awards 2025 — ReactJS Winner",
+      body: "Official 2025 TechBehemoths Award Winner in India for ReactJS Web Development. Conferred by TechBehemoths (Berlin, Germany) honoring Riyadvi Software Technologies for demonstrated engineering excellence, robust architectural benchmarks, component scalability, and 100/100 Lighthouse performance metrics.",
+      image: "assets/awards/award_tb_reactjs_2025_badge.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 130px; max-height: 130px; border-radius: 14px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+    },
+    'techbehemoths-wordpress': {
+      title: "TechBehemoths Awards 2025 — WordPress Winner",
+      body: "Official 2025 TechBehemoths Award Winner in India for WordPress Architecture and Engineering. Evaluated and awarded by TechBehemoths (Berlin, Germany) for enterprise-grade custom WordPress ecosystems, headless integrations, speed optimization, and secure development practices.",
+      image: "assets/awards/award_tb_wordpress_2025_badge.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 130px; max-height: 130px; border-radius: 14px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+    },
+    'techbehemoths-smm': {
+      title: "TechBehemoths Awards 2025 — SMM Winner",
+      body: "Official 2025 TechBehemoths Award Winner in India for Social Media Marketing (SMM). Honored by TechBehemoths (Berlin, Germany) for high-impact social media marketing, organic audience acquisition, data-driven growth strategies, and brand positioning campaigns.",
+      image: "assets/awards/award_tb_smm_2025_badge.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 130px; max-height: 130px; border-radius: 14px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
     },
     techbehemoths: {
       title: "TechBehemoths Global Awards 2025",
-      body: "Location: Berlin, Germany. Riyadvi Software Technologies Pvt. Ltd. was officially recognized as global winners across ReactJS, WordPress, and Social Media Marketing (SMM).",
-      link: "https://techbehemoths.com/company/riyadvi-software-technologies-private-limited"
+      body: "Accredited in Berlin, Germany. Riyadvi Software Technologies Pvt. Ltd. was recognized as global winners across 3 technological domains: ReactJS, WordPress, and Social Media Marketing (SMM).",
+      image: "assets/awards/award_tb_banner_2025.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 220px; max-height: 70px; object-fit: contain; border-radius: 8px;"
     }
   };
 
@@ -1570,16 +1604,29 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = awardDetails[key] || awardDetails.techbehemoths;
       if (awardModalTitle) awardModalTitle.textContent = data.title;
       if (awardModalBody) awardModalBody.textContent = data.body;
-      if (awardVerifyBtn) awardVerifyBtn.href = data.link;
+      if (awardVerifyBtn) {
+        awardVerifyBtn.href = data.link;
+        const btnSpan = awardVerifyBtn.querySelector('span:first-child');
+        if (btnSpan && data.btnText) {
+          btnSpan.textContent = data.btnText;
+        }
+      }
 
       if (awardModalBadgeImg && awardModalDefaultSvg) {
-        if (key === 'designrush') {
-          awardModalBadgeImg.src = 'assets/designrush_badge.png';
-          awardModalBadgeImg.alt = 'DesignRush';
+        if (data.image) {
+          awardModalBadgeImg.src = data.image;
+          awardModalBadgeImg.alt = data.title;
           awardModalBadgeImg.style.display = 'block';
+          if (data.imageStyle) {
+            awardModalBadgeImg.style.cssText = 'display: block; ' + data.imageStyle;
+          } else {
+            awardModalBadgeImg.style.cssText = 'display: block;';
+          }
+          if (awardModalSeal) awardModalSeal.classList.add('has-image');
           awardModalDefaultSvg.style.display = 'none';
         } else {
           awardModalBadgeImg.style.display = 'none';
+          if (awardModalSeal) awardModalSeal.classList.remove('has-image');
           awardModalDefaultSvg.style.display = 'block';
         }
       }
