@@ -1,7 +1,7 @@
 /**
  * DESIGN 1 / DESIGN 2 PROTOTYPE SWITCHER ENGINE
- * Provides instant live comparison between Design 1 (Original) and Design 2 (Diagonal Award Exhibition)
- * Context-aware routing, in-place awards toggle on home page, persistent selection, and feature flag management.
+ * Provides instant live comparison between Design 1 (Original) and Design 2 (The Digital Perspective)
+ * Context-aware routing, persistent selection, and feature flag management.
  */
 
 (function () {
@@ -35,17 +35,14 @@
   // Detect current active design from pathname
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
   const isDesign2Page = currentPath.includes('/services/design2');
-  const isHomePage = !isDesign2Page && (currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '');
+  const currentDesign = isDesign2Page ? 'design2' : 'design1';
 
   // Read persisted preference (default to design1 for first-time visitors)
   let storedPref = localStorage.getItem('services_prototype_design');
   if (!storedPref) {
-    storedPref = isDesign2Page ? 'design2' : 'design1';
+    storedPref = currentDesign;
     localStorage.setItem('services_prototype_design', storedPref);
   }
-
-  const activeDesignOnHome = storedPref || 'design1';
-  const currentDesign = isHomePage ? activeDesignOnHome : (isDesign2Page ? 'design2' : 'design1');
 
   // 3. INJECT STYLESHEET IF NOT PRESENT
   if (!document.getElementById('d2-switcher-styles')) {
@@ -56,35 +53,7 @@
     document.head.appendChild(link);
   }
 
-  // 4. HOME PAGE AWARDS SWITCHER HELPER
-  function applyHomePageDesign(targetDesign) {
-    const awardsD1 = document.getElementById('awards');
-    const awardsD2 = document.getElementById('awardsDesign2');
-
-    if (targetDesign === 'design2') {
-      if (awardsD1) awardsD1.style.display = 'none';
-      if (awardsD2) {
-        awardsD2.style.display = 'block';
-        if (window.initDiagonalExhibition) {
-          window.initDiagonalExhibition();
-        }
-      }
-    } else {
-      if (awardsD2) awardsD2.style.display = 'none';
-      if (awardsD1) awardsD1.style.display = 'block';
-    }
-
-    if (window.ScrollTrigger) {
-      setTimeout(() => ScrollTrigger.refresh(), 100);
-    }
-
-    // Keep nav anchors synced with active awards design
-    document.querySelectorAll('a[href="#awards"], a[href="#awardsDesign2"]').forEach(link => {
-      link.setAttribute('href', targetDesign === 'design2' ? '#awardsDesign2' : '#awards');
-    });
-  }
-
-  // 5. FIND CORRESPONDING TARGET URL FOR SWITCHING (ON SUBPAGES)
+  // 4. FIND CORRESPONDING TARGET URL FOR SWITCHING
   function getTargetUrl(targetDesign) {
     if (targetDesign === currentDesign) return null;
 
@@ -107,7 +76,7 @@
     }
   }
 
-  // 6. RENDER THE TOGGLE INTERFACE
+  // 5. RENDER THE TOGGLE INTERFACE
   function renderSwitcher() {
     if (document.getElementById('d2SwitcherHost')) return;
 
@@ -116,25 +85,23 @@
     host.className = 'd2-switcher-host';
     host.setAttribute('aria-label', 'Design Prototype Switcher');
 
-    const activeDesign = isHomePage ? (localStorage.getItem('services_prototype_design') || 'design1') : currentDesign;
-
     host.innerHTML = `
       <div class="d2-switcher-tag" title="Prototype Comparison Active">
         <span>PROTOTYPE</span>
       </div>
-      <div class="d2-segmented-control" data-active="${activeDesign}" role="radiogroup" aria-label="Select website design version">
+      <div class="d2-segmented-control" data-active="${currentDesign}" role="radiogroup" aria-label="Select website design version">
         <div class="d2-segmented-slider" aria-hidden="true"></div>
-        <button type="button" class="d2-segmented-btn ${activeDesign === 'design1' ? 'active' : ''}" data-target-design="design1" role="radio" aria-checked="${activeDesign === 'design1'}" title="Switch to Design 1 (Original live website)">
+        <button type="button" class="d2-segmented-btn ${currentDesign === 'design1' ? 'active' : ''}" data-target-design="design1" role="radio" aria-checked="${currentDesign === 'design1'}" title="Switch to Design 1 (Original live website)">
           <span>Design 1</span>
           <span class="d2-btn-badge">LIVE</span>
         </button>
-        <button type="button" class="d2-segmented-btn ${activeDesign === 'design2' ? 'active' : ''}" data-target-design="design2" role="radio" aria-checked="${activeDesign === 'design2'}" title="Switch to Design 2 (Diagonal Award Exhibition)">
+        <button type="button" class="d2-segmented-btn ${currentDesign === 'design2' ? 'active' : ''}" data-target-design="design2" role="radio" aria-checked="${currentDesign === 'design2'}" title="Switch to Design 2 (The Digital Perspective)">
           <span>Design 2</span>
           <span class="d2-btn-badge">NEW</span>
         </button>
       </div>
       <div class="d2-switcher-hint">
-        ${activeDesign === 'design1' ? 'Switch to Design 2 (Diagonal Exhibition)' : 'Switch back to Design 1 (Original)'}
+        ${currentDesign === 'design1' ? 'Switch to Design 2 (Editorial Prototype)' : 'Switch back to Design 1 (Original)'}
       </div>
     `;
 
@@ -145,59 +112,33 @@
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const targetDesign = btn.getAttribute('data-target-design');
-        const currentActive = localStorage.getItem('services_prototype_design') || 'design1';
-        if (targetDesign === currentActive && isHomePage) return;
+        if (targetDesign === currentDesign) return;
 
         localStorage.setItem('services_prototype_design', targetDesign);
 
         const control = host.querySelector('.d2-segmented-control');
         if (control) control.setAttribute('data-active', targetDesign);
 
-        buttons.forEach(b => {
-          const isSelected = b.getAttribute('data-target-design') === targetDesign;
-          b.classList.toggle('active', isSelected);
-          b.setAttribute('aria-checked', isSelected ? 'true' : 'false');
-        });
-
-        const hint = host.querySelector('.d2-switcher-hint');
-        if (hint) {
-          hint.textContent = targetDesign === 'design1'
-            ? 'Switch to Design 2 (Diagonal Exhibition)'
-            : 'Switch back to Design 1 (Original)';
-        }
-
-        if (isHomePage) {
-          // In-place instant toggle on the home page!
-          applyHomePageDesign(targetDesign);
-        } else {
-          const targetUrl = getTargetUrl(targetDesign);
-          if (targetUrl) {
-            window.location.href = targetUrl;
-          }
+        const targetUrl = getTargetUrl(targetDesign);
+        if (targetUrl) {
+          window.location.href = targetUrl;
         }
       });
     });
   }
 
-  // 7. INITIALIZE ON DOM READY
-  function init() {
-    renderSwitcher();
-    if (isHomePage) {
-      const stored = localStorage.getItem('services_prototype_design') || 'design1';
-      applyHomePageDesign(stored);
-    }
-  }
-
+  // 6. INITIALIZE ON DOM READY
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', renderSwitcher);
   } else {
-    init();
+    renderSwitcher();
   }
 
-  // 8. ROUTE INTERCEPTION WHEN PREFERENCE IS DESIGN 2
+  // 7. ROUTE INTERCEPTION WHEN PREFERENCE IS DESIGN 2
   document.addEventListener('DOMContentLoaded', () => {
     const pref = localStorage.getItem('services_prototype_design');
     if (pref === 'design2') {
+      // Rewrite links pointing to services if visitor selected Design 2
       document.querySelectorAll('a[href^="/services/"]').forEach(a => {
         const href = a.getAttribute('href');
         if (!href.startsWith('/services/design2/')) {
@@ -208,6 +149,7 @@
         }
       });
 
+      // Also on main page, when user navigates to services
       const navServicesLink = document.getElementById('navServicesLink');
       if (navServicesLink) {
         navServicesLink.setAttribute('href', '/services/design2/');
