@@ -3127,10 +3127,72 @@ body {
   }
 }
 
+/* Awards Verified Profile & PDF CTA Row */
+.awards-profile-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.btn-verified-profile-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 20px;
+  background: rgba(18, 18, 24, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-verified-profile-pill:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-bright);
+  color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.btn-pdf-pill {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e4e4e7;
+}
+
+.btn-pdf-pill:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-bright);
+}
+
+.live-dot-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: dotPulse 2s infinite;
+}
+
+@keyframes dotPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
 .awards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 24px;
   margin-top: 36px;
   max-width: 1240px;
   margin-left: auto;
@@ -3274,57 +3336,117 @@ body {
   text-decoration: none;
 }
 
-/* Award Card Thumbnail / Badge Icon */
-.award-badge-icon-box {
-  width: 52px;
-  height: 52px;
+/* Redesigned Award Card Showcase Preview Frame (Normal Size) */
+.award-card-showcase {
+  width: 100%;
+  height: 185px;
+  background: radial-gradient(circle at center, rgba(32, 32, 42, 0.8) 0%, rgba(13, 13, 18, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
 }
 
-.award-badge-light {
-  background: #ffffff !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
-  padding: 4px !important;
+.award-card:hover .award-card-showcase {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(212, 175, 55, 0.1);
 }
 
-.award-badge-dark {
-  background: #111116 !important;
-  border: 1px solid rgba(212, 175, 55, 0.35) !important;
-  padding: 2px !important;
-}
-
-.award-thumb-plaque,
-.award-thumb-ceremony {
-  background: #111116 !important;
-  border: 1px solid rgba(212, 175, 55, 0.5) !important;
-  padding: 0 !important;
-}
-
-.award-thumb-banner {
-  width: 140px !important;
-  height: 42px !important;
-  background: #0d0d12 !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
-  padding: 3px !important;
-}
-
-.award-card-thumb {
-  width: 100%;
-  height: 100%;
+.award-showcase-img {
+  max-width: 88%;
+  max-height: 150px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.7));
 }
 
-.award-thumb-plaque .award-card-thumb,
-.award-thumb-ceremony .award-card-thumb {
+.award-card:hover .award-showcase-img {
+  transform: scale(1.06);
+}
+
+/* Photo style (Star of Excellence Ceremony) */
+.award-showcase-photo .award-showcase-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
+  border-radius: 7px;
+  filter: none;
+}
+
+/* Light background style (DesignRush) */
+.award-showcase-light {
+  background: radial-gradient(circle at center, #ffffff 0%, #edf0f5 100%) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+}
+
+.award-showcase-light .award-showcase-img {
+  max-height: 140px;
+  filter: none;
+}
+
+/* PDF Certificate card showcase */
+.award-showcase-pdf {
+  background: radial-gradient(circle at center, rgba(32, 26, 20, 0.85) 0%, rgba(14, 12, 10, 0.98) 100%) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pdf-icon-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold-bright);
+}
+
+.pdf-icon-badge svg {
+  width: 52px;
+  height: 52px;
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.5));
+}
+
+.pdf-badge-label {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Modal Actions for PDF View */
+.award-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn-modal-pdf {
+  background: rgba(212, 175, 55, 0.15) !important;
+  border: 1px solid var(--gold-primary) !important;
+  color: var(--gold-bright) !important;
+}
+
+.btn-modal-pdf:hover {
+  background: var(--gold-primary) !important;
+  color: #000000 !important;
 }
   object-fit: cover;
 }

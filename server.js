@@ -30,7 +30,8 @@ const MIME_TYPES = {
   '.otf': 'font/otf',
   '.wasm': 'application/wasm',
   '.glb': 'model/gltf-binary',
-  '.gltf': 'model/gltf+json'
+  '.gltf': 'model/gltf+json',
+  '.pdf': 'application/pdf'
 };
 
 const server = http.createServer((req, res) => {
