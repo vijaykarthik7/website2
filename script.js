@@ -1548,53 +1548,165 @@ document.addEventListener('DOMContentLoaded', () => {
   const awardModalSeal = document.getElementById('awardModalSeal');
 
   const awardDetails = {
-    star: {
-      title: "Star of Excellence Award 2021",
-      body: "Conferred by the National Integrity Cultural Academy and The Peaks Magazine to Thiru. R. Bhoopathy, Proprietor of M/s. Riya Software Solutions, Chennai. Honored for pioneering entrepreneurship, digital innovation, technical excellence, and sustainable enterprise solutions.",
+    // 1. Star Plaque & Medal
+    'star-plaque': {
+      title: "Star of Excellence Award — Plaque & Medal",
+      body: "Awarded by National Integrity Cultural Academy and The Peaks Magazine to Thiru. R. Bhoopathy, Proprietor of M/s. Riya Software Solutions, Chennai on 28.03.2021 at TR Rajarathinam Kalai Arangam. Honored for pioneering entrepreneurship, digital innovation, technical excellence, and sustainable enterprise solutions.",
       image: "assets/awards/award_star_excellence_plaque.jpg",
       link: "https://riyadvisoftwaretechnologies.com/",
       btnText: "VIEW COMPANY CREDENTIALS",
-      imageStyle: "max-width: 140px; max-height: 170px; object-fit: cover; border-radius: 8px; border: 1.5px solid rgba(212, 175, 55, 0.5);"
+      imageStyle: "max-width: 200px; max-height: 270px; object-fit: cover; border-radius: 10px; border: 1.5px solid rgba(212, 175, 55, 0.5); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
     },
-    designrush: {
+    // 2. Star Presentation Ceremony
+    'star-ceremony': {
+      title: "Star of Excellence Award — Presentation Ceremony",
+      body: "Stage ceremony at TR Rajarathinam Kalai Arangam, Chennai, where esteemed dignitaries of the National Integrity Cultural Academy conferred the Star of Excellence Award to Thiru. R. Bhoopathy for pioneering leadership in enterprise software innovation.",
+      image: "assets/awards/award_star_excellence_ceremony.jpg",
+      link: "https://riyadvisoftwaretechnologies.com/",
+      btnText: "VIEW COMPANY CREDENTIALS",
+      imageStyle: "max-width: 270px; max-height: 270px; object-fit: cover; border-radius: 10px; border: 1.5px solid rgba(212, 175, 55, 0.5); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+    },
+    // 3. DesignRush Top Web Dev Company
+    'designrush-top': {
       title: "DesignRush — Top Web Development Company 2025",
-      body: "“We are proud to be featured on DesignRush for our outstanding work.” Accredited on DesignRush's international B2B index as a premier technology agency engineering scalable architectures, high-performance web products, and modern digital platforms.",
+      body: "“We are proud to be featured on DesignRush for our outstanding work.” Officially accredited on DesignRush's international B2B directory as a premier technology agency engineering scalable cloud architectures, high-performance web products, and modern digital platforms.",
       image: "assets/awards/award_designrush_2025.png",
       link: "https://www.designrush.com/",
       btnText: "VERIFY DESIGNRUSH ACCREDITATION",
-      imageStyle: "max-width: 120px; max-height: 120px; background: #ffffff; padding: 10px; border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.4);"
+      imageStyle: "max-width: 150px; max-height: 150px; background: #ffffff; padding: 12px; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 8px 25px rgba(0,0,0,0.6);"
     },
-    'techbehemoths-react': {
-      title: "TechBehemoths Awards 2025 — ReactJS Winner",
-      body: "Official 2025 TechBehemoths Award Winner in India for ReactJS Web Development. Conferred by TechBehemoths (Berlin, Germany) honoring Riyadvi Software Technologies for demonstrated engineering excellence, robust architectural benchmarks, component scalability, and 100/100 Lighthouse performance metrics.",
+    // 4. TechBehemoths ReactJS Badge
+    'tb-react-badge': {
+      title: "Award Winner 2025 — ReactJS Badge",
+      body: "Official 2025 TechBehemoths Award Winner badge in India for ReactJS Web Development. Conferred by TechBehemoths (Berlin, Germany) honoring Riyadvi Software Technologies for demonstrated engineering excellence, robust architectural benchmarks, component scalability, and 100/100 Lighthouse performance metrics.",
       image: "assets/awards/award_tb_reactjs_2025_badge.png",
       link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
       btnText: "VERIFY OFFICIAL CERTIFICATE",
-      imageStyle: "max-width: 130px; max-height: 130px; border-radius: 14px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+      imageStyle: "max-width: 170px; max-height: 170px; border-radius: 16px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
     },
-    'techbehemoths-wordpress': {
-      title: "TechBehemoths Awards 2025 — WordPress Winner",
-      body: "Official 2025 TechBehemoths Award Winner in India for WordPress Architecture and Engineering. Evaluated and awarded by TechBehemoths (Berlin, Germany) for enterprise-grade custom WordPress ecosystems, headless integrations, speed optimization, and secure development practices.",
+    // 5. TechBehemoths ReactJS Laurel
+    'tb-react-laurel': {
+      title: "ReactJS — 2025 Winner Laurel",
+      body: "TechBehemoths 2025 Gold Laurel insignia validating Riyadvi Software Technologies as the premier ReactJS engineering team in India. Recognized for modular React architecture, next-generation user experiences, and high-load web application performance.",
+      image: "assets/awards/award_tb_reactjs_laurel.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 250px; max-height: 190px; object-fit: contain; border-radius: 12px;"
+    },
+    // 6. TechBehemoths ReactJS Full Certificate
+    'tb-react-certificate': {
+      title: "Winner ReactJS 2025 — Full Certificate",
+      body: "Official TechBehemoths national celebration certificate confirming Riyadvi Software Technologies as an Award-Winning Company in India for ReactJS Services. Evaluated under strict European benchmarks in Berlin, Germany.",
+      image: "assets/awards/award_tb_reactjs_winner_poster.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 240px; max-height: 300px; object-fit: contain; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+    },
+    // 7. TechBehemoths WordPress Badge
+    'tb-wordpress-badge': {
+      title: "Award Winner 2025 — WordPress Badge",
+      body: "Official 2025 TechBehemoths Award Winner badge in India for WordPress Architecture and Engineering. Evaluated and awarded by TechBehemoths (Berlin, Germany) for enterprise-grade custom WordPress ecosystems, headless integrations, speed optimization, and secure development practices.",
       image: "assets/awards/award_tb_wordpress_2025_badge.png",
       link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
       btnText: "VERIFY OFFICIAL CERTIFICATE",
-      imageStyle: "max-width: 130px; max-height: 130px; border-radius: 14px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+      imageStyle: "max-width: 170px; max-height: 170px; border-radius: 16px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
     },
-    'techbehemoths-smm': {
-      title: "TechBehemoths Awards 2025 — SMM Winner",
-      body: "Official 2025 TechBehemoths Award Winner in India for Social Media Marketing (SMM). Honored by TechBehemoths (Berlin, Germany) for high-impact social media marketing, organic audience acquisition, data-driven growth strategies, and brand positioning campaigns.",
+    // 8. TechBehemoths WordPress Laurel
+    'tb-wordpress-laurel': {
+      title: "WordPress — 2025 Winner Laurel",
+      body: "TechBehemoths 2025 Gold Laurel insignia validating Riyadvi Software Technologies as the premier WordPress development and architecture agency in India. Recognized for custom theme frameworks, high-throughput WooCommerce systems, and enterprise reliability.",
+      image: "assets/awards/award_tb_wordpress_laurel.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 250px; max-height: 190px; object-fit: contain; border-radius: 12px;"
+    },
+    // 9. TechBehemoths WordPress Full Certificate
+    'tb-wordpress-certificate': {
+      title: "Winner WordPress 2025 — Full Certificate",
+      body: "Official TechBehemoths national celebration certificate confirming Riyadvi Software Technologies as an Award-Winning Company in India for WordPress Services. Evaluated under strict European benchmarks in Berlin, Germany.",
+      image: "assets/awards/award_tb_wordpress_winner_poster.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 240px; max-height: 300px; object-fit: contain; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+    },
+    // 10. TechBehemoths SMM Badge
+    'tb-smm-badge': {
+      title: "Award Badge — SMM — 2025",
+      body: "Official 2025 TechBehemoths Award Winner badge in India for Social Media Marketing (SMM). Honored by TechBehemoths (Berlin, Germany) for high-impact social media marketing, organic audience acquisition, data-driven growth strategies, and brand positioning campaigns.",
       image: "assets/awards/award_tb_smm_2025_badge.png",
       link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
       btnText: "VERIFY OFFICIAL CERTIFICATE",
-      imageStyle: "max-width: 130px; max-height: 130px; border-radius: 14px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+      imageStyle: "max-width: 170px; max-height: 170px; border-radius: 16px; border: 1.5px solid rgba(212, 175, 55, 0.45); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+    },
+    // 11. TechBehemoths SMM Laurel
+    'tb-smm-laurel': {
+      title: "SMM — 2025 Winner Laurel",
+      body: "TechBehemoths 2025 Gold Laurel insignia validating Riyadvi Software Technologies as the premier Social Media Marketing (SMM) agency in India. Recognized for viral engagement strategies, audience segmentation, and multi-channel conversion funnels.",
+      image: "assets/awards/award_tb_smm_laurel.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 250px; max-height: 190px; object-fit: contain; border-radius: 12px;"
+    },
+    // 12. TechBehemoths SMM Full Certificate
+    'tb-smm-certificate': {
+      title: "Winner SMM 2025 — Full Certificate",
+      body: "Official TechBehemoths national celebration certificate confirming Riyadvi Software Technologies as an Award-Winning Company in India for Social Media Marketing (SMM) Services. Evaluated under strict European benchmarks in Berlin, Germany.",
+      image: "assets/awards/award_tb_smm_winner_poster.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE",
+      imageStyle: "max-width: 240px; max-height: 300px; object-fit: contain; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.25);"
+    },
+    // 13. TechBehemoths Tri-Vertical Banner Award
+    'tb-banner-award': {
+      title: "TechBehemoths 2025 Awards Banner — Tri-Vertical Winner",
+      body: "“Riyadvi Software Technologies is the 2025 award-winning company in India for its WordPress, ReactJs and SMM services.” Official recognition banner by TechBehemoths (Berlin, Germany) honoring our multi-disciplinary engineering excellence across India.",
+      image: "assets/awards/award_tb_banner_2025.png",
+      link: "https://techbehemoths.com/company/riyadvi-software-technologies-private-limited",
+      btnText: "VERIFY OFFICIAL PROFILE",
+      imageStyle: "max-width: 480px; width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.4);"
+    },
+    // Backwards compatibility fallbacks
+    star: {
+      title: "Star of Excellence Award 2021",
+      body: "Conferred by the National Integrity Cultural Academy and The Peaks Magazine to Thiru. R. Bhoopathy, Proprietor of M/s. Riya Software Solutions, Chennai.",
+      image: "assets/awards/award_star_excellence_plaque.jpg",
+      link: "https://riyadvisoftwaretechnologies.com/",
+      btnText: "VIEW COMPANY CREDENTIALS"
+    },
+    designrush: {
+      title: "DesignRush — Top Web Development Company 2025",
+      body: "“We are proud to be featured on DesignRush for our outstanding work.” Accredited on DesignRush's international B2B index as a premier technology agency.",
+      image: "assets/awards/award_designrush_2025.png",
+      link: "https://www.designrush.com/",
+      btnText: "VERIFY DESIGNRUSH ACCREDITATION"
+    },
+    'techbehemoths-react': {
+      title: "TechBehemoths Awards 2025 — ReactJS Winner",
+      body: "Official 2025 TechBehemoths Award Winner in India for ReactJS Web Development.",
+      image: "assets/awards/award_tb_reactjs_2025_badge.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE"
+    },
+    'techbehemoths-wordpress': {
+      title: "TechBehemoths Awards 2025 — WordPress Winner",
+      body: "Official 2025 TechBehemoths Award Winner in India for WordPress Architecture and Engineering.",
+      image: "assets/awards/award_tb_wordpress_2025_badge.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE"
+    },
+    'techbehemoths-smm': {
+      title: "TechBehemoths Awards 2025 — SMM Winner",
+      body: "Official 2025 TechBehemoths Award Winner in India for Social Media Marketing (SMM).",
+      image: "assets/awards/award_tb_smm_2025_badge.png",
+      link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
+      btnText: "VERIFY OFFICIAL CERTIFICATE"
     },
     techbehemoths: {
       title: "TechBehemoths Global Awards 2025",
       body: "Accredited in Berlin, Germany. Riyadvi Software Technologies Pvt. Ltd. was recognized as global winners across 3 technological domains: ReactJS, WordPress, and Social Media Marketing (SMM).",
       image: "assets/awards/award_tb_banner_2025.png",
       link: "https://techbehemoths.com/awards-2025/certificates/6a58f7e3-4772-4971-823c-5b6350c91308",
-      btnText: "VERIFY OFFICIAL CERTIFICATE",
-      imageStyle: "max-width: 220px; max-height: 70px; object-fit: contain; border-radius: 8px;"
+      btnText: "VERIFY OFFICIAL CERTIFICATE"
     }
   };
 

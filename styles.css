@@ -3129,24 +3129,17 @@ body {
 
 .awards-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin-top: 36px;
-  max-width: 1180px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Card layout on desktop: Row 1 = 2 items (span 3), Row 2 = 3 items (span 2) */
 @media (min-width: 992px) {
-  .awards-grid .award-card:nth-child(1),
-  .awards-grid .award-card:nth-child(2) {
-    grid-column: span 3;
-  }
-  .awards-grid .award-card:nth-child(3),
-  .awards-grid .award-card:nth-child(4),
-  .awards-grid .award-card:nth-child(5) {
-    grid-column: span 2;
+  .awards-grid .award-card-featured-banner {
+    grid-column: 1 / -1;
   }
 }
 
@@ -3154,14 +3147,8 @@ body {
   .awards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .awards-grid .award-card:nth-child(1),
-  .awards-grid .award-card:nth-child(2),
-  .awards-grid .award-card:nth-child(3),
-  .awards-grid .award-card:nth-child(4) {
-    grid-column: span 1;
-  }
-  .awards-grid .award-card:nth-child(5) {
-    grid-column: span 2;
+  .awards-grid .award-card-featured-banner {
+    grid-column: 1 / -1;
   }
 }
 
@@ -3169,7 +3156,7 @@ body {
   .awards-grid {
     grid-template-columns: 1fr;
   }
-  .awards-grid .award-card {
+  .awards-grid .award-card-featured-banner {
     grid-column: span 1;
   }
 }
@@ -3289,8 +3276,8 @@ body {
 
 /* Award Card Thumbnail / Badge Icon */
 .award-badge-icon-box {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -3298,6 +3285,7 @@ body {
   margin-bottom: 14px;
   overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease;
+  flex-shrink: 0;
 }
 
 .award-badge-light {
@@ -3312,10 +3300,19 @@ body {
   padding: 2px !important;
 }
 
-.award-thumb-plaque {
+.award-thumb-plaque,
+.award-thumb-ceremony {
   background: #111116 !important;
   border: 1px solid rgba(212, 175, 55, 0.5) !important;
   padding: 0 !important;
+}
+
+.award-thumb-banner {
+  width: 140px !important;
+  height: 42px !important;
+  background: #0d0d12 !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  padding: 3px !important;
 }
 
 .award-card-thumb {
@@ -3325,7 +3322,10 @@ body {
   display: block;
 }
 
-.award-thumb-plaque .award-card-thumb {
+.award-thumb-plaque .award-card-thumb,
+.award-thumb-ceremony .award-card-thumb {
+  object-fit: cover;
+}
   object-fit: cover;
 }
 
