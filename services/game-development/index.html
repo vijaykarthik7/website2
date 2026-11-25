@@ -15,8 +15,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/design2/services-design2.css?v=7.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=8.0">
   
+<style id="d2-perfect-alignment">
+/* Precision Inline Overrides: Ensures zero reliance on browser stylesheet cache */
+.d2-reality-grid { display: grid !important; grid-template-columns: 460px 1fr !important; gap: 52px !important; align-items: stretch !important; }
+.d2-reality-left { display: flex !important; flex-direction: column !important; justify-content: space-between !important; height: 100% !important; background: rgba(14, 14, 20, 0.82) !important; backdrop-filter: blur(20px) !important; -webkit-backdrop-filter: blur(20px) !important; border: 1px solid rgba(201, 164, 92, 0.32) !important; border-radius: 20px !important; padding: 38px 34px !important; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.65) !important; box-sizing: border-box !important; }
+.d2-reality-benchmark-card { margin: 28px 0 !important; background: rgba(8, 8, 12, 0.75) !important; border: 1px solid rgba(201, 164, 92, 0.28) !important; border-left: 3.5px solid #C9A45C !important; border-radius: 12px !important; padding: 20px 22px !important; }
+.d2-benchmark-badge { font-family: var(--d2-font-mono, monospace) !important; font-size: 10px !important; font-weight: 700 !important; color: #C9A45C !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; margin-bottom: 8px !important; }
+.d2-benchmark-stat { font-family: var(--d2-font-display, sans-serif) !important; font-size: 17px !important; font-weight: 700 !important; color: #FFFFFF !important; margin-bottom: 6px !important; line-height: 1.35 !important; }
+.d2-benchmark-desc { font-size: 13.5px !important; color: #8F90A6 !important; line-height: 1.6 !important; }
+.d2-capabilities-layout { display: grid !important; grid-template-columns: 380px 1fr !important; gap: 36px !important; align-items: stretch !important; }
+.d2-cap-nav { display: flex !important; flex-direction: column !important; justify-content: space-between !important; height: 100% !important; background: rgba(14, 14, 20, 0.82) !important; backdrop-filter: blur(20px) !important; -webkit-backdrop-filter: blur(20px) !important; border: 1px solid rgba(201, 164, 92, 0.28) !important; border-radius: 20px !important; padding: 18px !important; box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65) !important; box-sizing: border-box !important; }
+.d2-cap-btn { flex: 1 !important; margin: 4px 0 !important; min-height: 52px !important; padding: 14px 18px !important; background: rgba(255, 255, 255, 0.035) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 12px !important; color: #A0A0B2 !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
+.d2-cap-btn.active { background: rgba(201, 164, 92, 0.18) !important; border-color: rgba(201, 164, 92, 0.65) !important; color: #FFFFFF !important; box-shadow: 0 4px 20px rgba(201, 164, 92, 0.18) !important; }
+.d2-trends-section { padding: 130px 0 150px 0 !important; }
+.d2-carousel-viewport { margin-bottom: 24px !important; padding: 12px 4px 34px !important; }
+.d2-process-section { padding: 140px 0 160px !important; background: #0D0D11 !important; border-top: 1px solid rgba(255, 255, 255, 0.08) !important; }
+.d2-process-step { display: grid !important; grid-template-columns: 70px 240px 1fr 280px !important; gap: 28px !important; align-items: center !important; background: rgba(14, 14, 20, 0.88) !important; border-left: 4px solid #C9A45C !important; border-radius: 18px !important; padding: 32px 36px !important; }
+</style>
 </head>
 <body class="d2-body">
 
@@ -149,14 +166,23 @@ export const gameRuntime = new GameEngine({
       <div class="d2-container">
         <div class="d2-reality-grid">
           <div class="d2-reality-left">
-            <span class="d2-badge">
-              <span class="d2-badge-dot"></span>
-              SECTION 02 // STRATEGIC REALITY
-            </span>
-            <h2 class="d2-reality-question">Beautiful graphics attract attention. Meaningful gameplay keeps it.</h2>
-            <p class="d2-reality-desc">The gaming industry is littered with visually striking titles that players abandon within two hours. Without tight tactile controls, rewarding gameplay loops, and rock-solid multiplayer netcode, even multi-million dollar assets fail to retain players.</p>
-            <div style="margin-top: 32px;">
-              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            <div>
+              <span class="d2-badge">
+                <span class="d2-badge-dot"></span>
+                SECTION 02 // STRATEGIC REALITY
+              </span>
+              <h2 class="d2-reality-question">Beautiful graphics attract attention. Meaningful gameplay keeps it.</h2>
+              <p class="d2-reality-desc">The gaming industry is littered with visually striking titles that players abandon within two hours. Without tight tactile controls, rewarding gameplay loops, and rock-solid multiplayer netcode, even multi-million dollar assets fail to retain players.</p>
+            </div>
+
+            <div class="d2-reality-benchmark-card">
+              <div class="d2-benchmark-badge">// INDUSTRY BENCHMARK RISK</div>
+              <div class="d2-benchmark-stat">Inconsistent frame timings</div>
+              <div class="d2-benchmark-desc">and desynced multiplayer netcode destroy player retention in under 60 seconds. We build deterministic physics pipelines and low-latency network topologies.</div>
+            </div>
+
+            <div class="d2-reality-action-row">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13.5px; padding: 12px 24px;">Review Our Solutions &rarr;</a>
             </div>
           </div>
 
@@ -744,7 +770,7 @@ export const gameRuntime = new GameEngine({
   </footer>
 
   <!-- Scripts -->
-  <script src="/services/design2/services-design2.js?v=7.0"></script>
+  <script src="/services/design2/services-design2.js?v=8.0"></script>
   
 </body>
 </html>
