@@ -302,7 +302,7 @@ function initDisciplinesComposer() {
           probEl.textContent = data.problem;
         }
         if (linkEl) {
-          linkEl.setAttribute('href', `/services/design2/${data.slug}`);
+          linkEl.setAttribute('href', `/services/${data.slug}`);
           linkEl.innerHTML = `<span>Explore ${data.name}</span> <span class="d2-btn-arrow">&rarr;</span>`;
         }
         stage.style.opacity = '1';

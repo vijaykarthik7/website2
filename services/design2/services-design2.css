@@ -46,7 +46,7 @@ body.d2-body {
   font-family: var(--d2-font-sans);
   line-height: 1.65;
   font-size: 16px;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -182,7 +182,7 @@ body.d2-body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--d2-border-subtle);
@@ -257,9 +257,10 @@ body.d2-body {
 .d2-subnav {
   position: sticky;
   top: 72px;
-  z-index: 900;
-  background: rgba(13, 13, 17, 0.95);
+  z-index: 990;
+  background: rgba(13, 13, 17, 0.96);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--d2-border-subtle);
 }
 
@@ -618,15 +619,15 @@ body.d2-body {
 
 /* Section 01: The Opening Frame (Hero) */
 .d2-svc-hero {
-  padding: 80px 0 100px 0;
+  padding: 100px 0 120px 0;
   position: relative;
 }
 
 .d2-svc-hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 50px;
-  align-items: center;
+  gap: 48px;
+  align-items: flex-start;
 }
 
 .d2-svc-hero-title {
@@ -653,13 +654,14 @@ body.d2-body {
 
 .d2-hero-canvas-box {
   width: 100%;
-  aspect-ratio: 16 / 11;
   background: #0E0E14;
   border: 1px solid var(--d2-border-subtle);
   border-radius: var(--d2-radius-md);
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Section 02: The Reality Check */
@@ -669,14 +671,18 @@ body.d2-body {
 
 .d2-reality-grid {
   display: grid;
-  grid-template-columns: 440px 1fr;
-  gap: 60px;
+  grid-template-columns: 420px 1fr;
+  gap: 56px;
+  align-items: flex-start;
 }
 
 .d2-reality-left {
   position: sticky;
   top: 140px;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .d2-reality-question {
@@ -714,23 +720,34 @@ body.d2-body {
 
 .d2-reality-card-header {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
 .d2-reality-card-num {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--d2-font-mono);
   font-size: 11px;
-  color: var(--d2-gold);
   font-weight: 700;
+  color: var(--d2-gold);
+  letter-spacing: 0.08em;
+  background: rgba(201, 164, 92, 0.12);
+  border: 1px solid rgba(201, 164, 92, 0.28);
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
 }
 
 .d2-reality-card-title {
   font-family: var(--d2-font-display);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #FFFFFF;
+  line-height: 1.35;
+  margin: 0;
 }
 
 .d2-reality-card-body {
@@ -750,8 +767,9 @@ body.d2-body {
 
 .d2-capabilities-layout {
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: 360px 1fr;
   gap: 36px;
+  align-items: flex-start;
 }
 
 .d2-cap-nav {
@@ -860,8 +878,8 @@ body.d2-body {
 .d2-tech-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  gap: 48px;
+  align-items: flex-start;
 }
 
 .d2-tech-card {
@@ -1039,9 +1057,9 @@ body.d2-body {
 
 .d2-process-step {
   display: grid;
-  grid-template-columns: 80px 240px 1fr 280px;
-  gap: 30px;
-  align-items: baseline;
+  grid-template-columns: 70px 220px 1fr 240px;
+  gap: 28px;
+  align-items: flex-start;
   background: var(--d2-bg-primary);
   border: 1px solid var(--d2-border-subtle);
   border-radius: var(--d2-radius-md);
@@ -1404,8 +1422,10 @@ body.d2-body {
 }
 
 
+
 /* ==========================================================================
    HOMEPAGE EMBEDDING OVERRIDES: LUXURY FROSTED GLASS & TRANSPARENT BACKDROP
+   Full Design 2 Suite (Manifesto + 9 Disciplines + CTA)
    Ensures #rocketCanvas fixed scroll-bound rocket explosion shines through!
    ========================================================================== */
 .d2-services-universe {
@@ -1415,12 +1435,44 @@ body.d2-body {
   color: var(--d2-text-primary);
   font-family: var(--d2-font-sans);
   overflow: visible;
-  padding: 100px 0 130px;
+  padding: 80px 0 120px;
   z-index: 10;
 }
 
+.d2-services-universe .d2-manifesto-hero {
+  background: transparent !important;
+  padding: 40px 0 90px;
+  min-height: auto;
+}
+
+.d2-services-universe .d2-manifesto-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.d2-services-universe .d2-manifesto-canvas-card {
+  background: rgba(14, 14, 20, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 164, 92, 0.35);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+  position: relative;
+  overflow: hidden;
+}
+
+.d2-services-universe .d2-manifesto-canvas {
+  width: 100%;
+  height: 320px;
+  display: block;
+  border-radius: 12px;
+}
+
 .d2-services-universe .d2-disciplines-section {
-  padding: 0;
+  padding: 40px 0 80px;
   background: transparent !important;
 }
 
@@ -1448,7 +1500,7 @@ body.d2-body {
 
 .d2-services-universe .d2-disciplines-composer {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 400px 1fr;
   gap: 36px;
   background: rgba(10, 10, 14, 0.78);
   backdrop-filter: blur(24px);
@@ -1648,6 +1700,24 @@ body.d2-body {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.d2-services-universe .d2-cta-section {
+  background: transparent !important;
+  padding: 80px 0 40px;
+}
+
+.d2-services-universe .d2-cta-box {
+  background: rgba(14, 14, 20, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 164, 92, 0.35);
+  border-radius: 20px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .d2-services-universe .d2-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -1689,6 +1759,9 @@ body.d2-body {
 }
 
 @media (max-width: 992px) {
+  .d2-services-universe .d2-manifesto-grid {
+    grid-template-columns: 1fr;
+  }
   .d2-services-universe .d2-disciplines-composer {
     display: none !important;
   }
