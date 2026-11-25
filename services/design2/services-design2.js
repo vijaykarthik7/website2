@@ -119,7 +119,14 @@ const DISCIPLINES_DATA = [
     desc: 'Connecting information architecture, edge rendering, and sub-second execution into web applications that serve as high-performing digital flagships.',
     slug: 'web-development',
     accent: '#C9A45C',
-    metric: '99.9% Uptime &middot; &lt;0.8s LCP'
+    metric: '99.9% Uptime &middot; &lt;0.8s LCP Edge',
+    architectures: [
+      'Headless Storefronts & Edge Middleware',
+      'Next.js App Router & React Server Components',
+      'Sub-second LCP Performance Tuning',
+      'Enterprise API & Microservice Orchestration'
+    ],
+    problem: 'When slow page speed, brittle legacy CMS systems, or poor core web vitals hinder enterprise pipeline conversion and brand authority.'
   },
   {
     num: '02',
@@ -128,7 +135,14 @@ const DISCIPLINES_DATA = [
     desc: 'Replacing disconnected SaaS subscriptions and manual workarounds with resilient, purpose-built distributed architectures engineered around proprietary workflows.',
     slug: 'custom-software-development',
     accent: '#82B1FF',
-    metric: 'mTLS Zero-Trust &middot; 45k req/s Mesh'
+    metric: 'mTLS Zero-Trust &middot; 45k req/s Mesh',
+    architectures: [
+      'Distributed Event-Driven Microservices',
+      'High-Throughput Go & Rust Core Engines',
+      'mTLS Zero-Trust Internal Networking',
+      'Resilient PostgreSQL & Redis Clustered Caching'
+    ],
+    problem: 'When off-the-shelf software forces compromise, creates data silos, and scales subscription costs faster than company revenue.'
   },
   {
     num: '03',
@@ -137,7 +151,14 @@ const DISCIPLINES_DATA = [
     desc: 'Crafting native iOS, Android, and cross-platform applications engineered for tactile precision, battery efficiency, and offline resilience.',
     slug: 'mobile-app-development',
     accent: '#B388FF',
-    metric: '60 FPS Tactile &middot; Offline-First Sync'
+    metric: '60 FPS Tactile &middot; Offline-First Sync',
+    architectures: [
+      'Swift / SwiftUI Native iOS Architectures',
+      'Kotlin Jetpack Compose Android Platforms',
+      'React Native & Flutter Unified Cross-Platform',
+      'Offline-First SQLite / WatermelonDB Sync'
+    ],
+    problem: 'When mobile apps suffer from battery drain, sluggish frame rates, poor offline behavior, or platform-inconsistent UX.'
   },
   {
     num: '04',
@@ -146,7 +167,14 @@ const DISCIPLINES_DATA = [
     desc: 'Building high-converting headless storefronts, frictionless checkout funnels, and real-time inventory synchronization systems.',
     slug: 'ecommerce-solutions',
     accent: '#FFD180',
-    metric: 'Sub-second Checkout &middot; Zero Cart Lag'
+    metric: 'Sub-second Checkout &middot; Zero Cart Lag',
+    architectures: [
+      'Headless Shopify Plus & MedusaJS Backends',
+      'Algolia & Typesense Instant Predictive Search',
+      'Stripe Global Multi-Currency Orchestration',
+      'Real-Time ERP & Inventory Webhook Pipelines'
+    ],
+    problem: 'When monolithic e-commerce platforms buckle under traffic spikes, exhibit cart latency, or prevent bespoke UX experiments.'
   },
   {
     num: '05',
@@ -155,7 +183,14 @@ const DISCIPLINES_DATA = [
     desc: 'Developing immersive 2D and 3D gameplay systems, custom physics pipelines, and synchronized multiplayer networks in Unity and Unreal Engine.',
     slug: 'game-development',
     accent: '#FF8A80',
-    metric: 'Deterministic Physics &middot; Low Latency Netcode'
+    metric: 'Deterministic Physics &middot; Low Latency Netcode',
+    architectures: [
+      'Unity 6 & Unreal Engine 5 Real-Time Pipelines',
+      'Deterministic Physics & Simulation Engines',
+      'Photon & WebRTC Low-Latency Multiplayer',
+      'Cross-Platform Asset Bundling & Shader Optimization'
+    ],
+    problem: 'When interactive projects need high-fidelity 60/120 FPS rendering, robust network synchronization, and fluid gameplay ergonomics.'
   },
   {
     num: '06',
@@ -164,7 +199,14 @@ const DISCIPLINES_DATA = [
     desc: 'Spatial computing, mixed-reality simulation, and interactive digital twins engineered for industrial training, medical practice, and architectural visualization.',
     slug: 'ar-vr-development',
     accent: '#80D8FF',
-    metric: '6DoF Tracking &middot; Spatial UI Depth'
+    metric: '6DoF Tracking &middot; Spatial UI Depth',
+    architectures: [
+      'Apple VisionOS Spatial Computing Architecture',
+      'Meta Quest OpenXR Native C++ Engines',
+      'WebXR Lightweight Browser Immersion',
+      'Precision 6DoF Spatial Tracking & Occlusion'
+    ],
+    problem: 'When industrial training, spatial commerce, or medical procedures require risk-free, photorealistic immersion that 2D screens cannot deliver.'
   },
   {
     num: '07',
@@ -173,7 +215,14 @@ const DISCIPLINES_DATA = [
     desc: 'User research, design token architectures, and atomic component systems that transform complex enterprise workflows into intuitive, joyful interfaces.',
     slug: 'ui-ux-design',
     accent: '#CCFF90',
-    metric: 'WCAG 2.2 AA &middot; Scalable Design Tokens'
+    metric: 'WCAG 2.2 AA &middot; Scalable Design Tokens',
+    architectures: [
+      'Figma Token Studio & Design Systems Architecture',
+      'WCAG 2.2 AAA Accessibility Conformance',
+      'Rapid Interactive Micro-Interaction Prototyping',
+      'Qualitative User Research & Usability Telemetry'
+    ],
+    problem: 'When complex operational workflows confuse operators, increase error rates, and reduce enterprise end-user satisfaction.'
   },
   {
     num: '08',
@@ -182,7 +231,14 @@ const DISCIPLINES_DATA = [
     desc: 'Hard-surface and organic modeling, PBR material synthesis, and optimized polygonal topologies for real-time WebGL, games, and industrial prototyping.',
     slug: '3d-modeling',
     accent: '#EA80FC',
-    metric: 'PBR Shaders &middot; WebGL Sub-50k Poly'
+    metric: 'PBR Shaders &middot; WebGL Sub-50k Poly',
+    architectures: [
+      'Subdivision Surface & Parametric Hard Modeling',
+      'Substance 3D PBR Material Shading Pipelines',
+      'glTF / Draco Geometry Compression for WebGL',
+      'Three.js & WebGPU Real-Time Scene Composition'
+    ],
+    problem: 'When digital products lack tactile presence, product visualizations feel static, or 3D assets bloat web load times.'
   },
   {
     num: '09',
@@ -191,7 +247,14 @@ const DISCIPLINES_DATA = [
     desc: 'Technical SEO, Generative Engine Optimization (GEO), first-party attribution modeling, and data-driven performance campaigns.',
     slug: 'digital-marketing',
     accent: '#FFAB40',
-    metric: 'Algorithmic GEO &middot; Multi-Touch Attribution'
+    metric: 'Algorithmic GEO &middot; Multi-Touch Attribution',
+    architectures: [
+      'Generative Engine Optimization (GEO) Frameworks',
+      'First-Party Server-Side Attribution Tracking',
+      'Programmatic SEO & Content Graph Architectures',
+      'Multi-Touch Pipeline Conversion Funnels'
+    ],
+    problem: 'When marketing spend increases while qualified enterprise pipeline stagnates due to opaque third-party cookie attribution.'
   }
 ];
 
@@ -201,34 +264,50 @@ function initDisciplinesComposer() {
   if (!tabs.length || !stage) return;
 
   const numEl = stage.querySelector('.d2-stage-num');
-  const titleEl = stage.querySelector('.d2-stage-headline');
+  const titleEl = stage.querySelector('.d2-stage-headline') || stage.querySelector('.d2-stage-title') || stage.querySelector('h3');
   const quoteEl = stage.querySelector('.d2-stage-quote');
-  const linkEl = stage.querySelector('.d2-stage-link');
+  const descEl = stage.querySelector('.d2-stage-body') || stage.querySelector('.d2-stage-desc') || stage.querySelector('#d2StageBody');
+  const metricEl = stage.querySelector('.d2-stage-tag') || stage.querySelector('#d2StageMetric');
+  const archEl = stage.querySelector('#d2StageArchitectures');
+  const probEl = stage.querySelector('#d2StageProblem');
+  const linkEl = stage.querySelector('.d2-stage-link') || stage.querySelector('#d2StageLink') || stage.querySelector('.d2-btn-primary');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
 
       const index = parseInt(tab.getAttribute('data-index'), 10) || 0;
       const data = DISCIPLINES_DATA[index];
       if (!data) return;
 
       // Animate update
-      stage.style.opacity = '0.5';
+      stage.style.opacity = '0.4';
       stage.style.transform = 'translateY(4px)';
 
       setTimeout(() => {
         if (numEl) numEl.textContent = `${data.num} // ${data.name.toUpperCase()}`;
         if (titleEl) titleEl.textContent = data.name;
         if (quoteEl) quoteEl.textContent = data.quote;
+        if (descEl) descEl.textContent = data.desc;
+        if (metricEl) metricEl.innerHTML = data.metric || 'Enterprise Scalability';
+        if (archEl && data.architectures) {
+          archEl.innerHTML = data.architectures.map(a => `<li>${a}</li>`).join('');
+        }
+        if (probEl && data.problem) {
+          probEl.textContent = data.problem;
+        }
         if (linkEl) {
           linkEl.setAttribute('href', `/services/design2/${data.slug}`);
-          linkEl.innerHTML = `Explore ${data.name} &rarr;`;
+          linkEl.innerHTML = `<span>Explore ${data.name}</span> <span class="d2-btn-arrow">&rarr;</span>`;
         }
         stage.style.opacity = '1';
         stage.style.transform = 'translateY(0)';
-      }, 140);
+      }, 120);
     });
   });
 }

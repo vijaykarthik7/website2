@@ -1310,57 +1310,17 @@
          SERVICES SECTION: DESIGN 2 (THE DIGITAL PERSPECTIVE)
          Nine Disciplines. Different Possibilities. Permanent Live Experience
          ========================================================================== -->
-    <div class="d2-services-universe" id="services">
-
-    <!-- ==========================================================================
-         SECTION 01: THE SERVICES MANIFESTO
+        <!-- ==========================================================================
+         SERVICES SECTION: DESIGN 2 (THE DIGITAL PERSPECTIVE)
+         Nine Disciplines. Different Possibilities. Permanent Live Experience
+         Backdrop: Fixed #rocketCanvas launch & 3D tech icons explosion
          ========================================================================== -->
-    <section class="d2-manifesto-hero" id="manifesto">
-      <div class="d2-container">
-        <div class="d2-manifesto-grid">
-          <div>
-            <div class="d2-manifesto-eyebrow">
-              <span class="d2-badge-dot"></span>
-              WHAT WE CREATE / 01&mdash;09
-            </div>
-            <h1 class="d2-manifesto-headline">
-              Technology is the medium. <em>What we make possible</em> is the story.
-            </h1>
-            <p class="d2-manifesto-body">
-              Every digital product begins with a challenge worth solving. Sometimes it's a business process that needs to work better. Sometimes it's an experience that doesn't yet exist. And sometimes it's a new way for people to connect, create, explore, or discover.
-            </p>
-            <p class="d2-manifesto-body" style="font-size: 16px; margin-top: -20px; color: var(--d2-text-muted);">
-              Our services bring design, engineering, and digital thinking together to turn those challenges into experiences that work in the real world.
-            </p>
-            <div class="d2-manifesto-actions">
-              <a href="#disciplines" class="d2-btn d2-btn-primary">Explore Nine Disciplines &darr;</a>
-              <a href="#contact" class="d2-btn d2-btn-secondary">Initiate a Conversation</a>
-            </div>
-          </div>
-
-          <div>
-            <div class="d2-manifesto-canvas-card">
-              <canvas class="d2-manifesto-canvas" id="manifestoCanvas"></canvas>
-              <div class="d2-canvas-overlay">
-                <span>// DIGITAL PERSPECTIVE</span>
-                <span style="color: var(--d2-gold);">9 DISCIPLINES CONNECTED</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECTION 02: NINE DISCIPLINES. DIFFERENT POSSIBILITIES.
-         Interactive Service Index
-         ========================================================================== -->
-    <section class="d2-disciplines-section d2-section-border-top" id="disciplines">
+    <section class="section-capabilities d2-services-universe" id="services">
       <div class="d2-container">
         <div class="d2-disciplines-header">
           <span class="d2-badge">
             <span class="d2-badge-dot"></span>
-            SECTION 02 // CAPABILITY INDEX
+            SERVICES &middot; CAPABILITY INDEX
           </span>
           <h2 class="d2-disciplines-headline">Nine Disciplines. <span class="d2-gold-text">Different Possibilities.</span></h2>
           <p class="d2-disciplines-lead">
@@ -1368,7 +1328,7 @@
           </p>
         </div>
 
-        <!-- Desktop 2-Part Composition -->
+        <!-- Desktop 2-Part Interactive Composer -->
         <div class="d2-disciplines-composer">
           <!-- Left Menu -->
           <div class="d2-disciplines-menu" role="tablist" aria-label="Service disciplines list">
@@ -1419,76 +1379,83 @@
             </button>
           </div>
 
-          <!-- Right Active Stage -->
+          <!-- Right Display Stage -->
           <div class="d2-stage-display" id="d2StageDisplay">
-            <div>
-              <div class="d2-stage-meta">
-                <span class="d2-stage-num">01 // WEB DEVELOPMENT</span>
-                <span class="d2-badge" style="margin-bottom: 0; padding: 4px 10px; font-size: 10px;">CORE ENGINEERING</span>
+            <div class="d2-stage-header">
+              <span class="d2-stage-num">01 // WEB DEVELOPMENT</span>
+              <span class="d2-stage-tag" id="d2StageMetric">99.9% Uptime &middot; &lt;0.8s LCP Edge</span>
+            </div>
+            
+            <h3 class="d2-stage-headline d2-stage-title" id="d2StageTitle">Web Development</h3>
+            
+            <p class="d2-stage-quote" id="d2StageQuote">
+              &ldquo;Digital experiences built to do more than look good.&rdquo;
+            </p>
+            
+            <p class="d2-stage-body d2-stage-desc" id="d2StageBody">
+              Connecting information architecture, edge rendering, and sub-second execution into web applications that serve as high-performing digital flagships.
+            </p>
+
+            <div class="d2-stage-meta">
+              <div class="d2-meta-col">
+                <span class="d2-meta-label">DELIVERY ARCHITECTURES</span>
+                <ul class="d2-meta-list" id="d2StageArchitectures">
+                  <li>Headless Storefronts &amp; Edge Middleware</li>
+                  <li>Next.js App Router &amp; React Server Components</li>
+                  <li>Sub-second LCP Performance Tuning</li>
+                  <li>Enterprise API &amp; Microservice Orchestration</li>
+                </ul>
               </div>
-              <h3 class="d2-stage-headline">Web Development</h3>
-              <p class="d2-stage-quote">"Digital experiences built to do more than look good."</p>
-              <p style="font-size: 15px; color: var(--d2-text-secondary); line-height: 1.75; margin-bottom: 28px;">
-                Connecting information architecture, edge rendering, and sub-second execution into web applications that serve as high-performing digital flagships.
-              </p>
+              <div class="d2-meta-col">
+                <span class="d2-meta-label">BUSINESS PROBLEM FRAMING</span>
+                <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.55;" id="d2StageProblem">
+                  When slow page speed, brittle legacy CMS systems, or poor core web vitals hinder enterprise pipeline conversion and brand authority.
+                </p>
+              </div>
             </div>
 
-            <div class="d2-stage-visual-container">
-              <!-- Visual Schematic -->
-              <svg class="d2-stage-svg" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="20" width="360" height="120" rx="8" fill="#12121A" stroke="#2B2B38"/>
-                <circle cx="40" cy="38" r="4" fill="#FF5F56"/>
-                <circle cx="54" cy="38" r="4" fill="#FFBD2E"/>
-                <circle cx="68" cy="38" r="4" fill="#27C93F"/>
-                <line x1="88" y1="38" x2="360" y2="38" stroke="#1F1F2C" stroke-width="2"/>
-                <rect x="40" y="58" width="140" height="60" rx="4" fill="#191924" stroke="#C9A45C" stroke-width="1.2"/>
-                <text x="52" y="85" fill="#FFE194" font-family="monospace" font-size="10">SERVER STREAM</text>
-                <text x="52" y="102" fill="#A0A0B0" font-family="monospace" font-size="9">&lt;0.8s LCP Edge</text>
-                <rect x="200" y="58" width="160" height="60" rx="4" fill="#191924" stroke="#333344"/>
-                <text x="212" y="85" fill="#FFFFFF" font-family="monospace" font-size="10">ISLAND HYDRATION</text>
-                <text x="212" y="102" fill="#777788" font-family="monospace" font-size="9">Zero JS Bloat</text>
-              </svg>
-            </div>
-
-            <div class="d2-stage-actions">
-              <a href="/services/design2/web-development" class="d2-btn d2-btn-primary d2-stage-link">Explore Web Development &rarr;</a>
-              <span style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">
-                6 Capabilities &middot; 4 Editorial Insights
+            <div class="d2-stage-action">
+              <a href="/services/design2/web-development" class="d2-btn d2-btn-primary d2-stage-link" id="d2StageLink">
+                <span>Explore Web Development</span>
+                <span class="d2-btn-arrow">&rarr;</span>
+              </a>
+              <span style="font-size: 12.5px; color: var(--d2-text-muted);">
+                Detailed Architecture &middot; Case Studies &middot; Tech Stack
               </span>
             </div>
           </div>
         </div>
 
-        <!-- Mobile Stacked Editorial Service List -->
-        <div class="d2-disciplines-mobile">
+        <!-- Mobile Stacked Cards (Visible only on mobile) -->
+        <div class="d2-disciplines-mobile-stack">
           <div class="d2-discipline-mobile-card">
-            <span class="d2-tab-num">01 // WEB DEVELOPMENT</span>
+            <span class="d2-tab-num">01 // ARCHITECTURES</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Web Development</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Digital experiences built to do more than look good."</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Digital experiences built to do more than look good.&rdquo;</p>
             <p style="font-size: 14px; color: var(--d2-text-secondary);">Connecting information architecture, edge rendering, and sub-second execution into web applications.</p>
             <a href="/services/design2/web-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Web Development &rarr;</a>
           </div>
 
           <div class="d2-discipline-mobile-card">
-            <span class="d2-tab-num">02 // CUSTOM SOFTWARE</span>
+            <span class="d2-tab-num">02 // SYSTEMS</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Custom Software Development</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Software that follows the way your business actually works."</p>
-            <p style="font-size: 14px; color: var(--d2-text-secondary);">Resilient distributed architectures engineered around proprietary workflows and high-throughput data.</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Software that follows the way your business actually works.&rdquo;</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Resilient distributed systems engineered around proprietary operational workflows.</p>
             <a href="/services/design2/custom-software-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Custom Software &rarr;</a>
           </div>
 
           <div class="d2-discipline-mobile-card">
-            <span class="d2-tab-num">03 // MOBILE APPS</span>
+            <span class="d2-tab-num">03 // TACTILE</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Mobile App Development</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Useful experiences designed for the devices people carry every day."</p>
-            <p style="font-size: 14px; color: var(--d2-text-secondary);">Native iOS, Android, and cross-platform apps built for fluid interactions and offline resilience.</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Useful experiences designed for the devices people carry every day.&rdquo;</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Native iOS and Android platforms engineered for tactile responsiveness and offline resilience.</p>
             <a href="/services/design2/mobile-app-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Mobile Apps &rarr;</a>
           </div>
 
           <div class="d2-discipline-mobile-card">
             <span class="d2-tab-num">04 // COMMERCE</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">E-Commerce Solutions</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Connected shopping experiences from discovery to delivery."</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Connected shopping experiences from discovery to delivery.&rdquo;</p>
             <p style="font-size: 14px; color: var(--d2-text-secondary);">Headless storefronts, zero-friction checkouts, and real-time inventory management.</p>
             <a href="/services/design2/ecommerce-solutions" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore E-Commerce &rarr;</a>
           </div>
@@ -1496,7 +1463,7 @@
           <div class="d2-discipline-mobile-card">
             <span class="d2-tab-num">05 // GAMES</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Game Development</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Interactive worlds shaped by imagination, mechanics, and engineering."</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Interactive worlds shaped by imagination, mechanics, and engineering.&rdquo;</p>
             <p style="font-size: 14px; color: var(--d2-text-secondary);">2D/3D gameplay mechanics, real-time physics engines, and multiplayer networks.</p>
             <a href="/services/design2/game-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Game Development &rarr;</a>
           </div>
@@ -1504,7 +1471,7 @@
           <div class="d2-discipline-mobile-card">
             <span class="d2-tab-num">06 // SPATIAL</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">AR/VR Development</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Digital experiences that move beyond the boundaries of a screen."</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Digital experiences that move beyond the boundaries of a screen.&rdquo;</p>
             <p style="font-size: 14px; color: var(--d2-text-secondary);">Mixed-reality environments, spatial computing, and digital twins for professional training.</p>
             <a href="/services/design2/ar-vr-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore AR/VR &rarr;</a>
           </div>
@@ -1512,7 +1479,7 @@
           <div class="d2-discipline-mobile-card">
             <span class="d2-tab-num">07 // DESIGN</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">UI/UX Design</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Thoughtful interactions that make complex experiences feel natural."</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Thoughtful interactions that make complex experiences feel natural.&rdquo;</p>
             <p style="font-size: 14px; color: var(--d2-text-secondary);">User research, atomic design systems, and interaction design that clarifies complexity.</p>
             <a href="/services/design2/ui-ux-design" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore UI/UX Design &rarr;</a>
           </div>
@@ -1520,7 +1487,7 @@
           <div class="d2-discipline-mobile-card">
             <span class="d2-tab-num">08 // 3D</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">3D Modeling</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Giving ideas form, dimension, and a sense of reality."</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Giving ideas form, dimension, and a sense of reality.&rdquo;</p>
             <p style="font-size: 14px; color: var(--d2-text-secondary);">Hard-surface modeling, PBR texturing, and optimized geometry for real-time WebGL.</p>
             <a href="/services/design2/3d-modeling" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore 3D Modeling &rarr;</a>
           </div>
@@ -1528,38 +1495,13 @@
           <div class="d2-discipline-mobile-card">
             <span class="d2-tab-num">09 // MARKETING</span>
             <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Digital Marketing</h3>
-            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Connecting meaningful messages with the people they are meant to reach."</p>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">&ldquo;Connecting meaningful messages with the people they are meant to reach.&rdquo;</p>
             <p style="font-size: 14px; color: var(--d2-text-secondary);">Technical SEO, Generative Engine Optimization, and attribution-driven performance campaigns.</p>
             <a href="/services/design2/digital-marketing" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Digital Marketing &rarr;</a>
           </div>
         </div>
-
       </div>
     </section>
-
-    <!-- ==========================================================================
-         CLOSING CTA
-         ========================================================================== -->
-    <section class="d2-cta-section d2-section-border-top" id="contact">
-      <div class="d2-container">
-        <div class="d2-cta-box">
-          <span class="d2-badge">
-            <span class="d2-badge-dot"></span>
-            COLLABORATION &middot; ENGINEERING PARTNER
-          </span>
-          <h2 class="d2-cta-title">Ready to build experiences that <span class="d2-gold-text">work in the real world?</span></h2>
-          <p class="d2-cta-lead">
-            Every breakthrough project starts with an honest discussion about requirements, constraints, and operational objectives. Let's examine what technology can make possible for your organization.
-          </p>
-          <div class="d2-cta-actions">
-            <a href="#contact" class="d2-btn d2-btn-primary">Start a Project Consultation &rarr;</a>
-            <a href="#about" class="d2-btn d2-btn-secondary">Learn About Our Team</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    </div>
 
     <!-- Section 20: Industries Ecosystem -->
     <section class="section-industries" id="industries">

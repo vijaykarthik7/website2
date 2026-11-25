@@ -709,9 +709,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (rectA.top > 0) {
           opacity = Math.max(0, Math.min(1, (vh - rectA.top) / (vh * 0.75)));
         }
-        // Fade out as Services bottom exits from vh down to 0
-        if (rectS.bottom < vh) {
-          const outFade = Math.max(0, Math.min(1, rectS.bottom / (vh * 0.75)));
+        // Fade out as Services bottom exits gracefully into next section
+        if (rectS.bottom < vh * 0.6) {
+          const outFade = Math.max(0, Math.min(1, rectS.bottom / (vh * 0.6)));
           opacity = Math.min(opacity, outFade);
         }
         rocketStage.style.opacity = opacity.toFixed(2);
