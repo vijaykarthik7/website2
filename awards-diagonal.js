@@ -2,6 +2,7 @@
  * DIAGONAL AWARDS EXHIBITION — ANIMATED ZIGZAG SCRIPT
  * Calculates true full-width diagonal S-curves between Left and Right anchors.
  * Drives real-time path drawing and glowing tracer head on scroll down.
+ * Manages All Awards & Certificates Gallery Modal (12 authentic recognitions).
  */
 
 (function () {
@@ -142,21 +143,18 @@
     }
 
     // -----------------------------------------------------------------
-    // 3. LISTENERS (Lenis, Window Scroll, GSAP, Resize)
+    // 3. SCROLL LISTENERS (Lenis, Window Scroll, GSAP, Resize)
     // -----------------------------------------------------------------
     window.addEventListener('scroll', onScrollThrottled, { passive: true });
 
-    // Hook into Lenis if active
     if (window.lenis) {
       window.lenis.on('scroll', onScrollThrottled);
     } else {
-      // Check after a brief delay in case Lenis initializes later
       setTimeout(() => {
         if (window.lenis) window.lenis.on('scroll', onScrollThrottled);
       }, 500);
     }
 
-    // GSAP ScrollTrigger hookup if available
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       ScrollTrigger.create({
         trigger: timeline,
@@ -172,7 +170,6 @@
       document.fonts.ready.then(calculateZigzagPath);
     }
 
-    // Initial calculation with fallbacks for layout settles
     setTimeout(calculateZigzagPath, 150);
     setTimeout(calculateZigzagPath, 600);
 
@@ -197,25 +194,21 @@
         const itemEl = document.getElementById(itemId);
         if (!itemEl) return;
 
-        // Update year subcaption / label
         const subcaption = itemEl.querySelector('.aw-year-subcaption');
         if (subcaption && newLabel) {
           subcaption.textContent = newLabel;
         }
 
-        // Update peek thumbnail
         const thumbImg = itemEl.querySelector('.aw-media-peek-thumb img');
         if (thumbImg && newImg) {
           thumbImg.src = newImg;
         }
 
-        // Update description if present
         const descEl = itemEl.querySelector('.aw-info-desc');
         if (descEl && newDesc) {
           descEl.textContent = newDesc;
         }
 
-        // Update target visual data for modal
         const visualCluster = itemEl.querySelector('.aw-visual-cluster');
         if (visualCluster && newImg) {
           visualCluster.setAttribute('data-modal-img', newImg);
@@ -224,7 +217,53 @@
     });
 
     // -----------------------------------------------------------------
-    // 5. LIGHTBOX MODAL VIEWER
+    // 5. ALL AWARDS GALLERY MODAL (12 RECOGNITIONS)
+    // -----------------------------------------------------------------
+    const galleryModal = document.getElementById('awAllAwardsModal');
+    const btnViewAll = document.getElementById('btnViewAllAwards');
+    const galleryCloseBtn = galleryModal ? galleryModal.querySelector('.aw-gallery-close-btn') : null;
+
+    if (btnViewAll && galleryModal) {
+      btnViewAll.addEventListener('click', function () {
+        galleryModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    function closeGalleryModal() {
+      if (!galleryModal) return;
+      galleryModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (galleryCloseBtn) galleryCloseBtn.addEventListener('click', closeGalleryModal);
+    if (galleryModal) {
+      galleryModal.addEventListener('click', function (e) {
+        if (e.target === galleryModal) closeGalleryModal();
+      });
+    }
+
+    // Filter pills inside All Awards Gallery
+    const galleryFilterPills = document.querySelectorAll('.aw-gallery-pill');
+    galleryFilterPills.forEach(pill => {
+      pill.addEventListener('click', function () {
+        galleryFilterPills.forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+
+        const cat = this.getAttribute('data-filter');
+        const cards = document.querySelectorAll('.aw-gcard');
+        cards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // -----------------------------------------------------------------
+    // 6. SINGLE ITEM LIGHTBOX MODAL
     // -----------------------------------------------------------------
     const modal = document.getElementById('awDiagonalModal');
     const modalClose = modal ? modal.querySelector('.aw-modal-close-btn') : null;
@@ -273,7 +312,9 @@
     function closeModal() {
       if (!modal) return;
       modal.classList.remove('active');
-      document.body.style.overflow = '';
+      if (!galleryModal || !galleryModal.classList.contains('active')) {
+        document.body.style.overflow = '';
+      }
       if (modalPdf) modalPdf.src = '';
     }
 
@@ -283,13 +324,18 @@
         if (e.target === modal) closeModal();
       });
     }
+
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-        closeModal();
+      if (e.key === 'Escape') {
+        if (modal && modal.classList.contains('active')) {
+          closeModal();
+        } else if (galleryModal && galleryModal.classList.contains('active')) {
+          closeGalleryModal();
+        }
       }
     });
 
-    // Click on visual clusters to open preview modal
+    // Click on milestone visual clusters to open preview modal
     document.querySelectorAll('.aw-visual-cluster').forEach(cluster => {
       cluster.addEventListener('click', function () {
         const item = this.closest('.aw-zigzag-item');
@@ -307,6 +353,27 @@
           isPdf,
           pdfUrl,
           verifyUrl: linkEl ? linkEl.href : ''
+        });
+      });
+    });
+
+    // Click on gallery card media to inspect in full resolution
+    document.querySelectorAll('.aw-gcard-media').forEach(cardMedia => {
+      cardMedia.addEventListener('click', function () {
+        const card = this.closest('.aw-gcard');
+        const img = this.querySelector('img');
+        const title = card ? (card.querySelector('.aw-gcard-title') ? card.querySelector('.aw-gcard-title').textContent : '') : '';
+        const org = card ? (card.querySelector('.aw-gcard-org') ? card.querySelector('.aw-gcard-org').textContent : '') : '';
+        const link = card ? card.querySelector('.aw-gcard-link') : null;
+        const isPdf = card && card.getAttribute('data-cat') === 'pdf';
+
+        openModal({
+          title,
+          org,
+          imgSrc: img ? img.src : '',
+          isPdf,
+          pdfUrl: isPdf ? 'assets/awards/Official_Certificate_of_Excellence_TechBehemoths_Global_Awards_2025.pdf' : '',
+          verifyUrl: link ? link.href : ''
         });
       });
     });
