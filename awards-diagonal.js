@@ -1,201 +1,231 @@
 /**
  * DIAGONAL AWARDS EXHIBITION — ANIMATED ZIGZAG SCRIPT
- * Dynamic SVG Curved Connecting Path, Scroll-Driven Stroke Drawing,
- * Credential Switcher, Waypoint Aura & Fullscreen Lightbox Modal.
+ * Calculates true full-width diagonal S-curves between Left and Right anchors.
+ * Drives real-time path drawing and glowing tracer head on scroll down.
  */
 
 (function () {
   'use strict';
 
-  function initDiagonalAwards() {
+  function initDiagonalExhibition() {
     const timeline = document.querySelector('.aw-zigzag-timeline');
     if (!timeline) return;
 
-    const svgPath = document.getElementById('awZigzagPath');
     const svgCanvas = document.querySelector('.aw-zigzag-svg-canvas');
-    const nodes = document.querySelectorAll('.aw-node-anchor');
-    const cueBadges = document.querySelectorAll('.aw-path-cue-badge');
+    const pathBg = document.getElementById('awZigzagPathBg');
+    const pathActive = document.getElementById('awZigzagPathActive');
+    const tracerGroup = document.getElementById('awTracerGroup');
 
-    // ----------------------------------------------------
-    // 1. CALCULATE AND DRAW CONTINUOUS CURVED PATH
-    // ----------------------------------------------------
-    function calculateConnectingPath() {
-      if (!svgPath || !svgCanvas || nodes.length < 2) return;
+    let totalLength = 0;
+    let isTicking = false;
+
+    // -----------------------------------------------------------------
+    // 1. CALCULATE TRUE WIDE S-CURVE DIAGONAL PATH
+    // -----------------------------------------------------------------
+    function calculateZigzagPath() {
+      if (!svgCanvas || !pathActive || !timeline) return;
 
       const timelineRect = timeline.getBoundingClientRect();
-      const timelineWidth = timelineRect.width;
-      const timelineHeight = timelineRect.height;
+      const width = timelineRect.width;
+      const height = timelineRect.height;
 
-      svgCanvas.setAttribute('viewBox', `0 0 ${timelineWidth} ${timelineHeight}`);
-      svgCanvas.setAttribute('width', timelineWidth);
-      svgCanvas.setAttribute('height', timelineHeight);
+      if (width <= 0 || height <= 0) return;
 
-      const points = [];
-      nodes.forEach(node => {
-        const nodeRect = node.getBoundingClientRect();
-        const x = (nodeRect.left - timelineRect.left) + nodeRect.width / 2;
-        const y = (nodeRect.top - timelineRect.top) + nodeRect.height / 2;
-        points.push({ x, y });
+      svgCanvas.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      svgCanvas.setAttribute('width', width);
+      svgCanvas.setAttribute('height', height);
+
+      // Collect anchor markers in exact DOM order
+      const anchorPoints = [];
+
+      // Start: Top Center
+      anchorPoints.push({ x: width / 2, y: 10 });
+
+      // Gather all milestone anchors and intermediate waypoint anchors
+      const allAnchors = timeline.querySelectorAll('.aw-anchor-point, .aw-waypoint-anchor');
+      allAnchors.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const x = (rect.left - timelineRect.left) + rect.width / 2;
+        const y = (rect.top - timelineRect.top) + rect.height / 2;
+        anchorPoints.push({ x, y });
       });
 
-      if (points.length < 2) return;
+      // End: Bottom Center
+      anchorPoints.push({ x: width / 2, y: height - 10 });
 
-      // Start path slightly above first node
-      const startY = Math.max(0, points[0].y - 50);
-      let d = `M ${points[0].x} ${startY} L ${points[0].x} ${points[0].y}`;
+      if (anchorPoints.length < 3) return;
 
-      const midPoints = [];
+      // Construct smooth continuous cubic bezier curve
+      let d = `M ${anchorPoints[0].x} ${anchorPoints[0].y}`;
 
-      for (let i = 0; i < points.length - 1; i++) {
-        const p1 = points[i];
-        const p2 = points[i + 1];
+      for (let i = 0; i < anchorPoints.length - 1; i++) {
+        const p1 = anchorPoints[i];
+        const p2 = anchorPoints[i + 1];
 
-        // Cubic bezier control points creating smooth luxury S-curves
         const dy = p2.y - p1.y;
+
+        // Smooth vertical tension for natural organic sweeps across the screen
         const cp1x = p1.x;
-        const cp1y = p1.y + dy * 0.55;
+        const cp1y = p1.y + dy * 0.52;
         const cp2x = p2.x;
-        const cp2y = p2.y - dy * 0.55;
+        const cp2y = p2.y - dy * 0.52;
 
         d += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
-
-        // Calculate approximate curve midpoint for cue badge (t = 0.5)
-        const t = 0.5;
-        const midX = (1 - t) ** 3 * p1.x + 3 * (1 - t) ** 2 * t * cp1x + 3 * (1 - t) * t ** 2 * cp2x + t ** 3 * p2.x;
-        const midY = (1 - t) ** 3 * p1.y + 3 * (1 - t) ** 2 * t * cp1y + 3 * (1 - t) * t ** 2 * cp2y + t ** 3 * p2.y;
-        midPoints.push({ x: midX, y: midY });
       }
 
-      // End path extending down slightly from last node
-      const endY = points[points.length - 1].y + 60;
-      d += ` L ${points[points.length - 1].x} ${endY}`;
+      // Apply to background guide and active drawing paths
+      if (pathBg) pathBg.setAttribute('d', d);
+      pathActive.setAttribute('d', d);
 
-      svgPath.setAttribute('d', d);
+      // Cache total path length
+      totalLength = pathActive.getTotalLength();
+      pathActive.style.strokeDasharray = `${totalLength} ${totalLength}`;
+      pathActive.style.strokeDashoffset = `${totalLength}`;
 
-      // Position intermediate floating arrow cue badges
-      cueBadges.forEach((badge, index) => {
-        if (midPoints[index]) {
-          badge.style.left = `${midPoints[index].x}px`;
-          badge.style.top = `${midPoints[index].y}px`;
-          badge.style.display = window.innerWidth > 768 ? 'flex' : 'none';
-        }
-      });
-
-      // Prepare stroke dash for scroll drawing
-      const pathLength = svgPath.getTotalLength();
-      svgPath.style.strokeDasharray = pathLength;
-      svgPath.style.strokeDashoffset = pathLength;
-
-      updatePathScroll(pathLength);
+      updatePathOnScroll();
     }
 
-    // ----------------------------------------------------
-    // 2. SCROLL PROGRESS PATH DRAWING
-    // ----------------------------------------------------
-    function updatePathScroll(totalLen) {
-      if (!svgPath || !timeline) return;
+    // -----------------------------------------------------------------
+    // 2. SCROLL PROGRESS & PATH DRAWING ENGINE
+    // -----------------------------------------------------------------
+    function updatePathOnScroll() {
+      if (!pathActive || totalLength <= 0) return;
 
-      const pathLength = totalLen || svgPath.getTotalLength();
-      const rect = timeline.getBoundingClientRect();
+      const timelineRect = timeline.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Scroll progress through timeline
-      const totalDist = rect.height + windowHeight * 0.4;
-      const currentDist = windowHeight * 0.7 - rect.top;
-      const progress = Math.max(0, Math.min(1, currentDist / totalDist));
+      // Start drawing when the top of the awards section enters 75% of viewport
+      const startTrigger = windowHeight * 0.75;
+      // Complete drawing when bottom reaches 35% of viewport
+      const endTrigger = windowHeight * 0.35;
 
-      const newOffset = pathLength * (1 - progress);
-      svgPath.style.strokeDashoffset = newOffset;
+      const totalDist = timelineRect.height + (startTrigger - endTrigger);
+      const currentScroll = startTrigger - timelineRect.top;
 
-      // Illuminate nodes as scroll reaches them
-      nodes.forEach(node => {
-        const nodeRect = node.getBoundingClientRect();
-        if (nodeRect.top < windowHeight * 0.75) {
-          node.classList.add('illuminated');
+      const progress = Math.max(0, Math.min(1, currentScroll / totalDist));
+      const drawnLength = totalLength * progress;
+
+      // Draw active golden stroke
+      pathActive.style.strokeDashoffset = `${totalLength - drawnLength}`;
+
+      // Move glowing tracer head along tip of drawn stroke
+      if (tracerGroup) {
+        if (drawnLength > 8 && drawnLength < totalLength - 4) {
+          const point = pathActive.getPointAtLength(drawnLength);
+          tracerGroup.setAttribute('transform', `translate(${point.x}, ${point.y})`);
+          tracerGroup.style.opacity = '1';
         } else {
-          node.classList.remove('illuminated');
+          tracerGroup.style.opacity = '0';
+        }
+      }
+
+      // Activate milestone items as the line passes through them
+      const items = timeline.querySelectorAll('.aw-zigzag-item');
+      items.forEach(item => {
+        const itemRect = item.getBoundingClientRect();
+        if (itemRect.top < windowHeight * 0.7) {
+          item.classList.add('aw-passed');
+        } else {
+          item.classList.remove('aw-passed');
         }
       });
     }
 
-    // GSAP ScrollTrigger integration if available, with robust window scroll fallback
+    function onScrollThrottled() {
+      if (!isTicking) {
+        requestAnimationFrame(() => {
+          updatePathOnScroll();
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    }
+
+    // -----------------------------------------------------------------
+    // 3. LISTENERS (Lenis, Window Scroll, GSAP, Resize)
+    // -----------------------------------------------------------------
+    window.addEventListener('scroll', onScrollThrottled, { passive: true });
+
+    // Hook into Lenis if active
+    if (window.lenis) {
+      window.lenis.on('scroll', onScrollThrottled);
+    } else {
+      // Check after a brief delay in case Lenis initializes later
+      setTimeout(() => {
+        if (window.lenis) window.lenis.on('scroll', onScrollThrottled);
+      }, 500);
+    }
+
+    // GSAP ScrollTrigger hookup if available
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       ScrollTrigger.create({
         trigger: timeline,
         start: 'top 80%',
-        end: 'bottom 40%',
-        scrub: 0.6,
-        onUpdate: (self) => {
-          if (!svgPath) return;
-          const len = svgPath.getTotalLength();
-          svgPath.style.strokeDashoffset = len * (1 - self.progress);
-        }
+        end: 'bottom 20%',
+        scrub: 0.2,
+        onUpdate: () => onScrollThrottled()
       });
     }
 
-    window.addEventListener('scroll', () => updatePathScroll(), { passive: true });
-    window.addEventListener('resize', debounce(calculateConnectingPath, 150));
+    window.addEventListener('resize', debounce(calculateZigzagPath, 150));
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(calculateZigzagPath);
+    }
 
-    // Initial path calculation
-    setTimeout(calculateConnectingPath, 120);
+    // Initial calculation with fallbacks for layout settles
+    setTimeout(calculateZigzagPath, 150);
+    setTimeout(calculateZigzagPath, 600);
 
-    // ----------------------------------------------------
-    // 3. MULTI-ASSET CREDENTIAL SWITCHER
-    // ----------------------------------------------------
+    // -----------------------------------------------------------------
+    // 4. MULTI-CREDENTIAL TABS SWITCHER
+    // -----------------------------------------------------------------
     const credTabs = document.querySelectorAll('.aw-cred-tab');
     credTabs.forEach(tab => {
       tab.addEventListener('click', function (e) {
         e.preventDefault();
-        const parentTabs = this.closest('.aw-cred-tabs');
-        if (parentTabs) {
-          parentTabs.querySelectorAll('.aw-cred-tab').forEach(t => t.classList.remove('active'));
+        const parent = this.closest('.aw-cred-tabs');
+        if (parent) {
+          parent.querySelectorAll('.aw-cred-tab').forEach(t => t.classList.remove('active'));
         }
         this.classList.add('active');
 
-        const targetItemId = this.getAttribute('data-item');
-        const newImgSrc = this.getAttribute('data-img');
-        const newPill = this.getAttribute('data-pill');
+        const itemId = this.getAttribute('data-item');
+        const newImg = this.getAttribute('data-img');
+        const newLabel = this.getAttribute('data-label');
         const newDesc = this.getAttribute('data-desc');
 
-        const itemEl = document.getElementById(targetItemId);
+        const itemEl = document.getElementById(itemId);
         if (!itemEl) return;
 
-        // Animate media image change
-        const mediaImg = itemEl.querySelector('.aw-media-img');
-        if (mediaImg && newImgSrc) {
-          mediaImg.style.opacity = '0';
-          mediaImg.style.transform = 'scale(0.96)';
-          setTimeout(() => {
-            mediaImg.src = newImgSrc;
-            mediaImg.style.opacity = '1';
-            mediaImg.style.transform = 'scale(1)';
-          }, 200);
+        // Update year subcaption / label
+        const subcaption = itemEl.querySelector('.aw-year-subcaption');
+        if (subcaption && newLabel) {
+          subcaption.textContent = newLabel;
         }
 
-        // Update pill text
-        const pillEl = itemEl.querySelector('.aw-media-badge-pill');
-        if (pillEl && newPill) {
-          pillEl.textContent = newPill;
+        // Update peek thumbnail
+        const thumbImg = itemEl.querySelector('.aw-media-peek-thumb img');
+        if (thumbImg && newImg) {
+          thumbImg.src = newImg;
         }
 
-        // Update description if provided
+        // Update description if present
         const descEl = itemEl.querySelector('.aw-info-desc');
         if (descEl && newDesc) {
           descEl.textContent = newDesc;
         }
 
-        // Update card data attribute for modal
-        const mediaCard = itemEl.querySelector('.aw-media-card');
-        if (mediaCard && newImgSrc) {
-          mediaCard.setAttribute('data-current-img', newImgSrc);
-          if (newPill) mediaCard.setAttribute('data-current-pill', newPill);
+        // Update target visual data for modal
+        const visualCluster = itemEl.querySelector('.aw-visual-cluster');
+        if (visualCluster && newImg) {
+          visualCluster.setAttribute('data-modal-img', newImg);
         }
       });
     });
 
-    // ----------------------------------------------------
-    // 4. FULLSCREEN LIGHTBOX & PDF CERTIFICATE MODAL
-    // ----------------------------------------------------
+    // -----------------------------------------------------------------
+    // 5. LIGHTBOX MODAL VIEWER
+    // -----------------------------------------------------------------
     const modal = document.getElementById('awDiagonalModal');
     const modalClose = modal ? modal.querySelector('.aw-modal-close-btn') : null;
     const modalImg = modal ? modal.querySelector('.aw-modal-img') : null;
@@ -232,7 +262,7 @@
         }
         if (modalCta) {
           modalCta.href = data.verifyUrl || 'https://techbehemoths.com/company/riyadvi-software-technologies-private-limited';
-          modalCta.textContent = data.verifyText || 'Verify Official Recognition ↗';
+          modalCta.textContent = 'Verify Official Recognition ↗';
         }
       }
 
@@ -259,17 +289,16 @@
       }
     });
 
-    // Attach click listeners to all media cards & inspect buttons
-    document.querySelectorAll('.aw-media-card').forEach(card => {
-      card.addEventListener('click', function () {
+    // Click on visual clusters to open preview modal
+    document.querySelectorAll('.aw-visual-cluster').forEach(cluster => {
+      cluster.addEventListener('click', function () {
         const item = this.closest('.aw-zigzag-item');
-        const imgSrc = this.getAttribute('data-current-img') || (this.querySelector('.aw-media-img') ? this.querySelector('.aw-media-img').src : '');
+        const imgSrc = this.getAttribute('data-modal-img') || (this.querySelector('.aw-media-peek-thumb img') ? this.querySelector('.aw-media-peek-thumb img').src : '');
         const title = item ? (item.querySelector('.aw-info-title') ? item.querySelector('.aw-info-title').textContent : '') : '';
         const org = item ? (item.querySelector('.aw-info-org') ? item.querySelector('.aw-info-org').textContent : '') : '';
-        const verifyLink = item ? (item.querySelector('.aw-link-primary') ? item.querySelector('.aw-link-primary').href : '') : '';
-
         const isPdf = this.getAttribute('data-is-pdf') === 'true';
         const pdfUrl = this.getAttribute('data-pdf-url') || '';
+        const linkEl = item ? item.querySelector('.aw-link-primary') : null;
 
         openModal({
           title,
@@ -277,53 +306,50 @@
           imgSrc,
           isPdf,
           pdfUrl,
-          verifyUrl: verifyLink,
-          verifyText: isPdf ? 'Open PDF in New Tab ↗' : 'Verify Official Recognition ↗'
+          verifyUrl: linkEl ? linkEl.href : ''
         });
       });
     });
 
-    document.querySelectorAll('.aw-btn-inspect').forEach(btn => {
-      btn.addEventListener('click', function (e) {
+    // Click on primary link or view recognition
+    document.querySelectorAll('.aw-link-primary[data-modal="true"]').forEach(link => {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
-        e.stopPropagation();
         const item = this.closest('.aw-zigzag-item');
         if (!item) return;
-        const card = item.querySelector('.aw-media-card');
-        if (card) card.click();
+        const visual = item.querySelector('.aw-visual-cluster');
+        if (visual) visual.click();
       });
     });
 
-    // Smooth scroll for cue button
+    // Scroll cue
     const cueBtn = document.querySelector('.aw-diag-cue');
     if (cueBtn) {
       cueBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        const firstItem = document.querySelector('.aw-zigzag-item');
-        if (firstItem) {
-          firstItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const first = document.querySelector('.aw-zigzag-item');
+        if (first) {
+          if (window.lenis) {
+            window.lenis.scrollTo(first, { offset: -60, duration: 1.2 });
+          } else {
+            first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
         }
       });
     }
   }
 
-  // Utility Debounce
-  function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
+  function debounce(fn, wait) {
+    let t;
+    return function (...args) {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), wait);
     };
   }
 
-  // Run on DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDiagonalAwards);
+    document.addEventListener('DOMContentLoaded', initDiagonalExhibition);
   } else {
-    initDiagonalAwards();
+    initDiagonalExhibition();
   }
 })();

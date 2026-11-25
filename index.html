@@ -709,7 +709,7 @@
 
       <!-- Awards Content Overlay -->
       <div class="section-container vstudio-content">
-                <!-- Diagonal Awards Exhibition — Animated Zigzag Layout -->
+                        <!-- Diagonal Awards Exhibition — Animated Zigzag Layout -->
         <div class="aw-diagonal-exhibition" id="awDiagonalExhibition">
           <!-- Section Header — Beyond Excellence -->
           <div class="aw-diag-header">
@@ -740,360 +740,299 @@
             </div>
           </div>
 
-          <!-- Zigzag Exhibition Timeline -->
+          <!-- Zigzag Exhibition Timeline with Continuous Diagonal Golden Path -->
           <div class="aw-zigzag-timeline">
             <!-- Continuous SVG Golden Connecting Path -->
             <svg class="aw-zigzag-svg-canvas" aria-hidden="true">
               <defs>
                 <linearGradient id="awGoldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#E8CE91" />
+                  <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+                  <stop offset="15%" stop-color="#E8CE91" />
                   <stop offset="50%" stop-color="#D4AF37" />
-                  <stop offset="100%" stop-color="#AA821C" />
+                  <stop offset="85%" stop-color="#E8CE91" />
+                  <stop offset="100%" stop-color="#D4AF37" />
                 </linearGradient>
+                <filter id="tracerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="3.5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
               </defs>
-              <path id="awZigzagPath" class="aw-zigzag-path" d="" />
-            </svg>
 
-            <!-- Intermediate Floating Cue Badges along path -->
-            <div class="aw-path-cue-badge" style="display: none;">&darr;</div>
-            <div class="aw-path-cue-badge" style="display: none;">&darr;</div>
-            <div class="aw-path-cue-badge" style="display: none;">&darr;</div>
-            <div class="aw-path-cue-badge" style="display: none;">&darr;</div>
-            <div class="aw-path-cue-badge" style="display: none;">&darr;</div>
+              <!-- Ambient faint guideline -->
+              <path id="awZigzagPathBg" class="aw-zigzag-path-bg" d="" />
+              <!-- Active drawing stroke synced with scroll -->
+              <path id="awZigzagPathActive" class="aw-zigzag-path-active" d="" />
+
+              <!-- Moving Tracer Particle riding tip of stroke -->
+              <g id="awTracerGroup" class="aw-tracer-group" style="opacity: 0;">
+                <circle r="4.5" fill="#FFFFFF" filter="url(#tracerGlow)" />
+                <circle r="12" fill="none" stroke="#E8CE91" stroke-width="1.5" opacity="0.85" />
+              </g>
+            </svg>
 
             <!-- 01 — STAR OF EXCELLENCE AWARD (2021) -->
             <article class="aw-zigzag-item aw-item-odd" id="awItem01">
-              <div class="aw-col-visual">
-                <div class="aw-visual-header">
-                  <svg class="aw-sparkle-star" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+              <div class="aw-visual-cluster" data-modal-img="assets/awards/award_star_excellence_ceremony.jpg" title="Click to view ceremony photo">
+                <div class="aw-anchor-point"></div>
+                <div class="aw-halo-glow"></div>
+                <div class="aw-symbol-icon-wrap">
+                  <svg class="aw-symbol-icon aw-star-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0L14.7 9.3L24 12L14.7 14.7L12 24L9.3 14.7L0 12L9.3 9.3L12 0Z"/>
                   </svg>
-                  <div class="aw-big-year">2021</div>
-                  <div class="aw-year-subcaption">Ceremony Photo</div>
                 </div>
-                <div class="aw-media-card" role="button" tabindex="0" data-current-img="assets/awards/award_star_excellence_ceremony.jpg" aria-label="View Star of Excellence Ceremony Photo">
-                  <div class="aw-media-frame">
-                    <img src="assets/awards/award_star_excellence_ceremony.jpg" alt="Star of Excellence Award Ceremony Presentation" class="aw-media-img" loading="lazy" />
-                    <div class="aw-media-overlay-hint">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      <span>Inspect Photo</span>
-                    </div>
-                  </div>
-                  <div class="aw-media-meta-bar">
-                    <span class="aw-media-loc">Chennai, India</span>
-                    <span class="aw-media-badge-pill">2021 CEREMONY</span>
-                  </div>
+                <div class="aw-big-year">2021</div>
+                <div class="aw-year-subcaption">Ceremony Photo</div>
+                <div class="aw-media-peek-thumb">
+                  <img src="assets/awards/award_star_excellence_ceremony.jpg" alt="Star of Excellence Award Ceremony" loading="lazy" />
                 </div>
               </div>
 
-              <div class="aw-col-node">
-                <div class="aw-node-anchor" title="Milestone 01: Star of Excellence 2021">
-                  <div class="aw-node-core"></div>
-                </div>
-              </div>
-
-              <div class="aw-col-info">
+              <div class="aw-text-cluster">
                 <span class="aw-info-tag">01 &mdash; RECOGNITION</span>
                 <h3 class="aw-info-title">Star of Excellence Award</h3>
                 <div class="aw-info-org">National Integrity Cultural Academy &amp; The Peaks</div>
                 <p class="aw-info-desc">Prestigious stage presentation at TR Rajarathinam Kalai Arangam honoring Thiru. R. Bhoopathy and Riyadvi Software Solutions leadership in enterprise software innovation, entrepreneurship, and community impact.</p>
-                <div class="aw-actions-group">
-                  <a href="assets/awards/award_star_excellence_ceremony.jpg" class="aw-link-primary" aria-label="View Ceremony Photo">
-                    <span>View Ceremony Photo</span>
+                <div class="aw-cred-tabs">
+                  <span class="aw-cred-tab active">Ceremony Photo</span>
+                </div>
+                <div>
+                  <a href="assets/awards/award_star_excellence_ceremony.jpg" class="aw-link-primary" data-modal="true">
+                    <span>View recognition</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
                   </a>
-                  <button type="button" class="aw-btn-inspect" aria-label="Fullscreen view">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Fullscreen View</span>
-                  </button>
                 </div>
               </div>
             </article>
 
+            <!-- Intermediate Waypoint Down-Arrow Badge -->
+            <div class="aw-waypoint-container">
+              <div class="aw-waypoint-badge">&darr;</div>
+              <div class="aw-waypoint-anchor"></div>
+            </div>
+
             <!-- 02 — DESIGNRUSH TOP WEB DEVELOPMENT COMPANY (2025) -->
             <article class="aw-zigzag-item aw-item-even" id="awItem02">
-              <div class="aw-col-info">
+              <div class="aw-text-cluster">
                 <span class="aw-info-tag">02 &mdash; RECOGNITION</span>
                 <h3 class="aw-info-title">Top Web Development Company</h3>
                 <div class="aw-info-org">DesignRush Global Network</div>
                 <p class="aw-info-desc">&ldquo;We are proud to be featured on DesignRush for our outstanding work.&rdquo; Accredited as a premier agency delivering high-performance enterprise web architectures and digital growth systems.</p>
-                <div class="aw-actions-group">
-                  <a href="https://www.designrush.com" target="_blank" rel="noopener noreferrer" class="aw-link-primary" aria-label="Verify DesignRush Recognition">
-                    <span>Verify Recognition</span>
+                <div class="aw-cred-tabs">
+                  <span class="aw-cred-tab active">Recognition</span>
+                </div>
+                <div>
+                  <a href="https://www.designrush.com" target="_blank" rel="noopener noreferrer" class="aw-link-primary">
+                    <span>View recognition</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
                   </a>
-                  <button type="button" class="aw-btn-inspect" aria-label="Inspect Accreditation Badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Inspect Badge</span>
-                  </button>
                 </div>
               </div>
 
-              <div class="aw-col-node">
-                <div class="aw-node-anchor" title="Milestone 02: DesignRush 2025">
-                  <div class="aw-node-core"></div>
-                </div>
-              </div>
-
-              <div class="aw-col-visual">
-                <div class="aw-visual-header">
-                  <svg class="aw-sparkle-star" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+              <div class="aw-visual-cluster" data-modal-img="assets/awards/award_designrush_2025.png" title="Click to view DesignRush recognition">
+                <div class="aw-anchor-point"></div>
+                <div class="aw-halo-glow"></div>
+                <div class="aw-symbol-icon-wrap">
+                  <svg class="aw-symbol-icon aw-star-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0L14.7 9.3L24 12L14.7 14.7L12 24L9.3 14.7L0 12L9.3 9.3L12 0Z"/>
                   </svg>
-                  <div class="aw-big-year">2025</div>
-                  <div class="aw-year-subcaption">Global Accreditation</div>
                 </div>
-                <div class="aw-media-card" role="button" tabindex="0" data-current-img="assets/awards/award_designrush_2025.png" aria-label="View DesignRush Recognition Badge">
-                  <div class="aw-media-frame light-bg">
-                    <img src="assets/awards/award_designrush_2025.png" alt="Top Web Development Company 2025 DesignRush" class="aw-media-img" loading="lazy" />
-                    <div class="aw-media-overlay-hint">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      <span>Inspect Badge</span>
-                    </div>
-                  </div>
-                  <div class="aw-media-meta-bar">
-                    <span class="aw-media-loc">Global Accreditation</span>
-                    <span class="aw-media-badge-pill">2025 RECOGNIZED</span>
-                  </div>
+                <div class="aw-big-year">2025</div>
+                <div class="aw-year-subcaption">Recognition</div>
+                <div class="aw-media-peek-thumb" style="background: #FFFFFF;">
+                  <img src="assets/awards/award_designrush_2025.png" alt="DesignRush 2025 Badge" loading="lazy" />
                 </div>
               </div>
             </article>
 
-            <!-- 03 — TECHBEHEMOTHS 2025 GLOBAL WINNER: REACTJS -->
+            <!-- Intermediate Waypoint Anchor -->
+            <div class="aw-waypoint-container" style="height: 40px;">
+              <div class="aw-waypoint-anchor"></div>
+            </div>
+
+            <!-- 03 — TECHBEHEMOTHS 2025: REACTJS AWARD WINNER -->
             <article class="aw-zigzag-item aw-item-odd" id="awItem03">
-              <div class="aw-col-visual">
-                <div class="aw-visual-header">
-                  <svg class="aw-sparkle-star" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+              <div class="aw-visual-cluster" data-modal-img="assets/awards/award_tb_reactjs_2025_badge.png" title="Click to view ReactJS award">
+                <div class="aw-anchor-point"></div>
+                <div class="aw-halo-glow"></div>
+                <div class="aw-symbol-icon-wrap">
+                  <!-- Gold React Atomic Orbital SVG -->
+                  <svg class="aw-symbol-icon aw-react-orbit" viewBox="-11.5 -10.23174 23 20.46348" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <circle cx="0" cy="0" r="2.05" fill="currentColor" stroke="none"/>
+                    <ellipse rx="11" ry="4.2"/>
+                    <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+                    <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
                   </svg>
-                  <div class="aw-big-year">2025</div>
-                  <div class="aw-year-subcaption">Berlin &bull; India Winner</div>
                 </div>
-                <div class="aw-media-card" role="button" tabindex="0" data-current-img="assets/awards/award_tb_reactjs_2025_badge.png" aria-label="View ReactJS Winner Asset">
-                  <div class="aw-media-frame">
-                    <img src="assets/awards/award_tb_reactjs_2025_badge.png" alt="Award Winner 2025 — ReactJS Badge" class="aw-media-img" loading="lazy" />
-                    <div class="aw-media-overlay-hint">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      <span>Inspect Credential</span>
-                    </div>
-                  </div>
-                  <div class="aw-media-meta-bar">
-                    <span class="aw-media-loc">Berlin &bull; India</span>
-                    <span class="aw-media-badge-pill">2025 WINNER BADGE</span>
-                  </div>
+                <div class="aw-big-year">2025</div>
+                <div class="aw-year-subcaption">Badge</div>
+                <div class="aw-media-peek-thumb">
+                  <img src="assets/awards/award_tb_reactjs_2025_badge.png" alt="ReactJS Award Asset" loading="lazy" />
                 </div>
               </div>
 
-              <div class="aw-col-node">
-                <div class="aw-node-anchor" title="Milestone 03: ReactJS 2025 Global Winner">
-                  <div class="aw-node-core"></div>
-                </div>
-              </div>
-
-              <div class="aw-col-info">
+              <div class="aw-text-cluster">
                 <span class="aw-info-tag">03 &mdash; RECOGNITION</span>
-                <h3 class="aw-info-title">ReactJS Global Winner</h3>
+                <h3 class="aw-info-title">ReactJS Award Winner</h3>
                 <div class="aw-info-org">TechBehemoths Berlin, Germany</div>
                 <p class="aw-info-desc">Official 2025 Winner in India for excellence in ReactJS web engineering, high-performance web applications, enterprise component systems, and 99+ Lighthouse speed scores.</p>
                 
-                <!-- Multi-Credential Switcher Tabs -->
-                <div class="aw-cred-tabs-wrap">
-                  <div class="aw-cred-tabs-label">Switch Credential Asset:</div>
-                  <div class="aw-cred-tabs" role="tablist">
-                    <button type="button" class="aw-cred-tab active" data-item="awItem03" data-img="assets/awards/award_tb_reactjs_2025_badge.png" data-pill="2025 WINNER BADGE" data-desc="Official 2025 Winner badge in India for excellence in ReactJS web engineering, modern component architecture, and top Lighthouse scores.">Badge</button>
-                    <button type="button" class="aw-cred-tab" data-item="awItem03" data-img="assets/awards/award_tb_reactjs_laurel.png" data-pill="2025 WINNER LAUREL" data-desc="Gold laurel insignia certifying Riyadvi Software Technologies as a premier ReactJS engineering company across India.">Laurel</button>
-                    <button type="button" class="aw-cred-tab" data-item="awItem03" data-img="assets/awards/award_tb_reactjs_winner_poster.png" data-pill="2025 CERTIFICATE" data-desc="Official celebration poster certificate proclaiming Riyadvi Software Technologies an Award-Winning Company in India for ReactJS Services.">Certificate</button>
-                  </div>
+                <!-- Credential Tabs -->
+                <div class="aw-cred-tabs" role="tablist">
+                  <button type="button" class="aw-cred-tab active" data-item="awItem03" data-label="Badge" data-img="assets/awards/award_tb_reactjs_2025_badge.png" data-desc="Official 2025 Winner badge in India for excellence in ReactJS web engineering, modern component architecture, and top Lighthouse scores.">Badge</button>
+                  <button type="button" class="aw-cred-tab" data-item="awItem03" data-label="Laurel" data-img="assets/awards/award_tb_reactjs_laurel.png" data-desc="Gold laurel insignia certifying Riyadvi Software Technologies as a premier ReactJS engineering company across India.">Laurel</button>
+                  <button type="button" class="aw-cred-tab" data-item="awItem03" data-label="Certificate" data-img="assets/awards/award_tb_reactjs_winner_poster.png" data-desc="Official celebration poster certificate proclaiming Riyadvi Software Technologies an Award-Winning Company in India for ReactJS Services.">Certificate</button>
                 </div>
 
-                <div class="aw-actions-group">
-                  <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener" class="aw-link-primary" aria-label="Verify ReactJS Award on TechBehemoths">
-                    <span>Verify TechBehemoths Profile</span>
+                <div>
+                  <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener" class="aw-link-primary">
+                    <span>View recognition</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
                   </a>
-                  <button type="button" class="aw-btn-inspect" aria-label="Inspect Fullscreen">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Fullscreen View</span>
-                  </button>
                 </div>
               </div>
             </article>
 
-            <!-- 04 — TECHBEHEMOTHS 2025 GLOBAL WINNER: WORDPRESS -->
+            <!-- Intermediate Waypoint Down-Arrow Badge -->
+            <div class="aw-waypoint-container">
+              <div class="aw-waypoint-badge">&darr;</div>
+              <div class="aw-waypoint-anchor"></div>
+            </div>
+
+            <!-- 04 — TECHBEHEMOTHS 2025: WORDPRESS AWARD WINNER -->
             <article class="aw-zigzag-item aw-item-even" id="awItem04">
-              <div class="aw-col-info">
+              <div class="aw-text-cluster">
                 <span class="aw-info-tag">04 &mdash; RECOGNITION</span>
-                <h3 class="aw-info-title">WordPress Global Winner</h3>
+                <h3 class="aw-info-title">WordPress Award Winner</h3>
                 <div class="aw-info-org">TechBehemoths Berlin, Germany</div>
                 <p class="aw-info-desc">Awarded top honors in India for enterprise WordPress development, custom headless CMS architectures, ultra-fast WooCommerce platforms, and rock-solid code security.</p>
 
-                <!-- Multi-Credential Switcher Tabs -->
-                <div class="aw-cred-tabs-wrap">
-                  <div class="aw-cred-tabs-label">Switch Credential Asset:</div>
-                  <div class="aw-cred-tabs" role="tablist">
-                    <button type="button" class="aw-cred-tab active" data-item="awItem04" data-img="assets/awards/award_tb_wordpress_2025_badge.png" data-pill="2025 WINNER BADGE" data-desc="Official 2025 Winner badge in India for enterprise WordPress solutions, tailored plugin development, and speed optimization.">Badge</button>
-                    <button type="button" class="aw-cred-tab" data-item="awItem04" data-img="assets/awards/award_tb_wordpress_laurel.png" data-pill="2025 WINNER LAUREL" data-desc="Gold laurel seal celebrating Riyadvi Software Technologies as a verified leader in WordPress technologies.">Laurel</button>
-                    <button type="button" class="aw-cred-tab" data-item="awItem04" data-img="assets/awards/award_tb_wordpress_winner_poster.png" data-pill="2025 CERTIFICATE" data-desc="Official celebration certificate honoring Riyadvi Software Technologies as a top-ranked WordPress agency.">Certificate</button>
-                  </div>
+                <!-- Credential Tabs -->
+                <div class="aw-cred-tabs" role="tablist">
+                  <button type="button" class="aw-cred-tab active" data-item="awItem04" data-label="Badge" data-img="assets/awards/award_tb_wordpress_2025_badge.png" data-desc="Official 2025 Winner badge in India for enterprise WordPress solutions, tailored plugin development, and speed optimization.">Badge</button>
+                  <button type="button" class="aw-cred-tab" data-item="awItem04" data-label="Laurel" data-img="assets/awards/award_tb_wordpress_laurel.png" data-desc="Gold laurel seal celebrating Riyadvi Software Technologies as a verified leader in WordPress technologies.">Laurel</button>
+                  <button type="button" class="aw-cred-tab" data-item="awItem04" data-label="Certificate" data-img="assets/awards/award_tb_wordpress_winner_poster.png" data-desc="Official celebration certificate honoring Riyadvi Software Technologies as a top-ranked WordPress agency.">Certificate</button>
                 </div>
 
-                <div class="aw-actions-group">
-                  <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener" class="aw-link-primary" aria-label="Verify WordPress Award on TechBehemoths">
-                    <span>Verify TechBehemoths Profile</span>
+                <div>
+                  <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener" class="aw-link-primary">
+                    <span>View recognition</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
                   </a>
-                  <button type="button" class="aw-btn-inspect" aria-label="Inspect Fullscreen">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Fullscreen View</span>
-                  </button>
                 </div>
               </div>
 
-              <div class="aw-col-node">
-                <div class="aw-node-anchor" title="Milestone 04: WordPress 2025 Global Winner">
-                  <div class="aw-node-core"></div>
-                </div>
-              </div>
-
-              <div class="aw-col-visual">
-                <div class="aw-visual-header">
-                  <svg class="aw-sparkle-star" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+              <div class="aw-visual-cluster" data-modal-img="assets/awards/award_tb_wordpress_2025_badge.png" title="Click to view WordPress award">
+                <div class="aw-anchor-point"></div>
+                <div class="aw-halo-glow"></div>
+                <div class="aw-symbol-icon-wrap">
+                  <!-- Gold WordPress (W) SVG -->
+                  <svg class="aw-symbol-icon" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 94.6C25.4 94.6 5.4 74.6 5.4 50S25.4 5.4 50 5.4 94.6 25.4 94.6 50 74.6 94.6 50 94.6z"/>
+                    <path d="M9.8 50c0 17 9.8 31.7 24 38.8L15.3 38.6C11.8 42.1 9.8 45.8 9.8 50zm64-2.1c0-4.7-1.7-8-3.1-10.4-1.9-3.1-3.6-5.8-3.6-8.9 0-3.5 2.6-6.7 6.4-6.7.2 0 .3 0 .5.1C66.8 15.6 58.7 12 50 12c-12.8 0-24.3 6.6-31.1 16.6 1 .1 1.9.1 2.7.1 4.4 0 11.2-.6 11.2-.6 2.3-.1 2.5 3.2.3 3.5 0 0-2.3.3-4.8.4l15.3 45.6 9.2-27.6-6.6-18c-2.2-.1-4.3-.4-4.3-.4-2.3-.1-2-3.6.3-3.5 0 0 6.9.6 11.1.6 4.4 0 11.2-.6 11.2-.6 2.3-.1 2.5 3.2.3 3.5 0 0-2.3.3-4.8.4l15.1 45 4.2-13.9c1.9-6.4 3.4-11 3.4-15z"/>
                   </svg>
-                  <div class="aw-big-year">2025</div>
-                  <div class="aw-year-subcaption">Berlin &bull; India Winner</div>
                 </div>
-                <div class="aw-media-card" role="button" tabindex="0" data-current-img="assets/awards/award_tb_wordpress_2025_badge.png" aria-label="View WordPress Winner Asset">
-                  <div class="aw-media-frame">
-                    <img src="assets/awards/award_tb_wordpress_2025_badge.png" alt="Award Winner 2025 — WordPress Badge" class="aw-media-img" loading="lazy" />
-                    <div class="aw-media-overlay-hint">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      <span>Inspect Credential</span>
-                    </div>
-                  </div>
-                  <div class="aw-media-meta-bar">
-                    <span class="aw-media-loc">Berlin &bull; India</span>
-                    <span class="aw-media-badge-pill">2025 WINNER BADGE</span>
-                  </div>
+                <div class="aw-big-year">2025</div>
+                <div class="aw-year-subcaption">Badge</div>
+                <div class="aw-media-peek-thumb">
+                  <img src="assets/awards/award_tb_wordpress_2025_badge.png" alt="WordPress Award Asset" loading="lazy" />
                 </div>
               </div>
             </article>
 
-            <!-- 05 — TECHBEHEMOTHS 2025 GLOBAL WINNER: SMM -->
+            <!-- Intermediate Waypoint Anchor -->
+            <div class="aw-waypoint-container" style="height: 40px;">
+              <div class="aw-waypoint-anchor"></div>
+            </div>
+
+            <!-- 05 — TECHBEHEMOTHS 2025: SMM WINNER -->
             <article class="aw-zigzag-item aw-item-odd" id="awItem05">
-              <div class="aw-col-visual">
-                <div class="aw-visual-header">
-                  <svg class="aw-sparkle-star" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+              <div class="aw-visual-cluster" data-modal-img="assets/awards/award_tb_smm_2025_badge.png" title="Click to view SMM award">
+                <div class="aw-anchor-point"></div>
+                <div class="aw-halo-glow"></div>
+                <div class="aw-symbol-icon-wrap">
+                  <!-- Gold Social Media / Network SVG -->
+                  <svg class="aw-symbol-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="18" cy="5" r="3"/>
+                    <circle cx="6" cy="12" r="3"/>
+                    <circle cx="18" cy="19" r="3"/>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
                   </svg>
-                  <div class="aw-big-year">2025</div>
-                  <div class="aw-year-subcaption">Berlin &bull; India Winner</div>
                 </div>
-                <div class="aw-media-card" role="button" tabindex="0" data-current-img="assets/awards/award_tb_smm_2025_badge.png" aria-label="View SMM Winner Asset">
-                  <div class="aw-media-frame">
-                    <img src="assets/awards/award_tb_smm_2025_badge.png" alt="Award Badge — SMM — 2025" class="aw-media-img" loading="lazy" />
-                    <div class="aw-media-overlay-hint">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      <span>Inspect Credential</span>
-                    </div>
-                  </div>
-                  <div class="aw-media-meta-bar">
-                    <span class="aw-media-loc">Berlin &bull; India</span>
-                    <span class="aw-media-badge-pill">2025 WINNER BADGE</span>
-                  </div>
+                <div class="aw-big-year">2025</div>
+                <div class="aw-year-subcaption">Badge</div>
+                <div class="aw-media-peek-thumb">
+                  <img src="assets/awards/award_tb_smm_2025_badge.png" alt="SMM Award Asset" loading="lazy" />
                 </div>
               </div>
 
-              <div class="aw-col-node">
-                <div class="aw-node-anchor" title="Milestone 05: Social Media Marketing 2025 Global Winner">
-                  <div class="aw-node-core"></div>
-                </div>
-              </div>
-
-              <div class="aw-col-info">
+              <div class="aw-text-cluster">
                 <span class="aw-info-tag">05 &mdash; RECOGNITION</span>
                 <h3 class="aw-info-title">Social Media Marketing Winner</h3>
                 <div class="aw-info-org">TechBehemoths Berlin, Germany</div>
                 <p class="aw-info-desc">Recognized for high-impact growth campaigns, omni-channel audience engagement, data-driven lead generation architectures, and exceptional ROI for enterprise clients across industries.</p>
 
-                <!-- Multi-Credential Switcher Tabs -->
-                <div class="aw-cred-tabs-wrap">
-                  <div class="aw-cred-tabs-label">Switch Credential Asset:</div>
-                  <div class="aw-cred-tabs" role="tablist">
-                    <button type="button" class="aw-cred-tab active" data-item="awItem05" data-img="assets/awards/award_tb_smm_2025_badge.png" data-pill="2025 WINNER BADGE" data-desc="Official 2025 Winner badge in India for high-converting social media marketing and brand campaigns.">Badge</button>
-                    <button type="button" class="aw-cred-tab" data-item="awItem05" data-img="assets/awards/award_tb_smm_laurel.png" data-pill="2025 WINNER LAUREL" data-desc="Gold laurel seal celebrating excellence and leadership in social media growth.">Laurel</button>
-                    <button type="button" class="aw-cred-tab" data-item="awItem05" data-img="assets/awards/award_tb_smm_winner_poster.png" data-pill="2025 CERTIFICATE" data-desc="Official winner certificate honoring Riyadvi Software Technologies for excellence in Social Media Marketing.">Certificate</button>
-                  </div>
+                <!-- Credential Tabs -->
+                <div class="aw-cred-tabs" role="tablist">
+                  <button type="button" class="aw-cred-tab active" data-item="awItem05" data-label="Badge" data-img="assets/awards/award_tb_smm_2025_badge.png" data-desc="Official 2025 Winner badge in India for high-converting social media marketing and brand campaigns.">Badge</button>
+                  <button type="button" class="aw-cred-tab" data-item="awItem05" data-label="Laurel" data-img="assets/awards/award_tb_smm_laurel.png" data-desc="Gold laurel seal celebrating excellence and leadership in social media growth.">Laurel</button>
+                  <button type="button" class="aw-cred-tab" data-item="awItem05" data-label="Certificate" data-img="assets/awards/award_tb_smm_winner_poster.png" data-desc="Official winner certificate honoring Riyadvi Software Technologies for excellence in Social Media Marketing.">Certificate</button>
                 </div>
 
-                <div class="aw-actions-group">
-                  <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener" class="aw-link-primary" aria-label="Verify SMM Award on TechBehemoths">
-                    <span>Verify TechBehemoths Profile</span>
+                <div>
+                  <a href="https://techbehemoths.com/company/riyadvi-software-technologies-private-limited" target="_blank" rel="noopener" class="aw-link-primary">
+                    <span>View recognition</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
                   </a>
-                  <button type="button" class="aw-btn-inspect" aria-label="Inspect Fullscreen">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Fullscreen View</span>
-                  </button>
                 </div>
               </div>
             </article>
 
+            <!-- Intermediate Waypoint Down-Arrow Badge -->
+            <div class="aw-waypoint-container">
+              <div class="aw-waypoint-badge">&darr;</div>
+              <div class="aw-waypoint-anchor"></div>
+            </div>
+
             <!-- 06 — OFFICIAL CERTIFICATE OF EXCELLENCE (PDF & BANNER) -->
             <article class="aw-zigzag-item aw-item-even" id="awItem06">
-              <div class="aw-col-info">
+              <div class="aw-text-cluster">
                 <span class="aw-info-tag">06 &mdash; ACCREDITATION &amp; PDF</span>
                 <h3 class="aw-info-title">Official Certificate of Excellence</h3>
                 <div class="aw-info-org">TechBehemoths Berlin, Germany</div>
                 <p class="aw-info-desc">Complete official verified PDF certification document and tri-vertical recognition banner honoring Riyadvi Software Technologies as the 2025 award-winning company in India for WordPress, ReactJS, and Social Media Marketing (SMM).</p>
 
-                <!-- Multi-Credential Switcher Tabs -->
-                <div class="aw-cred-tabs-wrap">
-                  <div class="aw-cred-tabs-label">Switch Credential Asset:</div>
-                  <div class="aw-cred-tabs" role="tablist">
-                    <button type="button" class="aw-cred-tab active" data-item="awItem06" data-img="assets/awards/award_tb_banner_2025.png" data-pill="2025 OFFICIAL BANNER" data-desc="Official tri-vertical award recognition banner validating Riyadvi across WordPress, ReactJS, and Social Media Marketing (SMM).">Tri-Vertical Banner</button>
-                    <button type="button" class="aw-cred-tab" data-item="awItem06" data-img="assets/awards/award_tb_reactjs_winner_poster.png" data-pill="OFFICIAL PDF DOCUMENT" data-desc="Complete verified PDF document issued by TechBehemoths Berlin validating Riyadvi's engineering credentials.">PDF Certificate</button>
-                  </div>
+                <!-- Credential Tabs -->
+                <div class="aw-cred-tabs" role="tablist">
+                  <button type="button" class="aw-cred-tab active" data-item="awItem06" data-label="Tri-Vertical Banner" data-img="assets/awards/award_tb_banner_2025.png" data-desc="Official tri-vertical award recognition banner validating Riyadvi across WordPress, ReactJS, and Social Media Marketing (SMM).">Tri-Vertical Banner</button>
+                  <button type="button" class="aw-cred-tab" data-item="awItem06" data-label="PDF Document" data-img="assets/awards/award_tb_reactjs_winner_poster.png" data-desc="Complete verified PDF document issued by TechBehemoths Berlin validating Riyadvi's engineering credentials.">PDF Document</button>
                 </div>
 
-                <div class="aw-actions-group">
-                  <a href="assets/awards/Official_Certificate_of_Excellence_TechBehemoths_Global_Awards_2025.pdf" target="_blank" rel="noopener noreferrer" class="aw-link-primary" aria-label="Open Official Certificate PDF">
-                    <span>Open Official PDF Certificate</span>
+                <div>
+                  <a href="assets/awards/Official_Certificate_of_Excellence_TechBehemoths_Global_Awards_2025.pdf" target="_blank" rel="noopener noreferrer" class="aw-link-primary">
+                    <span>Open Official Certificate (PDF)</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
                   </a>
-                  <button type="button" class="aw-btn-inspect" aria-label="View PDF Preview">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                    <span>Interactive PDF Viewer</span>
-                  </button>
                 </div>
               </div>
 
-              <div class="aw-col-node">
-                <div class="aw-node-anchor" title="Milestone 06: Official Certificate of Excellence">
-                  <div class="aw-node-core"></div>
-                </div>
-              </div>
-
-              <div class="aw-col-visual">
-                <div class="aw-visual-header">
-                  <svg class="aw-sparkle-star" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+              <div class="aw-visual-cluster" data-is-pdf="true" data-pdf-url="assets/awards/Official_Certificate_of_Excellence_TechBehemoths_Global_Awards_2025.pdf" data-modal-img="assets/awards/award_tb_banner_2025.png" title="Click to open official PDF certificate">
+                <div class="aw-anchor-point"></div>
+                <div class="aw-halo-glow"></div>
+                <div class="aw-symbol-icon-wrap">
+                  <!-- Gold Laurel Shield / Document SVG -->
+                  <svg class="aw-symbol-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+                    <path d="M9 12l2 2 4-4"/>
                   </svg>
-                  <div class="aw-big-year">2025</div>
-                  <div class="aw-year-subcaption">Tri-Vertical Honors</div>
                 </div>
-                <div class="aw-media-card" role="button" tabindex="0" data-is-pdf="true" data-pdf-url="assets/awards/Official_Certificate_of_Excellence_TechBehemoths_Global_Awards_2025.pdf" data-current-img="assets/awards/award_tb_banner_2025.png" aria-label="Open Official Certificate PDF">
-                  <div class="aw-media-frame">
-                    <img src="assets/awards/award_tb_banner_2025.png" alt="TechBehemoths 2025 Tri-Vertical Award Banner" class="aw-media-img" loading="lazy" />
-                    <div class="aw-media-overlay-hint">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                      <span>Open PDF Document</span>
-                    </div>
-                  </div>
-                  <div class="aw-media-meta-bar">
-                    <span class="aw-media-loc">Berlin &bull; India</span>
-                    <span class="aw-media-badge-pill">OFFICIAL PDF</span>
-                  </div>
+                <div class="aw-big-year">2025</div>
+                <div class="aw-year-subcaption">Official Document</div>
+                <div class="aw-media-peek-thumb">
+                  <img src="assets/awards/award_tb_banner_2025.png" alt="TechBehemoths 2025 Tri-Vertical Banner" loading="lazy" />
                 </div>
               </div>
             </article>
