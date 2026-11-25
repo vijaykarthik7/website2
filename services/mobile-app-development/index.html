@@ -3,768 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Mobile App Development & Enterprise Engineering | Riyadvi Software Technologies</title>
-  <meta name="description" content="Enterprise Mobile App Development capabilities by Riyadvi Software Technologies. Resilient architectures, tailored execution, and verified business outcomes.">
+  <title>Mobile App Development | Riyadvi Software Technologies</title>
+  <meta name="description" content="The Experiences People Carry With Them. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  
 </head>
-<body class="svc-page-body">
+<body class="d2-body">
 
-  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
-  <nav class="svc-subnav-bar" id="serviceSubnav">
-    <div class="svc-subnav-container">
-      <div class="svc-subnav-left">
-        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
-          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          ALL SERVICES
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <span class="svc-subnav-title">03 // MOBILE APP DEVELOPMENT</span>
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">03 // Mobile App Development</span>
       </div>
 
-      <div class="svc-subnav-links" id="subnavLinks">
-        <a href="#overview" class="svc-subnav-anchor active">Overview</a>
-        <a href="#landscape" class="svc-subnav-anchor">The Landscape</a>
-        <a href="#insights" class="svc-subnav-anchor">Insights</a>
-        <a href="#what-we-do" class="svc-subnav-anchor">What We Do</a>
-        <a href="#expertise" class="svc-subnav-anchor">Our Expertise</a>
-        <a href="#trending" class="svc-subnav-anchor">What's Trending</a>
-        <a href="#technologies" class="svc-subnav-anchor">Technologies</a>
-        <a href="#process" class="svc-subnav-anchor">Our Process</a>
-        <a href="#lets-talk" class="svc-subnav-anchor">Let's Talk</a>
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- SECTION 01: HERO & TERMINAL -->
-    <section class="svc-hero-section" id="overview">
-      <div class="svc-hero-container">
-        <div class="svc-hero-content">
-          <div class="svc-hero-badge">
-            <span class="svc-badge-dot"></span>
-            03 // MOBILE ENGINEERING
-          </div>
-          <h1 class="svc-hero-title">A mobile application is a <span class="svc-gold-text">permanent brand presence</span> in your customer’s hand.</h1>
-          <p class="svc-hero-lead">Consumers and field operators expect mobile experiences to be fluid, instantaneous, and resilient under poor network conditions. We develop native iOS, Android, and cross-platform mobile applications that combine 60/120fps fluid micro-interactions, local offline persistence, hardware-accelerated graphics, and secure biometrics into products users return to daily.</p>
-          <div class="svc-hero-actions">
-            <a href="#lets-talk" class="svc-btn-primary">Start Your Project &rarr;</a>
-            <a href="#what-we-do" class="svc-btn-secondary">Explore Capabilities</a>
-          </div>
-        </div>
-
-        <div class="svc-hero-visual">
-          <div class="svc-terminal-card">
-            <div class="svc-terminal-header">
-              <div class="svc-terminal-dots">
-                <span class="svc-dot svc-dot-red"></span>
-                <span class="svc-dot svc-dot-yellow"></span>
-                <span class="svc-dot svc-dot-green"></span>
-              </div>
-              <div class="svc-terminal-url">https://mobile.riyadvi.com/app-engine</div>
-              <div class="svc-terminal-status"><span class="svc-status-pill"></span>HEALTHY &middot; 99.99%</div>
-            </div>
-            <div class="svc-telemetry-grid">
-              
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">FRAME RATE</span>
-                <span class="svc-telemetry-value">60/120 FPS</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">OFFLINE SYNC</span>
-                <span class="svc-telemetry-value">SQLite Active</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">CRASH RATE</span>
-                <span class="svc-telemetry-value">< 0.01%</span>
-              </div>
-            </div>
-            <div class="svc-code-display">
-              <pre><code>import { MobileRuntime, OfflineCache } from '@riyadvi/mobile-core';
-export const appConfig = {
-  engine: 'flutter-native-compilation',
-  localStore: 'encrypted-sqlite-cipher',
-  biometrics: ['faceId', 'fingerprint'],
-  telemetry: 'realtime-crash-guard'
-};
-// Hardware-accelerated UI pipeline compiled for iOS & Android</code></pre>
-            </div>
-            <div class="svc-terminal-footer">
-              <span class="svc-pulse-indicator"></span>
-              <span class="svc-terminal-msg">Production Node Active</span>
-              <span class="svc-terminal-timestamp">Latency: 1.8ms</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02: THE LANDSCAPE -->
-    <section class="svc-section svc-section-border-top" id="landscape">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">02 // MOBILE CHALLENGES</span>
-          <h2 class="svc-section-title">Most mobile apps are downloaded once. <span class="svc-gold-text">And then never opened again.</span></h2>
-          <p class="svc-section-lead">Building a mobile application is easy; building one that commands high retention, flawless store reviews, and rapid user engagement requires deep platform engineering.</p>
-        </div>
-
-        <div class="svc-landscape-grid">
-          <div class="svc-landscape-narrative">
-            
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">01 / FLUIDITY & JANK</span>
-              <h3 class="svc-narrative-title">Frame Drops & Perceived Responsiveness</h3>
-              <p class="svc-narrative-desc">Mobile users immediately detect frame stutters during scrolling, sluggish transitions, and delayed tap responses. An app that stutters during payment or product browsing destroys brand trust instantly. Fluidity requires strict 16ms frame budgeting.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">02 / NETWORK INSTABILITY</span>
-              <h3 class="svc-narrative-title">Offline Brittleness in the Real World</h3>
-              <p class="svc-narrative-desc">Cellular signals drop in transit, elevators, and remote facilities. Apps that display blank screens or infinite loading spinners when connections stutter fail their users. Enterprise mobile engineering demands offline-first local data caching.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">03 / FRAGMENTATION & OS UPDATES</span>
-              <h3 class="svc-narrative-title">Ecosystem Fragmentation & Review Delays</h3>
-              <p class="svc-narrative-desc">Navigating thousands of Android screen variations, Apple App Store guidelines, permission policies, and biometric changes creates severe maintenance bottlenecks without disciplined engineering standards.</p>
-            </div>
-          </div>
-
-          <!-- Diagnostic Box with 4 full comparison rows (NO EMPTY SPACE) -->
-          <div class="svc-diagnostic-box">
-            <div class="svc-diag-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--svc-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              Architectural Reality Check
-            </div>
-            
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Fragile Hybrid Web Wrappers</strong>
-                Sluggish web views bundled in native shells suffering noticeable scroll lag and poor gesture support.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Compacted Native & Flutter Code</strong>
-                AOT-compiled bytecode running directly on native GPU pipelines with locked 60/120fps gesture fluidity.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Network-Dependent Data Fetching</strong>
-                Blank screens and blocking spinners whenever cellular connections drop or experience packet loss.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Offline-First Local Sync</strong>
-                Encrypted local SQLite caching with background conflict resolution queues that sync automatically when online.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Manual Store Release Cycles</strong>
-                Slow bi-monthly release bottlenecks fraught with unexpected rejection notices from Apple and Google.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Automated CI/CD Store Pipelines</strong>
-                Continuous integration pipelines with automated linting, test suites, screenshot generation, and fast-track deployment.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Silent Client-Side Crashes</strong>
-                Unreported app crashes leaving users frustrated with zero error tracking for the engineering team.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Real-Time Crash Telemetry</strong>
-                Symbolicated stack traces, breadcrumb interaction logs, and automated alerting with sub-0.01% crash benchmarks.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03: INSIGHTS -->
-    <section class="svc-section svc-section-border-top" id="insights">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">03 // MOBILE OBSERVATIONS</span>
-          <h2 class="svc-section-title">The benchmarks of <span class="svc-gold-text">mobile retention</span></h2>
-          <p class="svc-section-lead">Empirical app store analytics demonstrate the tight relationship between technical stability and user lifetime value.</p>
-        </div>
-
-        <div class="svc-insights-strip">
-          
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">78%</div>
-              <div class="svc-insight-headline">Users Abandon Unresponsive Apps</div>
-              <p class="svc-insight-desc">Over three quarters of consumers uninstall an app within 48 hours if it crashes, freezes, or exhibits stuttering.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">60/120</div>
-              <div class="svc-insight-headline">FPS Target Refresh Rate</div>
-              <p class="svc-insight-desc">Hardware-accelerated rendering pipelines lock fluid animations to high-refresh-rate ProMotion displays.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">< 0.01%</div>
-              <div class="svc-insight-headline">Benchmark Crash-Free Sessions</div>
-              <p class="svc-insight-desc">Enterprise apps developed to strict memory standards maintain 99.99% crash-free session ratings on store consoles.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">4.8★</div>
-              <div class="svc-insight-headline">Average App Store Rating Benchmark</div>
-              <p class="svc-insight-desc">Clean UI workflows and offline stability generate consistent top-tier ratings and editorial store features.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT WE DO -->
-    <section class="svc-section svc-section-border-top" id="what-we-do">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">04 // WHAT WE DO</span>
-          <h2 class="svc-section-title">Engineering capabilities built for <span class="svc-gold-text">business durability</span></h2>
-          <p class="svc-section-lead">We do not assemble one-size-fits-all brochure templates. We engineer tailored systems that address specific operational bottlenecks, user journeys, and technical objectives.</p>
-        </div>
-
-        <div class="svc-capabilities-stack">
-          
-          <!-- Capability 01 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 01 // CROSS-PLATFORM ENGINEERING</span>
-              <h3 class="svc-cap-title">Flutter & React Native Applications</h3>
-              <p class="svc-cap-body">Building separate engineering teams for iOS and Android inflates development budgets and introduces feature divergence. We engineer high-performance cross-platform applications using Flutter and React Native that share up to 90% of business logic while rendering through platform-native GPU engines. Your users receive native look, feel, and performance, while your organization benefits from unified feature releases and halved maintenance costs.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Dual-team overhead, desynchronized release schedules, and inconsistent user experiences across platforms.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">AOT-compiled Dart/Flutter or Hermes-powered React Native with strict native bridge optimization.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Consumer marketplaces, fintech wallets, on-demand logistics, and multi-platform enterprise tools.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Dual iOS/Android production builds, shared component library, CI/CD store configuration, and documentation.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // CROSS-PLATFORM PIPELINE</span>
-                <span class="svc-browser-status">60/120 FPS</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="35" width="65" height="55" rx="6" fill="#10101c" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="52" y="55" fill="#C9A45C" font-size="7.5" font-family="monospace" text-anchor="middle">CODEBASE</text>
-        <text x="52" y="68" fill="#ffffff" font-size="6.5" font-family="monospace" text-anchor="middle">Dart / TS</text>
-        <text x="52" y="78" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">90% Reused</text>
-        <line x1="85" y1="62" x2="115" y2="62" stroke="#C9A45C" stroke-width="1.5"/>
-        <rect x="119" y="30" width="60" height="65" rx="6" fill="#141422" stroke="#4eedc4" stroke-width="1.3"/>
-        <text x="149" y="48" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">IMPELLER</text>
-        <text x="149" y="58" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">GPU ENGINE</text>
-        <text x="149" y="80" fill="#27c93f" font-size="7" font-family="monospace" font-weight="700" text-anchor="middle">120 FPS</text>
-        <line x1="179" y1="48" x2="205" y2="40" stroke="#4eedc4" stroke-width="1.2"/>
-        <line x1="179" y1="76" x2="205" y2="84" stroke="#4eedc4" stroke-width="1.2"/>
-        <rect x="205" y="25" width="60" height="28" rx="4" fill="#0d141c" stroke="#5ac8fa" stroke-width="1"/>
-        <text x="235" y="42" fill="#5ac8fa" font-size="7" font-family="monospace" text-anchor="middle">APPLE iOS</text>
-        <rect x="205" y="70" width="60" height="28" rx="4" fill="#0c1810" stroke="#27c93f" stroke-width="1"/>
-        <text x="235" y="87" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">ANDROID</text>
-        <text x="140" y="116" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">AOT NATIVE COMPILATION PIPELINE</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Code Reusability</span><strong>89.4%</strong></div>
-
-                <div class="svc-preview-metric"><span>Binary Size Target</span><strong>< 24MB</strong></div>
-
-                <div class="svc-preview-metric"><span>Startup Time (Cold)</span><strong>0.85s</strong></div>
-
-                <div class="svc-preview-metric"><span>Memory Footprint</span><strong>48MB Avg</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 02 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 02 // NATIVE EXCELLENCE</span>
-              <h3 class="svc-cap-title">Native iOS & Android Engineering</h3>
-              <p class="svc-cap-body">When your product demands deep hardware integration, low-level Bluetooth LE communication, real-time audio processing, or platform-specific design language compliance, native development is paramount. We engineer native iOS apps in Swift/SwiftUI and native Android apps in Kotlin/Jetpack Compose that exploit the latest operating system APIs, neural engine capabilities, and background processing models.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Complex hardware integration limitations, high battery drain, and non-native gesture compromises in hybrid frameworks.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Clean MVVM/MVI architectures in Swift and Kotlin leveraging CoreBluetooth, CameraX, and hardware neural accelerators.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">IoT device controllers, health-tech biometric monitors, real-time audio recorders, and secure banking apps.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Native Swift/Kotlin source code, SDK wrapper modules, automated UI test suites, and App Store publishing.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // NATIVE HARDWARE</span>
-                <span class="svc-browser-status">SWIFT / KOTLIN</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="30" y="20" width="220" height="25" rx="4" fill="#141422" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="140" y="36" fill="#C9A45C" font-size="8" font-family="monospace" font-weight="700" text-anchor="middle">SWIFTUI &amp; JETPACK COMPOSE</text>
-        <rect x="30" y="52" width="65" height="42" rx="4" fill="#0f1620" stroke="#5ac8fa" stroke-width="1"/>
-        <text x="62" y="68" fill="#5ac8fa" font-size="7" font-family="monospace" text-anchor="middle">METAL / VULKAN</text>
-        <text x="62" y="80" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">Direct GPU</text>
-        <rect x="107" y="52" width="65" height="42" rx="4" fill="#101814" stroke="#27c93f" stroke-width="1"/>
-        <text x="140" y="68" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">CORE BLUETOOTH</text>
-        <text x="140" y="80" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">BLE 5.3 Low Pwr</text>
-        <rect x="185" y="52" width="65" height="42" rx="4" fill="#181216" stroke="#C9A45C" stroke-width="1"/>
-        <text x="217" y="68" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">SECURE ENCLAVE</text>
-        <text x="217" y="80" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">FaceID / Biometric</text>
-        <text x="140" y="115" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">BARE-METAL OS INTEGRATION</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>BLE Throughput</span><strong>2.1 Mbps</strong></div>
-
-                <div class="svc-preview-metric"><span>Battery Consumption</span><strong>< 2% / hr</strong></div>
-
-                <div class="svc-preview-metric"><span>Hardware Acceleration</span><strong>Metal / Vulkan</strong></div>
-
-                <div class="svc-preview-metric"><span>Biometric Auth Time</span><strong>180ms</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 03 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 03 // DATA RESILIENCE</span>
-              <h3 class="svc-cap-title">Offline-First Architecture & Data Sync</h3>
-              <p class="svc-cap-body">Mobile users should never be locked out of their data because of intermittent cellular connectivity. We build robust offline-first mobile applications that store, validate, and query records locally using encrypted SQLite or Realm databases. When connections are restored, background sync engines resolve data conflicts cleanly, stream mutations to cloud servers, and ensure uninterrupted productivity.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Data loss in transit, blank screens in low-connectivity areas, and frustrated field workers unable to log records.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Local-first encrypted database caching, operational transformation conflict queues, and background delta syncing.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Field inspection tools, healthcare patient records, offline aviation manifests, and remote warehouse auditing.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Offline data engine, conflict resolution rules, encrypted local store, and cloud synchronization endpoints.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // OFFLINE SYNC</span>
-                <span class="svc-browser-status">AES-256 CIPHER</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="35" width="70" height="60" rx="6" fill="#12121c" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="60" y="54" fill="#C9A45C" font-size="7.5" font-family="monospace" text-anchor="middle">LOCAL SQLITE</text>
-        <text x="60" y="66" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">SQLCipher Enc</text>
-        <text x="60" y="78" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">vClock: [T:14]</text>
-        <path d="M 95 52 L 175 52" stroke="#4eedc4" stroke-width="1.5"/>
-        <text x="135" y="46" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">PUSH DIFFS</text>
-        <path d="M 175 74 L 95 74" stroke="#C9A45C" stroke-width="1.5"/>
-        <text x="135" y="85" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">PULL MERGE</text>
-        <rect x="185" y="35" width="70" height="60" rx="6" fill="#0d1612" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="220" y="54" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">CLOUD DB</text>
-        <text x="220" y="66" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">Postgres Edge</text>
-        <text x="220" y="78" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">Resolved: 100%</text>
-        <text x="140" y="118" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">ZERO DATA LOSS OFFLINE RESILIENCE</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Offline Query Time</span><strong>4ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Sync Queue Capacity</span><strong>50k Events</strong></div>
-
-                <div class="svc-preview-metric"><span>Conflict Accuracy</span><strong>100.0%</strong></div>
-
-                <div class="svc-preview-metric"><span>Data Encryption</span><strong>SQLCipher</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 04 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 04 // ENGAGEMENT & COMMERCE</span>
-              <h3 class="svc-cap-title">Mobile Commerce & In-App Purchases</h3>
-              <p class="svc-cap-body">Converting mobile attention into transactions requires frictionless checkout flows and trusted payment handshakes. We engineer mobile commerce experiences with native Apple Pay, Google Pay, Stripe SDKs, and StoreKit subscriptions. From one-tap biometric checkouts to automated receipt validation and subscription lifecycle management, our checkout funnels maximize conversions while strictly complying with app store payment policies.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">High cart abandonment during mobile form fill, complex subscription management, and app store compliance rejections.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Native Apple/Google Pay integration, StoreKit 2 / Google Play Billing integration, and server-side receipt validation.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Direct-to-consumer mobile shopping, digital subscription apps, SaaS mobile extensions, and marketplace apps.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">One-click checkout flow, subscription webhook server, automated receipt validator, and refund management console.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // COMMERCE FLOW</span>
-                <span class="svc-browser-status">PCI-DSS LEVEL 1</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="40" width="55" height="48" rx="6" fill="#141420" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="52" y="60" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">APPLE PAY</text>
-        <text x="52" y="72" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">&amp; GOOGLE PAY</text>
-        <line x1="80" y1="64" x2="115" y2="64" stroke="#C9A45C" stroke-width="1.4"/>
-        <circle cx="140" cy="64" r="22" fill="#0e1a14" stroke="#27c93f" stroke-width="1.5"/>
-        <text x="140" y="62" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">TOKEN</text>
-        <text x="140" y="70" fill="#ffffff" font-size="5.5" font-family="monospace" text-anchor="middle">ENCLAVE</text>
-        <line x1="162" y1="64" x2="195" y2="64" stroke="#27c93f" stroke-width="1.4"/>
-        <rect x="200" y="40" width="60" height="48" rx="6" fill="#101822" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="230" y="58" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">STRIPE</text>
-        <text x="230" y="68" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">SETTLEMENT</text>
-        <text x="230" y="78" fill="#27c93f" font-size="5.5" font-family="monospace" text-anchor="middle">3DS2 Verified</text>
-        <text x="140" y="115" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">PCI-DSS SAQ-A ENCRYPTED HANDSHAKE</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Checkout Completion</span><strong>84.6%</strong></div>
-
-                <div class="svc-preview-metric"><span>Apple/Google Pay Share</span><strong>78%</strong></div>
-
-                <div class="svc-preview-metric"><span>Receipt Verification</span><strong>45ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Payment Uptime</span><strong>99.999%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 05 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 05 // REAL-TIME COMMUNICATIONS</span>
-              <h3 class="svc-cap-title">Push Notifications & Real-Time Messaging</h3>
-              <p class="svc-cap-body">Timely, personalized notifications drive mobile retention, while real-time in-app chat connects users with services instantly. We implement high-throughput push notification infrastructure using APNs, FCM, and segmented user messaging pipelines. We also engineer WebSocket-powered messaging channels with typing indicators, read receipts, and multimedia attachments that perform smoothly even during traffic spikes.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Delayed push notifications, unsegmented broadcast spam triggering uninstalls, and lagging in-app chat.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">HTTP/2 APNs/FCM multiplexing, localized notification payload scheduling, and low-latency WebSocket chat brokers.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Order delivery tracking, telehealth doctor-patient messaging, emergency notification alerts, and social communities.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Push notification engine, user notification preferences center, real-time chat module, and analytics dashboard.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // PUSH & SOCKETS</span>
-                <span class="svc-browser-status">SUB-SECOND DISPATCH</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="65" r="24" fill="#141424" stroke="#C9A45C" stroke-width="1.4"/>
-        <text x="50" y="62" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">DISPATCH</text>
-        <text x="50" y="72" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">SERVER</text>
-        <path d="M 74 52 Q 110 35 145 35" fill="none" stroke="#5ac8fa" stroke-width="1.3"/>
-        <path d="M 74 78 Q 110 95 145 95" fill="none" stroke="#27c93f" stroke-width="1.3"/>
-        <rect x="145" y="24" width="75" height="26" rx="4" fill="#0d141e" stroke="#5ac8fa" stroke-width="1"/>
-        <text x="182" y="40" fill="#5ac8fa" font-size="6.5" font-family="monospace" text-anchor="middle">APNs (iOS)</text>
-        <rect x="145" y="80" width="75" height="26" rx="4" fill="#0c1810" stroke="#27c93f" stroke-width="1"/>
-        <text x="182" y="96" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">FCM (Android)</text>
-        <circle cx="250" cy="65" r="16" fill="#141420" stroke="#C9A45C" stroke-width="1.5"/>
-        <text x="250" y="68" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">APP</text>
-        <line x1="220" y1="37" x2="245" y2="52" stroke="#5ac8fa" stroke-width="1"/>
-        <line x1="220" y1="93" x2="245" y2="78" stroke="#27c93f" stroke-width="1"/>
-        <text x="140" y="68" fill="#4eedc4" font-size="6.5" font-family="monospace" text-anchor="middle">&lt;42ms DISPATCH</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Push Delivery Rate</span><strong>99.8%</strong></div>
-
-                <div class="svc-preview-metric"><span>Socket Handshake</span><strong>18ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Concurrent Connections</span><strong>100k+</strong></div>
-
-                <div class="svc-preview-metric"><span>Message Roundtrip</span><strong>42ms</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 06 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 06 // LIFECYCLE MANAGEMENT</span>
-              <h3 class="svc-cap-title">App Store Optimization & CI/CD Pipelines</h3>
-              <p class="svc-cap-body">Launching an app is just the beginning. Long-term commercial success requires automated build pipelines, continuous regression testing across device farms, and structured App Store Optimization (ASO). We establish automated Fastlane CI/CD workflows that compile builds, run automated end-to-end tests, capture localized store screenshots, and deploy to TestFlight and Google Play Internal tracks automatically upon code merge.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Slow manual deployment processes, unexpected App Store review rejections, and low organic store visibility.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Automated Fastlane pipelines, cloud device farm testing, semantic versioning, and keyword/metadata optimization.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Continuous enterprise release trains, high-cadence consumer apps, and multi-region localized app deployments.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Fastlane configuration, automated store submission pipeline, ASO metadata keyword audit, and release playbooks.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // DEPLOYMENT PIPELINE</span>
-                <span class="svc-browser-status">FASTLANE AUTOMATED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="48" width="48" height="34" rx="4" fill="#101018" stroke="#C9A45C" stroke-width="1"/>
-        <text x="39" y="64" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">GIT PUSH</text>
-        <text x="39" y="73" fill="#727284" font-size="5.5" font-family="monospace" text-anchor="middle">Commit</text>
-        <line x1="63" y1="65" x2="78" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="78" y="48" width="48" height="34" rx="4" fill="#101018" stroke="#4eedc4" stroke-width="1"/>
-        <text x="102" y="64" fill="#4eedc4" font-size="6.5" font-family="monospace" text-anchor="middle">TESTS</text>
-        <text x="102" y="73" fill="#27c93f" font-size="5.5" font-family="monospace" text-anchor="middle">88.5% Pass</text>
-        <line x1="126" y1="65" x2="141" y2="65" stroke="#4eedc4" stroke-width="1.2"/>
-        <rect x="141" y="48" width="52" height="34" rx="4" fill="#101018" stroke="#C9A45C" stroke-width="1"/>
-        <text x="167" y="64" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">FASTLANE</text>
-        <text x="167" y="73" fill="#727284" font-size="5.5" font-family="monospace" text-anchor="middle">Sign &amp; Build</text>
-        <line x1="193" y1="65" x2="208" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="208" y="48" width="56" height="34" rx="4" fill="#0d1810" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="236" y="64" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">RELEASE</text>
-        <text x="236" y="73" fill="#27c93f" font-size="5.5" font-family="monospace" text-anchor="middle">App Store</text>
-        <text x="140" y="112" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">AUTOMATED ZERO-TOUCH RELEASE TRAIN</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Build Deployment Time</span><strong>8m 20s</strong></div>
-
-                <div class="svc-preview-metric"><span>Device Farm Matrix</span><strong>45 Devices</strong></div>
-
-                <div class="svc-preview-metric"><span>Store Acceptance Rate</span><strong>99.2%</strong></div>
-
-                <div class="svc-preview-metric"><span>Test Coverage</span><strong>88.5%</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: OUR EXPERTISE -->
-    <section class="svc-section svc-section-border-top" id="expertise">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">05 // TECHNICAL DISCIPLINES</span>
-          <h2 class="svc-section-title">Engineering disciplines & <span class="svc-gold-text">architectural trade-offs</span></h2>
-          <p class="svc-section-lead">Every technological decision involves intentional balance. We navigate these architectural trade-offs to deliver sustainable, scalable outcomes.</p>
-        </div>
-
-        <div class="svc-expertise-grid">
-          
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Native GPU Rendering (Metal & Vulkan)</h3>
-            <p class="svc-expertise-desc">Bypassing web view abstractions to render directly via GPU shaders for silky-smooth 60/120fps interactions.</p>
-            <div class="svc-expertise-tradeoff">PERFORMANCE // HARDWARE DIRECT ACCELERATION</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Memory Management & Battery Optimization</h3>
-            <p class="svc-expertise-desc">Profiling memory allocation and background threads to prevent OS terminations and minimize battery drainage.</p>
-            <div class="svc-expertise-tradeoff">EFFICIENCY // ZERO LEAK TOLERANCE</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Offline-First Synchronization</h3>
-            <p class="svc-expertise-desc">Engineering transactional local caches that reconcile cleanly with cloud backends upon reconnection.</p>
-            <div class="svc-expertise-tradeoff">RELIABILITY // ZERO DATA LOSS GUARANTEE</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Biometrics & Secure Enclave Keys</h3>
-            <p class="svc-expertise-desc">Storing authentication tokens and cryptographic secrets within hardware Secure Enclaves and Keychains.</p>
-            <div class="svc-expertise-tradeoff">SECURITY // HARDWARE-BACKED CRYPTOGRAPHY</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Automated Device Farm QA</h3>
-            <p class="svc-expertise-desc">Validating layout stability and functional flows across dozens of real physical devices prior to release.</p>
-            <div class="svc-expertise-tradeoff">QUALITY // ZERO FRAGMENTATION REGRESSIONS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">App Store Compliance Engineering</h3>
-            <p class="svc-expertise-desc">Structuring privacy manifests, permission rationale dialogues, and in-app purchase funnels for guaranteed approvals.</p>
-            <div class="svc-expertise-tradeoff">GOVERNANCE // 100% STORE COMPLIANCE</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: WHAT'S TRENDING -->
-    <section class="svc-section svc-section-border-top" id="trending">
-      <div class="svc-container">
-        <div class="svc-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
           <div>
-            <span class="svc-pill-badge">06 // EDITORIAL PERSPECTIVES</span>
-            <h2 class="svc-section-title">What's Shaping the <span class="svc-gold-text">Mobile App Development Platform</span></h2>
-            <p class="svc-section-lead">Research, technical analysis, and architectural perspectives from our engineering desk exploring current developments shaping enterprise digital delivery.</p>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              03 // MOBILE ARCHITECTURE & TACTILE INTERFACES
+            </div>
+            <h1 class="d2-svc-hero-title">Your application has a place on someone’s phone. It has to earn a place in their routine.</h1>
+            <p class="d2-svc-hero-lead">Mobile applications live in an environment where attention is limited and expectations are immediate. People expect familiar interactions, fast responses, clear information, and the ability to complete tasks without unnecessary effort. Building a useful mobile product means understanding those everyday moments. How does someone discover the application? What happens during their first session? Can they continue when the network is unreliable? Does the interface remain understandable across different devices? Our approach to mobile development begins with these questions and connects product design with dependable application engineering.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
           </div>
-        </div>
 
-        <div class="svc-trending-carousel-wrap">
-          <div class="svc-carousel-viewport">
-            <div class="svc-carousel-track" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-              
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">MOBILE AI &middot; 7 MIN READ</span>
-                  <h3 class="svc-article-card-title">On-Device Machine Learning & Apple Neural Engine in 2026</h3>
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
                 </div>
-                <p class="svc-article-card-summary">How running quantized LLMs and computer vision models locally on mobile devices eliminates server inference costs and protects user privacy.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Tactile Device Hardware &amp; Screen State Engine</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
                 </div>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">ARCHITECTURE &middot; 6 MIN READ</span>
-                  <h3 class="svc-article-card-title">The Evolution of Cross-Platform Frameworks: Flutter vs React Native</h3>
-                </div>
-                <p class="svc-article-card-summary">A detailed engineering comparison of compile targets, runtime overhead, and bridge performance across contemporary mobile frameworks.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">FRAME RATE</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">60 FPS</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">CRASH-FREE</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">99.98%</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">OFFLINE SYNC</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">Active</div>
+                  </div>
+                
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">SECURITY &middot; 8 MIN READ</span>
-                  <h3 class="svc-article-card-title">Mobile Security Mandates: Privacy Manifests & Biometric Enclaves</h3>
-                </div>
-                <p class="svc-article-card-summary">Navigating Apple and Google’s increasingly strict privacy requirements and securing sensitive credentials in hardware storage.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { DevicePipeline, OfflineSync } from '@riyadvi/mobile-core';
+export const appConfig = {
+  platform: ['ios-native-metal', 'android-compose-vulkan'],
+  telemetry: { fps: 60, batteryOptimization: 'strict' },
+  offlineDatabase: 'sqlite-encrypted-cipher',
+  syncProtocol: 'delta-compression-background'
+};
+// Hardware accelerated tactile interface initialized at 60 FPS</code></pre>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">DEVOPS &middot; 5 MIN READ</span>
-                  <h3 class="svc-article-card-title">Automated Fastlane Deployment Pipelines for Enterprise Mobile Apps</h3>
-                </div>
-                <p class="svc-article-card-summary">Eliminating manual release delays by automating code signing, test flight distribution, and phased store rollouts.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
               </div>
             </div>
           </div>
@@ -772,124 +142,609 @@ export const appConfig = {
       </div>
     </section>
 
-    <!-- SECTION 07: TECHNOLOGIES -->
-    <section class="svc-section svc-section-border-top" id="technologies">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">07 // TECHNOLOGY STACK</span>
-          <h2 class="svc-section-title">Technologies engineered for <span class="svc-gold-text">longevity</span></h2>
-          <p class="svc-section-lead">We select enterprise-proven, community-backed technologies with long-term support and reliable ecosystem roadmaps.</p>
-        </div>
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">People don’t judge mobile applications by their feature lists.</h2>
+            <p class="d2-reality-desc">A user will delete an application within 30 seconds if it freezes on splash, demands intrusive permissions before demonstrating value, or drains their battery in the background. Mobile engineering is the art of extreme discipline.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
 
-        <div class="svc-tech-grid">
-          <div class="svc-tech-card"><span class="svc-tech-cat">FRAMEWORKS</span><h3 class="svc-tech-title">Next.js & React</h3><p class="svc-tech-desc">Production-grade SSR, static generation, and streaming component rendering.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">RUNTIMES</span><h3 class="svc-tech-title">Node.js & Go</h3><p class="svc-tech-desc">Asynchronous, high-throughput microservices and API gateways.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">TYPE SAFETY</span><h3 class="svc-tech-title">Strict TypeScript</h3><p class="svc-tech-desc">Zero runtime type regressions with compile-time verification.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CONTAINERS</span><h3 class="svc-tech-title">Docker & K8s</h3><p class="svc-tech-desc">Containerized orchestration with automated horizontal scaling.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">PERSISTENCE</span><h3 class="svc-tech-title">PostgreSQL</h3><p class="svc-tech-desc">ACID relational compliance with indexed query optimization.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CACHE & BROKER</span><h3 class="svc-tech-title">Redis & Kafka</h3><p class="svc-tech-desc">Distributed caching and partition-tolerant event streaming.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">HEADLESS CMS</span><h3 class="svc-tech-title">Sanity & Strapi</h3><p class="svc-tech-desc">Structured content modeling with instant editorial preview studios.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">EDGE DELIVERY</span><h3 class="svc-tech-title">Cloudflare & AWS</h3><p class="svc-tech-desc">Multi-region edge network distribution with DDoS mitigation.</p></div>
+          <div class="d2-reality-stagger">
+            
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Onboarding Friction and Premature Sign-Up Walls</h3>
+      </div>
+      <p class="d2-reality-card-body">Forcing lengthy account creation forms and permission dialogues before the user experiences core utility causes over 60% of first-time visitors to abandon the application immediately.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Network Brittleness and Broken Offline States</h3>
+      </div>
+      <p class="d2-reality-card-body">Applications built with naive online-only assumptions crash or present endless spinning wheels when a user enters an elevator, subway, or low-connectivity area.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Memory Leaks and Device Battery Drain</h3>
+      </div>
+      <p class="d2-reality-card-body">Unoptimized background location polling, uncompressed asset bundles, and leaky state managers overheat mobile hardware and prompt OS battery warnings that destroy retention.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Platform Inconsistency and Non-Standard Gestures</h3>
+      </div>
+      <p class="d2-reality-card-body">Attempting to force iOS navigation patterns onto Android (or vice-versa) frustrates users who rely on tactile muscle memory for back navigation, keyboard handling, and system gestures.</p>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: OUR PROCESS -->
-    <section class="svc-section svc-section-border-top" id="process">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">08 // EXECUTION METHODOLOGY</span>
-          <h2 class="svc-section-title">How we take projects <span class="svc-gold-text">from idea to production</span></h2>
-          <p class="svc-section-lead">A transparent six-phase delivery framework ensuring architectural rigor, clear milestone governance, and predictable launches.</p>
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in Mobile App Development, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
         </div>
 
-        <div class="svc-process-timeline">
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 01</div><h3 class="svc-step-title">Discovery & Architecture</h3><p class="svc-step-desc">Stakeholder interviews, technical audit, specification mapping, and high-level architectural blueprints.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 02</div><h3 class="svc-step-title">UX Flows & Wireframing</h3><p class="svc-step-desc">Information architecture, user journey maps, and low-fidelity structural validation.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 03</div><h3 class="svc-step-title">UI & Design System</h3><p class="svc-step-desc">Atomic design tokens, high-fidelity responsive prototypes, and accessibility audits.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 04</div><h3 class="svc-step-title">Sprint Engineering</h3><p class="svc-step-desc">Iterative two-week sprints, automated test coverage, and continuous integration deployments.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 05</div><h3 class="svc-step-title">Security & QA Audit</h3><p class="svc-step-desc">End-to-end stress testing, OWASP security audits, and Core Web Vitals optimization.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 06</div><h3 class="svc-step-title">Production & Handover</h3><p class="svc-step-desc">Zero-downtime DNS cutover, telemetry configuration, source code IP handover, and staff training.</p></div>
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
+            
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>Android Application Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>iOS Application Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>Cross-Platform Applications</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>Enterprise Mobile Solutions</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>Mobile Interface Engineering</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>Application Maintenance and Optimization</span>
+    </button>
+  
+          </div>
+
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Modern Kotlin &amp; Jetpack Compose Engineering</h3>
+        <p class="d2-cap-stage-expl">Building native Android applications engineered for fluid performance across thousands of diverse screen sizes, chipsets, and OS versions.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Android fragmentation causes UI distortions, memory crashes, and inconsistent performance on budget chipsets.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Declarative Jetpack Compose UI, Kotlin Coroutines, and strict compatibility testing across physical device test farms.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Logistics driver dispatch application running reliably across 12,000 ruggedized Android handhelds.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Native APK/AAB Builds, Google Play Store Approval, Crashlytics Integration, ProGuard Obfuscation.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Swift &amp; SwiftUI Experiences for the Apple Ecosystem</h3>
+        <p class="d2-cap-stage-expl">Crafting pixel-perfect iOS applications that take full advantage of Apple Silicon, Metal graphics acceleration, Dynamic Island, and Core Haptics.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Generic hybrid wrappers fail to match the silky 120Hz ProMotion fluidity and tactile responsiveness iOS users expect.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Native Swift/SwiftUI development adhering to Apple Human Interface Guidelines and strict privacy protections.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Wealth management client portfolio app featuring biometrics, real-time charting, and interactive widgets.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Native Xcode Project, TestFlight Deployment, App Store Approval, Apple Watch Companion App.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Single-Codebase Efficiency with Flutter and React Native</h3>
+        <p class="d2-cap-stage-expl">Delivering unified multi-platform codebases that compile to native machine code without sacrificing platform-specific touch behaviors.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Maintaining two separate native teams doubles development cost and delays simultaneous feature releases.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Architecting clean domain abstraction layers in Flutter or React Native with native bridge modules for hardware APIs.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Consumer telehealth consultation app launched simultaneously on iOS and Android within 16 weeks.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Unified Cross-Platform Codebase, CI/CD Automated Store Deployments, Shared Design Tokens.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Secure Field Operations and Employee Utility Apps</h3>
+        <p class="d2-cap-stage-expl">Developing robust mobile applications for frontline enterprise workforces, integrated with corporate SSO, MDM provisioning, and barcode scanning.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Consumer apps lack enterprise device management, offline database encryption, and remote wipe capabilities.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Enterprise MDM integration, encrypted local SQLite databases (SQLCipher), and zero-trust VPN tunnels.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Field inspection and aircraft maintenance app functioning completely offline in remote hangars.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Enterprise IPA/APK Distribution, MDM Configuration Profiles, SQLCipher Local Encryption.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Tactile Gestures, Micro-Animations, and Fluid States</h3>
+        <p class="d2-cap-stage-expl">Designing gesture-driven navigation, spring physics, and subtle haptic feedback that make mobile applications feel alive and intuitive under the thumb.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Static, lifeless mobile interfaces feel sluggish and fail to communicate system state changes clearly.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Custom gesture recognizers, spring-based transition animations, and contextual haptic motor feedback.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Audio production companion controller with real-time multi-touch faders and visual waveform scrubbing.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Tactile Motion Library, Haptic Feedback Profiles, Frame-Budget Profiling Reports.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Continuous Telemetry, Store Compliance, and App Vitals</h3>
+        <p class="d2-cap-stage-expl">Proactive monitoring of crash rates, battery consumption, OS version updates, and App Store review guideline evolutions.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Unmaintained mobile apps become unlaunchable after annual iOS and Android OS updates.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Automated CI/CD pipelines, real-time Sentry crash tracking, and proactive annual SDK modernization.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Refactoring an aging e-commerce app, reducing binary size by 45% and slashing crash rates to 0.02%.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Continuous Maintenance SLA, Store Compliance Updates, Binary Size Optimization, Crash Reports.</div>
+        </div>
+      </div>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: LET'S TALK CTA -->
-    <section class="svc-cta-section" id="lets-talk">
-      <div class="svc-container">
-        <div class="svc-cta-box">
-          <div class="svc-cta-glow"></div>
-          <span class="svc-pill-badge" style="background: rgba(240, 199, 94, 0.15); border-color: var(--svc-gold);">09 // GET STARTED</span>
-          <h2 class="svc-cta-title">Ready to engineer your <span class="svc-gold-text">Mobile App Development?</span></h2>
-          <p class="svc-cta-lead">Let's discuss your requirements, architectural trade-offs, and how we can engineer an exceptional digital product tailored to your business goals.</p>
-          <div class="svc-cta-buttons">
-            <a href="/index.html#estimator" class="svc-btn-primary">Calculate Project Estimate &rarr;</a>
-            <a href="/index.html#contact" class="svc-btn-secondary">Schedule Technical Consultation</a>
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              Our mobile engineering stack prioritizes native performance, strict battery efficiency, and resilient offline data persistence.
+            </p>
+            <div class="d2-tech-list">
+              
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Core Native: Swift, SwiftUI, Kotlin, Jetpack Compose, and Metal/Vulkan hardware acceleration.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Cross-Platform: Flutter (Dart) and React Native with Fabric architecture.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Offline & State: SQLite, SQLCipher, WatermelonDB, Redux Toolkit, and Bloc/Riverpod architecture.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Hardware & Cloud: CoreBluetooth, Apple CoreML, Firebase Cloud Messaging, and fastlane CI/CD automation.</div>
+    </div>
+  
+            </div>
+          </div>
+
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
+              </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
+
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
+              </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in Mobile App Development.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">MOBILE AI &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">On-Device AI and the Future of Mobile Experiences</h3>
+        <p class="d2-card-summary">How Apple Neural Engine and Qualcomm NPU hardware enable localized inference with zero server latency and total data privacy.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/mobile-app-development/insights/on-device-ai-and-the-future-of-mobile-experiences" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">PLATFORMS &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">Cross-Platform Development Is Evolving. When Does Native Still Matter?</h3>
+        <p class="d2-card-summary">A technical benchmark comparing Flutter, React Native, and pure native Swift/Kotlin across rendering latency and binary size.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/mobile-app-development/insights/cross-platform-development-is-evolving-when-does-native-still-matter" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">OFFLINE ARCHITECTURE &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">Designing Mobile Experiences That Work Without Reliable Connectivity</h3>
+        <p class="d2-card-summary">Engineering conflict-free replicated data types (CRDTs) and local encrypted caches for enterprise offline resilience.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/mobile-app-development/insights/designing-mobile-experiences-that-work-without-reliable-connectivity" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">UX &middot; 5 MIN READ</div>
+        <h3 class="d2-card-title">The Rise of Adaptive Mobile Interfaces</h3>
+        <p class="d2-card-summary">Designing fluid layouts that dynamically adapt between compact phones, foldable displays, and tablet form factors.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/mobile-app-development/insights/the-rise-of-adaptive-mobile-interfaces" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
+        </div>
+
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Product Discovery &amp; Research</div>
+      <div class="d2-step-body">Analyzing target user device habits, ergonomic reach zones, offline operating conditions, and core commercial value.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Product Requirements Doc, User Personas, Technical Feasibility Matrix.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Ergonomic UX &amp; Wireframing</div>
+      <div class="d2-step-body">Crafting thumb-friendly navigation structures, bottom-sheet flows, and streamlined onboarding sequences.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Interactive Mobile Wireframes, User Journey Maps, Design System.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">Native / Hybrid Architecture</div>
+      <div class="d2-step-body">Structuring state management, local database schemas, background sync workers, and secure API gateways.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Software Architecture Blueprint, API Data Contracts, Security Protocols.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">Sprint Engineering &amp; Builds</div>
+      <div class="d2-step-body">Iterative development with continuous automated builds distributed to stakeholders via TestFlight and Firebase App Distribution.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Weekly TestFlight / Firebase Builds, Unit and E2E Test Suites.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Device Lab Testing &amp; Profiling</div>
+      <div class="d2-step-body">Testing across real physical iOS and Android hardware for thermal throttling, memory leaks, and frame rate stability.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Performance Profiling Report, Device Compatibility Matrix, Security Audit.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">App Store Submission &amp; Launch</div>
+      <div class="d2-step-body">Managing the end-to-end Apple App Store and Google Play review process, store listing metadata, and post-launch telemetry.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Live Store Deployments, Crashlytics Dashboard Setup, Ongoing Support SLA.</div>
+      </div>
+    </div>
+  
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What would make your application worth opening again tomorrow?</h2>
+          <p class="d2-cta-lead">In a crowded app store ecosystem, true utility and flawless tactile engineering are what separate essential daily applications from deleted downloads. Let's build a mobile experience that earns its place.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- GLOBAL PERSISTENT FOOTER -->
-  <footer class="svc-footer" id="footer">
-    <div class="svc-footer-container">
-      <div class="svc-footer-top">
-        <div class="svc-footer-brand">
-          <div class="svc-brand">
-            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-            <div class="svc-brand-text">
-              <span class="svc-brand-name">RIYADVI</span>
-              <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
             </div>
           </div>
-          <p class="svc-footer-motto">Digital technology, proprietary software systems, and business growth engineered for enterprises ready to scale.</p>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
         </div>
 
-        <div class="svc-footer-links-grid">
-          <div class="svc-footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/web-development">Web Development</a></li>
-              <li><a href="/services/custom-software-development">Custom Software</a></li>
-              <li><a href="/services/mobile-app-development">Mobile Apps</a></li>
-              <li><a href="/services/ecommerce-solutions">E-Commerce</a></li>
-              <li><a href="/services/game-development">Game Development</a></li>
-              <li><a href="/services/ar-vr-development">AR/VR Experiences</a></li>
-              <li><a href="/services/ui-ux-design">UI/UX Design</a></li>
-              <li><a href="/services/3d-modeling">3D Modeling</a></li>
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
 
-          <div class="svc-footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/index.html#about">About Riyadvi</a></li>
-              <li><a href="/index.html#awards">Awards & Recognition</a></li>
-              <li><a href="/index.html#industries">Industries Served</a></li>
-              <li><a href="/index.html#guardian">Riyadvi Guardian</a></li>
-              <li><a href="/index.html#portfolio">Featured Work</a></li>
-              <li><a href="/index.html#estimator">Project Estimator</a></li>
-              <li><a href="/index.html#contact">Contact Our Team</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
         </div>
       </div>
 
-      <div class="svc-footer-bottom">
-        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
-        <div class="svc-footer-legal">
-          <span>Enterprise Grade</span>
-          <span>Zero Vendor Lock-In</span>
-          <span>Global Delivery</span>
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/services/services-common.js?v=11.0"></script>
-  <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  
 </body>
 </html>

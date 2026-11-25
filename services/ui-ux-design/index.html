@@ -3,732 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>UI/UX Design & Enterprise Engineering | Riyadvi Software Technologies</title>
-  <meta name="description" content="Enterprise UI/UX Design capabilities by Riyadvi Software Technologies. Resilient architectures, tailored execution, and verified business outcomes.">
+  <title>UI/UX Design | Riyadvi Software Technologies</title>
+  <meta name="description" content="Every Interaction Is a Design Decision. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  
 </head>
-<body class="svc-page-body">
+<body class="d2-body">
 
-  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
-  <nav class="svc-subnav-bar" id="serviceSubnav">
-    <div class="svc-subnav-container">
-      <div class="svc-subnav-left">
-        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
-          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          ALL SERVICES
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <span class="svc-subnav-title">07 // UI/UX DESIGN</span>
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">07 // UI/UX Design</span>
       </div>
 
-      <div class="svc-subnav-links" id="subnavLinks">
-        <a href="#overview" class="svc-subnav-anchor active">Overview</a>
-        <a href="#landscape" class="svc-subnav-anchor">The Landscape</a>
-        <a href="#insights" class="svc-subnav-anchor">Insights</a>
-        <a href="#what-we-do" class="svc-subnav-anchor">What We Do</a>
-        <a href="#expertise" class="svc-subnav-anchor">Our Expertise</a>
-        <a href="#trending" class="svc-subnav-anchor">What's Trending</a>
-        <a href="#technologies" class="svc-subnav-anchor">Technologies</a>
-        <a href="#process" class="svc-subnav-anchor">Our Process</a>
-        <a href="#lets-talk" class="svc-subnav-anchor">Let's Talk</a>
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- SECTION 01: HERO & TERMINAL -->
-    <section class="svc-hero-section" id="overview">
-      <div class="svc-hero-container">
-        <div class="svc-hero-content">
-          <div class="svc-hero-badge">
-            <span class="svc-badge-dot"></span>
-            07 // HUMAN EXPERIENCE DESIGN
-          </div>
-          <h1 class="svc-hero-title">Design is not how a product looks. <span class="svc-gold-text">It is how effortlessly it works.</span></h1>
-          <p class="svc-hero-lead">Every digital interaction either accelerates a user’s decision or frustrates them into abandonment. We design human-centered interfaces, multi-platform design systems, and frictionless user journeys that translate complex enterprise software into clear, delightful, and high-converting customer experiences.</p>
-          <div class="svc-hero-actions">
-            <a href="#lets-talk" class="svc-btn-primary">Start Your Project &rarr;</a>
-            <a href="#what-we-do" class="svc-btn-secondary">Explore Capabilities</a>
-          </div>
-        </div>
-
-        <div class="svc-hero-visual">
-          <div class="svc-terminal-card">
-            <div class="svc-terminal-header">
-              <div class="svc-terminal-dots">
-                <span class="svc-dot svc-dot-red"></span>
-                <span class="svc-dot svc-dot-yellow"></span>
-                <span class="svc-dot svc-dot-green"></span>
-              </div>
-              <div class="svc-terminal-url">https://design.riyadvi.com/design-system</div>
-              <div class="svc-terminal-status"><span class="svc-status-pill"></span>HEALTHY &middot; 99.99%</div>
-            </div>
-            <div class="svc-telemetry-grid">
-              
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">ACCESSIBILITY</span>
-                <span class="svc-telemetry-value">WCAG 2.2 AAA</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">TASK SUCCESS</span>
-                <span class="svc-telemetry-value">96.4%</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">DESIGN TOKENS</span>
-                <span class="svc-telemetry-value">450+ Synced</span>
-              </div>
-            </div>
-            <div class="svc-code-display">
-              <pre><code>import { DesignSystem, TokenSync } from '@riyadvi/design-tokens';
-export const tokenArchitecture = new DesignSystem({
-  foundations: { typography: 'fluid-modular', spacing: '8pt-grid' },
-  accessibility: 'wcag-aaa-contrast-verified',
-  tokens: TokenSync.exportToCSS(['light', 'dark', 'oled']),
-  telemetry: 'frictionless-task-completion'
-});
-// Automated Figma-to-code token synchronization pipeline active</code></pre>
-            </div>
-            <div class="svc-terminal-footer">
-              <span class="svc-pulse-indicator"></span>
-              <span class="svc-terminal-msg">Production Node Active</span>
-              <span class="svc-terminal-timestamp">Latency: 1.8ms</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02: THE LANDSCAPE -->
-    <section class="svc-section svc-section-border-top" id="landscape">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">02 // UX REALITIES</span>
-          <h2 class="svc-section-title">Your features are powerful. <span class="svc-gold-text">Why are users struggling to navigate them?</span></h2>
-          <p class="svc-section-lead">Feature bloat and confusing navigation kill software adoption. When software requires a user manual, users abandon it for simpler alternatives.</p>
-        </div>
-
-        <div class="svc-landscape-grid">
-          <div class="svc-landscape-narrative">
-            
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">01 / COGNITIVE OVERLOAD</span>
-              <h3 class="svc-narrative-title">Visual Clutter & High Cognitive Load</h3>
-              <p class="svc-narrative-desc">Crowding screens with dozens of unorganized buttons, mismatched typography, and competing calls-to-action causes mental paralysis and user mistakes during high-stakes workflows.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">02 / INCONSISTENT PATTERNS</span>
-              <h3 class="svc-narrative-title">Design Debt & Multi-Team Inconsistency</h3>
-              <p class="svc-narrative-desc">As development teams scale, buttons, modals, and input states diverge wildly across modules. Inconsistent UI patterns degrade brand credibility and confuse users.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">03 / ACCESSIBILITY EXCLUSION</span>
-              <h3 class="svc-narrative-title">Low Contrast & Accessibility Violations</h3>
-              <p class="svc-narrative-desc">Over 95% of enterprise software interfaces fail basic accessibility audits. Inadequate color contrast and broken keyboard focus trap disabled users and invite legal exposure.</p>
-            </div>
-          </div>
-
-          <!-- Diagnostic Box with 4 full comparison rows (NO EMPTY SPACE) -->
-          <div class="svc-diagnostic-box">
-            <div class="svc-diag-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--svc-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              Architectural Reality Check
-            </div>
-            
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Subjective Aesthetic Guesswork</strong>
-                Decisions driven by personal executive taste rather than empirical user testing and task-completion data.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Data-Driven UX Research</strong>
-                Card sorting, task flow heatmaps, user interviews, and quantifiable usability testing guiding every layout choice.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Static Redline Spec Handoffs</strong>
-                PDF wireframes that fail during responsive implementation, leaving engineers to guess hover and active states.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Tokenized Living Design Systems</strong>
-                Figma-to-code token synchronization pipelines that update CSS variables automatically across development environments.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Feature-Stuffed Complex Interfaces</strong>
-                Every operational button exposed at once, overwhelming users with visual noise and high cognitive strain.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Progressive Disclosure UX</strong>
-                Carefully staged interfaces that reveal advanced configuration controls only when contextually relevant to the user.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Afterthought Accessibility Fixes</strong>
-                Superficial overlay widgets that fail screen reader accessibility audits and expose companies to litigation.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Native WCAG 2.2 Compliance</strong>
-                High-contrast typography, strict focus states, and semantic ARIA labeling designed into every component from day one.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03: INSIGHTS -->
-    <section class="svc-section svc-section-border-top" id="insights">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">03 // DESIGN METRICS</span>
-          <h2 class="svc-section-title">The quantitative impact of <span class="svc-gold-text">human-centered UX</span></h2>
-          <p class="svc-section-lead">Empirical behavioral research proves that reducing cognitive friction drives direct conversion and task-completion improvements.</p>
-        </div>
-
-        <div class="svc-insights-strip">
-          
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">400%</div>
-              <div class="svc-insight-headline">ROI on Usability Optimization</div>
-              <p class="svc-insight-desc">Studies from Forrester show that every dollar invested in deliberate UX architecture returns up to 100 dollars in saved engineering and lifted conversions.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">96.4%</div>
-              <div class="svc-insight-headline">Benchmark Task Completion Rate</div>
-              <p class="svc-insight-desc">Streamlined progressive disclosure architectures enable users to complete complex operational flows without assistance.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">-65%</div>
-              <div class="svc-insight-headline">Drop in Support Ticket Volumes</div>
-              <p class="svc-insight-desc">Intuitive interface validation and clear error prevention dialogues drastically reduce customer support escalations.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">100%</div>
-              <div class="svc-insight-headline">Automated Token Sync to Code</div>
-              <p class="svc-insight-desc">Living design systems eliminate translation errors between design files and production CSS codebases.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT WE DO -->
-    <section class="svc-section svc-section-border-top" id="what-we-do">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">04 // WHAT WE DO</span>
-          <h2 class="svc-section-title">Engineering capabilities built for <span class="svc-gold-text">business durability</span></h2>
-          <p class="svc-section-lead">We do not assemble one-size-fits-all brochure templates. We engineer tailored systems that address specific operational bottlenecks, user journeys, and technical objectives.</p>
-        </div>
-
-        <div class="svc-capabilities-stack">
-          
-          <!-- Capability 01 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 01 // DESIGN SYSTEMS</span>
-              <h3 class="svc-cap-title">Enterprise Design Systems & Component Libraries</h3>
-              <p class="svc-cap-body">As organizations scale across multiple digital products and engineering teams, maintaining visual and behavioral consistency becomes challenging. We architect robust, accessible design systems in Figma and React/Next.js. By standardizing color palettes, typography scales, spacing tokens, and interactive component states, we accelerate frontend development velocity by 3x while ensuring your digital brand feels cohesive and refined.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Engineering teams rebuilding the same buttons and modals repeatedly, resulting in UI drift and visual fragmentation.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Atomic design hierarchy, design token synchronization (Style Dictionary), and comprehensive Storybook documentation.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Multi-brand enterprises, growing SaaS platforms, fintech ecosystems, and complex internal tooling suites.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Figma component library, tokenized CSS variables, Storybook documentation portal, and governance guidelines.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // DESIGN SYSTEM</span>
-                <span class="svc-browser-status">STORYBOOK 100%</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="45" cy="60" r="14" fill="#141422" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="45" y="63" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">ATOMS</text>
-        <line x1="60" y1="60" x2="80" y2="60" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="80" y="45" width="45" height="30" rx="4" fill="#10181e" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="102" y="63" fill="#4eedc4" font-size="6.5" font-family="monospace" text-anchor="middle">MOLECULES</text>
-        <line x1="125" y1="60" x2="145" y2="60" stroke="#4eedc4" stroke-width="1.2"/>
-        <rect x="145" y="40" width="55" height="40" rx="5" fill="#101814" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="172" y="63" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">ORGANISMS</text>
-        <line x1="200" y1="60" x2="220" y2="60" stroke="#27c93f" stroke-width="1.2"/>
-        <rect x="220" y="35" width="45" height="50" rx="5" fill="#181216" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="242" y="63" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">PAGES</text>
-        <text x="140" y="112" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">ENTERPRISE FIGMA TOKEN REPOSITORY</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Component Variants</span><strong>240+ Active</strong></div>
-
-                <div class="svc-preview-metric"><span>Token Sync Velocity</span><strong>Automated</strong></div>
-
-                <div class="svc-preview-metric"><span>Design Debt Score</span><strong>Zero Drift</strong></div>
-
-                <div class="svc-preview-metric"><span>Accessibility Grade</span><strong>WCAG AAA</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 02 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 02 // USER RESEARCH</span>
-              <h3 class="svc-cap-title">UX Research, Journey Mapping & Information Architecture</h3>
-              <p class="svc-cap-body">Great software starts by deeply understanding user behavior, constraints, and motivations. We conduct comprehensive qualitative and quantitative UX research, including user interviews, task analysis, card sorting, and competitive heuristics. We transform these findings into clear customer journey maps and information architectures that organize deep content structures into intuitive paths where users never feel lost.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Features built on assumptions that miss real user needs, complicated navigational hierarchies that confuse visitors.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Generative user interviews, unmoderated task usability testing, card sorting, and mental model alignment diagrams.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Complex B2B workflow software, healthcare clinician dashboards, multi-service enterprise websites, and public portals.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">User research synthesis report, persona profiles, customer journey maps, and sitemap navigation architecture.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // UX RESEARCH</span>
-                <span class="svc-browser-status">USER TESTED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <line x1="30" y1="100" x2="250" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-        <line x1="30" y1="60" x2="250" y2="60" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3,3"/>
-        <path d="M 35 85 Q 70 35 110 40 T 170 95 T 245 30" fill="none" stroke="#C9A45C" stroke-width="2.2"/>
-        <circle cx="110" cy="40" r="4" fill="#27c93f"/>
-        <text x="110" y="28" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">Aha! Moment</text>
-        <circle cx="170" cy="95" r="4" fill="#ff5f56"/>
-        <text x="170" y="115" fill="#ff5f56" font-size="6.5" font-family="monospace" text-anchor="middle">Dropoff Solved</text>
-        <circle cx="245" cy="30" r="5" fill="#4eedc4"/>
-        <text x="245" y="20" fill="#4eedc4" font-size="6.5" font-family="monospace" text-anchor="middle">Conversion</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Tested User Cohorts</span><strong>45 Sessions</strong></div>
-
-                <div class="svc-preview-metric"><span>Navigation Depth Max</span><strong>3 Clicks</strong></div>
-
-                <div class="svc-preview-metric"><span>Task Success Rate</span><strong>96.4%</strong></div>
-
-                <div class="svc-preview-metric"><span>Friction Index</span><strong>-82% Lower</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 03 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 03 // PRODUCT PROTOTYPING</span>
-              <h3 class="svc-cap-title">High-Fidelity Wireframing & Interactive Prototyping</h3>
-              <p class="svc-cap-body">Testing concepts before writing a single line of code saves hundreds of engineering hours. We create high-fidelity, interactive prototypes in Figma that accurately mirror micro-interactions, responsive states, dynamic data inputs, and animated transitions. Stakeholders and test users experience the full feel of the product, enabling rapid validation and iteration before development begins.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Expensive code rework when clients realize specifications were misunderstood after development has already concluded.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Component-driven interactive prototyping with dynamic variables, realistic animations, and realistic demo data.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">New SaaS product conceptualization, mobile app user onboarding flows, and investor demonstration walk-throughs.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Interactive Figma prototype, usability test video recordings, clickable client walk-throughs, and feedback logs.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // PROTOTYPE STAGE</span>
-                <span class="svc-browser-status">INTERACTIVE FIGMA</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 30 95 C 90 10, 120 120, 250 35" fill="none" stroke="#C9A45C" stroke-width="2.5"/>
-        <circle cx="30" cy="95" r="4" fill="#C9A45C"/>
-        <text x="30" y="112" fill="#727284" font-size="6" font-family="monospace">REST (0.0)</text>
-        <circle cx="250" cy="35" r="5" fill="#27c93f"/>
-        <text x="250" y="22" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="end">SETTLE (1.0)</text>
-        <text x="140" y="118" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">CUBIC-BEZIER(0.16, 1, 0.3, 1) FLUID CURVE</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Interactive States</span><strong>180+ Flows</strong></div>
-
-                <div class="svc-preview-metric"><span>Iteration Cycle Speed</span><strong>48 Hours</strong></div>
-
-                <div class="svc-preview-metric"><span>Stakeholder Alignment</span><strong>100% Sign-Off</strong></div>
-
-                <div class="svc-preview-metric"><span>Engineering Rework</span><strong>-70%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 04 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 04 // ENTERPRISE DATA UX</span>
-              <h3 class="svc-cap-title">Complex SaaS & Dashboard Interface Design</h3>
-              <p class="svc-cap-body">Data-dense operational platforms and financial analytics consoles require extraordinary design restraint. We design complex SaaS dashboards that distill massive datasets into clear, actionable visual summaries. Through progressive disclosure, modular card layouts, intelligent search filtering, and high-contrast data visualizations, we empower operators to spot trends, execute workflows, and make decisions without cognitive overload.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Cluttered tables with hundreds of unformatted cells, visual noise obscuring key alerts, and slow operator task speed.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Information density balancing, customizable widget cards, accessible chart color palettes, and keyboard shortcuts.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Fintech trading terminals, cloud infrastructure monitoring, supply chain dispatch control, and healthcare portals.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Dashboard UI designs, responsive tablet/mobile adaptations, data visualization chart libraries, and asset exports.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // SAAS DASHBOARD</span>
-                <span class="svc-browser-status">ZERO COGNITIVE DRAG</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="20" width="230" height="85" rx="6" fill="#0d0d16" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="35" y="30" width="45" height="65" rx="4" fill="#141422" stroke="rgba(201,164,92,0.2)" stroke-width="1"/>
-        <rect x="90" y="30" width="70" height="30" rx="4" fill="#141c18" stroke="#27c93f" stroke-width="1"/>
-        <rect x="170" y="30" width="75" height="30" rx="4" fill="#141820" stroke="#4eedc4" stroke-width="1"/>
-        <rect x="90" y="68" width="155" height="27" rx="4" fill="#101018" stroke="#C9A45C" stroke-width="1"/>
-        <text x="140" y="120" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">HIGH-DENSITY DATA VISUALIZATION SYSTEM</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Data Points / Screen</span><strong>1,200+ Clean</strong></div>
-
-                <div class="svc-preview-metric"><span>Decision Time Avg</span><strong>3.2s</strong></div>
-
-                <div class="svc-preview-metric"><span>Contrast Ratio Min</span><strong>7:1 AAA</strong></div>
-
-                <div class="svc-preview-metric"><span>Keyboard Support</span><strong>100% Hotkeys</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 05 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 05 // MOBILE FIRST</span>
-              <h3 class="svc-cap-title">Mobile App UX/UI & Touch Ergonomics</h3>
-              <p class="svc-cap-body">Designing for touch screens demands strict attention to physical ergonomics, thumb reach zones, and subtle haptic feedback. We design native iOS and Android mobile interfaces following Apple Human Interface Guidelines and Google Material You. Every gesture, swipe action, and bottom-sheet transition is engineered for comfortable one-handed mobile operation.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Important action buttons placed in unreachable top corners, awkward modal popups that cannot be dismissed by gestures.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Natural thumb-zone interaction zoning, fluid gesture-driven navigation, native OS typography, and adaptive dark mode.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Consumer mobile apps, field technician mobile tools, on-the-go banking interfaces, and delivery tracking apps.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Complete mobile UI kit, gesture specification documentation, iOS/Android asset exports, and developer specs.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // MOBILE ERGONOMICS</span>
-                <span class="svc-browser-status">THUMB-ZONE OPTIMIZED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="95" y="15" width="90" height="100" rx="14" fill="#0d0d16" stroke="#C9A45C" stroke-width="1.5"/>
-        <path d="M 98 85 Q 140 55 182 85 L 182 110 Q 140 114 98 110 Z" fill="rgba(39,201,63,0.25)" stroke="#27c93f" stroke-width="1"/>
-        <text x="140" y="98" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">NATURAL THUMB</text>
-        <path d="M 98 50 Q 140 30 182 50 L 182 85 Q 140 55 98 85 Z" fill="rgba(201,164,92,0.15)" stroke="#C9A45C" stroke-width="1"/>
-        <text x="140" y="65" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">STRETCH ZONE</text>
-        <circle cx="140" cy="22" r="2" fill="#555"/>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Thumb-Reach Coverage</span><strong>94%</strong></div>
-
-                <div class="svc-preview-metric"><span>Gesture Rejection Rate</span><strong>< 0.5%</strong></div>
-
-                <div class="svc-preview-metric"><span>Dark Mode Support</span><strong>OLED Verified</strong></div>
-
-                <div class="svc-preview-metric"><span>Haptic Sync Tokens</span><strong>Enabled</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 06 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 06 // COMPLIANCE & ETHICS</span>
-              <h3 class="svc-cap-title">Accessibility Auditing & WCAG 2.2 AAA Compliance</h3>
-              <p class="svc-cap-body">Inaccessible digital products alienate millions of prospective customers and invite severe legal penalties under the Americans with Disabilities Act (ADA) and the European Accessibility Act (EAA). We perform rigorous accessibility audits of existing and new digital products, testing screen reader navigation (VoiceOver, NVDA), keyboard-only tab sequences, dynamic text resizing, and color contrast compliance to guarantee certified accessibility.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Legal liability from accessibility lawsuits, screen readers unable to read unlabeled buttons, and invisible focus rings.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Manual screen reader testing, automated axe-core scanning, semantic ARIA token mapping, and color contrast verification.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Public sector digital services, banking and insurance portals, healthcare systems, and educational platforms.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Comprehensive WCAG 2.2 audit report, remediation design specs, accessibility statement, and compliance certificate.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // ACCESSIBILITY AUDIT</span>
-                <span class="svc-browser-status">WCAG 2.2 AAA VERIFIED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="25" width="110" height="70" rx="6" fill="#000000" stroke="#27c93f" stroke-width="1.5"/>
-        <text x="80" y="48" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle">21:1 RATIO</text>
-        <rect x="45" y="60" width="70" height="20" rx="3" fill="#0d1810" stroke="#27c93f" stroke-width="1"/>
-        <text x="80" y="74" fill="#27c93f" font-size="7" font-family="monospace" font-weight="700" text-anchor="middle">WCAG AAA PASS</text>
-        <rect x="145" y="25" width="110" height="70" rx="6" fill="#14141c" stroke="#C9A45C" stroke-width="1.5"/>
-        <text x="200" y="48" fill="#C9A45C" font-size="11" font-weight="700" text-anchor="middle">7.8:1 RATIO</text>
-        <rect x="165" y="60" width="70" height="20" rx="3" fill="#181410" stroke="#C9A45C" stroke-width="1"/>
-        <text x="200" y="74" fill="#C9A45C" font-size="7" font-family="monospace" font-weight="700" text-anchor="middle">EN 301 549 PASS</text>
-        <text x="140" y="118" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">100% ACCESSIBLE FOR ALL USERS</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Screen Reader Score</span><strong>100 / 100</strong></div>
-
-                <div class="svc-preview-metric"><span>Keyboard Traversal</span><strong>100% Accessible</strong></div>
-
-                <div class="svc-preview-metric"><span>Color Contrast Ratio</span><strong>7:1 Min</strong></div>
-
-                <div class="svc-preview-metric"><span>Legal Risk Index</span><strong>Zero Liability</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: OUR EXPERTISE -->
-    <section class="svc-section svc-section-border-top" id="expertise">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">05 // TECHNICAL DISCIPLINES</span>
-          <h2 class="svc-section-title">Engineering disciplines & <span class="svc-gold-text">architectural trade-offs</span></h2>
-          <p class="svc-section-lead">Every technological decision involves intentional balance. We navigate these architectural trade-offs to deliver sustainable, scalable outcomes.</p>
-        </div>
-
-        <div class="svc-expertise-grid">
-          
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Progressive Disclosure UX</h3>
-            <p class="svc-expertise-desc">Staging complexity so primary tasks execute immediately while advanced features remain easily accessible on demand.</p>
-            <div class="svc-expertise-tradeoff">COGNITIVE // MINIMAL MENTAL EFFORT</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Figma Token Synchronization</h3>
-            <p class="svc-expertise-desc">Automating the translation of Figma variables directly into production CSS custom properties via CI/CD.</p>
-            <div class="svc-expertise-tradeoff">DEVSECOPS // ZERO TRANSLATION DRIFT</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">WCAG 2.2 AAA Compliance</h3>
-            <p class="svc-expertise-desc">Designing every component with high-contrast text ratios, clear focus states, and assistive screen reader semantics.</p>
-            <div class="svc-expertise-tradeoff">INCLUSIVITY // 100% ACCESSIBLE DIGITAL ACCESS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Thumb-Zone Ergonomics</h3>
-            <p class="svc-expertise-desc">Arranging key touch actions within the natural reach arc of one-handed smartphone users to eliminate strain.</p>
-            <div class="svc-expertise-tradeoff">MOBILE UX // PHYSICAL USABILITY AUDITED</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Information Density Optimization</h3>
-            <p class="svc-expertise-desc">Formatting deep enterprise data tables with clear typography and scannable visual indicators to prevent cognitive fatigue.</p>
-            <div class="svc-expertise-tradeoff">DATA VIZ // DECISION VELOCITY MAXIMIZED</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Behavioral Micro-Interactions</h3>
-            <p class="svc-expertise-desc">Using subtle state changes and tactile animations to communicate system status and confirm user intent.</p>
-            <div class="svc-expertise-tradeoff">DELIGHT // PURPOSEFUL VISUAL POLISH</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: WHAT'S TRENDING -->
-    <section class="svc-section svc-section-border-top" id="trending">
-      <div class="svc-container">
-        <div class="svc-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
           <div>
-            <span class="svc-pill-badge">06 // EDITORIAL PERSPECTIVES</span>
-            <h2 class="svc-section-title">What's Shaping the <span class="svc-gold-text">UI/UX Design Platform</span></h2>
-            <p class="svc-section-lead">Research, technical analysis, and architectural perspectives from our engineering desk exploring current developments shaping enterprise digital delivery.</p>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              07 // HUMAN-CENTERED SYSTEMS & INTERACTION DESIGN
+            </div>
+            <h1 class="d2-svc-hero-title">Good design doesn’t ask people to figure out how something works.</h1>
+            <p class="d2-svc-hero-lead">Every digital experience asks people to make decisions. Where should they go next? What information matters? What happens after they press a button? What should they do when something goes wrong? Thoughtful design helps answer those questions before they become problems. Our approach brings together user research, information architecture, interaction design, and visual communication to create experiences that feel clear and purposeful. The goal is not simply to make an interface attractive, but to make it understandable, accessible, and useful in the situations where people actually use it.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
           </div>
-        </div>
 
-        <div class="svc-trending-carousel-wrap">
-          <div class="svc-carousel-viewport">
-            <div class="svc-carousel-track" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-              
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">DESIGN SYSTEMS &middot; 7 MIN READ</span>
-                  <h3 class="svc-article-card-title">The Evolution of Design Tokens: Automating Figma to Production Code</h3>
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
                 </div>
-                <p class="svc-article-card-summary">How automated token sync pipelines are eliminating design-to-engineering handoff friction and enforcing brand consistency.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Wireframe to Tokenized Component State System</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
                 </div>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">ACCESSIBILITY &middot; 6 MIN READ</span>
-                  <h3 class="svc-article-card-title">Preparing for the European Accessibility Act (EAA) in 2026</h3>
-                </div>
-                <p class="svc-article-card-summary">Essential legal requirements and technical design mandates every digital product must meet to avoid European market bans.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">CONTRAST RATIO</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">7.1:1 AAA</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">TASK SUCCESS</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">98.4%</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">USABILITY SUS</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">89.2</div>
+                  </div>
+                
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">AI UX &middot; 8 MIN READ</span>
-                  <h3 class="svc-article-card-title">Designing Interfaces for Generative AI & Autonomous Copilots</h3>
-                </div>
-                <p class="svc-article-card-summary">Why conventional form inputs are giving way to conversational prompts, streaming text buffers, and canvas-based interactions.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { DesignSystem, TokenEngine } from '@riyadvi/design-tokens';
+export const themeTokens = new TokenEngine({
+  brand: 'riyadvi-black-and-gold',
+  contrastRatio: 'wcag-2.2-aaa-compliant',
+  spacingScale: [4, 8, 12, 16, 24, 32, 48, 64],
+  motionSpring: { tension: 180, friction: 12 },
+  typography: { sans: 'Plus Jakarta', serif: 'Playfair', mono: 'Space Mono' }
+});
+// Atomic design system verified with 100% semantic accessibility hierarchy</code></pre>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">SPATIAL &middot; 5 MIN READ</span>
-                  <h3 class="svc-article-card-title">Spatial Ergonomics: Why Flat UI Principles Fail in Headsets</h3>
-                </div>
-                <p class="svc-article-card-summary">How human eye gaze and physical arm fatigue dictate the layout and scale of spatial computing interfaces.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
               </div>
             </div>
           </div>
@@ -736,124 +143,609 @@ export const tokenArchitecture = new DesignSystem({
       </div>
     </section>
 
-    <!-- SECTION 07: TECHNOLOGIES -->
-    <section class="svc-section svc-section-border-top" id="technologies">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">07 // TECHNOLOGY STACK</span>
-          <h2 class="svc-section-title">Technologies engineered for <span class="svc-gold-text">longevity</span></h2>
-          <p class="svc-section-lead">We select enterprise-proven, community-backed technologies with long-term support and reliable ecosystem roadmaps.</p>
-        </div>
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">When an interface feels effortless, careful decisions are working behind the scenes.</h2>
+            <p class="d2-reality-desc">Simplicity is hard. Transforming complex enterprise workflows with hundreds of variables into a clean, intuitive interface requires ruthless prioritization, empirical behavioral testing, and deep empathy for user cognitive load.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
 
-        <div class="svc-tech-grid">
-          <div class="svc-tech-card"><span class="svc-tech-cat">FRAMEWORKS</span><h3 class="svc-tech-title">Next.js & React</h3><p class="svc-tech-desc">Production-grade SSR, static generation, and streaming component rendering.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">RUNTIMES</span><h3 class="svc-tech-title">Node.js & Go</h3><p class="svc-tech-desc">Asynchronous, high-throughput microservices and API gateways.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">TYPE SAFETY</span><h3 class="svc-tech-title">Strict TypeScript</h3><p class="svc-tech-desc">Zero runtime type regressions with compile-time verification.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CONTAINERS</span><h3 class="svc-tech-title">Docker & K8s</h3><p class="svc-tech-desc">Containerized orchestration with automated horizontal scaling.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">PERSISTENCE</span><h3 class="svc-tech-title">PostgreSQL</h3><p class="svc-tech-desc">ACID relational compliance with indexed query optimization.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CACHE & BROKER</span><h3 class="svc-tech-title">Redis & Kafka</h3><p class="svc-tech-desc">Distributed caching and partition-tolerant event streaming.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">HEADLESS CMS</span><h3 class="svc-tech-title">Sanity & Strapi</h3><p class="svc-tech-desc">Structured content modeling with instant editorial preview studios.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">EDGE DELIVERY</span><h3 class="svc-tech-title">Cloudflare & AWS</h3><p class="svc-tech-desc">Multi-region edge network distribution with DDoS mitigation.</p></div>
+          <div class="d2-reality-stagger">
+            
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Cognitive Overload and Dense Dashboard Clutter</h3>
+      </div>
+      <p class="d2-reality-card-body">Overwhelming users with dozens of unranked charts, conflicting metrics, and crowded menus paralyzes decision-making and leads to operational error.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Inconsistent UI Elements and Fragmented Patterns</h3>
+      </div>
+      <p class="d2-reality-card-body">When buttons change colors, modals behave unpredictably, and form validations differ across sections, users lose trust and feel disoriented.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Superficial Aesthetics Divorced from Real Workflows</h3>
+      </div>
+      <p class="d2-reality-card-body">Interfaces designed for Dribbble screenshots often collapse in the real world when confronted with messy customer names, long localization strings, and edge-case errors.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Neglected Accessibility and Assistive Exclusions</h3>
+      </div>
+      <p class="d2-reality-card-body">Failing to design focus rings, screen reader labels, and high-contrast color pairings alienates users with visual impairments and violates emerging international accessibility mandates.</p>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: OUR PROCESS -->
-    <section class="svc-section svc-section-border-top" id="process">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">08 // EXECUTION METHODOLOGY</span>
-          <h2 class="svc-section-title">How we take projects <span class="svc-gold-text">from idea to production</span></h2>
-          <p class="svc-section-lead">A transparent six-phase delivery framework ensuring architectural rigor, clear milestone governance, and predictable launches.</p>
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in UI/UX Design, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
         </div>
 
-        <div class="svc-process-timeline">
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 01</div><h3 class="svc-step-title">Discovery & Architecture</h3><p class="svc-step-desc">Stakeholder interviews, technical audit, specification mapping, and high-level architectural blueprints.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 02</div><h3 class="svc-step-title">UX Flows & Wireframing</h3><p class="svc-step-desc">Information architecture, user journey maps, and low-fidelity structural validation.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 03</div><h3 class="svc-step-title">UI & Design System</h3><p class="svc-step-desc">Atomic design tokens, high-fidelity responsive prototypes, and accessibility audits.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 04</div><h3 class="svc-step-title">Sprint Engineering</h3><p class="svc-step-desc">Iterative two-week sprints, automated test coverage, and continuous integration deployments.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 05</div><h3 class="svc-step-title">Security & QA Audit</h3><p class="svc-step-desc">End-to-end stress testing, OWASP security audits, and Core Web Vitals optimization.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 06</div><h3 class="svc-step-title">Production & Handover</h3><p class="svc-step-desc">Zero-downtime DNS cutover, telemetry configuration, source code IP handover, and staff training.</p></div>
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
+            
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>User Experience Research</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>User Interface Design</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>Website and Mobile App Design</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>Wireframing and Prototyping</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>Design System Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>UX Audits and Redesign</span>
+    </button>
+  
+          </div>
+
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Empirical Behavioral Insights Over Guesswork</h3>
+        <p class="d2-cap-stage-expl">Conducting in-depth stakeholder interviews, contextual inquiry, competitive benchmarking, and moderated usability testing to uncover real user pain points and motivations.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Product teams often build features based on internal executive assumptions rather than validated customer needs.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Generative user research, heuristic usability evaluations, customer journey mapping, and card sorting.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Fintech investment platform redesign identifying why 45% of retail investors abandoned portfolio onboarding.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Research Synthesis Report, User Journey Maps, Empathy Personas, Usability Scoring Matrix.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Visual Hierarchy, Typography, and Brand Resonance</h3>
+        <p class="d2-cap-stage-expl">Crafting visually arresting digital interfaces that communicate elegance, corporate authority, and functional clarity across all viewport resolutions.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Boring, generic template designs fail to differentiate high-value enterprise products from commoditized competitors.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Careful typographic scale selection, disciplined black-and-gold palettes, micro-texture depth, and intentional whitespace.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Executive analytics dashboard for private equity leaders managing $4B in global commercial assets.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">High-Fidelity Figma Screens, Interactive Prototypes, Micro-Interaction Specs, Icon Library.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Responsive Multi-Device Product Design</h3>
+        <p class="d2-cap-stage-expl">Designing coherent digital products that adapt seamlessly between desktop browsers, tablets, smartphones, and large display monitors.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Desktop layouts crammed into mobile screens become unreadable, with tiny tap targets that cause misclicks.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Mobile-first information prioritization, thumb-zone ergonomic mapping, and responsive auto-layout components in Figma.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Omnichannel B2B procurement platform used equally by warehouse floor workers on tablets and office buyers on desktop.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Responsive Multi-Viewport Designs, Auto-Layout Component Specs, Clickable InVision/Figma Demos.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Rapid Interactive Validation Before Code</h3>
+        <p class="d2-cap-stage-expl">Translating concepts into clickable wireframes and high-fidelity prototypes that allow stakeholders and users to test functionality before investing in development.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Writing production code before validating interaction flows leads to costly, time-consuming rewrites.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Iterative low-fidelity sketches progressing to component-driven interactive prototypes tested with real prospective users.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Clinical trial patient scheduling prototype validated with 40 oncologists across 3 iterative sprint cycles.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Clickable Wireframe Prototypes, User Flow Schematics, Usability Test Recordings.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Scalable Component Libraries and Design Tokens</h3>
+        <p class="d2-cap-stage-expl">Building living design systems in Figma and code that maintain brand consistency, accelerate developer velocity, and enforce accessibility across large engineering teams.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Growing development teams repeatedly recreate duplicate buttons and forms, causing design divergence and code bloat.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">W3C Design Token architecture, atomic components, dark/light theme switching, and automated Figma-to-code pipelines.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Enterprise design system unifying 14 distinct internal software products across 6 global development teams.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Figma UI Kit &amp; Token Library, React/Tailwind Component Docs, Storybook Setup, Governance Guide.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Diagnosing and Eliminating Product Friction</h3>
+        <p class="d2-cap-stage-expl">Comprehensive expert evaluation of existing digital products to identify usability roadblocks, conversion leaks, and accessibility non-compliance.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Mature software accumulates years of patchworked features, resulting in confusing workflows and user frustration.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Nielsen-Norman heuristic evaluation, hotjar heatmap analysis, drop-off funnel auditing, and accessibility scanning.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">B2B SaaS product audit leading to a redesigned checkout funnel that increased completed trials by 52%.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Heuristic UX Audit Report, Prioritized Fix Roadmap, Redesign Recommendations, WCAG Report.</div>
+        </div>
+      </div>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: LET'S TALK CTA -->
-    <section class="svc-cta-section" id="lets-talk">
-      <div class="svc-container">
-        <div class="svc-cta-box">
-          <div class="svc-cta-glow"></div>
-          <span class="svc-pill-badge" style="background: rgba(240, 199, 94, 0.15); border-color: var(--svc-gold);">09 // GET STARTED</span>
-          <h2 class="svc-cta-title">Ready to engineer your <span class="svc-gold-text">UI/UX Design?</span></h2>
-          <p class="svc-cta-lead">Let's discuss your requirements, architectural trade-offs, and how we can engineer an exceptional digital product tailored to your business goals.</p>
-          <div class="svc-cta-buttons">
-            <a href="/index.html#estimator" class="svc-btn-primary">Calculate Project Estimate &rarr;</a>
-            <a href="/index.html#contact" class="svc-btn-secondary">Schedule Technical Consultation</a>
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              Our design practice bridges the gap between creative visual artistry and strict front-end engineering feasibility.
+            </p>
+            <div class="d2-tech-list">
+              
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Design & Prototyping: Figma, FigJam, Framer, Adobe Creative Cloud, and Principle for Mac.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Tokens & Systems: W3C Design Tokens, Style Dictionary, Storybook, and zeroheight design documentation.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>User Research: Maze, UserTesting, Hotjar behavioral telemetry, and Optimal Workshop card sorting.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Accessibility: Stark contrast analyzer, axe DevTools, screen reader testing (VoiceOver/NVDA), and WCAG 2.2.</div>
+    </div>
+  
+            </div>
+          </div>
+
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
+              </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
+
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
+              </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in UI/UX Design.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">AI UX &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">Designing Interfaces for AI-Powered Products</h3>
+        <p class="d2-card-summary">How to design conversational feedback states, confidence score visualizations, and graceful recovery when models hallucinate.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ui-ux-design/insights/designing-interfaces-for-ai-powered-products" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">INTERACTION &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">The Evolution of Adaptive Interfaces</h3>
+        <p class="d2-card-summary">Moving beyond static responsive layouts toward intelligent interfaces that adapt to user skill levels and contextual habits.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ui-ux-design/insights/the-evolution-of-adaptive-interfaces" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">A11Y &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">Why Accessibility Must Be Part of the Design Process</h3>
+        <p class="d2-card-summary">Proving that WCAG 2.2 AA accessibility is not an afterthought compliance checklist, but a powerful driver of universal usability.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ui-ux-design/insights/why-accessibility-must-be-part-of-the-design-process" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">DESIGN SYSTEMS &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">Design Systems Are Becoming More Than Component Libraries</h3>
+        <p class="d2-card-summary">How design tokens, automated CI/CD style syncs, and unified cross-platform governance align design with software engineering.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ui-ux-design/insights/design-systems-are-becoming-more-than-component-libraries" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
+        </div>
+
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Discovery &amp; User Research</div>
+      <div class="d2-step-body">Immersing in your domain, conducting user interviews, reviewing behavioral analytics, and benchmarking competitors.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Research Synthesis, User Personas, Core Problem Statement.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Information Architecture &amp; Flows</div>
+      <div class="d2-step-body">Organizing complex content structures into logical hierarchies and streamlined step-by-step user journeys.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Site Architecture Sitemap, Task Flow Diagrams, Screen Blueprints.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">Wireframing &amp; Concept Validation</div>
+      <div class="d2-step-body">Developing low-fidelity layouts and clickable wireframe prototypes to validate structural flows with real end users.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Interactive Wireframe Prototype, User Testing Feedback Matrix.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">Visual Design &amp; High-Fidelity UI</div>
+      <div class="d2-step-body">Crafting the definitive aesthetic language: luxury dark mode, typography hierarchy, micro-interactions, and visual harmony.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Complete Figma Design Files, High-Fidelity Interactive Demos.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Design System &amp; Token Handoff</div>
+      <div class="d2-step-body">Tokenizing typography, spacing, colors, and components to ensure seamless, pixel-perfect engineering implementation.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Design Token Repository, Figma Component Library, Storybook Spec.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">Developer Collaboration &amp; QA</div>
+      <div class="d2-step-body">Working directly alongside engineering teams through sprint reviews, visual regression testing, and design QA sign-off.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Design QA Inspection Report, Interaction Video Specs, Launch Support.</div>
+      </div>
+    </div>
+  
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What would your product feel like if every interaction had a purpose?</h2>
+          <p class="d2-cta-lead">Exceptional design isn't ornamentation—it is the direct manifestation of respect for your customer's time and intelligence. Let's design an experience that clarifies complexity and drives lasting engagement.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- GLOBAL PERSISTENT FOOTER -->
-  <footer class="svc-footer" id="footer">
-    <div class="svc-footer-container">
-      <div class="svc-footer-top">
-        <div class="svc-footer-brand">
-          <div class="svc-brand">
-            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-            <div class="svc-brand-text">
-              <span class="svc-brand-name">RIYADVI</span>
-              <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
             </div>
           </div>
-          <p class="svc-footer-motto">Digital technology, proprietary software systems, and business growth engineered for enterprises ready to scale.</p>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
         </div>
 
-        <div class="svc-footer-links-grid">
-          <div class="svc-footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/web-development">Web Development</a></li>
-              <li><a href="/services/custom-software-development">Custom Software</a></li>
-              <li><a href="/services/mobile-app-development">Mobile Apps</a></li>
-              <li><a href="/services/ecommerce-solutions">E-Commerce</a></li>
-              <li><a href="/services/game-development">Game Development</a></li>
-              <li><a href="/services/ar-vr-development">AR/VR Experiences</a></li>
-              <li><a href="/services/ui-ux-design">UI/UX Design</a></li>
-              <li><a href="/services/3d-modeling">3D Modeling</a></li>
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
 
-          <div class="svc-footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/index.html#about">About Riyadvi</a></li>
-              <li><a href="/index.html#awards">Awards & Recognition</a></li>
-              <li><a href="/index.html#industries">Industries Served</a></li>
-              <li><a href="/index.html#guardian">Riyadvi Guardian</a></li>
-              <li><a href="/index.html#portfolio">Featured Work</a></li>
-              <li><a href="/index.html#estimator">Project Estimator</a></li>
-              <li><a href="/index.html#contact">Contact Our Team</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
         </div>
       </div>
 
-      <div class="svc-footer-bottom">
-        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
-        <div class="svc-footer-legal">
-          <span>Enterprise Grade</span>
-          <span>Zero Vendor Lock-In</span>
-          <span>Global Delivery</span>
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/services/services-common.js?v=11.0"></script>
-  <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  
 </body>
 </html>

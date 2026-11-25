@@ -3,740 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>AR/VR Development & Enterprise Engineering | Riyadvi Software Technologies</title>
-  <meta name="description" content="Enterprise AR/VR Development capabilities by Riyadvi Software Technologies. Resilient architectures, tailored execution, and verified business outcomes.">
+  <title>AR/VR Development | Riyadvi Software Technologies</title>
+  <meta name="description" content="When Digital Experiences Become Spatial. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  
 </head>
-<body class="svc-page-body">
+<body class="d2-body">
 
-  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
-  <nav class="svc-subnav-bar" id="serviceSubnav">
-    <div class="svc-subnav-container">
-      <div class="svc-subnav-left">
-        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
-          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          ALL SERVICES
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <span class="svc-subnav-title">06 // AR/VR DEVELOPMENT</span>
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">06 // AR/VR Development</span>
       </div>
 
-      <div class="svc-subnav-links" id="subnavLinks">
-        <a href="#overview" class="svc-subnav-anchor active">Overview</a>
-        <a href="#landscape" class="svc-subnav-anchor">The Landscape</a>
-        <a href="#insights" class="svc-subnav-anchor">Insights</a>
-        <a href="#what-we-do" class="svc-subnav-anchor">What We Do</a>
-        <a href="#expertise" class="svc-subnav-anchor">Our Expertise</a>
-        <a href="#trending" class="svc-subnav-anchor">What's Trending</a>
-        <a href="#technologies" class="svc-subnav-anchor">Technologies</a>
-        <a href="#process" class="svc-subnav-anchor">Our Process</a>
-        <a href="#lets-talk" class="svc-subnav-anchor">Let's Talk</a>
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- SECTION 01: HERO & TERMINAL -->
-    <section class="svc-hero-section" id="overview">
-      <div class="svc-hero-container">
-        <div class="svc-hero-content">
-          <div class="svc-hero-badge">
-            <span class="svc-badge-dot"></span>
-            06 // SPATIAL COMPUTING & XR
-          </div>
-          <h1 class="svc-hero-title">Spatial computing transforms digital data into <span class="svc-gold-text">physical presence</span>.</h1>
-          <p class="svc-hero-lead">Immersive reality connects users with environments, tools, and digital twins in three-dimensional space. We engineer augmented reality, virtual reality, and mixed reality applications across Apple Vision Pro (visionOS), Meta Quest, and WebXR, delivering sub-15ms motion-to-photon latency, precision hand and eye tracking, and enterprise-grade spatial computing solutions.</p>
-          <div class="svc-hero-actions">
-            <a href="#lets-talk" class="svc-btn-primary">Start Your Project &rarr;</a>
-            <a href="#what-we-do" class="svc-btn-secondary">Explore Capabilities</a>
-          </div>
-        </div>
-
-        <div class="svc-hero-visual">
-          <div class="svc-terminal-card">
-            <div class="svc-terminal-header">
-              <div class="svc-terminal-dots">
-                <span class="svc-dot svc-dot-red"></span>
-                <span class="svc-dot svc-dot-yellow"></span>
-                <span class="svc-dot svc-dot-green"></span>
-              </div>
-              <div class="svc-terminal-url">https://spatial.riyadvi.com/vision-engine</div>
-              <div class="svc-terminal-status"><span class="svc-status-pill"></span>HEALTHY &middot; 99.99%</div>
-            </div>
-            <div class="svc-telemetry-grid">
-              
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">MOTION-TO-PHOTON</span>
-                <span class="svc-telemetry-value">11.8ms</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">TRACKING DOF</span>
-                <span class="svc-telemetry-value">6-DoF Sub-Millimeter</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">SPATIAL FOV</span>
-                <span class="svc-telemetry-value">110° Stereoscopic</span>
-              </div>
-            </div>
-            <div class="svc-code-display">
-              <pre><code>import { SpatialRuntime, HandTracker } from '@riyadvi/spatial-core';
-export const spatialSession = new SpatialRuntime({
-  platform: ['visionOS', 'metaQuest3', 'webXR'],
-  tracking: { hands: '26-point-skeleton', eyes: 'foveated-gaze' },
-  audio: 'binaural-hrtf-acoustics',
-  latencyBudget: '12ms-hard-limit'
-});
-// Sub-15ms spatial computing session active with real-time pass-through</code></pre>
-            </div>
-            <div class="svc-terminal-footer">
-              <span class="svc-pulse-indicator"></span>
-              <span class="svc-terminal-msg">Production Node Active</span>
-              <span class="svc-terminal-timestamp">Latency: 1.8ms</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02: THE LANDSCAPE -->
-    <section class="svc-section svc-section-border-top" id="landscape">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">02 // SPATIAL CHALLENGES</span>
-          <h2 class="svc-section-title">Immersive technology is powerful. <span class="svc-gold-text">Simulation sickness and clunky controls destroy adoption.</span></h2>
-          <p class="svc-section-lead">Designing for spatial computing requires completely discarding flat screen paradigms. High frame latency, inaccurate hand tracking, and poor ergonomic design cause immediate disorientation.</p>
-        </div>
-
-        <div class="svc-landscape-grid">
-          <div class="svc-landscape-narrative">
-            
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">01 / MOTION-TO-PHOTON</span>
-              <h3 class="svc-narrative-title">Simulation Sickness & Latency Budgets</h3>
-              <p class="svc-narrative-desc">Any delay greater than 20ms between head movement and display redraw triggers vestibular mismatch and motion sickness. Maintaining locked 90/120Hz stereoscopic framerates is non-negotiable.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">02 / ERGONOMICS & INTERACTION</span>
-              <h3 class="svc-narrative-title">Clumsy Virtual Controls & Fatigue</h3>
-              <p class="svc-narrative-desc">Forcing users to hold their arms outstretched for virtual button presses creates severe muscular fatigue. Natural spatial UI relies on micro-gestures, gaze-assisted selection, and tactile haptic feedback.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">03 / CROSS-HARDWARE SPRAWL</span>
-              <h3 class="svc-narrative-title">Hardware Fragmentation across XR Ecosystems</h3>
-              <p class="svc-narrative-desc">Developing across Apple Vision Pro, Meta Quest, HTC Vive, and mobile AR requires distinct interaction models and graphics optimizations. Fragmented implementations waste engineering capital.</p>
-            </div>
-          </div>
-
-          <!-- Diagnostic Box with 4 full comparison rows (NO EMPTY SPACE) -->
-          <div class="svc-diagnostic-box">
-            <div class="svc-diag-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--svc-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              Architectural Reality Check
-            </div>
-            
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Flat 2D UI Floating in Space</strong>
-                Literal desktop windows suspended awkwardly in 3D headsets causing depth fatigue and eye strain.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Ergonomic Spatial Interfaces</strong>
-                Gaze-assisted micro-gestures, volumetric interaction cards, and natural arm-resting interaction zones.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Heavy Unoptimized 3D Meshes</strong>
-                High-poly CAD models exported directly into VR causing severe frame drops and thermal throttling.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Foveated Rendering & LOD Meshing</strong>
-                Eye-tracked foveated rendering concentrating GPU horsepower only where the pupil looks, boosting framerates by 60%.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Hardware Vendor Lock-In</strong>
-                Writing proprietary SDK code locked to a single headset, requiring complete rewrites for competing devices.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>OpenXR & WebXR Standards</strong>
-                Cross-platform OpenXR architecture deployable seamlessly across visionOS, Quest, and browser WebXR.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Sterile Visual Environments</strong>
-                Lifeless virtual spaces lacking ambient occlusion, spatial reflections, and realistic environmental audio.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Binaural Audio & Passthrough Blending</strong>
-                Realistic HRTF spatial acoustics and real-world shadow estimation that make virtual objects feel truly physical.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03: INSIGHTS -->
-    <section class="svc-section svc-section-border-top" id="insights">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">03 // XR BENCHMARKS</span>
-          <h2 class="svc-section-title">The physics metrics of <span class="svc-gold-text">spatial immersion</span></h2>
-          <p class="svc-section-lead">Medical and human factors research confirm the strict technical standards required for comfortable spatial computing.</p>
-        </div>
-
-        <div class="svc-insights-strip">
-          
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">< 15ms</div>
-              <div class="svc-insight-headline">Motion-to-Photon Latency Budget</div>
-              <p class="svc-insight-desc">Sub-15ms latency guarantees complete visual-vestibular alignment, eliminating simulation sickness and nausea.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">90/120Hz</div>
-              <div class="svc-insight-headline">Stereoscopic Refresh Target</div>
-              <p class="svc-insight-desc">High-frequency display rendering maintains crisp environmental stability during rapid head rotations.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">75%</div>
-              <div class="svc-insight-headline">Training Retention Boost in VR</div>
-              <p class="svc-insight-desc">Studies show technical workforce training in realistic VR simulations achieves more than triple the retention of classroom manuals.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">26-Point</div>
-              <div class="svc-insight-headline">Precision Hand Skeleton Tracking</div>
-              <p class="svc-insight-desc">Full finger articulation tracking allows natural manipulation of virtual tools without cumbersome handheld plastic controllers.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT WE DO -->
-    <section class="svc-section svc-section-border-top" id="what-we-do">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">04 // WHAT WE DO</span>
-          <h2 class="svc-section-title">Engineering capabilities built for <span class="svc-gold-text">business durability</span></h2>
-          <p class="svc-section-lead">We do not assemble one-size-fits-all brochure templates. We engineer tailored systems that address specific operational bottlenecks, user journeys, and technical objectives.</p>
-        </div>
-
-        <div class="svc-capabilities-stack">
-          
-          <!-- Capability 01 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 01 // SPATIAL COMPUTING</span>
-              <h3 class="svc-cap-title">Apple Vision Pro (visionOS) Development</h3>
-              <p class="svc-cap-body">Apple Vision Pro represents the premier platform for enterprise spatial computing. We develop native visionOS applications using Swift, SwiftUI, RealityKit, and ARKit. By combining gaze-and-pinch interaction models with realistic lighting, volumetric spatial audio, and immersive shared spaces, our visionOS apps unlock revolutionary workflows for executive data visualization, surgical planning, and creative media production.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Adapting legacy desktop software to visionOS spatial paradigms, high GPU thermal load, and complex 3D windowing.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Native Swift/RealityKit architecture, foveated rendering optimization, and ergonomic gaze-assisted gesture controls.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Executive financial control rooms, medical 3D imaging, architectural walk-throughs, and luxury retail showrooms.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Native visionOS application, RealityKit 3D asset packages, spatial audio soundscapes, and App Store submission.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // VISIONOS PLATFORM</span>
-                <span class="svc-browser-status">REALITYKIT NATIVE</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="60,25 220,25 240,65 80,65" fill="#141824" stroke="#C9A45C" stroke-width="1.4" opacity="0.8"/>
-        <polygon points="80,65 240,65 220,105 60,105" fill="#0e121a" stroke="#4eedc4" stroke-width="1.2" opacity="0.6"/>
-        <line x1="60" y1="25" x2="60" y2="105" stroke="#C9A45C" stroke-width="1"/>
-        <line x1="220" y1="25" x2="220" y2="105" stroke="#C9A45C" stroke-width="1"/>
-        <circle cx="150" cy="65" r="16" fill="#182232" stroke="#5ac8fa" stroke-width="1.8"/>
-        <text x="150" y="64" fill="#5ac8fa" font-size="6.5" font-family="monospace" font-weight="700" text-anchor="middle">SPATIAL</text>
-        <text x="150" y="72" fill="#ffffff" font-size="5.5" font-family="monospace" text-anchor="middle">ANCHOR</text>
-        <text x="140" y="120" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">REALITYKIT 4K PASSTHROUGH // 12ms LATENCY</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Gaze Detection Speed</span><strong>90 FPS</strong></div>
-
-                <div class="svc-preview-metric"><span>Stereo Render Rate</span><strong>90/100 Hz</strong></div>
-
-                <div class="svc-preview-metric"><span>Spatial Sound Model</span><strong>HRTF Spatial</strong></div>
-
-                <div class="svc-preview-metric"><span>Passthrough Latency</span><strong>< 12ms</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 02 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 02 // ENTERPRISE IMMERSION</span>
-              <h3 class="svc-cap-title">Meta Quest Enterprise VR Solutions</h3>
-              <p class="svc-cap-body">Meta Quest 3 and Quest Pro offer versatile, wireless enterprise XR hardware at scale. We build standalone VR simulations and mixed-reality passthrough applications in Unity and Unreal Engine using the Meta XR SDK. Our solutions support 6-DoF controller and hand tracking, spatial colocation for team collaboration, and local network streaming for high-complexity enterprise simulations.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Wireless battery drain, heat management over long training sessions, and difficulty provisioning headsets in enterprise fleets.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Mobile GPU shader profiling, ASTC texture compression, OpenXR compliance, and MDM fleet management integration.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Industrial safety simulations, aviation procedure training, virtual collaborative classrooms, and heavy machinery operations.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Standalone Meta Quest APK, enterprise MDM provisioning scripts, trainer control dashboard, and analytics export.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // QUEST ENTERPRISE</span>
-                <span class="svc-browser-status">STANDALONE WIRELESS</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="140,20 60,95 220,95" fill="rgba(201,164,92,0.06)" stroke="#C9A45C" stroke-width="1.4"/>
-        <circle cx="140" cy="25" r="10" fill="#141422" stroke="#C9A45C" stroke-width="1.5"/>
-        <text x="140" y="28" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">HMD</text>
-        <circle cx="95" cy="80" r="8" fill="#101814" stroke="#27c93f" stroke-width="1.2"/>
-        <text x="95" y="83" fill="#27c93f" font-size="5" font-family="monospace" text-anchor="middle">CTRL-L</text>
-        <circle cx="185" cy="80" r="8" fill="#101814" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="185" y="83" fill="#4eedc4" font-size="5.5" font-family="monospace" text-anchor="middle">CTRL-R</text>
-        <line x1="140" y1="35" x2="95" y2="72" stroke="#27c93f" stroke-width="1" stroke-dasharray="2,2"/>
-        <line x1="140" y1="35" x2="185" y2="72" stroke="#4eedc4" stroke-width="1" stroke-dasharray="2,2"/>
-        <text x="140" y="115" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">6DoF OPTICAL INSIDE-OUT SLAM TRACKING</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Frame Target</span><strong>90 FPS Locked</strong></div>
-
-                <div class="svc-preview-metric"><span>Hand Tracking Jitter</span><strong>< 1.2mm</strong></div>
-
-                <div class="svc-preview-metric"><span>Battery Life Session</span><strong>2.2 Hours</strong></div>
-
-                <div class="svc-preview-metric"><span>Enterprise MDM</span><strong>Compatible</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 03 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 03 // BROWSER ACCESSIBILITY</span>
-              <h3 class="svc-cap-title">WebXR Instant Browser Experiences</h3>
-              <p class="svc-cap-body">Zero-friction augmented and virtual reality in the browser eliminates the hurdle of app installations. We engineer WebXR experiences using Three.js, WebGL, and WebGPU that run directly inside Chrome, Safari, and mobile browsers. Customers view photorealistic 3D products projected in their living rooms, explore virtual galleries, and interact with educational models simply by tapping a web link.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Consumers refusing to download multi-gigabyte apps for a one-time product preview or virtual event.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Three.js / WebGL pipelines, WebXR Device API integration, basis universal texture compression, and responsive canvas.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">E-commerce "View in Your Room" AR, real estate virtual walk-throughs, museum virtual tours, and interactive web campaigns.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Self-hosted WebXR application, mobile AR QuickLook/Model-Viewer fallbacks, and user interaction analytics.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // WEBXR RUNTIME</span>
-                <span class="svc-browser-status">ZERO INSTALL BROWSER</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="25" width="110" height="75" rx="12" fill="#0d141e" stroke="#C9A45C" stroke-width="1.4"/>
-        <circle cx="80" cy="62" r="22" fill="#141c28" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="80" y="65" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">EYE-L 90Hz</text>
-        <rect x="145" y="25" width="110" height="75" rx="12" fill="#0d141e" stroke="#C9A45C" stroke-width="1.4"/>
-        <circle cx="200" cy="62" r="22" fill="#141c28" stroke="#27c93f" stroke-width="1.2"/>
-        <text x="200" y="65" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">EYE-R 90Hz</text>
-        <text x="140" y="118" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">WebXR BROWSER RUNTIME // ZERO INSTALL</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Initial Asset Payload</span><strong>< 12MB</strong></div>
-
-                <div class="svc-preview-metric"><span>AR Placement Time</span><strong>1.4s</strong></div>
-
-                <div class="svc-preview-metric"><span>Cross-Device Reach</span><strong>Mobile & Headsets</strong></div>
-
-                <div class="svc-preview-metric"><span>Browser Compatibility</span><strong>99.4%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 04 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 04 // INDUSTRIAL SIMULATION</span>
-              <h3 class="svc-cap-title">Digital Twins & Industrial Spatial Telemetry</h3>
-              <p class="svc-cap-body">Connecting physical machinery to virtual representations enables unprecedented operational oversight. We construct real-time digital twins in AR and VR that ingest live IoT telemetry, temperature sensors, and machine performance metrics. Engineers inspect virtual factory floors, simulate equipment failures, and receive holographic maintenance overlays projected directly over physical components.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Unscheduled factory equipment downtime, dangerous manual inspection environments, and slow maintenance diagnostics.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Real-time MQTT/WebSocket IoT data streaming into 3D CAD meshes, spatial holographic overlays, and predictive alerts.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Smart factory monitoring, offshore energy facility inspections, automated logistics sorting centers, and power grids.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Interactive 3D digital twin platform, real-time IoT bridge, holographic AR overlay app, and maintenance log sync.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // DIGITAL TWIN</span>
-                <span class="svc-browser-status">IOT STREAM ACTIVE</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="140,25 210,60 140,95 70,60" fill="#141420" stroke="#C9A45C" stroke-width="1.4"/>
-        <line x1="70" y1="60" x2="70" y2="90" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="210" y1="60" x2="210" y2="90" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="140" y1="95" x2="140" y2="120" stroke="#C9A45C" stroke-width="1.2"/>
-        <circle cx="105" cy="42" r="3" fill="#27c93f"/>
-        <line x1="105" y1="42" x2="35" y2="35" stroke="#27c93f" stroke-width="1"/>
-        <rect x="15" y="24" width="55" height="18" rx="3" fill="#0d1810" stroke="#27c93f" stroke-width="0.8"/>
-        <text x="42" y="36" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">RPM: 4,820</text>
-        <circle cx="175" cy="42" r="3" fill="#4eedc4"/>
-        <line x1="175" y1="42" x2="245" y2="35" stroke="#4eedc4" stroke-width="1"/>
-        <rect x="215" y="24" width="55" height="18" rx="3" fill="#0d141e" stroke="#4eedc4" stroke-width="0.8"/>
-        <text x="242" y="36" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">TEMP: 42.1&deg;C</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Sensor Sync Latency</span><strong>24ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Simulated Data Nodes</span><strong>1,500+</strong></div>
-
-                <div class="svc-preview-metric"><span>Anomaly Detection</span><strong>Automated</strong></div>
-
-                <div class="svc-preview-metric"><span>Inspection Speedup</span><strong>3.8x Faster</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 05 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 05 // COMMERCIAL AUGMENTATION</span>
-              <h3 class="svc-cap-title">Mobile Augmented Reality (ARKit & ARCore)</h3>
-              <p class="svc-cap-body">Transforming consumer smartphones into spatial portals unlocks immense commercial value. We build high-precision mobile AR applications for iOS and Android using Apple ARKit and Google ARCore. By leveraging environmental depth sensing, horizontal/vertical plane detection, and realistic lighting estimation, our mobile AR applications place digital assets into physical spaces with rock-solid spatial anchoring.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Virtual objects drifting or sliding on floor surfaces, mismatched ambient lighting making 3D models look fake.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Simultaneous Localization and Mapping (SLAM), LiDAR depth mapping, environmental light probing, and occlusion handling.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Home furniture spatial visualization, automotive configuration, interior design remodeling, and interactive children’s books.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Native iOS/Android AR applications, USDZ/glTF 3D asset library, lighting estimation pipeline, and user guides.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // MOBILE AR SLAM</span>
-                <span class="svc-browser-status">LIDAR ASSISTED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="140,40 235,90 140,115 45,90" fill="none" stroke="rgba(201,164,92,0.3)" stroke-width="1" stroke-dasharray="4,4"/>
-        <line x1="92" y1="65" x2="187" y2="102" stroke="rgba(201,164,92,0.2)" stroke-width="0.8"/>
-        <line x1="187" y1="65" x2="92" y2="102" stroke="rgba(201,164,92,0.2)" stroke-width="0.8"/>
-        <circle cx="140" cy="75" r="5" fill="#27c93f"/>
-        <circle cx="95" cy="65" r="3" fill="#C9A45C"/>
-        <circle cx="185" cy="65" r="3" fill="#C9A45C"/>
-        <circle cx="120" cy="85" r="3" fill="#4eedc4"/>
-        <circle cx="160" cy="85" r="3" fill="#4eedc4"/>
-        <text x="140" y="25" fill="#C9A45C" font-size="7.5" font-family="monospace" text-anchor="middle">ARKit / ARCore PLANE DETECTED</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Surface Anchor Drift</span><strong>< 2mm</strong></div>
-
-                <div class="svc-preview-metric"><span>Light Estimation Accuracy</span><strong>98.5%</strong></div>
-
-                <div class="svc-preview-metric"><span>Plane Detection Time</span><strong>0.65s</strong></div>
-
-                <div class="svc-preview-metric"><span>Depth Occlusion</span><strong>Real-Time</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 06 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 06 // COLLABORATIVE SPACES</span>
-              <h3 class="svc-cap-title">Multi-User XR Collaboration & Virtual Studios</h3>
-              <p class="svc-cap-body">Remote teams require collaborative environments that transcend flat video grid calls. We engineer multi-user spatial collaboration platforms where globally distributed teams meet as expressive avatars in shared 3D environments. Participants collaborate on 3D CAD models, annotate virtual whiteboards, and experience realistic directional audio that makes multi-person discussions feel natural and spontaneous.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Zoom fatigue, inability to review physical product prototypes remotely, and lack of presence in remote corporate sessions.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Spatial colocation networking, low-bandwidth avatar kinematic compression, WebRTC voice channels, and shared object state.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Automotive design reviews, architectural client presentations, remote university seminars, and global executive summits.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Multi-user XR collaboration platform, avatar customization studio, CAD model importer, and admin session manager.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // MULTI-USER XR</span>
-                <span class="svc-browser-status">SPATIAL COLOCATION</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="80" cy="65" r="28" fill="#101420" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="80" y="63" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">AVATAR 1</text>
-        <text x="80" y="73" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">New York</text>
-        <path d="M 108 55 Q 140 40 172 55" fill="none" stroke="#27c93f" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <path d="M 172 75 Q 140 90 108 75" fill="none" stroke="#4eedc4" stroke-width="1.5"/>
-        <text x="140" y="68" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">mTLS SYNC 14ms</text>
-        <circle cx="200" cy="65" r="28" fill="#101814" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="200" y="63" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">AVATAR 2</text>
-        <text x="200" y="73" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">London</text>
-        <text x="140" y="118" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">SHARED SPATIAL STATE SYNCHRONIZATION</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Max Room Capacity</span><strong>64 Users</strong></div>
-
-                <div class="svc-preview-metric"><span>Avatar Positional Tick</span><strong>45 Hz</strong></div>
-
-                <div class="svc-preview-metric"><span>Spatial Audio Channels</span><strong>Directional</strong></div>
-
-                <div class="svc-preview-metric"><span>Shared State Sync</span><strong>< 30ms</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: OUR EXPERTISE -->
-    <section class="svc-section svc-section-border-top" id="expertise">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">05 // TECHNICAL DISCIPLINES</span>
-          <h2 class="svc-section-title">Engineering disciplines & <span class="svc-gold-text">architectural trade-offs</span></h2>
-          <p class="svc-section-lead">Every technological decision involves intentional balance. We navigate these architectural trade-offs to deliver sustainable, scalable outcomes.</p>
-        </div>
-
-        <div class="svc-expertise-grid">
-          
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Sub-15ms Motion-to-Photon Latency</h3>
-            <p class="svc-expertise-desc">Optimizing rendering loops and GPU synchronization to eliminate vestibular mismatch and simulator sickness.</p>
-            <div class="svc-expertise-tradeoff">COMFORT // ZERO MOTION SICKNESS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Foveated Eye-Tracked Rendering</h3>
-            <p class="svc-expertise-desc">Concentrating full GPU shader passes only within the user’s instantaneous foveal gaze field.</p>
-            <div class="svc-expertise-tradeoff">PERFORMANCE // 60% GPU SAVINGS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Binaural HRTF Spatial Acoustics</h3>
-            <p class="svc-expertise-desc">Modeling Head-Related Transfer Functions to simulate realistic sound wave reflections off virtual surfaces.</p>
-            <div class="svc-expertise-tradeoff">IMMERSION // PHYSICAL ACOUSTIC SIMULATION</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">OpenXR Standards Architecture</h3>
-            <p class="svc-expertise-desc">Targeting standard OpenXR APIs to ensure code portability across Apple, Meta, Pico, and Vive hardware.</p>
-            <div class="svc-expertise-tradeoff">INTEROPERABILITY // WRITE ONCE, DEPLOY XR</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">LiDAR & Environmental Occlusion</h3>
-            <p class="svc-expertise-desc">Blending real-world foreground objects naturally over virtual holograms using depth sensors.</p>
-            <div class="svc-expertise-tradeoff">FIDELITY // NATURAL DEPTH PERCEPTION</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Spatial UI Micro-Gesture Ergonomics</h3>
-            <p class="svc-expertise-desc">Designing interfaces around comfortable eye-gaze and subtle pinch gestures rather than extended arm motions.</p>
-            <div class="svc-expertise-tradeoff">ERGONOMICS // ZERO ARM FATIGUE</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: WHAT'S TRENDING -->
-    <section class="svc-section svc-section-border-top" id="trending">
-      <div class="svc-container">
-        <div class="svc-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
           <div>
-            <span class="svc-pill-badge">06 // EDITORIAL PERSPECTIVES</span>
-            <h2 class="svc-section-title">What's Shaping the <span class="svc-gold-text">AR/VR Development Platform</span></h2>
-            <p class="svc-section-lead">Research, technical analysis, and architectural perspectives from our engineering desk exploring current developments shaping enterprise digital delivery.</p>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              06 // SPATIAL COMPUTING & EXTENDED REALITY
+            </div>
+            <h1 class="d2-svc-hero-title">What if people could explore an idea instead of only looking at it?</h1>
+            <p class="d2-svc-hero-lead">Some ideas are difficult to communicate through images, documents, or conventional screens. The scale of a space, the operation of a machine, or the experience of using a product can become easier to understand when people can interact with it. Augmented and virtual reality create opportunities to place digital information into physical environments or construct entirely simulated spaces. The value lies not in immersion alone, but in designing experiences that help people learn, evaluate, practice, and make decisions in ways that conventional interfaces may not support.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
           </div>
-        </div>
 
-        <div class="svc-trending-carousel-wrap">
-          <div class="svc-carousel-viewport">
-            <div class="svc-carousel-track" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-              
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">SPATIAL OS &middot; 7 MIN READ</span>
-                  <h3 class="svc-article-card-title">Spatial Computing Paradigms: Transitioning from Screens to Space</h3>
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
                 </div>
-                <p class="svc-article-card-summary">How Apple Vision Pro and visionOS are forcing designers to replace 2D window frames with volumetric depth and eye-gaze navigation.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Spatial 6DoF Coordinate Mesh &amp; Holographic Pipeline</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
                 </div>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">HARDWARE &middot; 6 MIN READ</span>
-                  <h3 class="svc-article-card-title">Foveated Rendering & Dynamic Eye Tracking in Enterprise XR</h3>
-                </div>
-                <p class="svc-article-card-summary">A technical deep-dive into how eye tracking algorithms slash render workloads while increasing perceived sharpness.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">TRACKING DRIFT</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">&lt;0.5mm</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">RENDER REFRESH</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">90/120 Hz</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">M2P LATENCY</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">&lt;12ms</div>
+                  </div>
+                
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">WEBXR &middot; 8 MIN READ</span>
-                  <h3 class="svc-article-card-title">The Rise of WebXR: Photorealistic 3D in Mobile Browsers</h3>
-                </div>
-                <p class="svc-article-card-summary">Why retail and real estate brands are adopting zero-install WebGL and WebXR technologies for direct customer acquisition.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { SpatialCore, HolographicEngine } from '@riyadvi/spatial';
+export const spatialPipeline = new HolographicEngine({
+  framework: 'openxr-webxr-unified',
+  tracking: '6dof-inside-out-slam',
+  handTracking: { fidelity: 'skeletal-26-joint', gestureRecognition: true },
+  foveatedRendering: 'eye-tracked-vrs-active'
+});
+// Spatial coordinate plane anchored with sub-millimeter drift correction</code></pre>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">INDUSTRY &middot; 5 MIN READ</span>
-                  <h3 class="svc-article-card-title">Building Industrial Digital Twins with Real-Time Spatial Overlays</h3>
-                </div>
-                <p class="svc-article-card-summary">How manufacturing plants use augmented reality headsets to display live machine telemetry directly on assembly lines.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
               </div>
             </div>
           </div>
@@ -744,124 +142,609 @@ export const spatialSession = new SpatialRuntime({
       </div>
     </section>
 
-    <!-- SECTION 07: TECHNOLOGIES -->
-    <section class="svc-section svc-section-border-top" id="technologies">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">07 // TECHNOLOGY STACK</span>
-          <h2 class="svc-section-title">Technologies engineered for <span class="svc-gold-text">longevity</span></h2>
-          <p class="svc-section-lead">We select enterprise-proven, community-backed technologies with long-term support and reliable ecosystem roadmaps.</p>
-        </div>
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">Some experiences are easier to understand when you can step inside them.</h2>
+            <p class="d2-reality-desc">Spatial computing is far more than entertainment headsets. When enterprise training simulations allow industrial technicians or surgeons to rehearse high-risk procedures without physical danger, spatial technology translates directly into saved lives and millions in prevented downtime.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
 
-        <div class="svc-tech-grid">
-          <div class="svc-tech-card"><span class="svc-tech-cat">FRAMEWORKS</span><h3 class="svc-tech-title">Next.js & React</h3><p class="svc-tech-desc">Production-grade SSR, static generation, and streaming component rendering.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">RUNTIMES</span><h3 class="svc-tech-title">Node.js & Go</h3><p class="svc-tech-desc">Asynchronous, high-throughput microservices and API gateways.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">TYPE SAFETY</span><h3 class="svc-tech-title">Strict TypeScript</h3><p class="svc-tech-desc">Zero runtime type regressions with compile-time verification.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CONTAINERS</span><h3 class="svc-tech-title">Docker & K8s</h3><p class="svc-tech-desc">Containerized orchestration with automated horizontal scaling.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">PERSISTENCE</span><h3 class="svc-tech-title">PostgreSQL</h3><p class="svc-tech-desc">ACID relational compliance with indexed query optimization.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CACHE & BROKER</span><h3 class="svc-tech-title">Redis & Kafka</h3><p class="svc-tech-desc">Distributed caching and partition-tolerant event streaming.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">HEADLESS CMS</span><h3 class="svc-tech-title">Sanity & Strapi</h3><p class="svc-tech-desc">Structured content modeling with instant editorial preview studios.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">EDGE DELIVERY</span><h3 class="svc-tech-title">Cloudflare & AWS</h3><p class="svc-tech-desc">Multi-region edge network distribution with DDoS mitigation.</p></div>
+          <div class="d2-reality-stagger">
+            
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Simulation Sickness and Motion-to-Photon Lag</h3>
+      </div>
+      <p class="d2-reality-card-body">When frame rates dip below 90 FPS or tracking latency exceeds 20 milliseconds, the human vestibular system experiences severe motion sickness, rendering the experience unusable.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Fatiguing Spatial Ergonomics and Heavy Hand Gestures</h3>
+      </div>
+      <p class="d2-reality-card-body">Forcing users to hold their arms outstretched in mid-air (the &quot;gorilla arm&quot; problem) creates rapid physical fatigue. Spatial interfaces must be designed for relaxed micro-gestures.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Hardware Fragmentation and Varied Field-of-View</h3>
+      </div>
+      <p class="d2-reality-card-body">Building for the Apple Vision Pro, Meta Quest 3, HoloLens 2, and WebXR on smartphones requires careful abstraction of optical pass-through versus immersive VR optics.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Complex CAD Asset Bloat and Low-Poly Retopology</h3>
+      </div>
+      <p class="d2-reality-card-body">Directly importing raw engineering CAD files with tens of millions of micro-polygons causes immediate headset crashes. Assets must undergo disciplined automated retopology.</p>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: OUR PROCESS -->
-    <section class="svc-section svc-section-border-top" id="process">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">08 // EXECUTION METHODOLOGY</span>
-          <h2 class="svc-section-title">How we take projects <span class="svc-gold-text">from idea to production</span></h2>
-          <p class="svc-section-lead">A transparent six-phase delivery framework ensuring architectural rigor, clear milestone governance, and predictable launches.</p>
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in AR/VR Development, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
         </div>
 
-        <div class="svc-process-timeline">
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 01</div><h3 class="svc-step-title">Discovery & Architecture</h3><p class="svc-step-desc">Stakeholder interviews, technical audit, specification mapping, and high-level architectural blueprints.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 02</div><h3 class="svc-step-title">UX Flows & Wireframing</h3><p class="svc-step-desc">Information architecture, user journey maps, and low-fidelity structural validation.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 03</div><h3 class="svc-step-title">UI & Design System</h3><p class="svc-step-desc">Atomic design tokens, high-fidelity responsive prototypes, and accessibility audits.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 04</div><h3 class="svc-step-title">Sprint Engineering</h3><p class="svc-step-desc">Iterative two-week sprints, automated test coverage, and continuous integration deployments.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 05</div><h3 class="svc-step-title">Security & QA Audit</h3><p class="svc-step-desc">End-to-end stress testing, OWASP security audits, and Core Web Vitals optimization.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 06</div><h3 class="svc-step-title">Production & Handover</h3><p class="svc-step-desc">Zero-downtime DNS cutover, telemetry configuration, source code IP handover, and staff training.</p></div>
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
+            
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>Augmented Reality Applications</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>Virtual Reality Experiences</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>AR Product Visualization</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>VR Training Simulations</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>Virtual Showrooms</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>Interactive 3D Environments</span>
+    </button>
+  
+          </div>
+
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Interactive Contextual Overlays for the Physical World</h3>
+        <p class="d2-cap-stage-expl">Developing AR experiences for smartphones and optical glasses that anchor photorealistic digital twins, diagnostic instructions, and guided navigation to real-world objects.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Technicians struggle to diagnose complex industrial machinery using static paper manuals.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Spatial computer vision (SLAM, object recognition, plane detection) using ARKit and ARCore with sub-millimeter anchoring.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Industrial HVAC maintenance app that overlays real-time pressure diagnostics onto physical machinery.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Native iOS &amp; Android AR Apps, Spatial Computer Vision Models, 3D Asset Retopology.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Fully Immersive Simulated Environments</h3>
+        <p class="d2-cap-stage-expl">Building complete 360-degree virtual worlds for Meta Quest, HTC Vive, and Apple Vision Pro that replicate hazardous scenarios with total visual fidelity and physical physics.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Dangerous industrial emergency training cannot be safely or cost-effectively practiced in reality.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">High-framerate Unity/Unreal VR applications featuring custom physics controllers, haptic touch feedback, and eye-tracked foveated rendering.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">High-voltage substation emergency response simulation training 500 utility linemen annually with zero safety risks.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Standalone Headset Builds, Physical Controller Physics Engine, Haptic Profiles.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Try-Before-You-Buy 3D Commerce Overlays</h3>
+        <p class="d2-cap-stage-expl">Web-based and native AR viewers that allow retail customers to place true-to-scale furniture, automotive accessories, and luxury goods into their living rooms.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Furniture and decor retailers suffer from 30%+ return rates due to customer sizing misjudgments.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Lightweight WebXR and Quick Look models with real-time environmental lighting reflections and automated scale locking.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Luxury sofa manufacturer increasing conversion by 42% while reducing product return rates by 28%.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">WebXR Embeddable Viewer, USDZ / glTF Optimized Assets, CMS Integration Pipeline.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Muscle Memory Rehearsal for High-Stakes Operations</h3>
+        <p class="d2-cap-stage-expl">Developing procedurally scored simulation modules that guide practitioners through step-by-step mechanical assembly, medical procedures, and safety checklists.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Traditional classroom training fails to develop muscle memory or prepare technicians for sudden edge-case failures.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Step-by-step validation state machines with telemetry recording hand speed, error rates, and gaze duration.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Surgical instrument sterilization training platform adopted across 14 university teaching hospitals.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Training Simulation Modules, LMS Telemetry Connector, Trainee Scoring Dashboard.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Photorealistic Architectural and Product Exhibitions</h3>
+        <p class="d2-cap-stage-expl">Spatial virtual galleries and real estate walkthroughs that allow prospective international clients to explore pre-construction properties with realistic sunlight and material finishes.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Physical showroom spaces and pre-construction sales suites require hundreds of thousands in physical buildout.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Unreal Engine architectural visualization with interactive material switchers, spatial audio, and multi-user multiplayer avatars.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Luxury residential condominium development pre-selling 60% of units via virtual spatial walkthroughs.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Multi-User Virtual Showroom, Real-Time Material Switcher, Guided Walkthrough Modes.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Web-Based Spatial Portals and Browser WebXR</h3>
+        <p class="d2-cap-stage-expl">Accessible 3D and spatial computing environments that load instantaneously within standard web browsers without requiring headset hardware or app downloads.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Demanding specialized headset hardware limits spatial campaigns to a tiny fraction of target consumers.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Optimized Three.js, WebGL, and WebXR pipelines delivering silky 60 FPS interactive 3D directly in Chrome and Safari.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Interactive 3D digital museum exhibition viewed by over 800,000 global visitors on desktop and mobile.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">WebXR Browser Application, Sub-5MB Asset Bundles, Responsive Mouse/Touch Controls.</div>
+        </div>
+      </div>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: LET'S TALK CTA -->
-    <section class="svc-cta-section" id="lets-talk">
-      <div class="svc-container">
-        <div class="svc-cta-box">
-          <div class="svc-cta-glow"></div>
-          <span class="svc-pill-badge" style="background: rgba(240, 199, 94, 0.15); border-color: var(--svc-gold);">09 // GET STARTED</span>
-          <h2 class="svc-cta-title">Ready to engineer your <span class="svc-gold-text">AR/VR Development?</span></h2>
-          <p class="svc-cta-lead">Let's discuss your requirements, architectural trade-offs, and how we can engineer an exceptional digital product tailored to your business goals.</p>
-          <div class="svc-cta-buttons">
-            <a href="/index.html#estimator" class="svc-btn-primary">Calculate Project Estimate &rarr;</a>
-            <a href="/index.html#contact" class="svc-btn-secondary">Schedule Technical Consultation</a>
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              Our spatial computing stack leverages open standards like OpenXR, native Apple Vision Pro visionOS development, and cutting-edge real-time 3D pipelines.
+            </p>
+            <div class="d2-tech-list">
+              
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Spatial Platforms: OpenXR, Apple visionOS (SwiftUI, RealityKit), Meta Quest SDK, and WebXR API.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Core Engines: Unity XR Interaction Toolkit and Unreal Engine 5 VR/MR Subsystems.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Computer Vision & Tracking: ARKit, ARCore, Vuforia, 6DoF inside-out SLAM, and skeletal hand tracking.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Optimization & Assets: Automated CAD decimation, glTF Draco mesh compression, and baking PBR ambient occlusion.</div>
+    </div>
+  
+            </div>
+          </div>
+
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
+              </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
+
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
+              </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in AR/VR Development.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">ENTERPRISE XR &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">Spatial Computing Is Moving Beyond Entertainment</h3>
+        <p class="d2-card-summary">How industrial maintenance, medical education, and architectural engineering are driving real enterprise spatial computing ROI.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ar-vr-development/insights/spatial-computing-is-moving-beyond-entertainment" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">SIMULATION &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">Mixed Reality in Professional Training</h3>
+        <p class="d2-card-summary">Analyzing cognitive retention rates and muscle memory development in optical passthrough training simulations.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ar-vr-development/insights/mixed-reality-in-professional-training" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">SPATIAL COMMERCE &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">The Future of Virtual Product Demonstrations</h3>
+        <p class="d2-card-summary">How true-to-scale photorealistic AR is replacing physical product showrooms and slashing retail return rates.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ar-vr-development/insights/the-future-of-virtual-product-demonstrations" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">XR ERGONOMICS &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">Designing Comfortable and Accessible Immersive Experiences</h3>
+        <p class="d2-card-summary">Preventing vestibular simulation sickness through field-of-view vignetting, teleport locomotion, and seated micro-gestures.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ar-vr-development/insights/designing-comfortable-and-accessible-immersive-experiences" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
+        </div>
+
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Use-Case Discovery &amp; Ergonomics</div>
+      <div class="d2-step-body">Analyzing the physical workspace, user hardware profile, environmental lighting, and cognitive objectives for the simulation.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Spatial Scoping Document, Ergonomic Safety Review, Hardware Recommendation.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Spatial Experience Wireframing</div>
+      <div class="d2-step-body">Mapping 3D interaction zones, depth layers, audio attenuation boundaries, and relaxed hand gesture vocabularies.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>3D Spatial Storyboards, Gesture Interaction Spec, Comfort Guidelines.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">CAD Retopology &amp; 3D Assets</div>
+      <div class="d2-step-body">Transforming dense engineering models into lightweight, hardware-accelerated 3D assets with physically based rendering (PBR) textures.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Optimized 3D Asset Kit, PBR Texture Sets, Draco Compressed glTF Models.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">Interaction Engineering &amp; Physics</div>
+      <div class="d2-step-body">Developing OpenXR/visionOS controllers, gesture recognizers, spatial audio cones, and physics interaction colliders.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Interactive Spatial Prototype, Skeletal Hand Tracking Module, Audio Occlusion Setup.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Vestibular &amp; Performance Profiling</div>
+      <div class="d2-step-body">Rigorous testing on physical headsets to verify locked 90/120 FPS performance and ensure zero vestibular motion discomfort.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Frame Timing Profiling Report, Comfort Benchmark Sign-Off, Multi-Device QA.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">Enterprise Deployment &amp; MDM</div>
+      <div class="d2-step-body">Configuring enterprise private store distribution, MDM kiosk headset provisioning, and operational operator documentation.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Production Headset Deployment, Kiosk Lockdown Profiles, Trainer Runbooks.</div>
+      </div>
+    </div>
+  
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What could your audience understand better by experiencing it?</h2>
+          <p class="d2-cta-lead">Spatial computing breaks through the abstract boundaries of two-dimensional screens. Let's engineer an immersive experience that allows your clients and teams to interact with ideas directly.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- GLOBAL PERSISTENT FOOTER -->
-  <footer class="svc-footer" id="footer">
-    <div class="svc-footer-container">
-      <div class="svc-footer-top">
-        <div class="svc-footer-brand">
-          <div class="svc-brand">
-            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-            <div class="svc-brand-text">
-              <span class="svc-brand-name">RIYADVI</span>
-              <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
             </div>
           </div>
-          <p class="svc-footer-motto">Digital technology, proprietary software systems, and business growth engineered for enterprises ready to scale.</p>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
         </div>
 
-        <div class="svc-footer-links-grid">
-          <div class="svc-footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/web-development">Web Development</a></li>
-              <li><a href="/services/custom-software-development">Custom Software</a></li>
-              <li><a href="/services/mobile-app-development">Mobile Apps</a></li>
-              <li><a href="/services/ecommerce-solutions">E-Commerce</a></li>
-              <li><a href="/services/game-development">Game Development</a></li>
-              <li><a href="/services/ar-vr-development">AR/VR Experiences</a></li>
-              <li><a href="/services/ui-ux-design">UI/UX Design</a></li>
-              <li><a href="/services/3d-modeling">3D Modeling</a></li>
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
 
-          <div class="svc-footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/index.html#about">About Riyadvi</a></li>
-              <li><a href="/index.html#awards">Awards & Recognition</a></li>
-              <li><a href="/index.html#industries">Industries Served</a></li>
-              <li><a href="/index.html#guardian">Riyadvi Guardian</a></li>
-              <li><a href="/index.html#portfolio">Featured Work</a></li>
-              <li><a href="/index.html#estimator">Project Estimator</a></li>
-              <li><a href="/index.html#contact">Contact Our Team</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
         </div>
       </div>
 
-      <div class="svc-footer-bottom">
-        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
-        <div class="svc-footer-legal">
-          <span>Enterprise Grade</span>
-          <span>Zero Vendor Lock-In</span>
-          <span>Global Delivery</span>
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/services/services-common.js?v=11.0"></script>
-  <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  
 </body>
 </html>

@@ -3,96 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Custom Software Development & Enterprise Engineering | Riyadvi Software Technologies</title>
-  <meta name="description" content="Enterprise Custom Software Development capabilities by Riyadvi Software Technologies. Resilient architectures, tailored execution, and verified business outcomes.">
+  <title>Custom Software Development | Riyadvi Software Technologies</title>
+  <meta name="description" content="When Off-the-Shelf Software Stops Fitting Your Business. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  
 </head>
-<body class="svc-page-body">
+<body class="d2-body">
 
-  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
-  <nav class="svc-subnav-bar" id="serviceSubnav">
-    <div class="svc-subnav-container">
-      <div class="svc-subnav-left">
-        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
-          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          ALL SERVICES
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <span class="svc-subnav-title">02 // CUSTOM SOFTWARE DEVELOPMENT</span>
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">02 // Custom Software Development</span>
       </div>
 
-      <div class="svc-subnav-links" id="subnavLinks">
-        <a href="#overview" class="svc-subnav-anchor active">Overview</a>
-        <a href="#landscape" class="svc-subnav-anchor">The Landscape</a>
-        <a href="#insights" class="svc-subnav-anchor">Insights</a>
-        <a href="#what-we-do" class="svc-subnav-anchor">What We Do</a>
-        <a href="#expertise" class="svc-subnav-anchor">Our Expertise</a>
-        <a href="#trending" class="svc-subnav-anchor">What's Trending</a>
-        <a href="#technologies" class="svc-subnav-anchor">Technologies</a>
-        <a href="#process" class="svc-subnav-anchor">Our Process</a>
-        <a href="#lets-talk" class="svc-subnav-anchor">Let's Talk</a>
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- SECTION 01: HERO & TERMINAL -->
-    <section class="svc-hero-section" id="overview">
-      <div class="svc-hero-container">
-        <div class="svc-hero-content">
-          <div class="svc-hero-badge">
-            <span class="svc-badge-dot"></span>
-            02 // ENTERPRISE SYSTEMS
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
+          <div>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              02 // ENTERPRISE ARCHITECTURE & WORKFLOWS
+            </div>
+            <h1 class="d2-svc-hero-title">Your business shouldn't have to reshape itself around the limitations of its software.</h1>
+            <p class="d2-svc-hero-lead">Every organization develops its own way of working. Over time, those processes can become spread across spreadsheets, disconnected applications, manual approvals, and systems that were never designed to communicate. Custom software begins by understanding those realities. Instead of introducing another tool that people must work around, the objective is to create a system that supports how information moves, how decisions are made, and how work gets completed. From internal management platforms to enterprise applications, the focus is on making complex operations more understandable, reliable, and adaptable.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
           </div>
-          <h1 class="svc-hero-title">Off-the-shelf software solves common problems. <span class="svc-gold-text">Custom systems create lasting competitive advantage.</span></h1>
-          <p class="svc-hero-lead">When an organization relies on disconnected SaaS subscriptions, rigid vendor constraints, and manual spreadsheet workarounds, operational friction compounds rapidly. Custom software development replaces fragmented processes with resilient, purpose-built distributed architectures engineered around your proprietary workflows, compliance mandates, and high-throughput data pipelines.</p>
-          <div class="svc-hero-actions">
-            <a href="#lets-talk" class="svc-btn-primary">Start Your Project &rarr;</a>
-            <a href="#what-we-do" class="svc-btn-secondary">Explore Capabilities</a>
-          </div>
-        </div>
 
-        <div class="svc-hero-visual">
-          <div class="svc-terminal-card">
-            <div class="svc-terminal-header">
-              <div class="svc-terminal-dots">
-                <span class="svc-dot svc-dot-red"></span>
-                <span class="svc-dot svc-dot-yellow"></span>
-                <span class="svc-dot svc-dot-green"></span>
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
+                </div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Distributed Microservice &amp; Event Bus Mesh</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
+                </div>
               </div>
-              <div class="svc-terminal-url">https://core.riyadvi.com/enterprise-systems</div>
-              <div class="svc-terminal-status"><span class="svc-status-pill"></span>HEALTHY &middot; 99.99%</div>
-            </div>
-            <div class="svc-telemetry-grid">
-              
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">API LATENCY</span>
-                <span class="svc-telemetry-value">1.8ms</span>
+
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">API LATENCY</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">1.8ms</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">AVAILABILITY</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">99.995%</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">THROUGHPUT</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">45k req/s</div>
+                  </div>
+                
               </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">AVAILABILITY</span>
-                <span class="svc-telemetry-value">99.995%</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">THROUGHPUT</span>
-                <span class="svc-telemetry-value">45k req/s</span>
-              </div>
-            </div>
-            <div class="svc-code-display">
-              <pre><code>import { MicroserviceMesh, EventStream } from '@riyadvi/enterprise-core';
+
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { MicroserviceMesh, EventStream } from '@riyadvi/enterprise-core';
 export const enterprisePipeline = new MicroserviceMesh({
   architecture: 'domain-driven-distributed',
   broker: 'kafka-partitioned-clusters',
@@ -100,806 +130,621 @@ export const enterprisePipeline = new MicroserviceMesh({
   security: { protocol: 'mTLS-zero-trust', rbac: 'fine-grained' }
 });
 // Distributed event mesh active with idempotent state processing</code></pre>
-            </div>
-            <div class="svc-terminal-footer">
-              <span class="svc-pulse-indicator"></span>
-              <span class="svc-terminal-msg">Production Node Active</span>
-              <span class="svc-terminal-timestamp">Latency: 1.8ms</span>
+              </div>
+
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 02: THE LANDSCAPE -->
-    <section class="svc-section svc-section-border-top" id="landscape">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">02 // STRATEGIC REALITY</span>
-          <h2 class="svc-section-title">Your off-the-shelf software solved early problems. <span class="svc-gold-text">Now it is holding you back.</span></h2>
-          <p class="svc-section-lead">Enterprise technology landscapes are frequently encumbered by legacy technical debt, disconnected point solutions, and soaring per-seat subscription fees. Custom software development aligns engineering investments directly with organizational autonomy and long-term operating leverage.</p>
-        </div>
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">When everyday work depends on workarounds, the system needs rethinking.</h2>
+            <p class="d2-reality-desc">Commercial off-the-shelf software offers convenience in early stages. But as organizational complexity scales, rigid vendor constraints, escalating per-seat licensing, and disconnected data silos actively stifle operational agility.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
 
-        <div class="svc-landscape-grid">
-          <div class="svc-landscape-narrative">
+          <div class="d2-reality-stagger">
             
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">01 / OPERATIONAL FRICTION</span>
-              <h3 class="svc-narrative-title">Operational Agility vs. Commercial Vendor Lock-In</h3>
-              <p class="svc-narrative-desc">Pre-packaged enterprise platforms force organizations to reshape their operational workflows to match rigid software constraints. Custom software inverts this dynamic by building around your unique operational strengths, eliminating recurring seat license costs and unlocking unrestricted feature evolution.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">02 / DATA SILOS & SOVEREIGNTY</span>
-              <h3 class="svc-narrative-title">Data Sovereignty, Compliance & Governance</h3>
-              <p class="svc-narrative-desc">Relying on multi-tenant third-party SaaS means your strategic intellectual property and proprietary customer records reside within someone else’s database boundaries. Custom architectures guarantee complete data sovereignty, granular role-based access control, and verifiable audit trails.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">03 / SYSTEM FRAGMENTATION</span>
-              <h3 class="svc-narrative-title">Event-Driven Interoperability & Integration</h3>
-              <p class="svc-narrative-desc">Disconnected systems create dangerous data silos, delayed reporting, and error-prone duplicate data entry. We design decoupled, event-driven architectures that orchestrate legacy mainframe data, modern cloud microservices, and external partner APIs into cohesive real-time pipelines.</p>
-            </div>
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">SaaS Subscription Creep and Redundant Tools</h3>
+      </div>
+      <p class="d2-reality-card-body">Enterprises routinely pay for dozens of overlapping SaaS tools. Employees copy data manually between CRMs, project trackers, and ERPs, leading to synchronization errors and massive annual license waste.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Fragile Spreadsheets Disguised as Core Systems</h3>
+      </div>
+      <p class="d2-reality-card-body">Crucial business decisions frequently depend on colossal, unversioned Excel spreadsheets maintained by single points of failure. One broken macro can corrupt financial reporting or halt logistics.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Legacy Mainframes and Architecture Bottlenecks</h3>
+      </div>
+      <p class="d2-reality-card-body">Decades-old monolithic codebases become so brittle that engineering teams fear making minor modifications. Onboarding new developers takes months, and feature velocity grinds to a halt.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Compliance, Audit, and Data Sovereignty Risks</h3>
+      </div>
+      <p class="d2-reality-card-body">Storing sensitive intellectual property and proprietary customer data across multi-tenant commercial SaaS vendors introduces severe regulatory exposure under GDPR, HIPAA, and industry-specific privacy mandates.</p>
+    </div>
+  
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Diagnostic Box with 4 full comparison rows (NO EMPTY SPACE) -->
-          <div class="svc-diagnostic-box">
-            <div class="svc-diag-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--svc-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              Architectural Reality Check
-            </div>
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in Custom Software Development, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
+        </div>
+
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
             
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Commercial Vendor Lock-In</strong>
-                Per-seat recurring license royalties with rigid product roadmaps that disregard your business model.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Proprietary IP Ownership</strong>
-                100% enterprise ownership of source code, database schemas, and intellectual property with zero recurring royalties.
-              </div>
-            </div>
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>Enterprise Application Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>Business Process Automation</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>CRM and ERP Solutions</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>SaaS Platform Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>API and System Integration</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>Legacy Software Modernization</span>
+    </button>
+  
+          </div>
 
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Fragmented SaaS Sprawl</strong>
-                8+ disparate cloud tools glued together with fragile webhooks, creating data discrepancies and reconciliation delays.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Unified Event Mesh</strong>
-                Centralized Kafka/Redis event backbone orchestrating all operational pipelines in real-time with sub-millisecond sync.
-              </div>
-            </div>
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Scalable Distributed Systems Built for Proprietary Operations</h3>
+        <p class="d2-cap-stage-expl">Architecting end-to-end enterprise systems that streamline multifaceted organizational logic, handle millions of daily transactions, and maintain absolute state integrity.</p>
+      </div>
 
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Manual Spreadsheet Operations</strong>
-                Critical business logistics and approvals bottlenecked in shared spreadsheets prone to human formula errors.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Automated BPM Engines</strong>
-                Stateful workflow engines that automate rule validations, cross-department handoffs, and audit logging.
-              </div>
-            </div>
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Generic enterprise software fails to handle unique organizational workflows and regulatory requirements.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Domain-driven design (DDD) with event-sourced state machines and clean modular architecture.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Global supply chain tracking and customs compliance platform for an international freight consortium.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Enterprise Core Software, Distributed Database Clusters, RBAC Security Protocols, API Gateways.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Eliminating Operational Drag Through Intelligent Pipelines</h3>
+        <p class="d2-cap-stage-expl">Replacing manual data entry, paper approvals, and repetitive cross-system tasks with automated event-driven workflows that execute flawlessly 24/7.</p>
+      </div>
 
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Fragile Monolithic Deployments</strong>
-                A single bug in one reporting module brings down the entire corporate operational infrastructure.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Isolated Microservices</strong>
-                Decoupled containerized services running on Kubernetes with automated health checking and zero-downtime rolling deploys.
-              </div>
-            </div>
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Knowledge workers spend up to 40% of their workday copying data and following up on approvals.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Bespoke workflow orchestration engines with automated audit logs, webhook triggers, and exception handling.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Automated invoice reconciliation and vendor payout engine processing $50M annually with zero human intervention.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Workflow Automation Engine, Audit Logging Framework, Real-Time Monitoring Dashboard.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Unified Operational Hubs Tailored to Your Business Logic</h3>
+        <p class="d2-cap-stage-expl">Custom Customer Relationship Management and Enterprise Resource Planning platforms designed specifically around your unique sales cycles and inventory models.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Standard ERP implementations take years, cost millions, and force companies to alter their business processes.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Modular ERP architecture allowing incremental deployment of inventory, procurement, and billing modules.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Custom manufacturing execution and warehouse management system for a precision engineering firm.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Custom CRM/ERP Modules, Inventory Sync Engine, Executive Reporting Dashboards.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Commercial-Grade Multi-Tenant Software Products</h3>
+        <p class="d2-cap-stage-expl">From initial prototype to production scale: building commercial B2B SaaS platforms with isolated tenant data, automated billing, and high-concurrency APIs.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Building multi-tenant SaaS requires complex partitioning, metered billing, and elastic infrastructure.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Row-level security database architectures, Stripe billing webhooks, and Kubernetes autoscaling clusters.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Vertical SaaS platform for commercial real estate asset managers scaling from 0 to 500 enterprise tenants.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Multi-Tenant SaaS Architecture, Subscription Billing Engine, Tenant Admin Portals, SLA Monitoring.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Connecting Heterogeneous Enterprise Landscapes</h3>
+        <p class="d2-cap-stage-expl">Engineering secure middleware, event brokers, and API integration layers that unify disparate legacy databases, cloud services, and third-party partners.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Isolated software islands create communication delays and data divergence across departments.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Kafka or RabbitMQ distributed message brokers with idempotent event handlers and OpenAPI contracts.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Bidirectional sync middleware integrating legacy AS400 core banking systems with modern customer mobile apps.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Middleware Integration Layer, Message Queue Infrastructure, Swagger API Docs, Telemetry.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Safe Re-Engineering of Mission-Critical Legacy Assets</h3>
+        <p class="d2-cap-stage-expl">Transforming legacy desktop applications, COBOL/Delphi systems, or monolithic codebases into cloud-native microservices with zero downtime.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Rebuilding legacy systems from scratch poses enormous operational risk and historic business logic loss.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Strangler pattern migration: encapsulating legacy systems behind modern APIs and decomposing services iteratively.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Modernization of a 15-year-old hospital patient management system to cloud-native HIPAA-compliant services.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Decomposition Strategy, Cloud Microservices, Automated Data Migration, Continuous Sync Pipelines.</div>
+        </div>
+      </div>
+    </div>
+  
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 03: INSIGHTS -->
-    <section class="svc-section svc-section-border-top" id="insights">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">03 // INDUSTRY OBSERVATIONS</span>
-          <h2 class="svc-section-title">The data that governs <span class="svc-gold-text">operational success</span></h2>
-          <p class="svc-section-lead">Independent enterprise research reveals the compounding cost of software friction and the quantifiable ROI of proprietary engineering.</p>
-        </div>
-
-        <div class="svc-insights-strip">
-          
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">68%</div>
-              <div class="svc-insight-headline">Reduction in Manual Approval Latency</div>
-              <p class="svc-insight-desc">Organizations migrating core processes to bespoke workflow engines reduce cross-departmental approval delays by over two thirds.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">3.4x</div>
-              <div class="svc-insight-headline">Higher Transaction Throughput Capacity</div>
-              <p class="svc-insight-desc">Custom-engineered database schemas and asynchronous event queues comfortably handle peak operational surges that exhaust generic SaaS APIs.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">42%</div>
-              <div class="svc-insight-headline">Lower 5-Year Total Cost of Ownership</div>
-              <p class="svc-insight-desc">Eliminating perpetual per-seat SaaS tiers and third-party customization consulting delivers measurable operational savings by year three.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">99.995%</div>
-              <div class="svc-insight-headline">High Availability Target SLA</div>
-              <p class="svc-insight-desc">Mission-critical distributed architectures with automated multi-zone failover guarantee round-the-clock enterprise continuity.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT WE DO -->
-    <section class="svc-section svc-section-border-top" id="what-we-do">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">04 // WHAT WE DO</span>
-          <h2 class="svc-section-title">Engineering capabilities built for <span class="svc-gold-text">business durability</span></h2>
-          <p class="svc-section-lead">We do not assemble one-size-fits-all brochure templates. We engineer tailored systems that address specific operational bottlenecks, user journeys, and technical objectives.</p>
-        </div>
-
-        <div class="svc-capabilities-stack">
-          
-          <!-- Capability 01 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 01 // OPERATIONAL COMMAND</span>
-              <h3 class="svc-cap-title">Business Management Systems (BMS)</h3>
-              <p class="svc-cap-body">When organizations reach substantial scale, off-the-shelf management tools struggle to mirror proprietary hierarchies, specialized pricing rules, and multi-departmental approvals. Our Business Management Systems provide unified command centers tailored precisely to your operational anatomy. We design role-based dashboards, automated notification triggers, and real-time operational KPI monitors that give leadership clear visibility into departmental throughput, inventory allocation, and SLA compliance.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Siloed spreadsheets, delayed managerial approvals, and lack of cross-departmental throughput visibility.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Event-driven backend architecture, role-based real-time dashboards, and fine-grained authorization policies.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Multi-location operations, specialized logistics providers, and complex professional services organizations.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Custom BMS platform, executive KPI consoles, automated notification engine, and full source code IP handover.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // BMS ENGINE</span>
-                <span class="svc-browser-status">ENTERPRISE LEVEL</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="20" width="240" height="90" rx="8" fill="#0d0d16" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="32" y="32" width="65" height="40" rx="4" fill="#141422" stroke="rgba(201,164,92,0.3)" stroke-width="1"/>
-        <text x="40" y="45" fill="#727284" font-size="6" font-family="monospace">THROUGHPUT</text>
-        <text x="40" y="60" fill="#C9A45C" font-size="12" font-family="monospace" font-weight="700">42.8k</text>
-        <text x="40" y="68" fill="#27c93f" font-size="5.5" font-family="monospace">&uarr; +24% YoY</text>
-        <rect x="107" y="32" width="65" height="40" rx="4" fill="#141422" stroke="rgba(201,164,92,0.3)" stroke-width="1"/>
-        <text x="115" y="45" fill="#727284" font-size="6" font-family="monospace">EFFICIENCY</text>
-        <text x="115" y="60" fill="#4eedc4" font-size="12" font-family="monospace" font-weight="700">99.98%</text>
-        <text x="115" y="68" fill="#4eedc4" font-size="5.5" font-family="monospace">Zero Latency</text>
-        <rect x="182" y="32" width="65" height="40" rx="4" fill="#141422" stroke="rgba(201,164,92,0.3)" stroke-width="1"/>
-        <text x="190" y="45" fill="#727284" font-size="6" font-family="monospace">RUN RATE</text>
-        <text x="190" y="60" fill="#27c93f" font-size="12" font-family="monospace" font-weight="700">0.02ms</text>
-        <text x="190" y="68" fill="#27c93f" font-size="5.5" font-family="monospace">Instant SLA</text>
-        <path d="M 35 100 L 70 92 L 110 96 L 150 88 L 190 92 L 240 85" fill="none" stroke="#C9A45C" stroke-width="1.8"/>
-        <circle cx="240" cy="85" r="3" fill="#27c93f"/>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Approval Latency</span><strong>0.12s</strong></div>
-
-                <div class="svc-preview-metric"><span>Daily Processed Tasks</span><strong>120k+</strong></div>
-
-                <div class="svc-preview-metric"><span>Role-Based Access</span><strong>Granular</strong></div>
-
-                <div class="svc-preview-metric"><span>Data Retention</span><strong>Encrypted</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 02 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 02 // DISTRIBUTED ARCHITECTURE</span>
-              <h3 class="svc-cap-title">Enterprise Software & Microservices</h3>
-              <p class="svc-cap-body">Modern enterprises cannot afford monolithic architectures where a failure in one module compromises the entire business. We architect resilient distributed systems using microservices, event-driven messaging, and containerized deployment pipelines. By breaking complex business domains into autonomous, independently scalable services, we ensure your critical operations maintain 99.99% availability, handle peak concurrency effortlessly, and allow continuous feature deployment without system-wide downtime.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">System outages during peak loads, slow release cycles, and fragile monolithic interdependencies.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Domain-Driven Design (DDD), Docker containerization, Kubernetes orchestration, and Kafka/RabbitMQ message brokers.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">High-throughput transactional platforms, billing & invoicing systems, and large-scale data processing hubs.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Microservices architecture, automated CI/CD pipeline, service mesh configuration, and disaster recovery plan.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // CLUSTER STATE</span>
-                <span class="svc-browser-status">HIGH AVAILABILITY</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="140,15 215,50 215,100 140,125 65,100 65,50" fill="none" stroke="rgba(201,164,92,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
-        <circle cx="140" cy="25" r="10" fill="#141422" stroke="#27c93f" stroke-width="1.5"/>
-        <text x="140" y="28" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">POD-1</text>
-        <circle cx="205" cy="55" r="10" fill="#141422" stroke="#4eedc4" stroke-width="1.5"/>
-        <text x="205" y="58" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">POD-2</text>
-        <circle cx="205" cy="95" r="10" fill="#141422" stroke="#C9A45C" stroke-width="1.5"/>
-        <text x="205" y="98" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">POD-3</text>
-        <circle cx="140" cy="115" r="10" fill="#141422" stroke="#27c93f" stroke-width="1.5"/>
-        <text x="140" y="118" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">POD-4</text>
-        <circle cx="75" cy="95" r="10" fill="#141422" stroke="#4eedc4" stroke-width="1.5"/>
-        <text x="75" y="98" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">POD-5</text>
-        <circle cx="75" cy="55" r="10" fill="#141422" stroke="#C9A45C" stroke-width="1.5"/>
-        <text x="75" y="58" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">POD-6</text>
-        <circle cx="140" cy="70" r="16" fill="#1c1828" stroke="#C9A45C" stroke-width="2"/>
-        <text x="140" y="69" fill="#C9A45C" font-size="6.5" font-family="monospace" font-weight="700" text-anchor="middle">ISTIO</text>
-        <text x="140" y="76" fill="#ffffff" font-size="5" font-family="monospace" text-anchor="middle">mTLS</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Cluster Nodes</span><strong>12 Active</strong></div>
-
-                <div class="svc-preview-metric"><span>Failover Time</span><strong>< 800ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Replication Lag</span><strong>0.4ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Uptime SLA</span><strong>99.995%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 03 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 03 // EFFICIENCY & SCALE</span>
-              <h3 class="svc-cap-title">Workflow Automation & Process Optimization</h3>
-              <p class="svc-cap-body">Repetitive manual data entry and disjointed communication channels slow organizational velocity and introduce human error. We engineer custom workflow automation platforms that connect disparate data sources, validate incoming records, and execute multi-step business logic autonomously. From automated customer onboarding and document generation to automated financial reconciliations, our workflow engines liberate your workforce to focus on strategic growth.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Costly manual data re-entry, slow customer onboarding, and human error in critical compliance workflows.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">State machine workflow engines, asynchronous task queues, OCR/document processing, and automated audit logging.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Automated claim processing, client verification pipelines, contract generation, and supply chain tracking.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Bespoke automation engine, administrative execution monitor, audit log explorer, and staff operating guides.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // WORKFLOW QUEUE</span>
-                <span class="svc-browser-status">ZERO ERRORS</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="45" width="50" height="38" rx="4" fill="#10101a" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="40" y="62" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">PRODUCER</text>
-        <text x="40" y="72" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">App Events</text>
-        <line x1="65" y1="64" x2="95" y2="64" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <rect x="98" y="25" width="84" height="78" rx="6" fill="#0a1210" stroke="#27c93f" stroke-width="1.4"/>
-        <text x="140" y="40" fill="#27c93f" font-size="7.5" font-family="monospace" font-weight="700" text-anchor="middle">KAFKA CLUSTER</text>
-        <rect x="108" y="48" width="64" height="12" rx="2" fill="#14241e" stroke="#27c93f" stroke-width="0.8"/>
-        <text x="140" y="57" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">PARTITION 001</text>
-        <rect x="108" y="64" width="64" height="12" rx="2" fill="#14241e" stroke="#27c93f" stroke-width="0.8"/>
-        <text x="140" y="73" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">PARTITION 002</text>
-        <rect x="108" y="80" width="64" height="12" rx="2" fill="#14241e" stroke="#27c93f" stroke-width="0.8"/>
-        <text x="140" y="89" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">PARTITION 003</text>
-        <line x1="182" y1="64" x2="212" y2="64" stroke="#27c93f" stroke-width="1.5"/>
-        <rect x="215" y="45" width="50" height="38" rx="4" fill="#10101a" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="240" y="62" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">CONSUMER</text>
-        <text x="240" y="72" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">Worker Pool</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Tasks Resolved / Hr</span><strong>45,000</strong></div>
-
-                <div class="svc-preview-metric"><span>Manual Touchpoints</span><strong>-85%</strong></div>
-
-                <div class="svc-preview-metric"><span>Audit Trail Depth</span><strong>100% Immutable</strong></div>
-
-                <div class="svc-preview-metric"><span>Retry Circuit</span><strong>Exponential</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 04 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 04 // RESOURCE PLANNING</span>
-              <h3 class="svc-cap-title">Custom CRM & ERP Platforms</h3>
-              <p class="svc-cap-body">Generic CRM and ERP platforms charge exorbitant per-seat license fees while forcing your team into generic workflows that do not fit your business model. We build fully proprietary CRM and ERP systems tailored specifically to your sales cycles, procurement protocols, and operational workflows. With zero recurring seat license fees and unlimited customization potential, our systems provide deep customer intelligence, unified pipeline tracking, and precision inventory governance.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Exorbitant software licensing costs, bloated unused features, and failure of generic tools to mirror business reality.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Custom relational database schemas, modular ERP components, role-tailored user interfaces, and automated reports.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Manufacturing operations, specialized wholesale distributors, and multi-tier B2B sales organizations.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Proprietary CRM/ERP system, custom reporting engine, customer journey timeline, and data migration scripts.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // ERP PIPELINE</span>
-                <span class="svc-browser-status">OPTIMIZED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="25" width="65" height="75" rx="4" fill="#10101c" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="20" y="25" width="65" height="16" rx="4" fill="#C9A45C" opacity="0.2"/>
-        <text x="52" y="36" fill="#C9A45C" font-size="6.5" font-family="monospace" font-weight="700" text-anchor="middle">CUSTOMERS</text>
-        <text x="25" y="52" fill="#ffffff" font-size="5.5" font-family="monospace">PK id [UUID]</text>
-        <text x="25" y="62" fill="#727284" font-size="5.5" font-family="monospace">org_id</text>
-        <text x="25" y="72" fill="#727284" font-size="5.5" font-family="monospace">balance_cents</text>
-        <text x="25" y="82" fill="#27c93f" font-size="5.5" font-family="monospace">status_enum</text>
-        <line x1="85" y1="52" x2="115" y2="52" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="115" y="25" width="65" height="75" rx="4" fill="#10101c" stroke="#4eedc4" stroke-width="1.2"/>
-        <rect x="115" y="25" width="65" height="16" rx="4" fill="#4eedc4" opacity="0.2"/>
-        <text x="147" y="36" fill="#4eedc4" font-size="6.5" font-family="monospace" font-weight="700" text-anchor="middle">LEDGER</text>
-        <text x="120" y="52" fill="#ffffff" font-size="5.5" font-family="monospace">PK tx_id</text>
-        <text x="120" y="62" fill="#C9A45C" font-size="5.5" font-family="monospace">FK cust_id</text>
-        <text x="120" y="72" fill="#727284" font-size="5.5" font-family="monospace">amount_debit</text>
-        <line x1="180" y1="52" x2="205" y2="52" stroke="#4eedc4" stroke-width="1.2"/>
-        <rect x="205" y="25" width="60" height="75" rx="4" fill="#10101c" stroke="#27c93f" stroke-width="1.2"/>
-        <rect x="205" y="25" width="60" height="16" rx="4" fill="#27c93f" opacity="0.2"/>
-        <text x="235" y="36" fill="#27c93f" font-size="6.5" font-family="monospace" font-weight="700" text-anchor="middle">AUDIT_LOG</text>
-        <text x="210" y="52" fill="#ffffff" font-size="5.5" font-family="monospace">PK log_id</text>
-        <text x="210" y="62" fill="#4eedc4" font-size="5.5" font-family="monospace">FK tx_id</text>
-        <text x="210" y="72" fill="#27c93f" font-size="5.5" font-family="monospace">verified_sig</text>
-        <text x="140" y="118" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">ACID COMPLIANT RELATIONAL INTEGRITY</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>User Adoption Rate</span><strong>98.2%</strong></div>
-
-                <div class="svc-preview-metric"><span>Report Generation</span><strong>Real-time</strong></div>
-
-                <div class="svc-preview-metric"><span>Inventory Drift</span><strong>0.00%</strong></div>
-
-                <div class="svc-preview-metric"><span>API Endpoints</span><strong>140+ Built</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 05 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 05 // INTEGRATION ARCHITECTURE</span>
-              <h3 class="svc-cap-title">Custom API & Backend Solutions</h3>
-              <p class="svc-cap-body">Modern enterprises thrive on interconnected ecosystems. We engineer secure, robust RESTful and GraphQL API backends that bridge legacy databases with modern cloud applications, mobile frontends, and external third-party partners. Featuring rate limiting, cryptographic token authentication, and distributed caching, our backend architectures guarantee low latency, bulletproof security, and seamless interoperability across your entire technology stack.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Disconnected software applications, slow data synchronizations, and unstandardized partner integration endpoints.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">OpenAPI standardized design, Redis distributed caching, OAuth 2.0 / SAML identity management, and webhook dispatchers.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Third-party partner integrations, mobile app backends, real-time data ingestion pipelines, and legacy database facades.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">High-throughput API suite, developer documentation portal, webhook notification hub, and integration SDKs.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // API GATEWAY</span>
-                <span class="svc-browser-status">SUB-2MS</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 60 25 L 140 25 L 125 90 L 75 90 Z" fill="#101420" stroke="#C9A45C" stroke-width="1.4"/>
-        <line x1="70" y1="45" x2="130" y2="45" stroke="rgba(201,164,92,0.3)" stroke-width="1" stroke-dasharray="2,2"/>
-        <circle cx="100" cy="38" r="4" fill="#27c93f"/>
-        <circle cx="88" cy="55" r="4" fill="#C9A45C"/>
-        <circle cx="112" cy="55" r="4" fill="#C9A45C"/>
-        <circle cx="100" cy="75" r="4" fill="#4eedc4"/>
-        <line x1="100" y1="90" x2="100" y2="105" stroke="#4eedc4" stroke-width="1.5"/>
-        <rect x="165" y="35" width="95" height="58" rx="6" fill="#0d1410" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="212" y="52" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">RATE CONTROLLER</text>
-        <text x="175" y="68" fill="#ffffff" font-size="6.5" font-family="monospace">Capacity: 10,000/s</text>
-        <text x="175" y="78" fill="#4eedc4" font-size="6.5" font-family="monospace">Refill: 2,500/s</text>
-        <text x="175" y="88" fill="#727284" font-size="6" font-family="monospace">Burst: ACTIVE</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Average Latency</span><strong>1.4ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Peak Concurrency</span><strong>65k req/s</strong></div>
-
-                <div class="svc-preview-metric"><span>Auth Handshake</span><strong>mTLS v1.3</strong></div>
-
-                <div class="svc-preview-metric"><span>Cache Hit Ratio</span><strong>94.8%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 06 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 06 // DATA GOVERNANCE</span>
-              <h3 class="svc-cap-title">Legacy Modernization & Data Migration</h3>
-              <p class="svc-cap-body">Aging mainframe systems, undocumented legacy databases, and obsolete codebases expose organizations to security vulnerabilities and operational paralysis. We architect careful, risk-mitigated legacy migration roadmaps that extract business logic, clean relational data, and transition core operations to modern cloud architectures with zero operational interruption. Every migration is supported by parallel run validations, rollback safeguards, and verifiable data audits.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Security liabilities in unsupported legacy stacks, inability to recruit COBOL/deprecated language talent, and fear of data corruption.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Strangler-fig migration methodology, automated ETL extraction pipelines, dual-write data validation, and automated reconciliation.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Legacy SQL Server modernization, FoxPro/Access database transitions, and on-premises to cloud refactoring.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Migrated cloud platform, automated data reconciliation reports, complete system documentation, and engineering handover.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // MIGRATION SUITE</span>
-                <span class="svc-browser-status">ZERO DOWNTIME</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="40" width="55" height="48" rx="4" fill="#141014" stroke="#ff5f56" stroke-width="1.3"/>
-        <text x="47" y="60" fill="#ff5f56" font-size="7.5" font-family="monospace" text-anchor="middle">SOURCE DB</text>
-        <text x="47" y="72" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">WAL Logs</text>
-        <line x1="75" y1="64" x2="110" y2="64" stroke="#C9A45C" stroke-width="1.5"/>
-        <rect x="114" y="35" width="60" height="58" rx="5" fill="#10141a" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="144" y="55" fill="#C9A45C" font-size="7.5" font-family="monospace" text-anchor="middle">DEBEZIUM</text>
-        <text x="144" y="68" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">CDC Engine</text>
-        <text x="144" y="80" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">&lt;10ms Sync</text>
-        <line x1="174" y1="64" x2="205" y2="64" stroke="#27c93f" stroke-width="1.5"/>
-        <rect x="209" y="40" width="55" height="48" rx="4" fill="#0c1612" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="236" y="60" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">TARGET DB</text>
-        <text x="236" y="72" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">Distributed</text>
-        <text x="140" y="115" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">CONTINUOUS DUAL-WRITE SYNCHRONIZATION</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Data Integrity Delta</span><strong>100.00%</strong></div>
-
-                <div class="svc-preview-metric"><span>Legacy Deprecation</span><strong>100% Phased</strong></div>
-
-                <div class="svc-preview-metric"><span>Query Speed Gain</span><strong>14.2x Faster</strong></div>
-
-                <div class="svc-preview-metric"><span>Infrastructure OpEx</span><strong>-52%</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: OUR EXPERTISE -->
-    <section class="svc-section svc-section-border-top" id="expertise">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">05 // TECHNICAL DISCIPLINES</span>
-          <h2 class="svc-section-title">Engineering disciplines & <span class="svc-gold-text">architectural trade-offs</span></h2>
-          <p class="svc-section-lead">Every technological decision involves intentional balance. We navigate these architectural trade-offs to deliver sustainable, scalable outcomes.</p>
-        </div>
-
-        <div class="svc-expertise-grid">
-          
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Domain-Driven Design (DDD)</h3>
-            <p class="svc-expertise-desc">Modeling software architecture around core business entities and operational boundaries rather than generic technical constructs.</p>
-            <div class="svc-expertise-tradeoff">METHODOLOGY // BUSINESS-ALIGNED ARCHITECTURE</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Asynchronous Event-Driven Meshes</h3>
-            <p class="svc-expertise-desc">Decoupling services through distributed message brokers so peak volume spikes never cause systemic failures.</p>
-            <div class="svc-expertise-tradeoff">RESILIENCE // ZERO CONCURRENCY BOTTLENECKS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Zero-Trust Security & RBAC</h3>
-            <p class="svc-expertise-desc">Implementing granular role-based permissions, mTLS service-to-service authentication, and field-level database encryption.</p>
-            <div class="svc-expertise-tradeoff">SECURITY // ENTERPRISE COMPLIANCE AUDITED</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">ACID Data Integrity & Sharding</h3>
-            <p class="svc-expertise-desc">Architecting relational and distributed database clusters with strict transactional guarantees and automated read replica scaling.</p>
-            <div class="svc-expertise-tradeoff">PERSISTENCE // ZERO DATA CORRUPTION</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Automated CI/CD & Infrastructure as Code</h3>
-            <p class="svc-expertise-desc">Deploying reproducible cloud infrastructure using Terraform, Docker, and Kubernetes for zero-downtime blue/green rollouts.</p>
-            <div class="svc-expertise-tradeoff">DEVOPS // AUTOMATED SELF-HEALING</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Telemetry & Distributed Tracing</h3>
-            <p class="svc-expertise-desc">Embedding OpenTelemetry tracing across all services for instantaneous root-cause diagnosis of latency anomalies.</p>
-            <div class="svc-expertise-tradeoff">OBSERVABILITY // SUB-SECOND FAULT LOCALIZATION</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: WHAT'S TRENDING -->
-    <section class="svc-section svc-section-border-top" id="trending">
-      <div class="svc-container">
-        <div class="svc-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
           <div>
-            <span class="svc-pill-badge">06 // EDITORIAL PERSPECTIVES</span>
-            <h2 class="svc-section-title">What's Shaping the <span class="svc-gold-text">Custom Software Development Platform</span></h2>
-            <p class="svc-section-lead">Research, technical analysis, and architectural perspectives from our engineering desk exploring current developments shaping enterprise digital delivery.</p>
-          </div>
-        </div>
-
-        <div class="svc-trending-carousel-wrap">
-          <div class="svc-carousel-viewport">
-            <div class="svc-carousel-track" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              We select enterprise technologies proven to deliver continuous uptime, rigorous memory safety, and predictable long-term scalability.
+            </p>
+            <div class="d2-tech-list">
               
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">ARCHITECTURE &middot; 8 MIN READ</span>
-                  <h3 class="svc-article-card-title">Event-Driven Microservices vs. Modular Monoliths in 2026</h3>
-                </div>
-                <p class="svc-article-card-summary">Analyzing when organizations should decouple into microservices and when disciplined modular monoliths deliver superior velocity and reliability.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
-              </div>
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Backend Languages: Node.js/TypeScript, Python, Go, and Java Enterprise.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Data & Event Stores: PostgreSQL with row-level security, Apache Kafka, Redis cluster, and Elasticsearch.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Security & Identity: mTLS zero-trust communication, OpenID Connect, OAuth2, and granular RBAC/ABAC.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Infrastructure: Docker, Kubernetes, Terraform IaC, AWS/Azure hybrid cloud, and Datadog telemetry.</div>
+    </div>
+  
+            </div>
+          </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">SECURITY &middot; 6 MIN READ</span>
-                  <h3 class="svc-article-card-title">Zero-Trust Architecture for Distributed Enterprise Systems</h3>
-                </div>
-                <p class="svc-article-card-summary">Practical implementation patterns for mTLS, token rotation, and least-privilege authorization in modern cloud environments.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
               </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">PERSISTENCE &middot; 7 MIN READ</span>
-                  <h3 class="svc-article-card-title">Database Sharding and Distributed Transactions at Scale</h3>
-                </div>
-                <p class="svc-article-card-summary">Navigating the trade-offs between two-phase commit protocols, saga patterns, and eventual consistency in high-volume transaction environments.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
-              </div>
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">DEVSECOPS &middot; 5 MIN READ</span>
-                  <h3 class="svc-article-card-title">Automated Compliance & Continuous Governance in Cloud Pipelines</h3>
-                </div>
-                <p class="svc-article-card-summary">Embedding security audits and compliance verifications directly into continuous delivery workflows for regulated enterprises.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
               </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 07: TECHNOLOGIES -->
-    <section class="svc-section svc-section-border-top" id="technologies">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">07 // TECHNOLOGY STACK</span>
-          <h2 class="svc-section-title">Technologies engineered for <span class="svc-gold-text">longevity</span></h2>
-          <p class="svc-section-lead">We select enterprise-proven, community-backed technologies with long-term support and reliable ecosystem roadmaps.</p>
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in Custom Software Development.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
         </div>
 
-        <div class="svc-tech-grid">
-          <div class="svc-tech-card"><span class="svc-tech-cat">FRAMEWORKS</span><h3 class="svc-tech-title">Next.js & React</h3><p class="svc-tech-desc">Production-grade SSR, static generation, and streaming component rendering.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">RUNTIMES</span><h3 class="svc-tech-title">Node.js & Go</h3><p class="svc-tech-desc">Asynchronous, high-throughput microservices and API gateways.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">TYPE SAFETY</span><h3 class="svc-tech-title">Strict TypeScript</h3><p class="svc-tech-desc">Zero runtime type regressions with compile-time verification.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CONTAINERS</span><h3 class="svc-tech-title">Docker & K8s</h3><p class="svc-tech-desc">Containerized orchestration with automated horizontal scaling.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">PERSISTENCE</span><h3 class="svc-tech-title">PostgreSQL</h3><p class="svc-tech-desc">ACID relational compliance with indexed query optimization.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CACHE & BROKER</span><h3 class="svc-tech-title">Redis & Kafka</h3><p class="svc-tech-desc">Distributed caching and partition-tolerant event streaming.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">HEADLESS CMS</span><h3 class="svc-tech-title">Sanity & Strapi</h3><p class="svc-tech-desc">Structured content modeling with instant editorial preview studios.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">EDGE DELIVERY</span><h3 class="svc-tech-title">Cloudflare & AWS</h3><p class="svc-tech-desc">Multi-region edge network distribution with DDoS mitigation.</p></div>
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">AI GOVERNANCE &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">AI Agents Are Entering Business Workflows. Where Should Human Oversight Remain?</h3>
+        <p class="d2-card-summary">Architectural patterns for implementing autonomous agentic workflows while maintaining strict deterministic guardrails and auditability.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/custom-software-development/insights/ai-agents-are-entering-business-workflows-where-should-human-oversight-remain" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">ARCHITECTURE &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">Why Modern Software Architecture Is Moving Beyond Large Monolithic Systems</h3>
+        <p class="d2-card-summary">Deconstructing the trade-offs between modular monoliths, distributed microservices, and serverless topologies in 2026.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/custom-software-development/insights/why-modern-software-architecture-is-moving-beyond-large-monolithic-systems" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">DEVOPS &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">The Growing Role of Platform Engineering</h3>
+        <p class="d2-card-summary">How internal developer platforms (IDPs) are replacing manual infrastructure provisioning with automated self-service environments.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/custom-software-development/insights/the-growing-role-of-platform-engineering" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">ENTERPRISE &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">Modernizing Legacy Software Without Disrupting the Business</h3>
+        <p class="d2-card-summary">Practical strategies for decoupling mission-critical legacy databases and monolithic services using event-driven strangler patterns.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/custom-software-development/insights/modernizing-legacy-software-without-disrupting-the-business" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: OUR PROCESS -->
-    <section class="svc-section svc-section-border-top" id="process">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">08 // EXECUTION METHODOLOGY</span>
-          <h2 class="svc-section-title">How we take projects <span class="svc-gold-text">from idea to production</span></h2>
-          <p class="svc-section-lead">A transparent six-phase delivery framework ensuring architectural rigor, clear milestone governance, and predictable launches.</p>
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
         </div>
 
-        <div class="svc-process-timeline">
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 01</div><h3 class="svc-step-title">Discovery & Architecture</h3><p class="svc-step-desc">Stakeholder interviews, technical audit, specification mapping, and high-level architectural blueprints.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 02</div><h3 class="svc-step-title">UX Flows & Wireframing</h3><p class="svc-step-desc">Information architecture, user journey maps, and low-fidelity structural validation.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 03</div><h3 class="svc-step-title">UI & Design System</h3><p class="svc-step-desc">Atomic design tokens, high-fidelity responsive prototypes, and accessibility audits.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 04</div><h3 class="svc-step-title">Sprint Engineering</h3><p class="svc-step-desc">Iterative two-week sprints, automated test coverage, and continuous integration deployments.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 05</div><h3 class="svc-step-title">Security & QA Audit</h3><p class="svc-step-desc">End-to-end stress testing, OWASP security audits, and Core Web Vitals optimization.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 06</div><h3 class="svc-step-title">Production & Handover</h3><p class="svc-step-desc">Zero-downtime DNS cutover, telemetry configuration, source code IP handover, and staff training.</p></div>
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Domain Modeling &amp; Analysis</div>
+      <div class="d2-step-body">Deep-dive analysis of your proprietary business logic, data models, edge cases, and compliance boundaries.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Domain Architecture Specification, Entity Relationship Diagram, Risk Assessment.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Workflow Mapping &amp; UX Wireframing</div>
+      <div class="d2-step-body">Mapping physical operational journeys to digital interfaces that minimize user steps and eliminate cognitive fatigue.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Process Flow Diagrams, Low-Fidelity Prototypes, Role-Based Access Matrix.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">System Architecture &amp; Schema</div>
+      <div class="d2-step-body">Designing resilient distributed architectures, database replication topologies, API contracts, and security boundaries.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Technical Architecture Document, OpenAPI Schema, Infrastructure Blueprint.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">Agile Engineering Sprints</div>
+      <div class="d2-step-body">Iterative, test-driven development with bi-weekly milestone demonstrations and production-like staging deployments.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Functional Microservices, Continuous Delivery Pipelines, Automated Test Coverage.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Integration &amp; Load Testing</div>
+      <div class="d2-step-body">End-to-end integration with existing enterprise systems, high-concurrency stress testing, and security penetration checks.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Stress Benchmark Reports, Penetration Test Sign-off, Data Migration Scripts.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">Deployment &amp; Knowledge Transfer</div>
+      <div class="d2-step-body">Zero-downtime production cutover, operational runbook documentation, and comprehensive training for internal engineering teams.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Production System Launch, Ops Runbooks, Developer Handoff Workshops.</div>
+      </div>
+    </div>
+  
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: LET'S TALK CTA -->
-    <section class="svc-cta-section" id="lets-talk">
-      <div class="svc-container">
-        <div class="svc-cta-box">
-          <div class="svc-cta-glow"></div>
-          <span class="svc-pill-badge" style="background: rgba(240, 199, 94, 0.15); border-color: var(--svc-gold);">09 // GET STARTED</span>
-          <h2 class="svc-cta-title">Ready to engineer your <span class="svc-gold-text">Custom Software Development?</span></h2>
-          <p class="svc-cta-lead">Let's discuss your requirements, architectural trade-offs, and how we can engineer an exceptional digital product tailored to your business goals.</p>
-          <div class="svc-cta-buttons">
-            <a href="/index.html#estimator" class="svc-btn-primary">Calculate Project Estimate &rarr;</a>
-            <a href="/index.html#contact" class="svc-btn-secondary">Schedule Technical Consultation</a>
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What would your team accomplish if the software stopped getting in the way?</h2>
+          <p class="d2-cta-lead">Custom software gives forward-thinking organizations an unassailable competitive advantage. Let's design and engineer software that matches how your business truly operates.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- GLOBAL PERSISTENT FOOTER -->
-  <footer class="svc-footer" id="footer">
-    <div class="svc-footer-container">
-      <div class="svc-footer-top">
-        <div class="svc-footer-brand">
-          <div class="svc-brand">
-            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-            <div class="svc-brand-text">
-              <span class="svc-brand-name">RIYADVI</span>
-              <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
             </div>
           </div>
-          <p class="svc-footer-motto">Digital technology, proprietary software systems, and business growth engineered for enterprises ready to scale.</p>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
         </div>
 
-        <div class="svc-footer-links-grid">
-          <div class="svc-footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/web-development">Web Development</a></li>
-              <li><a href="/services/custom-software-development">Custom Software</a></li>
-              <li><a href="/services/mobile-app-development">Mobile Apps</a></li>
-              <li><a href="/services/ecommerce-solutions">E-Commerce</a></li>
-              <li><a href="/services/game-development">Game Development</a></li>
-              <li><a href="/services/ar-vr-development">AR/VR Experiences</a></li>
-              <li><a href="/services/ui-ux-design">UI/UX Design</a></li>
-              <li><a href="/services/3d-modeling">3D Modeling</a></li>
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
 
-          <div class="svc-footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/index.html#about">About Riyadvi</a></li>
-              <li><a href="/index.html#awards">Awards & Recognition</a></li>
-              <li><a href="/index.html#industries">Industries Served</a></li>
-              <li><a href="/index.html#guardian">Riyadvi Guardian</a></li>
-              <li><a href="/index.html#portfolio">Featured Work</a></li>
-              <li><a href="/index.html#estimator">Project Estimator</a></li>
-              <li><a href="/index.html#contact">Contact Our Team</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
         </div>
       </div>
 
-      <div class="svc-footer-bottom">
-        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
-        <div class="svc-footer-legal">
-          <span>Enterprise Grade</span>
-          <span>Zero Vendor Lock-In</span>
-          <span>Global Delivery</span>
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/services/services-common.js?v=11.0"></script>
-  <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  
 </body>
 </html>

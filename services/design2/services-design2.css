@@ -29,9 +29,13 @@
   --d2-radius-lg: 20px;
 }
 
-/* Base resets for isolated Design 2 pages */
-*, *::before, *::after {
+/* Base resets for Design 2 components */
+.d2-services-universe *, .d2-services-universe *::before, .d2-services-universe *::after,
+body.d2-body *, body.d2-body *::before, body.d2-body *::after {
   box-sizing: border-box;
+}
+
+body.d2-body *, body.d2-body *::before, body.d2-body *::after {
   margin: 0;
   padding: 0;
 }
@@ -47,9 +51,21 @@ body.d2-body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+.d2-services-universe a, body.d2-body a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Master Universe Wrapper when embedded in index.html */
+.d2-services-universe {
+  position: relative;
+  width: 100%;
+  background: var(--d2-bg-primary);
+  color: var(--d2-text-primary);
+  font-family: var(--d2-font-sans);
+  overflow: hidden;
+  padding-top: 10px;
+  border-top: 1px solid var(--d2-border-subtle);
 }
 
 /* Container */

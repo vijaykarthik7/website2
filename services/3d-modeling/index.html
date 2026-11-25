@@ -3,741 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>3D Modeling & Enterprise Engineering | Riyadvi Software Technologies</title>
-  <meta name="description" content="Enterprise 3D Modeling capabilities by Riyadvi Software Technologies. Resilient architectures, tailored execution, and verified business outcomes.">
+  <title>3D Modeling | Riyadvi Software Technologies</title>
+  <meta name="description" content="Giving Shape to Ideas Before They Exist. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  
 </head>
-<body class="svc-page-body">
+<body class="d2-body">
 
-  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
-  <nav class="svc-subnav-bar" id="serviceSubnav">
-    <div class="svc-subnav-container">
-      <div class="svc-subnav-left">
-        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
-          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          ALL SERVICES
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <span class="svc-subnav-title">08 // 3D MODELING</span>
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">08 // 3D Modeling</span>
       </div>
 
-      <div class="svc-subnav-links" id="subnavLinks">
-        <a href="#overview" class="svc-subnav-anchor active">Overview</a>
-        <a href="#landscape" class="svc-subnav-anchor">The Landscape</a>
-        <a href="#insights" class="svc-subnav-anchor">Insights</a>
-        <a href="#what-we-do" class="svc-subnav-anchor">What We Do</a>
-        <a href="#expertise" class="svc-subnav-anchor">Our Expertise</a>
-        <a href="#trending" class="svc-subnav-anchor">What's Trending</a>
-        <a href="#technologies" class="svc-subnav-anchor">Technologies</a>
-        <a href="#process" class="svc-subnav-anchor">Our Process</a>
-        <a href="#lets-talk" class="svc-subnav-anchor">Let's Talk</a>
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- SECTION 01: HERO & TERMINAL -->
-    <section class="svc-hero-section" id="overview">
-      <div class="svc-hero-container">
-        <div class="svc-hero-content">
-          <div class="svc-hero-badge">
-            <span class="svc-badge-dot"></span>
-            08 // 3D VISUALIZATION & SHADERS
-          </div>
-          <h1 class="svc-hero-title">Three dimensions transform products into <span class="svc-gold-text">tangible digital reality</span>.</h1>
-          <p class="svc-hero-lead">Static photography cannot convey the physical craft, internal mechanics, or dynamic customization of modern products. We craft photorealistic 3D models, procedural shaders, and lightweight real-time WebGL assets for enterprise product configurators, architectural visualizations, industrial digital twins, and cinematic brand campaigns.</p>
-          <div class="svc-hero-actions">
-            <a href="#lets-talk" class="svc-btn-primary">Start Your Project &rarr;</a>
-            <a href="#what-we-do" class="svc-btn-secondary">Explore Capabilities</a>
-          </div>
-        </div>
-
-        <div class="svc-hero-visual">
-          <div class="svc-terminal-card">
-            <div class="svc-terminal-header">
-              <div class="svc-terminal-dots">
-                <span class="svc-dot svc-dot-red"></span>
-                <span class="svc-dot svc-dot-yellow"></span>
-                <span class="svc-dot svc-dot-green"></span>
-              </div>
-              <div class="svc-terminal-url">https://3d.riyadvi.com/realtime-shader</div>
-              <div class="svc-terminal-status"><span class="svc-status-pill"></span>HEALTHY &middot; 99.99%</div>
-            </div>
-            <div class="svc-telemetry-grid">
-              
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">MESH DRAW CALLS</span>
-                <span class="svc-telemetry-value">< 18 Calls</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">TEXTURE COMPRESSION</span>
-                <span class="svc-telemetry-value">KTX2 / Basis</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">WEBGL LOAD TIME</span>
-                <span class="svc-telemetry-value">0.9s</span>
-              </div>
-            </div>
-            <div class="svc-code-display">
-              <pre><code>import { MeshPipeline, PBRMaterial } from '@riyadvi/3d-core';
-export const modelAsset = new MeshPipeline({
-  geometry: 'subdivision-surface-draco',
-  materials: PBRMaterial.metallicRoughness({ albedo: '4k-compressed' }),
-  exportTarget: ['gltf-binary', 'usdz-quicklook'],
-  realtimeOptimization: 'draw-call-batching'
-});
-// Photorealistic 3D PBR asset compiled for real-time web & AR engines</code></pre>
-            </div>
-            <div class="svc-terminal-footer">
-              <span class="svc-pulse-indicator"></span>
-              <span class="svc-terminal-msg">Production Node Active</span>
-              <span class="svc-terminal-timestamp">Latency: 1.8ms</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02: THE LANDSCAPE -->
-    <section class="svc-section svc-section-border-top" id="landscape">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">02 // 3D CHALLENGES</span>
-          <h2 class="svc-section-title">3D models look spectacular in rendering studios. <span class="svc-gold-text">Why are they crashing web browsers?</span></h2>
-          <p class="svc-section-lead">Bridging the divide between high-end offline raytracing and lightweight real-time web 3D requires disciplined technical artistry.</p>
-        </div>
-
-        <div class="svc-landscape-grid">
-          <div class="svc-landscape-narrative">
-            
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">01 / PAYLOAD OVERLOAD</span>
-              <h3 class="svc-narrative-title">Massive CAD Mesh Payloads & Slow Downloads</h3>
-              <p class="svc-narrative-desc">Exporting raw industrial CAD files results in 150MB meshes that crash mobile browsers and consume massive user data budgets before rendering a single frame.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">02 / STERILE SHADING</span>
-              <h3 class="svc-narrative-title">Plastic Uncanny Valley Shaders</h3>
-              <p class="svc-narrative-desc">Generic 3D models often appear flat, plastic, and unconvincing. Recreating physical realism requires accurate Physically-Based Rendering (PBR) roughness and normal mapping.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">03 / FORMAT FRAGMENTATION</span>
-              <h3 class="svc-narrative-title">Format Incompatibility Across Platforms</h3>
-              <p class="svc-narrative-desc">Navigating USDZ for Apple AR, glTF for WebGL, and FBX/OBJ for game engines creates asset pipeline chaos without automated conversion and optimization.</p>
-            </div>
-          </div>
-
-          <!-- Diagnostic Box with 4 full comparison rows (NO EMPTY SPACE) -->
-          <div class="svc-diagnostic-box">
-            <div class="svc-diag-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--svc-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              Architectural Reality Check
-            </div>
-            
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Raw CAD Polygon Exports</strong>
-                Direct imports with millions of redundant polygons that overwhelm client GPUs and cause frame drops.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Draco-Compressed Retopology</strong>
-                Hand-retopologized quad geometry compressed with Google Draco, shrinking 100MB files to under 4MB.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Generic Flat Shading</strong>
-                Simple untextured materials that look synthetic and fail to communicate true material finishes.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Sub-Surface PBR Shaders</strong>
-                Accurate Physically-Based Rendering (PBR) capturing micro-scratches, subsurface light scattering, and clearcoat sheen.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Disparate Manual Formats</strong>
-                Manual conversion for every target device leading to texture misalignments and inverted normal maps.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Automated glTF / USDZ Pipeline</strong>
-                Continuous integration script pipelines that export optimized glTF, GLB, and USDZ assets simultaneously.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Static Non-Interactive Renders</strong>
-                Flat pre-rendered video clips that prevent customers from inspecting product details from custom angles.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Real-Time WebGL Configurators</strong>
-                Interactive 360-degree 3D configurators allowing buyers to customize colors, textures, and parts in real-time.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03: INSIGHTS -->
-    <section class="svc-section svc-section-border-top" id="insights">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">03 // 3D OBSERVATIONS</span>
-          <h2 class="svc-section-title">The commercial power of <span class="svc-gold-text">interactive 3D assets</span></h2>
-          <p class="svc-section-lead">Consumer conversion data confirms that allowing buyers to inspect physical products in 3D drives higher purchasing confidence.</p>
-        </div>
-
-        <div class="svc-insights-strip">
-          
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">+94%</div>
-              <div class="svc-insight-headline">Higher Conversion on 3D Products</div>
-              <p class="svc-insight-desc">Shopify retail studies report that products featuring interactive 3D models convert nearly double the rate of flat photos.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">-40%</div>
-              <div class="svc-insight-headline">Reduction in Product Returns</div>
-              <p class="svc-insight-desc">Allowing customers to examine scale, texture, and details in 3D dramatically reduces post-delivery expectations mismatches.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">< 3MB</div>
-              <div class="svc-insight-headline">Optimized Real-Time GLB Target</div>
-              <p class="svc-insight-desc">Draco geometry compression and KTX2 texture encoding deliver instant loading on real-world cellular networks.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">60 FPS</div>
-              <div class="svc-insight-headline">Locked WebGL Viewport Refresh</div>
-              <p class="svc-insight-desc">Strict polygon budgeting and draw call batching ensure fluid interactive rotations across budget mobile devices.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT WE DO -->
-    <section class="svc-section svc-section-border-top" id="what-we-do">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">04 // WHAT WE DO</span>
-          <h2 class="svc-section-title">Engineering capabilities built for <span class="svc-gold-text">business durability</span></h2>
-          <p class="svc-section-lead">We do not assemble one-size-fits-all brochure templates. We engineer tailored systems that address specific operational bottlenecks, user journeys, and technical objectives.</p>
-        </div>
-
-        <div class="svc-capabilities-stack">
-          
-          <!-- Capability 01 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 01 // PRODUCT VISUALIZATION</span>
-              <h3 class="svc-cap-title">High-Fidelity 3D Product Modeling & Texturing</h3>
-              <p class="svc-cap-body">We create photorealistic 3D models of consumer products, electronics, luxury fashion items, and furniture. Starting from physical blueprints, reference photographs, or engineering CAD files, our 3D artists craft clean subdivision surfaces with accurate proportions. We author custom Physically-Based Rendering (PBR) texture maps capturing realistic brushed metals, textured leathers, and refractive glass finishes that look stunning in studio lighting.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Expensive physical photo studio shoots, inability to market products before manufacturing completes.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Subdivision surface modeling, high-poly to low-poly baking, procedural texturing in Substance Painter.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Consumer electronics, luxury timepieces, designer furniture, cosmetic packaging, and footwear.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Photorealistic 3D models (FBX/OBJ/GLB), 4K PBR texture maps, studio lighting setups, and high-res render stills.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // PBR TEXTURING</span>
-                <span class="svc-browser-status">PHOTOREALISTIC 4K</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="35" y="20" width="120" height="20" rx="3" fill="#141c28" stroke="#5ac8fa" stroke-width="1.2"/>
-        <text x="45" y="34" fill="#5ac8fa" font-size="7" font-family="monospace">01. ALBEDO DIFFUSE (4K)</text>
-        <rect x="45" y="44" width="120" height="20" rx="3" fill="#1c1824" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="55" y="58" fill="#C9A45C" font-size="7" font-family="monospace">02. NORMAL TANGENT MAP</text>
-        <rect x="55" y="68" width="120" height="20" rx="3" fill="#101814" stroke="#27c93f" stroke-width="1.2"/>
-        <text x="65" y="82" fill="#27c93f" font-size="7" font-family="monospace">03. ROUGHNESS &amp; METALLIC</text>
-        <rect x="65" y="92" width="120" height="20" rx="3" fill="#181414" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="75" y="106" fill="#4eedc4" font-size="7" font-family="monospace">04. AMBIENT OCCLUSION</text>
-        <circle cx="215" cy="65" r="32" fill="#10141e" stroke="#C9A45C" stroke-width="2"/>
-        <text x="215" y="68" fill="#C9A45C" font-size="8" font-family="monospace" font-weight="700" text-anchor="middle">PBR</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Polygon Count</span><strong>< 35,000 Tri</strong></div>
-
-                <div class="svc-preview-metric"><span>Texture Map Set</span><strong>Albedo, Rough, Norm</strong></div>
-
-                <div class="svc-preview-metric"><span>Color Accuracy</span><strong>sRGB / ACES</strong></div>
-
-                <div class="svc-preview-metric"><span>Bake Quality</span><strong>32-Bit Float</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 02 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 02 // REAL-TIME OPTIMIZATION</span>
-              <h3 class="svc-cap-title">Real-Time WebGL & Mobile 3D Asset Optimization</h3>
-              <p class="svc-cap-body">High-end 3D models are useless on the web if they take 30 seconds to load or crash mobile browsers. We specialize in low-poly retopology, draw call batching, and advanced asset compression. Using Google Draco mesh compression and KTX2/Basis Universal texture encoding, we shrink 100MB industrial models into ultra-lightweight 2-4MB files that load instantaneously and run at locked 60fps in WebGL.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Heavy 3D files crashing mobile phones, slow download times driving bounce rates on product pages.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Quad retopology, Draco geometry compression, KTX2 GPU texture compression, and texture atlas packing.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">E-commerce 3D product viewers, interactive web hero elements, mobile game assets, and WebXR experiences.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Optimized GLB/glTF files, USDZ iOS QuickLook files, texture atlases, and compression report.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // DRACO PIPELINE</span>
-                <span class="svc-browser-status">DRACO COMPRESSED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="35" width="85" height="55" rx="6" fill="#181216" stroke="#ff5f56" stroke-width="1.2"/>
-        <text x="67" y="55" fill="#ff5f56" font-size="7" font-family="monospace" text-anchor="middle">HIGH-POLY SCULPT</text>
-        <text x="67" y="68" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">1,850,000 Tris</text>
-        <text x="67" y="78" fill="#727284" font-size="5.5" font-family="monospace" text-anchor="middle">Raw 148 MB</text>
-        <line x1="110" y1="62" x2="160" y2="62" stroke="#C9A45C" stroke-width="1.5"/>
-        <polygon points="158,59 164,62 158,65" fill="#C9A45C"/>
-        <text x="135" y="54" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">DRACO</text>
-        <rect x="165" y="35" width="90" height="55" rx="6" fill="#0d1814" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="210" y="55" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">OPTIMIZED GLTF</text>
-        <text x="210" y="68" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">42,000 Tris</text>
-        <text x="210" y="78" fill="#27c93f" font-size="5.5" font-family="monospace" text-anchor="middle">Compressed 2.4 MB</text>
-        <text x="140" y="115" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">98.4% PAYLOAD COMPRESSION RATIO</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>File Size Reduction</span><strong>-92% Shrunk</strong></div>
-
-                <div class="svc-preview-metric"><span>Mobile Memory Usage</span><strong>< 45MB</strong></div>
-
-                <div class="svc-preview-metric"><span>WebGL FPS Target</span><strong>60 FPS Locked</strong></div>
-
-                <div class="svc-preview-metric"><span>Draw Call Batching</span><strong>< 8 Calls</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 03 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 03 // INTERACTIVE COMMERCE</span>
-              <h3 class="svc-cap-title">Interactive 3D Web Configurators</h3>
-              <p class="svc-cap-body">Empower your buyers to customize colors, materials, finishes, and optional components on their own screens. We build interactive 360-degree 3D product configurators using Three.js and custom shader code. Shoppers explore products from every angle, toggle interior and exterior finishes in real-time, inspect internal component cutaways, and see dynamic pricing update instantaneously as they build their ideal product.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Static flat images failing to show product variations, high return rates due to customer color mismatch expectations.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Three.js runtime, custom PBR material swapper, dynamic camera orbital constraints, and real-time lighting.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Automotive customizers, bespoke furniture configurators, architectural finish pickers, and luxury watches.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Interactive 3D configurator, Three.js web component, material switching engine, and screenshot generator.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // 3D CONFIGURATOR</span>
-                <span class="svc-browser-status">REAL-TIME THREE.JS</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="140" cy="65" rx="75" ry="32" fill="none" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="4,4"/>
-        <ellipse cx="140" cy="65" rx="35" ry="55" fill="none" stroke="#4eedc4" stroke-width="1.2"/>
-        <circle cx="140" cy="65" r="18" fill="#141424" stroke="#27c93f" stroke-width="2"/>
-        <text x="140" y="68" fill="#27c93f" font-size="7" font-family="monospace" font-weight="700" text-anchor="middle">3D</text>
-        <circle cx="65" cy="65" r="4" fill="#C9A45C"/>
-        <circle cx="215" cy="65" r="4" fill="#C9A45C"/>
-        <text x="140" y="118" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">EULER XYZ ROTATION GIZMO // 60 FPS ORBIT</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Material Variations</span><strong>120+ Combos</strong></div>
-
-                <div class="svc-preview-metric"><span>Texture Swap Time</span><strong>< 16ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Camera Orbit Jitter</span><strong>0.00</strong></div>
-
-                <div class="svc-preview-metric"><span>Order Value Uplift</span><strong>+42%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 04 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 04 // SPATIAL ARCHITECTURE</span>
-              <h3 class="svc-cap-title">Architectural Visualization & Digital Environments</h3>
-              <p class="svc-cap-body">Translate architectural blueprints into breathtaking virtual walk-throughs and realistic real estate models. We model interior and exterior architectural spaces with photorealistic lighting, realistic landscaping, accurate sun-path calculations, and physically accurate materials. Investors and prospective buyers experience properties years before ground is broken.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Off-plan real estate sales stalling because buyers struggle to visualize 2D floor plans in three dimensions.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">BIM/CAD architectural modeling, physically accurate sunlight simulation, volumetric atmospheric scattering.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Luxury residential towers, commercial corporate campuses, urban planning developments, and hospitality resorts.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Interactive 3D architectural model, 8K architectural render stills, virtual camera flythroughs, and VR setups.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // ARCHVIZ SUITE</span>
-                <span class="svc-browser-status">PHOTOREALISTIC BIM</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="40,25 240,25 200,95 80,95" fill="#101420" stroke="#C9A45C" stroke-width="1.4"/>
-        <line x1="80" y1="95" x2="40" y2="120" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="200" y1="95" x2="240" y2="120" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="80" y1="95" x2="200" y2="95" stroke="#4eedc4" stroke-width="1"/>
-        <circle cx="140" cy="40" r="12" fill="#241e12" stroke="#C9A45C" stroke-width="1.5"/>
-        <text x="140" y="43" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">SUN</text>
-        <line x1="140" y1="52" x2="110" y2="90" stroke="#C9A45C" stroke-width="1" stroke-dasharray="2,2"/>
-        <line x1="140" y1="52" x2="170" y2="90" stroke="#C9A45C" stroke-width="1" stroke-dasharray="2,2"/>
-        <text x="140" y="114" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">PHOTOMETRIC IES LIGHTING ENVIRONMENT</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Atmospheric Lighting</span><strong>True Sun-Path</strong></div>
-
-                <div class="svc-preview-metric"><span>Spatial Scale Ratio</span><strong>1:1 Accurate</strong></div>
-
-                <div class="svc-preview-metric"><span>Material Accuracy</span><strong>Architectural</strong></div>
-
-                <div class="svc-preview-metric"><span>Off-Plan Sales Lift</span><strong>+55%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 05 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 05 // INDUSTRIAL ASSETS</span>
-              <h3 class="svc-cap-title">Industrial CAD Cleanup & Mechanical Exploded Views</h3>
-              <p class="svc-cap-body">Complex industrial machinery often contains millions of internal nuts, bolts, and hidden surfaces that destroy real-time performance. We clean, defeature, and retopologize industrial SolidWorks, STEP, and IGES CAD files. We construct dynamic exploded-view animations and interactive assembly walk-throughs that demonstrate precision mechanical engineering to clients and technical maintenance crews.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Confidential internal CAD files leaking proprietary geometry, massive CAD file sizes crashing web applications.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">CAD geometry defeaturing, internal face culling, procedural kinematic rigging, and interactive exploded-view slider.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Industrial pump manufacturers, aerospace equipment suppliers, medical device technical explainers, and robotics.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Cleaned mechanical 3D asset, interactive exploded assembly viewer, technical callout markers, and animations.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // CAD CLEANUP</span>
-                <span class="svc-browser-status">DEFEATURED & SECURE</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <line x1="25" y1="65" x2="255" y2="65" stroke="rgba(201,164,92,0.4)" stroke-width="1" stroke-dasharray="4,4"/>
-        <rect x="35" y="45" width="35" height="40" rx="4" fill="#121620" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="52" y="68" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">CASING</text>
-        <circle cx="110" cy="65" r="18" fill="#101814" stroke="#27c93f" stroke-width="1.4"/>
-        <text x="110" y="68" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">ROTOR</text>
-        <rect x="155" y="50" width="30" height="30" rx="3" fill="#18141c" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="170" y="68" fill="#4eedc4" font-size="5.5" font-family="monospace" text-anchor="middle">SHAFT</text>
-        <rect x="210" y="45" width="35" height="40" rx="4" fill="#121620" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="227" y="68" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">BEARING</text>
-        <text x="140" y="115" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">PARAMETRIC CAD EXPLODED ASSEMBLY</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Polygon Reduction</span><strong>-88%</strong></div>
-
-                <div class="svc-preview-metric"><span>Internal Geometry</span><strong>Safely Culled</strong></div>
-
-                <div class="svc-preview-metric"><span>Exploded Axis Motion</span><strong>Kinematic</strong></div>
-
-                <div class="svc-preview-metric"><span>IP Protection</span><strong>Obfuscated</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 06 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 06 // MOTION & CAMPAIGNS</span>
-              <h3 class="svc-cap-title">3D Motion Graphics & Cinematic Product Films</h3>
-              <p class="svc-cap-body">Elevate your brand launch with high-energy 3D motion graphics and cinematic product films. Using Cinema 4D, Blender, Houdini, and Octane Render, we choreograph dynamic camera movements, fluid simulations, and lighting transitions that turn technical features into emotional visual spectacles for global advertising campaigns and keynote presentations.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Boring product launch presentations, inability to showcase microscopic engineering craft through regular video cameras.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Procedural motion design, Octane/Redshift spectral rendering, dynamic particle systems, and micro-lens depth-of-field.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Flagship product launch keynotes, investor pitch decks, social media advertising spots, and broadcast commercials.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">4K ProRes commercial masters, social cutdowns (9:16 and 1:1), seamless looping visual assets, and project files.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // 3D MOTION SUITE</span>
-                <span class="svc-browser-status">4K PRORES MASTER</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <line x1="25" y1="95" x2="255" y2="95" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-        <rect x="40" y="90" width="3" height="10" fill="#C9A45C"/>
-        <rect x="100" y="90" width="3" height="10" fill="#4eedc4"/>
-        <rect x="175" y="90" width="3" height="10" fill="#27c93f"/>
-        <rect x="240" y="90" width="3" height="10" fill="#C9A45C"/>
-        <path d="M 40 75 C 80 20, 140 100, 240 30" fill="none" stroke="#C9A45C" stroke-width="2"/>
-        <circle cx="100" cy="48" r="4" fill="#4eedc4"/>
-        <circle cx="175" cy="72" r="4" fill="#27c93f"/>
-        <text x="140" y="118" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">TIMELINE FRAME 0 TO 240 // 24FPS SMPTE</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Render Resolution</span><strong>3840 x 2160</strong></div>
-
-                <div class="svc-preview-metric"><span>Color Pipeline</span><strong>ACEScg 16-Bit</strong></div>
-
-                <div class="svc-preview-metric"><span>Dynamic Range</span><strong>HDR High Dynamic</strong></div>
-
-                <div class="svc-preview-metric"><span>Campaign Impact</span><strong>Viral / Editorial</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: OUR EXPERTISE -->
-    <section class="svc-section svc-section-border-top" id="expertise">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">05 // TECHNICAL DISCIPLINES</span>
-          <h2 class="svc-section-title">Engineering disciplines & <span class="svc-gold-text">architectural trade-offs</span></h2>
-          <p class="svc-section-lead">Every technological decision involves intentional balance. We navigate these architectural trade-offs to deliver sustainable, scalable outcomes.</p>
-        </div>
-
-        <div class="svc-expertise-grid">
-          
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Draco & Meshopt Compression</h3>
-            <p class="svc-expertise-desc">Compressing complex 3D vertex buffers to achieve ultra-fast downloads on cellular web networks.</p>
-            <div class="svc-expertise-tradeoff">EFFICIENCY // 90% MESH PAYLOAD REDUCTION</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">PBR Material Calibration</h3>
-            <p class="svc-expertise-desc">Balancing metallic, roughness, and normal maps to accurately reflect real-world lighting physics.</p>
-            <div class="svc-expertise-tradeoff">FIDELITY // PHYSICALLY ACCURATE MATERIALS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Draw Call & Texture Batching</h3>
-            <p class="svc-expertise-desc">Merging materials and baking texture atlases to minimize GPU state changes and maintain 60fps.</p>
-            <div class="svc-expertise-tradeoff">PERFORMANCE // LOW DRAW CALL OVERHEAD</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Cross-Platform USDZ & glTF Pipelines</h3>
-            <p class="svc-expertise-desc">Authoring unified 3D assets that render consistently across Apple AR QuickLook and WebGL.</p>
-            <div class="svc-expertise-tradeoff">INTEROPERABILITY // ONE MESH, ALL SCREENS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Industrial CAD Defeaturing</h3>
-            <p class="svc-expertise-desc">Removing confidential internal mechanical features while preserving high-fidelity visual exteriors.</p>
-            <div class="svc-expertise-tradeoff">SECURITY // IP PROTECTION VERIFIED</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Procedural Shader Development</h3>
-            <p class="svc-expertise-desc">Writing custom WebGL and GLSL fragment shaders for specialized light reflections and interactive effects.</p>
-            <div class="svc-expertise-tradeoff">TECHNICAL ART // HARDWARE ACCELERATED</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: WHAT'S TRENDING -->
-    <section class="svc-section svc-section-border-top" id="trending">
-      <div class="svc-container">
-        <div class="svc-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
           <div>
-            <span class="svc-pill-badge">06 // EDITORIAL PERSPECTIVES</span>
-            <h2 class="svc-section-title">What's Shaping the <span class="svc-gold-text">3D Modeling Platform</span></h2>
-            <p class="svc-section-lead">Research, technical analysis, and architectural perspectives from our engineering desk exploring current developments shaping enterprise digital delivery.</p>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              08 // 3D GEOMETRY, PBR MATERIALS & REAL-TIME ASSETS
+            </div>
+            <h1 class="d2-svc-hero-title">Before something can be built, manufactured, or experienced, it often needs to be visualized.</h1>
+            <p class="d2-svc-hero-lead">Three-dimensional modeling gives ideas a form that can be examined, refined, and communicated. A product can be viewed from every angle before it exists physically. An environment can be explored before construction begins. A digital character can be developed for animation, games, or immersive experiences. Creating effective 3D assets involves more than shaping geometry. Materials, proportions, lighting, topology, and performance requirements all influence the final result. Our approach connects visual accuracy with the practical needs of the medium in which the asset will be used.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
           </div>
-        </div>
 
-        <div class="svc-trending-carousel-wrap">
-          <div class="svc-carousel-viewport">
-            <div class="svc-carousel-track" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-              
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">WEB3D &middot; 7 MIN READ</span>
-                  <h3 class="svc-article-card-title">WebGPU & Next-Generation Real-Time Web 3D in 2026</h3>
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
                 </div>
-                <p class="svc-article-card-summary">How the shift from WebGL to WebGPU is unlocking compute shaders, complex particle systems, and desktop-class graphics inside browsers.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Wireframe Geometry to PBR Procedural Shader Pipeline</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
                 </div>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">COMPRESSION &middot; 6 MIN READ</span>
-                  <h3 class="svc-article-card-title">KTX2 & Basis Universal: The Future of Real-Time Textures</h3>
-                </div>
-                <p class="svc-article-card-summary">Why modern 3D pipelines are abandoning PNG/JPEG textures in favor of GPU-compressed formats that stay compressed in VRAM.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">POLY BUDGET</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">&lt;48k Quads</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">TEXTURE PACKING</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">PBR 4K</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">WEBGL LATENCY</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">&lt;350ms</div>
+                  </div>
+                
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">COMMERCE &middot; 8 MIN READ</span>
-                  <h3 class="svc-article-card-title">The Conversion Impact of 3D Product Configurators in Retail</h3>
-                </div>
-                <p class="svc-article-card-summary">Analyzing commercial transaction data showing that interactive 360-degree product configuration drives higher average order values.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { MeshOptimizer, PBRShaderEngine } from '@riyadvi/3d-core';
+export const assetPipeline = new MeshOptimizer({
+  topology: 'quad-dominant-subdivision',
+  textures: { albedo: '4k-linear', roughness: 'pbr-packed', normal: 'tangent-space' },
+  webglCompression: 'draco-meshopt-sub-50k-poly',
+  shadingModel: 'ggx-cook-torrance-specular'
+});
+// Photorealistic 3D asset compiled with sub-second browser WebGL streaming</code></pre>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">NEURAL RENDERING &middot; 5 MIN READ</span>
-                  <h3 class="svc-article-card-title">Gaussian Splatting vs Photogrammetry for Real-World 3D Capture</h3>
-                </div>
-                <p class="svc-article-card-summary">Comparing novel view synthesis techniques for rapidly capturing physical environments into lightweight real-time assets.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
               </div>
             </div>
           </div>
@@ -745,124 +142,609 @@ export const modelAsset = new MeshPipeline({
       </div>
     </section>
 
-    <!-- SECTION 07: TECHNOLOGIES -->
-    <section class="svc-section svc-section-border-top" id="technologies">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">07 // TECHNOLOGY STACK</span>
-          <h2 class="svc-section-title">Technologies engineered for <span class="svc-gold-text">longevity</span></h2>
-          <p class="svc-section-lead">We select enterprise-proven, community-backed technologies with long-term support and reliable ecosystem roadmaps.</p>
-        </div>
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">A good 3D model communicates more than appearance.</h2>
+            <p class="d2-reality-desc">A visually stunning 3D model that cannot run at 60 FPS in a web browser or games engine is useless in production. Professional 3D engineering requires balancing photorealistic surface detail with disciplined polygonal efficiency and clean topology.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
 
-        <div class="svc-tech-grid">
-          <div class="svc-tech-card"><span class="svc-tech-cat">FRAMEWORKS</span><h3 class="svc-tech-title">Next.js & React</h3><p class="svc-tech-desc">Production-grade SSR, static generation, and streaming component rendering.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">RUNTIMES</span><h3 class="svc-tech-title">Node.js & Go</h3><p class="svc-tech-desc">Asynchronous, high-throughput microservices and API gateways.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">TYPE SAFETY</span><h3 class="svc-tech-title">Strict TypeScript</h3><p class="svc-tech-desc">Zero runtime type regressions with compile-time verification.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CONTAINERS</span><h3 class="svc-tech-title">Docker & K8s</h3><p class="svc-tech-desc">Containerized orchestration with automated horizontal scaling.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">PERSISTENCE</span><h3 class="svc-tech-title">PostgreSQL</h3><p class="svc-tech-desc">ACID relational compliance with indexed query optimization.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CACHE & BROKER</span><h3 class="svc-tech-title">Redis & Kafka</h3><p class="svc-tech-desc">Distributed caching and partition-tolerant event streaming.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">HEADLESS CMS</span><h3 class="svc-tech-title">Sanity & Strapi</h3><p class="svc-tech-desc">Structured content modeling with instant editorial preview studios.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">EDGE DELIVERY</span><h3 class="svc-tech-title">Cloudflare & AWS</h3><p class="svc-tech-desc">Multi-region edge network distribution with DDoS mitigation.</p></div>
+          <div class="d2-reality-stagger">
+            
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Non-Manifold Geometry and Disorganized Topology</h3>
+      </div>
+      <p class="d2-reality-card-body">Triangulated, messy CAD imports with inverted normals and overlapping vertices cause rendering artifacts, black shadows, and complete failure during animation deformation.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Massive Uncompressed Textures Crashing Memory</h3>
+      </div>
+      <p class="d2-reality-card-body">Using raw 8K uncompressed textures across multiple assets saturates GPU VRAM, causing browser tabs to crash and mobile headsets to stutter.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Unrealistic Lighting and Generic Plastic Materials</h3>
+      </div>
+      <p class="d2-reality-card-body">Inaccurate roughness maps and naive specular highlights make luxury products look like cheap toy plastic, undermining high-end brand perception.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Lack of Cross-Platform Asset Reusability</h3>
+      </div>
+      <p class="d2-reality-card-body">Authoring 3D assets exclusively for high-end offline rendering forces teams to rebuild everything from scratch when the asset is needed for WebGL, AR, or mobile apps.</p>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: OUR PROCESS -->
-    <section class="svc-section svc-section-border-top" id="process">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">08 // EXECUTION METHODOLOGY</span>
-          <h2 class="svc-section-title">How we take projects <span class="svc-gold-text">from idea to production</span></h2>
-          <p class="svc-section-lead">A transparent six-phase delivery framework ensuring architectural rigor, clear milestone governance, and predictable launches.</p>
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in 3D Modeling, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
         </div>
 
-        <div class="svc-process-timeline">
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 01</div><h3 class="svc-step-title">Discovery & Architecture</h3><p class="svc-step-desc">Stakeholder interviews, technical audit, specification mapping, and high-level architectural blueprints.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 02</div><h3 class="svc-step-title">UX Flows & Wireframing</h3><p class="svc-step-desc">Information architecture, user journey maps, and low-fidelity structural validation.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 03</div><h3 class="svc-step-title">UI & Design System</h3><p class="svc-step-desc">Atomic design tokens, high-fidelity responsive prototypes, and accessibility audits.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 04</div><h3 class="svc-step-title">Sprint Engineering</h3><p class="svc-step-desc">Iterative two-week sprints, automated test coverage, and continuous integration deployments.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 05</div><h3 class="svc-step-title">Security & QA Audit</h3><p class="svc-step-desc">End-to-end stress testing, OWASP security audits, and Core Web Vitals optimization.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 06</div><h3 class="svc-step-title">Production & Handover</h3><p class="svc-step-desc">Zero-downtime DNS cutover, telemetry configuration, source code IP handover, and staff training.</p></div>
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
+            
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>Product Modeling</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>Architectural Visualization</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>Character Modeling</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>Environment Modeling</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>Texturing and Material Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>Rendering and Animation</span>
+    </button>
+  
+          </div>
+
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Precision Industrial and Consumer Electronics 3D</h3>
+        <p class="d2-cap-stage-expl">Transforming industrial CAD files, physical prototypes, or 2D sketches into dimensionally accurate, photorealistic 3D models ready for marketing and interactive 3D viewers.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Traditional studio photography is expensive, inflexible, and cannot showcase internal mechanical components or color variants.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">NURBS to quad retopology, sub-millimeter beveling, micro-scratch roughness maps, and procedural shader generation.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Interactive 3D configurator for a luxury Swiss timepiece manufacturer allowing customization of bezels, straps, and dials.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Master 3D CAD/FBX/glTF Files, 8K Marketing Renders, Interactive WebGL Viewer.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Hyper-Realistic Spatial Interiors and Exteriors</h3>
+        <p class="d2-cap-stage-expl">Crafting atmospheric, photorealistic renderings and real-time walkthroughs of pre-construction architectural developments with true physical daylight simulation.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Architectural blueprints fail to convey spatial emotional resonance to prospective luxury property buyers and investors.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Physically based sun and sky systems, accurate IES light profiles, realistic foliage scattering, and high-end PBR materials.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Marketing campaign visualization for a 40-story beachfront luxury residential condominium development.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Photorealistic Architectural Stills, 4K Cinematic Video Fly-Throughs, Interactive Walkthrough.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Expressive Characters Engineered for Animation and Games</h3>
+        <p class="d2-cap-stage-expl">Sculpting compelling organic characters, stylized mascots, and anatomical creatures with deformation-ready quad topology and expressive facial blendshapes.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Poor character edge flow around eyes and joints causes ugly pinching and unnatural deformations when rigged.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">High-res ZBrush digital sculpting retopologized into clean quad edge loops with facial action coding system (FACS) blendshapes.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Hero character and antagonist models created for a sci-fi narrative video game title.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Rigged 3D Character Mesh, High-Res Texture Maps, 52 FACS Facial Blendshapes.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Immersive Natural and Sci-Fi Worldbuilding</h3>
+        <p class="d2-cap-stage-expl">Creating modular 3D environment kits, detailed urban landscapes, and organic terrains optimized for real-time video games and cinematic virtual production.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Hand-crafting large environments without modular kits leads to repetitive layouts and bloated memory footprints.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Modular architectural kits, procedural trim sheets, vertex color blending, and tileable PBR texture materials.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Modular futuristic cyberpunk city environment kit featuring over 150 interchangeable architectural pieces.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Modular 3D Environment Kit, Collision Meshes, Material Shader Library, LOD Packages.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">PBR Material Synthesis and Procedural Surfaces</h3>
+        <p class="d2-cap-stage-expl">Authoring physically based rendering (PBR) materials that simulate glass refraction, brushed titanium, anisotropic metal, woven fabrics, and weathered leather.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Flat, uniform materials break visual immersion and fail to react realistically to dynamic lighting.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Procedural material generation in Substance Designer combined with hand-painted micro-detail in Substance Painter.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Custom material library developed for an automotive brand showcasing 24 proprietary metallic paint finishes.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">PBR Material Pack (Albedo, Normal, Roughness, Metallic, AO), Substance Archive Files.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Cinematic 4K Product Reveals and Exploded Views</h3>
+        <p class="d2-cap-stage-expl">Directing and rendering cinematic 3D product commercial animations featuring smooth camera movements, lighting choreography, and mechanical exploded views.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Explaining complex internal engineering assemblies through words alone is difficult and unconvincing.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Keyframe and physics-driven animation, depth of field cinematography, dynamic lighting passes, and Octane/Redshift rendering.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">60-second broadcast product reveal video highlighting the internal cooling and acoustic engineering of a flagship audio amplifier.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">4K Broadcast Video Renders, Alpha Channel Sequences, Exploded View Technical Animations.</div>
+        </div>
+      </div>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: LET'S TALK CTA -->
-    <section class="svc-cta-section" id="lets-talk">
-      <div class="svc-container">
-        <div class="svc-cta-box">
-          <div class="svc-cta-glow"></div>
-          <span class="svc-pill-badge" style="background: rgba(240, 199, 94, 0.15); border-color: var(--svc-gold);">09 // GET STARTED</span>
-          <h2 class="svc-cta-title">Ready to engineer your <span class="svc-gold-text">3D Modeling?</span></h2>
-          <p class="svc-cta-lead">Let's discuss your requirements, architectural trade-offs, and how we can engineer an exceptional digital product tailored to your business goals.</p>
-          <div class="svc-cta-buttons">
-            <a href="/index.html#estimator" class="svc-btn-primary">Calculate Project Estimate &rarr;</a>
-            <a href="/index.html#contact" class="svc-btn-secondary">Schedule Technical Consultation</a>
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              Our 3D studio utilizes industry-standard digital content creation (DCC) suites alongside real-time WebGL compression pipelines.
+            </p>
+            <div class="d2-tech-list">
+              
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>3D DCC Suites: Blender, Autodesk Maya, 3ds Max, Pixologic ZBrush, and SideFX Houdini.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Texturing & Materials: Substance 3D Painter & Designer, Marmoset Toolbag, and Photoshop.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Render Engines: Cycles, Chaos V-Ray, Maxon Redshift, OctaneRender, and Unreal Engine 5 Lumen.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Real-Time & Web: glTF/GLB formats, Draco mesh compression, Meshopt, and Three.js/Babylon.js WebGL.</div>
+    </div>
+  
+            </div>
+          </div>
+
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
+              </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
+
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
+              </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in 3D Modeling.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">WEBGL 3D &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">Real-Time 3D Is Changing How Products Are Presented</h3>
+        <p class="d2-card-summary">How lightweight WebGL pipelines allow consumers to inspect, configure, and customize products in real-time inside their browser.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/3d-modeling/insights/real-time-3d-is-changing-how-products-are-presented" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">AI & 3D &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">AI-Assisted 3D Asset Creation: Opportunities and Limitations</h3>
+        <p class="d2-card-summary">Evaluating neural radiance fields (NeRFs), 3D Gaussian splatting, and automated text-to-3D mesh generation in production pipelines.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/3d-modeling/insights/ai-assisted-3d-asset-creation-opportunities-and-limitations" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">COMMERCE 3D &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">From Product Photography to Interactive 3D Visualization</h3>
+        <p class="d2-card-summary">Why leading brands are replacing expensive physical studio photo shoots with reusable digital 3D product twins.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/3d-modeling/insights/from-product-photography-to-interactive-3d-visualization" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">OPTIMIZATION &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">Optimizing 3D Assets for Games, Web, and AR/VR</h3>
+        <p class="d2-card-summary">Practical techniques for quad retopology, normal map baking, draw call reduction, and texture atlas packing.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/3d-modeling/insights/optimizing-3d-assets-for-games-web-and-ar-vr" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
+        </div>
+
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Creative Brief &amp; Reference Audit</div>
+      <div class="d2-step-body">Reviewing engineering blueprints, CAD files, moodboards, lighting references, and target medium performance constraints.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Production Brief, Visual Reference Board, Polygon/Texture Budget Spec.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Concept Modeling &amp; Blockout</div>
+      <div class="d2-step-body">Establishing primary forms, silhouette proportions, and scale accuracy before committing to fine micro-details.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Low-Poly 3D Blockout, Scale Verification, Client Silhouette Sign-Off.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">High-Res Sculpting &amp; Retopology</div>
+      <div class="d2-step-body">Crafting fine surface details and retopologizing the geometry into clean, quad-dominant edge flows ready for texturing.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Production Quad Mesh, High-Res Sculpt, Normal Map Bakes.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">UV Unwrapping &amp; PBR Texturing</div>
+      <div class="d2-step-body">Unwrapping UV islands with zero stretching and authoring photorealistic physically based rendering (PBR) texture maps.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Packed UV Layouts, 4K PBR Texture Sets, Procedural Material Archive.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Lighting, Shaders &amp; Rendering</div>
+      <div class="d2-step-body">Setting up photographic studio lighting, custom shader graphs, depth of field, and rendering test passes for review.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Lighting Rig Setup, Look-Development Test Renders, Color Calibration.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">Delivery &amp; Multi-Format Export</div>
+      <div class="d2-step-body">Exporting final optimized assets across required formats (glTF for WebGL, USDZ for Apple AR, FBX for Unreal Engine).</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Final 3D Master Package, WebGL glTF Models, High-Res Still/Motion Renders.</div>
+      </div>
+    </div>
+  
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What would your idea look like if people could already see it?</h2>
+          <p class="d2-cta-lead">3D visualization brings abstract concepts into tangible, photorealistic reality. Let's sculpt and render assets that elevate your brand and communicate your engineering craftsmanship.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- GLOBAL PERSISTENT FOOTER -->
-  <footer class="svc-footer" id="footer">
-    <div class="svc-footer-container">
-      <div class="svc-footer-top">
-        <div class="svc-footer-brand">
-          <div class="svc-brand">
-            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-            <div class="svc-brand-text">
-              <span class="svc-brand-name">RIYADVI</span>
-              <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
             </div>
           </div>
-          <p class="svc-footer-motto">Digital technology, proprietary software systems, and business growth engineered for enterprises ready to scale.</p>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
         </div>
 
-        <div class="svc-footer-links-grid">
-          <div class="svc-footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/web-development">Web Development</a></li>
-              <li><a href="/services/custom-software-development">Custom Software</a></li>
-              <li><a href="/services/mobile-app-development">Mobile Apps</a></li>
-              <li><a href="/services/ecommerce-solutions">E-Commerce</a></li>
-              <li><a href="/services/game-development">Game Development</a></li>
-              <li><a href="/services/ar-vr-development">AR/VR Experiences</a></li>
-              <li><a href="/services/ui-ux-design">UI/UX Design</a></li>
-              <li><a href="/services/3d-modeling">3D Modeling</a></li>
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
 
-          <div class="svc-footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/index.html#about">About Riyadvi</a></li>
-              <li><a href="/index.html#awards">Awards & Recognition</a></li>
-              <li><a href="/index.html#industries">Industries Served</a></li>
-              <li><a href="/index.html#guardian">Riyadvi Guardian</a></li>
-              <li><a href="/index.html#portfolio">Featured Work</a></li>
-              <li><a href="/index.html#estimator">Project Estimator</a></li>
-              <li><a href="/index.html#contact">Contact Our Team</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
         </div>
       </div>
 
-      <div class="svc-footer-bottom">
-        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
-        <div class="svc-footer-legal">
-          <span>Enterprise Grade</span>
-          <span>Zero Vendor Lock-In</span>
-          <span>Global Delivery</span>
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/services/services-common.js?v=11.0"></script>
-  <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  
 </body>
 </html>

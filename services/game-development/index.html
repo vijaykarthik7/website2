@@ -3,754 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Game Development & Enterprise Engineering | Riyadvi Software Technologies</title>
-  <meta name="description" content="Enterprise Game Development capabilities by Riyadvi Software Technologies. Resilient architectures, tailored execution, and verified business outcomes.">
+  <title>Game Development | Riyadvi Software Technologies</title>
+  <meta name="description" content="Building Worlds That Respond to the Player. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  
 </head>
-<body class="svc-page-body">
+<body class="d2-body">
 
-  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
-  <nav class="svc-subnav-bar" id="serviceSubnav">
-    <div class="svc-subnav-container">
-      <div class="svc-subnav-left">
-        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
-          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          ALL SERVICES
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <span class="svc-subnav-title">05 // GAME DEVELOPMENT</span>
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">05 // Game Development</span>
       </div>
 
-      <div class="svc-subnav-links" id="subnavLinks">
-        <a href="#overview" class="svc-subnav-anchor active">Overview</a>
-        <a href="#landscape" class="svc-subnav-anchor">The Landscape</a>
-        <a href="#insights" class="svc-subnav-anchor">Insights</a>
-        <a href="#what-we-do" class="svc-subnav-anchor">What We Do</a>
-        <a href="#expertise" class="svc-subnav-anchor">Our Expertise</a>
-        <a href="#trending" class="svc-subnav-anchor">What's Trending</a>
-        <a href="#technologies" class="svc-subnav-anchor">Technologies</a>
-        <a href="#process" class="svc-subnav-anchor">Our Process</a>
-        <a href="#lets-talk" class="svc-subnav-anchor">Let's Talk</a>
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- SECTION 01: HERO & TERMINAL -->
-    <section class="svc-hero-section" id="overview">
-      <div class="svc-hero-container">
-        <div class="svc-hero-content">
-          <div class="svc-hero-badge">
-            <span class="svc-badge-dot"></span>
-            05 // REALTIME GAME ENGINES
-          </div>
-          <h1 class="svc-hero-title">A video game is an <span class="svc-gold-text">interactive world</span> where art, physics, and code converge.</h1>
-          <p class="svc-hero-lead">Engaging games demand disciplined performance engineering, responsive player feedback loops, and robust multiplayer networking. We engineer 2D and 3D games across PC, console, mobile, and web using Unreal Engine 5, Unity, and custom WebGL/C++ pipelines, delivering 60/120fps physics simulations, immersive audio environments, and scalable multiplayer backends.</p>
-          <div class="svc-hero-actions">
-            <a href="#lets-talk" class="svc-btn-primary">Start Your Project &rarr;</a>
-            <a href="#what-we-do" class="svc-btn-secondary">Explore Capabilities</a>
-          </div>
-        </div>
-
-        <div class="svc-hero-visual">
-          <div class="svc-terminal-card">
-            <div class="svc-terminal-header">
-              <div class="svc-terminal-dots">
-                <span class="svc-dot svc-dot-red"></span>
-                <span class="svc-dot svc-dot-yellow"></span>
-                <span class="svc-dot svc-dot-green"></span>
-              </div>
-              <div class="svc-terminal-url">https://engine.riyadvi.com/realtime-physics</div>
-              <div class="svc-terminal-status"><span class="svc-status-pill"></span>HEALTHY &middot; 99.99%</div>
-            </div>
-            <div class="svc-telemetry-grid">
-              
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">SIMULATION RATE</span>
-                <span class="svc-telemetry-value">120 Hz Fixed</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">NETWORK TICK</span>
-                <span class="svc-telemetry-value">64 Hz Client/Server</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">RENDER TIME</span>
-                <span class="svc-telemetry-value">8.33ms (120 FPS)</span>
-              </div>
-            </div>
-            <div class="svc-code-display">
-              <pre><code>import { PhysicsEngine, NetSync } from '@riyadvi/game-runtime';
-export const gameInstance = new GameEngine({
-  engine: 'unreal-5-native-cpp',
-  renderer: 'lumen-nanite-hardware-vfx',
-  networking: NetSync.deterministicClientPrediction({ tickRate: 64 }),
-  physics: 'chaos-rigid-body-simulation'
-});
-// 120 FPS real-time multiplayer simulation running on dedicated servers</code></pre>
-            </div>
-            <div class="svc-terminal-footer">
-              <span class="svc-pulse-indicator"></span>
-              <span class="svc-terminal-msg">Production Node Active</span>
-              <span class="svc-terminal-timestamp">Latency: 1.8ms</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02: THE LANDSCAPE -->
-    <section class="svc-section svc-section-border-top" id="landscape">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">02 // GAMING REALITIES</span>
-          <h2 class="svc-section-title">Players demand immersive gameplay. <span class="svc-gold-text">Performance bottlenecks ruin immersion.</span></h2>
-          <p class="svc-section-lead">Game development is among the most demanding disciplines in software engineering. Frame pacing stutters, input lag, and multiplayer synchronization anomalies destroy player engagement.</p>
-        </div>
-
-        <div class="svc-landscape-grid">
-          <div class="svc-landscape-narrative">
-            
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">01 / FRAME BUDGETING</span>
-              <h3 class="svc-narrative-title">Frame Pacing & GPU Draw Call Bottlenecks</h3>
-              <p class="svc-narrative-desc">Missing a single 16.6ms frame deadline creates jarring screen tear and stutter. Unoptimized shaders, excessive polycounts, and unbatched draw calls quickly exhaust hardware limits across consoles and mobile devices.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">02 / MULTIPLAYER LAG</span>
-              <h3 class="svc-narrative-title">Multiplayer Desynchronization & Latency Jitter</h3>
-              <p class="svc-narrative-desc">High packet latency and jitter cause teleporting players, rejected hit detection, and desynchronized game states. Building stable multiplayer games requires deterministic client prediction and server reconciliation.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">03 / ASSET BLOAT</span>
-              <h3 class="svc-narrative-title">Massive Download Sizes & Memory Leaks</h3>
-              <p class="svc-narrative-desc">Players abandon games with 80GB download payloads and long initial loading screens. Efficient game engineering demands streaming asset bundles, level-of-detail (LOD) hierarchies, and strict memory budgets.</p>
-            </div>
-          </div>
-
-          <!-- Diagnostic Box with 4 full comparison rows (NO EMPTY SPACE) -->
-          <div class="svc-diagnostic-box">
-            <div class="svc-diag-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--svc-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              Architectural Reality Check
-            </div>
-            
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Unoptimized Visual Asset Meshes</strong>
-                High-poly assets with uncompressed 4K textures causing memory thrashing and frame drops on consoles.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Nanite & Virtualized Geometry</strong>
-                Streaming LOD hierarchies and GPU-driven rendering that deliver film-quality detail with locked 60/120fps performance.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Naive Peer-to-Peer Networking</strong>
-                Host migration failures, vulnerable player cheating, and severe position desync on cellular connections.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Authoritative Dedicated Servers</strong>
-                Client-side prediction with server-reconciliation running on low-latency global edge server clusters.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Blocking Asset Loading Screens</strong>
-                Long 45-second level load pauses that trigger player drop-offs during game transitions.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Asynchronous World Streaming</strong>
-                Seamless background streaming of level geometry and shaders, enabling continuous gameplay without loading screens.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Hardcoded Game Mechanics</strong>
-                Brittle scripts requiring engineering intervention to tune balance parameters, slowing iteration cycles.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Data-Driven Game Balance</strong>
-                Exposed balance curves and visual script systems allowing designers to tune mechanics in real-time without recompiles.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03: INSIGHTS -->
-    <section class="svc-section svc-section-border-top" id="insights">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">03 // INDUSTRY OBSERVATIONS</span>
-          <h2 class="svc-section-title">The technical parameters of <span class="svc-gold-text">gameplay mastery</span></h2>
-          <p class="svc-section-lead">Player satisfaction benchmarks confirm that gameplay fluidity and input responsiveness govern game commercial success.</p>
-        </div>
-
-        <div class="svc-insights-strip">
-          
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">16.6ms</div>
-              <div class="svc-insight-headline">Maximum Frame Budget (60 FPS)</div>
-              <p class="svc-insight-desc">Consistently hitting the 16.6ms render target ensures butter-smooth gameplay and zero visual stuttering across platforms.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">< 35ms</div>
-              <div class="svc-insight-headline">Target Multiplayer Round-Trip</div>
-              <p class="svc-insight-desc">Deploying authoritative game servers across regional edge clusters minimizes latency for competitive twitch gameplay.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">64 Hz</div>
-              <div class="svc-insight-headline">Server Tick Simulation Rate</div>
-              <p class="svc-insight-desc">High-frequency simulation loops ensure precision hitbox collision detection and zero client ghost hits.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">90%+</div>
-              <div class="svc-insight-headline">Asset Memory Optimization</div>
-              <p class="svc-insight-desc">Streaming texture compression algorithms compress visual footprints while preserving photorealistic fidelity.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT WE DO -->
-    <section class="svc-section svc-section-border-top" id="what-we-do">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">04 // WHAT WE DO</span>
-          <h2 class="svc-section-title">Engineering capabilities built for <span class="svc-gold-text">business durability</span></h2>
-          <p class="svc-section-lead">We do not assemble one-size-fits-all brochure templates. We engineer tailored systems that address specific operational bottlenecks, user journeys, and technical objectives.</p>
-        </div>
-
-        <div class="svc-capabilities-stack">
-          
-          <!-- Capability 01 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 01 // AAA GRAPHICS & CODE</span>
-              <h3 class="svc-cap-title">Unreal Engine 5 Core Engineering</h3>
-              <p class="svc-cap-body">Unreal Engine 5 empowers games with breathtaking photorealism and film-quality environments. We engineer high-performance games in C++ leveraging UE5’s Nanite virtualized geometry, Lumen dynamic global illumination, and the Chaos physics solver. Our team crafts custom gameplay systems, character movement states, and AI behavior trees that run smoothly on modern consoles, high-end PC rigs, and cloud gaming platforms.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Performance drops with high-end lighting, unstable physics simulations, and long build compile times in large teams.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Custom C++ gameplay frameworks, modular sub-levels, Nanite mesh optimization, and distributed compilation clusters.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Immersive action adventures, high-fidelity racing simulations, tactical shooters, and open-world titles.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">UE5 game project, custom C++ gameplay modules, shader materials, and multi-platform packaging.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // UNREAL ENGINE 5</span>
-                <span class="svc-browser-status">LUMEN & NANITE LOCKED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="50,25 95,50 95,95 50,115 15,90 15,45" fill="#14101a" stroke="#C9A45C" stroke-width="1.4"/>
-        <line x1="50" y1="25" x2="50" y2="115" stroke="#C9A45C" stroke-width="0.8" opacity="0.4"/>
-        <line x1="15" y1="45" x2="95" y2="95" stroke="#C9A45C" stroke-width="0.8" opacity="0.4"/>
-        <line x1="15" y1="90" x2="95" y2="50" stroke="#C9A45C" stroke-width="0.8" opacity="0.4"/>
-        <text x="55" y="68" fill="#C9A45C" font-size="7" font-family="monospace" font-weight="700" text-anchor="middle">NANITE</text>
-        <path d="M 105 35 Q 150 15 190 40 T 255 30" fill="none" stroke="#27c93f" stroke-width="1.8" stroke-dasharray="3,3"/>
-        <circle cx="255" cy="30" r="4" fill="#27c93f"/>
-        <text x="200" y="24" fill="#27c93f" font-size="7" font-family="monospace">LUMEN BOUNCE #1</text>
-        <path d="M 255 30 L 210 95 L 140 105" fill="none" stroke="#4eedc4" stroke-width="1.5"/>
-        <circle cx="210" cy="95" r="3.5" fill="#4eedc4"/>
-        <text x="210" y="110" fill="#4eedc4" font-size="6.5" font-family="monospace">GI BOUNCE #2</text>
-        <text x="140" y="122" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">REAL-TIME HARDWARE-ACCELERATED RAYTRACING</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Target Frame Rate</span><strong>60/120 FPS</strong></div>
-
-                <div class="svc-preview-metric"><span>Draw Call Count</span><strong>< 1,200</strong></div>
-
-                <div class="svc-preview-metric"><span>Shader Compile Time</span><strong>Optimized</strong></div>
-
-                <div class="svc-preview-metric"><span>VRAM Allocation</span><strong>5.2 GB Avg</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 02 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 02 // MULTI-PLATFORM AGILITY</span>
-              <h3 class="svc-cap-title">Unity 2D & 3D Cross-Platform Games</h3>
-              <p class="svc-cap-body">Unity provides unbeatable multi-platform reach across iOS, Android, Nintendo Switch, PC, and WebGL. We build performant games in C# using Unity’s Universal Render Pipeline (URP) and Data-Oriented Technology Stack (DOTS). By structuring code around high-performance ECS architectures, our games execute thousands of active entities simultaneously without dropping below 60fps on mobile devices.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Mobile battery thermal throttling, memory leaks over long play sessions, and UI scaling across device aspect ratios.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Unity URP shader optimization, DOTS/ECS entity architecture, and custom asset bundle streaming managers.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Mobile mid-core games, stylized 3D platformers, puzzle adventures, and accessible WebGL browser games.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Complete Unity project, URP post-processing profiles, localized UI canvas setups, and store builds.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // UNITY DOTS ENGINE</span>
-                <span class="svc-browser-status">ECS OPTIMIZED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="25" width="230" height="26" rx="4" fill="#0d141e" stroke="#5ac8fa" stroke-width="1.2"/>
-        <text x="35" y="41" fill="#5ac8fa" font-size="7" font-family="monospace">POSITION CHUNK [4,096 ENTITIES] (L1 CACHE)</text>
-        <rect x="25" y="56" width="230" height="26" rx="4" fill="#0d1814" stroke="#27c93f" stroke-width="1.2"/>
-        <text x="35" y="72" fill="#27c93f" font-size="7" font-family="monospace">VELOCITY CHUNK [SIMD PARALLEL JOBS]</text>
-        <rect x="25" y="87" width="230" height="26" rx="4" fill="#181216" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="35" y="103" fill="#C9A45C" font-size="7" font-family="monospace">COLLIDER CHUNK [BURST COMPILED NATIVE C++]</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Active Entity Count</span><strong>25,000+</strong></div>
-
-                <div class="svc-preview-metric"><span>Mobile Frame Target</span><strong>60 FPS</strong></div>
-
-                <div class="svc-preview-metric"><span>Thermal Profile</span><strong>Cool / Green</strong></div>
-
-                <div class="svc-preview-metric"><span>Binary Size</span><strong>< 65MB</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 03 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 03 // NETWORK INFRASTRUCTURE</span>
-              <h3 class="svc-cap-title">Multiplayer Client/Server Architecture</h3>
-              <p class="svc-cap-body">Lag and cheating will destroy a multiplayer title faster than any other bug. We engineer authoritative dedicated server backends using custom C++ sockets, Nakama, and Photon Quantum. Featuring client-side prediction, entity interpolation, and deterministic rollbacks, our multiplayer games deliver seamless, cheat-resistant matches across global regional clusters.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Player desync on high latency connections, vulnerable memory tampering/cheating, and high server hosting costs.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Authoritative server simulation, deterministic rollback networking, spatial matchmaking algorithms, and anti-cheat modules.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Competitive multiplayer arenas, cooperative action games, real-time strategy (RTS), and social virtual worlds.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Dedicated game server binaries, spatial matchmaking coordinator, anti-cheat validation, and server deployment scripts.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // MULTIPLAYER MESH</span>
-                <span class="svc-browser-status">64 HZ TICK RATE</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="65" r="20" fill="#12121c" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="50" y="67" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">CLIENT A</text>
-        <line x1="70" y1="65" x2="110" y2="65" stroke="#C9A45C" stroke-width="1.3" stroke-dasharray="3,3"/>
-        <rect x="110" y="35" width="60" height="60" rx="8" fill="#101814" stroke="#27c93f" stroke-width="1.6"/>
-        <text x="140" y="56" fill="#27c93f" font-size="7.5" font-family="monospace" font-weight="700" text-anchor="middle">64Hz SERVER</text>
-        <text x="140" y="68" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">TICK RATE</text>
-        <text x="140" y="80" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">15.6ms delta</text>
-        <line x1="170" y1="65" x2="210" y2="65" stroke="#27c93f" stroke-width="1.3"/>
-        <circle cx="230" cy="65" r="20" fill="#12121c" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="230" y="67" fill="#4eedc4" font-size="6.5" font-family="monospace" text-anchor="middle">CLIENT B</text>
-        <text x="140" y="116" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">CLIENT-SIDE PREDICTION &amp; LAG COMPENSATION</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Server Tick Rate</span><strong>64 Hz Fixed</strong></div>
-
-                <div class="svc-preview-metric"><span>Client Rollback Window</span><strong>150ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Matchmaking Latency</span><strong>< 800ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Cheat Rejection Rate</span><strong>100%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 04 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 04 // IMMERSION & POLISH</span>
-              <h3 class="svc-cap-title">Gameplay Mechanics, AI & Physics Simulation</h3>
-              <p class="svc-cap-body">Memorable games are defined by the tactile feel of their controls and the intelligence of their virtual worlds. We build responsive gameplay mechanics with custom character controllers, dynamic camera behavior, and procedural inverse kinematics (IK). We construct believable enemy AI using behavior trees, state machines, and navmesh pathfinding that flank, react, and challenge players dynamically.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Floaty player controls, predictable static enemy behavior, and physics clipping through environment geometry.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Custom kinematic character controllers, procedural animation blending, and modular behavior tree AI architectures.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Combat mechanics, driving physics, platforming controls, and challenging boss fight encounter systems.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Custom controller systems, dynamic camera modules, AI behavior tree templates, and tuning documentation.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // PHYSICS & AI</span>
-                <span class="svc-browser-status">120 HZ SUB-STEPPING</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="115" y="15" width="50" height="22" rx="4" fill="#181422" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="140" y="29" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">ROOT [SEL]</text>
-        <line x1="125" y1="37" x2="80" y2="55" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="155" y1="37" x2="200" y2="55" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="55" y="55" width="50" height="22" rx="4" fill="#121620" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="80" y="69" fill="#4eedc4" font-size="6.5" font-family="monospace" text-anchor="middle">COMBAT</text>
-        <rect x="175" y="55" width="50" height="22" rx="4" fill="#121814" stroke="#27c93f" stroke-width="1.2"/>
-        <text x="200" y="69" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">PATROL</text>
-        <line x1="65" y1="77" x2="40" y2="95" stroke="#4eedc4" stroke-width="1"/>
-        <line x1="95" y1="77" x2="115" y2="95" stroke="#4eedc4" stroke-width="1"/>
-        <rect x="15" y="95" width="50" height="20" rx="3" fill="#0d1810" stroke="#27c93f" stroke-width="1"/>
-        <text x="40" y="108" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">Attack()</text>
-        <rect x="90" y="95" width="50" height="20" rx="3" fill="#0d1810" stroke="#27c93f" stroke-width="1"/>
-        <text x="115" y="108" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">Cover()</text>
-        <line x1="200" y1="77" x2="200" y2="95" stroke="#27c93f" stroke-width="1"/>
-        <rect x="175" y="95" width="50" height="20" rx="3" fill="#0d1810" stroke="#27c93f" stroke-width="1"/>
-        <text x="200" y="108" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">Waypoints()</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Input Latency</span><strong>< 8.2ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Physics Sub-Stepping</span><strong>120 Hz</strong></div>
-
-                <div class="svc-preview-metric"><span>AI Pathfinding Cost</span><strong>< 1.4ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Collision Accuracy</span><strong>Continuous</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 05 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 05 // WEB DISTRIBUTION</span>
-              <h3 class="svc-cap-title">WebGL & Instant Browser Games</h3>
-              <p class="svc-cap-body">Zero-install browser games allow instant player acquisition from web ads and social links. We develop lightweight 3D and 2D games running in modern web browsers using Three.js, Babylon.js, and WebAssembly (Wasm). With sub-second initial loads, responsive canvas rendering, and WebAudio dynamic spatial sounds, our browser games deliver full arcade excitement without requiring an app store download.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">High app store acquisition costs, long download drop-offs, and WebGL memory crashes on low-end laptops.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">WebAssembly compilation, lightweight WebGL shaders, compressed basis universal textures, and procedural audio.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Playable interactive ad units, branded promotional games, web portal minigames, and gamified educational experiences.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Self-hosted WebGL build, responsive canvas wrapper, social leaderboard integration, and analytics tracking.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // WEBGL RUNTIME</span>
-                <span class="svc-browser-status">ZERO INSTALL WASM</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="45" width="60" height="40" rx="5" fill="#12121c" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="55" y="62" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">WASM BUFFER</text>
-        <text x="55" y="73" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">Zero Copy</text>
-        <line x1="85" y1="65" x2="115" y2="65" stroke="#C9A45C" stroke-width="1.5"/>
-        <rect x="115" y="32" width="70" height="66" rx="6" fill="#0d1814" stroke="#27c93f" stroke-width="1.5"/>
-        <text x="150" y="52" fill="#27c93f" font-size="7.5" font-family="monospace" font-weight="700" text-anchor="middle">WebGPU CORE</text>
-        <text x="150" y="66" fill="#ffffff" font-size="6.5" font-family="monospace" text-anchor="middle">Compute Shaders</text>
-        <text x="150" y="80" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">100k Particles</text>
-        <line x1="185" y1="65" x2="215" y2="65" stroke="#27c93f" stroke-width="1.5"/>
-        <rect x="215" y="45" width="50" height="40" rx="5" fill="#141424" stroke="#4eedc4" stroke-width="1.3"/>
-        <text x="240" y="62" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">CANVAS</text>
-        <text x="240" y="73" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">60 FPS Flat</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Initial Load Time</span><strong>1.2s</strong></div>
-
-                <div class="svc-preview-metric"><span>Wasm Bundle Size</span><strong>< 8MB</strong></div>
-
-                <div class="svc-preview-metric"><span>Browser Frame Rate</span><strong>60 FPS</strong></div>
-
-                <div class="svc-preview-metric"><span>Cross-Device Support</span><strong>99.1%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 06 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 06 // AUDIO & VFX</span>
-              <h3 class="svc-cap-title">Technical Art, Shaders & Spatial Audio</h3>
-              <p class="svc-cap-body">A game’s emotional impact relies heavily on visual polish and sound design. Our technical artists author custom HLSL/GLSL shaders, visual particle effects (Niagara / Visual Effect Graph), and dynamic lighting environments. We integrate interactive spatial audio engines (FMOD and Wwise) that calculate real-time acoustics, environmental reverb, and Doppler shifts based on player positioning.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Flat visual aesthetics, generic particle effects that drop framerates, and static repetitive game audio.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">GPU compute particle systems, procedural surface shaders, and FMOD/Wwise dynamic interactive audio mixing.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Cinematic weather systems, magical spell effects, realistic material shaders, and environmental audio landscapes.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Niagara/VFX particle suites, custom shader library, integrated FMOD/Wwise sound banks, and performance guidelines.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // TECHNICAL ART</span>
-                <span class="svc-browser-status">NIAGARA & FMOD ACTIVE</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="140" cy="65" r="45" fill="none" stroke="rgba(201,164,92,0.2)" stroke-width="1.5"/>
-        <circle cx="140" cy="65" r="28" fill="none" stroke="rgba(201,164,92,0.3)" stroke-width="1.2" stroke-dasharray="3,3"/>
-        <circle cx="140" cy="65" r="10" fill="#141422" stroke="#C9A45C" stroke-width="2"/>
-        <text x="140" y="68" fill="#C9A45C" font-size="6" font-family="monospace" font-weight="700" text-anchor="middle">HRTF</text>
-        <circle cx="95" cy="65" r="6" fill="#0d1810" stroke="#27c93f" stroke-width="1.2"/>
-        <text x="75" y="68" fill="#27c93f" font-size="5.5" font-family="monospace">L-EAR</text>
-        <circle cx="185" cy="65" r="6" fill="#0d1810" stroke="#27c93f" stroke-width="1.2"/>
-        <text x="205" y="68" fill="#27c93f" font-size="5.5" font-family="monospace">R-EAR</text>
-        <circle cx="140" cy="20" r="5" fill="#141424" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="140" y="14" fill="#4eedc4" font-size="5.5" font-family="monospace" text-anchor="middle">AUDIO SOURCE</text>
-        <line x1="140" y1="25" x2="140" y2="55" stroke="#4eedc4" stroke-width="1" stroke-dasharray="2,2"/>
-        <text x="140" y="122" fill="#727284" font-size="7" font-family="monospace" text-anchor="middle">3D BINAURAL CONVOLUTION REVERB</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Active GPU Particles</span><strong>100,000+</strong></div>
-
-                <div class="svc-preview-metric"><span>Shader Instruction Cost</span><strong>< 72 ALU</strong></div>
-
-                <div class="svc-preview-metric"><span>Spatial Audio Voices</span><strong>64 Voices</strong></div>
-
-                <div class="svc-preview-metric"><span>Overdraw Ratio</span><strong>< 1.4x</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: OUR EXPERTISE -->
-    <section class="svc-section svc-section-border-top" id="expertise">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">05 // TECHNICAL DISCIPLINES</span>
-          <h2 class="svc-section-title">Engineering disciplines & <span class="svc-gold-text">architectural trade-offs</span></h2>
-          <p class="svc-section-lead">Every technological decision involves intentional balance. We navigate these architectural trade-offs to deliver sustainable, scalable outcomes.</p>
-        </div>
-
-        <div class="svc-expertise-grid">
-          
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Deterministic Physics Sub-Stepping</h3>
-            <p class="svc-expertise-desc">Simulating physics at locked high frequencies to prevent object clipping and guarantee repeatable simulations.</p>
-            <div class="svc-expertise-tradeoff">INTEGRITY // 120HZ DETERMINISTIC SIM</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">LOD & Occlusion Culling</h3>
-            <p class="svc-expertise-desc">Dynamically culling non-visible geometry and swapping texture mipmaps to conserve memory budgets.</p>
-            <div class="svc-expertise-tradeoff">PERFORMANCE // ADVANCED RENDER PIPELINES</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Authoritative Multiplayer Netcode</h3>
-            <p class="svc-expertise-desc">Client prediction coupled with server-side rewind verification to ensure competitive fair play.</p>
-            <div class="svc-expertise-tradeoff">NETWORKING // CHEAT-PROOF ARCHITECTURE</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Procedural Shader Authoring</h3>
-            <p class="svc-expertise-desc">Creating custom GPU surface shaders and volumetric lighting that execute with minimal instruction overhead.</p>
-            <div class="svc-expertise-tradeoff">TECHNICAL ART // HARDWARE-ACCELERATED SHADERS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Interactive Spatial Audio Engines</h3>
-            <p class="svc-expertise-desc">Deploying FMOD and Wwise middleware for dynamic acoustic reverberation and directional spatialization.</p>
-            <div class="svc-expertise-tradeoff">IMMERSION // PROCEDURAL SOUND DESIGN</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Automated Playtesting & Stress QA</h3>
-            <p class="svc-expertise-desc">Executing headless automated game sessions to detect memory leaks and boundary collision glitches.</p>
-            <div class="svc-expertise-tradeoff">RELIABILITY // 24/7 AUTOMATED BOT QA</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: WHAT'S TRENDING -->
-    <section class="svc-section svc-section-border-top" id="trending">
-      <div class="svc-container">
-        <div class="svc-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
           <div>
-            <span class="svc-pill-badge">06 // EDITORIAL PERSPECTIVES</span>
-            <h2 class="svc-section-title">What's Shaping the <span class="svc-gold-text">Game Development Platform</span></h2>
-            <p class="svc-section-lead">Research, technical analysis, and architectural perspectives from our engineering desk exploring current developments shaping enterprise digital delivery.</p>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              05 // INTERACTIVE WORLDS & GAMEPLAY ENGINEERING
+            </div>
+            <h1 class="d2-svc-hero-title">A game becomes memorable when the world responds to what the player does.</h1>
+            <p class="d2-svc-hero-lead">Games are built from relationships between action, response, challenge, and reward. A movement mechanic can change how a world feels. A sound can communicate success or danger. A carefully designed level can teach a player something without requiring a single line of instruction. Developing these experiences requires more than visual production. It brings together gameplay systems, interaction design, animation, physics, technical performance, and iterative testing. From an early playable prototype to a complete interactive world, each decision contributes to how the player experiences the game.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
           </div>
-        </div>
 
-        <div class="svc-trending-carousel-wrap">
-          <div class="svc-carousel-viewport">
-            <div class="svc-carousel-track" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-              
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">GRAPHICS &middot; 8 MIN READ</span>
-                  <h3 class="svc-article-card-title">Real-Time Global Illumination: Lumen vs Raytracing in 2026</h3>
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
                 </div>
-                <p class="svc-article-card-summary">How dynamic software global illumination enables photorealistic lighting without the crippling frame cost of pure hardware raytracing.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Deterministic Physics &amp; Real-Time Multiplayer Netcode</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
                 </div>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">NETWORKING &middot; 7 MIN READ</span>
-                  <h3 class="svc-article-card-title">Deterministic Rollback Netcode in Competitive Multiplayer</h3>
-                </div>
-                <p class="svc-article-card-summary">Why peer-to-peer and client-server architectures are adopting deterministic rollbacks for zero-latency multiplayer combat.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">TICK RATE</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">64 Hz</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">RENDER TARGET</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">60/120 FPS</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">FRAME BUDGET</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">16.6ms</div>
+                  </div>
+                
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">PROCEDURAL &middot; 6 MIN READ</span>
-                  <h3 class="svc-article-card-title">GPU-Driven Rendering & Compute Shaders for Game Worlds</h3>
-                </div>
-                <p class="svc-article-card-summary">Unloading world generation and massive crowd simulations from the CPU to high-throughput GPU compute pipelines.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { GameEngine, NetcodePipeline } from '@riyadvi/games';
+export const gameRuntime = new GameEngine({
+  engine: 'unreal-custom-subsystem',
+  rendering: 'nanite-lumen-hardware-rt',
+  netcode: { tickRate: 64, prediction: 'client-reconciliation' },
+  physics: 'deterministic-rigid-body-substepping'
+});
+// 60 FPS deterministic gameplay loop active with spatial sound occlusion</code></pre>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">AUDIO &middot; 5 MIN READ</span>
-                  <h3 class="svc-article-card-title">Adaptive Audio Landscapes with FMOD and Unreal Engine 5</h3>
-                </div>
-                <p class="svc-article-card-summary">Techniques for building audio environments that dynamically shift stems and filters based on player tension and environment geometry.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
               </div>
             </div>
           </div>
@@ -758,124 +142,609 @@ export const gameInstance = new GameEngine({
       </div>
     </section>
 
-    <!-- SECTION 07: TECHNOLOGIES -->
-    <section class="svc-section svc-section-border-top" id="technologies">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">07 // TECHNOLOGY STACK</span>
-          <h2 class="svc-section-title">Technologies engineered for <span class="svc-gold-text">longevity</span></h2>
-          <p class="svc-section-lead">We select enterprise-proven, community-backed technologies with long-term support and reliable ecosystem roadmaps.</p>
-        </div>
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">Beautiful graphics attract attention. Meaningful gameplay keeps it.</h2>
+            <p class="d2-reality-desc">The gaming industry is littered with visually striking titles that players abandon within two hours. Without tight tactile controls, rewarding gameplay loops, and rock-solid multiplayer netcode, even multi-million dollar assets fail to retain players.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
 
-        <div class="svc-tech-grid">
-          <div class="svc-tech-card"><span class="svc-tech-cat">FRAMEWORKS</span><h3 class="svc-tech-title">Next.js & React</h3><p class="svc-tech-desc">Production-grade SSR, static generation, and streaming component rendering.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">RUNTIMES</span><h3 class="svc-tech-title">Node.js & Go</h3><p class="svc-tech-desc">Asynchronous, high-throughput microservices and API gateways.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">TYPE SAFETY</span><h3 class="svc-tech-title">Strict TypeScript</h3><p class="svc-tech-desc">Zero runtime type regressions with compile-time verification.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CONTAINERS</span><h3 class="svc-tech-title">Docker & K8s</h3><p class="svc-tech-desc">Containerized orchestration with automated horizontal scaling.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">PERSISTENCE</span><h3 class="svc-tech-title">PostgreSQL</h3><p class="svc-tech-desc">ACID relational compliance with indexed query optimization.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CACHE & BROKER</span><h3 class="svc-tech-title">Redis & Kafka</h3><p class="svc-tech-desc">Distributed caching and partition-tolerant event streaming.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">HEADLESS CMS</span><h3 class="svc-tech-title">Sanity & Strapi</h3><p class="svc-tech-desc">Structured content modeling with instant editorial preview studios.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">EDGE DELIVERY</span><h3 class="svc-tech-title">Cloudflare & AWS</h3><p class="svc-tech-desc">Multi-region edge network distribution with DDoS mitigation.</p></div>
+          <div class="d2-reality-stagger">
+            
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Floaty Mechanics and Unresponsive Player Controls</h3>
+      </div>
+      <p class="d2-reality-card-body">Subtle input lag, poor jump deceleration curves, and disconnected character animations break player immersion and transform challenging gameplay into frustrating punishment.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Multiplayer Desynchronization and Rubberbanding</h3>
+      </div>
+      <p class="d2-reality-card-body">Naive multiplayer network code without client-side prediction and server reconciliation results in jarring hit registration failures, phantom damage, and enraged player communities.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Uncontrolled Frame Drops and Thermal Throttling</h3>
+      </div>
+      <p class="d2-reality-card-body">Failing to establish strict polygonal and draw-call budgets early leads to catastrophic frame rate dips during intense particle-heavy combat scenes, particularly on mobile and consoles.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Scope Creep and Incomplete Core Gameplay Loops</h3>
+      </div>
+      <p class="d2-reality-card-body">Over-investing in procedural world generation and lore before proving that the 30-second core gameplay loop is inherently enjoyable results in bloated, delayed, and hollow productions.</p>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: OUR PROCESS -->
-    <section class="svc-section svc-section-border-top" id="process">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">08 // EXECUTION METHODOLOGY</span>
-          <h2 class="svc-section-title">How we take projects <span class="svc-gold-text">from idea to production</span></h2>
-          <p class="svc-section-lead">A transparent six-phase delivery framework ensuring architectural rigor, clear milestone governance, and predictable launches.</p>
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in Game Development, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
         </div>
 
-        <div class="svc-process-timeline">
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 01</div><h3 class="svc-step-title">Discovery & Architecture</h3><p class="svc-step-desc">Stakeholder interviews, technical audit, specification mapping, and high-level architectural blueprints.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 02</div><h3 class="svc-step-title">UX Flows & Wireframing</h3><p class="svc-step-desc">Information architecture, user journey maps, and low-fidelity structural validation.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 03</div><h3 class="svc-step-title">UI & Design System</h3><p class="svc-step-desc">Atomic design tokens, high-fidelity responsive prototypes, and accessibility audits.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 04</div><h3 class="svc-step-title">Sprint Engineering</h3><p class="svc-step-desc">Iterative two-week sprints, automated test coverage, and continuous integration deployments.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 05</div><h3 class="svc-step-title">Security & QA Audit</h3><p class="svc-step-desc">End-to-end stress testing, OWASP security audits, and Core Web Vitals optimization.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 06</div><h3 class="svc-step-title">Production & Handover</h3><p class="svc-step-desc">Zero-downtime DNS cutover, telemetry configuration, source code IP handover, and staff training.</p></div>
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
+            
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>Mobile Game Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>2D Game Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>3D Game Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>Multiplayer Game Systems</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>Level and Environment Design</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>Game Optimization and Testing</span>
+    </button>
+  
+          </div>
+
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Tactile Touch Mechanics and Battery-Optimized 3D</h3>
+        <p class="d2-cap-stage-expl">Developing addictive, highly optimized mobile games for iOS and Android that deliver console-quality graphics within strict thermal and memory budgets.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Mobile games frequently overheat devices and drain batteries within 20 minutes of play.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Bespoke Unity/Unreal mobile pipelines with ASTC texture compression, LOD systems, and gesture-driven controls.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Fast-paced mobile puzzle-RPG downloaded over 1.5 million times with 4.8-star average store rating.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Native iOS &amp; Android Builds, LiveOps Integration, In-App Purchase Pipeline, Ad Mediation.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Hand-Crafted Pixel and Vector Mechanics with Deep Physics</h3>
+        <p class="d2-cap-stage-expl">Engineering responsive 2D platformers, Metroidvanias, and tactical strategy games featuring frame-accurate hitboxes, skeletal 2D animation, and dynamic lighting.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">2D games often feel flat and floaty without custom gravity substepping and particle punch.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Custom 2D physics controllers, Spine 2D skeletal animation, and normal-mapped 2D lighting shaders.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Stylized 2D roguelike action platformer launched globally on Steam and Nintendo Switch.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Complete Game Build, Steam/Console SDK Integration, Sound FX and Soundtrack Implementation.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Immersive Real-Time Environments Powered by Unreal &amp; Unity</h3>
+        <p class="d2-cap-stage-expl">From third-person action games to complex simulations: developing rich 3D worlds with physical shaders, atmospheric post-processing, and dynamic AI behaviors.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">High-fidelity 3D assets quickly cause stuttering without rigorous occlusion culling and LOD authoring.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Unreal Engine 5 Nanite geometry, Lumen dynamic global illumination, and custom Behavior Tree AI systems.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Atmospheric survival exploration game featuring dynamic weather, procedural hazards, and complex wildlife AI.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Console/PC Master Builds, Custom Shader Library, AI Behavior Trees, Master Audio Mix.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Low-Latency Netcode and Scalable Matchmaking Servers</h3>
+        <p class="d2-cap-stage-expl">Engineering rock-solid authoritative multiplayer backends with client-side prediction, entity interpolation, and global matchmaking infrastructure.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Multiplayer games collapse under high player concurrency and latency-induced synchronization drift.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">UDP-based network protocols with client prediction, lag compensation rollback, and containerized match servers on Agones/K8s.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">4-player cooperative tactical shooter maintaining sub-40ms latency synchronization across international player sessions.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Authoritative Server Architecture, Matchmaking Microservice, Anti-Cheat Integration.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Non-Verbal Guidance and Spatial Storytelling</h3>
+        <p class="d2-cap-stage-expl">Crafting memorable game environments that guide player curiosity through subtle architectural lighting, visual landmarks, and escalating pacing curves.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Players become disoriented in poorly lit levels, relying on artificial mini-map arrows that shatter immersion.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Iterative greybox level blocking, sightline composition, organic breadcrumb trails, and environmental narrative pacing.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Multi-tiered sci-fi research facility level that intuitively teaches mechanics through environmental hazards.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Greybox Level Blocks, Fully Dressed 3D Environments, Lighting Pass &amp; Occlusion Volumes.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Frame-Budget Enforcement and Continuous Playtesting</h3>
+        <p class="d2-cap-stage-expl">Rigorous profiling of draw calls, memory bandwidth, shader complexity, and physics step times to guarantee locked 60 FPS performance on target hardware.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Late-stage optimization often requires slashing assets and sacrificing creative visual fidelity.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Continuous automated profiling runs on physical target consoles/phones, RenderDoc shader analysis, and blind playtesting.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Optimizing a complex 3D VR simulation from 38 FPS to a locked 90 FPS on standalone Meta Quest hardware.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">RenderDoc Profiling Audit, Automated Stress Test Suites, QA Playtesting Matrix.</div>
+        </div>
+      </div>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: LET'S TALK CTA -->
-    <section class="svc-cta-section" id="lets-talk">
-      <div class="svc-container">
-        <div class="svc-cta-box">
-          <div class="svc-cta-glow"></div>
-          <span class="svc-pill-badge" style="background: rgba(240, 199, 94, 0.15); border-color: var(--svc-gold);">09 // GET STARTED</span>
-          <h2 class="svc-cta-title">Ready to engineer your <span class="svc-gold-text">Game Development?</span></h2>
-          <p class="svc-cta-lead">Let's discuss your requirements, architectural trade-offs, and how we can engineer an exceptional digital product tailored to your business goals.</p>
-          <div class="svc-cta-buttons">
-            <a href="/index.html#estimator" class="svc-btn-primary">Calculate Project Estimate &rarr;</a>
-            <a href="/index.html#contact" class="svc-btn-secondary">Schedule Technical Consultation</a>
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              Our gaming engineering capabilities combine industry-standard commercial game engines with bespoke low-level C++ systems and physics optimization.
+            </p>
+            <div class="d2-tech-list">
+              
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Game Engines: Unreal Engine 5 (C++, Blueprints, Lumen, Nanite) and Unity 6 (C#, DOTS, Universal Render Pipeline).</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Asset Creation: Blender, Autodesk Maya, ZBrush, Substance 3D Painter, and Houdini procedural tools.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Multiplayer & Cloud: Mirror, Photon Fusion, Agones, AWS GameLift, and Nakama OSS game server.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Audio & Motion: FMOD, Wwise spatial audio integration, and motion capture clean-up pipelines.</div>
+    </div>
+  
+            </div>
+          </div>
+
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
+              </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
+
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
+              </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in Game Development.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">GAME TECH &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">How AI-Assisted Tools Are Changing Game Production</h3>
+        <p class="d2-card-summary">Examining the real impact of generative AI in level design, NPC dialogue synthesis, and automated QA bug discovery.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/game-development/insights/how-ai-assisted-tools-are-changing-game-production" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">INDUSTRY &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">Why Smaller, Focused Games Are Attracting Attention</h3>
+        <p class="d2-card-summary">Why player fatigue with 100-hour open-world titles is driving massive commercial success for polished, 6-hour narrative indie experiences.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/game-development/insights/why-smaller-focused-games-are-attracting-attention" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">GRAPHICS &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">The Evolution of Real-Time Rendering</h3>
+        <p class="d2-card-summary">Deconstructing hardware raytracing, path tracing, and mesh shaders in modern game engines and their practical performance budgets.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/game-development/insights/the-evolution-of-real-time-rendering" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">NETCODE &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">Designing Multiplayer Experiences That Feel Reliable</h3>
+        <p class="d2-card-summary">The engineering mechanics behind client prediction, rollback netcode, and entity interpolation in competitive games.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/game-development/insights/designing-multiplayer-experiences-that-feel-reliable" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
+        </div>
+
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Concept &amp; Game Design Document</div>
+      <div class="d2-step-body">Defining the core gameplay fantasy, 30-second loop, target audience, visual art direction, and technical platforms.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Game Design Document (GDD), Visual Moodboards, Mechanics Spec.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Greybox Playable Prototype</div>
+      <div class="d2-step-body">Building a stripped-down, untextured playable prototype to validate that the movement and core mechanics are fun in isolation.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Playable Greybox Build, Controller Tuning Matrix, Player Feedback Report.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">Production Pipeline &amp; Art Pass</div>
+      <div class="d2-step-body">Establishing 3D asset pipelines, character rigging, environmental dressing, shader development, and dynamic lighting.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Rigged 3D Character Models, Environmental Art Kit, Master Shaders.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">Gameplay Engineering &amp; Audio</div>
+      <div class="d2-step-body">Coding player abilities, enemy AI state machines, UI menus, and integrating dynamic Wwise/FMOD spatial audio mixes.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Feature-Complete Game Build, AI Behavior Trees, Integrated Audio Bank.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Balancing, QA &amp; Performance Lock</div>
+      <div class="d2-step-body">Conducting blind playtesting sessions, tuning weapon/ability balance, and profiling draw calls to lock framerates.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>QA Bug Sign-Off, Locked 60 FPS Profiling Report, Localization Passes.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">Platform Certification &amp; Launch</div>
+      <div class="d2-step-body">Navigating Steam, Nintendo, Sony, and Xbox certification checklists and configuring LiveOps analytics for day-one release.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Gold Master Build, Console Certification Approvals, Launch Marketing Assets.</div>
+      </div>
+    </div>
+  
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What kind of world do you want players to remember?</h2>
+          <p class="d2-cta-lead">Great games are engineered through relentless mechanical iteration, tight feedback loops, and technical discipline. Let's build an interactive world that players will never forget.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- GLOBAL PERSISTENT FOOTER -->
-  <footer class="svc-footer" id="footer">
-    <div class="svc-footer-container">
-      <div class="svc-footer-top">
-        <div class="svc-footer-brand">
-          <div class="svc-brand">
-            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-            <div class="svc-brand-text">
-              <span class="svc-brand-name">RIYADVI</span>
-              <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
             </div>
           </div>
-          <p class="svc-footer-motto">Digital technology, proprietary software systems, and business growth engineered for enterprises ready to scale.</p>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
         </div>
 
-        <div class="svc-footer-links-grid">
-          <div class="svc-footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/web-development">Web Development</a></li>
-              <li><a href="/services/custom-software-development">Custom Software</a></li>
-              <li><a href="/services/mobile-app-development">Mobile Apps</a></li>
-              <li><a href="/services/ecommerce-solutions">E-Commerce</a></li>
-              <li><a href="/services/game-development">Game Development</a></li>
-              <li><a href="/services/ar-vr-development">AR/VR Experiences</a></li>
-              <li><a href="/services/ui-ux-design">UI/UX Design</a></li>
-              <li><a href="/services/3d-modeling">3D Modeling</a></li>
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
 
-          <div class="svc-footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/index.html#about">About Riyadvi</a></li>
-              <li><a href="/index.html#awards">Awards & Recognition</a></li>
-              <li><a href="/index.html#industries">Industries Served</a></li>
-              <li><a href="/index.html#guardian">Riyadvi Guardian</a></li>
-              <li><a href="/index.html#portfolio">Featured Work</a></li>
-              <li><a href="/index.html#estimator">Project Estimator</a></li>
-              <li><a href="/index.html#contact">Contact Our Team</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
         </div>
       </div>
 
-      <div class="svc-footer-bottom">
-        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
-        <div class="svc-footer-legal">
-          <span>Enterprise Grade</span>
-          <span>Zero Vendor Lock-In</span>
-          <span>Global Delivery</span>
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/services/services-common.js?v=11.0"></script>
-  <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  
 </body>
 </html>

@@ -3,96 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Web Development & Enterprise Engineering | Riyadvi Software Technologies</title>
-  <meta name="description" content="Enterprise Web Development capabilities by Riyadvi Software Technologies. Resilient architectures, tailored execution, and verified business outcomes.">
+  <title>Web Development | Riyadvi Software Technologies</title>
+  <meta name="description" content="Beyond the Website: Building Digital Experiences That Perform. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  
 </head>
-<body class="svc-page-body">
+<body class="d2-body">
 
-  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
-  <nav class="svc-subnav-bar" id="serviceSubnav">
-    <div class="svc-subnav-container">
-      <div class="svc-subnav-left">
-        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
-          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          ALL SERVICES
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <span class="svc-subnav-title">01 // WEB DEVELOPMENT</span>
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">01 // Web Development</span>
       </div>
 
-      <div class="svc-subnav-links" id="subnavLinks">
-        <a href="#overview" class="svc-subnav-anchor active">Overview</a>
-        <a href="#landscape" class="svc-subnav-anchor">The Landscape</a>
-        <a href="#insights" class="svc-subnav-anchor">Insights</a>
-        <a href="#what-we-do" class="svc-subnav-anchor">What We Do</a>
-        <a href="#expertise" class="svc-subnav-anchor">Our Expertise</a>
-        <a href="#trending" class="svc-subnav-anchor">What's Trending</a>
-        <a href="#technologies" class="svc-subnav-anchor">Technologies</a>
-        <a href="#process" class="svc-subnav-anchor">Our Process</a>
-        <a href="#lets-talk" class="svc-subnav-anchor">Let's Talk</a>
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- SECTION 01: HERO & TERMINAL -->
-    <section class="svc-hero-section" id="overview">
-      <div class="svc-hero-container">
-        <div class="svc-hero-content">
-          <div class="svc-hero-badge">
-            <span class="svc-badge-dot"></span>
-            01 // CORE ARCHITECTURE
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
+          <div>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              01 // WEB ARCHITECTURE & PERFORMANCE
+            </div>
+            <h1 class="d2-svc-hero-title">A website is often where the first conversation with your business begins.</h1>
+            <p class="d2-svc-hero-lead">A visitor arrives with a question, a problem, or a decision to make. Within seconds, your website needs to help them understand what you offer, why it matters, and where to go next. We approach web development as more than the construction of pages. It involves understanding how people discover your business, how information should be organized, how interfaces respond to different devices, and how the underlying technology performs when demand grows. Whether it's a corporate website, a customer portal, or a complex web application, the objective is to create a digital experience that is useful to visitors and dependable for the business behind it.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
           </div>
-          <h1 class="svc-hero-title">A website is often where the <span class="svc-gold-text">first conversation</span> with your business begins.</h1>
-          <p class="svc-hero-lead">A visitor arrives with a question, a problem, or a decision to make. Within seconds, your website needs to help them understand what you offer, why it matters, and where to go next. We approach web development as an integrated discipline—connecting information architecture, frontend engineering, backend reliability, and sub-second performance into platforms that generate measurable business enquiries.</p>
-          <div class="svc-hero-actions">
-            <a href="#lets-talk" class="svc-btn-primary">Start Your Project &rarr;</a>
-            <a href="#what-we-do" class="svc-btn-secondary">Explore Capabilities</a>
-          </div>
-        </div>
 
-        <div class="svc-hero-visual">
-          <div class="svc-terminal-card">
-            <div class="svc-terminal-header">
-              <div class="svc-terminal-dots">
-                <span class="svc-dot svc-dot-red"></span>
-                <span class="svc-dot svc-dot-yellow"></span>
-                <span class="svc-dot svc-dot-green"></span>
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
+                </div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Layered Wireframe to Edge Telemetry</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
+                </div>
               </div>
-              <div class="svc-terminal-url">https://webcore.riyadvi.com/production</div>
-              <div class="svc-terminal-status"><span class="svc-status-pill"></span>HEALTHY &middot; 99.99%</div>
-            </div>
-            <div class="svc-telemetry-grid">
-              
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">LCP RESPONSE</span>
-                <span class="svc-telemetry-value">0.68s</span>
+
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">LCP RESPONSE</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">0.68s</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">EDGE HIT</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">99.4%</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">A11Y SCORE</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">100/100</div>
+                  </div>
+                
               </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">EDGE CDN HIT</span>
-                <span class="svc-telemetry-value">99.4%</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">ACCESSIBILITY</span>
-                <span class="svc-telemetry-value">100 / 100</span>
-              </div>
-            </div>
-            <div class="svc-code-display">
-              <pre><code>import { EnterprisePipeline } from '@riyadvi/web-core';
+
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { EnterprisePipeline } from '@riyadvi/web-core';
 export const runtimeConfig = {
   rendering: 'server-streamed',
   caching: 'stale-while-revalidate',
@@ -100,802 +130,621 @@ export const runtimeConfig = {
   security: ['csp-strict', 'cors-whitelisted']
 };
 // Sub-second execution pipeline initialized globally</code></pre>
-            </div>
-            <div class="svc-terminal-footer">
-              <span class="svc-pulse-indicator"></span>
-              <span class="svc-terminal-msg">Production Node Active</span>
-              <span class="svc-terminal-timestamp">Latency: 1.8ms</span>
+              </div>
+
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 02: THE LANDSCAPE -->
-    <section class="svc-section svc-section-border-top" id="landscape">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">02 // INDUSTRY CHALLENGES</span>
-          <h2 class="svc-section-title">Your website may look good. <span class="svc-gold-text">But is it doing its job?</span></h2>
-          <p class="svc-section-lead">The modern web is crowded with visually polished websites that fail at their primary commercial purpose. High bounce rates, drop-offs during key interactions, and unranked search positions are rarely cosmetic problems—they are structural engineering failures.</p>
-        </div>
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">Your website may look good. But is it doing its job?</h2>
+            <p class="d2-reality-desc">The modern web is crowded with visually polished websites that fail at their primary commercial purpose. High bounce rates, drop-offs during key interactions, and unranked search positions are rarely cosmetic problems—they are structural engineering failures.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
 
-        <div class="svc-landscape-grid">
-          <div class="svc-landscape-narrative">
+          <div class="d2-reality-stagger">
             
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">01 / PERFORMANCE DEGRADATION</span>
-              <h3 class="svc-narrative-title">The Illusion of Visual Polish vs True Speed</h3>
-              <p class="svc-narrative-desc">Many organizations invest heavily in visual branding while overlooking how websites load on real cellular networks. Third-party marketing tags, uncompressed video backgrounds, and multi-megabyte JavaScript bundles cause pages to stutter, delay Time to Interactive (TTI), and frustrate potential clients before the first sentence can even be read.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">02 / FRAGMENTED MOBILE EXPERIENCES</span>
-              <h3 class="svc-narrative-title">Mobile Usability Beyond Responsive Shifting</h3>
-              <p class="svc-narrative-desc">Shrinking desktop columns into a single vertical scroll does not constitute responsive engineering. Real mobile users face clumsy tap targets, complex dropdowns that fail under thumb navigation, and multi-step forms that trigger abandonment. True responsive architecture rethinks information priority for hand-held context.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">03 / TECHNICAL DEBT & BOTTLENECKS</span>
-              <h3 class="svc-narrative-title">Monolithic Dependencies & Stalled Iteration</h3>
-              <p class="svc-narrative-desc">Relying on bloated legacy CMS themes and fragile plugin networks leaves companies trapped. Updating a simple case study requires engineering intervention, security vulnerabilities surface monthly, and scaling the site across regions requires complete rewrites. Modern web platforms must be decoupled, modular, and instantly editable.</p>
-            </div>
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Bloated Client Bundles and Sluggish Load Times</h3>
+      </div>
+      <p class="d2-reality-card-body">Over-reliance on heavy client-side JavaScript frameworks pushes multi-megabyte payloads to mobile devices. On moderate cellular connections, users experience white screens, layout shifts, and unresponsive taps, causing high abandonment before the brand story even renders.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Unnavigable Information Architecture</h3>
+      </div>
+      <p class="d2-reality-card-body">When navigation mirrors internal corporate hierarchies rather than visitor mental models, prospective clients cannot find answers quickly. If pricing, service scope, or technical credibility remain buried under layers of marketing ambiguity, buyers exit.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Accessibility Barriers That Exclude and Expose</h3>
+      </div>
+      <p class="d2-reality-card-body">Websites built without strict semantic HTML, keyboard navigable states, and WCAG 2.2 AA compliance alienate millions of users with assistive technologies while exposing enterprise organizations to significant legal and regulatory liabilities.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Rigid Content Silos and Maintenance Paralysis</h3>
+      </div>
+      <p class="d2-reality-card-body">Legacy monolithic CMS setups trap marketing and engineering teams in conflicting release cycles. Simple copy updates require code deploys, while content creators struggle with fragile page builders that break layouts upon every update.</p>
+    </div>
+  
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Diagnostic Box with 4 full comparison rows (NO EMPTY SPACE) -->
-          <div class="svc-diagnostic-box">
-            <div class="svc-diag-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--svc-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              Architectural Reality Check
-            </div>
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in Web Development, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
+        </div>
+
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
             
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Conventional Theme Approach</strong>
-                Large monolithic bundles loaded upfront regardless of viewport or user intent.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Riyadvi Server-First Pipeline</strong>
-                Edge-streamed HTML with selective islands of interactivity, reducing initial payload by up to 75%.
-              </div>
-            </div>
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>Corporate Website Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>Custom Web Applications</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>Frontend Engineering</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>Backend and API Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>Website Modernization</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>Content Management Systems</span>
+    </button>
+  
+          </div>
 
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Fragile Plugin Dependencies</strong>
-                30+ third-party plugins creating security liabilities, breaking updates, and database slowdowns.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Headless Modular Services</strong>
-                Clean API contracts, versioned components, and continuous integration pipelines without external bloat.
-              </div>
-            </div>
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Flagship Digital Presences Engineered for Credibility</h3>
+        <p class="d2-cap-stage-expl">We design and develop high-stakes corporate websites that articulate enterprise authority, align stakeholder messaging, and maintain flawless performance under global traffic spikes.</p>
+      </div>
 
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Post-Launch Accessibility Patches</strong>
-                Overlay widgets that fail accessibility audits and create compliance legal exposure.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Semantic Core Compliance</strong>
-                Native WCAG 2.2 AA markup, full keyboard traversal, and high-contrast typographic hierarchy from day one.
-              </div>
-            </div>
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Corporate sites often become bloated brochureware with slow load speeds and ambiguous brand value.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Modern headless architectures with atomic component systems, localized CDN delivery, and editorial workflows.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Multi-regional corporate headquarters relaunch across 14 languages with unified brand governance.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Custom Design System, CMS Schema, Localization Pipeline, Edge Hosting Infrastructure.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Mission-Critical Cloud Platforms and Portals</h3>
+        <p class="d2-cap-stage-expl">Purpose-built web applications that handle complex data transactions, role-based workflows, and sensitive customer communications with sub-second responsiveness.</p>
+      </div>
 
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Opaque Analytics & Conversion Drops</strong>
-                Basic pageview tracking without insight into where users encounter friction or abandon inquiries.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Interaction Telemetry</strong>
-                Granular funnel measurement, field-monitored Core Web Vitals, and intent-driven call-to-action paths.
-              </div>
-            </div>
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Off-the-shelf SaaS tools force compromises in proprietary data structures and customer portal interactions.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Domain-driven micro-frontend or modular full-stack applications with real-time WebSockets and zero-trust authentication.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Self-service client billing and telemetry portal serving 250,000 active institutional users.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Single-Page &amp; Server-Rendered App, Real-Time API Layer, RBAC Security Audit, CI/CD Pipeline.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Pixel-Precise, Hardware-Accelerated User Interfaces</h3>
+        <p class="d2-cap-stage-expl">Engineering interactive frontends with modern reactive libraries, CSS architectures, and micro-interactions that operate fluidly at 60 FPS across all screen form factors.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Clunky animations, layout shifts, and inconsistent cross-browser bugs undermine visitor trust.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Selective hydration, CSS custom properties tokenization, hardware-accelerated transforms, and automated visual regression testing.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Interactive financial calculator and dynamic quotation tool operating with zero external layout shifts.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Production Component Library, Storybook Documentation, Automated Lighthouse E2E Test Suite.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Resilient Microservices and Real-Time Data Pipelines</h3>
+        <p class="d2-cap-stage-expl">Developing robust backend services, secure REST and GraphQL endpoints, and asynchronous event streams engineered for maximum fault tolerance and horizontal scale.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Fragile backend APIs bottleneck frontend interactions and create catastrophic single points of failure.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Node.js, Go, or Python microservices with distributed caching, rate-limiting gateways, and automated failover.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">High-concurrency quotation aggregation engine processing 10,000 simultaneous partner requests.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">OpenAPI/Swagger Documentation, Microservices Architecture, Containerized Docker/K8s Manifests.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Replatforming Legacy Monoliths Without Downtime</h3>
+        <p class="d2-cap-stage-expl">Systematic migration of slow, outdated CMS platforms to modern, decoupled server-first web architectures without impacting active organic search rankings.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Legacy platforms like monolithic Drupal or bloated WordPress installs incur massive maintenance overhead and security vulnerabilities.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Strangler fig migration pattern: incrementally replacing legacy routes with high-speed Next.js edge pages.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Migration of an 8,000-page enterprise publication to Next.js edge architecture with 75% faster LCP.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">URL Redirect Mapping, Automated Data Extraction Scripts, Edge Middleware Routing, SEO Audit.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Structured Content Engines for Agile Marketing</h3>
+        <p class="d2-cap-stage-expl">Implementing modern headless CMS solutions (Sanity, Strapi, Contentful) that empower marketing teams to publish campaigns instantaneously while preserving layout integrity.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">WYSIWYG page builders introduce unmaintainable inline styles and break responsive layouts.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Strict structured content modeling with typed validation schemas and live preview staging environments.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Omnichannel content repository powering corporate websites, mobile apps, and email campaigns from one hub.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Headless CMS Integration, Custom Editorial Workflows, Live Preview Mode, Role Permissions.</div>
+        </div>
+      </div>
+    </div>
+  
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 03: INSIGHTS -->
-    <section class="svc-section svc-section-border-top" id="insights">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">03 // INDUSTRY OBSERVATIONS</span>
-          <h2 class="svc-section-title">The numbers that define <span class="svc-gold-text">web performance</span></h2>
-          <p class="svc-section-lead">Independent digital research consistently demonstrates that technical excellence directly dictates commercial conversion rates and search rankings.</p>
-        </div>
-
-        <div class="svc-insights-strip">
-          
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">53%</div>
-              <div class="svc-insight-headline">Mobile Bounces on >3s Load</div>
-              <p class="svc-insight-desc">Google consumer studies show that more than half of mobile visitors abandon a website if page assets take more than 3 seconds to appear.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">0.8s</div>
-              <div class="svc-insight-headline">Target Largest Contentful Paint</div>
-              <p class="svc-insight-desc">Engineering for sub-second LCP ensures users perceive instant loading, dramatically lowering initial bounce rates.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">3.2x</div>
-              <div class="svc-insight-headline">Higher Conversions for Fast Sites</div>
-              <p class="svc-insight-desc">Enterprise sites optimized for instant interactivity record more than triple the consultation inquiries of slower competitors.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">99.98%</div>
-              <div class="svc-insight-headline">Edge Network Uptime Benchmark</div>
-              <p class="svc-insight-desc">Deploying across global edge server nodes ensures zero single-point-of-failure risks and seamless regional delivery.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT WE DO -->
-    <section class="svc-section svc-section-border-top" id="what-we-do">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">04 // WHAT WE DO</span>
-          <h2 class="svc-section-title">Engineering capabilities built for <span class="svc-gold-text">business durability</span></h2>
-          <p class="svc-section-lead">We do not assemble one-size-fits-all brochure templates. We engineer tailored systems that address specific operational bottlenecks, user journeys, and technical objectives.</p>
-        </div>
-
-        <div class="svc-capabilities-stack">
-          
-          <!-- Capability 01 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 01 // CORPORATE PRESENCE</span>
-              <h3 class="svc-cap-title">Corporate Website Development</h3>
-              <p class="svc-cap-body">For established enterprises and rapidly scaling companies, a corporate website is not a digital business card; it is a central validation engine for prospects, partners, and institutional stakeholders. We architect corporate web platforms that clearly articulate complex service offerings, organize deep libraries of case studies, and present institutional credibility through bespoke typography and restrained aesthetics. Every corporate build is engineered with ultra-clean code, structured metadata for search clarity, and strict accessibility standards, ensuring your brand commands authority across every global market segment it addresses.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Outdated digital brand perception, difficult navigation, and high bounce rates among executive decision-makers.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Semantic React/Next.js architecture, modular design tokens, and edge CDN asset distribution.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Multi-disciplinary professional services firms, technology providers, and B2B corporate flagships.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Production deployment, custom component library, editorial CMS integration, and technical governance guides.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // CORPORATE BUILD</span>
-                <span class="svc-browser-status">WCAG 2.2 AA</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="20" width="115" height="75" rx="5" fill="#101018" stroke="#C9A45C" stroke-width="1.4"/>
-        <line x1="25" y1="34" x2="140" y2="34" stroke="#C9A45C" stroke-width="0.8" opacity="0.4"/>
-        <circle cx="32" cy="27" r="2" fill="#ff5f56"/>
-        <circle cx="38" cy="27" r="2" fill="#ffbd2e"/>
-        <circle cx="44" cy="27" r="2" fill="#27c93f"/>
-        <rect x="35" y="44" width="45" height="6" rx="2" fill="#C9A45C" opacity="0.8"/>
-        <rect x="35" y="55" width="95" height="4" rx="1.5" fill="#727284" opacity="0.5"/>
-        <rect x="35" y="63" width="75" height="4" rx="1.5" fill="#727284" opacity="0.5"/>
-        <rect x="35" y="75" width="28" height="12" rx="3" fill="#C9A45C" opacity="0.3" stroke="#C9A45C" stroke-width="0.8"/>
-        <rect x="155" y="35" width="55" height="60" rx="4" fill="#0d0d14" stroke="#4eedc4" stroke-width="1.2"/>
-        <line x1="155" y1="46" x2="210" y2="46" stroke="#4eedc4" stroke-width="0.8" opacity="0.4"/>
-        <circle cx="182" cy="90" r="2" fill="#4eedc4" opacity="0.6"/>
-        <rect x="222" y="45" width="34" height="50" rx="4" fill="#08080c" stroke="#27c93f" stroke-width="1.2"/>
-        <line x1="222" y1="53" x2="256" y2="53" stroke="#27c93f" stroke-width="0.6" opacity="0.4"/>
-        <circle cx="239" cy="91" r="1.5" fill="#27c93f"/>
-        <text x="82" y="112" fill="#C9A45C" font-size="8" font-family="monospace" text-anchor="middle">VIEWPORT MATRIX // 1440 · 768 · 390</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>First Contentful Paint</span><strong>0.42s</strong></div>
-
-                <div class="svc-preview-metric"><span>Cumulative Layout Shift</span><strong>0.000</strong></div>
-
-                <div class="svc-preview-metric"><span>SEO Semantic Indexing</span><strong>100%</strong></div>
-
-                <div class="svc-preview-metric"><span>Global Edge Nodes</span><strong>285+ Active</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 02 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 02 // APPLICATION ENGINEERING</span>
-              <h3 class="svc-cap-title">Custom Web Applications & Client Portals</h3>
-              <p class="svc-cap-body">When off-the-shelf software cannot accommodate your operational complexity or customer service workflows, custom web applications bridge the gap. We engineer responsive web applications that handle secure user authentication, role-based document access, live client communication, and automated status tracking. By designing clean frontend interfaces backed by resilient cloud APIs, we help businesses streamline client interactions, reduce administrative overhead, and deliver frictionless self-service experiences that delight high-value customers.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Manual email exchanges, fragmented spreadsheet tracking, and inefficient customer service touchpoints.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">State-driven Single Page Applications (SPA) with optimistic UI updates and real-time WebSocket synchronization.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Client reporting portals, B2B account dashboards, operational dispatch hubs, and member portals.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">End-to-end web app, REST/GraphQL API integration, authenticated session manager, and role matrix.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // APPLICATION PIPELINE</span>
-                <span class="svc-browser-status">RBAC SECURED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="24" width="240" height="82" rx="8" fill="#0c0c14" stroke="rgba(201,164,92,0.3)" stroke-width="1.2"/>
-        <text x="32" y="40" fill="#727284" font-size="7.5" font-family="monospace">STATIC SERVER-STREAMED DOM</text>
-        <line x1="32" y1="48" x2="248" y2="48" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-        <rect x="35" y="56" width="60" height="42" rx="5" fill="#141420" stroke="#27c93f" stroke-width="1.4"/>
-        <text x="65" y="72" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">ISLAND A</text>
-        <text x="65" y="85" fill="#ffffff" font-size="6.5" font-family="monospace" text-anchor="middle">Cart Widget</text>
-        <rect x="110" y="56" width="60" height="42" rx="5" fill="#141420" stroke="#C9A45C" stroke-width="1.4"/>
-        <text x="140" y="72" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">ISLAND B</text>
-        <text x="140" y="85" fill="#ffffff" font-size="6.5" font-family="monospace" text-anchor="middle">Search Bar</text>
-        <rect x="185" y="56" width="60" height="42" rx="5" fill="#141420" stroke="#4eedc4" stroke-width="1.4"/>
-        <text x="215" y="72" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">ISLAND C</text>
-        <text x="215" y="85" fill="#ffffff" font-size="6.5" font-family="monospace" text-anchor="middle">Auth State</text>
-        <text x="140" y="120" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">&lt;0.2ms HYDRATION OVERHEAD</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Token Verification</span><strong>< 8ms</strong></div>
-
-                <div class="svc-preview-metric"><span>WebSocket Sync Latency</span><strong>14ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Data Encryption</span><strong>AES-256 GCM</strong></div>
-
-                <div class="svc-preview-metric"><span>API Uptime Benchmark</span><strong>99.98%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 03 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 03 // FRONTEND MASTERY</span>
-              <h3 class="svc-cap-title">High-Performance Frontend Engineering</h3>
-              <p class="svc-cap-body">Visual design only succeeds when the underlying frontend engineering executes with fluid precision. We build frontends with meticulous attention to Core Web Vitals, ensuring zero Cumulative Layout Shift (CLS), sub-second Largest Contentful Paint (LCP), and instantaneous Interaction to Next Paint (INP). From smooth micro-interactions that communicate state changes to complex interactive calculators and multi-step forms, our frontend code is lightweight, modular, and fully tested across modern desktop and mobile browsers.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Sluggish UI rendering, layout jumps during loading, and unresponsiveness under variable network conditions.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Component-level code splitting, critical CSS inlining, font subsetting, and hardware-accelerated animations.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">High-traffic consumer portals, interactive visual product configuration tools, and financial calculators.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Modular UI system, automated performance budgets, comprehensive cross-browser test suites, and documentation.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // RENDER PERFORMANCE</span>
-                <span class="svc-browser-status">60 FPS LOCKED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="55" cy="62" r="32" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5"/>
-        <circle cx="55" cy="62" r="32" fill="none" stroke="#27c93f" stroke-width="5" stroke-dasharray="160" stroke-dashoffset="35" stroke-linecap="round"/>
-        <text x="55" y="58" fill="#ffffff" font-size="11" font-family="monospace" font-weight="700" text-anchor="middle">0.68s</text>
-        <text x="55" y="72" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">LCP GOOD</text>
-        <circle cx="140" cy="62" r="32" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5"/>
-        <circle cx="140" cy="62" r="32" fill="none" stroke="#C9A45C" stroke-width="5" stroke-dasharray="160" stroke-dashoffset="25" stroke-linecap="round"/>
-        <text x="140" y="58" fill="#ffffff" font-size="11" font-family="monospace" font-weight="700" text-anchor="middle">18ms</text>
-        <text x="140" y="72" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">INP FAST</text>
-        <circle cx="225" cy="62" r="32" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5"/>
-        <circle cx="225" cy="62" r="32" fill="none" stroke="#4eedc4" stroke-width="5" stroke-dasharray="160" stroke-dashoffset="10" stroke-linecap="round"/>
-        <text x="225" y="58" fill="#ffffff" font-size="11" font-family="monospace" font-weight="700" text-anchor="middle">0.00</text>
-        <text x="225" y="72" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">CLS ZERO</text>
-        <text x="140" y="115" fill="#727284" font-size="7.5" font-family="monospace" text-anchor="middle">LIGHTHOUSE 100/100 AUDITED</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Frame Budget</span><strong>16.6ms Target</strong></div>
-
-                <div class="svc-preview-metric"><span>Interaction to Next Paint</span><strong>42ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Bundle Minification</span><strong>Gzip / Brotli</strong></div>
-
-                <div class="svc-preview-metric"><span>Font Display Swap</span><strong>Zero FOIT</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 04 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 04 // BACKEND & INTEGRATIONS</span>
-              <h3 class="svc-cap-title">Backend Architecture & API Engineering</h3>
-              <p class="svc-cap-body">A dependable website requires a backend architecture capable of handling traffic spikes, secure transactions, and multi-system data flows without degradation. We develop secure, scalable server-side systems and RESTful/GraphQL APIs that seamlessly connect your website with third-party CRMs, ERPs, payment processors, and marketing automation platforms. Every backend build prioritizes data integrity, structured caching policies, and comprehensive logging to ensure administrative operations remain transparent and dependable.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Slow database query responses, fragile third-party integrations, and unhandled API rate limits.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Node.js/Go microservices, Redis caching layers, connection pooling, and resilient retry mechanisms.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">CRM lead synchronization, inventory data orchestration, payment gateway routing, and webhook ingestion.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">API microservice cluster, OpenAPI/Swagger specifications, automated error notification webhooks, and DB schemas.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // BACKEND DISPATCH</span>
-                <span class="svc-browser-status">SUB-MILLISECOND</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="48" width="55" height="34" rx="5" fill="#141420" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="42" y="64" fill="#C9A45C" font-size="7.5" font-family="monospace" text-anchor="middle">GATEWAY</text>
-        <text x="42" y="74" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">EDGE INGRESS</text>
-        <line x1="70" y1="65" x2="105" y2="35" stroke="#C9A45C" stroke-width="1.2" stroke-dasharray="3,3"/>
-        <line x1="70" y1="65" x2="105" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="70" y1="65" x2="105" y2="95" stroke="#C9A45C" stroke-width="1.2" stroke-dasharray="3,3"/>
-        <rect x="105" y="22" width="75" height="26" rx="4" fill="#0d0d16" stroke="#27c93f" stroke-width="1"/>
-        <text x="142" y="38" fill="#ffffff" font-size="7" font-family="monospace" text-anchor="middle">/api/v1/auth</text>
-        <rect x="105" y="52" width="75" height="26" rx="4" fill="#0d0d16" stroke="#4eedc4" stroke-width="1"/>
-        <text x="142" y="68" fill="#ffffff" font-size="7" font-family="monospace" text-anchor="middle">/api/v1/orders</text>
-        <rect x="105" y="82" width="75" height="26" rx="4" fill="#0d0d16" stroke="#C9A45C" stroke-width="1"/>
-        <text x="142" y="98" fill="#ffffff" font-size="7" font-family="monospace" text-anchor="middle">/api/v1/stream</text>
-        <circle cx="235" cy="65" r="18" fill="#141420" stroke="#27c93f" stroke-width="1.4"/>
-        <text x="235" y="67" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">POSTGRES</text>
-        <text x="235" y="74" fill="#727284" font-size="5.5" font-family="monospace" text-anchor="middle">CLUSTER</text>
-        <line x1="180" y1="35" x2="218" y2="58" stroke="#27c93f" stroke-width="1"/>
-        <line x1="180" y1="65" x2="217" y2="65" stroke="#4eedc4" stroke-width="1"/>
-        <line x1="180" y1="95" x2="218" y2="72" stroke="#C9A45C" stroke-width="1"/>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Query Execution P95</span><strong>12ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Redis Cache Hit Rate</span><strong>94.2%</strong></div>
-
-                <div class="svc-preview-metric"><span>Connection Pooling</span><strong>Active Max 150</strong></div>
-
-                <div class="svc-preview-metric"><span>TLS Handshake</span><strong>TLS 1.3 Strict</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 05 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 05 // MIGRATION & REFACTORING</span>
-              <h3 class="svc-cap-title">Legacy Modernization & Re-Platforming</h3>
-              <p class="svc-cap-body">Outdated websites built on deprecated CMS versions or bloated monoliths often carry severe security risks and engineering paralysis. We guide companies through smooth re-platforming and modernization initiatives, migrating legacy databases, content structures, and URL configurations into modern architectures without disrupting live organic search rankings or daily customer inquiries. We audit every legacy endpoint, establish 301 redirect maps, and replace fragile plugin networks with clean, maintainable engineering.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Security vulnerabilities in unmaintained plugins, slow page loads, and fear of breaking organic Google rankings.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Phased strangler-fig pattern migration, automated content extraction scripts, and granular redirect mapping.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">WordPress to Next.js migrations, legacy Drupal overhauls, and monolith-to-headless transitions.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Complete platform migration, zero 404 redirect governance, preserved SEO equity, and staff training.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // MIGRATION AUDIT</span>
-                <span class="svc-browser-status">ZERO DOWNTIME</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="30" width="70" height="70" rx="6" fill="#1a1414" stroke="#ff5f56" stroke-width="1.3"/>
-        <text x="55" y="52" fill="#ff5f56" font-size="7.5" font-family="monospace" text-anchor="middle">LEGACY</text>
-        <text x="55" y="64" fill="#ff5f56" font-size="7" font-family="monospace" text-anchor="middle">MONOLITH</text>
-        <text x="55" y="82" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">Phaseout 82%</text>
-        <rect x="115" y="48" width="50" height="34" rx="4" fill="#12121c" stroke="#C9A45C" stroke-width="1"/>
-        <text x="140" y="64" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">STRANGLER</text>
-        <text x="140" y="73" fill="#C9A45C" font-size="6" font-family="monospace" text-anchor="middle">PROXY</text>
-        <line x1="90" y1="65" x2="115" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="165" y1="65" x2="190" y2="65" stroke="#27c93f" stroke-width="1.2"/>
-        <rect x="190" y="30" width="75" height="70" rx="6" fill="#0d1814" stroke="#27c93f" stroke-width="1.4"/>
-        <text x="227" y="52" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">MODERN</text>
-        <text x="227" y="64" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">NEXT.JS EDGE</text>
-        <text x="227" y="82" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">Active 99.99%</text>
-        <text x="140" y="118" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">ZERO-DOWNTIME RE-PLATFORMING</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Lighthouse Score Delta</span><strong>+58 Points</strong></div>
-
-                <div class="svc-preview-metric"><span>SEO Redirect Accuracy</span><strong>100.0%</strong></div>
-
-                <div class="svc-preview-metric"><span>Server Cost Reduction</span><strong>-42%</strong></div>
-
-                <div class="svc-preview-metric"><span>Build / Deploy Time</span><strong>45s (Automated)</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 06 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 06 // EDITORIAL ENABLEMENT</span>
-              <h3 class="svc-cap-title">Headless CMS & Content Infrastructure</h3>
-              <p class="svc-cap-body">Marketing and editorial teams must be empowered to publish content rapidly without relying on software engineers for simple text changes. We implement enterprise headless CMS solutions (such as Sanity, Strapi, and Contentful) that separate content authoring from frontend rendering. Writers receive an intuitive, distraction-free publishing studio with real-time visual previews, structured schema models, and multi-language support, while the website retains all the speed, security, and rendering benefits of modern static and server-side pipelines.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Marketing gridlock, accidental layout breakage by editors, and lack of content reusability across channels.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Structured headless schema modeling, atomic component composition, and webhooks triggering incremental revalidation.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Global corporate blogs, multi-brand resource libraries, localized regional storefronts, and documentation hubs.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Configured CMS workspace, customized editorial roles, live preview environments, and editor documentation.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // HEADLESS PIPELINE</span>
-                <span class="svc-browser-status">ISR ENABLED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="65" r="28" fill="#141420" stroke="#C9A45C" stroke-width="1.5"/>
-        <text x="50" y="62" fill="#C9A45C" font-size="8" font-family="monospace" text-anchor="middle">HEADLESS</text>
-        <text x="50" y="72" fill="#ffffff" font-size="6.5" font-family="monospace" text-anchor="middle">CMS STUDIO</text>
-        <line x1="78" y1="65" x2="115" y2="65" stroke="#C9A45C" stroke-width="1.5"/>
-        <rect x="119" y="45" width="50" height="40" rx="5" fill="#101018" stroke="#4eedc4" stroke-width="1.2"/>
-        <text x="144" y="62" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">GRAPHQL</text>
-        <text x="144" y="73" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">CDN CACHE</text>
-        <line x1="169" y1="52" x2="200" y2="35" stroke="#4eedc4" stroke-width="1.2"/>
-        <line x1="169" y1="65" x2="200" y2="65" stroke="#4eedc4" stroke-width="1.2"/>
-        <line x1="169" y1="78" x2="200" y2="95" stroke="#4eedc4" stroke-width="1.2"/>
-        <rect x="200" y="22" width="60" height="22" rx="3" fill="#0c0c14" stroke="#27c93f" stroke-width="1"/>
-        <text x="230" y="36" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">WEB APP</text>
-        <rect x="200" y="54" width="60" height="22" rx="3" fill="#0c0c14" stroke="#27c93f" stroke-width="1"/>
-        <text x="230" y="68" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">MOBILE iOS/AND</text>
-        <rect x="200" y="86" width="60" height="22" rx="3" fill="#0c0c14" stroke="#27c93f" stroke-width="1"/>
-        <text x="230" y="100" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">GLOBAL STORES</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Content Update Propagation</span><strong>< 2s</strong></div>
-
-                <div class="svc-preview-metric"><span>Live Preview Generation</span><strong>Instant</strong></div>
-
-                <div class="svc-preview-metric"><span>Multi-Language Locales</span><strong>Supported</strong></div>
-
-                <div class="svc-preview-metric"><span>API Asset Optimization</span><strong>Auto WebP / AVIF</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: OUR EXPERTISE -->
-    <section class="svc-section svc-section-border-top" id="expertise">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">05 // TECHNICAL DISCIPLINES</span>
-          <h2 class="svc-section-title">Engineering disciplines & <span class="svc-gold-text">architectural trade-offs</span></h2>
-          <p class="svc-section-lead">Every technological decision involves intentional balance. We navigate these architectural trade-offs to deliver sustainable, scalable outcomes.</p>
-        </div>
-
-        <div class="svc-expertise-grid">
-          
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Server-Side Rendering (SSR) & SSG</h3>
-            <p class="svc-expertise-desc">Balancing dynamic real-time data needs against static edge caching to deliver optimal load speed and search clarity.</p>
-            <div class="svc-expertise-tradeoff">TRADE-OFF // CACHE HIT VS DYNAMIC FRESHNESS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Information Architecture (IA)</h3>
-            <p class="svc-expertise-desc">Structuring content taxonomies and navigational hierarchies so decision-makers find crucial answers in three clicks or fewer.</p>
-            <div class="svc-expertise-tradeoff">DISCIPLINE // COGNITIVE LOAD REDUCTION</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Core Web Vitals Engineering</h3>
-            <p class="svc-expertise-desc">Meticulously profiling critical rendering paths, font loading behaviors, and script execution order to guarantee perfect scores.</p>
-            <div class="svc-expertise-tradeoff">BENCHMARK // LCP < 1.0S, CLS = 0.00</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Progressive Enhancement</h3>
-            <p class="svc-expertise-desc">Ensuring core content and forms remain completely functional across old hardware and poor cellular connections before JS executes.</p>
-            <div class="svc-expertise-tradeoff">PHILOSOPHY // FAULT-TOLERANT UI</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Edge CDN Infrastructure</h3>
-            <p class="svc-expertise-desc">Deploying computational middleware and assets at global edge nodes, bringing response times within 50ms worldwide.</p>
-            <div class="svc-expertise-tradeoff">ARCHITECTURE // ZERO SINGLE-POINT-OF-FAILURE</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">WCAG 2.2 AA Compliance</h3>
-            <p class="svc-expertise-desc">Engineering native HTML semantics, ARIA attributes, and high-contrast typography so every user navigates with dignity.</p>
-            <div class="svc-expertise-tradeoff">STANDARD // INCLUSIVE DIGITAL DESIGN</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: WHAT'S TRENDING -->
-    <section class="svc-section svc-section-border-top" id="trending">
-      <div class="svc-container">
-        <div class="svc-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
           <div>
-            <span class="svc-pill-badge">06 // EDITORIAL PERSPECTIVES</span>
-            <h2 class="svc-section-title">What's Shaping the <span class="svc-gold-text">Web Development Platform</span></h2>
-            <p class="svc-section-lead">Research, technical analysis, and architectural perspectives from our engineering desk exploring current developments shaping enterprise digital delivery.</p>
-          </div>
-        </div>
-
-        <div class="svc-trending-carousel-wrap">
-          <div class="svc-carousel-viewport">
-            <div class="svc-carousel-track" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              Our web engineering stack is selected for stability, type safety, sub-second execution, and long-term maintainability rather than transient industry hype.
+            </p>
+            <div class="d2-tech-list">
               
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">ARCHITECTURE &middot; 7 MIN READ</span>
-                  <h3 class="svc-article-card-title">The Shift Toward Server-First Web Experiences</h3>
-                </div>
-                <p class="svc-article-card-summary">Why leading engineering organizations are moving away from heavy client-side SPAs back toward server-rendered architectures that prioritize instant mobile interactivity.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
-              </div>
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Server-First Rendering: React Server Components, Next.js App Router, Node.js edge runtimes.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Data Layer: PostgreSQL, Redis cache layers, Supabase, Prisma ORM, and distributed GraphQL APIs.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Frontend Discipline: TypeScript, Tailwind CSS, Motion/GSAP animations, and accessible semantic HTML5.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Deployment & Edge: Vercel Edge Network, AWS Lambda@Edge, Cloudflare CDN, and Docker orchestration.</div>
+    </div>
+  
+            </div>
+          </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">WEB PERFORMANCE &middot; 6 MIN READ</span>
-                  <h3 class="svc-article-card-title">Why Performance Is Becoming a Design Decision</h3>
-                </div>
-                <p class="svc-article-card-summary">Performance can no longer be treated as a post-launch optimization task. Discover how visual decisions made in design phases govern real-world conversion rates.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
               </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">ENGINEERING &middot; 8 MIN READ</span>
-                  <h3 class="svc-article-card-title">The Next Generation of Interactive Web Experiences</h3>
-                </div>
-                <p class="svc-article-card-summary">Exploring how WebAssembly, WebGL shaders, and lightweight micro-frontends enable cinematic web experiences without sacrificing mobile performance.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
-              </div>
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">SECURITY &middot; 5 MIN READ</span>
-                  <h3 class="svc-article-card-title">Zero-Trust Frontend Architecture & Supply Chain Defense</h3>
-                </div>
-                <p class="svc-article-card-summary">Securing web applications against third-party dependency vulnerabilities, script injections, and client-side data leaks in high-compliance sectors.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
               </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 07: TECHNOLOGIES -->
-    <section class="svc-section svc-section-border-top" id="technologies">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">07 // TECHNOLOGY STACK</span>
-          <h2 class="svc-section-title">Technologies engineered for <span class="svc-gold-text">longevity</span></h2>
-          <p class="svc-section-lead">We select enterprise-proven, community-backed technologies with long-term support and reliable ecosystem roadmaps.</p>
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in Web Development.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
         </div>
 
-        <div class="svc-tech-grid">
-          <div class="svc-tech-card"><span class="svc-tech-cat">FRAMEWORKS</span><h3 class="svc-tech-title">Next.js & React</h3><p class="svc-tech-desc">Production-grade SSR, static generation, and streaming component rendering.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">RUNTIMES</span><h3 class="svc-tech-title">Node.js & Go</h3><p class="svc-tech-desc">Asynchronous, high-throughput microservices and API gateways.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">TYPE SAFETY</span><h3 class="svc-tech-title">Strict TypeScript</h3><p class="svc-tech-desc">Zero runtime type regressions with compile-time verification.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CONTAINERS</span><h3 class="svc-tech-title">Docker & K8s</h3><p class="svc-tech-desc">Containerized orchestration with automated horizontal scaling.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">PERSISTENCE</span><h3 class="svc-tech-title">PostgreSQL</h3><p class="svc-tech-desc">ACID relational compliance with indexed query optimization.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CACHE & BROKER</span><h3 class="svc-tech-title">Redis & Kafka</h3><p class="svc-tech-desc">Distributed caching and partition-tolerant event streaming.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">HEADLESS CMS</span><h3 class="svc-tech-title">Sanity & Strapi</h3><p class="svc-tech-desc">Structured content modeling with instant editorial preview studios.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">EDGE DELIVERY</span><h3 class="svc-tech-title">Cloudflare & AWS</h3><p class="svc-tech-desc">Multi-region edge network distribution with DDoS mitigation.</p></div>
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">ARCHITECTURE &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">The Shift Toward Server-First Web Experiences</h3>
+        <p class="d2-card-summary">An architectural analysis of React Server Components, streaming HTML pipelines, and edge compute topologies reversing a decade of client-side JavaScript bloat.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/web-development/insights/the-shift-toward-server-first-web-experiences" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">ENGINEERING &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">AI Is Changing How Websites Are Built. Who Checks the Work?</h3>
+        <p class="d2-card-summary">Examining the risks of generative AI code generation in enterprise frontends, from subtle accessibility failures to hidden security flaws.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/web-development/insights/ai-is-changing-how-websites-are-built-who-checks-the-work" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">UX STRATEGY &middot; 5 MIN READ</div>
+        <h3 class="d2-card-title">Why Performance Is Becoming a Design Decision</h3>
+        <p class="d2-card-summary">Core Web Vitals and Interaction to Next Paint (INP) demand that load latency and asset budgets be treated as core creative constraints.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/web-development/insights/why-performance-is-becoming-a-design-decision" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">INNOVATION &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">The Next Generation of Interactive Web Experiences</h3>
+        <p class="d2-card-summary">Balancing cinematic 3D WebGL immersion with sub-second initial page load and strict mobile accessibility requirements.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/web-development/insights/the-next-generation-of-interactive-web-experiences" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: OUR PROCESS -->
-    <section class="svc-section svc-section-border-top" id="process">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">08 // EXECUTION METHODOLOGY</span>
-          <h2 class="svc-section-title">How we take projects <span class="svc-gold-text">from idea to production</span></h2>
-          <p class="svc-section-lead">A transparent six-phase delivery framework ensuring architectural rigor, clear milestone governance, and predictable launches.</p>
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
         </div>
 
-        <div class="svc-process-timeline">
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 01</div><h3 class="svc-step-title">Discovery & Architecture</h3><p class="svc-step-desc">Stakeholder interviews, technical audit, specification mapping, and high-level architectural blueprints.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 02</div><h3 class="svc-step-title">UX Flows & Wireframing</h3><p class="svc-step-desc">Information architecture, user journey maps, and low-fidelity structural validation.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 03</div><h3 class="svc-step-title">UI & Design System</h3><p class="svc-step-desc">Atomic design tokens, high-fidelity responsive prototypes, and accessibility audits.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 04</div><h3 class="svc-step-title">Sprint Engineering</h3><p class="svc-step-desc">Iterative two-week sprints, automated test coverage, and continuous integration deployments.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 05</div><h3 class="svc-step-title">Security & QA Audit</h3><p class="svc-step-desc">End-to-end stress testing, OWASP security audits, and Core Web Vitals optimization.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 06</div><h3 class="svc-step-title">Production & Handover</h3><p class="svc-step-desc">Zero-downtime DNS cutover, telemetry configuration, source code IP handover, and staff training.</p></div>
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Discovery &amp; Business Analysis</div>
+      <div class="d2-step-body">We audit your commercial goals, user personas, technical constraints, and current digital assets to define strict success benchmarks.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Requirements Specification, Architecture Blueprint, Performance KPI Matrix.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Information Architecture &amp; UX</div>
+      <div class="d2-step-body">Structuring navigation hierarchies, user flows, and low-fidelity wireframes that eliminate cognitive friction before aesthetic styling begins.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Site Hierarchy Map, User Journey Flows, Interactive Wireframe Prototypes.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">Visual Design &amp; Design System</div>
+      <div class="d2-step-body">Creating an uncompromising black-and-gold visual identity with modular component tokens, typography scales, and accessible contrast states.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Figma Design System, Interactive UI Prototypes, Motion Style Guide.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">Core Engineering &amp; Integration</div>
+      <div class="d2-step-body">Clean, type-safe development using React Server Components, typed APIs, resilient database models, and headless CMS integrations.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Clean Git Repository, Documented API Endpoints, Headless CMS Workflows.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Automated Testing &amp; Security</div>
+      <div class="d2-step-body">Comprehensive cross-device visual testing, automated lighthouse performance gates, WCAG accessibility validation, and penetration audits.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Lighthouse Audit Report, Security Vulnerability Scan, Cross-Browser Matrix.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">Zero-Downtime Deployment</div>
+      <div class="d2-step-body">Deploying to edge CDN infrastructure with automated SSL, DNS failover, zero-downtime routing, and live telemetry monitoring.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Production Edge Deployment, DNS Configuration, Telemetry Dashboard Setup.</div>
+      </div>
+    </div>
+  
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: LET'S TALK CTA -->
-    <section class="svc-cta-section" id="lets-talk">
-      <div class="svc-container">
-        <div class="svc-cta-box">
-          <div class="svc-cta-glow"></div>
-          <span class="svc-pill-badge" style="background: rgba(240, 199, 94, 0.15); border-color: var(--svc-gold);">09 // GET STARTED</span>
-          <h2 class="svc-cta-title">Ready to engineer your <span class="svc-gold-text">Web Development?</span></h2>
-          <p class="svc-cta-lead">Let's discuss your requirements, architectural trade-offs, and how we can engineer an exceptional digital product tailored to your business goals.</p>
-          <div class="svc-cta-buttons">
-            <a href="/index.html#estimator" class="svc-btn-primary">Calculate Project Estimate &rarr;</a>
-            <a href="/index.html#contact" class="svc-btn-secondary">Schedule Technical Consultation</a>
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What should your website make possible?</h2>
+          <p class="d2-cta-lead">Whether you are building an industry-defining corporate flagship, replatforming a sluggish legacy portal, or engineering a high-concurrency web application, our engineering team is prepared to help you execute.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- GLOBAL PERSISTENT FOOTER -->
-  <footer class="svc-footer" id="footer">
-    <div class="svc-footer-container">
-      <div class="svc-footer-top">
-        <div class="svc-footer-brand">
-          <div class="svc-brand">
-            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-            <div class="svc-brand-text">
-              <span class="svc-brand-name">RIYADVI</span>
-              <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
             </div>
           </div>
-          <p class="svc-footer-motto">Digital technology, proprietary software systems, and business growth engineered for enterprises ready to scale.</p>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
         </div>
 
-        <div class="svc-footer-links-grid">
-          <div class="svc-footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/web-development">Web Development</a></li>
-              <li><a href="/services/custom-software-development">Custom Software</a></li>
-              <li><a href="/services/mobile-app-development">Mobile Apps</a></li>
-              <li><a href="/services/ecommerce-solutions">E-Commerce</a></li>
-              <li><a href="/services/game-development">Game Development</a></li>
-              <li><a href="/services/ar-vr-development">AR/VR Experiences</a></li>
-              <li><a href="/services/ui-ux-design">UI/UX Design</a></li>
-              <li><a href="/services/3d-modeling">3D Modeling</a></li>
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
 
-          <div class="svc-footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/index.html#about">About Riyadvi</a></li>
-              <li><a href="/index.html#awards">Awards & Recognition</a></li>
-              <li><a href="/index.html#industries">Industries Served</a></li>
-              <li><a href="/index.html#guardian">Riyadvi Guardian</a></li>
-              <li><a href="/index.html#portfolio">Featured Work</a></li>
-              <li><a href="/index.html#estimator">Project Estimator</a></li>
-              <li><a href="/index.html#contact">Contact Our Team</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
         </div>
       </div>
 
-      <div class="svc-footer-bottom">
-        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
-        <div class="svc-footer-legal">
-          <span>Enterprise Grade</span>
-          <span>Zero Vendor Lock-In</span>
-          <span>Global Delivery</span>
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/services/services-common.js?v=11.0"></script>
-  <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  
 </body>
 </html>

@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="styles.css?v=10.0">
   <!-- Interactive Volumetric Awards Exhibition Stylesheet -->
   <link rel="stylesheet" href="awards-diagonal.css?v=2.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=2.0">
 
   <!-- JSON-LD Organization Schema Markup -->
   <script type="application/ld+json">
@@ -130,63 +131,63 @@
               <span class="dropdown-header-count">9 SERVICES</span>
             </div>
             <div class="nav-dropdown-grid">
-              <a href="/services/web-development" class="nav-dropdown-card">
+              <a href="/services/design2/web-development" class="nav-dropdown-card">
                 <span class="dropdown-card-num">01</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">Web Development</span>
                   <span class="dropdown-card-desc">Modern web apps, portals & headless platforms</span>
                 </div>
               </a>
-              <a href="/services/custom-software-development" class="nav-dropdown-card">
+              <a href="/services/design2/custom-software-development" class="nav-dropdown-card">
                 <span class="dropdown-card-num">02</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">Custom Software</span>
                   <span class="dropdown-card-desc">Tailored enterprise systems, APIs & workflows</span>
                 </div>
               </a>
-              <a href="/services/mobile-app-development" class="nav-dropdown-card">
+              <a href="/services/design2/mobile-app-development" class="nav-dropdown-card">
                 <span class="dropdown-card-num">03</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">Mobile App Development</span>
                   <span class="dropdown-card-desc">High-performance iOS, Android & cross-platform</span>
                 </div>
               </a>
-              <a href="/services/ecommerce-solutions" class="nav-dropdown-card">
+              <a href="/services/design2/ecommerce-solutions" class="nav-dropdown-card">
                 <span class="dropdown-card-num">04</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">E-Commerce Solutions</span>
                   <span class="dropdown-card-desc">High-conversion storefronts & global payments</span>
                 </div>
               </a>
-              <a href="/services/game-development" class="nav-dropdown-card">
+              <a href="/services/design2/game-development" class="nav-dropdown-card">
                 <span class="dropdown-card-num">05</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">Game Development</span>
                   <span class="dropdown-card-desc">Engaging 2D/3D games, mechanics & simulations</span>
                 </div>
               </a>
-              <a href="/services/ar-vr-development" class="nav-dropdown-card">
+              <a href="/services/design2/ar-vr-development" class="nav-dropdown-card">
                 <span class="dropdown-card-num">06</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">AR/VR Development</span>
                   <span class="dropdown-card-desc">Immersive spatial computing & interactive reality</span>
                 </div>
               </a>
-              <a href="/services/ui-ux-design" class="nav-dropdown-card">
+              <a href="/services/design2/ui-ux-design" class="nav-dropdown-card">
                 <span class="dropdown-card-num">07</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">UI/UX Design</span>
                   <span class="dropdown-card-desc">Human-centered interfaces & design systems</span>
                 </div>
               </a>
-              <a href="/services/3d-modeling" class="nav-dropdown-card">
+              <a href="/services/design2/3d-modeling" class="nav-dropdown-card">
                 <span class="dropdown-card-num">08</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">3D Modeling</span>
                   <span class="dropdown-card-desc">Photorealistic assets, shaders & interactive 3D</span>
                 </div>
               </a>
-              <a href="/services/digital-marketing" class="nav-dropdown-card">
+              <a href="/services/design2/digital-marketing" class="nav-dropdown-card">
                 <span class="dropdown-card-num">09</span>
                 <div class="dropdown-card-text">
                   <span class="dropdown-card-title">Digital Marketing</span>
@@ -1305,56 +1306,262 @@
 
 
     <!-- Sections 12 & 13: Digital Capability Universe / Services Bento Grid -->
-    <section class="section-capabilities" id="services">
-      <div class="section-container">
-        <!-- Services Section Header -->
-        <div class="services-header-wrap">
-          <h2 class="services-main-heading">Services built for <span class="gold-gradient">real growth</span></h2>
-          <p class="services-sub-heading">Drag, scroll or use the arrows. Click the centre card to open its full story.</p>
+        <!-- ==========================================================================
+         SERVICES SECTION: DESIGN 2 (THE DIGITAL PERSPECTIVE)
+         Nine Disciplines. Different Possibilities. Permanent Live Experience
+         ========================================================================== -->
+    <div class="d2-services-universe" id="services">
 
-          <!-- Filter Chips -->
-          <div class="services-filter-row" role="tablist" aria-label="Filter services by domain">
-            <button class="svc-filter-chip active" data-filter="all" role="tab" aria-selected="true">All (9)</button>
-            <button class="svc-filter-chip" data-filter="development" role="tab" aria-selected="false">Development (6)</button>
-            <button class="svc-filter-chip" data-filter="designing" role="tab" aria-selected="false">Designing (2)</button>
-            <button class="svc-filter-chip" data-filter="marketing" role="tab" aria-selected="false">Marketing (1)</button>
-          </div>
-        </div>
-
-        <!-- 3D Coverflow Container -->
-        <div class="services-coverflow-container">
-          <!-- The 3D Coverflow Stage -->
-          <div class="services-coverflow-stage" id="servicesCoverflowStage" tabindex="0" role="region" aria-label="3D Services Coverflow Carousel">
-            <!-- Cards rendered dynamically by JS -->
-          </div>
-
-          <!-- Soft gold elliptical glow under the stage -->
-          <div class="services-stage-glow" aria-hidden="true"></div>
-
-          <!-- Controls: Prev / Pagination Dots / Next -->
-          <div class="services-nav-controls">
-            <button class="svc-nav-btn prev" id="svcPrevBtn" aria-label="Previous Service">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            </button>
-            <div class="services-pagination-dots" id="svcDotsWrap" role="tablist" aria-label="Carousel pagination"></div>
-            <button class="svc-nav-btn next" id="svcNextBtn" aria-label="Next Service">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </button>
+    <!-- ==========================================================================
+         SECTION 01: THE SERVICES MANIFESTO
+         ========================================================================== -->
+    <section class="d2-manifesto-hero" id="manifesto">
+      <div class="d2-container">
+        <div class="d2-manifesto-grid">
+          <div>
+            <div class="d2-manifesto-eyebrow">
+              <span class="d2-badge-dot"></span>
+              WHAT WE CREATE / 01&mdash;09
+            </div>
+            <h1 class="d2-manifesto-headline">
+              Technology is the medium. <em>What we make possible</em> is the story.
+            </h1>
+            <p class="d2-manifesto-body">
+              Every digital product begins with a challenge worth solving. Sometimes it's a business process that needs to work better. Sometimes it's an experience that doesn't yet exist. And sometimes it's a new way for people to connect, create, explore, or discover.
+            </p>
+            <p class="d2-manifesto-body" style="font-size: 16px; margin-top: -20px; color: var(--d2-text-muted);">
+              Our services bring design, engineering, and digital thinking together to turn those challenges into experiences that work in the real world.
+            </p>
+            <div class="d2-manifesto-actions">
+              <a href="#disciplines" class="d2-btn d2-btn-primary">Explore Nine Disciplines &darr;</a>
+              <a href="#contact" class="d2-btn d2-btn-secondary">Initiate a Conversation</a>
+            </div>
           </div>
 
-          <!-- Caption & Explore Active Service CTA -->
-          <div class="services-bottom-action">
-            <div class="services-active-caption" id="svcActiveCaption">01 / 09 &middot; Development</div>
-            <a class="services-explore-active-btn" id="svcExploreActiveBtn" href="/services/web-development">
-              <span id="svcExploreBtnText">Explore Web Development &rarr;</span>
-            </a>
+          <div>
+            <div class="d2-manifesto-canvas-card">
+              <canvas class="d2-manifesto-canvas" id="manifestoCanvas"></canvas>
+              <div class="d2-canvas-overlay">
+                <span>// DIGITAL PERSPECTIVE</span>
+                <span style="color: var(--d2-gold);">9 DISCIPLINES CONNECTED</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    
-<!-- Section 20: Industries Ecosystem -->
+    <!-- ==========================================================================
+         SECTION 02: NINE DISCIPLINES. DIFFERENT POSSIBILITIES.
+         Interactive Service Index
+         ========================================================================== -->
+    <section class="d2-disciplines-section d2-section-border-top" id="disciplines">
+      <div class="d2-container">
+        <div class="d2-disciplines-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 02 // CAPABILITY INDEX
+          </span>
+          <h2 class="d2-disciplines-headline">Nine Disciplines. <span class="d2-gold-text">Different Possibilities.</span></h2>
+          <p class="d2-disciplines-lead">
+            Select a discipline below to examine our engineering philosophy, business problem framing, delivery architectures, and research perspectives.
+          </p>
+        </div>
+
+        <!-- Desktop 2-Part Composition -->
+        <div class="d2-disciplines-composer">
+          <!-- Left Menu -->
+          <div class="d2-disciplines-menu" role="tablist" aria-label="Service disciplines list">
+            <button class="d2-discipline-tab active" data-index="0" role="tab" aria-selected="true">
+              <span class="d2-tab-num">01</span>
+              <span class="d2-tab-name">Web Development</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+            <button class="d2-discipline-tab" data-index="1" role="tab" aria-selected="false">
+              <span class="d2-tab-num">02</span>
+              <span class="d2-tab-name">Custom Software Development</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+            <button class="d2-discipline-tab" data-index="2" role="tab" aria-selected="false">
+              <span class="d2-tab-num">03</span>
+              <span class="d2-tab-name">Mobile App Development</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+            <button class="d2-discipline-tab" data-index="3" role="tab" aria-selected="false">
+              <span class="d2-tab-num">04</span>
+              <span class="d2-tab-name">E-Commerce Solutions</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+            <button class="d2-discipline-tab" data-index="4" role="tab" aria-selected="false">
+              <span class="d2-tab-num">05</span>
+              <span class="d2-tab-name">Game Development</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+            <button class="d2-discipline-tab" data-index="5" role="tab" aria-selected="false">
+              <span class="d2-tab-num">06</span>
+              <span class="d2-tab-name">AR/VR Development</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+            <button class="d2-discipline-tab" data-index="6" role="tab" aria-selected="false">
+              <span class="d2-tab-num">07</span>
+              <span class="d2-tab-name">UI/UX Design</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+            <button class="d2-discipline-tab" data-index="7" role="tab" aria-selected="false">
+              <span class="d2-tab-num">08</span>
+              <span class="d2-tab-name">3D Modeling</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+            <button class="d2-discipline-tab" data-index="8" role="tab" aria-selected="false">
+              <span class="d2-tab-num">09</span>
+              <span class="d2-tab-name">Digital Marketing</span>
+              <span class="d2-tab-arrow">&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Right Active Stage -->
+          <div class="d2-stage-display" id="d2StageDisplay">
+            <div>
+              <div class="d2-stage-meta">
+                <span class="d2-stage-num">01 // WEB DEVELOPMENT</span>
+                <span class="d2-badge" style="margin-bottom: 0; padding: 4px 10px; font-size: 10px;">CORE ENGINEERING</span>
+              </div>
+              <h3 class="d2-stage-headline">Web Development</h3>
+              <p class="d2-stage-quote">"Digital experiences built to do more than look good."</p>
+              <p style="font-size: 15px; color: var(--d2-text-secondary); line-height: 1.75; margin-bottom: 28px;">
+                Connecting information architecture, edge rendering, and sub-second execution into web applications that serve as high-performing digital flagships.
+              </p>
+            </div>
+
+            <div class="d2-stage-visual-container">
+              <!-- Visual Schematic -->
+              <svg class="d2-stage-svg" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="360" height="120" rx="8" fill="#12121A" stroke="#2B2B38"/>
+                <circle cx="40" cy="38" r="4" fill="#FF5F56"/>
+                <circle cx="54" cy="38" r="4" fill="#FFBD2E"/>
+                <circle cx="68" cy="38" r="4" fill="#27C93F"/>
+                <line x1="88" y1="38" x2="360" y2="38" stroke="#1F1F2C" stroke-width="2"/>
+                <rect x="40" y="58" width="140" height="60" rx="4" fill="#191924" stroke="#C9A45C" stroke-width="1.2"/>
+                <text x="52" y="85" fill="#FFE194" font-family="monospace" font-size="10">SERVER STREAM</text>
+                <text x="52" y="102" fill="#A0A0B0" font-family="monospace" font-size="9">&lt;0.8s LCP Edge</text>
+                <rect x="200" y="58" width="160" height="60" rx="4" fill="#191924" stroke="#333344"/>
+                <text x="212" y="85" fill="#FFFFFF" font-family="monospace" font-size="10">ISLAND HYDRATION</text>
+                <text x="212" y="102" fill="#777788" font-family="monospace" font-size="9">Zero JS Bloat</text>
+              </svg>
+            </div>
+
+            <div class="d2-stage-actions">
+              <a href="/services/design2/web-development" class="d2-btn d2-btn-primary d2-stage-link">Explore Web Development &rarr;</a>
+              <span style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">
+                6 Capabilities &middot; 4 Editorial Insights
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Stacked Editorial Service List -->
+        <div class="d2-disciplines-mobile">
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">01 // WEB DEVELOPMENT</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Web Development</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Digital experiences built to do more than look good."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Connecting information architecture, edge rendering, and sub-second execution into web applications.</p>
+            <a href="/services/design2/web-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Web Development &rarr;</a>
+          </div>
+
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">02 // CUSTOM SOFTWARE</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Custom Software Development</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Software that follows the way your business actually works."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Resilient distributed architectures engineered around proprietary workflows and high-throughput data.</p>
+            <a href="/services/design2/custom-software-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Custom Software &rarr;</a>
+          </div>
+
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">03 // MOBILE APPS</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Mobile App Development</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Useful experiences designed for the devices people carry every day."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Native iOS, Android, and cross-platform apps built for fluid interactions and offline resilience.</p>
+            <a href="/services/design2/mobile-app-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Mobile Apps &rarr;</a>
+          </div>
+
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">04 // COMMERCE</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">E-Commerce Solutions</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Connected shopping experiences from discovery to delivery."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Headless storefronts, zero-friction checkouts, and real-time inventory management.</p>
+            <a href="/services/design2/ecommerce-solutions" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore E-Commerce &rarr;</a>
+          </div>
+
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">05 // GAMES</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Game Development</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Interactive worlds shaped by imagination, mechanics, and engineering."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">2D/3D gameplay mechanics, real-time physics engines, and multiplayer networks.</p>
+            <a href="/services/design2/game-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Game Development &rarr;</a>
+          </div>
+
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">06 // SPATIAL</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">AR/VR Development</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Digital experiences that move beyond the boundaries of a screen."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Mixed-reality environments, spatial computing, and digital twins for professional training.</p>
+            <a href="/services/design2/ar-vr-development" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore AR/VR &rarr;</a>
+          </div>
+
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">07 // DESIGN</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">UI/UX Design</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Thoughtful interactions that make complex experiences feel natural."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">User research, atomic design systems, and interaction design that clarifies complexity.</p>
+            <a href="/services/design2/ui-ux-design" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore UI/UX Design &rarr;</a>
+          </div>
+
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">08 // 3D</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">3D Modeling</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Giving ideas form, dimension, and a sense of reality."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Hard-surface modeling, PBR texturing, and optimized geometry for real-time WebGL.</p>
+            <a href="/services/design2/3d-modeling" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore 3D Modeling &rarr;</a>
+          </div>
+
+          <div class="d2-discipline-mobile-card">
+            <span class="d2-tab-num">09 // MARKETING</span>
+            <h3 style="font-family: var(--d2-font-serif); font-size: 24px; color: #FFF;">Digital Marketing</h3>
+            <p style="font-size: 14.5px; font-style: italic; color: var(--d2-gold);">"Connecting meaningful messages with the people they are meant to reach."</p>
+            <p style="font-size: 14px; color: var(--d2-text-secondary);">Technical SEO, Generative Engine Optimization, and attribution-driven performance campaigns.</p>
+            <a href="/services/design2/digital-marketing" class="d2-btn d2-btn-primary" style="width: 100%; font-size: 13px;">Explore Digital Marketing &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CLOSING CTA
+         ========================================================================== -->
+    <section class="d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            COLLABORATION &middot; ENGINEERING PARTNER
+          </span>
+          <h2 class="d2-cta-title">Ready to build experiences that <span class="d2-gold-text">work in the real world?</span></h2>
+          <p class="d2-cta-lead">
+            Every breakthrough project starts with an honest discussion about requirements, constraints, and operational objectives. Let's examine what technology can make possible for your organization.
+          </p>
+          <div class="d2-cta-actions">
+            <a href="#contact" class="d2-btn d2-btn-primary">Start a Project Consultation &rarr;</a>
+            <a href="#about" class="d2-btn d2-btn-secondary">Learn About Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    </div>
+
+    <!-- Section 20: Industries Ecosystem -->
     <section class="section-industries" id="industries">
       <!-- Animated WebGL Cosmic Shader Background (Disabled per request to remove orange moving background) -->
       <!-- <canvas id="industryShaderCanvas" class="industry-shader-bg"></canvas> -->
@@ -2363,7 +2570,7 @@
   <script src="assets/lenis.min.js"></script>
   <script src="script.js?v=10.0"></script>
   <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <script src="/services/design2/services-design2.js?v=2.0"></script>
   <script src="awards-diagonal.js?v=2.0"></script>
 </body>
 </html>

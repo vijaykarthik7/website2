@@ -3,763 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>E-Commerce Solutions & Enterprise Engineering | Riyadvi Software Technologies</title>
-  <meta name="description" content="Enterprise E-Commerce Solutions capabilities by Riyadvi Software Technologies. Resilient architectures, tailored execution, and verified business outcomes.">
+  <title>E-Commerce Solutions | Riyadvi Software Technologies</title>
+  <meta name="description" content="From Product Discovery to the Final Checkout. Enterprise engineering, strategic architecture, and verified business outcomes by Riyadvi.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/services/services-common.css?v=12.0">
+  <link rel="stylesheet" href="/services/design2/services-design2.css?v=1.0">
+  
 </head>
-<body class="svc-page-body">
+<body class="d2-body">
 
-  <!-- SECONDARY SERVICE SUBNAV (TOP STICKY NAVIGATION) -->
-  <nav class="svc-subnav-bar" id="serviceSubnav">
-    <div class="svc-subnav-container">
-      <div class="svc-subnav-left">
-        <a href="/index.html" class="svc-subnav-logo" title="Riyadvi Home">
-          <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <a href="/index.html#services" class="svc-subnav-back" aria-label="Return to all services">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          ALL SERVICES
-        </a>
-        <span class="svc-subnav-divider" aria-hidden="true"></span>
-        <span class="svc-subnav-title">04 // E-COMMERCE SOLUTIONS</span>
+  <div class="d2-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Global Brand Navbar -->
+  <header class="d2-navbar" id="d2Navbar">
+    <div class="d2-container d2-nav-inner">
+      <a href="/index.html" class="d2-brand" aria-label="Riyadvi Software Technologies Home">
+        <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+        <div>
+          <div class="d2-brand-name">RIYADVI</div>
+          <div class="d2-brand-sub">Software Technologies</div>
+        </div>
+      </a>
+
+      <nav class="d2-nav-links" aria-label="Main Navigation">
+        <a href="/index.html#home" class="d2-nav-link">Home</a>
+        <a href="/index.html#about" class="d2-nav-link">About Us</a>
+        <a href="/services/design2/" class="d2-nav-link active">Services</a>
+        <a href="/index.html#contact" class="d2-nav-link">Contact</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#contact" class="d2-btn d2-btn-primary" style="padding: 10px 20px; font-size: 13px;">Let's Talk &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Sticky Subnav on Service Detail Pages -->
+  <nav class="d2-subnav" id="d2Subnav">
+    <div class="d2-container d2-subnav-inner">
+      <div class="d2-subnav-meta">
+        <a href="/services/design2/" class="d2-subnav-back">&larr; ALL SERVICES</a>
+        <span class="d2-subnav-sep">/</span>
+        <span class="d2-subnav-title">04 // E-Commerce Solutions</span>
       </div>
 
-      <div class="svc-subnav-links" id="subnavLinks">
-        <a href="#overview" class="svc-subnav-anchor active">Overview</a>
-        <a href="#landscape" class="svc-subnav-anchor">The Landscape</a>
-        <a href="#insights" class="svc-subnav-anchor">Insights</a>
-        <a href="#what-we-do" class="svc-subnav-anchor">What We Do</a>
-        <a href="#expertise" class="svc-subnav-anchor">Our Expertise</a>
-        <a href="#trending" class="svc-subnav-anchor">What's Trending</a>
-        <a href="#technologies" class="svc-subnav-anchor">Technologies</a>
-        <a href="#process" class="svc-subnav-anchor">Our Process</a>
-        <a href="#lets-talk" class="svc-subnav-anchor">Let's Talk</a>
+      <div class="d2-subnav-anchors">
+        <a href="#overview" class="d2-subnav-anchor active">Overview</a>
+        <a href="#reality-check" class="d2-subnav-anchor">Reality Check</a>
+        <a href="#capabilities" class="d2-subnav-anchor">Capabilities</a>
+        <a href="#technology" class="d2-subnav-anchor">Technology</a>
+        <a href="#trending" class="d2-subnav-anchor">What's Trending</a>
+        <a href="#process" class="d2-subnav-anchor">Process</a>
+        <a href="#contact" class="d2-subnav-anchor">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- SECTION 01: HERO & TERMINAL -->
-    <section class="svc-hero-section" id="overview">
-      <div class="svc-hero-container">
-        <div class="svc-hero-content">
-          <div class="svc-hero-badge">
-            <span class="svc-badge-dot"></span>
-            04 // COMMERCE ENGINEERING
-          </div>
-          <h1 class="svc-hero-title">An e-commerce store is a <span class="svc-gold-text">transaction engine</span> where milliseconds dictate margin.</h1>
-          <p class="svc-hero-lead">Modern digital retail demands far more than basic product catalogs and generic templates. We engineer high-conversion headless e-commerce architectures, custom payment pipelines, and real-time ERP inventory synchronizations that eliminate checkout friction, support global multi-currency scaling, and turn browsing traffic into lifetime customer value.</p>
-          <div class="svc-hero-actions">
-            <a href="#lets-talk" class="svc-btn-primary">Start Your Project &rarr;</a>
-            <a href="#what-we-do" class="svc-btn-secondary">Explore Capabilities</a>
-          </div>
-        </div>
-
-        <div class="svc-hero-visual">
-          <div class="svc-terminal-card">
-            <div class="svc-terminal-header">
-              <div class="svc-terminal-dots">
-                <span class="svc-dot svc-dot-red"></span>
-                <span class="svc-dot svc-dot-yellow"></span>
-                <span class="svc-dot svc-dot-green"></span>
-              </div>
-              <div class="svc-terminal-url">https://commerce.riyadvi.com/checkout-engine</div>
-              <div class="svc-terminal-status"><span class="svc-status-pill"></span>HEALTHY &middot; 99.99%</div>
-            </div>
-            <div class="svc-telemetry-grid">
-              
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">CHECKOUT SPEED</span>
-                <span class="svc-telemetry-value">0.45s</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">CART CONVERSION</span>
-                <span class="svc-telemetry-value">+34%</span>
-              </div>
-              <div class="svc-telemetry-item">
-                <span class="svc-telemetry-label">GLOBAL CURRENCIES</span>
-                <span class="svc-telemetry-value">135+ Active</span>
-              </div>
-            </div>
-            <div class="svc-code-display">
-              <pre><code>import { CommerceMesh, PaymentGateway } from '@riyadvi/commerce-core';
-export const storePipeline = new CommerceMesh({
-  architecture: 'headless-composable',
-  gateway: PaymentGateway.multiRegion(['stripe', 'razorpay', 'applePay']),
-  inventory: { sync: 'realtime-event-driven', buffer: 'zero-oversell' },
-  security: 'pci-dss-level-1'
-});
-// Global commerce pipeline active with zero-downtime flash sale scaling</code></pre>
-            </div>
-            <div class="svc-terminal-footer">
-              <span class="svc-pulse-indicator"></span>
-              <span class="svc-terminal-msg">Production Node Active</span>
-              <span class="svc-terminal-timestamp">Latency: 1.8ms</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02: THE LANDSCAPE -->
-    <section class="svc-section svc-section-border-top" id="landscape">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">02 // RETAIL REALITIES</span>
-          <h2 class="svc-section-title">Your store has traffic. <span class="svc-gold-text">Why are customers abandoning at checkout?</span></h2>
-          <p class="svc-section-lead">In e-commerce, the gap between a profitable brand and a struggling one often comes down to checkout speed, mobile UX friction, and inventory reliability under load.</p>
-        </div>
-
-        <div class="svc-landscape-grid">
-          <div class="svc-landscape-narrative">
-            
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">01 / CHECKOUT FRICTION</span>
-              <h3 class="svc-narrative-title">Multi-Step Checkout Friction & Form Fatigue</h3>
-              <p class="svc-narrative-desc">Every additional form field, unexpected redirect, or delayed shipping calculator multiplies the likelihood of cart abandonment. Over 70% of digital shoppers abandon their orders due to cumbersome mobile checkout flows.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">02 / FLASH TRAFFIC COLLAPSE</span>
-              <h3 class="svc-narrative-title">Peak Traffic Concurrency & Flash Sale Outages</h3>
-              <p class="svc-narrative-desc">Conventional monolithic store platforms crumble when marketing campaigns drive thousands of concurrent shoppers to a product drop. Database locks, inventory overselling, and checkout payment gateway timeouts destroy revenue.</p>
-            </div>
-            <div class="svc-narrative-card">
-              <span class="svc-narrative-tag">03 / FRAGMENTED ERP SYNC</span>
-              <h3 class="svc-narrative-title">Inventory Desynchronization & Post-Purchase Friction</h3>
-              <p class="svc-narrative-desc">Selling an item that is out of stock in your warehouse triggers costly refunds, customer service escalations, and negative reviews. Modern commerce demands real-time bidirectional ERP/WMS inventory synchronization.</p>
-            </div>
-          </div>
-
-          <!-- Diagnostic Box with 4 full comparison rows (NO EMPTY SPACE) -->
-          <div class="svc-diagnostic-box">
-            <div class="svc-diag-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--svc-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              Architectural Reality Check
-            </div>
-            
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Bloated Monolithic CMS Themes</strong>
-                Slow multi-megabyte storefronts with 40+ plugins causing sluggish page transitions and 3s+ mobile load times.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Headless Composable Storefronts</strong>
-                Next.js edge-rendered storefronts delivering sub-second product pages and instant client-side catalog filtering.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Multi-Step Form Checkouts</strong>
-                Clumsy multi-page forms requiring manual billing entry and account creation that drive 70%+ abandonment.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>One-Click Biometric Checkout</strong>
-                Instant Apple Pay, Google Pay, and pre-filled address validation reducing checkout friction to under 30 seconds.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Batch Inventory Syncing</strong>
-                Hourly or daily stock updates resulting in overselling high-demand items during flash sales.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Real-Time Event-Driven Sync</strong>
-                Sub-second event bus syncing inventory across warehouses, physical stores, and online channels with zero overselling.
-              </div>
-            </div>
-
-            <div class="svc-diag-row">
-              <div class="svc-diag-col-old">
-                <strong>Rigid Single-Region Pricing</strong>
-                Inflexible currencies and international tax calculation failures locking brands out of cross-border growth.
-              </div>
-              <div class="svc-diag-col-new">
-                <strong>Dynamic Multi-Currency & Tax Engine</strong>
-                Automated geolocation, 135+ localized currencies, and automated regional VAT/GST tax compliance at checkout.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03: INSIGHTS -->
-    <section class="svc-section svc-section-border-top" id="insights">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">03 // COMMERCE OBSERVATIONS</span>
-          <h2 class="svc-section-title">The metrics that govern <span class="svc-gold-text">e-commerce profitability</span></h2>
-          <p class="svc-section-lead">Retail benchmark data reveals the massive revenue sensitivity associated with checkout speed and catalog responsiveness.</p>
-        </div>
-
-        <div class="svc-insights-strip">
-          
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">70.2%</div>
-              <div class="svc-insight-headline">Average Global Cart Abandonment</div>
-              <p class="svc-insight-desc">Over two thirds of online shoppers abandon purchases, with checkout friction and unexpected costs cited as the primary reasons.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">0.45s</div>
-              <div class="svc-insight-headline">Target One-Click Checkout Time</div>
-              <p class="svc-insight-desc">Eliminating manual address and card inputs through native biometric wallets drives dramatic conversion lifts.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">+34%</div>
-              <div class="svc-insight-headline">Conversion Lift on Headless Migrations</div>
-              <p class="svc-insight-desc">Brands transitioning from sluggish monolithic themes to sub-second headless storefronts record immediate double-digit sales growth.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-
-          <div class="svc-insight-col">
-            <div class="svc-insight-top">
-              <div class="svc-insight-metric">0.00%</div>
-              <div class="svc-insight-headline">Oversell Rate with Real-Time Sync</div>
-              <p class="svc-insight-desc">Event-driven inventory allocation guarantees that out-of-stock items can never be purchased during high-volume drops.</p>
-            </div>
-            <div class="svc-insight-source">Riyadvi Engineering Benchmark</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT WE DO -->
-    <section class="svc-section svc-section-border-top" id="what-we-do">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">04 // WHAT WE DO</span>
-          <h2 class="svc-section-title">Engineering capabilities built for <span class="svc-gold-text">business durability</span></h2>
-          <p class="svc-section-lead">We do not assemble one-size-fits-all brochure templates. We engineer tailored systems that address specific operational bottlenecks, user journeys, and technical objectives.</p>
-        </div>
-
-        <div class="svc-capabilities-stack">
-          
-          <!-- Capability 01 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 01 // HEADLESS ARCHITECTURE</span>
-              <h3 class="svc-cap-title">Headless E-Commerce Storefronts</h3>
-              <p class="svc-cap-body">Decoupling your presentation layer from backend commerce logic transforms your digital storefront. We architect blazing-fast headless e-commerce platforms using Next.js, Shopify Plus Storefront API, and custom Commerce Engine backends. By edge-caching product catalogs and streaming dynamic pricing, your storefront delivers instant product filtering, zero layout shifts, and sub-second load times that keep shoppers engaged.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Sluggish theme performance, high bounce rates on mobile ad traffic, and rigid template customization barriers.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Next.js App Router with incremental static regeneration, GraphQL catalog queries, and edge asset caching.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">High-growth direct-to-consumer (DTC) brands, luxury apparel houses, and multi-product enterprise retailers.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Headless storefront, custom UI component library, analytics event tracking suite, and CMS product manager.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // HEADLESS STORE</span>
-                <span class="svc-browser-status">SUB-SECOND LCP</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="32" width="65" height="66" rx="5" fill="#141420" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="52" y="52" fill="#C9A45C" font-size="7.5" font-family="monospace" text-anchor="middle">NEXT.JS</text>
-        <text x="52" y="64" fill="#ffffff" font-size="6.5" font-family="monospace" text-anchor="middle">Storefront</text>
-        <text x="52" y="78" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">Edge Cached</text>
-        <line x1="85" y1="65" x2="115" y2="65" stroke="#C9A45C" stroke-width="1.5"/>
-        <rect x="119" y="25" width="65" height="80" rx="5" fill="#101818" stroke="#4eedc4" stroke-width="1.3"/>
-        <text x="151" y="42" fill="#4eedc4" font-size="7" font-family="monospace" text-anchor="middle">COMMERCE API</text>
-        <text x="151" y="56" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">Shopify / Medusa</text>
-        <text x="151" y="78" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">Catalog Sync</text>
-        <text x="151" y="88" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">Sub-Second</text>
-        <line x1="184" y1="65" x2="210" y2="65" stroke="#4eedc4" stroke-width="1.5"/>
-        <rect x="210" y="32" width="55" height="66" rx="5" fill="#0d1612" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="237" y="52" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">CHECKOUT</text>
-        <text x="237" y="64" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">Vault</text>
-        <text x="237" y="78" fill="#4eedc4" font-size="6" font-family="monospace" text-anchor="middle">PCI Tier-1</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Catalog Page Load</span><strong>0.38s</strong></div>
-
-                <div class="svc-preview-metric"><span>Cache Hit Ratio</span><strong>98.5%</strong></div>
-
-                <div class="svc-preview-metric"><span>Mobile Conversion Delta</span><strong>+28%</strong></div>
-
-                <div class="svc-preview-metric"><span>Lighthouse Score</span><strong>98 / 100</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 02 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 02 // CHECKOUT OPTIMIZATION</span>
-              <h3 class="svc-cap-title">Frictionless Checkout & Payment Gateways</h3>
-              <p class="svc-cap-body">The checkout flow is where revenue is finalized or permanently lost. We engineer optimized, distraction-free checkout funnels supporting Apple Pay, Google Pay, Stripe Elements, Razorpay, Klarna, and localized alternative payment methods (APMs). With inline address autocomplete, instant card validation, and 3D Secure 2.0 biometric handshakes, we eliminate drop-offs and minimize fraud chargebacks.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Complicated multi-step checkouts, card validation errors, and high drop-offs on mobile checkouts.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">One-page checkout architecture, native biometric payment buttons, and automated address tokenization.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Global consumer retail, subscription replenishment services, and high-volume seasonal flash sales.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Optimized checkout funnel, multi-gateway router, automated fraud screening, and abandoned cart triggers.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // CHECKOUT ENGINE</span>
-                <span class="svc-browser-status">ONE-CLICK BIOMETRIC</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="45" width="55" height="40" rx="5" fill="#141420" stroke="#C9A45C" stroke-width="1.2"/>
-        <text x="47" y="62" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">CUSTOMER</text>
-        <text x="47" y="72" fill="#727284" font-size="6" font-family="monospace" text-anchor="middle">1-Click Cart</text>
-        <line x1="75" y1="65" x2="105" y2="40" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="75" y1="65" x2="105" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="75" y1="65" x2="105" y2="90" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="105" y="28" width="75" height="24" rx="4" fill="#0d141e" stroke="#5ac8fa" stroke-width="1"/>
-        <text x="142" y="44" fill="#5ac8fa" font-size="6.5" font-family="monospace" text-anchor="middle">STRIPE RADAR</text>
-        <rect x="105" y="53" width="75" height="24" rx="4" fill="#181216" stroke="#C9A45C" stroke-width="1"/>
-        <text x="142" y="69" fill="#C9A45C" font-size="6.5" font-family="monospace" text-anchor="middle">PAYPAL SMART</text>
-        <rect x="105" y="78" width="75" height="24" rx="4" fill="#0c1810" stroke="#27c93f" stroke-width="1"/>
-        <text x="142" y="94" fill="#27c93f" font-size="6.5" font-family="monospace" text-anchor="middle">ADYEN / LOCAL</text>
-        <line x1="180" y1="40" x2="210" y2="65" stroke="#5ac8fa" stroke-width="1"/>
-        <line x1="180" y1="65" x2="210" y2="65" stroke="#C9A45C" stroke-width="1"/>
-        <line x1="180" y1="90" x2="210" y2="65" stroke="#27c93f" stroke-width="1"/>
-        <circle cx="235" cy="65" r="20" fill="#0d1810" stroke="#27c93f" stroke-width="1.5"/>
-        <text x="235" y="64" fill="#27c93f" font-size="6.5" font-family="monospace" font-weight="700" text-anchor="middle">3DS 2.0</text>
-        <text x="235" y="72" fill="#ffffff" font-size="5" font-family="monospace" text-anchor="middle">APPROVED</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Avg Checkout Duration</span><strong>22s</strong></div>
-
-                <div class="svc-preview-metric"><span>Payment Success Rate</span><strong>99.4%</strong></div>
-
-                <div class="svc-preview-metric"><span>Chargeback Ratio</span><strong>< 0.04%</strong></div>
-
-                <div class="svc-preview-metric"><span>Cart Recovery Rate</span><strong>18.2%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 03 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 03 // OPERATIONAL BACKEND</span>
-              <h3 class="svc-cap-title">ERP & Warehouse Inventory Synchronization</h3>
-              <p class="svc-cap-body">Scaling an e-commerce business requires seamless operational synchronization between online stores, warehouse management systems (WMS), enterprise resource planning (ERP) platforms, and logistics carriers. We build event-driven middleware that orchestrates inventory allocation, prints automated shipping manifests, updates tracking numbers, and prevents overselling during high-demand flash sales.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Overselling out-of-stock items, manual order data entry into warehouse software, and delayed shipment notifications.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Kafka/RabbitMQ event queues, bidirectional ERP API connectors, and atomic database inventory reservations.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Multi-warehouse retail operations, omnichannel brick-and-mortar brands, and third-party logistics (3PL) sync.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Inventory orchestration middleware, automated shipment webhook handlers, and admin stock monitoring console.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // INVENTORY SYNC</span>
-                <span class="svc-browser-status">EVENT-DRIVEN BACKBONE</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="60" cy="65" r="24" fill="#141420" stroke="#C9A45C" stroke-width="1.4"/>
-        <text x="60" y="62" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">CENTRAL</text>
-        <text x="60" y="72" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">LEDGER</text>
-        <line x1="84" y1="52" x2="135" y2="35" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="84" y1="65" x2="135" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="84" y1="78" x2="135" y2="95" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="135" y="24" width="115" height="22" rx="4" fill="#101814" stroke="#27c93f" stroke-width="1"/>
-        <text x="145" y="38" fill="#27c93f" font-size="6.5" font-family="monospace">WH-US: 4,820 SKU (SYNCED)</text>
-        <rect x="135" y="54" width="115" height="22" rx="4" fill="#101814" stroke="#4eedc4" stroke-width="1"/>
-        <text x="145" y="68" fill="#4eedc4" font-size="6.5" font-family="monospace">WH-EU: 3,140 SKU (SYNCED)</text>
-        <rect x="135" y="84" width="115" height="22" rx="4" fill="#101814" stroke="#C9A45C" stroke-width="1"/>
-        <text x="145" y="98" fill="#C9A45C" font-size="6.5" font-family="monospace">WH-APAC: 1,980 SKU (SYNCED)</text>
-        <text x="140" y="118" fill="#27c93f" font-size="7.5" font-family="monospace" text-anchor="middle">ZERO-BUFFER REAL-TIME OMNICHANNEL INVENTORY</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Sync Lag Benchmark</span><strong>< 400ms</strong></div>
-
-                <div class="svc-preview-metric"><span>Oversell Incident Rate</span><strong>0.00%</strong></div>
-
-                <div class="svc-preview-metric"><span>Daily Synced SKU Ops</span><strong>450k+</strong></div>
-
-                <div class="svc-preview-metric"><span>Carrier API Health</span><strong>99.98%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 04 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 04 // GLOBAL EXPANSION</span>
-              <h3 class="svc-cap-title">Cross-Border Multi-Currency & Localized Stores</h3>
-              <p class="svc-cap-body">Expanding beyond domestic borders requires localized customer experiences. We engineer multi-regional e-commerce architectures that detect visitor geography, display native currency pricing with real-time exchange rate buffers, calculate local duties and taxes at checkout, and present localized language catalogs to build trust with international buyers.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Foreign shoppers bouncing due to foreign currency displays, surprise customs fees, and unsupported local payment methods.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Geo-IP routing, automated multi-currency pricing matrices, dynamic tax/duty calculation, and localized language stores.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Direct-to-consumer brands scaling into North America, Europe, the Middle East, and Asia-Pacific markets.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Multi-store architecture, regional routing engine, automated exchange rate scheduler, and duty calculator.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // GLOBAL EXPANSION</span>
-                <span class="svc-browser-status">135+ CURRENCIES</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="65" r="26" fill="#101424" stroke="#C9A45C" stroke-width="1.3"/>
-        <text x="50" y="61" fill="#C9A45C" font-size="7" font-family="monospace" text-anchor="middle">GEO-IP</text>
-        <text x="50" y="71" fill="#ffffff" font-size="6" font-family="monospace" text-anchor="middle">RESOLVER</text>
-        <line x1="76" y1="50" x2="120" y2="35" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="76" y1="65" x2="120" y2="65" stroke="#C9A45C" stroke-width="1.2"/>
-        <line x1="76" y1="80" x2="120" y2="95" stroke="#C9A45C" stroke-width="1.2"/>
-        <rect x="120" y="24" width="135" height="22" rx="4" fill="#121620" stroke="#5ac8fa" stroke-width="1"/>
-        <text x="130" y="38" fill="#5ac8fa" font-size="6.5" font-family="monospace">USD / NA &middot; Sales Tax Auto</text>
-        <rect x="120" y="54" width="135" height="22" rx="4" fill="#101814" stroke="#27c93f" stroke-width="1"/>
-        <text x="130" y="68" fill="#27c93f" font-size="6.5" font-family="monospace">EUR / EMEA &middot; VAT Included</text>
-        <rect x="120" y="84" width="135" height="22" rx="4" fill="#181216" stroke="#C9A45C" stroke-width="1"/>
-        <text x="130" y="98" fill="#C9A45C" font-size="6.5" font-family="monospace">GBP / UK &middot; Duty Auto-Calculated</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Active Currency Markets</span><strong>135+</strong></div>
-
-                <div class="svc-preview-metric"><span>Geo-Routing Accuracy</span><strong>99.7%</strong></div>
-
-                <div class="svc-preview-metric"><span>Cross-Border Conversion</span><strong>+42%</strong></div>
-
-                <div class="svc-preview-metric"><span>Tax Compliance Nodes</span><strong>Automated</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 05 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 05 // REVENUE OPTIMIZATION</span>
-              <h3 class="svc-cap-title">Subscription Commerce & Customer Retention</h3>
-              <p class="svc-cap-body">Predictable recurring revenue stabilizes business cash flow. We build robust subscription commerce engines for consumable goods, membership clubs, and curated product boxes. Customers enjoy self-service subscriber portals to pause, skip, or modify delivery dates, while automated card updater tools and smart retry billing logic maximize subscriber lifetime value and eliminate involuntary churn.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Involuntary churn from expired payment cards, rigid subscription tools, and frustrated customer cancellation spikes.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Tokenized recurring billing engines, intelligent dunning management retry logic, and self-service customer portal.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Health and wellness subscriptions, coffee clubs, beauty boxes, and B2B consumable replenishment.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">Subscription billing engine, subscriber self-service portal, dunning email sequence, and cohort analytics.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // SUBSCRIPTION ENGINE</span>
-                <span class="svc-browser-status">RECURRING MRR</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="140" cy="62" r="35" fill="none" stroke="rgba(201,164,92,0.2)" stroke-width="2"/>
-        <circle cx="140" cy="27" r="10" fill="#141422" stroke="#27c93f" stroke-width="1.4"/>
-        <text x="140" y="30" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">ACTIVE</text>
-        <circle cx="175" cy="62" r="10" fill="#141422" stroke="#C9A45C" stroke-width="1.4"/>
-        <text x="175" y="65" fill="#C9A45C" font-size="5.5" font-family="monospace" text-anchor="middle">RENEW</text>
-        <circle cx="140" cy="97" r="10" fill="#141422" stroke="#4eedc4" stroke-width="1.4"/>
-        <text x="140" y="100" fill="#4eedc4" font-size="5.5" font-family="monospace" text-anchor="middle">RETRY</text>
-        <circle cx="105" cy="62" r="10" fill="#141422" stroke="#27c93f" stroke-width="1.4"/>
-        <text x="105" y="65" fill="#27c93f" font-size="5.5" font-family="monospace" text-anchor="middle">SAVED</text>
-        <text x="140" y="60" fill="#ffffff" font-size="7" font-family="monospace" text-anchor="middle">DUNNING</text>
-        <text x="140" y="68" fill="#27c93f" font-size="6" font-family="monospace" text-anchor="middle">+14% Retained</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Dunning Recovery Rate</span><strong>72.4%</strong></div>
-
-                <div class="svc-preview-metric"><span>Subscriber Retention (6m)</span><strong>68%</strong></div>
-
-                <div class="svc-preview-metric"><span>Churn Reduction</span><strong>-24%</strong></div>
-
-                <div class="svc-preview-metric"><span>Recurring Revenue Share</span><strong>54%</strong></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Capability 06 -->
-          <div class="svc-capability-card">
-            <div class="svc-cap-content">
-              <span class="svc-cap-label">CAPABILITY 06 // CUSTOM LOGIC</span>
-              <h3 class="svc-cap-title">B2B Wholesale Portals & Custom Pricing Engines</h3>
-              <p class="svc-cap-body">Business-to-business commerce requires specialized transaction logic that consumer stores cannot support. We engineer dedicated B2B wholesale portals featuring tiered volume pricing, customer-specific negotiated catalogs, purchase order (PO) workflows, Net-30 credit terms, and multi-user corporate buying accounts with managerial approval workflows.</p>
-              <div class="svc-cap-meta-grid">
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Problem Addressed</div>
-                  <div class="svc-meta-item-text">Sales teams manually processing email PDF orders, inflexible consumer checkout software, and lack of credit term support.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Engineering Approach</div>
-                  <div class="svc-meta-item-text">Role-based B2B buyer portals, custom tiered pricing matrices, automated credit limits, and ERP order ingestion.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Enterprise Use Case</div>
-                  <div class="svc-meta-item-text">Manufacturers, industrial equipment distributors, wholesale food suppliers, and corporate uniform suppliers.</div>
-                </div>
-                <div class="svc-meta-item">
-                  <div class="svc-meta-item-title">Deliverables</div>
-                  <div class="svc-meta-item-text">B2B wholesale portal, custom pricing matrix, corporate account manager, and automated PO generator.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="svc-cap-preview">
-              <div class="svc-preview-header">
-                <span class="svc-preview-tag">TELEMETRY // B2B WHOLESALE</span>
-                <span class="svc-browser-status">NET-30 & PO ENABLED</span>
-              </div>
-              <div class="svc-preview-visual-box">
-                <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-        <rect x="25" y="24" width="230" height="24" rx="4" fill="#141420" stroke="rgba(201,164,92,0.3)" stroke-width="1"/>
-        <text x="35" y="39" fill="#C9A45C" font-size="7" font-family="monospace">TIER 1 (1-99 UNITS)</text>
-        <text x="210" y="39" fill="#ffffff" font-size="7.5" font-family="monospace" text-anchor="end">$48.00 / unit</text>
-        <rect x="25" y="52" width="230" height="24" rx="4" fill="#141420" stroke="#4eedc4" stroke-width="1"/>
-        <text x="35" y="67" fill="#4eedc4" font-size="7" font-family="monospace">TIER 2 (100-499 UNITS)</text>
-        <text x="210" y="67" fill="#ffffff" font-size="7.5" font-family="monospace" text-anchor="end">$36.50 (-24%)</text>
-        <rect x="25" y="80" width="230" height="24" rx="4" fill="#101814" stroke="#27c93f" stroke-width="1.3"/>
-        <text x="35" y="95" fill="#27c93f" font-size="7" font-family="monospace">TIER 3 (500+ CONTRACT)</text>
-        <text x="210" y="95" fill="#27c93f" font-size="7.5" font-family="monospace" font-weight="700" text-anchor="end">$28.00 (-41%)</text>
-        <text x="140" y="118" fill="#27c93f" font-size="7" font-family="monospace" text-anchor="middle">CUSTOM NET-30/60 CREDIT TERM LEDGERS</text>
-      </svg>
-              </div>
-              <div class="svc-preview-metric-list">
-                
-                <div class="svc-preview-metric"><span>Order Processing Speed</span><strong>Automated</strong></div>
-
-                <div class="svc-preview-metric"><span>Average B2B Order Value</span><strong>$4,850</strong></div>
-
-                <div class="svc-preview-metric"><span>Corporate Accounts Active</span><strong>850+</strong></div>
-
-                <div class="svc-preview-metric"><span>ERP Ingestion Accuracy</span><strong>100.0%</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: OUR EXPERTISE -->
-    <section class="svc-section svc-section-border-top" id="expertise">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">05 // TECHNICAL DISCIPLINES</span>
-          <h2 class="svc-section-title">Engineering disciplines & <span class="svc-gold-text">architectural trade-offs</span></h2>
-          <p class="svc-section-lead">Every technological decision involves intentional balance. We navigate these architectural trade-offs to deliver sustainable, scalable outcomes.</p>
-        </div>
-
-        <div class="svc-expertise-grid">
-          
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Headless Catalog Composition</h3>
-            <p class="svc-expertise-desc">Isolating product catalog data from rendering engines for instantaneous client-side navigation and search.</p>
-            <div class="svc-expertise-tradeoff">PERFORMANCE // SUB-SECOND BROWSE TO CART</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Payment Gateway Redundancy</h3>
-            <p class="svc-expertise-desc">Automated multi-gateway failover ensuring transactions complete even if primary acquirers suffer outages.</p>
-            <div class="svc-expertise-tradeoff">RELIABILITY // ZERO CHECKOUT DOWNTIME</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Atomic Inventory Allocation</h3>
-            <p class="svc-expertise-desc">Database row-locking mechanisms ensuring high-speed flash sales never sell inventory that does not exist.</p>
-            <div class="svc-expertise-tradeoff">INTEGRITY // ZERO OVERSELL GUARANTEE</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">Global Tax & Customs Calculation</h3>
-            <p class="svc-expertise-desc">Automated integration with Avalara and TaxJar for verifiable multi-jurisdictional compliance.</p>
-            <div class="svc-expertise-tradeoff">COMPLIANCE // VERIFIED TAX AUTOMATION</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">High-Concurrency Caching</h3>
-            <p class="svc-expertise-desc">Edge CDN caching of non-personalized assets coupled with dynamic client hydration for instant responsiveness.</p>
-            <div class="svc-expertise-tradeoff">SCALE // 100K+ CONCURRENT SHOPPERS</div>
-          </div>
-
-          <div class="svc-expertise-card">
-            <div class="svc-expertise-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <h3 class="svc-expertise-title">PCI-DSS Security Compliance</h3>
-            <p class="svc-expertise-desc">Tokenizing card data directly through secure iframe elements to eliminate client server compliance exposure.</p>
-            <div class="svc-expertise-tradeoff">SECURITY // PCI-DSS LEVEL 1 CERTIFIED</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: WHAT'S TRENDING -->
-    <section class="svc-section svc-section-border-top" id="trending">
-      <div class="svc-container">
-        <div class="svc-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <!-- ==========================================================================
+         SECTION 01: THE OPENING FRAME (HERO)
+         ========================================================================== -->
+    <section class="d2-svc-hero" id="overview">
+      <div class="d2-container">
+        <div class="d2-svc-hero-grid">
           <div>
-            <span class="svc-pill-badge">06 // EDITORIAL PERSPECTIVES</span>
-            <h2 class="svc-section-title">What's Shaping the <span class="svc-gold-text">E-Commerce Solutions Platform</span></h2>
-            <p class="svc-section-lead">Research, technical analysis, and architectural perspectives from our engineering desk exploring current developments shaping enterprise digital delivery.</p>
+            <div class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              04 // HEADLESS COMMERCE & CHECKOUT ARCHITECTURE
+            </div>
+            <h1 class="d2-svc-hero-title">An online store isn’t simply a place to display products. It’s an entire buying experience.</h1>
+            <p class="d2-svc-hero-lead">A customer may discover a product through search, compare options on a phone, return later from another device, and make a purchase only after finding the information they need. Behind that journey are dozens of decisions involving product organization, inventory, pricing, payments, order management, and customer communication. An effective commerce platform connects those decisions into an experience that feels simple to the customer and remains manageable for the business. Our approach considers both sides of that relationship, from the first product interaction to what happens after checkout.</p>
+            <div class="d2-svc-hero-actions">
+              <a href="#contact" class="d2-btn d2-btn-primary">Start Your Project &rarr;</a>
+              <a href="#capabilities" class="d2-btn d2-btn-secondary">Explore Capabilities</a>
+            </div>
           </div>
-        </div>
 
-        <div class="svc-trending-carousel-wrap">
-          <div class="svc-carousel-viewport">
-            <div class="svc-carousel-track" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-              
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">COMMERCE TECH &middot; 7 MIN READ</span>
-                  <h3 class="svc-article-card-title">The Economics of Headless Commerce in 2026</h3>
+          <div>
+            <div class="d2-hero-canvas-box">
+              <div style="padding: 18px 24px; border-bottom: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; align-items: center; background: #13131A;">
+                <div style="display: flex; gap: 8px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
                 </div>
-                <p class="svc-article-card-summary">An executive breakdown of the total cost of ownership, conversion lifts, and architectural flexibility of composable commerce.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
+                <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-text-muted);">Headless Checkout Pipeline &amp; Real-Time Cart Telemetry</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-gold);">
+                  <span class="d2-badge-dot"></span> 99.99% HEALTHY
                 </div>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">CHECKOUT &middot; 6 MIN READ</span>
-                  <h3 class="svc-article-card-title">Why One-Click Biometrics Are Replacing Traditional Checkouts</h3>
-                </div>
-                <p class="svc-article-card-summary">How Apple Pay, Google Pay, and identity networks are eradicating manual form filling and lifting mobile retail conversion rates.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <!-- Metrics Row -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--d2-border-subtle); border-bottom: 1px solid var(--d2-border-subtle);">
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">CHECKOUT SPEED</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">0.4s</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">CONVERSION UPLIFT</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">+34%</div>
+                  </div>
+                
+                  <div style="background: #0E0E14; padding: 14px 18px;">
+                    <div style="font-family: var(--d2-font-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--d2-text-muted); text-transform: uppercase;">CART PERSISTENCE</div>
+                    <div style="font-family: var(--d2-font-display); font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">100%</div>
+                  </div>
+                
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">OMNICHANNEL &middot; 8 MIN READ</span>
-                  <h3 class="svc-article-card-title">Real-Time Inventory Synchronization Across Distributed Warehouses</h3>
-                </div>
-                <p class="svc-article-card-summary">Architectural patterns for keeping stock records perfectly synchronized across physical stores, marketplaces, and online shops.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 24px; font-family: var(--d2-font-mono); font-size: 12.5px; line-height: 1.7; color: #8F90A6; overflow-x: auto;">
+                <pre><code>import { CommerceEngine, CheckoutOrchestrator } from '@riyadvi/commerce';
+export const commercePipeline = new CheckoutOrchestrator({
+  storefront: 'headless-edge-rendered',
+  cartState: 'optimistic-instant-update',
+  paymentGateways: ['stripe-elements', 'razorpay-direct', 'apple-pay'],
+  inventorySync: { latency: '&lt;50ms', erpWebhook: 'kafka-event' }
+});
+// Sub-second checkout funnel initialized with zero layout shifting</code></pre>
               </div>
 
-              <div class="svc-article-card">
-                <div class="svc-article-card-header">
-                  <span class="svc-article-category">RETAINMENT &middot; 5 MIN READ</span>
-                  <h3 class="svc-article-card-title">Smart Dunning & Involuntary Churn Prevention for Subscriptions</h3>
-                </div>
-                <p class="svc-article-card-summary">Using algorithmic retry logic and automated card updating to salvage recurring revenue from expired customer cards.</p>
-                <div class="svc-article-card-meta">
-                  <span>Riyadvi Research</span>
-                  <div class="svc-card-arrow">&rarr;</div>
-                </div>
+              <div style="padding: 12px 24px; background: #0B0B0F; border-top: 1px solid var(--d2-border-subtle); display: flex; justify-content: space-between; font-family: var(--d2-font-mono); font-size: 10.5px; color: var(--d2-text-muted);">
+                <span>Production Node Active</span>
+                <span>Latency: 1.8ms</span>
               </div>
             </div>
           </div>
@@ -767,124 +142,609 @@ export const storePipeline = new CommerceMesh({
       </div>
     </section>
 
-    <!-- SECTION 07: TECHNOLOGIES -->
-    <section class="svc-section svc-section-border-top" id="technologies">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">07 // TECHNOLOGY STACK</span>
-          <h2 class="svc-section-title">Technologies engineered for <span class="svc-gold-text">longevity</span></h2>
-          <p class="svc-section-lead">We select enterprise-proven, community-backed technologies with long-term support and reliable ecosystem roadmaps.</p>
-        </div>
+    <!-- ==========================================================================
+         SECTION 02: THE REALITY CHECK
+         ========================================================================== -->
+    <section class="d2-section d2-reality-section d2-section-border-top" id="reality-check">
+      <div class="d2-container">
+        <div class="d2-reality-grid">
+          <div class="d2-reality-left">
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 02 // STRATEGIC REALITY
+            </span>
+            <h2 class="d2-reality-question">Every unnecessary step between discovery and purchase creates friction.</h2>
+            <p class="d2-reality-desc">Online shoppers abandon carts in fractions of a second when checkout processes stall, mobile payment options are missing, or unexpected shipping charges appear. High-converting commerce is engineered at the intersection of latency, trust, and psychological momentum.</p>
+            <div style="margin-top: 32px;">
+              <a href="#capabilities" class="d2-btn d2-btn-secondary" style="font-size: 13px; padding: 10px 20px;">Review Our Solutions &rarr;</a>
+            </div>
+          </div>
 
-        <div class="svc-tech-grid">
-          <div class="svc-tech-card"><span class="svc-tech-cat">FRAMEWORKS</span><h3 class="svc-tech-title">Next.js & React</h3><p class="svc-tech-desc">Production-grade SSR, static generation, and streaming component rendering.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">RUNTIMES</span><h3 class="svc-tech-title">Node.js & Go</h3><p class="svc-tech-desc">Asynchronous, high-throughput microservices and API gateways.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">TYPE SAFETY</span><h3 class="svc-tech-title">Strict TypeScript</h3><p class="svc-tech-desc">Zero runtime type regressions with compile-time verification.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CONTAINERS</span><h3 class="svc-tech-title">Docker & K8s</h3><p class="svc-tech-desc">Containerized orchestration with automated horizontal scaling.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">PERSISTENCE</span><h3 class="svc-tech-title">PostgreSQL</h3><p class="svc-tech-desc">ACID relational compliance with indexed query optimization.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">CACHE & BROKER</span><h3 class="svc-tech-title">Redis & Kafka</h3><p class="svc-tech-desc">Distributed caching and partition-tolerant event streaming.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">HEADLESS CMS</span><h3 class="svc-tech-title">Sanity & Strapi</h3><p class="svc-tech-desc">Structured content modeling with instant editorial preview studios.</p></div>
-          <div class="svc-tech-card"><span class="svc-tech-cat">EDGE DELIVERY</span><h3 class="svc-tech-title">Cloudflare & AWS</h3><p class="svc-tech-desc">Multi-region edge network distribution with DDoS mitigation.</p></div>
+          <div class="d2-reality-stagger">
+            
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">01 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Checkout Friction and Endless Multi-Step Forms</h3>
+      </div>
+      <p class="d2-reality-card-body">Demanding redundant address fields, forced account registration, and non-optimized mobile keypads causes over 70% of shoppers to abandon full carts at the final transaction stage.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">02 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Slow Search and Broken Catalog Filtering</h3>
+      </div>
+      <p class="d2-reality-card-body">When catalog searches yield irrelevant results or facet filters trigger full-page reloads, consumers exit to marketplace competitors with instantaneous predictive search.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">03 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Inventory Desynchronization and Overselling</h3>
+      </div>
+      <p class="d2-reality-card-body">Disconnected inventory databases lead to catastrophic overselling during holiday promotions, forcing embarrassing customer cancellations and chargeback disputes.</p>
+    </div>
+  
+    <div class="d2-reality-card">
+      <div class="d2-reality-card-header">
+        <span class="d2-reality-card-num">04 // REALITY CHECK</span>
+        <h3 class="d2-reality-card-title">Platform Lock-In and Bloated Monolithic Themes</h3>
+      </div>
+      <p class="d2-reality-card-body">Standard Shopify or WooCommerce monolithic themes accumulate dozens of competing third-party apps, dragging Google PageSpeed scores down into the single digits.</p>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: OUR PROCESS -->
-    <section class="svc-section svc-section-border-top" id="process">
-      <div class="svc-container">
-        <div class="svc-section-header">
-          <span class="svc-pill-badge">08 // EXECUTION METHODOLOGY</span>
-          <h2 class="svc-section-title">How we take projects <span class="svc-gold-text">from idea to production</span></h2>
-          <p class="svc-section-lead">A transparent six-phase delivery framework ensuring architectural rigor, clear milestone governance, and predictable launches.</p>
+    <!-- ==========================================================================
+         SECTION 03: WHAT WE MAKE POSSIBLE (6 CAPABILITIES)
+         ========================================================================== -->
+    <section class="d2-section d2-capabilities-section d2-section-border-top" id="capabilities">
+      <div class="d2-container">
+        <div class="d2-capabilities-header">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 03 // SIX CORE CAPABILITIES
+          </span>
+          <h2 class="d2-disciplines-headline">What We <span class="d2-gold-text">Make Possible</span></h2>
+          <p class="d2-disciplines-lead">
+            Explore our six dedicated disciplines in E-Commerce Solutions, engineered to solve specific operational bottlenecks and generate measurable enterprise leverage.
+          </p>
         </div>
 
-        <div class="svc-process-timeline">
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 01</div><h3 class="svc-step-title">Discovery & Architecture</h3><p class="svc-step-desc">Stakeholder interviews, technical audit, specification mapping, and high-level architectural blueprints.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 02</div><h3 class="svc-step-title">UX Flows & Wireframing</h3><p class="svc-step-desc">Information architecture, user journey maps, and low-fidelity structural validation.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 03</div><h3 class="svc-step-title">UI & Design System</h3><p class="svc-step-desc">Atomic design tokens, high-fidelity responsive prototypes, and accessibility audits.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 04</div><h3 class="svc-step-title">Sprint Engineering</h3><p class="svc-step-desc">Iterative two-week sprints, automated test coverage, and continuous integration deployments.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 05</div><h3 class="svc-step-title">Security & QA Audit</h3><p class="svc-step-desc">End-to-end stress testing, OWASP security audits, and Core Web Vitals optimization.</p></div>
-          <div class="svc-process-step"><div class="svc-step-badge">PHASE 06</div><h3 class="svc-step-title">Production & Handover</h3><p class="svc-step-desc">Zero-downtime DNS cutover, telemetry configuration, source code IP handover, and staff training.</p></div>
+        <div class="d2-capabilities-layout">
+          <!-- Left Tab Selector -->
+          <div class="d2-cap-nav" id="d2CapNav">
+            
+    <button class="d2-cap-btn active" data-cap-target="cap1" type="button">
+      <span class="d2-cap-num">01</span>
+      <span>Custom E-Commerce Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap2" type="button">
+      <span class="d2-cap-num">02</span>
+      <span>Storefront Experience Design</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap3" type="button">
+      <span class="d2-cap-num">03</span>
+      <span>Checkout and Payment Integration</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap4" type="button">
+      <span class="d2-cap-num">04</span>
+      <span>Inventory and Order Management</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap5" type="button">
+      <span class="d2-cap-num">05</span>
+      <span>Marketplace Development</span>
+    </button>
+  
+    <button class="d2-cap-btn " data-cap-target="cap6" type="button">
+      <span class="d2-cap-num">06</span>
+      <span>Commerce Platform Modernization</span>
+    </button>
+  
+          </div>
+
+          <!-- Right Active Capability Panel -->
+          <div class="d2-cap-stage" id="d2CapStage">
+            
+    <div class="d2-cap-panel" id="cap1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 01 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Tailored Headless Commerce Architecture</h3>
+        <p class="d2-cap-stage-expl">Decoupling frontend buyer touchpoints from backend commerce engines to deliver sub-second page transitions, dynamic pricing, and custom bundle builders.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Traditional monolithic storefronts are too rigid to support complex B2B pricing tiers or custom product customizers.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Next.js Commerce frontend connected via GraphQL to Shopify Plus, Medusa, or custom headless engines.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Direct-to-consumer luxury apparel brand scaling to $30M GMV across 18 currency regions.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Headless Storefront, GraphQL Middleware, Multi-Currency Engine, Global Edge CDN.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap2" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 02 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Immersive Product Storytelling and Visual Merchandising</h3>
+        <p class="d2-cap-stage-expl">Designing high-converting product detail pages (PDP), interactive 360-degree product viewers, and dynamic upsell drawers that elevate average order value (AOV).</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Generic template layouts treat products like commodity catalog items without conveying brand craftsmanship.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Editorial product layouts, tactile interaction states, sticky add-to-cart drawers, and high-res WebP media.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Bespoke furniture manufacturer with interactive room scale visualization on product detail pages.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Custom PDP Layouts, Interactive Merchandising Components, High-Conversion Cart Drawers.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap3" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 03 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Frictionless One-Click Global Transactions</h3>
+        <p class="d2-cap-stage-expl">Engineering streamlined, single-screen checkouts supporting Apple Pay, Google Pay, localized buy-now-pay-later (BNPL), and global payment orchestration.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Clunky payment gateways with multi-second redirect loops cause immediate transaction drop-offs.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Embedded Stripe Elements and native digital wallets with optimistic UI updates and instant address validation.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Global lifestyle marketplace reducing checkout completion time from 95 seconds to 18 seconds.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Embedded Checkout Flow, Multi-Gateway Integration, Fraud Detection Engine, TaxJar Automated Tax.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap4" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 04 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Real-Time ERP and Multi-Warehouse Synchronization</h3>
+        <p class="d2-cap-stage-expl">Automated bidirectional synchronization connecting storefront inventory with ERPs, fulfillment centers, and marketplace channels (Amazon, Walmart).</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Manual inventory updating across channels results in stockouts and unfulfilled order cancellations.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Event-driven webhooks with Kafka event queues that update inventory across all sales channels within 100 milliseconds.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Omnichannel retailer synchronizing stock across 45 physical retail stores and digital e-commerce channels.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Inventory Sync Middleware, Multi-Warehouse Router, Automated Packing Slip Generator.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap5" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 05 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Multi-Vendor Platforms with Automated Split Settlements</h3>
+        <p class="d2-cap-stage-expl">Building complete multi-vendor marketplaces featuring vendor onboarding portals, automated commission splits, and unified customer checkout.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Building multi-vendor systems requires complex escrow management, vendor payout compliance, and dispute resolution.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Stripe Connect Custom/Express accounts with automated fee withholding and unified vendor management dashboards.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Artisanal culinary marketplace connecting 350 regional producers with national retail consumers.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Multi-Vendor Portal, Stripe Connect Split Payouts, Vendor Analytics Suite, Unified Cart.</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d2-cap-panel" id="cap6" style="display: none; flex-direction: column; gap: 24px;">
+      <div>
+        <span class="d2-badge" style="margin-bottom: 12px; font-size: 10px;">CAPABILITY 06 // SPECIFICATION</span>
+        <h3 class="d2-cap-stage-title">Replatforming Monoliths to Headless Performance</h3>
+        <p class="d2-cap-stage-expl">Migrating sluggish legacy Magento or monolithic WooCommerce sites to high-velocity headless platforms without losing historic orders, customer data, or SEO equity.</p>
+      </div>
+
+      <div class="d2-cap-details-grid">
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Commercial Problem Addressed</div>
+          <div class="d2-cap-detail-val">Legacy commerce platforms suffer from crippling server costs, slow page loads, and fragile update cycles.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Engineering Approach</div>
+          <div class="d2-cap-detail-val">Systematic database migration with 301 redirect management and strangler pattern checkout cutovers.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Real-World Use Case</div>
+          <div class="d2-cap-detail-val">Migration of an automotive parts distributor with 150,000 SKUs from Magento 1 to headless Next.js.</div>
+        </div>
+        <div class="d2-cap-detail-item">
+          <div class="d2-cap-detail-label">Typical Deliverables</div>
+          <div class="d2-cap-detail-val">Data Migration Scripts, SEO Redirect Map, Zero-Downtime Store Launch, Performance Audit.</div>
+        </div>
+      </div>
+    </div>
+  
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: LET'S TALK CTA -->
-    <section class="svc-cta-section" id="lets-talk">
-      <div class="svc-container">
-        <div class="svc-cta-box">
-          <div class="svc-cta-glow"></div>
-          <span class="svc-pill-badge" style="background: rgba(240, 199, 94, 0.15); border-color: var(--svc-gold);">09 // GET STARTED</span>
-          <h2 class="svc-cta-title">Ready to engineer your <span class="svc-gold-text">E-Commerce Solutions?</span></h2>
-          <p class="svc-cta-lead">Let's discuss your requirements, architectural trade-offs, and how we can engineer an exceptional digital product tailored to your business goals.</p>
-          <div class="svc-cta-buttons">
-            <a href="/index.html#estimator" class="svc-btn-primary">Calculate Project Estimate &rarr;</a>
-            <a href="/index.html#contact" class="svc-btn-secondary">Schedule Technical Consultation</a>
+    <!-- ==========================================================================
+         SECTION 04: INSIDE THE TECHNOLOGY
+         ========================================================================== -->
+    <section class="d2-section d2-tech-section d2-section-border-top" id="technology">
+      <div class="d2-container">
+        <div class="d2-tech-grid">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 04 // ENGINEERING ARCHITECTURE
+            </span>
+            <h2 class="d2-disciplines-headline">Inside the <span class="d2-gold-text">Technology</span></h2>
+            <p style="font-size: 16px; color: var(--d2-text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              Our commerce architecture marries lightning-fast edge delivery with military-grade payment security and high-throughput inventory brokers.
+            </p>
+            <div class="d2-tech-list">
+              
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Storefront Tech: Next.js Commerce, React Server Components, Tailwind CSS, and edge caching.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Backend & Headless: Shopify Plus Storefront API, Medusa.js, Saleor, Commercelayer, and Node.js.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Payments & Tax: Stripe, Razorpay, Apple Pay, PayPal Complete, and TaxJar/Avalara.</div>
+    </div>
+  
+    <div class="d2-tech-item">
+      <span class="d2-tech-item-dot"></span>
+      <div>Search & Intelligence: Algolia InstantSearch, MeiliSearch, and real-time inventory Kafka streams.</div>
+    </div>
+  
+            </div>
+          </div>
+
+          <div>
+            <div class="d2-tech-card">
+              <div style="font-family: var(--d2-font-mono); font-size: 11px; color: var(--d2-gold); margin-bottom: 16px;">
+                // SYSTEM ARCHITECTURE &middot; SPECIFICATION MATRIX
+              </div>
+              <div class="d2-tech-schematic">
+                <svg viewBox="0 0 360 180" fill="none" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#C9A45C" stroke-width="1.2"/>
+                  <text x="25" y="45" fill="#FFE194" font-family="monospace" font-size="10">EDGE INGRESS</text>
+                  <text x="25" y="62" fill="#888899" font-family="monospace" font-size="9">Global CDN &lt;5ms</text>
+
+                  <line x1="110" y1="50" x2="150" y2="50" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+                  <rect x="150" y="20" width="100" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="165" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">CORE LOGIC</text>
+                  <text x="165" y="62" fill="#888899" font-family="monospace" font-size="9">Type-Safe Mesh</text>
+
+                  <line x1="250" y1="50" x2="290" y2="50" stroke="#363645" stroke-width="1.5"/>
+
+                  <rect x="290" y="20" width="60" height="60" rx="6" fill="#13131A" stroke="#363645"/>
+                  <text x="305" y="45" fill="#FFFFFF" font-family="monospace" font-size="10">DATA</text>
+                  <text x="305" y="62" fill="#888899" font-family="monospace" font-size="9">mTLS</text>
+
+                  <rect x="10" y="105" width="340" height="55" rx="6" fill="#0E0E14" stroke="#24242E"/>
+                  <text x="25" y="128" fill="#C9A45C" font-family="monospace" font-size="10">TELEMETRY &amp; AUDIT PIPELINE</text>
+                  <text x="25" y="145" fill="#A0A0B0" font-family="monospace" font-size="9.5">Zero-Trust Event Logging &middot; 99.99% Availability Guarantee</text>
+                </svg>
+              </div>
+              <p style="font-size: 13.5px; color: var(--d2-text-muted); margin-top: 18px; line-height: 1.6;">
+                Every deployment enforces zero-trust boundaries, automated rollback checkpoints, and continuous observability monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: THE NEXT WAVE (EDITORIAL TRENDS CAROUSEL)
+         ========================================================================== -->
+    <section class="d2-section d2-trends-section d2-section-border-top" id="trending">
+      <div class="d2-container">
+        <div class="d2-trends-top">
+          <div>
+            <span class="d2-badge">
+              <span class="d2-badge-dot"></span>
+              SECTION 05 // THE NEXT WAVE
+            </span>
+            <h2 class="d2-disciplines-headline">Industry Trends &amp; <span class="d2-gold-text">Editorial Insights</span></h2>
+            <p class="d2-disciplines-lead">
+              Original research, technical analyses, and verified industry perspectives examining modern shifts in E-Commerce Solutions.
+            </p>
+          </div>
+
+          <div class="d2-carousel-controls">
+            <button class="d2-carousel-btn" id="d2CarouselPrev" aria-label="Previous articles">&larr;</button>
+            <button class="d2-carousel-btn" id="d2CarouselNext" aria-label="Next articles">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="d2-carousel-viewport" id="d2CarouselViewport">
+          <div class="d2-carousel-track">
+            
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">COMMERCE AI &middot; 7 MIN READ</div>
+        <h3 class="d2-card-title">AI Shopping Assistants Are Changing Product Discovery</h3>
+        <p class="d2-card-summary">How conversational LLMs and semantic vector search are replacing rigid keyword search filters in luxury and specialized retail.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ecommerce-solutions/insights/ai-shopping-assistants-are-changing-product-discovery" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">ARCHITECTURE &middot; 8 MIN READ</div>
+        <h3 class="d2-card-title">The Evolution of Headless Commerce</h3>
+        <p class="d2-card-summary">Analyzing when decoupled frontends deliver tangible ROI versus when modern integrated platforms suffice.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ecommerce-solutions/insights/the-evolution-of-headless-commerce" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">TRENDS &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">From Social Discovery to Direct Purchase</h3>
+        <p class="d2-card-summary">Engineering frictionless unified checkout flows that capture customers directly from TikTok, Instagram, and creator ecosystems.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ecommerce-solutions/insights/from-social-discovery-to-direct-purchase" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+    <div class="d2-article-card">
+      <div>
+        <div class="d2-card-cat">CRO STRATEGY &middot; 6 MIN READ</div>
+        <h3 class="d2-card-title">Why Checkout Experience Still Determines Commerce Success</h3>
+        <p class="d2-card-summary">Deconstructing the technical mechanics of one-click checkout, tokenized biometric auth, and zero-redirect payment flows.</p>
+      </div>
+      <div class="d2-card-meta">
+        <span>Verified Engineering &middot; 2026</span>
+        <a href="/services/design2/ecommerce-solutions/insights/why-checkout-experience-still-determines-commerce-success" class="d2-card-link-text">Read Analysis &rarr;</a>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: FROM THINKING TO MAKING (PROCESS JOURNEY)
+         ========================================================================== -->
+    <section class="d2-section d2-process-section d2-section-border-top" id="process">
+      <div class="d2-container">
+        <div>
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 06 // DELIVERY LIFECYCLE
+          </span>
+          <h2 class="d2-disciplines-headline">From Thinking <span class="d2-gold-text">to Making</span></h2>
+          <p class="d2-disciplines-lead">
+            Our disciplined delivery process connects rigorous upfront problem definition with iterative development, stress testing, and zero-downtime execution.
+          </p>
+        </div>
+
+        <div class="d2-process-timeline">
+          
+    <div class="d2-process-step">
+      <div class="d2-step-num">01</div>
+      <div class="d2-step-name">Commerce Discovery &amp; Audit</div>
+      <div class="d2-step-body">Evaluating your catalog complexity, SKU variants, checkout drop-off rates, payment gateways, and fulfillment workflows.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Commercial Audit Report, Technology Recommendation, Migration Strategy.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">02</div>
+      <div class="d2-step-name">Customer Journey Mapping</div>
+      <div class="d2-step-body">Designing streamlined paths from landing page discovery through facet filtering, product education, and instant checkout.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Customer Journey Flows, Low-Fidelity Wireframes, Information Hierarchy.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">03</div>
+      <div class="d2-step-name">Storefront UI/UX &amp; Design System</div>
+      <div class="d2-step-body">Creating an editorial, luxury digital shopping experience with custom product cards, sticky cart drawers, and brand merchandising.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Figma E-Commerce Design System, Interactive Prototypes, Mobile Touch Guidelines.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">04</div>
+      <div class="d2-step-name">Headless Engineering &amp; Integrations</div>
+      <div class="d2-step-body">Building lightning-fast edge frontends and integrating payment gateways, inventory feeds, ERPs, and marketing automation.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Headless Next.js Repository, Payment API Verification, ERP Webhook Pipelines.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">05</div>
+      <div class="d2-step-name">Payment &amp; Stress Testing</div>
+      <div class="d2-step-body">Simulating high-concurrency flash sales, edge payment gateway failovers, and end-to-end order processing audits.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Flash-Sale Stress Report, PCI-DSS Compliance Checklist, End-to-End Test Matrix.</div>
+      </div>
+    </div>
+  
+    <div class="d2-process-step">
+      <div class="d2-step-num">06</div>
+      <div class="d2-step-name">Go-Live &amp; Revenue Optimization</div>
+      <div class="d2-step-body">Zero-downtime DNS cutover, Google Tag Manager server-side tracking setup, and ongoing conversion rate optimization.</div>
+      <div class="d2-step-deliverables">
+        <div class="d2-deliverables-label">Core Deliverables</div>
+        <div>Live Production Launch, Analytics Dashboard, Ongoing Support SLA.</div>
+      </div>
+    </div>
+  
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: YOUR NEXT MOVE (CLOSING CTA)
+         ========================================================================== -->
+    <section class="d2-section d2-cta-section d2-section-border-top" id="contact">
+      <div class="d2-container">
+        <div class="d2-cta-box">
+          <span class="d2-badge">
+            <span class="d2-badge-dot"></span>
+            SECTION 07 // NEXT STEPS
+          </span>
+          <h2 class="d2-cta-title">What would a better buying experience mean for your customers?</h2>
+          <p class="d2-cta-lead">In modern commerce, latency is the ultimate friction. Let's design and engineer an e-commerce platform that turns casual product discovery into lifelong customer loyalty.</p>
+          <div class="d2-cta-actions">
+            <a href="/index.html#contact" class="d2-btn d2-btn-primary">Start Your Project Consultation &rarr;</a>
+            <a href="/services/design2/" class="d2-btn d2-btn-secondary">Explore Other Disciplines</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- GLOBAL PERSISTENT FOOTER -->
-  <footer class="svc-footer" id="footer">
-    <div class="svc-footer-container">
-      <div class="svc-footer-top">
-        <div class="svc-footer-brand">
-          <div class="svc-brand">
-            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="svc-brand-logo">
-            <div class="svc-brand-text">
-              <span class="svc-brand-name">RIYADVI</span>
-              <span class="svc-brand-sub">SOFTWARE TECHNOLOGIES</span>
+  <!-- Global Footer -->
+  <footer class="d2-footer">
+    <div class="d2-container">
+      <div class="d2-footer-grid">
+        <div class="d2-footer-col">
+          <div class="d2-brand" style="margin-bottom: 18px;">
+            <img src="/assets/riyadvilogo.png" alt="Riyadvi Emblem" class="d2-brand-logo">
+            <div>
+              <div class="d2-brand-name">RIYADVI</div>
+              <div class="d2-brand-sub">Software Technologies</div>
             </div>
           </div>
-          <p class="svc-footer-motto">Digital technology, proprietary software systems, and business growth engineered for enterprises ready to scale.</p>
+          <p style="font-size: 13.5px; color: var(--d2-text-secondary); line-height: 1.7; max-width: 320px;">
+            Premier digital technology and business growth partner. We combine high-end technology, AI, 3D, and resilient architectures to engineer sustainable business growth.
+          </p>
         </div>
 
-        <div class="svc-footer-links-grid">
-          <div class="svc-footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/web-development">Web Development</a></li>
-              <li><a href="/services/custom-software-development">Custom Software</a></li>
-              <li><a href="/services/mobile-app-development">Mobile Apps</a></li>
-              <li><a href="/services/ecommerce-solutions">E-Commerce</a></li>
-              <li><a href="/services/game-development">Game Development</a></li>
-              <li><a href="/services/ar-vr-development">AR/VR Experiences</a></li>
-              <li><a href="/services/ui-ux-design">UI/UX Design</a></li>
-              <li><a href="/services/3d-modeling">3D Modeling</a></li>
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Core Disciplines</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/web-development">Web Development</a></li>
+            <li><a href="/services/design2/custom-software-development">Custom Software</a></li>
+            <li><a href="/services/design2/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/design2/ecommerce-solutions">E-Commerce Solutions</a></li>
+            <li><a href="/services/design2/game-development">Game Development</a></li>
+          </ul>
+        </div>
 
-          <div class="svc-footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/index.html#about">About Riyadvi</a></li>
-              <li><a href="/index.html#awards">Awards & Recognition</a></li>
-              <li><a href="/index.html#industries">Industries Served</a></li>
-              <li><a href="/index.html#guardian">Riyadvi Guardian</a></li>
-              <li><a href="/index.html#portfolio">Featured Work</a></li>
-              <li><a href="/index.html#estimator">Project Estimator</a></li>
-              <li><a href="/index.html#contact">Contact Our Team</a></li>
-            </ul>
-          </div>
+        <div class="d2-footer-col">
+          <h5>Creative & Growth</h5>
+          <ul class="d2-footer-links">
+            <li><a href="/services/design2/ar-vr-development">AR/VR Development</a></li>
+            <li><a href="/services/design2/ui-ux-design">UI/UX Design</a></li>
+            <li><a href="/services/design2/3d-modeling">3D Modeling</a></li>
+            <li><a href="/services/design2/digital-marketing">Digital Marketing</a></li>
+            <li><a href="/index.html#about">About Riyadvi</a></li>
+          </ul>
+        </div>
+
+        <div class="d2-footer-col">
+          <h5>Offices & Contacts</h5>
+          <p style="font-size: 13px; color: var(--d2-text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <p style="font-size: 13px; color: var(--d2-text-muted); font-family: var(--d2-font-mono);">
+            Tel: +91 80724 87427<br>
+            Tel: +91 90808 22034
+          </p>
         </div>
       </div>
 
-      <div class="svc-footer-bottom">
-        <p>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</p>
-        <div class="svc-footer-legal">
-          <span>Enterprise Grade</span>
-          <span>Zero Vendor Lock-In</span>
-          <span>Global Delivery</span>
+      <div class="d2-footer-bottom">
+        <div>&copy; 2026 Riyadvi Software Technologies Pvt. Ltd. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="/index.html#home">Home</a>
+          <a href="/services/design2/">Design 2 Services</a>
+          <a href="/index.html#services">Design 1 Services</a>
+          <a href="/index.html#contact">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/services/services-common.js?v=11.0"></script>
-  <!-- Design 1 / Design 2 Prototype Switcher -->
-  <script src="/services/design2/design-switcher.js?v=2.0" defer></script>
+  <!-- Scripts -->
+  <script src="/services/design2/services-design2.js?v=1.0"></script>
+  
 </body>
 </html>
