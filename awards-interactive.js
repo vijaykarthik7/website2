@@ -221,6 +221,27 @@
 
   // 3. BUILD CAROUSEL
   function buildCarousel() {
+    const existingCards = trackEl.querySelectorAll('.aw-carousel-card');
+    if (existingCards.length === AWARDS_DATA.length) {
+      cardsList = Array.from(existingCards);
+      cardsList.forEach((card, index) => {
+        card.addEventListener('click', () => {
+          if (currentIndex !== index) {
+            selectAward(index, true);
+          } else {
+            openLightbox(AWARDS_DATA[index]);
+          }
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectAward(index, true);
+          }
+        });
+      });
+      return;
+    }
+
     trackEl.innerHTML = '';
     AWARDS_DATA.forEach((award, index) => {
       const card = document.createElement('div');

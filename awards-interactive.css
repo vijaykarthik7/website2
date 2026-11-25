@@ -391,6 +391,43 @@
   justify-content: center;
 }
 
+/* Default Static Initial Transforms */
+.aw-carousel-card[data-index="0"] {
+  transform: translateX(0px) translateZ(0px) scale(1.15) rotateY(0deg);
+  opacity: 1;
+  z-index: 25;
+}
+.aw-carousel-card[data-index="1"] {
+  transform: translateX(230px) translateZ(-75px) scale(0.92) rotateY(-16deg);
+  opacity: 0.85;
+  z-index: 18;
+}
+.aw-carousel-card[data-index="11"] {
+  transform: translateX(-230px) translateZ(-75px) scale(0.92) rotateY(16deg);
+  opacity: 0.85;
+  z-index: 18;
+}
+.aw-carousel-card[data-index="2"] {
+  transform: translateX(415px) translateZ(-160px) scale(0.80) rotateY(-28deg);
+  opacity: 0.6;
+  z-index: 12;
+}
+.aw-carousel-card[data-index="10"] {
+  transform: translateX(-415px) translateZ(-160px) scale(0.80) rotateY(28deg);
+  opacity: 0.6;
+  z-index: 12;
+}
+.aw-carousel-card[data-index="3"] {
+  transform: translateX(560px) translateZ(-240px) scale(0.70) rotateY(-38deg);
+  opacity: 0.28;
+  z-index: 8;
+}
+.aw-carousel-card[data-index="9"] {
+  transform: translateX(-560px) translateZ(-240px) scale(0.70) rotateY(38deg);
+  opacity: 0.28;
+  z-index: 8;
+}
+
 /* Individual Carousel Cards */
 .aw-carousel-card {
   position: absolute;
