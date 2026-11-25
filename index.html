@@ -31,6 +31,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css?v=10.0">
+  <!-- Interactive Volumetric Awards Exhibition Stylesheet -->
+  <link rel="stylesheet" href="awards-interactive.css?v=1.0">
 
   <!-- JSON-LD Organization Schema Markup -->
   <script type="application/ld+json">
@@ -725,193 +727,62 @@
           </div>
         </div>
 
-        <div class="awards-grid">
-          <!-- 1. Star of Excellence Award - Presentation Ceremony -->
-          <div class="award-card" data-award="star-ceremony" data-cursor="VIEW">
-            <span class="award-year-badge">2021 CEREMONY</span>
-            <div class="award-card-showcase award-showcase-photo">
-              <img src="assets/awards/award_star_excellence_ceremony.jpg" alt="Star of Excellence Award Presentation Ceremony" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">Star of Excellence Award</h3>
-            <div class="award-org">National Integrity Cultural Academy &amp; The Peaks</div>
-            <p class="award-desc">Prestigious stage presentation at TR Rajarathinam Kalai Arangam honoring Thiru. R. Bhoopathy for pioneering leadership in enterprise software innovation and business excellence.</p>
-            <div class="award-meta-row">
-              <span class="award-location">Chennai, India</span>
-              <span class="award-verify-link">View Photo &rarr;</span>
-            </div>
+        <!-- Interactive Volumetric Awards Exhibition Stage -->
+        <div class="interactive-awards-stage" id="interactiveAwardsStage">
+          <!-- Category Filter Bar -->
+          <div class="aw-filter-bar" role="tablist" aria-label="Awards filter by category">
+            <button type="button" class="aw-filter-pill active" data-category="all">All Recognitions (12)</button>
+            <button type="button" class="aw-filter-pill" data-category="DesignRush">DesignRush Global</button>
+            <button type="button" class="aw-filter-pill" data-category="TechBehemoths 2025">TechBehemoths 2025</button>
+            <button type="button" class="aw-filter-pill" data-category="Star of Excellence">Star of Excellence</button>
+            <button type="button" class="aw-filter-pill" data-category="PDF Certificate">PDF Certificate</button>
           </div>
 
-          <!-- 2. DesignRush Top Web Dev Company 2025 -->
-          <div class="award-card" data-award="designrush-top" data-cursor="VIEW">
-            <span class="award-year-badge">2025 RECOGNIZED</span>
-            <div class="award-card-showcase award-showcase-light">
-              <img src="assets/awards/award_designrush_2025.png" alt="Top Web Development Company 2025 - By DesignRush" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">Top Web Development Company 2025</h3>
-            <div class="award-org">DesignRush Global Network</div>
-            <p class="award-desc">“We are proud to be featured on DesignRush for our outstanding work.” Accredited as a premier agency delivering high-performance enterprise web architectures.</p>
-            <div class="award-meta-row">
-              <span class="award-location">Global Accreditation</span>
-              <span class="award-verify-link">Verify Recognition &rarr;</span>
-            </div>
+          <!-- Master Featured Showcase (Hero Spotlight) -->
+          <div class="aw-featured-hero-stage">
+            <!-- Dynamically populated by awards-interactive.js -->
           </div>
 
-          <!-- 3. Official Certificate of Excellence 2025 (PDF) -->
-          <div class="award-card award-card-pdf" data-award="tb-pdf-certificate" data-cursor="VIEW">
-            <span class="award-year-badge">2025 OFFICIAL PDF</span>
-            <div class="award-card-showcase award-showcase-pdf">
-              <div class="pdf-icon-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-                <span class="pdf-badge-label">OFFICIAL PDF CERTIFICATE</span>
+          <!-- 3D Perspective Curved Deck (Floating Exhibition Deck) -->
+          <div class="aw-deck-stage">
+            <div class="aw-deck-ellipse" aria-hidden="true"></div>
+
+            <button type="button" class="aw-nav-btn prev-btn" aria-label="Previous Award">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+
+            <div class="aw-deck-track-wrapper">
+              <div class="aw-deck-track">
+                <!-- Dynamically populated by awards-interactive.js -->
               </div>
             </div>
-            <h3 class="award-title">Official Certificate of Excellence</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Complete official verified PDF certification document honoring Riyadvi across WordPress, ReactJS, and Social Media Marketing (SMM) verticals.</p>
-            <div class="award-meta-row">
-              <span class="award-location">Berlin, Germany</span>
-              <span class="award-verify-link">View Official PDF &rarr;</span>
-            </div>
+
+            <button type="button" class="aw-nav-btn next-btn" aria-label="Next Award">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6"></path></svg>
+            </button>
           </div>
 
-          <!-- 4. TechBehemoths 2025 Award Winner Badge - ReactJS -->
-          <div class="award-card" data-award="tb-react-badge" data-cursor="VIEW">
-            <span class="award-year-badge">2025 WINNER</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_reactjs_2025_badge.png" alt="Award Winner 2025 - ReactJS Badge" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">Award Winner 2025 &mdash; ReactJS Badge</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Official 2025 Winner badge in India for excellence in ReactJS web applications, modern component architecture, and top Lighthouse scores.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">Verify Award &rarr;</span>
-            </div>
-          </div>
+          <!-- Pagination Dots -->
+          <div class="aw-pagination-dots" role="tablist" aria-label="Awards pagination"></div>
+        </div>
 
-          <!-- 5. TechBehemoths 2025 Winner Laurel - ReactJS -->
-          <div class="award-card" data-award="tb-react-laurel" data-cursor="VIEW">
-            <span class="award-year-badge">2025 LAUREL</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_reactjs_laurel.png" alt="ReactJs - 2025 Winner Laurel" class="award-showcase-img" loading="lazy" />
+        <!-- Fullscreen Award & PDF Lightbox Dialog -->
+        <div class="aw-lightbox-overlay" id="awLightbox" role="dialog" aria-modal="true" aria-label="Award Certificate Viewer">
+          <div class="aw-lightbox-dialog">
+            <div class="aw-lightbox-header">
+              <div class="aw-lightbox-title-box">
+                <h3 class="aw-lightbox-title">Award Title</h3>
+                <span class="aw-lightbox-subtitle">Award Organization</span>
+              </div>
+              <button type="button" class="aw-lightbox-close" aria-label="Close Lightbox">&times;</button>
             </div>
-            <h3 class="award-title">ReactJS &mdash; 2025 Winner Laurel</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Gold laurel insignia certifying Riyadvi Software Technologies as a premier ReactJS engineering company across India.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">Verify Laurel &rarr;</span>
+            <div class="aw-lightbox-body">
+              <!-- Dynamically populated -->
             </div>
-          </div>
-
-          <!-- 6. TechBehemoths 2025 Winner Certificate - ReactJS -->
-          <div class="award-card" data-award="tb-react-certificate" data-cursor="VIEW">
-            <span class="award-year-badge">2025 CERTIFICATE</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_reactjs_winner_poster.png" alt="Winner ReactJS 2025 Full Certificate" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">Winner ReactJS 2025 &mdash; Certificate</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Official celebration certificate proclaiming Riyadvi Software Technologies an Award-Winning Company in India for ReactJS Services.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">View Certificate &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 7. TechBehemoths 2025 Award Winner Badge - WordPress -->
-          <div class="award-card" data-award="tb-wordpress-badge" data-cursor="VIEW">
-            <span class="award-year-badge">2025 WINNER</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_wordpress_2025_badge.png" alt="Award Winner 2025 - WordPress Badge" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">Award Winner 2025 &mdash; WordPress Badge</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Official 2025 Winner badge in India for enterprise WordPress solutions, bespoke theme architecture, and headless CMS integrations.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">Verify Award &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 8. TechBehemoths 2025 Winner Laurel - WordPress -->
-          <div class="award-card" data-award="tb-wordpress-laurel" data-cursor="VIEW">
-            <span class="award-year-badge">2025 LAUREL</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_wordpress_laurel.png" alt="WordPress - 2025 Winner Laurel" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">WordPress &mdash; 2025 Winner Laurel</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Gold laurel insignia certifying Riyadvi Software Technologies as a premier WordPress engineering and theme architecture agency.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">Verify Laurel &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 9. TechBehemoths 2025 Winner Certificate - WordPress -->
-          <div class="award-card" data-award="tb-wordpress-certificate" data-cursor="VIEW">
-            <span class="award-year-badge">2025 CERTIFICATE</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_wordpress_winner_poster.png" alt="Winner WordPress 2025 Full Certificate" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">Winner WordPress 2025 &mdash; Certificate</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Official celebration certificate proclaiming Riyadvi Software Technologies an Award-Winning Company in India for WordPress Services.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">View Certificate &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 10. TechBehemoths 2025 Award Badge - SMM -->
-          <div class="award-card" data-award="tb-smm-badge" data-cursor="VIEW">
-            <span class="award-year-badge">2025 WINNER</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_smm_2025_badge.png" alt="Award Badge - SMM - 2025" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">Award Badge &mdash; SMM &mdash; 2025</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Official 2025 Winner badge in India for data-driven Social Media Marketing (SMM), multi-channel brand growth, and audience acquisition.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">Verify Award &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 11. TechBehemoths 2025 Winner Laurel - SMM -->
-          <div class="award-card" data-award="tb-smm-laurel" data-cursor="VIEW">
-            <span class="award-year-badge">2025 LAUREL</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_smm_laurel.png" alt="SMM - 2025 Winner Laurel" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">SMM &mdash; 2025 Winner Laurel</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Gold laurel insignia certifying Riyadvi Software Technologies as the leading Social Media Marketing company in India.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">Verify Laurel &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 12. TechBehemoths 2025 Winner Certificate - SMM -->
-          <div class="award-card" data-award="tb-smm-certificate" data-cursor="VIEW">
-            <span class="award-year-badge">2025 CERTIFICATE</span>
-            <div class="award-card-showcase">
-              <img src="assets/awards/award_tb_smm_winner_poster.png" alt="Winner SMM 2025 Full Certificate" class="award-showcase-img" loading="lazy" />
-            </div>
-            <h3 class="award-title">Winner SMM 2025 &mdash; Certificate</h3>
-            <div class="award-org">TechBehemoths Berlin, Germany</div>
-            <p class="award-desc">Official celebration certificate proclaiming Riyadvi Software Technologies an Award-Winning Company in India for SMM Services.</p>
-            <div class="award-meta-row">
-              <span class="award-location">India &bull; Berlin, Germany</span>
-              <span class="award-verify-link">View Certificate &rarr;</span>
+            <div class="aw-lightbox-footer">
+              <div class="aw-lightbox-actions">
+                <!-- Dynamically populated -->
+              </div>
             </div>
           </div>
         </div>
