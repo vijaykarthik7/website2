@@ -310,36 +310,13 @@
                 </div>
               </div>
 
-              <!-- 03 // BUDGET SLIDER -->
-              <div class="form-section-block" style="margin-top: 24px;">
-                <div class="budget-slider-box">
-                  <div class="budget-top-row">
-                    <span class="budget-title">03 // PROJECT BUDGET TIER *</span>
-                    <span class="budget-active-tier" id="budgetBadge">
-                      <span id="budgetTierName">Growth Tier</span>
-                      <span style="color:var(--gold);">&bull;</span>
-                      <span id="budgetTierRange">$2,000 &ndash; $5,000</span>
-                    </span>
-                  </div>
-
-                  <input type="range" id="budgetRange" min="0" max="3" step="1" value="1" class="custom-range" aria-label="Project Budget Slider">
-
-                  <div class="budget-ticks">
-                    <span id="tick0">Starter (&lt;$2k)</span>
-                    <span id="tick1" class="active">Growth ($2k&ndash;$5k)</span>
-                    <span id="tick2">Scale ($5k&ndash;$15k)</span>
-                    <span id="tick3">Enterprise ($15k+)</span>
-                  </div>
-                </div>
-              </div>
-
               <!-- 04 // GOALS & ACTIONS -->
               <div class="form-section-block" style="margin-top: 24px;">
                 
                 <!-- Goals Textarea with 600 char limit -->
                 <div class="goals-wrapper">
                   <div class="goals-label-row">
-                    <span>04 // PROJECT OVERVIEW / GOALS *</span>
+                    <span>03 // PROJECT OVERVIEW / GOALS *</span>
                     <span><span class="char-counter" id="charCount">0</span> / 600</span>
                   </div>
                   <textarea id="projectGoals" name="projectGoals" class="goals-textarea" placeholder="Briefly describe what you're building, key operational challenges, or expected timeline..." maxlength="600" required></textarea>
@@ -375,13 +352,9 @@
 
                 <!-- Two Final Buttons -->
                 <div class="final-buttons-row" style="margin-top: 28px;">
-                  <button type="submit" class="btn-magnetic-primary" id="btnStartProject" data-action="START_PROJECT">
-                    <span>START MY PROJECT</span>
-                    <span>&rarr;</span>
-                  </button>
-
-                  <button type="submit" class="btn-magnetic-outline" id="btnConsultation" data-action="FREE_CONSULTATION">
+                  <button type="submit" class="btn-magnetic-primary" id="btnConsultation" data-action="FREE_CONSULTATION">
                     <span>GET FREE CONSULTATION</span>
+                    <span>&rarr;</span>
                   </button>
                 </div>
 
@@ -465,11 +438,6 @@
                 <div class="ticket-row" id="rowService">
                   <span class="ticket-key">SERVICE</span>
                   <span class="ticket-val" id="valService">Web Development</span>
-                </div>
-
-                <div class="ticket-row" id="rowBudget">
-                  <span class="ticket-key">BUDGET</span>
-                  <span class="ticket-val" id="valBudget">Growth $2k&ndash;$5k</span>
                 </div>
 
                 <div class="ticket-row" id="rowTimeline">

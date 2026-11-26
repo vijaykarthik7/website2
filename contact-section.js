@@ -686,11 +686,10 @@
         const fields = [
           userNameInput ? userNameInput.value.trim() : '',
           companyInput ? companyInput.value.trim() : '',
-          phoneInput ? phoneInput.value.trim() : '',
-          emailInput ? emailInput.value.trim() : '',
+          (phoneInput ? phoneInput.value.trim() : '') && (emailInput ? emailInput.value.trim() : ''),
           goalsInput ? goalsInput.value.trim() : ''
         ];
-        const validCount = fields.filter(f => f.length > 0).length;
+        const validCount = fields.filter(f => Boolean(f)).length;
         const pct = Math.round((validCount / fields.length) * 100);
 
         if (ringText) ringText.textContent = pct + '%';
@@ -786,7 +785,7 @@
           const tier = budgetTiers[idx];
           if (budgetTierName) budgetTierName.textContent = tier.name;
           if (budgetTierRange) budgetTierRange.textContent = tier.range;
-          if (valBudget) valBudget.textContent = tier.display;
+          if (valBudget) valBudget.textContent = tier ? tier.display : "";
           flashTicketRow('rowBudget');
 
           for (let i = 0; i <= 3; i++) {
