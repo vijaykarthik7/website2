@@ -1,0 +1,3303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Contact & Project Brief Console | Riyadvi Software Technologies</title>
+  <meta name="description" content="Direct lines and interactive project brief console for Riyadvi Software Technologies. Dark and gold luxury-tech experience.">
+  <link rel="icon" type="image/png" href="/assets/riyadvilogo.png">
+
+  <!-- Google Fonts: Bricolage Grotesque, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & RESET
+       ========================================================================== */
+    :root {
+      --bg-dark: #09080a;
+      --bg-panel: #12100e;
+      --bg-card: #161412;
+      --bg-card-hover: #1c1916;
+      --bg-input: #0e0d0b;
+      --ink: #f5efe2;
+      --ink-secondary: #c9c1b2;
+      --muted: #a89f8c;
+      --muted-dark: #635c4e;
+
+      /* Gold Accent Family */
+      --gold: #e8c468;
+      --gold-hi: #f8e19a;
+      --gold-deep: #a87d22;
+      --gold-border: rgba(232, 196, 104, 0.14);
+      --gold-border-active: rgba(232, 196, 104, 0.45);
+      --gold-glow: rgba(232, 196, 104, 0.25);
+      --gold-dim: rgba(232, 196, 104, 0.06);
+
+      --error: #ff8573;
+      --error-glow: rgba(255, 133, 115, 0.25);
+      --success: #67e8a3;
+
+      /* Typography */
+      --font-heading: 'Bricolage Grotesque', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+      --radius-xl: 28px;
+
+      --container-max: 1380px;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-dark);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Selection */
+    ::selection {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* Background Particle Canvas & Ambient Pointer Glow */
+    #bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cursor-ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 650px;
+      height: 650px;
+      margin-left: -325px;
+      margin-top: -325px;
+      background: radial-gradient(circle, rgba(232, 196, 104, 0.06) 0%, rgba(9, 8, 10, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 50%;
+      will-change: transform;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Main Container */
+    .contact-universe {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ==========================================================================
+       2. TOP HERO SECTION: LIVE IST CLOCK, HEADLINE, DRAGGABLE 3D GLOBE
+       ========================================================================== */
+    .contact-hero {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--gold-border);
+      position: relative;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* Eyebrow Pill with Live Clock */
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(232, 196, 104, 0.05);
+      border: 1px solid var(--gold-border);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--gold-glow);
+      animation: pulseAnim 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseAnim {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 16px var(--gold); }
+    }
+
+    .hero-clock {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(38px, 4.4vw, 68px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .rotating-word-wrap {
+      display: inline-block;
+      position: relative;
+      padding-right: 4px;
+    }
+
+    .rotating-word {
+      display: inline-block;
+      color: var(--gold);
+      background: linear-gradient(135deg, var(--gold-hi) 0%, var(--gold) 60%, var(--gold-deep) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: filter 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
+      will-change: transform, filter, opacity;
+    }
+
+    .rotating-word.blur-out {
+      filter: blur(8px);
+      transform: translateY(-16px);
+      opacity: 0;
+    }
+
+    .rotating-word.blur-in {
+      filter: blur(8px);
+      transform: translateY(16px);
+      opacity: 0;
+    }
+
+    .hero-subtext {
+      font-size: clamp(15.5px, 1.25vw, 18px);
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.65;
+    }
+
+    /* Hero Right: Draggable Gold Wireframe Globe */
+    .hero-globe-stage {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, rgba(232, 196, 104, 0.04) 0%, rgba(18, 16, 14, 0) 70%);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--gold-border);
+      overflow: hidden;
+      box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.8), 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    #globeCanvas {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+      touch-action: none;
+    }
+
+    #globeCanvas:active {
+      cursor: grabbing;
+    }
+
+    .globe-overlay-tag {
+      position: absolute;
+      bottom: 18px;
+      right: 20px;
+      background: rgba(14, 13, 11, 0.85);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      pointer-events: none;
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .globe-hint {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted-dark);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       3. TWO-COLUMN LAYOUT: DIRECT LINES & PROJECT BRIEF CONSOLE
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    /* Left Column: Direct Lines Stack */
+    .direct-lines-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .col-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .col-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold-border) 0%, transparent 100%);
+    }
+
+    /* Contact Card Style */
+    .contact-card {
+      position: relative;
+      background: var(--bg-panel);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: transform 0.28s var(--transition-smooth), box-shadow 0.28s var(--transition-smooth), border-color 0.28s ease;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-border-active);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(232, 196, 104, 0.08);
+    }
+
+    /* Cursor-following spotlight inside card */
+    .card-spotlight {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: radial-gradient(300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(232, 196, 104, 0.09), transparent 80%);
+      border-radius: inherit;
+    }
+
+    .contact-card:hover .card-spotlight {
+      opacity: 1;
+    }
+
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .card-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(232, 196, 104, 0.08);
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .contact-card:hover .card-icon-box {
+      transform: scale(1.05);
+      background: rgba(232, 196, 104, 0.14);
+      color: var(--gold-hi);
+    }
+
+    .card-mono-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .card-value-box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-value-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--ink);
+      font-size: 15.5px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(232, 196, 104, 0.08);
+      transform: scale(1.08);
+    }
+
+    .copy-btn:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(232, 196, 104, 0.08);
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-top: 14px;
+      width: fit-content;
+      transition: all 0.22s var(--transition-smooth);
+    }
+
+    .pill-link:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px var(--gold-glow);
+    }
+
+    .address-text {
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .geo-coord {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Radar Mini-Map in Headquarters Card */
+    .radar-container {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      background: #09090b;
+      border: 1px solid rgba(232, 196, 104, 0.2);
+      border-radius: 14px;
+      margin-top: 18px;
+      overflow: hidden;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9);
+    }
+
+    #radarCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ==========================================================================
+       4. RIGHT COLUMN: PROJECT BRIEF CONSOLE PANEL
+       ========================================================================== */
+    .console-panel {
+      position: relative;
+      background: var(--bg-panel);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Console Header & Stepper */
+    .console-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--gold-border);
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .console-title-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .console-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .console-subtitle {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Stepper */
+    .stepper-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .stepper-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      outline: none;
+      transition: color 0.2s ease;
+    }
+
+    .stepper-item:hover {
+      color: var(--ink);
+    }
+
+    .stepper-item:focus-visible {
+      outline: 2px solid var(--gold);
+      border-radius: 6px;
+    }
+
+    .step-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1.5px solid var(--muted-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      color: var(--muted);
+    }
+
+    .stepper-item.active {
+      color: var(--gold);
+    }
+
+    .stepper-item.active .step-circle {
+      border-color: var(--gold);
+      background: rgba(232, 196, 104, 0.15);
+      color: var(--gold-hi);
+      box-shadow: 0 0 12px var(--gold-glow);
+    }
+
+    .stepper-item.done {
+      color: var(--ink-secondary);
+    }
+
+    .stepper-item.done .step-circle {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: #000;
+    }
+
+    .stepper-line {
+      width: 28px;
+      height: 1.5px;
+      background: var(--muted-dark);
+      transition: background-color 0.3s ease;
+    }
+
+    .stepper-line.active {
+      background: var(--gold);
+    }
+
+    /* Console Body Grid: Form Left, Ticket Right */
+    .console-body {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 36px;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    /* Form Stages Wrapper with Slide Transition */
+    .form-wrapper {
+      position: relative;
+      overflow: hidden;
+      min-height: 440px;
+    }
+
+    .form-step {
+      display: none;
+      flex-direction: column;
+      gap: 24px;
+      animation: fadeInStep 0.35s var(--transition-smooth) forwards;
+    }
+
+    .form-step.active {
+      display: flex;
+    }
+
+    @keyframes fadeInStep {
+      from {
+        opacity: 0;
+        transform: translateX(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .form-step.slide-left {
+      animation: slideLeft 0.35s var(--transition-smooth) forwards;
+    }
+
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(-18px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Floating Label Inputs Grid */
+    .input-grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .floating-field {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .floating-field.shake {
+      animation: fieldShake 0.4s ease;
+    }
+
+    @keyframes fieldShake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
+    .field-input-box {
+      position: relative;
+      width: 100%;
+    }
+
+    .floating-input {
+      width: 100%;
+      height: 56px;
+      background: var(--bg-input);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 22px 40px 6px 16px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .floating-input:focus {
+      border-color: var(--gold);
+      background: rgba(18, 16, 14, 0.9);
+      box-shadow: 0 0 15px rgba(232, 196, 104, 0.12);
+    }
+
+    .floating-input.is-invalid {
+      border-color: var(--error);
+      box-shadow: 0 0 15px var(--error-glow);
+    }
+
+    .floating-input.is-valid {
+      border-color: rgba(103, 232, 163, 0.4);
+    }
+
+    .floating-label {
+      position: absolute;
+      top: 17px;
+      left: 16px;
+      font-size: 14.5px;
+      color: var(--muted);
+      pointer-events: none;
+      transition: all 0.2s var(--transition-smooth);
+      transform-origin: left top;
+    }
+
+    .floating-input:focus ~ .floating-label,
+    .floating-input:not(:placeholder-shown) ~ .floating-label {
+      top: 8px;
+      transform: scale(0.78);
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .floating-input.is-invalid ~ .floating-label {
+      color: var(--error);
+    }
+
+    .field-status-icon {
+      position: absolute;
+      right: 14px;
+      top: 18px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .floating-input.is-valid ~ .field-status-icon.valid-icon {
+      opacity: 1;
+      color: var(--success);
+    }
+
+    .floating-input.is-invalid ~ .field-status-icon.invalid-icon {
+      opacity: 1;
+      color: var(--error);
+    }
+
+    .field-error-msg {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--error);
+      margin-top: 4px;
+      min-height: 16px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .field-error-msg.visible {
+      opacity: 1;
+    }
+
+    /* Step 2: 6 Service Chips */
+    .service-chips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .chip-radio {
+      display: none;
+    }
+
+    .service-chip-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-input);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.22s var(--transition-smooth);
+      position: relative;
+      user-select: none;
+    }
+
+    .chip-icon {
+      color: var(--gold);
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-chip-label:hover {
+      border-color: var(--gold);
+      color: #fff;
+      background: rgba(232, 196, 104, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .chip-radio:checked + .service-chip-label {
+      border-color: var(--gold);
+      background: rgba(232, 196, 104, 0.16);
+      color: var(--gold-hi);
+      box-shadow: 0 4px 18px rgba(232, 196, 104, 0.14);
+    }
+
+    .chip-check-badge {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #000;
+      font-size: 9px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .chip-radio:checked + .service-chip-label .chip-check-badge {
+      display: flex;
+    }
+
+    /* Budget Slider */
+    .budget-slider-box {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .budget-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .budget-title {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .budget-active-tier {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(232, 196, 104, 0.1);
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--gold-hi);
+      font-weight: 700;
+    }
+
+    .custom-range {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid #fff;
+      box-shadow: 0 0 14px var(--gold);
+      cursor: grab;
+      transition: transform 0.15s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.18);
+    }
+
+    .budget-ticks {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--muted-dark);
+    }
+
+    .budget-ticks span.active {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Step 3: Goals Textarea, Quick-Start, Timeline */
+    .goals-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .goals-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .char-counter {
+      color: var(--gold);
+    }
+
+    .goals-textarea {
+      width: 100%;
+      height: 120px;
+      background: var(--bg-input);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-size: 14.5px;
+      color: var(--ink);
+      outline: none;
+      resize: vertical;
+      line-height: 1.6;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .goals-textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(232, 196, 104, 0.15);
+    }
+
+    /* Quick-Start Prompt Pills */
+    .quick-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .quick-pill-tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--muted-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .quick-pill-btn {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quick-pill-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(232, 196, 104, 0.08);
+      transform: translateY(-1px);
+    }
+
+    /* Timeline Selection */
+    .timeline-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .timeline-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-pill-label {
+      background: var(--bg-input);
+      border: 1px solid var(--gold-border);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .timeline-pill-label:hover {
+      border-color: var(--gold);
+      color: var(--ink);
+    }
+
+    .timeline-radio:checked + .timeline-pill-label {
+      background: rgba(232, 196, 104, 0.18);
+      border-color: var(--gold);
+      color: var(--gold-hi);
+      font-weight: 700;
+      box-shadow: 0 0 12px rgba(232, 196, 104, 0.15);
+    }
+
+    /* Stepper Button Actions */
+    .stepper-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .btn-step-next {
+      background: linear-gradient(135deg, var(--gold-hi) 0%, var(--gold) 60%, var(--gold-deep) 100%);
+      color: #000;
+      border: 1px solid var(--gold-hi);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s var(--transition-smooth);
+      box-shadow: 0 4px 18px rgba(232, 196, 104, 0.25);
+    }
+
+    .btn-step-next:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 196, 104, 0.4);
+    }
+
+    .btn-step-back {
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 13px 22px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-step-back:hover {
+      color: var(--ink);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Two Final Submission Buttons */
+    .final-buttons-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    /* Magnetic Primary Button with Shine Sweep */
+    .btn-magnetic-primary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, var(--gold-hi) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+      color: #000000;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-hi);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(232, 196, 104, 0.35);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+    }
+
+    .btn-magnetic-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -100%;
+      width: 60px;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: rotate(25deg);
+      transition: left 0.65s ease;
+    }
+
+    .btn-magnetic-primary:hover::after {
+      left: 140%;
+    }
+
+    .btn-magnetic-primary:hover {
+      box-shadow: 0 8px 30px rgba(232, 196, 104, 0.55);
+    }
+
+    /* Magnetic Secondary Button with Fill-From-Bottom */
+    .btn-magnetic-outline {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 28px;
+      background: transparent;
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      overflow: hidden;
+      transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+      z-index: 1;
+    }
+
+    .btn-magnetic-outline::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background: var(--gold);
+      transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: -1;
+    }
+
+    .btn-magnetic-outline:hover::before {
+      height: 100%;
+    }
+
+    .btn-magnetic-outline:hover {
+      color: #000;
+      box-shadow: 0 4px 20px rgba(232, 196, 104, 0.3);
+    }
+
+    /* ==========================================================================
+       5. LIVE TICKET PREVIEW (BOARDING PASS)
+       ========================================================================== */
+    .ticket-wrapper {
+      position: sticky;
+      top: 30px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .boarding-pass {
+      position: relative;
+      background: #0f0e0c;
+      border: 1px solid var(--gold-border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      font-family: var(--font-mono);
+    }
+
+    /* Notched Edges and Perforation */
+    .pass-perforation {
+      position: relative;
+      margin: 18px -24px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pass-notch-left, .pass-notch-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      background: var(--bg-panel);
+      border-radius: 50%;
+      border: 1px solid var(--gold-border);
+      z-index: 2;
+    }
+
+    .pass-notch-left {
+      left: -9px;
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    }
+
+    .pass-notch-right {
+      right: -9px;
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    }
+
+    .perforation-dashed-line {
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px dashed rgba(232, 196, 104, 0.25);
+    }
+
+    /* Ticket Header */
+    .ticket-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .ticket-brand {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .ticket-ref-no {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+
+    .ticket-status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(232, 196, 104, 0.12);
+      color: var(--gold-hi);
+      border: 1px solid var(--gold-border);
+      transition: all 0.3s ease;
+    }
+
+    .status-badge.sent {
+      background: rgba(103, 232, 163, 0.15);
+      border-color: rgba(103, 232, 163, 0.4);
+      color: var(--success);
+    }
+
+    /* Circular SVG Completion Ring */
+    .completion-ring-box {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .completion-ring-svg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    .ring-bg {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.08);
+      stroke-width: 3.5;
+    }
+
+    .ring-val {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-dasharray: 100.5;
+      stroke-dashoffset: 100.5;
+      transition: stroke-dashoffset 0.4s ease;
+    }
+
+    .ring-text {
+      position: absolute;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--gold-hi);
+    }
+
+    /* Key-Value Ticket Rows */
+    .ticket-data-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ticket-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 4px 6px;
+      border-radius: 4px;
+      transition: background-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .ticket-row.flash {
+      background: rgba(232, 196, 104, 0.18);
+      box-shadow: 0 0 10px rgba(232, 196, 104, 0.2);
+    }
+
+    .ticket-key {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .ticket-val {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 170px;
+    }
+
+    .ticket-goals-box {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .ticket-goals-label {
+      font-size: 9.5px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .ticket-goals-excerpt {
+      font-size: 10.5px;
+      color: var(--ink-secondary);
+      line-height: 1.5;
+      max-height: 48px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    /* Barcode */
+    .ticket-barcode-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .barcode-svg {
+      width: 100%;
+      height: 38px;
+    }
+
+    .barcode-caption {
+      font-size: 9px;
+      color: var(--muted-dark);
+      letter-spacing: 0.2em;
+    }
+
+    /* The "RECEIVED" Stamp Slam Animation */
+    .received-stamp {
+      position: absolute;
+      top: 42%;
+      left: 18%;
+      transform: translate(-50%, -50%) rotate(-14deg) scale(2.5);
+      border: 3.5px dashed var(--gold);
+      border-radius: 10px;
+      padding: 8px 20px;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      color: var(--gold-hi);
+      text-transform: uppercase;
+      box-shadow: 0 0 25px rgba(232, 196, 104, 0.4), inset 0 0 15px rgba(232, 196, 104, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+      background: rgba(18, 16, 14, 0.88);
+      backdrop-filter: blur(2px);
+    }
+
+    .received-stamp.slam {
+      animation: stampSlam 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes stampSlam {
+      0% {
+        opacity: 0;
+        transform: rotate(-14deg) scale(3);
+      }
+      70% {
+        opacity: 1;
+        transform: rotate(-14deg) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate(-14deg) scale(1);
+      }
+    }
+
+    /* ==========================================================================
+       6. SUCCESS STATE VIEW
+       ========================================================================== */
+    .success-view {
+      display: none;
+      flex-direction: column;
+      gap: 24px;
+      animation: fadeInStep 0.4s var(--transition-smooth) forwards;
+    }
+
+    .success-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(103, 232, 163, 0.12);
+      border: 1px solid rgba(103, 232, 163, 0.3);
+      color: var(--success);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    .success-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 3vw, 44px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+
+    .success-lead {
+      font-size: 15.5px;
+      color: var(--muted);
+      line-height: 1.68;
+      max-width: 580px;
+    }
+
+    .success-roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 10px 0;
+    }
+
+    .roadmap-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-left: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .roadmap-num {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(232, 196, 104, 0.12);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .roadmap-text {
+      font-size: 14.5px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .btn-send-another {
+      background: var(--bg-input);
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      width: fit-content;
+      transition: all 0.22s ease;
+    }
+
+    .btn-send-another:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* Confetti Canvas */
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Floating Toast Notification */
+    .toast-box {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #141210;
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--gold-hi);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(232, 196, 104, 0.15);
+      z-index: 10000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .toast-box.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       7. RESPONSIVE MEDIA QUERIES (DOWN TO 400PX)
+       ========================================================================== */
+    @media (max-width: 1100px) {
+      .contact-hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .hero-globe-stage {
+        height: 320px;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .direct-lines-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .direct-lines-col .col-label {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .console-body {
+        grid-template-columns: 1fr;
+      }
+      .ticket-wrapper {
+        position: static;
+        max-width: 100%;
+        margin-top: 30px;
+      }
+      .service-chips-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .direct-lines-col {
+        grid-template-columns: 1fr;
+      }
+      .direct-lines-col .col-label {
+        grid-column: span 1;
+      }
+      .console-panel {
+        padding: 28px 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .input-grid-2x2 {
+        grid-template-columns: 1fr;
+      }
+      .service-chips-grid {
+        grid-template-columns: 1fr;
+      }
+      .final-buttons-row {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-magnetic-primary,
+      .btn-magnetic-outline {
+        width: 100%;
+      }
+      .stepper-nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .contact-universe {
+        padding: 24px 16px 60px;
+      }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Particle Canvas & Pointer Glow -->
+  <canvas id="bgCanvas"></canvas>
+  <div class="cursor-ambient-glow" id="cursorGlow"></div>
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-box" id="toastBox" role="status" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">Copied to clipboard</span>
+  </div>
+
+  <main class="contact-universe">
+
+    <!-- ========================================================================
+         HERO SECTION: CHENNAI LIVE CLOCK, ROTATING HEADLINE, 3D GLOBE CANVAS
+         ======================================================================== -->
+    <section class="contact-hero" aria-label="Contact Overview">
+      <div class="hero-left">
+        <!-- Live Chennai Clock Pill -->
+        <div class="hero-eyebrow">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>CHENNAI, IN &middot; <span class="hero-clock" id="liveClock">--:--:-- IST</span> &middot; UTC+5:30</span>
+        </div>
+
+        <h1 class="hero-title">
+          Let's <span class="rotating-word-wrap"><span class="rotating-word" id="rotatingWord">scale</span></span> your business.
+        </h1>
+
+        <p class="hero-subtext">
+          Reach out directly or request a free growth consultation. Our technical team responds within 2 business hours.
+        </p>
+      </div>
+
+      <!-- Hero Right: Interactive Wireframe Canvas Globe -->
+      <div class="hero-globe-stage" id="globeStage" aria-label="Interactive Chennai Globe Visualization">
+        <canvas id="globeCanvas"></canvas>
+        <div class="globe-hint">DRAG TO ROTATE &middot; REAL-TIME ORBIT</div>
+        <div class="globe-overlay-tag">
+          <span class="pulse-dot" style="width:6px;height:6px;"></span>
+          <span>CHENNAI 13.08&deg;N 80.27&deg;E</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TWO-COLUMN CONTACT GRID: DIRECT LINES & PROJECT BRIEF CONSOLE
+         ======================================================================== -->
+    <div class="contact-grid">
+
+      <!-- LEFT COLUMN: DIRECT LINES (STACKED CARDS) -->
+      <aside class="direct-lines-col" aria-label="Direct Contact Channels">
+        <div class="col-label">DIRECT LINES</div>
+
+        <!-- 1. Direct WhatsApp -->
+        <div class="contact-card" data-card>
+          <div class="card-spotlight"></div>
+          <div class="card-header-row">
+            <div class="card-icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </div>
+            <span class="card-mono-tag">DIRECT WHATSAPP</span>
+          </div>
+          <div class="card-value-box">
+            <div class="card-value-line">
+              <span>+91 8072487427</span>
+              <button type="button" class="copy-btn" data-copy="+918072487427" aria-label="Copy WhatsApp Number">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <a href="https://wa.me/918072487427" target="_blank" rel="noopener noreferrer" class="pill-link">
+            <span>CHAT NOW</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+
+        <!-- 2. Phone Call -->
+        <div class="contact-card" data-card>
+          <div class="card-spotlight"></div>
+          <div class="card-header-row">
+            <div class="card-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <span class="card-mono-tag">PHONE CALL</span>
+          </div>
+          <div class="card-value-box">
+            <div class="card-value-line">
+              <a href="tel:+919080822034" style="color:inherit;text-decoration:none;">+91 9080822034</a>
+              <button type="button" class="copy-btn" data-copy="+919080822034" aria-label="Copy primary phone number">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+            <div class="card-value-line">
+              <a href="tel:+918072487427" style="color:inherit;text-decoration:none;">+91 8072487427</a>
+              <button type="button" class="copy-btn" data-copy="+918072487427" aria-label="Copy secondary phone number">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Corporate Email -->
+        <div class="contact-card" data-card>
+          <div class="card-spotlight"></div>
+          <div class="card-header-row">
+            <div class="card-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <span class="card-mono-tag">CORPORATE EMAIL</span>
+          </div>
+          <div class="card-value-box">
+            <div class="card-value-line" style="word-break: break-all; font-size: 14.5px;">
+              <a href="mailto:info@riyadvisoftwaretechnologies.com" style="color:inherit;text-decoration:none;">info@riyadvisoftwaretechnologies.com</a>
+              <button type="button" class="copy-btn" data-copy="info@riyadvisoftwaretechnologies.com" aria-label="Copy Email address">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Headquarters Location & Radar Mini-Map -->
+        <div class="contact-card" data-card>
+          <div class="card-spotlight"></div>
+          <div class="card-header-row">
+            <div class="card-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <span class="card-mono-tag">HEADQUARTERS LOCATION</span>
+          </div>
+          <p class="address-text">
+            17, Aarti Arcade, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004
+          </p>
+          <div class="geo-coord">
+            <span>&empty; 13.08&deg;N &middot; 80.27&deg;E</span>
+          </div>
+          <a href="https://maps.google.com/?q=17,+Aarti+Arcade,+Dr.+Radha+Krishnan+Salai,+Mylapore,+Chennai,+Tamil+Nadu+600004" target="_blank" rel="noopener noreferrer" class="pill-link">
+            <span>OPEN IN MAPS</span>
+            <span>&rarr;</span>
+          </a>
+
+          <!-- Animated Radar Mini-Map Canvas -->
+          <div class="radar-container" aria-label="Mylapore Headquarters Radar Telemetry">
+            <canvas id="radarCanvas"></canvas>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- RIGHT COLUMN: PROJECT BRIEF CONSOLE PANEL -->
+      <section class="console-panel" aria-label="Project Brief Builder">
+
+        <!-- Console Header with 3-Step Stepper -->
+        <div class="console-header">
+          <div class="console-title-group">
+            <h2 class="console-title">Project brief</h2>
+            <p class="console-subtitle" id="consoleSub">Three short steps. About a minute.</p>
+          </div>
+
+          <div class="stepper-nav" role="tablist" aria-label="Form Progress Steps">
+            <button type="button" class="stepper-item active" id="stepBtn1" data-step="1" role="tab" aria-selected="true" aria-controls="stepForm1">
+              <span class="step-circle" id="circle1">01</span>
+              <span>You</span>
+            </button>
+            <div class="stepper-line" id="line1"></div>
+
+            <button type="button" class="stepper-item" id="stepBtn2" data-step="2" role="tab" aria-selected="false" aria-controls="stepForm2">
+              <span class="step-circle" id="circle2">02</span>
+              <span>Scope</span>
+            </button>
+            <div class="stepper-line" id="line2"></div>
+
+            <button type="button" class="stepper-item" id="stepBtn3" data-step="3" role="tab" aria-selected="false" aria-controls="stepForm3">
+              <span class="step-circle" id="circle3">03</span>
+              <span>Goals</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="console-body">
+
+          <!-- FORM CONTAINER -->
+          <div class="form-wrapper">
+
+            <!-- STEP 1: YOU (NAME, COMPANY, PHONE, EMAIL) -->
+            <form id="projectBriefForm" novalidate>
+              <div class="form-step active" id="step1Container">
+                <div class="input-grid-2x2">
+                  
+                  <!-- Your Name -->
+                  <div class="floating-field" id="wrap-userName">
+                    <div class="field-input-box">
+                      <input type="text" id="userName" name="userName" class="floating-input" placeholder=" " required autocomplete="name">
+                      <label for="userName" class="floating-label">Your Name *</label>
+                      <span class="field-status-icon valid-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </span>
+                      <span class="field-status-icon invalid-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                      </span>
+                    </div>
+                    <span class="field-error-msg" id="err-userName"></span>
+                  </div>
+
+                  <!-- Company Name -->
+                  <div class="floating-field" id="wrap-companyName">
+                    <div class="field-input-box">
+                      <input type="text" id="companyName" name="companyName" class="floating-input" placeholder=" " required autocomplete="organization">
+                      <label for="companyName" class="floating-label">Company Name *</label>
+                      <span class="field-status-icon valid-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </span>
+                      <span class="field-status-icon invalid-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                      </span>
+                    </div>
+                    <span class="field-error-msg" id="err-companyName"></span>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div class="floating-field" id="wrap-phoneNumber">
+                    <div class="field-input-box">
+                      <input type="tel" id="phoneNumber" name="phoneNumber" class="floating-input" placeholder=" " required autocomplete="tel">
+                      <label for="phoneNumber" class="floating-label">Phone Number *</label>
+                      <span class="field-status-icon valid-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </span>
+                      <span class="field-status-icon invalid-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                      </span>
+                    </div>
+                    <span class="field-error-msg" id="err-phoneNumber"></span>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="floating-field" id="wrap-emailAddress">
+                    <div class="field-input-box">
+                      <input type="email" id="emailAddress" name="emailAddress" class="floating-input" placeholder=" " required autocomplete="email">
+                      <label for="emailAddress" class="floating-label">Email Address *</label>
+                      <span class="field-status-icon valid-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </span>
+                      <span class="field-status-icon invalid-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                      </span>
+                    </div>
+                    <span class="field-error-msg" id="err-emailAddress"></span>
+                  </div>
+
+                </div>
+
+                <div class="stepper-actions">
+                  <button type="button" class="btn-step-next" id="btnGoToStep2">
+                    <span>CONTINUE TO SCOPE</span>
+                    <span>&rarr;</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 2: SCOPE (SERVICE CHIPS & BUDGET SLIDER) -->
+              <div class="form-step" id="step2Container">
+                
+                <!-- Service Selection -->
+                <div>
+                  <div class="col-label" style="margin-bottom: 12px;">REQUIRED SERVICE *</div>
+                  <div class="service-chips-grid">
+                    
+                    <!-- Web Development (Default) -->
+                    <input type="radio" name="serviceChoice" id="svcWeb" value="Web Development" data-verb="launch" class="chip-radio" checked>
+                    <label for="svcWeb" class="service-chip-label">
+                      <span class="chip-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                      </span>
+                      <span>Web Development</span>
+                      <span class="chip-check-badge">&#10003;</span>
+                    </label>
+
+                    <!-- Mobile App -->
+                    <input type="radio" name="serviceChoice" id="svcMobile" value="Mobile App" data-verb="ship" class="chip-radio">
+                    <label for="svcMobile" class="service-chip-label">
+                      <span class="chip-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                      </span>
+                      <span>Mobile App</span>
+                      <span class="chip-check-badge">&#10003;</span>
+                    </label>
+
+                    <!-- UI/UX Design -->
+                    <input type="radio" name="serviceChoice" id="svcDesign" value="UI/UX Design" data-verb="redesign" class="chip-radio">
+                    <label for="svcDesign" class="service-chip-label">
+                      <span class="chip-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                      </span>
+                      <span>UI/UX Design</span>
+                      <span class="chip-check-badge">&#10003;</span>
+                    </label>
+
+                    <!-- Cloud & DevOps -->
+                    <input type="radio" name="serviceChoice" id="svcCloud" value="Cloud & DevOps" data-verb="modernize" class="chip-radio">
+                    <label for="svcCloud" class="service-chip-label">
+                      <span class="chip-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                      </span>
+                      <span>Cloud & DevOps</span>
+                      <span class="chip-check-badge">&#10003;</span>
+                    </label>
+
+                    <!-- Custom Software -->
+                    <input type="radio" name="serviceChoice" id="svcSoftware" value="Custom Software" data-verb="automate" class="chip-radio">
+                    <label for="svcSoftware" class="service-chip-label">
+                      <span class="chip-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                      </span>
+                      <span>Custom Software</span>
+                      <span class="chip-check-badge">&#10003;</span>
+                    </label>
+
+                    <!-- Digital Growth -->
+                    <input type="radio" name="serviceChoice" id="svcGrowth" value="Digital Growth" data-verb="grow" class="chip-radio">
+                    <label for="svcGrowth" class="service-chip-label">
+                      <span class="chip-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                      </span>
+                      <span>Digital Growth</span>
+                      <span class="chip-check-badge">&#10003;</span>
+                    </label>
+
+                  </div>
+                </div>
+
+                <!-- Budget Slider -->
+                <div class="budget-slider-box">
+                  <div class="budget-top-row">
+                    <span class="budget-title">PROJECT BUDGET TIER *</span>
+                    <span class="budget-active-tier" id="budgetBadge">
+                      <span id="budgetTierName">Growth Tier</span>
+                      <span style="color:var(--gold);">&bull;</span>
+                      <span id="budgetTierRange">$2,000 &ndash; $5,000</span>
+                    </span>
+                  </div>
+
+                  <input type="range" id="budgetRange" min="0" max="3" step="1" value="1" class="custom-range" aria-label="Project Budget Slider">
+
+                  <div class="budget-ticks">
+                    <span id="tick0">Starter (&lt;$2k)</span>
+                    <span id="tick1" class="active">Growth ($2k&ndash;$5k)</span>
+                    <span id="tick2">Scale ($5k&ndash;$15k)</span>
+                    <span id="tick3">Enterprise ($15k+)</span>
+                  </div>
+                </div>
+
+                <div class="stepper-actions">
+                  <button type="button" class="btn-step-back" id="btnBackToStep1">&larr; BACK</button>
+                  <button type="button" class="btn-step-next" id="btnGoToStep3">
+                    <span>CONTINUE TO GOALS</span>
+                    <span>&rarr;</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 3: GOALS & ACTIONS -->
+              <div class="form-step" id="step3Container">
+                
+                <!-- Goals Textarea with 600 char limit -->
+                <div class="goals-wrapper">
+                  <div class="goals-label-row">
+                    <span>PROJECT OVERVIEW / GOALS *</span>
+                    <span><span class="char-counter" id="charCount">0</span> / 600</span>
+                  </div>
+                  <textarea id="projectGoals" name="projectGoals" class="goals-textarea" placeholder="Briefly describe what you're building, key operational challenges, or expected timeline..." maxlength="600" required></textarea>
+                  <span class="field-error-msg" id="err-projectGoals"></span>
+                </div>
+
+                <!-- Quick-Start Pills -->
+                <div class="quick-pills-row">
+                  <span class="quick-pill-tag">QUICK PROMPTS:</span>
+                  <button type="button" class="quick-pill-btn" data-insert="Launch an MVP: Build a rapid, resilient prototype to test commercial market validation.">Launch an MVP</button>
+                  <button type="button" class="quick-pill-btn" data-insert="Redesign my site: Modernize digital architecture, refine UX aesthetics, and speed up load latency.">Redesign my site</button>
+                  <button type="button" class="quick-pill-btn" data-insert="Fix performance: Eliminate server bottlenecks, reduce bundle weights, and achieve 95+ Core Web Vitals.">Fix performance</button>
+                  <button type="button" class="quick-pill-btn" data-insert="Automate a process: Build microservices and workflows to remove manual data bottlenecks.">Automate a process</button>
+                </div>
+
+                <!-- Optional Timeline Pills -->
+                <div class="timeline-section">
+                  <div class="col-label">DESIRED TIMELINE</div>
+                  <div class="timeline-pills">
+                    
+                    <input type="radio" name="timelineChoice" id="tlAsap" value="ASAP" class="timeline-radio" style="display:none;">
+                    <label for="tlAsap" class="timeline-pill-label">ASAP</label>
+
+                    <input type="radio" name="timelineChoice" id="tl1to3" value="1-3 months" class="timeline-radio" style="display:none;" checked>
+                    <label for="tl1to3" class="timeline-pill-label">1&ndash;3 months</label>
+
+                    <input type="radio" name="timelineChoice" id="tl3to6" value="3-6 months" class="timeline-radio" style="display:none;">
+                    <label for="tl3to6" class="timeline-pill-label">3&ndash;6 months</label>
+
+                    <input type="radio" name="timelineChoice" id="tlFlex" value="Flexible" class="timeline-radio" style="display:none;">
+                    <label for="tlFlex" class="timeline-pill-label">Flexible</label>
+
+                  </div>
+                </div>
+
+                <!-- Two Final Buttons & Back -->
+                <div class="final-buttons-row">
+                  <button type="submit" class="btn-magnetic-primary" id="btnStartProject" data-action="START_PROJECT">
+                    <span>START MY PROJECT</span>
+                    <span>&rarr;</span>
+                  </button>
+
+                  <button type="submit" class="btn-magnetic-outline" id="btnConsultation" data-action="FREE_CONSULTATION">
+                    <span>GET FREE CONSULTATION</span>
+                  </button>
+
+                  <button type="button" class="btn-step-back" id="btnBackToStep2" style="margin-left: auto;">&larr; BACK</button>
+                </div>
+
+              </div>
+            </form>
+
+            <!-- SUCCESS VIEW (Appears after submission) -->
+            <div class="success-view" id="successView">
+              <span class="success-badge">
+                <span class="pulse-dot" style="background:var(--success);box-shadow:0 0 10px rgba(103,232,163,0.5);"></span>
+                <span>BRIEF RECEIVED</span>
+              </span>
+
+              <h2 class="success-heading" id="successHeading">Consultation requested, Partner.</h2>
+
+              <p class="success-lead" id="successLead">
+                Our technical team will reply to your inquiry within 2 business hours. Your reference is <strong style="color:var(--gold);" id="successRef">BRF-000000-0000</strong>.
+              </p>
+
+              <div class="success-roadmap">
+                <div class="roadmap-item">
+                  <span class="roadmap-num">01</span>
+                  <span class="roadmap-text">Our technical leads analyze your requirements and architectural scope.</span>
+                </div>
+                <div class="roadmap-item">
+                  <span class="roadmap-num">02</span>
+                  <span class="roadmap-text">You receive a direct reply with strategic recommendations within 2 business hours.</span>
+                </div>
+                <div class="roadmap-item">
+                  <span class="roadmap-num">03</span>
+                  <span class="roadmap-text">We coordinate a private technical discovery call to finalize execution milestones.</span>
+                </div>
+              </div>
+
+              <button type="button" class="btn-send-another" id="btnSendAnother">
+                <span>&larr; SEND ANOTHER BRIEF</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- RIGHT LIVE TICKET (BOARDING PASS) -->
+          <aside class="ticket-wrapper" aria-label="Real-time Brief Boarding Pass">
+            <div class="boarding-pass" id="boardingPass">
+              
+              <!-- Tilted RECEIVED Stamp -->
+              <div class="received-stamp" id="receivedStamp">RECEIVED</div>
+
+              <!-- Ticket Header -->
+              <div class="ticket-header">
+                <span class="ticket-brand">PROJECT BRIEF</span>
+                <span class="ticket-ref-no" id="ticketRef">BRF-261126-3155</span>
+              </div>
+
+              <!-- Ticket Status & Completion Ring -->
+              <div class="ticket-status-row">
+                <span class="status-badge" id="ticketStatusBadge">Draft</span>
+
+                <div class="completion-ring-box">
+                  <svg class="completion-ring-svg" viewBox="0 0 36 36">
+                    <circle class="ring-bg" cx="18" cy="18" r="16"></circle>
+                    <circle class="ring-val" id="ringCircle" cx="18" cy="18" r="16"></circle>
+                  </svg>
+                  <span class="ring-text" id="ringText">0%</span>
+                </div>
+              </div>
+
+              <!-- Key Value Data Rows -->
+              <div class="ticket-data-list">
+                
+                <div class="ticket-row" id="rowClient">
+                  <span class="ticket-key">CLIENT</span>
+                  <span class="ticket-val" id="valClient">&mdash;</span>
+                </div>
+
+                <div class="ticket-row" id="rowCompany">
+                  <span class="ticket-key">COMPANY</span>
+                  <span class="ticket-val" id="valCompany">&mdash;</span>
+                </div>
+
+                <div class="ticket-row" id="rowService">
+                  <span class="ticket-key">SERVICE</span>
+                  <span class="ticket-val" id="valService">Web Development</span>
+                </div>
+
+                <div class="ticket-row" id="rowBudget">
+                  <span class="ticket-key">BUDGET</span>
+                  <span class="ticket-val" id="valBudget">Growth $2k&ndash;$5k</span>
+                </div>
+
+                <div class="ticket-row" id="rowTimeline">
+                  <span class="ticket-key">TIMELINE</span>
+                  <span class="ticket-val" id="valTimeline">1&ndash;3 months</span>
+                </div>
+
+                <div class="ticket-row" id="rowReach">
+                  <span class="ticket-key">REACH</span>
+                  <span class="ticket-val" id="valReach">&mdash;</span>
+                </div>
+
+              </div>
+
+              <!-- Goals Excerpt Box -->
+              <div class="ticket-goals-box" id="rowGoals">
+                <div class="ticket-goals-label">GOALS EXCERPT</div>
+                <div class="ticket-goals-excerpt" id="valGoals">Awaiting project description...</div>
+              </div>
+
+              <!-- Notched Edges Perforation -->
+              <div class="pass-perforation" aria-hidden="true">
+                <div class="pass-notch-left"></div>
+                <div class="perforation-dashed-line"></div>
+                <div class="pass-notch-right"></div>
+              </div>
+
+              <!-- Regenerating Barcode -->
+              <div class="ticket-barcode-box">
+                <svg class="barcode-svg" id="barcodeSvg" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true">
+                  <!-- Dynamically rendered bars -->
+                </svg>
+                <span class="barcode-caption" id="barcodeCaption">|||| | | ||| || ||| | ||</span>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       8. VANILLA JS LOGIC ENGINE
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Live Chennai Clock (IST)
+      initLiveClock();
+
+      // 2. Headline Word Rotator & Service Verb Locking
+      initHeadlineRotator();
+
+      // 3. Interactive Draggable 3D Globe Canvas (Centered on Chennai)
+      initInteractiveGlobe();
+
+      // 4. Background Particle Mesh & Cursor Easing Glow
+      initParticleMesh();
+
+      // 5. Radar Mini-Map in Headquarters Card
+      initRadarCanvas();
+
+      // 6. Interactive Card Spotlights & Copy Buttons
+      initContactCards();
+
+      // 7. Multi-step Stepper & Form Logic with Validation
+      initBriefConsole();
+
+      // 8. Dynamic Barcode Generator
+      renderBarcode('RIYADVI-INIT-261126');
+    });
+
+    /* ==========================================================================
+       1. LIVE CHENNAI IST CLOCK
+       ========================================================================== */
+    function initLiveClock() {
+      const clockEl = document.getElementById('liveClock');
+      if (!clockEl) return;
+
+      function update() {
+        const now = new Date();
+        const options = {
+          timeZone: 'Asia/Kolkata',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        };
+        clockEl.textContent = `${now.toLocaleTimeString('en-US', options)} IST`;
+      }
+      update();
+      setInterval(update, 1000);
+    }
+
+    /* ==========================================================================
+       2. HEADLINE WORD ROTATOR
+       ========================================================================== */
+    let isVerbLocked = false;
+    let rotatorInterval = null;
+
+    function initHeadlineRotator() {
+      const wordEl = document.getElementById('rotatingWord');
+      if (!wordEl) return;
+
+      const words = ['scale', 'launch', 'automate', 'redesign', 'ship'];
+      let idx = 0;
+
+      function rotate() {
+        if (isVerbLocked) return;
+        wordEl.classList.add('blur-out');
+        setTimeout(() => {
+          idx = (idx + 1) % words.length;
+          wordEl.textContent = words[idx];
+          wordEl.classList.remove('blur-out');
+          wordEl.classList.add('blur-in');
+          setTimeout(() => {
+            wordEl.classList.remove('blur-in');
+          }, 350);
+        }, 350);
+      }
+
+      rotatorInterval = setInterval(rotate, 3200);
+    }
+
+    function lockHeadlineVerb(verb) {
+      isVerbLocked = true;
+      const wordEl = document.getElementById('rotatingWord');
+      if (!wordEl) return;
+      wordEl.classList.add('blur-out');
+      setTimeout(() => {
+        wordEl.textContent = verb;
+        wordEl.classList.remove('blur-out');
+        wordEl.classList.add('blur-in');
+        setTimeout(() => {
+          wordEl.classList.remove('blur-in');
+        }, 350);
+      }, 350);
+    }
+
+    /* ==========================================================================
+       3. DRAGGABLE DOTTED GOLD GLOBE (CANVAS)
+       Centred on Chennai: 13.08°N, 80.27°E
+       ========================================================================== */
+    function initInteractiveGlobe() {
+      const canvas = document.getElementById('globeCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width, height;
+      function resize() {
+        width = canvas.width = canvas.parentElement.clientWidth;
+        height = canvas.height = canvas.parentElement.clientHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      // Globe Settings
+      const radius = Math.min(width, height) * 0.36;
+      let rotX = 0.22; // Latitude tilt for 13°N
+      let rotY = -1.4; // Longitude offset for 80°E
+      let autoSpeed = 0.002;
+      let isDragging = false;
+      let lastX = 0, lastY = 0;
+
+      // Generate Fibonacci Sphere Dotted Grid
+      const dotCount = 420;
+      const dots = [];
+      const phi = Math.PI * (3 - Math.sqrt(5)); // Golden angle
+
+      for (let i = 0; i < dotCount; i++) {
+        const y = 1 - (i / (dotCount - 1)) * 2; // y goes from 1 to -1
+        const r = Math.sqrt(1 - y * y); // radius at y
+        const theta = phi * i; // golden angle increment
+        const x = Math.cos(theta) * r;
+        const z = Math.sin(theta) * r;
+        dots.push({ x, y, z });
+      }
+
+      // Chennai Pin Coordinates in Spherical Math (Lat: 13.08°N, Lon: 80.27°E)
+      const latRad = 13.08 * (Math.PI / 180);
+      const lonRad = 80.27 * (Math.PI / 180);
+      const chennaiVec = {
+        x: Math.cos(latRad) * Math.sin(lonRad),
+        y: -Math.sin(latRad),
+        z: Math.cos(latRad) * Math.cos(lonRad)
+      };
+
+      // 3 Satellites on Orbit Ring
+      const satellites = [
+        { angle: 0, speed: 0.015, dist: radius * 1.34 },
+        { angle: 2.1, speed: 0.015, dist: radius * 1.34 },
+        { angle: 4.2, speed: 0.015, dist: radius * 1.34 }
+      ];
+
+      // Mouse & Touch Dragging
+      canvas.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        lastX = e.clientX;
+        lastY = e.clientY;
+      });
+      window.addEventListener('mouseup', () => { isDragging = false; });
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - lastX;
+        const dy = e.clientY - lastY;
+        rotY += dx * 0.006;
+        rotX += dy * 0.006;
+        rotX = Math.max(-1.1, Math.min(1.1, rotX));
+        lastX = e.clientX;
+        lastY = e.clientY;
+      });
+
+      // Touch handlers
+      canvas.addEventListener('touchstart', (e) => {
+        if (!e.touches.length) return;
+        isDragging = true;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
+      }, { passive: true });
+      window.addEventListener('touchend', () => { isDragging = false; });
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging || !e.touches.length) return;
+        const dx = e.touches[0].clientX - lastX;
+        const dy = e.touches[0].clientY - lastY;
+        rotY += dx * 0.006;
+        rotX += dy * 0.006;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
+      }, { passive: true });
+
+      function rotatePoint(p, rx, ry) {
+        // Rotate around Y
+        let x1 = p.x * Math.cos(ry) + p.z * Math.sin(ry);
+        let z1 = -p.x * Math.sin(ry) + p.z * Math.cos(ry);
+        let y1 = p.y;
+        // Rotate around X
+        let y2 = y1 * Math.cos(rx) - z1 * Math.sin(rx);
+        let z2 = y1 * Math.sin(rx) + z1 * Math.cos(rx);
+        let x2 = x1;
+        return { x: x2, y: y2, z: z2 };
+      }
+
+      let pingPulse = 0;
+
+      function render() {
+        ctx.clearRect(0, 0, width, height);
+        const cx = width / 2;
+        const cy = height / 2;
+
+        if (!isDragging) {
+          rotY += autoSpeed;
+        }
+
+        // Draw Globe Wireframe Ring (Atmosphere rim)
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(232, 196, 104, 0.16)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+
+        // Draw Elliptical Orbit Ring
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, radius * 1.34, radius * 0.45, -0.22, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(232, 196, 104, 0.18)';
+        ctx.setLineDash([4, 4]);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Draw Satellites on Orbit
+        satellites.forEach(sat => {
+          sat.angle += sat.speed;
+          const sx = cx + Math.cos(sat.angle) * sat.dist * Math.cos(-0.22) - Math.sin(sat.angle) * (sat.dist * 0.34) * Math.sin(-0.22);
+          const sy = cy + Math.cos(sat.angle) * sat.dist * Math.sin(-0.22) + Math.sin(sat.angle) * (sat.dist * 0.34) * Math.cos(-0.22);
+          
+          ctx.beginPath();
+          ctx.arc(sx, sy, 3, 0, Math.PI * 2);
+          ctx.fillStyle = '#f8e19a';
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = '#e8c468';
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        });
+
+        // Draw Dotted Globe Points
+        dots.forEach(d => {
+          const rot = rotatePoint(d, rotX, rotY);
+          const px = cx + rot.x * radius;
+          const py = cy + rot.y * radius;
+          
+          // Only draw points facing the viewer (z > -0.15)
+          if (rot.z > -0.2) {
+            const alpha = Math.max(0.1, (rot.z + 0.2) / 1.2);
+            ctx.beginPath();
+            ctx.arc(px, py, 1.4, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(232, 196, 104, ${alpha * 0.75})`;
+            ctx.fill();
+          }
+        });
+
+        // Draw Chennai Pin & Pulsing Marker
+        const chRot = rotatePoint(chennaiVec, rotX, rotY);
+        if (chRot.z > 0) {
+          const chX = cx + chRot.x * radius;
+          const chY = cy + chRot.y * radius;
+
+          pingPulse += 0.05;
+          const pingR = 5 + (Math.sin(pingPulse) + 1) * 7;
+          const pingAlpha = (Math.cos(pingPulse) + 1) * 0.45;
+
+          // Pulse ring
+          ctx.beginPath();
+          ctx.arc(chX, chY, pingR, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(248, 225, 154, ${pingAlpha})`;
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+
+          // Center solid beacon
+          ctx.beginPath();
+          ctx.arc(chX, chY, 4, 0, Math.PI * 2);
+          ctx.fillStyle = '#f8e19a';
+          ctx.shadowBlur = 12;
+          ctx.shadowColor = '#e8c468';
+          ctx.fill();
+          ctx.shadowBlur = 0;
+
+          // Connecting Leader Line & Label
+          ctx.beginPath();
+          ctx.moveTo(chX, chY);
+          ctx.lineTo(chX + 28, chY - 24);
+          ctx.lineTo(chX + 75, chY - 24);
+          ctx.strokeStyle = 'rgba(232, 196, 104, 0.6)';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          ctx.font = '600 10.5px "JetBrains Mono", monospace';
+          ctx.fillStyle = '#f8e19a';
+          ctx.fillText('CHENNAI', chX + 32, chY - 29);
+        }
+
+        requestAnimationFrame(render);
+      }
+      render();
+    }
+
+    /* ==========================================================================
+       4. BACKGROUND PARTICLE MESH & CURSOR GLOW
+       ========================================================================== */
+    function initParticleMesh() {
+      const canvas = document.getElementById('bgCanvas');
+      const glowEl = document.getElementById('cursorGlow');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let w, h;
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      const count = 35;
+      const particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          r: Math.random() * 1.5 + 1
+        });
+      }
+
+      let mouse = { x: -999, y: -999, targetX: -999, targetY: -999 };
+      window.addEventListener('mousemove', (e) => {
+        mouse.targetX = e.clientX;
+        mouse.targetY = e.clientY;
+      });
+
+      function loop() {
+        ctx.clearRect(0, 0, w, h);
+
+        // Smooth cursor ambient glow lerp
+        if (mouse.targetX !== -999) {
+          mouse.x += (mouse.targetX - mouse.x) * 0.12;
+          mouse.y += (mouse.targetY - mouse.y) * 0.12;
+          if (glowEl) {
+            glowEl.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0)`;
+          }
+        }
+
+        for (let i = 0; i < count; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+
+          // Connect nearby particles
+          for (let j = i + 1; j < count; j++) {
+            const p2 = particles[j];
+            const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (dist < 110) {
+              const alpha = (1 - dist / 110) * 0.15;
+              ctx.strokeStyle = `rgba(232, 196, 104, ${alpha})`;
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+
+          // Draw node
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(232, 196, 104, 0.4)';
+          ctx.fill();
+        }
+
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+
+    /* ==========================================================================
+       5. RADAR MINI-MAP IN HEADQUARTERS CARD
+       ========================================================================== */
+    function initRadarCanvas() {
+      const canvas = document.getElementById('radarCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let w = canvas.width = canvas.parentElement.clientWidth;
+      let h = canvas.height = canvas.parentElement.clientHeight;
+
+      let angle = 0;
+      let ping = 0;
+
+      function drawRadar() {
+        ctx.clearRect(0, 0, w, h);
+        const cx = w * 0.68;
+        const cy = h * 0.52;
+        const maxR = Math.max(w, h) * 0.75;
+
+        // Background Coordinate Grid
+        ctx.strokeStyle = 'rgba(232, 196, 104, 0.07)';
+        ctx.lineWidth = 1;
+        const gridSize = 24;
+        for (let x = 0; x < w; x += gridSize) {
+          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+        }
+        for (let y = 0; y < h; y += gridSize) {
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+        }
+
+        // Range Concentric Rings
+        for (let r = 24; r < maxR; r += 26) {
+          ctx.beginPath();
+          ctx.arc(cx, cy, r, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(232, 196, 104, 0.14)';
+          ctx.stroke();
+        }
+
+        // Crosshairs
+        ctx.beginPath();
+        ctx.moveTo(cx - maxR, cy); ctx.lineTo(cx + maxR, cy);
+        ctx.moveTo(cx, cy - maxR); ctx.lineTo(cx, cy + maxR);
+        ctx.strokeStyle = 'rgba(232, 196, 104, 0.16)';
+        ctx.stroke();
+
+        // Rotating Sweep Cone
+        angle += 0.025;
+        const sweepGrad = ctx.createConicGradient(angle, cx, cy);
+        sweepGrad.addColorStop(0, 'rgba(232, 196, 104, 0.35)');
+        sweepGrad.addColorStop(0.12, 'rgba(232, 196, 104, 0.0)');
+        sweepGrad.addColorStop(1, 'rgba(232, 196, 104, 0.0)');
+
+        ctx.fillStyle = sweepGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, maxR, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Pinging Mylapore Blip
+        ping += 0.04;
+        const pR = 4 + (Math.sin(ping) + 1) * 5;
+        ctx.beginPath();
+        ctx.arc(cx, cy, pR, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(248, 225, 154, 0.8)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#f8e19a';
+        ctx.fill();
+
+        // Label
+        ctx.font = '700 9.5px "JetBrains Mono", monospace';
+        ctx.fillStyle = '#f8e19a';
+        ctx.fillText('MYLAPORE', cx + 10, cy - 8);
+
+        requestAnimationFrame(drawRadar);
+      }
+      drawRadar();
+    }
+
+    /* ==========================================================================
+       6. CONTACT CARDS INTERACTION & CLIPBOARD TOAST
+       ========================================================================== */
+    function initContactCards() {
+      // Spotlight tracker on cards
+      const cards = document.querySelectorAll('[data-card]');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+
+      // Copy buttons with toast
+      const copyBtns = document.querySelectorAll('[data-copy]');
+      const toast = document.getElementById('toastBox');
+      const toastMsg = document.getElementById('toastMsg');
+      let toastTimer = null;
+
+      copyBtns.forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const text = btn.getAttribute('data-copy');
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(text);
+            } else {
+              // Fallback
+              const ta = document.createElement('textarea');
+              ta.value = text;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+            }
+            showToast(`Copied: ${text}`);
+          } catch (err) {
+            showToast('Copied to clipboard');
+          }
+        });
+      });
+
+      function showToast(msg) {
+        if (!toast || !toastMsg) return;
+        toastMsg.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
+      }
+    }
+
+    /* ==========================================================================
+       7. STEPPER & PROJECT BRIEF LOGIC
+       ========================================================================== */
+    function initBriefConsole() {
+      let currentStep = 1;
+      const totalSteps = 3;
+
+      // Inputs
+      const userNameInput = document.getElementById('userName');
+      const companyInput = document.getElementById('companyName');
+      const phoneInput = document.getElementById('phoneNumber');
+      const emailInput = document.getElementById('emailAddress');
+      const goalsInput = document.getElementById('projectGoals');
+      const budgetRange = document.getElementById('budgetRange');
+      const serviceRadios = document.querySelectorAll('input[name="serviceChoice"]');
+      const timelineRadios = document.querySelectorAll('input[name="timelineChoice"]');
+
+      // Ticket Elements
+      const valClient = document.getElementById('valClient');
+      const valCompany = document.getElementById('valCompany');
+      const valService = document.getElementById('valService');
+      const valBudget = document.getElementById('valBudget');
+      const valTimeline = document.getElementById('valTimeline');
+      const valReach = document.getElementById('valReach');
+      const valGoals = document.getElementById('valGoals');
+      const ticketRef = document.getElementById('ticketRef');
+      const ticketStatusBadge = document.getElementById('ticketStatusBadge');
+      const ringCircle = document.getElementById('ringCircle');
+      const ringText = document.getElementById('ringText');
+
+      // Stepper Controls
+      const step1Cont = document.getElementById('step1Container');
+      const step2Cont = document.getElementById('step2Container');
+      const step3Cont = document.getElementById('step3Container');
+      const stepContainers = [step1Cont, step2Cont, step3Cont];
+
+      const stepBtns = [
+        document.getElementById('stepBtn1'),
+        document.getElementById('stepBtn2'),
+        document.getElementById('stepBtn3')
+      ];
+      const circles = [
+        document.getElementById('circle1'),
+        document.getElementById('circle2'),
+        document.getElementById('circle3')
+      ];
+      const lines = [
+        document.getElementById('line1'),
+        document.getElementById('line2')
+      ];
+
+      // Generate Reference Code: BRF-YYMMDD-####
+      const now = new Date();
+      const yy = String(now.getFullYear()).slice(-2);
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      const randRef = Math.floor(1000 + Math.random() * 9000);
+      const currentRefCode = `BRF-${yy}${mm}${dd}-${randRef}`;
+      ticketRef.textContent = currentRefCode;
+
+      // Dynamic Validation Logic
+      function validateStep1() {
+        let valid = true;
+
+        // Name
+        if (!userNameInput.value.trim()) {
+          showError('userName', 'Your name is required.');
+          valid = false;
+        } else {
+          clearError('userName');
+        }
+
+        // Company
+        if (!companyInput.value.trim()) {
+          showError('companyName', 'Company name is required.');
+          valid = false;
+        } else {
+          clearError('companyName');
+        }
+
+        // Phone
+        const phoneRegex = /^[+]?[\d\s\-()]{7,20}$/;
+        if (!phoneInput.value.trim() || !phoneRegex.test(phoneInput.value.trim())) {
+          showError('phoneNumber', 'Valid phone number required.');
+          valid = false;
+        } else {
+          clearError('phoneNumber');
+        }
+
+        // Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+          showError('emailAddress', 'Valid email address required.');
+          valid = false;
+        } else {
+          clearError('emailAddress');
+        }
+
+        return valid;
+      }
+
+      function showError(id, msg) {
+        const wrap = document.getElementById(`wrap-${id}`);
+        const input = document.getElementById(id);
+        const err = document.getElementById(`err-${id}`);
+        if (wrap) {
+          wrap.classList.remove('shake');
+          void wrap.offsetWidth; // trigger reflow
+          wrap.classList.add('shake');
+        }
+        if (input) {
+          input.classList.remove('is-valid');
+          input.classList.add('is-invalid');
+        }
+        if (err) {
+          err.textContent = msg;
+          err.classList.add('visible');
+        }
+      }
+
+      function clearError(id) {
+        const input = document.getElementById(id);
+        const err = document.getElementById(`err-${id}`);
+        if (input) {
+          input.classList.remove('is-invalid');
+          input.classList.add('is-valid');
+        }
+        if (err) {
+          err.textContent = '';
+          err.classList.remove('visible');
+        }
+      }
+
+      // Ticket Flash Feedback
+      function flashTicketRow(rowId) {
+        const row = document.getElementById(rowId);
+        if (!row) return;
+        row.classList.remove('flash');
+        void row.offsetWidth;
+        row.classList.add('flash');
+      }
+
+      // Update Completion Ring
+      function updateCompletion() {
+        const fields = [
+          userNameInput.value.trim(),
+          companyInput.value.trim(),
+          phoneInput.value.trim(),
+          emailInput.value.trim(),
+          goalsInput.value.trim()
+        ];
+        const validCount = fields.filter(f => f.length > 0).length;
+        const pct = Math.round((validCount / fields.length) * 100);
+
+        ringText.textContent = `${pct}%`;
+        const circumference = 100.5;
+        const offset = circumference - (pct / 100) * circumference;
+        ringCircle.style.strokeDashoffset = offset;
+
+        if (pct === 100) {
+          ticketStatusBadge.textContent = 'Ready';
+          ticketStatusBadge.style.color = '#f8e19a';
+          ticketStatusBadge.style.borderColor = '#e8c468';
+        } else {
+          ticketStatusBadge.textContent = 'Draft';
+          ticketStatusBadge.style.color = 'var(--muted)';
+          ticketStatusBadge.style.borderColor = 'var(--gold-border)';
+        }
+      }
+
+      // Live Input Sync to Ticket
+      userNameInput.addEventListener('input', () => {
+        valClient.textContent = userNameInput.value.trim() || '—';
+        flashTicketRow('rowClient');
+        renderBarcode(userNameInput.value.trim() || currentRefCode);
+        updateCompletion();
+        if (userNameInput.value.trim()) clearError('userName');
+      });
+
+      companyInput.addEventListener('input', () => {
+        valCompany.textContent = companyInput.value.trim() || '—';
+        flashTicketRow('rowCompany');
+        updateCompletion();
+        if (companyInput.value.trim()) clearError('companyName');
+      });
+
+      function syncReach() {
+        const em = emailInput.value.trim();
+        const ph = phoneInput.value.trim();
+        if (em && ph) valReach.textContent = `${em} / ${ph}`;
+        else if (em) valReach.textContent = em;
+        else if (ph) valReach.textContent = ph;
+        else valReach.textContent = '—';
+        flashTicketRow('rowReach');
+        updateCompletion();
+      }
+
+      phoneInput.addEventListener('input', () => {
+        syncReach();
+        if (phoneInput.value.trim()) clearError('phoneNumber');
+      });
+
+      emailInput.addEventListener('input', () => {
+        syncReach();
+        if (emailInput.value.trim()) clearError('emailAddress');
+      });
+
+      // Enter key moves to next step in Step 1
+      [userNameInput, companyInput, phoneInput, emailInput].forEach(inp => {
+        inp.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            goToStep(2);
+          }
+        });
+      });
+
+      // Service Chips Sync & Headline Verb Locking
+      serviceRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          valService.textContent = radio.value;
+          flashTicketRow('rowService');
+          const verb = radio.getAttribute('data-verb');
+          if (verb) lockHeadlineVerb(verb);
+          renderBarcode(radio.value + '-' + currentRefCode);
+        });
+      });
+
+      // Budget Slider Sync
+      const budgetTiers = [
+        { name: 'Starter Tier', range: 'Under $2,000', display: 'Starter <$2k' },
+        { name: 'Growth Tier', range: '$2,000 – $5,000', display: 'Growth $2k–$5k' },
+        { name: 'Scale Tier', range: '$5,000 – $15,000', display: 'Scale $5k–$15k' },
+        { name: 'Enterprise Tier', range: '$15,000+', display: 'Enterprise $15k+' }
+      ];
+
+      const budgetTierName = document.getElementById('budgetTierName');
+      const budgetTierRange = document.getElementById('budgetTierRange');
+
+      budgetRange.addEventListener('input', () => {
+        const idx = parseInt(budgetRange.value, 10);
+        const tier = budgetTiers[idx];
+        budgetTierName.textContent = tier.name;
+        budgetTierRange.textContent = tier.range;
+        valBudget.textContent = tier.display;
+        flashTicketRow('rowBudget');
+
+        for (let i = 0; i <= 3; i++) {
+          const t = document.getElementById(`tick${i}`);
+          if (t) t.classList.toggle('active', i === idx);
+        }
+      });
+
+      // Goals & Character Count
+      const charCountEl = document.getElementById('charCount');
+      goalsInput.addEventListener('input', () => {
+        charCountEl.textContent = goalsInput.value.length;
+        valGoals.textContent = goalsInput.value.trim() || 'Awaiting project description...';
+        flashTicketRow('rowGoals');
+        updateCompletion();
+        if (goalsInput.value.trim()) clearError('projectGoals');
+      });
+
+      // Quick Prompt Buttons
+      document.querySelectorAll('[data-insert]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const insertText = btn.getAttribute('data-insert');
+          if (goalsInput.value.trim().length > 0) {
+            goalsInput.value = `${goalsInput.value.trim()}\n\n${insertText}`;
+          } else {
+            goalsInput.value = insertText;
+          }
+          goalsInput.dispatchEvent(new Event('input'));
+          goalsInput.focus();
+        });
+      });
+
+      // Timeline Radios Sync
+      timelineRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          valTimeline.textContent = radio.value;
+          flashTicketRow('rowTimeline');
+        });
+      });
+
+      // Stepper Navigation Function
+      function goToStep(target) {
+        if (target === 2 && currentStep === 1) {
+          if (!validateStep1()) return;
+        }
+        if (target === 3 && currentStep < 3) {
+          if (!validateStep1()) {
+            goToStep(1);
+            return;
+          }
+        }
+
+        const isBack = target < currentStep;
+
+        stepContainers.forEach((cont, i) => {
+          cont.classList.remove('active', 'slide-left');
+          if (i === target - 1) {
+            cont.classList.add('active');
+            if (isBack) cont.classList.add('slide-left');
+          }
+        });
+
+        // Update Stepper Nav
+        stepBtns.forEach((btn, i) => {
+          btn.classList.remove('active', 'done');
+          if (i + 1 < target) {
+            btn.classList.add('done');
+            circles[i].innerHTML = '&#10003;';
+          } else if (i + 1 === target) {
+            btn.classList.add('active');
+            circles[i].textContent = `0${i + 1}`;
+          } else {
+            circles[i].textContent = `0${i + 1}`;
+          }
+        });
+
+        lines.forEach((line, i) => {
+          line.classList.toggle('active', i + 1 < target);
+        });
+
+        currentStep = target;
+      }
+
+      // Step Buttons
+      document.getElementById('btnGoToStep2').addEventListener('click', () => goToStep(2));
+      document.getElementById('btnBackToStep1').addEventListener('click', () => goToStep(1));
+      document.getElementById('btnGoToStep3').addEventListener('click', () => goToStep(3));
+      document.getElementById('btnBackToStep2').addEventListener('click', () => goToStep(2));
+
+      stepBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          goToStep(i + 1);
+        });
+      });
+
+      // Form Submission
+      const form = document.getElementById('projectBriefForm');
+      const successView = document.getElementById('successView');
+      const receivedStamp = document.getElementById('receivedStamp');
+      const successHeading = document.getElementById('successHeading');
+      const successLead = document.getElementById('successLead');
+      const successRef = document.getElementById('successRef');
+      const btnSendAnother = document.getElementById('btnSendAnother');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Validate all required fields
+        if (!validateStep1()) {
+          goToStep(1);
+          return;
+        }
+
+        if (!goalsInput.value.trim()) {
+          showError('projectGoals', 'Please provide a brief project overview.');
+          goalsInput.focus();
+          return;
+        }
+
+        const actionType = e.submitter ? e.submitter.getAttribute('data-action') : 'START_PROJECT';
+        const clientName = userNameInput.value.trim() || 'Partner';
+        const clientEmail = emailInput.value.trim() || 'your email';
+
+        // TODO: CONNECT BACKEND API ENDPOINT HERE
+        // Example:
+        // const payload = {
+        //   reference: currentRefCode,
+        //   name: userNameInput.value.trim(),
+        //   company: companyInput.value.trim(),
+        //   phone: phoneInput.value.trim(),
+        //   email: emailInput.value.trim(),
+        //   service: document.querySelector('input[name="serviceChoice"]:checked').value,
+        //   budget: budgetTiers[parseInt(budgetRange.value, 10)].name,
+        //   timeline: document.querySelector('input[name="timelineChoice"]:checked').value,
+        //   goals: goalsInput.value.trim(),
+        //   action: actionType
+        // };
+        // fetch('/api/project-brief', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+
+        // Visual Stamp Slam Animation
+        receivedStamp.classList.add('slam');
+
+        // Burst Gold Confetti
+        launchGoldConfetti();
+
+        // Update Boarding Pass Status
+        ticketStatusBadge.textContent = 'Sent';
+        ticketStatusBadge.classList.add('sent');
+
+        // Update Success View Copy
+        if (actionType === 'FREE_CONSULTATION') {
+          successHeading.textContent = `Consultation requested, ${clientName}.`;
+        } else {
+          successHeading.textContent = `Project brief received, ${clientName}.`;
+        }
+        successLead.innerHTML = `Our technical team will review your scope and reply to <strong style="color:#fff;">${clientEmail}</strong> within 2 business hours. Your reference is <strong style="color:var(--gold);">${currentRefCode}</strong>.`;
+        successRef.textContent = currentRefCode;
+
+        // Transition form to success roadmap view
+        form.style.display = 'none';
+        successView.style.display = 'flex';
+      });
+
+      // Reset Button: Send Another Brief
+      btnSendAnother.addEventListener('click', () => {
+        form.reset();
+        form.style.display = 'block';
+        successView.style.display = 'none';
+        receivedStamp.classList.remove('slam');
+        ticketStatusBadge.textContent = 'Draft';
+        ticketStatusBadge.classList.remove('sent');
+        valClient.textContent = '—';
+        valCompany.textContent = '—';
+        valReach.textContent = '—';
+        valGoals.textContent = 'Awaiting project description...';
+        charCountEl.textContent = '0';
+        updateCompletion();
+        goToStep(1);
+      });
+
+      // Initialize Completion
+      updateCompletion();
+    }
+
+    /* ==========================================================================
+       8. DYNAMIC BARCODE GENERATOR (SVG)
+       ========================================================================== */
+    function renderBarcode(seedString) {
+      const svg = document.getElementById('barcodeSvg');
+      const caption = document.getElementById('barcodeCaption');
+      if (!svg) return;
+
+      // Simple deterministic hash pattern for barcodes
+      let hash = 0;
+      for (let i = 0; i < seedString.length; i++) {
+        hash = (hash << 5) - hash + seedString.charCodeAt(i);
+        hash |= 0;
+      }
+
+      svg.innerHTML = '';
+      let x = 4;
+      let binaryPattern = '';
+
+      for (let i = 0; i < 48; i++) {
+        const bit = ((hash ^ (i * 9973)) >>> (i % 31)) & 1;
+        const width = bit ? 3 : 1.5;
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', x);
+        rect.setAttribute('y', 0);
+        rect.setAttribute('width', width);
+        rect.setAttribute('height', 40);
+        rect.setAttribute('fill', '#e8c468');
+        rect.setAttribute('opacity', bit ? '0.9' : '0.45');
+        svg.appendChild(rect);
+        x += width + (i % 2 === 0 ? 2 : 3);
+        binaryPattern += bit ? '|' : ' ';
+      }
+
+      if (caption) {
+        caption.textContent = seedString.toUpperCase().slice(0, 24);
+      }
+    }
+
+    /* ==========================================================================
+       9. GOLD CONFETTI BURST
+       ========================================================================== */
+    function launchGoldConfetti() {
+      const canvas = document.getElementById('confettiCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ['#e8c468', '#f8e19a', '#a87d22', '#ffffff', '#ffd700'];
+
+      for (let i = 0; i < 120; i++) {
+        particles.push({
+          x: canvas.width / 2 + (Math.random() - 0.5) * 300,
+          y: canvas.height * 0.65,
+          vx: (Math.random() - 0.5) * 16,
+          vy: -(Math.random() * 18 + 8),
+          size: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 14,
+          gravity: 0.45,
+          opacity: 1
+        });
+      }
+
+      function updateConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += p.gravity;
+          p.rotation += p.rotSpeed;
+          p.opacity -= 0.009;
+
+          if (p.opacity > 0) {
+            active = true;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.opacity;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+            ctx.restore();
+          }
+        });
+
+        if (active) {
+          requestAnimationFrame(updateConfetti);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+      updateConfetti();
+    }
+  </script>
+</body>
+</html>
