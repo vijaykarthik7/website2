@@ -7,8 +7,8 @@
       // 2. Headline Word Rotator & Service Verb Locking
       initHeadlineRotator();
 
-      // 3. Interactive Draggable 3D Globe Canvas (Centered on Chennai)
-      initInteractiveGlobe();
+      // 3. Interactive Draggable 3D Globe Canvas (removed per user request)
+      // initInteractiveGlobe();
 
       // 4. Background Particle Mesh & Cursor Easing Glow
       initParticleMesh();
