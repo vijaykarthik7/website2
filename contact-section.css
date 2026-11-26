@@ -2,14 +2,22 @@
 /* Scoped Contact Section Container */
 #contact.section-contact-full {
   position: relative !important;
-  background: var(--bg-dark, #09080a) !important;
+  background: radial-gradient(ellipse at 50% 50%, rgba(5, 5, 8, 0.36) 0%, rgba(5, 5, 8, 0.72) 75%, rgba(2, 2, 4, 0.90) 100%) !important;
   padding: 100px 24px 140px 24px !important;
   overflow: hidden !important;
   border-top: 1px solid rgba(232, 196, 104, 0.14) !important;
   scroll-margin-top: 80px;
 }
 #contact.section-contact-full::after {
-  display: none !important;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent 0%, #050505 100%);
+  pointer-events: none;
+  z-index: 3;
 }
 #contact .contact-universe {
   position: relative;
@@ -70,7 +78,7 @@
     /* ::selection scoped */
 
     /* Background Particle Canvas & Ambient Pointer Glow */
-    #bgCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    #bgCanvas { display: none !important; }
 
     .cursor-ambient-glow {
       position: fixed;
@@ -296,7 +304,9 @@
     /* Contact Card Style */
     .contact-card {
       position: relative;
-      background: var(--bg-panel);
+      background: rgba(18, 16, 14, 0.72) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--gold-border);
       border-radius: var(--radius-lg);
       padding: 24px;
@@ -474,7 +484,9 @@
        ========================================================================== */
     .console-panel {
       position: relative;
-      background: var(--bg-panel);
+      background: rgba(18, 16, 14, 0.72) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--gold-border);
       border-radius: var(--radius-xl);
       padding: 40px;
@@ -1221,7 +1233,9 @@
 
     .boarding-pass {
       position: relative;
-      background: #0f0e0c;
+      background: rgba(15, 14, 12, 0.82) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--gold-border);
       border-radius: 18px;
       padding: 24px;
