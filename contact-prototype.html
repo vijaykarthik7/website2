@@ -1855,29 +1855,16 @@
       <section class="console-panel" aria-label="Project Brief Builder">
 
         <!-- Console Header with 3-Step Stepper -->
+                <!-- Console Header (All-in-One Console) -->
         <div class="console-header">
           <div class="console-title-group">
             <h2 class="console-title">Project brief</h2>
-            <p class="console-subtitle" id="consoleSub">Three short steps. About a minute.</p>
+            <p class="console-subtitle" id="consoleSub">Fill in your requirements below for an instant scope estimate & consultation.</p>
           </div>
 
-          <div class="stepper-nav" role="tablist" aria-label="Form Progress Steps">
-            <button type="button" class="stepper-item active" id="stepBtn1" data-step="1" role="tab" aria-selected="true" aria-controls="stepForm1">
-              <span class="step-circle" id="circle1">01</span>
-              <span>You</span>
-            </button>
-            <div class="stepper-line" id="line1"></div>
-
-            <button type="button" class="stepper-item" id="stepBtn2" data-step="2" role="tab" aria-selected="false" aria-controls="stepForm2">
-              <span class="step-circle" id="circle2">02</span>
-              <span>Scope</span>
-            </button>
-            <div class="stepper-line" id="line2"></div>
-
-            <button type="button" class="stepper-item" id="stepBtn3" data-step="3" role="tab" aria-selected="false" aria-controls="stepForm3">
-              <span class="step-circle" id="circle3">03</span>
-              <span>Goals</span>
-            </button>
+          <div class="console-status-pill">
+            <span class="pulse-dot"></span>
+            <span>ALL-IN-ONE BRIEF CONSOLE</span>
           </div>
         </div>
 
@@ -1887,8 +1874,12 @@
           <div class="form-wrapper">
 
             <!-- STEP 1: YOU (NAME, COMPANY, PHONE, EMAIL) -->
-            <form id="projectBriefForm" novalidate>
-              <div class="form-step active" id="step1Container">
+                        <!-- SINGLE-PAGE UNIFIED PROJECT BRIEF FORM -->
+            <form id="projectBriefForm" class="single-page-brief-form" novalidate>
+              
+              <!-- 01 // CONTACT DETAILS -->
+              <div class="form-section-block">
+                <div class="col-label" style="margin-bottom: 12px;">01 // CONTACT DETAILS *</div>
                 <div class="input-grid-2x2">
                   
                   <!-- Your Name -->
@@ -1952,90 +1943,81 @@
                   </div>
 
                 </div>
+              </div>
 
-                <div class="stepper-actions">
-                  <button type="button" class="btn-step-next" id="btnGoToStep2">
-                    <span>CONTINUE TO SCOPE</span>
-                    <span>&rarr;</span>
-                  </button>
+              <!-- 02 // REQUIRED SERVICE SELECTION -->
+              <div class="form-section-block" style="margin-top: 24px;">
+                <div class="col-label" style="margin-bottom: 12px;">02 // REQUIRED SERVICE *</div>
+                <div class="service-chips-grid">
+                  
+                  <!-- Web Development (Default) -->
+                  <input type="radio" name="serviceChoice" id="svcWeb" value="Web Development" data-verb="launch" class="chip-radio" checked>
+                  <label for="svcWeb" class="service-chip-label">
+                    <span class="chip-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </span>
+                    <span>Web Development</span>
+                    <span class="chip-check-badge">&#10003;</span>
+                  </label>
+
+                  <!-- Mobile App -->
+                  <input type="radio" name="serviceChoice" id="svcMobile" value="Mobile App" data-verb="ship" class="chip-radio">
+                  <label for="svcMobile" class="service-chip-label">
+                    <span class="chip-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </span>
+                    <span>Mobile App</span>
+                    <span class="chip-check-badge">&#10003;</span>
+                  </label>
+
+                  <!-- UI/UX Design -->
+                  <input type="radio" name="serviceChoice" id="svcDesign" value="UI/UX Design" data-verb="redesign" class="chip-radio">
+                  <label for="svcDesign" class="service-chip-label">
+                    <span class="chip-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    </span>
+                    <span>UI/UX Design</span>
+                    <span class="chip-check-badge">&#10003;</span>
+                  </label>
+
+                  <!-- Cloud & DevOps -->
+                  <input type="radio" name="serviceChoice" id="svcCloud" value="Cloud & DevOps" data-verb="modernize" class="chip-radio">
+                  <label for="svcCloud" class="service-chip-label">
+                    <span class="chip-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                    </span>
+                    <span>Cloud & DevOps</span>
+                    <span class="chip-check-badge">&#10003;</span>
+                  </label>
+
+                  <!-- Custom Software -->
+                  <input type="radio" name="serviceChoice" id="svcSoftware" value="Custom Software" data-verb="automate" class="chip-radio">
+                  <label for="svcSoftware" class="service-chip-label">
+                    <span class="chip-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </span>
+                    <span>Custom Software</span>
+                    <span class="chip-check-badge">&#10003;</span>
+                  </label>
+
+                  <!-- Digital Growth -->
+                  <input type="radio" name="serviceChoice" id="svcGrowth" value="Digital Growth" data-verb="grow" class="chip-radio">
+                  <label for="svcGrowth" class="service-chip-label">
+                    <span class="chip-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    </span>
+                    <span>Digital Growth</span>
+                    <span class="chip-check-badge">&#10003;</span>
+                  </label>
+
                 </div>
               </div>
 
-              <!-- STEP 2: SCOPE (SERVICE CHIPS & BUDGET SLIDER) -->
-              <div class="form-step" id="step2Container">
-                
-                <!-- Service Selection -->
-                <div>
-                  <div class="col-label" style="margin-bottom: 12px;">REQUIRED SERVICE *</div>
-                  <div class="service-chips-grid">
-                    
-                    <!-- Web Development (Default) -->
-                    <input type="radio" name="serviceChoice" id="svcWeb" value="Web Development" data-verb="launch" class="chip-radio" checked>
-                    <label for="svcWeb" class="service-chip-label">
-                      <span class="chip-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                      </span>
-                      <span>Web Development</span>
-                      <span class="chip-check-badge">&#10003;</span>
-                    </label>
-
-                    <!-- Mobile App -->
-                    <input type="radio" name="serviceChoice" id="svcMobile" value="Mobile App" data-verb="ship" class="chip-radio">
-                    <label for="svcMobile" class="service-chip-label">
-                      <span class="chip-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                      </span>
-                      <span>Mobile App</span>
-                      <span class="chip-check-badge">&#10003;</span>
-                    </label>
-
-                    <!-- UI/UX Design -->
-                    <input type="radio" name="serviceChoice" id="svcDesign" value="UI/UX Design" data-verb="redesign" class="chip-radio">
-                    <label for="svcDesign" class="service-chip-label">
-                      <span class="chip-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-                      </span>
-                      <span>UI/UX Design</span>
-                      <span class="chip-check-badge">&#10003;</span>
-                    </label>
-
-                    <!-- Cloud & DevOps -->
-                    <input type="radio" name="serviceChoice" id="svcCloud" value="Cloud & DevOps" data-verb="modernize" class="chip-radio">
-                    <label for="svcCloud" class="service-chip-label">
-                      <span class="chip-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
-                      </span>
-                      <span>Cloud & DevOps</span>
-                      <span class="chip-check-badge">&#10003;</span>
-                    </label>
-
-                    <!-- Custom Software -->
-                    <input type="radio" name="serviceChoice" id="svcSoftware" value="Custom Software" data-verb="automate" class="chip-radio">
-                    <label for="svcSoftware" class="service-chip-label">
-                      <span class="chip-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                      </span>
-                      <span>Custom Software</span>
-                      <span class="chip-check-badge">&#10003;</span>
-                    </label>
-
-                    <!-- Digital Growth -->
-                    <input type="radio" name="serviceChoice" id="svcGrowth" value="Digital Growth" data-verb="grow" class="chip-radio">
-                    <label for="svcGrowth" class="service-chip-label">
-                      <span class="chip-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-                      </span>
-                      <span>Digital Growth</span>
-                      <span class="chip-check-badge">&#10003;</span>
-                    </label>
-
-                  </div>
-                </div>
-
-                <!-- Budget Slider -->
+              <!-- 03 // BUDGET SLIDER -->
+              <div class="form-section-block" style="margin-top: 24px;">
                 <div class="budget-slider-box">
                   <div class="budget-top-row">
-                    <span class="budget-title">PROJECT BUDGET TIER *</span>
+                    <span class="budget-title">03 // PROJECT BUDGET TIER *</span>
                     <span class="budget-active-tier" id="budgetBadge">
                       <span id="budgetTierName">Growth Tier</span>
                       <span style="color:var(--gold);">&bull;</span>
@@ -2052,23 +2034,15 @@
                     <span id="tick3">Enterprise ($15k+)</span>
                   </div>
                 </div>
-
-                <div class="stepper-actions">
-                  <button type="button" class="btn-step-back" id="btnBackToStep1">&larr; BACK</button>
-                  <button type="button" class="btn-step-next" id="btnGoToStep3">
-                    <span>CONTINUE TO GOALS</span>
-                    <span>&rarr;</span>
-                  </button>
-                </div>
               </div>
 
-              <!-- STEP 3: GOALS & ACTIONS -->
-              <div class="form-step" id="step3Container">
+              <!-- 04 // GOALS & ACTIONS -->
+              <div class="form-section-block" style="margin-top: 24px;">
                 
                 <!-- Goals Textarea with 600 char limit -->
                 <div class="goals-wrapper">
                   <div class="goals-label-row">
-                    <span>PROJECT OVERVIEW / GOALS *</span>
+                    <span>04 // PROJECT OVERVIEW / GOALS *</span>
                     <span><span class="char-counter" id="charCount">0</span> / 600</span>
                   </div>
                   <textarea id="projectGoals" name="projectGoals" class="goals-textarea" placeholder="Briefly describe what you're building, key operational challenges, or expected timeline..." maxlength="600" required></textarea>
@@ -2076,7 +2050,7 @@
                 </div>
 
                 <!-- Quick-Start Pills -->
-                <div class="quick-pills-row">
+                <div class="quick-pills-row" style="margin-top: 14px;">
                   <span class="quick-pill-tag">QUICK PROMPTS:</span>
                   <button type="button" class="quick-pill-btn" data-insert="Launch an MVP: Build a rapid, resilient prototype to test commercial market validation.">Launch an MVP</button>
                   <button type="button" class="quick-pill-btn" data-insert="Redesign my site: Modernize digital architecture, refine UX aesthetics, and speed up load latency.">Redesign my site</button>
@@ -2085,10 +2059,9 @@
                 </div>
 
                 <!-- Optional Timeline Pills -->
-                <div class="timeline-section">
+                <div class="timeline-section" style="margin-top: 18px;">
                   <div class="col-label">DESIRED TIMELINE</div>
                   <div class="timeline-pills">
-                    
                     <input type="radio" name="timelineChoice" id="tlAsap" value="ASAP" class="timeline-radio" style="display:none;">
                     <label for="tlAsap" class="timeline-pill-label">ASAP</label>
 
@@ -2100,12 +2073,11 @@
 
                     <input type="radio" name="timelineChoice" id="tlFlex" value="Flexible" class="timeline-radio" style="display:none;">
                     <label for="tlFlex" class="timeline-pill-label">Flexible</label>
-
                   </div>
                 </div>
 
-                <!-- Two Final Buttons & Back -->
-                <div class="final-buttons-row">
+                <!-- Two Final Buttons -->
+                <div class="final-buttons-row" style="margin-top: 28px;">
                   <button type="submit" class="btn-magnetic-primary" id="btnStartProject" data-action="START_PROJECT">
                     <span>START MY PROJECT</span>
                     <span>&rarr;</span>
@@ -2114,8 +2086,6 @@
                   <button type="submit" class="btn-magnetic-outline" id="btnConsultation" data-action="FREE_CONSULTATION">
                     <span>GET FREE CONSULTATION</span>
                   </button>
-
-                  <button type="button" class="btn-step-back" id="btnBackToStep2" style="margin-left: auto;">&larr; BACK</button>
                 </div>
 
               </div>

@@ -483,6 +483,41 @@
     }
 
     /* Console Header & Stepper */
+    
+    /* All-in-One Console Status Pill */
+    .console-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232, 196, 104, 0.08);
+      border: 1px solid var(--gold-border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--gold-hi);
+    }
+
+    /* Unified Single Page Form Layout */
+    .single-page-brief-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+
+    .form-section-block {
+      width: 100%;
+    }
+
+    .form-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: auto !important;
+      overflow: visible !important;
+    }
+
     .console-header {
       display: flex;
       align-items: center;

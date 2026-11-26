@@ -536,9 +536,6 @@
        7. STEPPER & PROJECT BRIEF LOGIC
        ========================================================================== */
     function initBriefConsole() {
-      let currentStep = 1;
-      const totalSteps = 3;
-
       // Inputs
       const userNameInput = document.getElementById('userName');
       const companyInput = document.getElementById('companyName');
@@ -562,84 +559,94 @@
       const ringCircle = document.getElementById('ringCircle');
       const ringText = document.getElementById('ringText');
 
-      // Stepper Controls
-      const step1Cont = document.getElementById('step1Container');
-      const step2Cont = document.getElementById('step2Container');
-      const step3Cont = document.getElementById('step3Container');
-      const stepContainers = [step1Cont, step2Cont, step3Cont];
-
-      const stepBtns = [
-        document.getElementById('stepBtn1'),
-        document.getElementById('stepBtn2'),
-        document.getElementById('stepBtn3')
-      ];
-      const circles = [
-        document.getElementById('circle1'),
-        document.getElementById('circle2'),
-        document.getElementById('circle3')
-      ];
-      const lines = [
-        document.getElementById('line1'),
-        document.getElementById('line2')
-      ];
-
       // Generate Reference Code: BRF-YYMMDD-####
-      const now = new Date();
-      const yy = String(now.getFullYear()).slice(-2);
-      const mm = String(now.getMonth() + 1).padStart(2, '0');
-      const dd = String(now.getDate()).padStart(2, '0');
-      const randRef = Math.floor(1000 + Math.random() * 9000);
-      const currentRefCode = `BRF-${yy}${mm}${dd}-${randRef}`;
-      ticketRef.textContent = currentRefCode;
+      let now = new Date();
+      let yy = String(now.getFullYear()).slice(-2);
+      let mm = String(now.getMonth() + 1).padStart(2, '0');
+      let dd = String(now.getDate()).padStart(2, '0');
+      let randRef = Math.floor(1000 + Math.random() * 9000);
+      let currentRefCode = 'BRF-' + yy + mm + dd + '-' + randRef;
+      if (ticketRef) ticketRef.textContent = currentRefCode;
 
-      // Dynamic Validation Logic
-      function validateStep1() {
-        let valid = true;
-
-        // Name
-        if (!userNameInput.value.trim()) {
-          showError('userName', 'Your name is required.');
-          valid = false;
-        } else {
+      // Validation Functions
+      function validateField(id) {
+        if (id === 'userName') {
+          if (!userNameInput.value.trim()) {
+            showError('userName', 'Your name is required.');
+            return false;
+          }
           clearError('userName');
+          return true;
         }
-
-        // Company
-        if (!companyInput.value.trim()) {
-          showError('companyName', 'Company name is required.');
-          valid = false;
-        } else {
+        if (id === 'companyName') {
+          if (!companyInput.value.trim()) {
+            showError('companyName', 'Company name is required.');
+            return false;
+          }
           clearError('companyName');
+          return true;
         }
-
-        // Phone
-        const phoneRegex = /^[+]?[\d\s\-()]{7,20}$/;
-        if (!phoneInput.value.trim() || !phoneRegex.test(phoneInput.value.trim())) {
-          showError('phoneNumber', 'Valid phone number required.');
-          valid = false;
-        } else {
+        if (id === 'phoneNumber') {
+          const phoneRegex = /^[+]?[\d\s\-()]{7,20}$/;
+          if (!phoneInput.value.trim() || !phoneRegex.test(phoneInput.value.trim())) {
+            showError('phoneNumber', 'Valid phone number required.');
+            return false;
+          }
           clearError('phoneNumber');
+          return true;
         }
-
-        // Email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
-          showError('emailAddress', 'Valid email address required.');
-          valid = false;
-        } else {
+        if (id === 'emailAddress') {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+            showError('emailAddress', 'Valid email address required.');
+            return false;
+          }
           clearError('emailAddress');
+          return true;
         }
+        if (id === 'projectGoals') {
+          if (!goalsInput.value.trim()) {
+            showError('projectGoals', 'Please provide a brief project overview.');
+            return false;
+          }
+          clearError('projectGoals');
+          return true;
+        }
+        return true;
+      }
 
-        return valid;
+      function validateAll() {
+        let firstInvalid = null;
+        const validName = validateField('userName');
+        if (!validName && !firstInvalid) firstInvalid = userNameInput;
+
+        const validCompany = validateField('companyName');
+        if (!validCompany && !firstInvalid) firstInvalid = companyInput;
+
+        const validPhone = validateField('phoneNumber');
+        if (!validPhone && !firstInvalid) firstInvalid = phoneInput;
+
+        const validEmail = validateField('emailAddress');
+        if (!validEmail && !firstInvalid) firstInvalid = emailInput;
+
+        const validGoals = validateField('projectGoals');
+        if (!validGoals && !firstInvalid) firstInvalid = goalsInput;
+
+        if (firstInvalid) {
+          firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstInvalid.focus();
+          return false;
+        }
+        return true;
       }
 
       function showError(id, msg) {
-        const wrap = document.getElementById(`wrap-${id}`);
+        const wrap = document.getElementById('wrap-' + id);
         const input = document.getElementById(id);
-        const err = document.getElementById(`err-${id}`);
+        const err = document.getElementById('err-' + id);
         if (wrap) {
           wrap.classList.remove('shake');
-          void wrap.offsetWidth; // trigger reflow
+          void wrap.offsetWidth;
           wrap.classList.add('shake');
         }
         if (input) {
@@ -654,7 +661,7 @@
 
       function clearError(id) {
         const input = document.getElementById(id);
-        const err = document.getElementById(`err-${id}`);
+        const err = document.getElementById('err-' + id);
         if (input) {
           input.classList.remove('is-invalid');
           input.classList.add('is-valid');
@@ -677,82 +684,84 @@
       // Update Completion Ring
       function updateCompletion() {
         const fields = [
-          userNameInput.value.trim(),
-          companyInput.value.trim(),
-          phoneInput.value.trim(),
-          emailInput.value.trim(),
-          goalsInput.value.trim()
+          userNameInput ? userNameInput.value.trim() : '',
+          companyInput ? companyInput.value.trim() : '',
+          phoneInput ? phoneInput.value.trim() : '',
+          emailInput ? emailInput.value.trim() : '',
+          goalsInput ? goalsInput.value.trim() : ''
         ];
         const validCount = fields.filter(f => f.length > 0).length;
         const pct = Math.round((validCount / fields.length) * 100);
 
-        ringText.textContent = `${pct}%`;
+        if (ringText) ringText.textContent = pct + '%';
         const circumference = 100.5;
         const offset = circumference - (pct / 100) * circumference;
-        ringCircle.style.strokeDashoffset = offset;
+        if (ringCircle) ringCircle.style.strokeDashoffset = offset;
 
-        if (pct === 100) {
-          ticketStatusBadge.textContent = 'Ready';
-          ticketStatusBadge.style.color = '#f8e19a';
-          ticketStatusBadge.style.borderColor = '#e8c468';
-        } else {
-          ticketStatusBadge.textContent = 'Draft';
-          ticketStatusBadge.style.color = 'var(--muted)';
-          ticketStatusBadge.style.borderColor = 'var(--gold-border)';
+        if (ticketStatusBadge) {
+          if (pct === 100) {
+            ticketStatusBadge.textContent = 'Ready';
+            ticketStatusBadge.style.color = '#f8e19a';
+            ticketStatusBadge.style.borderColor = '#e8c468';
+          } else {
+            ticketStatusBadge.textContent = 'Draft';
+            ticketStatusBadge.style.color = 'var(--muted)';
+            ticketStatusBadge.style.borderColor = 'var(--gold-border)';
+          }
         }
       }
 
       // Live Input Sync to Ticket
-      userNameInput.addEventListener('input', () => {
-        valClient.textContent = userNameInput.value.trim() || '—';
-        flashTicketRow('rowClient');
-        renderBarcode(userNameInput.value.trim() || currentRefCode);
-        updateCompletion();
-        if (userNameInput.value.trim()) clearError('userName');
-      });
+      if (userNameInput) {
+        userNameInput.addEventListener('input', () => {
+          if (valClient) valClient.textContent = userNameInput.value.trim() || '—';
+          flashTicketRow('rowClient');
+          renderBarcode(userNameInput.value.trim() || currentRefCode);
+          updateCompletion();
+          if (userNameInput.value.trim()) clearError('userName');
+        });
+      }
 
-      companyInput.addEventListener('input', () => {
-        valCompany.textContent = companyInput.value.trim() || '—';
-        flashTicketRow('rowCompany');
-        updateCompletion();
-        if (companyInput.value.trim()) clearError('companyName');
-      });
+      if (companyInput) {
+        companyInput.addEventListener('input', () => {
+          if (valCompany) valCompany.textContent = companyInput.value.trim() || '—';
+          flashTicketRow('rowCompany');
+          updateCompletion();
+          if (companyInput.value.trim()) clearError('companyName');
+        });
+      }
 
       function syncReach() {
-        const em = emailInput.value.trim();
-        const ph = phoneInput.value.trim();
-        if (em && ph) valReach.textContent = `${em} / ${ph}`;
-        else if (em) valReach.textContent = em;
-        else if (ph) valReach.textContent = ph;
-        else valReach.textContent = '—';
+        const em = emailInput ? emailInput.value.trim() : '';
+        const ph = phoneInput ? phoneInput.value.trim() : '';
+        if (valReach) {
+          if (em && ph) valReach.textContent = em + ' / ' + ph;
+          else if (em) valReach.textContent = em;
+          else if (ph) valReach.textContent = ph;
+          else valReach.textContent = '—';
+        }
         flashTicketRow('rowReach');
         updateCompletion();
       }
 
-      phoneInput.addEventListener('input', () => {
-        syncReach();
-        if (phoneInput.value.trim()) clearError('phoneNumber');
-      });
-
-      emailInput.addEventListener('input', () => {
-        syncReach();
-        if (emailInput.value.trim()) clearError('emailAddress');
-      });
-
-      // Enter key moves to next step in Step 1
-      [userNameInput, companyInput, phoneInput, emailInput].forEach(inp => {
-        inp.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            goToStep(2);
-          }
+      if (phoneInput) {
+        phoneInput.addEventListener('input', () => {
+          syncReach();
+          if (phoneInput.value.trim()) clearError('phoneNumber');
         });
-      });
+      }
+
+      if (emailInput) {
+        emailInput.addEventListener('input', () => {
+          syncReach();
+          if (emailInput.value.trim()) clearError('emailAddress');
+        });
+      }
 
       // Service Chips Sync & Headline Verb Locking
       serviceRadios.forEach(radio => {
         radio.addEventListener('change', () => {
-          valService.textContent = radio.value;
+          if (valService) valService.textContent = radio.value;
           flashTicketRow('rowService');
           const verb = radio.getAttribute('data-verb');
           if (verb) lockHeadlineVerb(verb);
@@ -771,104 +780,55 @@
       const budgetTierName = document.getElementById('budgetTierName');
       const budgetTierRange = document.getElementById('budgetTierRange');
 
-      budgetRange.addEventListener('input', () => {
-        const idx = parseInt(budgetRange.value, 10);
-        const tier = budgetTiers[idx];
-        budgetTierName.textContent = tier.name;
-        budgetTierRange.textContent = tier.range;
-        valBudget.textContent = tier.display;
-        flashTicketRow('rowBudget');
+      if (budgetRange) {
+        budgetRange.addEventListener('input', () => {
+          const idx = parseInt(budgetRange.value, 10);
+          const tier = budgetTiers[idx];
+          if (budgetTierName) budgetTierName.textContent = tier.name;
+          if (budgetTierRange) budgetTierRange.textContent = tier.range;
+          if (valBudget) valBudget.textContent = tier.display;
+          flashTicketRow('rowBudget');
 
-        for (let i = 0; i <= 3; i++) {
-          const t = document.getElementById(`tick${i}`);
-          if (t) t.classList.toggle('active', i === idx);
-        }
-      });
+          for (let i = 0; i <= 3; i++) {
+            const t = document.getElementById('tick' + i);
+            if (t) t.classList.toggle('active', i === idx);
+          }
+        });
+      }
 
       // Goals & Character Count
       const charCountEl = document.getElementById('charCount');
-      goalsInput.addEventListener('input', () => {
-        charCountEl.textContent = goalsInput.value.length;
-        valGoals.textContent = goalsInput.value.trim() || 'Awaiting project description...';
-        flashTicketRow('rowGoals');
-        updateCompletion();
-        if (goalsInput.value.trim()) clearError('projectGoals');
-      });
+      if (goalsInput) {
+        goalsInput.addEventListener('input', () => {
+          if (charCountEl) charCountEl.textContent = goalsInput.value.length;
+          if (valGoals) valGoals.textContent = goalsInput.value.trim() || 'Awaiting project description...';
+          flashTicketRow('rowGoals');
+          updateCompletion();
+          if (goalsInput.value.trim()) clearError('projectGoals');
+        });
+      }
 
       // Quick Prompt Buttons
       document.querySelectorAll('[data-insert]').forEach(btn => {
         btn.addEventListener('click', () => {
           const insertText = btn.getAttribute('data-insert');
-          if (goalsInput.value.trim().length > 0) {
-            goalsInput.value = `${goalsInput.value.trim()}\n\n${insertText}`;
-          } else {
-            goalsInput.value = insertText;
+          if (goalsInput) {
+            if (goalsInput.value.trim().length > 0) {
+              goalsInput.value = goalsInput.value.trim() + '\n\n' + insertText;
+            } else {
+              goalsInput.value = insertText;
+            }
+            goalsInput.dispatchEvent(new Event('input'));
+            goalsInput.focus();
           }
-          goalsInput.dispatchEvent(new Event('input'));
-          goalsInput.focus();
         });
       });
 
       // Timeline Radios Sync
       timelineRadios.forEach(radio => {
         radio.addEventListener('change', () => {
-          valTimeline.textContent = radio.value;
+          if (valTimeline) valTimeline.textContent = radio.value;
           flashTicketRow('rowTimeline');
-        });
-      });
-
-      // Stepper Navigation Function
-      function goToStep(target) {
-        if (target === 2 && currentStep === 1) {
-          if (!validateStep1()) return;
-        }
-        if (target === 3 && currentStep < 3) {
-          if (!validateStep1()) {
-            goToStep(1);
-            return;
-          }
-        }
-
-        const isBack = target < currentStep;
-
-        stepContainers.forEach((cont, i) => {
-          cont.classList.remove('active', 'slide-left');
-          if (i === target - 1) {
-            cont.classList.add('active');
-            if (isBack) cont.classList.add('slide-left');
-          }
-        });
-
-        // Update Stepper Nav
-        stepBtns.forEach((btn, i) => {
-          btn.classList.remove('active', 'done');
-          if (i + 1 < target) {
-            btn.classList.add('done');
-            circles[i].innerHTML = '&#10003;';
-          } else if (i + 1 === target) {
-            btn.classList.add('active');
-            circles[i].textContent = `0${i + 1}`;
-          } else {
-            circles[i].textContent = `0${i + 1}`;
-          }
-        });
-
-        lines.forEach((line, i) => {
-          line.classList.toggle('active', i + 1 < target);
-        });
-
-        currentStep = target;
-      }
-
-      // Step Buttons
-      document.getElementById('btnGoToStep2').addEventListener('click', () => goToStep(2));
-      document.getElementById('btnBackToStep1').addEventListener('click', () => goToStep(1));
-      document.getElementById('btnGoToStep3').addEventListener('click', () => goToStep(3));
-      document.getElementById('btnBackToStep2').addEventListener('click', () => goToStep(2));
-
-      stepBtns.forEach((btn, i) => {
-        btn.addEventListener('click', () => {
-          goToStep(i + 1);
         });
       });
 
@@ -881,89 +841,80 @@
       const successRef = document.getElementById('successRef');
       const btnSendAnother = document.getElementById('btnSendAnother');
 
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
 
-        // Validate all required fields
-        if (!validateStep1()) {
-          goToStep(1);
-          return;
-        }
+          if (!validateAll()) return;
 
-        if (!goalsInput.value.trim()) {
-          showError('projectGoals', 'Please provide a brief project overview.');
-          goalsInput.focus();
-          return;
-        }
+          const actionType = e.submitter ? e.submitter.getAttribute('data-action') : 'START_PROJECT';
+          const clientName = userNameInput.value.trim() || 'Partner';
+          const clientEmail = emailInput.value.trim() || 'your email';
 
-        const actionType = e.submitter ? e.submitter.getAttribute('data-action') : 'START_PROJECT';
-        const clientName = userNameInput.value.trim() || 'Partner';
-        const clientEmail = emailInput.value.trim() || 'your email';
+          // Visual Stamp Slam Animation
+          if (receivedStamp) receivedStamp.classList.add('slam');
 
-        // TODO: CONNECT BACKEND API ENDPOINT HERE
-        // Example:
-        // const payload = {
-        //   reference: currentRefCode,
-        //   name: userNameInput.value.trim(),
-        //   company: companyInput.value.trim(),
-        //   phone: phoneInput.value.trim(),
-        //   email: emailInput.value.trim(),
-        //   service: document.querySelector('input[name="serviceChoice"]:checked').value,
-        //   budget: budgetTiers[parseInt(budgetRange.value, 10)].name,
-        //   timeline: document.querySelector('input[name="timelineChoice"]:checked').value,
-        //   goals: goalsInput.value.trim(),
-        //   action: actionType
-        // };
-        // fetch('/api/project-brief', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          // Burst Gold Confetti
+          launchGoldConfetti();
 
-        // Visual Stamp Slam Animation
-        receivedStamp.classList.add('slam');
+          // Update Boarding Pass Status
+          if (ticketStatusBadge) {
+            ticketStatusBadge.textContent = 'Sent';
+            ticketStatusBadge.classList.add('sent');
+          }
 
-        // Burst Gold Confetti
-        launchGoldConfetti();
+          // Update Success View Copy
+          if (successHeading) {
+            if (actionType === 'FREE_CONSULTATION') {
+              successHeading.textContent = 'Consultation requested, ' + clientName + '.';
+            } else {
+              successHeading.textContent = 'Project brief received, ' + clientName + '.';
+            }
+          }
+          if (successLead) {
+            successLead.innerHTML = 'Our technical team will review your scope and reply to <strong style="color:#fff;">' + clientEmail + '</strong> within 2 business hours. Your reference is <strong style="color:var(--gold);">' + currentRefCode + '</strong>.';
+          }
+          if (successRef) successRef.textContent = currentRefCode;
 
-        // Update Boarding Pass Status
-        ticketStatusBadge.textContent = 'Sent';
-        ticketStatusBadge.classList.add('sent');
-
-        // Update Success View Copy
-        if (actionType === 'FREE_CONSULTATION') {
-          successHeading.textContent = `Consultation requested, ${clientName}.`;
-        } else {
-          successHeading.textContent = `Project brief received, ${clientName}.`;
-        }
-        successLead.innerHTML = `Our technical team will review your scope and reply to <strong style="color:#fff;">${clientEmail}</strong> within 2 business hours. Your reference is <strong style="color:var(--gold);">${currentRefCode}</strong>.`;
-        successRef.textContent = currentRefCode;
-
-        // Transition form to success roadmap view
-        form.style.display = 'none';
-        successView.style.display = 'flex';
-      });
+          // Transition form to success roadmap view
+          form.style.display = 'none';
+          if (successView) successView.style.display = 'flex';
+        });
+      }
 
       // Reset Button: Send Another Brief
-      btnSendAnother.addEventListener('click', () => {
-        form.reset();
-        form.style.display = 'block';
-        successView.style.display = 'none';
-        receivedStamp.classList.remove('slam');
-        ticketStatusBadge.textContent = 'Draft';
-        ticketStatusBadge.classList.remove('sent');
-        valClient.textContent = '—';
-        valCompany.textContent = '—';
-        valReach.textContent = '—';
-        valGoals.textContent = 'Awaiting project description...';
-        charCountEl.textContent = '0';
-        updateCompletion();
-        goToStep(1);
-      });
+      if (btnSendAnother) {
+        btnSendAnother.addEventListener('click', () => {
+          if (form) {
+            form.reset();
+            form.style.display = 'flex';
+          }
+          if (successView) successView.style.display = 'none';
+          if (receivedStamp) receivedStamp.classList.remove('slam');
+          if (ticketStatusBadge) {
+            ticketStatusBadge.textContent = 'Draft';
+            ticketStatusBadge.classList.remove('sent');
+          }
+          now = new Date();
+          yy = String(now.getFullYear()).slice(-2);
+          mm = String(now.getMonth() + 1).padStart(2, '0');
+          dd = String(now.getDate()).padStart(2, '0');
+          randRef = Math.floor(1000 + Math.random() * 9000);
+          currentRefCode = 'BRF-' + yy + mm + dd + '-' + randRef;
+          if (ticketRef) ticketRef.textContent = currentRefCode;
+
+          if (valClient) valClient.textContent = '—';
+          if (valCompany) valCompany.textContent = '—';
+          if (valReach) valReach.textContent = '—';
+          if (valGoals) valGoals.textContent = 'Awaiting project description...';
+          updateCompletion();
+        });
+      }
 
       // Initialize Completion
       updateCompletion();
     }
 
-    /* ==========================================================================
-       8. DYNAMIC BARCODE GENERATOR (SVG)
-       ========================================================================== */
     function renderBarcode(seedString) {
       const svg = document.getElementById('barcodeSvg');
       const caption = document.getElementById('barcodeCaption');
