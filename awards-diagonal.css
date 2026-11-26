@@ -1073,4 +1073,34 @@
     padding: 14px 24px;
     font-size: 15px;
   }
+  .aw-gallery-filter-bar {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 4px 0 10px 0 !important;
+    box-sizing: border-box !important;
+  }
+  .aw-gallery-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .aw-gallery-pill {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+  .aw-badges-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .aw-badge-card {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }

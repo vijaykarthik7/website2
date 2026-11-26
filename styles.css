@@ -9574,9 +9574,30 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Full-bleed scroll stages & ambient glows mobile containment */
+  .video-hero-stage,
+  .rocket-scroll-stage,
+  .earth-scroll-stage,
+  .handani-scroll-stage {
+    max-width: 100vw !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .video-hero-ambient,
+  .rocket-ambient-glow,
+  .earth-ambient-glow,
+  .handani-ambient-glow {
+    max-width: 90vw !important;
+    max-height: 90vw !important;
+    overflow: hidden !important;
+  }
+
   /* Global Layout & Rhythm */
   .section-container {
-    padding: 0 18px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
   .section-about {
@@ -9883,26 +9904,44 @@ body {
 
   .timeline-01-row,
   .timeline-01-row.row-even {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 38px;
+    padding-left: 32px !important;
+    padding-right: 8px !important;
     gap: 16px;
   }
 
   .timeline-01-content-side,
   .timeline-01-row:not(.row-even) .timeline-01-content-side,
   .timeline-01-row.row-even .timeline-01-content-side {
-    width: 100%;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
     text-align: left;
     align-items: flex-start;
   }
 
+  .timeline-01-item-desc {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    word-break: break-word;
+  }
+
   .timeline-01-image-side {
-    width: 100%;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .timeline-01-img {
-    height: 190px;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 14px;
   }
 
   .timeline-01-process-box {
@@ -10181,8 +10220,29 @@ body {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
-    gap: 8px;
-    padding-top: 12px;
+    gap: 10px;
+    padding-top: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-bottom-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    font-size: 11.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .footer-bottom-links a,
+  .footer-bottom-links span {
+    white-space: normal !important;
   }
 }
 
@@ -10672,13 +10732,21 @@ html.lenis, html.lenis body {
 }
 
 @media (max-width: 768px) {
+  .global-map-console {
+    max-width: 100% !important;
+    margin: 0 auto;
+    border-radius: 18px;
+  }
   .global-map-stage {
-    min-height: 280px;
+    min-height: 260px;
+    width: 100%;
+    overflow: hidden;
   }
   .global-map-footer {
     flex-direction: column;
     text-align: center;
     gap: 12px;
+    padding: 14px 16px;
   }
   .telemetry-item.item-right {
     text-align: center;
@@ -10688,6 +10756,16 @@ html.lenis, html.lenis body {
   }
   .marker-text {
     font-size: 11px;
+  }
+  .map-marker-label.label-canada {
+    left: 24% !important;
+    top: 24% !important;
+    transform: translate(-50%, 6px) !important;
+  }
+  .map-marker-label.label-australia {
+    left: 80% !important;
+    top: 74% !important;
+    transform: translate(-50%, 6px) !important;
   }
 }
 

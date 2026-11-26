@@ -1825,6 +1825,12 @@ section[id],
 
 
 @media (max-width: 768px) {
+  .d2-services-universe .d2-manifesto-title { font-size: clamp(26px, 7vw, 36px) !important; line-height: 1.18 !important; }
+  .d2-services-universe .d2-manifesto-lead { font-size: 14.5px !important; line-height: 1.6 !important; }
+  .d2-services-universe .d2-discipline-mobile-card { padding: 20px 16px !important; border-radius: 16px !important; }
+  .d2-services-universe .d2-discipline-title { font-size: 20px !important; }
+  .d2-services-universe .d2-discipline-thesis { font-size: 13.5px !important; }
+  .d2-services-universe .d2-cta-card { padding: 32px 20px !important; border-radius: 20px !important; }
   .d2-svc-hero-title { font-size: clamp(22px, 5.5vw, 32px) !important; line-height: 1.25 !important; }
   .d2-svc-hero-lead { font-size: 14.5px !important; line-height: 1.65 !important; }
   .d2-reality-question { font-size: clamp(20px, 5vw, 26px) !important; }
