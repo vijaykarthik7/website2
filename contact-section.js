@@ -620,6 +620,18 @@
         const validName = validateField('userName');
         if (!validName && !firstInvalid) firstInvalid = userNameInput;
 
+        const selectedService = document.querySelector('input[name="serviceChoice"]:checked');
+        if (!selectedService) {
+          const chipsGrid = document.querySelector('.service-chips-grid');
+          if (chipsGrid) {
+            chipsGrid.classList.remove('shake');
+            void chipsGrid.offsetWidth;
+            chipsGrid.classList.add('shake');
+          }
+          if (!firstInvalid && chipsGrid) firstInvalid = chipsGrid;
+        }
+
+
         const validCompany = validateField('companyName');
         if (!validCompany && !firstInvalid) firstInvalid = companyInput;
 
@@ -683,10 +695,12 @@
 
       // Update Completion Ring
       function updateCompletion() {
+        const selectedService = document.querySelector('input[name="serviceChoice"]:checked');
         const fields = [
           userNameInput ? userNameInput.value.trim() : '',
           companyInput ? companyInput.value.trim() : '',
-          (phoneInput ? phoneInput.value.trim() : '') && (emailInput ? emailInput.value.trim() : ''),
+          (phoneInput ? phoneInput.value.trim() : '') || (emailInput ? emailInput.value.trim() : ''),
+          selectedService ? selectedService.value : '',
           goalsInput ? goalsInput.value.trim() : ''
         ];
         const validCount = fields.filter(f => Boolean(f)).length;
