@@ -1010,9 +1010,10 @@ body {
   transition: opacity 0.35s ease, visibility 0.35s ease;
   will-change: opacity;
   background: 
-    radial-gradient(circle 750px at 50% 50%, rgba(255, 180, 60, 0.32) 0%, rgba(232, 140, 40, 0.16) 35%, rgba(244, 211, 107, 0.08) 55%, transparent 75%),
-    radial-gradient(circle 500px at 70% 30%, rgba(248, 225, 154, 0.18) 0%, transparent 60%),
-    linear-gradient(180deg, #09080c 0%, #18141f 35%, #131018 70%, #08070b 100%);
+    radial-gradient(circle 800px at 50% 50%, rgba(255, 185, 65, 0.45) 0%, rgba(232, 130, 30, 0.25) 30%, rgba(244, 211, 107, 0.14) 50%, rgba(120, 60, 20, 0.08) 65%, transparent 80%),
+    radial-gradient(circle 550px at 70% 30%, rgba(248, 225, 154, 0.25) 0%, transparent 60%),
+    radial-gradient(circle 550px at 30% 70%, rgba(255, 160, 40, 0.20) 0%, transparent 60%),
+    linear-gradient(180deg, #09080c 0%, #1a1420 30%, #14101a 65%, #08070c 100%) !important;
 }
 
 .rocket-canvas {
@@ -1023,7 +1024,7 @@ body {
   display: block;
   pointer-events: none;
   mix-blend-mode: screen;
-  filter: brightness(1.06) contrast(1.06);
+  filter: brightness(1.08) contrast(1.08) saturate(1.15);
   background: transparent url('assets/rocket/ezgif-frame-001.jpg') center center / cover no-repeat;
 }
 
@@ -1032,13 +1033,13 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 750px;
-  height: 750px;
-  background: radial-gradient(circle, rgba(255, 185, 65, 0.28) 0%, rgba(212, 175, 55, 0.12) 40%, transparent 75%);
-  filter: blur(70px);
+  width: 850px;
+  height: 850px;
+  background: radial-gradient(circle, rgba(255, 195, 75, 0.42) 0%, rgba(232, 120, 30, 0.20) 35%, rgba(244, 211, 107, 0.10) 55%, transparent 75%);
+  filter: blur(75px);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.95;
   mix-blend-mode: screen;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -1132,9 +1133,10 @@ body {
   transition: opacity 0.35s ease, visibility 0.35s ease;
   will-change: opacity;
   background: 
-    radial-gradient(circle 750px at 50% 50%, rgba(97, 218, 251, 0.28) 0%, rgba(56, 189, 248, 0.14) 35%, rgba(212, 175, 55, 0.10) 55%, transparent 80%),
-    radial-gradient(circle 600px at 30% 60%, rgba(147, 197, 253, 0.18) 0%, transparent 65%),
-    linear-gradient(180deg, #08070a 0%, #10131e 35%, #0c0f18 70%, #060608 100%);
+    radial-gradient(circle 850px at 50% 50%, rgba(97, 218, 251, 0.42) 0%, rgba(56, 189, 248, 0.24) 30%, rgba(30, 144, 255, 0.14) 50%, rgba(212, 175, 55, 0.08) 65%, transparent 80%),
+    radial-gradient(circle 600px at 70% 30%, rgba(248, 225, 154, 0.22) 0%, transparent 60%),
+    radial-gradient(circle 600px at 30% 65%, rgba(147, 197, 253, 0.20) 0%, transparent 65%),
+    linear-gradient(180deg, #07070a 0%, #0d1222 35%, #090e1a 70%, #050508 100%) !important;
 }
 
 .earth-canvas {
@@ -1145,7 +1147,7 @@ body {
   display: block;
   pointer-events: none;
   mix-blend-mode: screen;
-  filter: brightness(1.08) contrast(1.06);
+  filter: brightness(1.10) contrast(1.08) saturate(1.15);
   background: transparent url('assets/earth/ezgif-frame-001.webp') center center / cover no-repeat;
 }
 
@@ -1154,13 +1156,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(97, 218, 251, 0.22) 0%, rgba(30, 144, 255, 0.10) 45%, transparent 75%);
-  filter: blur(80px);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(97, 218, 251, 0.38) 0%, rgba(56, 189, 248, 0.20) 35%, rgba(212, 175, 55, 0.10) 55%, transparent 75%);
+  filter: blur(85px);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.95;
   mix-blend-mode: screen;
   transition: opacity 0.4s ease;
 }
@@ -1254,10 +1256,10 @@ body {
   transition: opacity 0.35s ease, visibility 0.35s ease;
   will-change: opacity;
   background: 
-    radial-gradient(circle 800px at 50% 45%, rgba(248, 225, 154, 0.36) 0%, rgba(212, 175, 55, 0.18) 32%, rgba(255, 180, 50, 0.09) 50%, rgba(56, 189, 248, 0.06) 65%, transparent 80%),
-    radial-gradient(circle 550px at 70% 35%, rgba(248, 225, 154, 0.22) 0%, transparent 65%),
-    radial-gradient(circle 550px at 25% 60%, rgba(212, 175, 55, 0.16) 0%, transparent 60%),
-    linear-gradient(180deg, #09080d 0%, #191522 30%, #14111c 65%, #070609 100%);
+    radial-gradient(circle 850px at 50% 45%, rgba(248, 225, 154, 0.44) 0%, rgba(212, 175, 55, 0.25) 30%, rgba(255, 180, 50, 0.12) 48%, rgba(56, 189, 248, 0.08) 65%, transparent 80%),
+    radial-gradient(circle 600px at 70% 35%, rgba(248, 225, 154, 0.25) 0%, transparent 65%),
+    radial-gradient(circle 600px at 25% 60%, rgba(212, 175, 55, 0.20) 0%, transparent 60%),
+    linear-gradient(180deg, #09080d 0%, #1a1524 30%, #13101b 65%, #070609 100%) !important;
 }
 
 .handani-canvas {
@@ -1268,7 +1270,7 @@ body {
   display: block;
   pointer-events: none;
   mix-blend-mode: screen;
-  filter: brightness(1.1) contrast(1.08) saturate(1.12);
+  filter: brightness(1.12) contrast(1.10) saturate(1.18);
   background: transparent url('assets/handani/ezgif-frame-001.jpg') center center / cover no-repeat;
 }
 
@@ -1277,13 +1279,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(248, 225, 154, 0.30) 0%, rgba(212, 175, 55, 0.15) 35%, transparent 75%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(248, 225, 154, 0.40) 0%, rgba(212, 175, 55, 0.20) 35%, rgba(56, 189, 248, 0.08) 55%, transparent 75%);
   filter: blur(80px);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.95;
   mix-blend-mode: screen;
   transition: opacity 0.4s ease;
 }
@@ -2767,7 +2769,9 @@ body {
 .section-awards {
   position: relative;
   min-height: 850px;
-  background: radial-gradient(ellipse at 50% 40%, rgba(5, 5, 8, 0.40) 0%, rgba(5, 5, 8, 0.78) 80%, rgba(3, 3, 5, 0.92) 100%);
+  background: 
+    radial-gradient(ellipse 70% 50% at 50% 35%, rgba(248, 225, 154, 0.22) 0%, rgba(212, 175, 55, 0.10) 38%, transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(16, 14, 22, 0.40) 0%, rgba(9, 8, 13, 0.72) 65%, rgba(5, 5, 8, 0.92) 100%) !important;
   overflow: hidden;
   padding: 130px 0 100px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -5434,7 +5438,9 @@ body {
 .section-guardian {
   position: relative;
   padding: 120px 0 100px 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(4, 4, 6, 0.40) 0%, rgba(4, 4, 6, 0.76) 80%, rgba(2, 2, 4, 0.90) 100%);
+  background: 
+    radial-gradient(ellipse 70% 45% at 50% 40%, rgba(248, 225, 154, 0.24) 0%, rgba(212, 175, 55, 0.12) 35%, rgba(97, 218, 251, 0.08) 55%, transparent 75%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(14, 15, 24, 0.42) 0%, rgba(8, 9, 15, 0.75) 65%, rgba(5, 5, 8, 0.92) 100%) !important;
   border-top: 1px solid rgba(212, 175, 55, 0.18);
   border-bottom: 1px solid rgba(212, 175, 55, 0.18);
   overflow: hidden;
@@ -6447,7 +6453,9 @@ body {
 .section-portfolio {
   position: relative;
   padding: 120px 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(5, 5, 8, 0.42) 0%, rgba(5, 5, 8, 0.78) 80%, rgba(2, 2, 4, 0.92) 100%);
+  background: 
+    radial-gradient(ellipse 75% 50% at 50% 30%, rgba(240, 199, 94, 0.22) 0%, rgba(201, 153, 58, 0.10) 40%, transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(16, 14, 20, 0.42) 0%, rgba(9, 8, 13, 0.75) 65%, rgba(5, 5, 8, 0.94) 100%) !important;
   z-index: 2;
 }
 
@@ -7212,7 +7220,9 @@ body {
 .section-industries {
   position: relative;
   padding: 130px 0 120px 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(5, 5, 8, 0.35) 0%, rgba(5, 5, 8, 0.70) 75%, rgba(2, 2, 4, 0.90) 100%) !important;
+  background: 
+    radial-gradient(ellipse 70% 45% at 50% 35%, rgba(97, 218, 251, 0.20) 0%, rgba(56, 189, 248, 0.09) 38%, transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(12, 16, 26, 0.40) 0%, rgba(7, 10, 18, 0.72) 65%, rgba(4, 5, 8, 0.92) 100%) !important;
   overflow: hidden;
   z-index: 2;
   scroll-margin-top: 80px;
@@ -8341,7 +8351,9 @@ body {
 .section-estimator {
   position: relative;
   padding: 120px 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(5, 5, 8, 0.36) 0%, rgba(5, 5, 8, 0.72) 75%, rgba(2, 2, 4, 0.90) 100%) !important;
+  background: 
+    radial-gradient(ellipse 70% 45% at 50% 30%, rgba(248, 225, 154, 0.24) 0%, rgba(212, 175, 55, 0.12) 35%, rgba(97, 218, 251, 0.08) 55%, transparent 75%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(18, 15, 24, 0.42) 0%, rgba(10, 9, 15, 0.75) 65%, rgba(5, 5, 8, 0.94) 100%) !important;
   border-top: 1px solid rgba(212, 175, 55, 0.12);
   border-bottom: 1px solid rgba(212, 175, 55, 0.12);
   z-index: 2;
@@ -10449,7 +10461,9 @@ html.lenis, html.lenis body {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.95);
   margin-top: 0;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 40%, rgba(5, 5, 8, 0.40) 0%, rgba(5, 5, 8, 0.78) 80%, rgba(3, 3, 5, 0.92) 100%) !important;
+  background: 
+    radial-gradient(ellipse 70% 50% at 50% 35%, rgba(248, 225, 154, 0.22) 0%, rgba(212, 175, 55, 0.10) 38%, transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(16, 14, 22, 0.40) 0%, rgba(9, 8, 13, 0.72) 65%, rgba(5, 5, 8, 0.92) 100%) !important;
 }
 
 /* Subtle 54px Tech Grid Overlay with radial mask for Volumetric Studio Stage */

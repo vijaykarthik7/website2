@@ -1483,7 +1483,9 @@ section[id],
 .d2-services-universe {
   position: relative;
   width: 100%;
-  background: radial-gradient(ellipse at 50% 35%, rgba(5, 5, 8, 0.52) 0%, rgba(5, 5, 8, 0.80) 65%, rgba(2, 2, 4, 0.95) 100%) !important;
+  background: 
+    radial-gradient(ellipse 75% 45% at 50% 25%, rgba(255, 190, 75, 0.26) 0%, rgba(244, 211, 107, 0.12) 38%, transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(18, 15, 24, 0.45) 0%, rgba(10, 9, 14, 0.75) 65%, rgba(5, 5, 8, 0.92) 100%) !important;
   color: var(--d2-text-primary);
   font-family: var(--d2-font-sans);
   overflow: hidden;
