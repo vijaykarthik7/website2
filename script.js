@@ -23,19 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
         this.init();
         if (!this.ctx) return;
         if (this.ctx.state === 'suspended') this.ctx.resume();
-        
+
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
         osc.type = type;
         osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
         gain.gain.setValueAtTime(gainVal, this.ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
-        
+
         osc.connect(gain);
         gain.connect(this.ctx.destination);
         osc.start();
         osc.stop(this.ctx.currentTime + duration);
-      } catch (e) {}
+      } catch (e) { }
     },
     playScanHum() {
       try {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gain.connect(this.ctx.destination);
         osc.start();
         osc.stop(this.ctx.currentTime + 0.38);
-      } catch (e) {}
+      } catch (e) { }
     }
   };
 
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
       preloaderDismissed = true;
       cancelAnimationFrame(pAnimId);
       preloader.classList.add('preloader-hidden');
-      try { AudioEngine.playBeep(980, 'sine', 0.12, 0.02); } catch (e) {}
+      try { AudioEngine.playBeep(980, 'sine', 0.12, 0.02); } catch (e) { }
     }
 
     // Dismiss early on window load (400ms) or at 800ms max for instant perceived speed
@@ -392,8 +392,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heroEditorialCenter) {
         heroEditorialCenter.style.opacity = overlayFade.toFixed(2);
         const isMobile = window.innerWidth <= 768;
-        heroEditorialCenter.style.transform = isMobile 
-          ? `translateY(${translateY}px)` 
+        heroEditorialCenter.style.transform = isMobile
+          ? `translateY(${translateY}px)`
           : `translateX(-50%) translateY(${translateY}px)`;
         heroEditorialCenter.style.pointerEvents = overlayFade < 0.1 ? 'none' : 'auto';
       }
@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
 
-        window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
     updateScrollProgress(0);
 
@@ -1426,7 +1426,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     const st = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     // Background blur & shrink
     if (st > 40) {
       navbar.classList.add('scrolled');
@@ -2110,12 +2110,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // GSAP ScrollTrigger Entrance
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.fromTo(trustViewer, 
-        { opacity: 0, y: 35 }, 
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 0.8, 
+      gsap.fromTo(trustViewer,
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
           ease: "power2.out",
           scrollTrigger: {
             trigger: trustViewer,
@@ -3795,7 +3795,7 @@ void main(void) {
       e.preventDefault();
       const name = document.getElementById('contactName')?.value || 'Client';
       const service = document.getElementById('contactService')?.value || 'Digital Solutions';
-      
+
       if (formFeedback) {
         formFeedback.style.display = 'block';
         formFeedback.innerHTML = `Thank you, <strong>${name}</strong>! Your inquiry for <em>${service}</em> has been securely registered. A technical director will contact you within 2 hours.`;
@@ -3949,7 +3949,7 @@ void main(void) {
     setVStudioLights(false);
 
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-    
+
     // Realistic studio arc lamp boot-up flicker sequence
     await sleep(250);
     if (currentRun !== flickerRunId) return;
@@ -4627,7 +4627,7 @@ void main(void) {
   window.openChapterView = navigateToService;
   window.switchChapter = navigateToService;
   window.openServiceModal = navigateToService;
-  window.closeChapterView = function() {};
+  window.closeChapterView = function () { };
 
   // 2. BUILD CAROUSEL CARDS
   function buildCards() {

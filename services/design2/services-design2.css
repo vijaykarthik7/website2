@@ -69,10 +69,9 @@ body.d2-body {
 .d2-services-universe {
   position: relative;
   width: 100%;
-  background: transparent !important;
   color: var(--d2-text-primary);
   font-family: var(--d2-font-sans);
-  overflow: visible;
+  overflow: hidden;
   padding: 110px 0 130px;
   z-index: 10;
 }
@@ -1484,16 +1483,47 @@ section[id],
 .d2-services-universe {
   position: relative;
   width: 100%;
-  background: transparent !important;
+  background: radial-gradient(ellipse at 50% 35%, rgba(5, 5, 8, 0.52) 0%, rgba(5, 5, 8, 0.80) 65%, rgba(2, 2, 4, 0.95) 100%) !important;
   color: var(--d2-text-primary);
   font-family: var(--d2-font-sans);
-  overflow: visible;
+  overflow: hidden;
   padding: 80px 0 120px;
   z-index: 10;
 }
 
+/* Seamless Top & Bottom Black Fade Screens */
+.d2-services-universe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(to bottom, rgba(5, 5, 8, 0.96) 0%, rgba(5, 5, 8, 0.60) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.d2-services-universe::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(5, 5, 8, 0.65) 50%, rgba(2, 2, 4, 0.96) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.d2-services-universe .d2-container {
+  position: relative;
+  z-index: 6;
+}
+
 .d2-services-universe .d2-manifesto-hero {
-  background: transparent !important;
+  position: relative;
+  background: radial-gradient(ellipse 70% 60% at 30% 45%, rgba(5, 5, 8, 0.50) 0%, transparent 100%) !important;
   padding: 40px 0 90px;
   min-height: auto;
 }
