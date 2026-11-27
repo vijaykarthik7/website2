@@ -93,8 +93,27 @@ html.lenis, html.lenis body {
   }
 }
 
+/* Dynamic Aurora / Atmosphere Breathing Keyframes */
+@keyframes auroraPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.82;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.14) rotate(12deg);
+    opacity: 1;
+  }
+}
+
 body {
-  background-color: var(--bg-deep);
+  background-color: #08070a;
+  background-image: 
+    radial-gradient(circle 850px at 50% 16%, rgba(244, 211, 107, 0.22) 0%, rgba(212, 175, 55, 0.10) 35%, rgba(56, 189, 248, 0.04) 55%, transparent 75%),
+    radial-gradient(circle 750px at 85% 42%, rgba(232, 196, 104, 0.15) 0%, rgba(140, 100, 30, 0.05) 40%, transparent 70%),
+    radial-gradient(circle 850px at 15% 72%, rgba(56, 189, 248, 0.10) 0%, rgba(99, 102, 241, 0.05) 35%, transparent 70%),
+    radial-gradient(circle 850px at 50% 90%, rgba(248, 225, 154, 0.18) 0%, rgba(212, 175, 55, 0.08) 40%, transparent 75%),
+    linear-gradient(180deg, #09080c 0%, #15131a 20%, #0d0c11 40%, #181520 60%, #0e0d12 80%, #060608 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
@@ -110,12 +129,13 @@ body {
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 65vw;
-  height: 55vh;
-  background: radial-gradient(circle at center, var(--amber-ambient) 0%, transparent 70%);
+  width: 85vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, rgba(248, 225, 154, 0.28) 0%, rgba(212, 175, 55, 0.14) 35%, rgba(56, 189, 248, 0.06) 60%, transparent 80%);
   pointer-events: none;
   z-index: 0;
-  filter: blur(80px);
+  filter: blur(85px);
+  animation: auroraPulse 14s ease-in-out infinite alternate;
 }
 
 .subtle-grid-bg {
@@ -929,6 +949,11 @@ body {
   pointer-events: none;
   overflow: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+  background: 
+    radial-gradient(circle 700px at 50% 46%, rgba(248, 225, 154, 0.36) 0%, rgba(212, 175, 55, 0.18) 30%, rgba(255, 180, 50, 0.08) 50%, rgba(56, 189, 248, 0.05) 65%, transparent 80%),
+    radial-gradient(circle 500px at 20% 40%, rgba(248, 225, 154, 0.18) 0%, transparent 60%),
+    radial-gradient(circle 500px at 80% 40%, rgba(212, 175, 55, 0.20) 0%, transparent 60%),
+    linear-gradient(180deg, #0a090e 0%, #16131c 30%, #121017 65%, #08070b 100%);
 }
 
 .video-hero-canvas {
@@ -938,7 +963,9 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  background: #050505 url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 47% / contain no-repeat;
+  mix-blend-mode: screen;
+  filter: brightness(1.06) contrast(1.05) saturate(1.1);
+  background: transparent url('assets/HeroAbout/VideoHero_frames/frame_001.webp') center 47% / contain no-repeat;
 }
 
 @media (min-width: 901px) and (min-aspect-ratio: 13/10) {
@@ -953,13 +980,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(244, 211, 107, 0.16) 0%, rgba(212, 175, 55, 0.05) 45%, transparent 70%);
-  filter: blur(55px);
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(248, 225, 154, 0.32) 0%, rgba(212, 175, 55, 0.15) 35%, rgba(56, 189, 248, 0.05) 55%, transparent 75%);
+  filter: blur(70px);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.85;
+  mix-blend-mode: screen;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -981,6 +1009,10 @@ body {
   visibility: hidden;
   transition: opacity 0.35s ease, visibility 0.35s ease;
   will-change: opacity;
+  background: 
+    radial-gradient(circle 750px at 50% 50%, rgba(255, 180, 60, 0.32) 0%, rgba(232, 140, 40, 0.16) 35%, rgba(244, 211, 107, 0.08) 55%, transparent 75%),
+    radial-gradient(circle 500px at 70% 30%, rgba(248, 225, 154, 0.18) 0%, transparent 60%),
+    linear-gradient(180deg, #09080c 0%, #18141f 35%, #131018 70%, #08070b 100%);
 }
 
 .rocket-canvas {
@@ -990,8 +1022,9 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  background: #000000 url('assets/rocket/ezgif-frame-001.jpg') center center / cover no-repeat;
-  filter: brightness(0.96) contrast(1.04);
+  mix-blend-mode: screen;
+  filter: brightness(1.06) contrast(1.06);
+  background: transparent url('assets/rocket/ezgif-frame-001.jpg') center center / cover no-repeat;
 }
 
 .rocket-ambient-glow {
@@ -999,13 +1032,14 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(255, 175, 55, 0.16) 0%, rgba(212, 175, 55, 0.06) 45%, transparent 70%);
-  filter: blur(60px);
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(255, 185, 65, 0.28) 0%, rgba(212, 175, 55, 0.12) 40%, transparent 75%);
+  filter: blur(70px);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.85;
+  mix-blend-mode: screen;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -1097,6 +1131,10 @@ body {
   visibility: hidden;
   transition: opacity 0.35s ease, visibility 0.35s ease;
   will-change: opacity;
+  background: 
+    radial-gradient(circle 750px at 50% 50%, rgba(97, 218, 251, 0.28) 0%, rgba(56, 189, 248, 0.14) 35%, rgba(212, 175, 55, 0.10) 55%, transparent 80%),
+    radial-gradient(circle 600px at 30% 60%, rgba(147, 197, 253, 0.18) 0%, transparent 65%),
+    linear-gradient(180deg, #08070a 0%, #10131e 35%, #0c0f18 70%, #060608 100%);
 }
 
 .earth-canvas {
@@ -1106,8 +1144,9 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  background: #000000 url('assets/earth/ezgif-frame-001.webp') center center / cover no-repeat;
-  filter: brightness(0.95) contrast(1.05);
+  mix-blend-mode: screen;
+  filter: brightness(1.08) contrast(1.06);
+  background: transparent url('assets/earth/ezgif-frame-001.webp') center center / cover no-repeat;
 }
 
 .earth-ambient-glow {
@@ -1115,13 +1154,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(97, 218, 251, 0.12) 0%, rgba(30, 144, 255, 0.05) 50%, transparent 75%);
-  filter: blur(70px);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(97, 218, 251, 0.22) 0%, rgba(30, 144, 255, 0.10) 45%, transparent 75%);
+  filter: blur(80px);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.8;
+  mix-blend-mode: screen;
   transition: opacity 0.4s ease;
 }
 
@@ -1213,6 +1253,11 @@ body {
   visibility: hidden;
   transition: opacity 0.35s ease, visibility 0.35s ease;
   will-change: opacity;
+  background: 
+    radial-gradient(circle 800px at 50% 45%, rgba(248, 225, 154, 0.36) 0%, rgba(212, 175, 55, 0.18) 32%, rgba(255, 180, 50, 0.09) 50%, rgba(56, 189, 248, 0.06) 65%, transparent 80%),
+    radial-gradient(circle 550px at 70% 35%, rgba(248, 225, 154, 0.22) 0%, transparent 65%),
+    radial-gradient(circle 550px at 25% 60%, rgba(212, 175, 55, 0.16) 0%, transparent 60%),
+    linear-gradient(180deg, #09080d 0%, #191522 30%, #14111c 65%, #070609 100%);
 }
 
 .handani-canvas {
@@ -1222,8 +1267,9 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  background: #000000 url('assets/handani/ezgif-frame-001.jpg') center center / cover no-repeat;
-  filter: brightness(0.95) contrast(1.05);
+  mix-blend-mode: screen;
+  filter: brightness(1.1) contrast(1.08) saturate(1.12);
+  background: transparent url('assets/handani/ezgif-frame-001.jpg') center center / cover no-repeat;
 }
 
 .handani-ambient-glow {
@@ -1231,13 +1277,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 720px;
-  height: 720px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(244, 211, 107, 0.05) 50%, transparent 75%);
-  filter: blur(75px);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(248, 225, 154, 0.30) 0%, rgba(212, 175, 55, 0.15) 35%, transparent 75%);
+  filter: blur(80px);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.65;
+  opacity: 0.85;
+  mix-blend-mode: screen;
   transition: opacity 0.4s ease;
 }
 

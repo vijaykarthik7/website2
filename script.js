@@ -416,16 +416,17 @@ document.addEventListener('DOMContentLoaded', () => {
       // Keep VideoHero canvas clear, radiant & visible throughout Hero and About Us
       const vCanvas = document.getElementById('videoHeroCanvas');
       if (vCanvas) {
-        vCanvas.style.opacity = '0.88';
-        vCanvas.style.filter = 'brightness(0.92) contrast(1.02)';
+        vCanvas.style.opacity = '1';
+        vCanvas.style.mixBlendMode = 'screen';
+        vCanvas.style.filter = 'brightness(1.06) contrast(1.05) saturate(1.1)';
       }
 
       // Ambient warm golden glow throughout timeline
       if (videoHeroAmbient) {
-        const ambVal = Math.min(0.65, 0.45 + progress * 0.20);
+        const ambVal = Math.min(0.95, 0.65 + progress * 0.30);
         videoHeroAmbient.style.opacity = ambVal.toFixed(2);
         videoHeroAmbient.style.transform = 'translate(-50%, -50%) scale(1)';
-        videoHeroAmbient.style.background = 'radial-gradient(circle, rgba(244, 211, 107, 0.22) 0%, rgba(212, 175, 55, 0.07) 50%, transparent 70%)';
+        videoHeroAmbient.style.background = 'radial-gradient(circle, rgba(248, 225, 154, 0.36) 0%, rgba(212, 175, 55, 0.18) 35%, rgba(56, 189, 248, 0.06) 60%, transparent 75%)';
       }
 
       // Audio micro-haptic when fingers make full connection touch (around progress 0.26 to 0.35)
